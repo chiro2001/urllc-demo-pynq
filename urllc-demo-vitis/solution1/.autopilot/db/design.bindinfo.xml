@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<BindInfo>
+	<BindNode BINDTYPE="op" DISPLAY="bind_op icmp" ID="" IMPL="auto" LATENCY="0" OPTYPE="icmp" PRAGMA="" RTLNAME="icmp_ln11_fu_164_p2" SOURCE="src/vitis_ip/urllc-vitis-top.cpp:11" VARIABLE="icmp_ln11" MODULE="ad2dma" LOOP="VITIS_LOOP_11_1" DSP="0" BRAM="0" URAM="0"/>
+	<BindNode BINDTYPE="op" DISPLAY="bind_op add" ID="" IMPL="fabric" LATENCY="0" OPTYPE="add" PRAGMA="" RTLNAME="add_ln11_fu_170_p2" SOURCE="src/vitis_ip/urllc-vitis-top.cpp:11" VARIABLE="add_ln11" MODULE="ad2dma" LOOP="VITIS_LOOP_11_1" DSP="0" BRAM="0" URAM="0"/>
+</BindInfo>

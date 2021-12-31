@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section name="Workbench">
+	<item key="devices_info_chiropc" value="{&quot;cables&quot;:[{&quot;name&quot;:&quot;Digilent JTAG-SMT2 210251A08870&quot;,&quot;indexContextMap&quot;:{&quot;2&quot;:&quot;jsn-JTAG-SMT2-210251A08870-4ba00477-0&quot;,&quot;3&quot;:&quot;jsn-JTAG-SMT2-210251A08870-23727093-0&quot;}}]}"/>
+	<item key="urllc_io_test_system-bitFile" value="${project_loc:urllc_io_test}/_ide/bitstream/urllc.bit"/>
+	<item key="urllc_io_test_system-bmmFile" value=""/>
+	<item key="urllc_io_test_system-target" value="chiropc"/>
+	<item key="urllc_io_test_system-device" value="Auto Detect"/>
+	<item key="urllc_io_test_system-partial_bit" value="false"/>
+	<item key="urllc_io_test_system-skip_rev_check" value="false"/>
+	<item key="programfpga.sdxproject" value="urllc_io_test_system"/>
+</section>
