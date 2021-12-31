@@ -1,6 +1,8 @@
 # urllc-demo-pynq
 Ultra Reliable Low Latency Communication demo for pynq.
 
+[toc]
+
 ## Plan
 
 ### 初步整体框架
@@ -16,13 +18,47 @@ Ultra Reliable Low Latency Communication demo for pynq.
      - [ ] 经过FPGA内部流数据处理函数
      - [ ] 添加帧同步、时钟同步
      - [ ] 到达IQ调制，输出数据部分
+     
 2. 接收端
      - [ ] 从IQ解调，用ADC采样到的波形数据
      - [ ] 根据帧同步和时钟同步信息对ADC采集的数据进行时间上的调整（频偏等）
      - [ ] 模拟波形数据→数据波形
      - [ ] 传输到DAC
      
-     ### 数字上变频DUC&&下变频DDC
+### FPGA框图
+
+#### 发送端
+
+```mermaid
+graph LR
+input_adc("输入ADC(AD9280,10M)")
+data_process("数字处理")
+serial("并行转串行")
+duc("数字上变频(DUC)")
+output_iq("IQ调制")
+
+input_adc --8.W,10M--> data_process --8.W,10M--> serial --"1.W(80M..?)"--> duc --"8.W(20M中频,125M采样)"--> output_iq
+```
+
+#### 接收端
+
+```mermaid
+graph LR
+input_iq("IQ解调")
+ddc("数字下变频(DDC)")
+serial("串行转并行")
+data_process("数字处理")
+dac("DAC输出")
+
+input_iq --8.W,65M--> ddc --1.W,8.125M--> serial --8.W,1.015625M--> data_process --8.W,1.015625M--> dac
+```
+
+**// TODO:**
+
+1. 数字上变频之后中频20M，输出采样率最大125M，那么串行频率最高也就20M...?
+2. IQ解调后的ADC只有65M，最后输出波形才1M采样率..?
+
+### 数字上变频DUC&&下变频DDC
 
 ![image-20211231144254725](README.assets/image-20211231144254725.png)
 

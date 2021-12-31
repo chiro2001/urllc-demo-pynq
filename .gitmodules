@@ -1,0 +1,3 @@
+[submodule "chisel-test-project"]
+	path = chisel-test-project
+	url = https://github.com/chiro2001/chisel-test-project
