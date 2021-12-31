@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<vivadoHLSLog:LogRoot xmlns:vivadoHLSLog="www.xilinx.com/vivadoHLSLog">
+  <errorLogs>
+    <logs>
+      <simLog>
+        <logs message="ERROR: [COSIM 212-4] *** C/RTL co-simulation finished: FAIL ***" projectName="urllc-demo-vitis" solutionName="solution1" date="2021-12-29T00:39:07.956+0800"/>
+      </simLog>
+    </logs>
+  </errorLogs>
+  <warningLogs>
+    <logs>
+      <simLog>
+        <logs message="WARNING: [VRFC 10-3705] select index -1 into 'read_address' is out of bounds [H:/Chiro/gits/urllc-demo-pynq/urllc-demo-vitis/solution1/sim/verilog/AESL_fifo.v:191]&#xD;&#xA;Completed static elaboration&#xD;&#xA;Starting simulation data flow analysis&#xD;&#xA;Completed simulation data flow analysis&#xD;&#xA;Time Resolution for simulation is 1ps&#xD;&#xA;Compiling package xil_defaultlib.$unit_dataflow_monitor_sv&#xD;&#xA;Compiling module xil_defaultlib.ad2dma_control_s_axi&#xD;&#xA;Compiling module xil_defaultlib.ad2dma_flow_control_loop_pipe&#xD;&#xA;Compiling module xil_defaultlib.ad2dma_regslice_both&#xD;&#xA;Compiling module xil_defaultlib.ad2dma_regslice_both(DataWidth=4...&#xD;&#xA;Compiling module xil_defaultlib.ad2dma_regslice_both(DataWidth=1...&#xD;&#xA;Compiling module xil_defaultlib.ad2dma&#xD;&#xA;Compiling module xil_defaultlib.AESL_automem_ad&#xD;&#xA;Compiling module xil_defaultlib.AESL_automem_da&#xD;&#xA;Compiling module xil_defaultlib.fifo(DEPTH=0,WIDTH=32)&#xD;&#xA;Compiling module xil_defaultlib.fifo(DEPTH=0,WIDTH=4)&#xD;&#xA;Compiling module xil_defaultlib.fifo(DEPTH=0,WIDTH=1)&#xD;&#xA;Compiling module xil_defaultlib.AESL_axi_s_inputs&#xD;&#xA;Compiling module xil_defaultlib.fifo(DEPTH=200,WIDTH=32)&#xD;&#xA;Compiling module xil_defaultlib.fifo(DEPTH=200,WIDTH=4)&#xD;&#xA;Compiling module xil_defaultlib.fifo(DEPTH=200,WIDTH=1)&#xD;&#xA;Compiling module xil_defaultlib.AESL_axi_s_outs&#xD;&#xA;Compiling module xil_defaultlib.AESL_axi_slave_control&#xD;&#xA;Compiling module xil_defaultlib.AESL_deadlock_idx0_monitor&#xD;&#xA;Compiling module xil_defaultlib.AESL_deadlock_kernel_monitor_top...&#xD;&#xA;Compiling module xil_defaultlib.nodf_module_intf&#xD;&#xA;Compiling module xil_defaultlib.upc_loop_intf(FSM_WIDTH=1)&#xD;&#xA;Compiling module xil_defaultlib.dataflow_monitor_1&#xD;&#xA;Compiling module xil_defaultlib.apatb_ad2dma_top&#xD;&#xA;Compiling module work.glbl&#xD;&#xA;Built simulation snapshot ad2dma&#xD;&#xA;&#xD;&#xA;****** Webtalk v2021.1 (64-bit)&#xD;&#xA;  **** SW Build 3247384 on Thu Jun 10 19:36:33 MDT 2021&#xD;&#xA;  **** IP Build 3246043 on Fri Jun 11 00:30:35 MDT 2021&#xD;&#xA;    ** Copyright 1986-2021 Xilinx, Inc. All Rights Reserved.&#xD;&#xA;&#xD;&#xA;source H:/Chiro/gits/urllc-demo-pynq/urllc-demo-vitis/solution1/sim/verilog/xsim.dir/ad2dma/webtalk/xsim_webtalk.tcl -notrace" projectName="urllc-demo-vitis" solutionName="solution1" date="2021-12-29T00:36:41.160+0800" type="Warning"/>
+        <logs message="WARNING: [VRFC 10-3705] select index -1 into 'read_address' is out of bounds [H:/Chiro/gits/urllc-demo-pynq/urllc-demo-vitis/solution1/sim/verilog/AESL_fifo.v:190]" projectName="urllc-demo-vitis" solutionName="solution1" date="2021-12-29T00:36:32.635+0800" type="Warning"/>
+      </simLog>
+    </logs>
+  </warningLogs>
+</vivadoHLSLog:LogRoot>

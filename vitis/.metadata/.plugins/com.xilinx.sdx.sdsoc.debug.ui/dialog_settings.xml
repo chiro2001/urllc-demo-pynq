@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section name="Workbench">
+	<item key="enabletrace_urllc_io_test_Debug" value="false"/>
+	<item key="emulatorarguments_urllc_io_test_Debug" value=""/>
+	<item key="waveform_urllc_io_test_Debug" value="false"/>
+</section>

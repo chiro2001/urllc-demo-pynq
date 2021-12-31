@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xd:acceleratorMap xmlns:xd="http://www.xilinx.com/xidane" xd:functionName="ad2dma" xd:componentRef="ad2dma" xd:initiationInterval="204" xd:clockPeriod="10" xd:sequential="true" xd:hostMachine="64" xd:reset="control">
+  <xd:controlReg xd:name="control" xd:interfaceRef="s_axi_control" xd:busTypeRef="axilite" xd:type="generic_axi_lite" xd:offset="0x0"/>
+  <xd:arg xd:name="*(ad)" xd:originalName="ad" xd:direction="in" xd:interfaceRef="ad_q0" xd:busTypeRef="ap_memory" xd:dataWidth="32"/>
+  <xd:arg xd:name="*(da)" xd:originalName="da" xd:direction="out" xd:interfaceRef="da_d0" xd:busTypeRef="ap_memory" xd:dataWidth="32"/>
+  <xd:arg xd:name="inputs" xd:originalName="inputs" xd:direction="in" xd:interfaceRef="inputs" xd:busTypeRef="axis" xd:dataWidth="32"/>
+  <xd:arg xd:name="outs" xd:originalName="outs" xd:direction="out" xd:interfaceRef="outs" xd:busTypeRef="axis" xd:dataWidth="32"/>
+  <xd:latencyEstimates xd:best-case="203" xd:worst-case="203" xd:average-case="203"/>
+  <xd:resourceEstimates xd:LUT="113" xd:FF="61" xd:BRAM="0" xd:DSP="0"/>
+</xd:acceleratorMap>

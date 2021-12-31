@@ -1,0 +1,20 @@
+verilog xil_defaultlib --include "C:/Xilinx/Vivado/2021.1/data/xilinx_vip/include" --include "../../../../urllc-demo-vivado.gen/sources_1/bd/urllc/ipshared/2cdb/hdl/verilog" --include "../../../../urllc-demo-vivado.gen/sources_1/bd/urllc/ip/urllc_ad2dma_0_0/drivers/ad2dma_v0_6/src" --include "../../../../urllc-demo-vivado.gen/sources_1/bd/urllc/ipshared/ec67/hdl" --include "../../../../urllc-demo-vivado.gen/sources_1/bd/urllc/ipshared/f42d/hdl" \
+"../../../../urllc-demo-vivado.gen/sources_1/bd/urllc/ipshared/2cdb/hdl/verilog/ad2dma_control_s_axi.v" \
+"../../../../urllc-demo-vivado.gen/sources_1/bd/urllc/ipshared/2cdb/hdl/verilog/ad2dma_flow_control_loop_pipe.v" \
+"../../../../urllc-demo-vivado.gen/sources_1/bd/urllc/ipshared/2cdb/hdl/verilog/ad2dma_hls_deadlock_idx0_monitor.v" \
+"../../../../urllc-demo-vivado.gen/sources_1/bd/urllc/ipshared/2cdb/hdl/verilog/ad2dma_regslice_both.v" \
+"../../../../urllc-demo-vivado.gen/sources_1/bd/urllc/ipshared/2cdb/hdl/verilog/ad2dma.v" \
+"../../../bd/urllc/ip/urllc_ad2dma_0_0/sim/urllc_ad2dma_0_0.v" \
+"../../../bd/urllc/ip/urllc_processing_system7_0_0/sim/urllc_processing_system7_0_0.v" \
+"../../../bd/urllc/ip/urllc_xlconcat_0_0/sim/urllc_xlconcat_0_0.v" \
+"../../../bd/urllc/ip/urllc_xlconstant_0_0/sim/urllc_xlconstant_0_0.v" \
+"../../../bd/urllc/ip/urllc_xlslice_0_0/sim/urllc_xlslice_0_0.v" \
+"../../../bd/urllc/ip/urllc_xbar_2/sim/urllc_xbar_2.v" \
+"../../../bd/urllc/ip/urllc_xbar_3/sim/urllc_xbar_3.v" \
+"../../../bd/urllc/ip/urllc_auto_pc_0/sim/urllc_auto_pc_0.v" \
+"../../../bd/urllc/ip/urllc_auto_pc_1/sim/urllc_auto_pc_1.v" \
+"../../../bd/urllc/sim/urllc.v" \
+
+verilog xil_defaultlib "glbl.v"
+
+nosort

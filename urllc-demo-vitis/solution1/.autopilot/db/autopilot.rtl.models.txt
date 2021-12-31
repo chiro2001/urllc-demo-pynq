@@ -1,0 +1,17 @@
+ad2dma_control_s_axi
+ad2dma_regslice_both
+ad2dma_regslice_both
+ad2dma_regslice_both
+ad2dma_regslice_both
+ad2dma_regslice_both
+ad2dma_regslice_both
+ad2dma_regslice_both
+ad2dma_regslice_both
+ad2dma_regslice_both
+ad2dma_regslice_both
+ad2dma_regslice_both
+ad2dma_regslice_both
+ad2dma_regslice_both
+ad2dma_regslice_both
+ad2dma_flow_control_loop_pipe
+ad2dma
