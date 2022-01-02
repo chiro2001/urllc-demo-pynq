@@ -1,7 +1,7 @@
 //Copyright 1986-2021 Xilinx, Inc. All Rights Reserved.
 //--------------------------------------------------------------------------------
 //Tool Version: Vivado v.2021.1 (win64) Build 3247384 Thu Jun 10 19:36:33 MDT 2021
-//Date        : Wed Dec 29 00:44:10 2021
+//Date        : Sun Jan  2 23:29:27 2022
 //Host        : DESKTOP-DAG2M26 running 64-bit major release  (build 9200)
 //Command     : generate_target urllc_wrapper.bd
 //Design      : urllc_wrapper
@@ -32,7 +32,9 @@ module urllc_wrapper
     FIXED_IO_ps_porb,
     FIXED_IO_ps_srstb,
     ad,
-    da);
+    ad_iq,
+    da,
+    da_iq);
   inout [14:0]DDR_addr;
   inout [2:0]DDR_ba;
   inout DDR_cas_n;
@@ -55,7 +57,9 @@ module urllc_wrapper
   inout FIXED_IO_ps_porb;
   inout FIXED_IO_ps_srstb;
   input [7:0]ad;
+  input [7:0]ad_iq;
   output [7:0]da;
+  output [7:0]da_iq;
 
   wire [14:0]DDR_addr;
   wire [2:0]DDR_ba;
@@ -79,7 +83,9 @@ module urllc_wrapper
   wire FIXED_IO_ps_porb;
   wire FIXED_IO_ps_srstb;
   wire [7:0]ad;
+  wire [7:0]ad_iq;
   wire [7:0]da;
+  wire [7:0]da_iq;
 
   urllc urllc_i
        (.DDR_addr(DDR_addr),
@@ -104,5 +110,7 @@ module urllc_wrapper
         .FIXED_IO_ps_porb(FIXED_IO_ps_porb),
         .FIXED_IO_ps_srstb(FIXED_IO_ps_srstb),
         .ad(ad),
-        .da(da));
+        .ad_iq(ad_iq),
+        .da(da),
+        .da_iq(da_iq));
 endmodule

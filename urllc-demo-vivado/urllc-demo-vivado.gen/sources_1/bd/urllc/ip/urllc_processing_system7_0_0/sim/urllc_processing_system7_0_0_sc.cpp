@@ -1,4 +1,4 @@
-// (c) Copyright 1995-2021 Xilinx, Inc. All rights reserved.
+// (c) Copyright 1995-2022 Xilinx, Inc. All rights reserved.
 // 
 // This file contains confidential and proprietary information
 // of Xilinx, Inc. and is protected under U.S. and
@@ -85,7 +85,7 @@ urllc_processing_system7_0_0_sc::urllc_processing_system7_0_0_sc(const sc_core::
     model_param_props.addLong("C_S_AXI_HP0_ID_WIDTH", "6");
     model_param_props.addLong("C_S_AXI_HP0_DATA_WIDTH", "32");
     model_param_props.addLong("C_S_AXI_HP1_ID_WIDTH", "6");
-    model_param_props.addLong("C_S_AXI_HP1_DATA_WIDTH", "64");
+    model_param_props.addLong("C_S_AXI_HP1_DATA_WIDTH", "32");
     model_param_props.addLong("C_S_AXI_HP2_ID_WIDTH", "6");
     model_param_props.addLong("C_S_AXI_HP2_DATA_WIDTH", "64");
     model_param_props.addLong("C_S_AXI_HP3_ID_WIDTH", "6");
@@ -100,11 +100,11 @@ urllc_processing_system7_0_0_sc::urllc_processing_system7_0_0_sc(const sc_core::
     model_param_props.addLong("C_TRACE_INTERNAL_WIDTH", "2");
     model_param_props.addLong("C_USE_AXI_NONSECURE", "0");
     model_param_props.addLong("C_USE_M_AXI_GP0", "1");
-    model_param_props.addLong("C_USE_M_AXI_GP1", "0");
+    model_param_props.addLong("C_USE_M_AXI_GP1", "1");
     model_param_props.addLong("C_USE_S_AXI_GP0", "0");
     model_param_props.addLong("C_USE_S_AXI_GP1", "0");
     model_param_props.addLong("C_USE_S_AXI_HP0", "1");
-    model_param_props.addLong("C_USE_S_AXI_HP1", "0");
+    model_param_props.addLong("C_USE_S_AXI_HP1", "1");
     model_param_props.addLong("C_USE_S_AXI_HP2", "0");
     model_param_props.addLong("C_USE_S_AXI_HP3", "0");
     model_param_props.addLong("C_USE_S_AXI_ACP", "0");
@@ -113,8 +113,8 @@ urllc_processing_system7_0_0_sc::urllc_processing_system7_0_0_sc(const sc_core::
     model_param_props.addString("C_IRQ_F2P_MODE", "DIRECT");
     model_param_props.addString("C_PS7_SI_REV", "PRODUCTION");
     model_param_props.addString("C_FCLK_CLK0_BUF", "TRUE");
-    model_param_props.addString("C_FCLK_CLK1_BUF", "FALSE");
-    model_param_props.addString("C_FCLK_CLK2_BUF", "FALSE");
+    model_param_props.addString("C_FCLK_CLK1_BUF", "TRUE");
+    model_param_props.addString("C_FCLK_CLK2_BUF", "TRUE");
     model_param_props.addString("C_FCLK_CLK3_BUF", "FALSE");
     model_param_props.addString("C_PACKAGE_NAME", "clg400");
 
@@ -123,8 +123,12 @@ urllc_processing_system7_0_0_sc::urllc_processing_system7_0_0_sc(const sc_core::
   // initialize AXI sockets
   M_AXI_GP0_rd_socket = mp_impl->M_AXI_GP0_rd_socket;
   M_AXI_GP0_wr_socket = mp_impl->M_AXI_GP0_wr_socket;
+  M_AXI_GP1_rd_socket = mp_impl->M_AXI_GP1_rd_socket;
+  M_AXI_GP1_wr_socket = mp_impl->M_AXI_GP1_wr_socket;
   S_AXI_HP0_rd_socket = mp_impl->S_AXI_HP0_rd_socket;
   S_AXI_HP0_wr_socket = mp_impl->S_AXI_HP0_wr_socket;
+  S_AXI_HP1_rd_socket = mp_impl->S_AXI_HP1_rd_socket;
+  S_AXI_HP1_wr_socket = mp_impl->S_AXI_HP1_wr_socket;
 }
 
 urllc_processing_system7_0_0_sc::~urllc_processing_system7_0_0_sc()

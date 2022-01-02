@@ -1,7 +1,7 @@
 -- Copyright 1986-2021 Xilinx, Inc. All Rights Reserved.
 -- --------------------------------------------------------------------------------
 -- Tool Version: Vivado v.2021.1 (win64) Build 3247384 Thu Jun 10 19:36:33 MDT 2021
--- Date        : Wed Dec 29 00:18:10 2021
+-- Date        : Sun Jan  2 16:52:19 2022
 -- Host        : DESKTOP-DAG2M26 running 64-bit major release  (build 9200)
 -- Command     : write_vhdl -force -mode synth_stub
 --               h:/Chiro/gits/urllc-demo-pynq/urllc-demo-vivado/urllc-demo-vivado.gen/sources_1/bd/urllc/ip/urllc_axi_dma_0_0/urllc_axi_dma_0_0_stub.vhdl

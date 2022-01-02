@@ -6,11 +6,11 @@ OPTION psf_version = 2.1;
 
 BEGIN driver ad2dma
 
- OPTION supported_peripherals = (ad2dma_v0_6 );
+ OPTION supported_peripherals = (ad2dma_v0_7 );
  OPTION driver_state = ACTIVE;
  OPTION copyfiles = all;
  OPTION name = ad2dma;
- OPTION version = 0.6;
+ OPTION version = 0.7;
 
 END driver
 

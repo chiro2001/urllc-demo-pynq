@@ -70,7 +70,12 @@ proc create_report { reportName command } {
   }
 }
 OPTRACE "synth_1" START { ROLLUP_AUTO }
+set_param checkpoint.writeSynthRtdsInDcp 1
 set_param chipscope.maxJobs 16
+set_msg_config -id {Common 17-41} -limit 10000000
+set_msg_config -id {HDL-1065} -limit 10000
+set_msg_config -id {Synth 8-256} -limit 10000
+set_msg_config -id {Synth 8-638} -limit 10000
 OPTRACE "Creating in-memory project" START { }
 create_project -in_memory -part xc7z020clg400-2
 
@@ -89,21 +94,34 @@ set_property ip_output_repo h:/Chiro/gits/urllc-demo-pynq/urllc-demo-vivado/urll
 set_property ip_cache_permissions {read write} [current_project]
 OPTRACE "Creating in-memory project" END { }
 OPTRACE "Adding files" START { }
-read_verilog -library xil_defaultlib h:/Chiro/gits/urllc-demo-pynq/urllc-demo-vivado/urllc-demo-vivado.gen/sources_1/bd/urllc/hdl/urllc_wrapper.v
+read_verilog -library xil_defaultlib H:/Chiro/gits/urllc-demo-pynq/urllc-demo-vivado/urllc-demo-vivado.gen/sources_1/bd/urllc/hdl/urllc_wrapper.v
 add_files H:/Chiro/gits/urllc-demo-pynq/urllc-demo-vivado/urllc-demo-vivado.srcs/sources_1/bd/urllc/urllc.bd
 set_property used_in_implementation false [get_files -all h:/Chiro/gits/urllc-demo-pynq/urllc-demo-vivado/urllc-demo-vivado.gen/sources_1/bd/urllc/ip/urllc_axi_dma_0_0/urllc_axi_dma_0_0.xdc]
 set_property used_in_implementation false [get_files -all h:/Chiro/gits/urllc-demo-pynq/urllc-demo-vivado/urllc-demo-vivado.gen/sources_1/bd/urllc/ip/urllc_axi_dma_0_0/urllc_axi_dma_0_0_clocks.xdc]
 set_property used_in_implementation false [get_files -all h:/Chiro/gits/urllc-demo-pynq/urllc-demo-vivado/urllc-demo-vivado.gen/sources_1/bd/urllc/ip/urllc_axi_dma_0_0/urllc_axi_dma_0_0_ooc.xdc]
+set_property used_in_implementation false [get_files -all h:/Chiro/gits/urllc-demo-pynq/urllc-demo-vivado/urllc-demo-vivado.gen/sources_1/bd/urllc/ip/urllc_xbar_2/urllc_xbar_2_ooc.xdc]
 set_property used_in_implementation false [get_files -all h:/Chiro/gits/urllc-demo-pynq/urllc-demo-vivado/urllc-demo-vivado.gen/sources_1/bd/urllc/ip/urllc_processing_system7_0_0/urllc_processing_system7_0_0.xdc]
+set_property used_in_implementation false [get_files -all h:/Chiro/gits/urllc-demo-pynq/urllc-demo-vivado/urllc-demo-vivado.gen/sources_1/bd/urllc/ip/urllc_xbar_3/urllc_xbar_3_ooc.xdc]
 set_property used_in_implementation false [get_files -all h:/Chiro/gits/urllc-demo-pynq/urllc-demo-vivado/urllc-demo-vivado.gen/sources_1/bd/urllc/ip/urllc_rst_ps7_0_50M_0/urllc_rst_ps7_0_50M_0_board.xdc]
 set_property used_in_implementation false [get_files -all h:/Chiro/gits/urllc-demo-pynq/urllc-demo-vivado/urllc-demo-vivado.gen/sources_1/bd/urllc/ip/urllc_rst_ps7_0_50M_0/urllc_rst_ps7_0_50M_0.xdc]
 set_property used_in_implementation false [get_files -all h:/Chiro/gits/urllc-demo-pynq/urllc-demo-vivado/urllc-demo-vivado.gen/sources_1/bd/urllc/ip/urllc_rst_ps7_0_50M_0/urllc_rst_ps7_0_50M_0_ooc.xdc]
-set_property used_in_implementation false [get_files -all h:/Chiro/gits/urllc-demo-pynq/urllc-demo-vivado/urllc-demo-vivado.gen/sources_1/bd/urllc/ip/urllc_xbar_2/urllc_xbar_2_ooc.xdc]
-set_property used_in_implementation false [get_files -all h:/Chiro/gits/urllc-demo-pynq/urllc-demo-vivado/urllc-demo-vivado.gen/sources_1/bd/urllc/ip/urllc_xbar_3/urllc_xbar_3_ooc.xdc]
 set_property used_in_implementation false [get_files -all h:/Chiro/gits/urllc-demo-pynq/urllc-demo-vivado/urllc-demo-vivado.gen/sources_1/bd/urllc/ip/urllc_ad2dma_1_0/constraints/ad2dma_ooc.xdc]
+set_property used_in_implementation false [get_files -all h:/Chiro/gits/urllc-demo-pynq/urllc-demo-vivado/urllc-demo-vivado.gen/sources_1/bd/urllc/ip/urllc_ad2dma_1_1/constraints/ad2dma_ooc.xdc]
+set_property used_in_implementation false [get_files -all h:/Chiro/gits/urllc-demo-pynq/urllc-demo-vivado/urllc-demo-vivado.gen/sources_1/bd/urllc/ip/urllc_axi_dma_0_1/urllc_axi_dma_0_1.xdc]
+set_property used_in_implementation false [get_files -all h:/Chiro/gits/urllc-demo-pynq/urllc-demo-vivado/urllc-demo-vivado.gen/sources_1/bd/urllc/ip/urllc_axi_dma_0_1/urllc_axi_dma_0_1_clocks.xdc]
+set_property used_in_implementation false [get_files -all h:/Chiro/gits/urllc-demo-pynq/urllc-demo-vivado/urllc-demo-vivado.gen/sources_1/bd/urllc/ip/urllc_axi_dma_0_1/urllc_axi_dma_0_1_ooc.xdc]
+set_property used_in_implementation false [get_files -all h:/Chiro/gits/urllc-demo-pynq/urllc-demo-vivado/urllc-demo-vivado.gen/sources_1/bd/urllc/ip/urllc_xbar_4/urllc_xbar_4_ooc.xdc]
+set_property used_in_implementation false [get_files -all h:/Chiro/gits/urllc-demo-pynq/urllc-demo-vivado/urllc-demo-vivado.gen/sources_1/bd/urllc/ip/urllc_xbar_5/urllc_xbar_5_ooc.xdc]
+set_property used_in_implementation false [get_files -all h:/Chiro/gits/urllc-demo-pynq/urllc-demo-vivado/urllc-demo-vivado.gen/sources_1/bd/urllc/ip/urllc_rst_ps7_0_4M_0/urllc_rst_ps7_0_4M_0_board.xdc]
+set_property used_in_implementation false [get_files -all h:/Chiro/gits/urllc-demo-pynq/urllc-demo-vivado/urllc-demo-vivado.gen/sources_1/bd/urllc/ip/urllc_rst_ps7_0_4M_0/urllc_rst_ps7_0_4M_0.xdc]
+set_property used_in_implementation false [get_files -all h:/Chiro/gits/urllc-demo-pynq/urllc-demo-vivado/urllc-demo-vivado.gen/sources_1/bd/urllc/ip/urllc_rst_ps7_0_4M_0/urllc_rst_ps7_0_4M_0_ooc.xdc]
+set_property used_in_implementation false [get_files -all h:/Chiro/gits/urllc-demo-pynq/urllc-demo-vivado/urllc-demo-vivado.gen/sources_1/bd/urllc/ip/urllc_rst_ps7_0_60M_0/urllc_rst_ps7_0_60M_0_board.xdc]
+set_property used_in_implementation false [get_files -all h:/Chiro/gits/urllc-demo-pynq/urllc-demo-vivado/urllc-demo-vivado.gen/sources_1/bd/urllc/ip/urllc_rst_ps7_0_60M_0/urllc_rst_ps7_0_60M_0.xdc]
+set_property used_in_implementation false [get_files -all h:/Chiro/gits/urllc-demo-pynq/urllc-demo-vivado/urllc-demo-vivado.gen/sources_1/bd/urllc/ip/urllc_rst_ps7_0_60M_0/urllc_rst_ps7_0_60M_0_ooc.xdc]
 set_property used_in_implementation false [get_files -all h:/Chiro/gits/urllc-demo-pynq/urllc-demo-vivado/urllc-demo-vivado.gen/sources_1/bd/urllc/ip/urllc_auto_pc_0/urllc_auto_pc_0_ooc.xdc]
 set_property used_in_implementation false [get_files -all h:/Chiro/gits/urllc-demo-pynq/urllc-demo-vivado/urllc-demo-vivado.gen/sources_1/bd/urllc/ip/urllc_auto_pc_1/urllc_auto_pc_1_ooc.xdc]
-set_property used_in_implementation false [get_files -all h:/Chiro/gits/urllc-demo-pynq/urllc-demo-vivado/urllc-demo-vivado.gen/sources_1/bd/urllc/ip/urllc_s00_mmu_0/urllc_s00_mmu_0_ooc.xdc]
+set_property used_in_implementation false [get_files -all h:/Chiro/gits/urllc-demo-pynq/urllc-demo-vivado/urllc-demo-vivado.gen/sources_1/bd/urllc/ip/urllc_auto_pc_2/urllc_auto_pc_2_ooc.xdc]
+set_property used_in_implementation false [get_files -all h:/Chiro/gits/urllc-demo-pynq/urllc-demo-vivado/urllc-demo-vivado.gen/sources_1/bd/urllc/ip/urllc_auto_pc_3/urllc_auto_pc_3_ooc.xdc]
 set_property used_in_implementation false [get_files -all h:/Chiro/gits/urllc-demo-pynq/urllc-demo-vivado/urllc-demo-vivado.gen/sources_1/bd/urllc/urllc_ooc.xdc]
 
 OPTRACE "Adding files" END { }

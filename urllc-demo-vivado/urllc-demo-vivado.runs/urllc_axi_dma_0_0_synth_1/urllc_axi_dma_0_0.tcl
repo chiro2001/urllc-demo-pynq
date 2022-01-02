@@ -71,6 +71,7 @@ proc create_report { reportName command } {
 }
 OPTRACE "urllc_axi_dma_0_0_synth_1" START { ROLLUP_AUTO }
 set_param chipscope.maxJobs 16
+set_msg_config -id {HDL-1065} -limit 10000
 set_param project.vivado.isBlockSynthRun true
 set_msg_config -msgmgr_mode ooc_run
 OPTRACE "Creating in-memory project" START { }
@@ -91,7 +92,7 @@ set_property ip_output_repo h:/Chiro/gits/urllc-demo-pynq/urllc-demo-vivado/urll
 set_property ip_cache_permissions {read write} [current_project]
 OPTRACE "Creating in-memory project" END { }
 OPTRACE "Adding files" START { }
-read_ip -quiet h:/Chiro/gits/urllc-demo-pynq/urllc-demo-vivado/urllc-demo-vivado.srcs/sources_1/bd/urllc/ip/urllc_axi_dma_0_0/urllc_axi_dma_0_0.xci
+read_ip -quiet H:/Chiro/gits/urllc-demo-pynq/urllc-demo-vivado/urllc-demo-vivado.srcs/sources_1/bd/urllc/ip/urllc_axi_dma_0_0/urllc_axi_dma_0_0.xci
 set_property used_in_implementation false [get_files -all h:/Chiro/gits/urllc-demo-pynq/urllc-demo-vivado/urllc-demo-vivado.gen/sources_1/bd/urllc/ip/urllc_axi_dma_0_0/urllc_axi_dma_0_0.xdc]
 set_property used_in_implementation false [get_files -all h:/Chiro/gits/urllc-demo-pynq/urllc-demo-vivado/urllc-demo-vivado.gen/sources_1/bd/urllc/ip/urllc_axi_dma_0_0/urllc_axi_dma_0_0_clocks.xdc]
 set_property used_in_implementation false [get_files -all h:/Chiro/gits/urllc-demo-pynq/urllc-demo-vivado/urllc-demo-vivado.gen/sources_1/bd/urllc/ip/urllc_axi_dma_0_0/urllc_axi_dma_0_0_ooc.xdc]
