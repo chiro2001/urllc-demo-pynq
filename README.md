@@ -37,10 +37,10 @@ serial("并行转串行")
 duc("数字上变频(DUC)")
 output_iq("IQ调制")
 
-input_adc --8.W,10M--> data_process --8.W,10M--> serial --"1.W(80M..?)"--> duc --"8.W(20M中频,125M采样)"--> output_iq
+input_adc --8.W,500K--> data_process --8.W,500K--> serial --"1.W,4M"--> duc --"8.W(20M中频,120M采样)"--> output_iq
 ```
 
-![image-20211231205806284](README.assets/image-20211231205806284.png)
+![image-20220102153943909](README.assets/image-20220102153943909.png)
 
 #### 接收端
 
@@ -52,15 +52,16 @@ serial("串行转并行")
 data_process("数字处理")
 dac("DAC输出")
 
-input_iq --8.W,65M--> ddc --1.W,8.125M--> serial --8.W,1.015625M--> data_process --8.W,1.015625M--> dac
+input_iq --12.W,65M--> ddc --1.W,4M--> serial --8.W,500K--> data_process --8.W,500K--> dac
 ```
 
-![image-20211231205818369](README.assets/image-20211231205818369.png)
+![image-20220102153950845](README.assets/image-20220102153950845.png)
 
-**// TODO:**
+**关于采样率等：**
 
-1. 数字上变频之后中频20M，输出采样率最大125M，那么串行频率最高也就20M...?
-2. IQ解调后的ADC只有65M，最后输出波形才1M采样率..?
+![image-20220102153658283](README.assets/image-20220102153658283.png)
+
+![image-20220102153711988](README.assets/image-20220102153711988.png)
 
 ### 数字上变频DUC&&下变频DDC
 
