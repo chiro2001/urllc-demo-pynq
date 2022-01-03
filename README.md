@@ -59,9 +59,9 @@ input_iq --12.W,65M--> ddc --1.W,4M--> serial --8.W,500K--> data_process --8.W,5
 
 **关于采样率等：**
 
-![image-20220102153658283](README.assets/image-20220102153658283.png)
+![image-20220102202303012](README.assets/image-20220102202303012.png)
 
-![image-20220102153711988](README.assets/image-20220102153711988.png)
+![image-20220102202723597](README.assets/image-20220102202723597.png)
 
 ### 数字上变频DUC&&下变频DDC
 
@@ -143,9 +143,35 @@ input_iq --12.W,65M--> ddc --1.W,4M--> serial --8.W,500K--> data_process --8.W,5
 ## TODO-List
 
 - [ ] Vitis HLS IP
-    - [x] Create: ad-da
+    - [x] Create: ad-da(1/1)
     - [ ] debug: AXI Stream DMA
 - [ ] 数字上变频和下变频
-    - [ ] Chisel
+    - [x] Chisel(1/2)
+    - [ ] debug: 调试Chisel模块
+- [ ] 时钟同步问题
+    - [ ] 调试同步sync
+    - [ ] 添加异步sync
+    - [ ] 调试异步sync
 - [ ] Vitis 嵌入式
+    - [ ] 所有模块的单元测试
 - [ ] PYNQ Module
+    - [ ] PYNQ模块单元测试
+
+## Debug Logs
+
+1. 2022年1月3日17:12:12
+
+   1. 架构图
+
+      ![image-20220103171311372](README.assets/image-20220103171311372.png)
+
+      发送端：
+
+      ![image-20220103171324720](README.assets/image-20220103171324720.png)
+
+      接收端：
+
+      ![image-20220103171357927](README.assets/image-20220103171357927.png)
+
+      
+
