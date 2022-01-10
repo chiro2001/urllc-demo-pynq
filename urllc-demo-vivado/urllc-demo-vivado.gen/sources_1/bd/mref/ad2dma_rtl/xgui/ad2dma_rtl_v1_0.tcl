@@ -3,6 +3,7 @@ proc init_gui { IPINST } {
   ipgui::add_param $IPINST -name "Component_Name"
   #Adding Page
   set Page_0 [ipgui::add_page $IPINST -name "Page 0"]
+  ipgui::add_param $IPINST -name "CLK_FREQ" -parent ${Page_0}
   ipgui::add_param $IPINST -name "DATA_WIDTH" -parent ${Page_0}
   ipgui::add_param $IPINST -name "DEST_ENABLE" -parent ${Page_0}
   ipgui::add_param $IPINST -name "DEST_WIDTH" -parent ${Page_0}
@@ -14,8 +15,19 @@ proc init_gui { IPINST } {
   ipgui::add_param $IPINST -name "USER_BAD_FRAME_VALUE" -parent ${Page_0}
   ipgui::add_param $IPINST -name "USER_ENABLE" -parent ${Page_0}
   ipgui::add_param $IPINST -name "USER_WIDTH" -parent ${Page_0}
+  ipgui::add_param $IPINST -name "in_axis_FREQ_HZ" -parent ${Page_0}
+  ipgui::add_param $IPINST -name "out_axis_FREQ_HZ" -parent ${Page_0}
 
 
+}
+
+proc update_PARAM_VALUE.CLK_FREQ { PARAM_VALUE.CLK_FREQ } {
+	# Procedure called to update CLK_FREQ when any of the dependent parameters in the arguments change
+}
+
+proc validate_PARAM_VALUE.CLK_FREQ { PARAM_VALUE.CLK_FREQ } {
+	# Procedure called to validate CLK_FREQ
+	return true
 }
 
 proc update_PARAM_VALUE.DATA_WIDTH { PARAM_VALUE.DATA_WIDTH } {
@@ -117,6 +129,29 @@ proc validate_PARAM_VALUE.USER_WIDTH { PARAM_VALUE.USER_WIDTH } {
 	return true
 }
 
+proc update_PARAM_VALUE.in_axis_FREQ_HZ { PARAM_VALUE.in_axis_FREQ_HZ } {
+	# Procedure called to update in_axis_FREQ_HZ when any of the dependent parameters in the arguments change
+}
+
+proc validate_PARAM_VALUE.in_axis_FREQ_HZ { PARAM_VALUE.in_axis_FREQ_HZ } {
+	# Procedure called to validate in_axis_FREQ_HZ
+	return true
+}
+
+proc update_PARAM_VALUE.out_axis_FREQ_HZ { PARAM_VALUE.out_axis_FREQ_HZ } {
+	# Procedure called to update out_axis_FREQ_HZ when any of the dependent parameters in the arguments change
+}
+
+proc validate_PARAM_VALUE.out_axis_FREQ_HZ { PARAM_VALUE.out_axis_FREQ_HZ } {
+	# Procedure called to validate out_axis_FREQ_HZ
+	return true
+}
+
+
+proc update_MODELPARAM_VALUE.CLK_FREQ { MODELPARAM_VALUE.CLK_FREQ PARAM_VALUE.CLK_FREQ } {
+	# Procedure called to set VHDL generic/Verilog parameter value(s) based on TCL parameter value
+	set_property value [get_property value ${PARAM_VALUE.CLK_FREQ}] ${MODELPARAM_VALUE.CLK_FREQ}
+}
 
 proc update_MODELPARAM_VALUE.DATA_WIDTH { MODELPARAM_VALUE.DATA_WIDTH PARAM_VALUE.DATA_WIDTH } {
 	# Procedure called to set VHDL generic/Verilog parameter value(s) based on TCL parameter value
@@ -171,5 +206,15 @@ proc update_MODELPARAM_VALUE.USER_BAD_FRAME_VALUE { MODELPARAM_VALUE.USER_BAD_FR
 proc update_MODELPARAM_VALUE.USER_BAD_FRAME_MASK { MODELPARAM_VALUE.USER_BAD_FRAME_MASK PARAM_VALUE.USER_BAD_FRAME_MASK } {
 	# Procedure called to set VHDL generic/Verilog parameter value(s) based on TCL parameter value
 	set_property value [get_property value ${PARAM_VALUE.USER_BAD_FRAME_MASK}] ${MODELPARAM_VALUE.USER_BAD_FRAME_MASK}
+}
+
+proc update_MODELPARAM_VALUE.in_axis_FREQ_HZ { MODELPARAM_VALUE.in_axis_FREQ_HZ PARAM_VALUE.in_axis_FREQ_HZ } {
+	# Procedure called to set VHDL generic/Verilog parameter value(s) based on TCL parameter value
+	set_property value [get_property value ${PARAM_VALUE.in_axis_FREQ_HZ}] ${MODELPARAM_VALUE.in_axis_FREQ_HZ}
+}
+
+proc update_MODELPARAM_VALUE.out_axis_FREQ_HZ { MODELPARAM_VALUE.out_axis_FREQ_HZ PARAM_VALUE.out_axis_FREQ_HZ } {
+	# Procedure called to set VHDL generic/Verilog parameter value(s) based on TCL parameter value
+	set_property value [get_property value ${PARAM_VALUE.out_axis_FREQ_HZ}] ${MODELPARAM_VALUE.out_axis_FREQ_HZ}
 }
 

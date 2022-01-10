@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<GenRun Id="impl_1" LaunchPart="xc7z020clg400-2" LaunchTime="1641804304">
+<GenRun Id="impl_1" LaunchPart="xc7z020clg400-2" LaunchTime="1641827829">
   <File Type="ROUTE-PWR" Name="urllc_wrapper_power_routed.rpt"/>
   <File Type="PA-TCL" Name="urllc_wrapper.tcl"/>
   <File Type="BITSTR-MMI" Name="urllc_wrapper.mmi"/>
@@ -84,14 +84,14 @@
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
     </File>
-    <File Path="$PSRCDIR/sources_1/new/div8.v">
+    <File Path="$PSRCDIR/sources_1/new/p_s.v">
       <FileInfo>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="implementation"/>
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
     </File>
-    <File Path="$PSRCDIR/sources_1/new/p_s.v">
+    <File Path="$PSRCDIR/sources_1/new/ad2dma_rtl.v">
       <FileInfo>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="implementation"/>
@@ -112,6 +112,13 @@
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
     </File>
+    <File Path="$PSRCDIR/sources_1/new/div_n.v">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
     <File Path="$PSRCDIR/sources_1/bd/urllc/urllc.bd">
       <FileInfo>
         <Attr Name="UsedIn" Val="synthesis"/>
@@ -121,6 +128,14 @@
     </File>
     <File Path="$PGENDIR/sources_1/bd/urllc/hdl/urllc_wrapper.v">
       <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/new/div8.v">
+      <FileInfo>
+        <Attr Name="AutoDisabled" Val="1"/>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="implementation"/>
         <Attr Name="UsedIn" Val="simulation"/>
@@ -165,13 +180,14 @@
     <Step Id="post_route_phys_opt_design"/>
     <Step Id="write_bitstream"/>
   </Strategy>
+  <BlockFileSet Type="BlockSrcs" Name="urllc_ad2dma_rtl_0_0"/>
   <BlockFileSet Type="BlockSrcs" Name="urllc_ila_0_0"/>
   <BlockFileSet Type="BlockSrcs" Name="urllc_processing_system7_0_0"/>
-  <BlockFileSet Type="BlockSrcs" Name="urllc_div8_0_0"/>
   <BlockFileSet Type="BlockSrcs" Name="urllc_xbar_5"/>
   <BlockFileSet Type="BlockSrcs" Name="urllc_rst_ps7_0_60M_0"/>
   <BlockFileSet Type="BlockSrcs" Name="urllc_s_p_0_0"/>
   <BlockFileSet Type="BlockSrcs" Name="urllc_p_s_0_1"/>
   <BlockFileSet Type="BlockSrcs" Name="urllc_DDCWrapper_0_0"/>
-  <BlockFileSet Type="BlockSrcs" Name="urllc_div8_0_1"/>
+  <BlockFileSet Type="BlockSrcs" Name="urllc_div_n_0_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="urllc_ad2dma_rtl_0_1"/>
 </GenRun>

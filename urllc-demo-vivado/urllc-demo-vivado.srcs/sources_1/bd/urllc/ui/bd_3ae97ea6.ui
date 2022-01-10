@@ -1,45 +1,46 @@
 {
    "ActiveEmotionalView":"Default View",
    "Default View_ScaleFactor":"1.0",
-   "Default View_TopLeft":"-261,-82",
+   "Default View_TopLeft":"-261,148",
    "ExpandedHierarchyInLayout":"",
    "commentid":"",
-   "guistr":"# # String gsaved with Nlview 7.0r6  2020-01-29 bk=1.5227 VDI=41 GEI=36 GUI=JA:10.0 non-TLS-threadsafe
+   "guistr":"# # String gsaved with Nlview 7.0r6  2020-01-29 bk=1.5227 VDI=41 GEI=36 GUI=JA:10.0 non-TLS
 #  -string -flagsOSRD
-preplace port DDR -pg 1 -lvl 4 -x 1120 -y 90 -defaultsOSRD
-preplace port FIXED_IO -pg 1 -lvl 4 -x 1120 -y 110 -defaultsOSRD
-preplace portBus ad -pg 1 -lvl 0 -x -20 -y 190 -defaultsOSRD
-preplace portBus da_iq -pg 1 -lvl 4 -x 1120 -y 280 -defaultsOSRD
-preplace portBus ad_iq -pg 1 -lvl 0 -x -20 -y 520 -defaultsOSRD
-preplace portBus da -pg 1 -lvl 4 -x 1120 -y 520 -defaultsOSRD
+preplace port DDR -pg 1 -lvl 4 -x 1130 -y 90 -defaultsOSRD
+preplace port FIXED_IO -pg 1 -lvl 4 -x 1130 -y 110 -defaultsOSRD
+preplace portBus ad -pg 1 -lvl 0 -x -30 -y 190 -defaultsOSRD
+preplace portBus da_iq -pg 1 -lvl 4 -x 1130 -y 280 -defaultsOSRD
+preplace portBus ad_iq -pg 1 -lvl 0 -x -30 -y 520 -defaultsOSRD
+preplace portBus da -pg 1 -lvl 4 -x 1130 -y 520 -defaultsOSRD
 preplace inst processing_system7_0 -pg 1 -lvl 2 -x 600 -y 170 -defaultsOSRD
 preplace inst sender -pg 1 -lvl 1 -x 180 -y 170 -defaultsOSRD
 preplace inst reciever -pg 1 -lvl 1 -x 180 -y 520 -defaultsOSRD
 preplace inst ila_0 -pg 1 -lvl 3 -x 1010 -y 370 -defaultsOSRD
 preplace netloc ad_1 1 0 1 NJ 190
 preplace netloc ad_iq_1 1 0 1 NJ 520
-preplace netloc processing_system7_0_FCLK_CLK2 1 0 3 20 370 NJ 370 850
-preplace netloc processing_system7_0_FCLK_RESET0_N 1 0 3 10 380 NJ 380 840
+preplace netloc clk_120M_1 1 0 3 30 350 NJ 350 860
+preplace netloc processing_system7_0_FCLK_CLK0 1 0 3 -10 260 350 340 870
+preplace netloc processing_system7_0_FCLK_CLK2 1 0 3 10 370 NJ 370 850
+preplace netloc processing_system7_0_FCLK_CLK3 1 2 1 900 250n
+preplace netloc processing_system7_0_FCLK_RESET0_N 1 0 3 0 380 NJ 380 840
 preplace netloc reciever_da 1 1 3 NJ 520 NJ 520 NJ
 preplace netloc reciever_data_check 1 1 2 330J 510 920
 preplace netloc sender_da_iq 1 1 3 320J 360 890J 280 NJ
-preplace netloc sender_data_out 1 0 3 30 390 330 390 900
-preplace netloc sender_data_serial_out 1 0 3 40 400 310 400 910
-preplace netloc processing_system7_0_FCLK_CLK0 1 0 3 0 260 350 340 870
-preplace netloc clk_120M_1 1 0 3 40 350 NJ 350 860
-preplace netloc processing_system7_0_FCLK_CLK3 1 2 1 900 250n
+preplace netloc sender_data_out 1 0 3 20 390 330 390 900
+preplace netloc sender_data_serial_out 1 0 3 30 400 310 400 910
 preplace netloc processing_system7_0_DDR 1 2 2 NJ 90 NJ
 preplace netloc processing_system7_0_FIXED_IO 1 2 2 NJ 110 NJ
-preplace netloc processing_system7_0_M_AXI_GP0 1 0 3 0 10 NJ 10 840
-preplace netloc processing_system7_0_M_AXI_GP1 1 0 3 50 330 NJ 330 880
+preplace netloc processing_system7_0_M_AXI_GP0 1 0 3 -10 10 NJ 10 840
+preplace netloc processing_system7_0_M_AXI_GP1 1 0 3 40 330 NJ 330 880
 preplace netloc reciever_M00_AXI 1 1 1 340 160n
 preplace netloc sender_M00_AXI 1 1 1 N 140
-levelinfo -pg 1 -20 180 600 1010 1120
-pagesize -pg 1 -db -bbox -sgen -140 0 1240 650
+levelinfo -pg 1 -30 180 600 1010 1130
+pagesize -pg 1 -db -bbox -sgen -150 0 1250 650
 "
 }
 {
-   """"da_board_cnt"""":"2",
-   """"da_clkrst_cnt"""":"20",
-   "da_clkrst_cnt":"4"
+   """""da_board_cnt""""":"2",
+   """""da_clkrst_cnt""""":"20",
+   ""da_clkrst_cnt"":"4",
+   "da_clkrst_cnt":"1"
 }

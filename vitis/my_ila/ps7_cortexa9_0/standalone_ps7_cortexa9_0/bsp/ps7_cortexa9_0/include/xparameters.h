@@ -31,36 +31,6 @@
  
  
 /******************************************************************/
-/* Definitions for driver AD2DMA */
-#define XPAR_XAD2DMA_NUM_INSTANCES 2
-
-/* Definitions for peripheral RECIEVER_AD2DMA_2 */
-#define XPAR_RECIEVER_AD2DMA_2_DEVICE_ID 0
-#define XPAR_RECIEVER_AD2DMA_2_S_AXI_CONTROL_BASEADDR 0x80000000
-#define XPAR_RECIEVER_AD2DMA_2_S_AXI_CONTROL_HIGHADDR 0x8000FFFF
-
-
-/* Definitions for peripheral SENDER_AD2DMA_1 */
-#define XPAR_SENDER_AD2DMA_1_DEVICE_ID 1
-#define XPAR_SENDER_AD2DMA_1_S_AXI_CONTROL_BASEADDR 0x40000000
-#define XPAR_SENDER_AD2DMA_1_S_AXI_CONTROL_HIGHADDR 0x4000FFFF
-
-
-/******************************************************************/
-
-/* Canonical definitions for peripheral RECIEVER_AD2DMA_2 */
-#define XPAR_XAD2DMA_0_DEVICE_ID XPAR_RECIEVER_AD2DMA_2_DEVICE_ID
-#define XPAR_XAD2DMA_0_S_AXI_CONTROL_BASEADDR 0x80000000
-#define XPAR_XAD2DMA_0_S_AXI_CONTROL_HIGHADDR 0x8000FFFF
-
-/* Canonical definitions for peripheral SENDER_AD2DMA_1 */
-#define XPAR_XAD2DMA_1_DEVICE_ID XPAR_SENDER_AD2DMA_1_DEVICE_ID
-#define XPAR_XAD2DMA_1_S_AXI_CONTROL_BASEADDR 0x40000000
-#define XPAR_XAD2DMA_1_S_AXI_CONTROL_HIGHADDR 0x4000FFFF
-
-
-/******************************************************************/
-
 /* Definitions for driver AXIDMA */
 #define XPAR_XAXIDMA_NUM_INSTANCES 2
 

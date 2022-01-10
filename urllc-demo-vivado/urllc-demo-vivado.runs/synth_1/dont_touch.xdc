@@ -18,9 +18,6 @@ set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==urllc_xbar_
 # IP: bd/urllc/ip/urllc_ps7_0_axi_periph_0/urllc_ps7_0_axi_periph_0.xci
 set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==urllc_ps7_0_axi_periph_0 || ORIG_REF_NAME==urllc_ps7_0_axi_periph_0} -quiet] -quiet
 
-# IP: bd/urllc/ip/urllc_ad2dma_1_0/urllc_ad2dma_1_0.xci
-set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==urllc_ad2dma_1_0 || ORIG_REF_NAME==urllc_ad2dma_1_0} -quiet] -quiet
-
 # IP: bd/urllc/ip/urllc_axi_dma_0_0/urllc_axi_dma_0_0.xci
 set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==urllc_axi_dma_0_0 || ORIG_REF_NAME==urllc_axi_dma_0_0} -quiet] -quiet
 
@@ -45,14 +42,11 @@ set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==urllc_DUCWr
 # IP: bd/urllc/ip/urllc_rst_ps7_0_60M_0/urllc_rst_ps7_0_60M_0.xci
 set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==urllc_rst_ps7_0_60M_0 || ORIG_REF_NAME==urllc_rst_ps7_0_60M_0} -quiet] -quiet
 
-# IP: bd/urllc/ip/urllc_div8_0_0/urllc_div8_0_0.xci
-set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==urllc_div8_0_0 || ORIG_REF_NAME==urllc_div8_0_0} -quiet] -quiet
-
 # IP: bd/urllc/ip/urllc_p_s_0_1/urllc_p_s_0_1.xci
 set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==urllc_p_s_0_1 || ORIG_REF_NAME==urllc_p_s_0_1} -quiet] -quiet
 
-# IP: bd/urllc/ip/urllc_xlconstant_1_0/urllc_xlconstant_1_0.xci
-set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==urllc_xlconstant_1_0 || ORIG_REF_NAME==urllc_xlconstant_1_0} -quiet] -quiet
+# IP: bd/urllc/ip/urllc_ad2dma_rtl_0_0/urllc_ad2dma_rtl_0_0.xci
+set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==urllc_ad2dma_rtl_0_0 || ORIG_REF_NAME==urllc_ad2dma_rtl_0_0} -quiet] -quiet
 
 # IP: bd/urllc/ip/urllc_xbar_5/urllc_xbar_5.xci
 set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==urllc_xbar_5 || ORIG_REF_NAME==urllc_xbar_5} -quiet] -quiet
@@ -65,9 +59,6 @@ set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==urllc_axi_d
 
 # IP: bd/urllc/ip/urllc_xlconcat_0_1/urllc_xlconcat_0_1.xci
 set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==urllc_xlconcat_0_1 || ORIG_REF_NAME==urllc_xlconcat_0_1} -quiet] -quiet
-
-# IP: bd/urllc/ip/urllc_ad2dma_1_1/urllc_ad2dma_1_1.xci
-set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==urllc_ad2dma_1_1 || ORIG_REF_NAME==urllc_ad2dma_1_1} -quiet] -quiet
 
 # IP: bd/urllc/ip/urllc_xlconstant_0_1/urllc_xlconstant_0_1.xci
 set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==urllc_xlconstant_0_1 || ORIG_REF_NAME==urllc_xlconstant_0_1} -quiet] -quiet
@@ -87,9 +78,6 @@ set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==urllc_axi_m
 # IP: bd/urllc/ip/urllc_xlslice_0_1/urllc_xlslice_0_1.xci
 set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==urllc_xlslice_0_1 || ORIG_REF_NAME==urllc_xlslice_0_1} -quiet] -quiet
 
-# IP: bd/urllc/ip/urllc_div8_0_1/urllc_div8_0_1.xci
-set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==urllc_div8_0_1 || ORIG_REF_NAME==urllc_div8_0_1} -quiet] -quiet
-
 # IP: bd/urllc/ip/urllc_s_p_0_0/urllc_s_p_0_0.xci
 set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==urllc_s_p_0_0 || ORIG_REF_NAME==urllc_s_p_0_0} -quiet] -quiet
 
@@ -104,6 +92,12 @@ set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==urllc_proc_
 
 # IP: bd/urllc/ip/urllc_ila_0_0/urllc_ila_0_0.xci
 set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==urllc_ila_0_0 || ORIG_REF_NAME==urllc_ila_0_0} -quiet] -quiet
+
+# IP: bd/urllc/ip/urllc_ad2dma_rtl_0_1/urllc_ad2dma_rtl_0_1.xci
+set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==urllc_ad2dma_rtl_0_1 || ORIG_REF_NAME==urllc_ad2dma_rtl_0_1} -quiet] -quiet
+
+# IP: bd/urllc/ip/urllc_div_n_0_0/urllc_div_n_0_0.xci
+set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==urllc_div_n_0_0 || ORIG_REF_NAME==urllc_div_n_0_0} -quiet] -quiet
 
 # IP: bd/urllc/ip/urllc_auto_pc_0/urllc_auto_pc_0.xci
 set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==urllc_auto_pc_0 || ORIG_REF_NAME==urllc_auto_pc_0} -quiet] -quiet

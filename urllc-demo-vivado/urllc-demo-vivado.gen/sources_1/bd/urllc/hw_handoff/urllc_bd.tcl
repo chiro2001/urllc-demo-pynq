@@ -40,7 +40,7 @@ if { [string first $scripts_vivado_version $current_vivado_version] == -1 } {
 
 # The design that will be created by this Tcl script contains the following 
 # module references:
-# DDCWrapper, div8, s_p, DUCWrapper, div8, p_s
+# DDCWrapper, ad2dma_rtl, s_p, DUCWrapper, ad2dma_rtl, div_n, p_s
 
 # Please add the sources of those modules before sourcing this Tcl script.
 
@@ -188,9 +188,17 @@ proc create_hier_cell_sender { parentCell nameHier } {
      return 1
    }
   
-  # Create instance: ad2dma_1, and set properties
-  set ad2dma_1 [ create_bd_cell -type ip -vlnv chiro.urllc.axi_input:chilib:ad2dma:0.7 ad2dma_1 ]
-
+  # Create instance: ad2dma_rtl_0, and set properties
+  set block_name ad2dma_rtl
+  set block_cell_name ad2dma_rtl_0
+  if { [catch {set ad2dma_rtl_0 [create_bd_cell -type module -reference $block_name $block_cell_name] } errmsg] } {
+     catch {common::send_gid_msg -ssname BD::TCL -id 2095 -severity "ERROR" "Unable to add referenced block <$block_name>. Please add the files for ${block_name}'s definition into the project."}
+     return 1
+   } elseif { $ad2dma_rtl_0 eq "" } {
+     catch {common::send_gid_msg -ssname BD::TCL -id 2096 -severity "ERROR" "Unable to referenced block <$block_name>. Please add the files for ${block_name}'s definition into the project."}
+     return 1
+   }
+  
   # Create instance: axi_dma_0, and set properties
   set axi_dma_0 [ create_bd_cell -type ip -vlnv xilinx.com:ip:axi_dma:7.1 axi_dma_0 ]
   set_property -dict [ list \
@@ -206,13 +214,13 @@ proc create_hier_cell_sender { parentCell nameHier } {
    CONFIG.NUM_SI {2} \
  ] $axi_mem_intercon
 
-  # Create instance: div8_0, and set properties
-  set block_name div8
-  set block_cell_name div8_0
-  if { [catch {set div8_0 [create_bd_cell -type module -reference $block_name $block_cell_name] } errmsg] } {
+  # Create instance: div_n_0, and set properties
+  set block_name div_n
+  set block_cell_name div_n_0
+  if { [catch {set div_n_0 [create_bd_cell -type module -reference $block_name $block_cell_name] } errmsg] } {
      catch {common::send_gid_msg -ssname BD::TCL -id 2095 -severity "ERROR" "Unable to add referenced block <$block_name>. Please add the files for ${block_name}'s definition into the project."}
      return 1
-   } elseif { $div8_0 eq "" } {
+   } elseif { $div_n_0 eq "" } {
      catch {common::send_gid_msg -ssname BD::TCL -id 2096 -severity "ERROR" "Unable to referenced block <$block_name>. Please add the files for ${block_name}'s definition into the project."}
      return 1
    }
@@ -251,9 +259,6 @@ proc create_hier_cell_sender { parentCell nameHier } {
    CONFIG.CONST_WIDTH {24} \
  ] $xlconstant_0
 
-  # Create instance: xlconstant_1, and set properties
-  set xlconstant_1 [ create_bd_cell -type ip -vlnv xilinx.com:ip:xlconstant:1.1 xlconstant_1 ]
-
   # Create instance: xlslice_0, and set properties
   set xlslice_0 [ create_bd_cell -type ip -vlnv xilinx.com:ip:xlslice:1.0 xlslice_0 ]
   set_property -dict [ list \
@@ -264,26 +269,25 @@ proc create_hier_cell_sender { parentCell nameHier } {
   # Create interface connections
   connect_bd_intf_net -intf_net Conn1 [get_bd_intf_pins M00_AXI] [get_bd_intf_pins axi_mem_intercon/M00_AXI]
   connect_bd_intf_net -intf_net Conn3 [get_bd_intf_pins S00_AXI] [get_bd_intf_pins ps7_0_axi_periph/S00_AXI]
-  connect_bd_intf_net -intf_net ad2dma_1_outs [get_bd_intf_pins ad2dma_1/outs] [get_bd_intf_pins axi_dma_0/S_AXIS_S2MM]
-  connect_bd_intf_net -intf_net axi_dma_0_M_AXIS_MM2S [get_bd_intf_pins ad2dma_1/inputs] [get_bd_intf_pins axi_dma_0/M_AXIS_MM2S]
+  connect_bd_intf_net -intf_net ad2dma_rtl_0_out_axis [get_bd_intf_pins ad2dma_rtl_0/out_axis] [get_bd_intf_pins axi_dma_0/S_AXIS_S2MM]
+  connect_bd_intf_net -intf_net axi_dma_0_M_AXIS_MM2S [get_bd_intf_pins ad2dma_rtl_0/in_axis] [get_bd_intf_pins axi_dma_0/M_AXIS_MM2S]
   connect_bd_intf_net -intf_net axi_dma_0_M_AXI_MM2S [get_bd_intf_pins axi_dma_0/M_AXI_MM2S] [get_bd_intf_pins axi_mem_intercon/S00_AXI]
   connect_bd_intf_net -intf_net axi_dma_0_M_AXI_S2MM [get_bd_intf_pins axi_dma_0/M_AXI_S2MM] [get_bd_intf_pins axi_mem_intercon/S01_AXI]
-  connect_bd_intf_net -intf_net ps7_0_axi_periph_M00_AXI [get_bd_intf_pins ad2dma_1/s_axi_control] [get_bd_intf_pins ps7_0_axi_periph/M00_AXI]
   connect_bd_intf_net -intf_net ps7_0_axi_periph_M01_AXI [get_bd_intf_pins axi_dma_0/S_AXI_LITE] [get_bd_intf_pins ps7_0_axi_periph/M01_AXI]
 
   # Create port connections
-  connect_bd_net -net ARESETN_1 [get_bd_pins ad2dma_1/ap_rst_n] [get_bd_pins axi_dma_0/axi_resetn] [get_bd_pins axi_mem_intercon/ARESETN] [get_bd_pins axi_mem_intercon/M00_ARESETN] [get_bd_pins axi_mem_intercon/S00_ARESETN] [get_bd_pins axi_mem_intercon/S01_ARESETN] [get_bd_pins div8_0/rst_n] [get_bd_pins p_s_0/rst_n] [get_bd_pins ps7_0_axi_periph/ARESETN] [get_bd_pins ps7_0_axi_periph/M00_ARESETN] [get_bd_pins ps7_0_axi_periph/M01_ARESETN] [get_bd_pins ps7_0_axi_periph/S00_ARESETN] [get_bd_pins rst_ps7_0_4M/peripheral_aresetn]
+  connect_bd_net -net ARESETN_1 [get_bd_pins ad2dma_rtl_0/resetn] [get_bd_pins axi_dma_0/axi_resetn] [get_bd_pins axi_mem_intercon/ARESETN] [get_bd_pins axi_mem_intercon/M00_ARESETN] [get_bd_pins axi_mem_intercon/S00_ARESETN] [get_bd_pins axi_mem_intercon/S01_ARESETN] [get_bd_pins div_n_0/resetn] [get_bd_pins p_s_0/rst_n] [get_bd_pins ps7_0_axi_periph/ARESETN] [get_bd_pins ps7_0_axi_periph/M00_ARESETN] [get_bd_pins ps7_0_axi_periph/M01_ARESETN] [get_bd_pins ps7_0_axi_periph/S00_ARESETN] [get_bd_pins rst_ps7_0_4M/peripheral_aresetn]
   connect_bd_net -net DUCWrapper_0_io_out_dac [get_bd_pins da_iq] [get_bd_pins DUCWrapper_0/io_out_dac]
-  connect_bd_net -net M00_ACLK_1 [get_bd_pins clk_4M] [get_bd_pins ad2dma_1/ap_clk] [get_bd_pins axi_dma_0/m_axi_mm2s_aclk] [get_bd_pins axi_dma_0/m_axi_s2mm_aclk] [get_bd_pins axi_dma_0/s_axi_lite_aclk] [get_bd_pins axi_mem_intercon/ACLK] [get_bd_pins axi_mem_intercon/M00_ACLK] [get_bd_pins axi_mem_intercon/S00_ACLK] [get_bd_pins axi_mem_intercon/S01_ACLK] [get_bd_pins div8_0/clk_in] [get_bd_pins p_s_0/clk] [get_bd_pins ps7_0_axi_periph/ACLK] [get_bd_pins ps7_0_axi_periph/M00_ACLK] [get_bd_pins ps7_0_axi_periph/M01_ACLK] [get_bd_pins ps7_0_axi_periph/S00_ACLK] [get_bd_pins rst_ps7_0_4M/slowest_sync_clk]
-  connect_bd_net -net ad2dma_1_da_d0 [get_bd_pins ad2dma_1/da_d0] [get_bd_pins xlslice_0/Din]
+  connect_bd_net -net M00_ACLK_1 [get_bd_pins clk_4M] [get_bd_pins ad2dma_rtl_0/clk] [get_bd_pins axi_dma_0/m_axi_mm2s_aclk] [get_bd_pins axi_dma_0/m_axi_s2mm_aclk] [get_bd_pins axi_dma_0/s_axi_lite_aclk] [get_bd_pins axi_mem_intercon/ACLK] [get_bd_pins axi_mem_intercon/M00_ACLK] [get_bd_pins axi_mem_intercon/S00_ACLK] [get_bd_pins axi_mem_intercon/S01_ACLK] [get_bd_pins div_n_0/clk] [get_bd_pins p_s_0/clk] [get_bd_pins ps7_0_axi_periph/ACLK] [get_bd_pins ps7_0_axi_periph/M00_ACLK] [get_bd_pins ps7_0_axi_periph/M01_ACLK] [get_bd_pins ps7_0_axi_periph/S00_ACLK] [get_bd_pins rst_ps7_0_4M/slowest_sync_clk]
+  connect_bd_net -net ad2dma_rtl_0_da [get_bd_pins ad2dma_rtl_0/da] [get_bd_pins xlslice_0/Din]
   connect_bd_net -net ad_1 [get_bd_pins ad] [get_bd_pins xlconcat_0/In0]
   connect_bd_net -net ext_reset_in_1 [get_bd_pins ext_reset_in] [get_bd_pins rst_ps7_0_120M/ext_reset_in] [get_bd_pins rst_ps7_0_4M/ext_reset_in]
   connect_bd_net -net io_in_clockDac_1 [get_bd_pins clk_120M] [get_bd_pins DUCWrapper_0/io_clock] [get_bd_pins rst_ps7_0_120M/slowest_sync_clk]
   connect_bd_net -net p_s_1_data_out [get_bd_pins data_serial_out] [get_bd_pins DUCWrapper_0/io_in_data] [get_bd_pins p_s_0/data_out]
   connect_bd_net -net rst_ps7_0_120M_peripheral_aresetn [get_bd_pins DUCWrapper_0/io_resetN] [get_bd_pins rst_ps7_0_120M/peripheral_aresetn]
-  connect_bd_net -net xlconcat_0_dout [get_bd_pins ad2dma_1/ad_q0] [get_bd_pins xlconcat_0/dout]
+  connect_bd_net -net xlconcat_0_dout [get_bd_pins ad2dma_rtl_0/ad] [get_bd_pins xlconcat_0/dout]
   connect_bd_net -net xlconstant_0_dout [get_bd_pins xlconcat_0/In1] [get_bd_pins xlconstant_0/dout]
-  connect_bd_net -net xlconstant_1_dout [get_bd_pins DUCWrapper_0/io_in_sync] [get_bd_pins p_s_0/sync] [get_bd_pins xlconstant_1/dout]
+  connect_bd_net -net xlconstant_1_dout [get_bd_pins DUCWrapper_0/io_in_sync] [get_bd_pins div_n_0/clk_div8] [get_bd_pins p_s_0/sync]
   connect_bd_net -net xlslice_0_Dout [get_bd_pins data_out] [get_bd_pins p_s_0/data_in] [get_bd_pins xlslice_0/Dout]
 
   # Restore current instance
@@ -351,9 +355,17 @@ proc create_hier_cell_reciever { parentCell nameHier } {
      return 1
    }
   
-  # Create instance: ad2dma_2, and set properties
-  set ad2dma_2 [ create_bd_cell -type ip -vlnv chiro.urllc.axi_input:chilib:ad2dma:0.7 ad2dma_2 ]
-
+  # Create instance: ad2dma_rtl_0, and set properties
+  set block_name ad2dma_rtl
+  set block_cell_name ad2dma_rtl_0
+  if { [catch {set ad2dma_rtl_0 [create_bd_cell -type module -reference $block_name $block_cell_name] } errmsg] } {
+     catch {common::send_gid_msg -ssname BD::TCL -id 2095 -severity "ERROR" "Unable to add referenced block <$block_name>. Please add the files for ${block_name}'s definition into the project."}
+     return 1
+   } elseif { $ad2dma_rtl_0 eq "" } {
+     catch {common::send_gid_msg -ssname BD::TCL -id 2096 -severity "ERROR" "Unable to referenced block <$block_name>. Please add the files for ${block_name}'s definition into the project."}
+     return 1
+   }
+  
   # Create instance: axi_dma_1, and set properties
   set axi_dma_1 [ create_bd_cell -type ip -vlnv xilinx.com:ip:axi_dma:7.1 axi_dma_1 ]
   set_property -dict [ list \
@@ -368,20 +380,6 @@ proc create_hier_cell_reciever { parentCell nameHier } {
    CONFIG.NUM_MI {1} \
    CONFIG.NUM_SI {2} \
  ] $axi_mem_intercon1
-
-  # Create instance: div8_1, and set properties
-  set block_name div8
-  set block_cell_name div8_1
-  if { [catch {set div8_1 [create_bd_cell -type module -reference $block_name $block_cell_name] } errmsg] } {
-     catch {common::send_gid_msg -ssname BD::TCL -id 2095 -severity "ERROR" "Unable to add referenced block <$block_name>. Please add the files for ${block_name}'s definition into the project."}
-     return 1
-   } elseif { $div8_1 eq "" } {
-     catch {common::send_gid_msg -ssname BD::TCL -id 2096 -severity "ERROR" "Unable to referenced block <$block_name>. Please add the files for ${block_name}'s definition into the project."}
-     return 1
-   }
-    set_property -dict [ list \
-   CONFIG.N {4} \
- ] $div8_1
 
   # Create instance: ps7_0_axi_periph1, and set properties
   set ps7_0_axi_periph1 [ create_bd_cell -type ip -vlnv xilinx.com:ip:axi_interconnect:2.1 ps7_0_axi_periph1 ]
@@ -433,26 +431,25 @@ proc create_hier_cell_reciever { parentCell nameHier } {
   # Create interface connections
   connect_bd_intf_net -intf_net Conn1 [get_bd_intf_pins S00_AXI] [get_bd_intf_pins ps7_0_axi_periph1/S00_AXI]
   connect_bd_intf_net -intf_net Conn2 [get_bd_intf_pins M00_AXI] [get_bd_intf_pins axi_mem_intercon1/M00_AXI]
-  connect_bd_intf_net -intf_net ad2dma_2_outs [get_bd_intf_pins ad2dma_2/outs] [get_bd_intf_pins axi_dma_1/S_AXIS_S2MM]
-  connect_bd_intf_net -intf_net axi_dma_1_M_AXIS_MM2S [get_bd_intf_pins ad2dma_2/inputs] [get_bd_intf_pins axi_dma_1/M_AXIS_MM2S]
+  connect_bd_intf_net -intf_net ad2dma_rtl_0_out_axis [get_bd_intf_pins ad2dma_rtl_0/out_axis] [get_bd_intf_pins axi_dma_1/S_AXIS_S2MM]
+  connect_bd_intf_net -intf_net axi_dma_1_M_AXIS_MM2S [get_bd_intf_pins ad2dma_rtl_0/in_axis] [get_bd_intf_pins axi_dma_1/M_AXIS_MM2S]
   connect_bd_intf_net -intf_net axi_dma_1_M_AXI_MM2S [get_bd_intf_pins axi_dma_1/M_AXI_MM2S] [get_bd_intf_pins axi_mem_intercon1/S00_AXI]
   connect_bd_intf_net -intf_net axi_dma_1_M_AXI_S2MM [get_bd_intf_pins axi_dma_1/M_AXI_S2MM] [get_bd_intf_pins axi_mem_intercon1/S01_AXI]
-  connect_bd_intf_net -intf_net ps7_0_axi_periph1_M00_AXI [get_bd_intf_pins ad2dma_2/s_axi_control] [get_bd_intf_pins ps7_0_axi_periph1/M00_AXI]
   connect_bd_intf_net -intf_net ps7_0_axi_periph1_M01_AXI [get_bd_intf_pins axi_dma_1/S_AXI_LITE] [get_bd_intf_pins ps7_0_axi_periph1/M01_AXI]
 
   # Create port connections
-  connect_bd_net -net DDCWrapper_0_io_out_update [get_bd_pins DDCWrapper_0/io_out_update] [get_bd_pins div8_1/clk_in] [get_bd_pins s_p_0/clk]
-  connect_bd_net -net M00_ARESETN_1 [get_bd_pins ad2dma_2/ap_rst_n] [get_bd_pins axi_dma_1/axi_resetn] [get_bd_pins axi_mem_intercon1/ARESETN] [get_bd_pins axi_mem_intercon1/M00_ARESETN] [get_bd_pins axi_mem_intercon1/S00_ARESETN] [get_bd_pins axi_mem_intercon1/S01_ARESETN] [get_bd_pins ps7_0_axi_periph1/ARESETN] [get_bd_pins ps7_0_axi_periph1/M00_ARESETN] [get_bd_pins ps7_0_axi_periph1/M01_ARESETN] [get_bd_pins ps7_0_axi_periph1/S00_ARESETN] [get_bd_pins rst_ps7_0_4M/peripheral_aresetn]
-  connect_bd_net -net Net [get_bd_pins DDCWrapper_0/io_resetN] [get_bd_pins div8_1/rst_n] [get_bd_pins rst_ps7_0_200M/peripheral_aresetn] [get_bd_pins s_p_0/rst_n]
-  connect_bd_net -net ad2dma_2_da_d0 [get_bd_pins ad2dma_2/da_d0] [get_bd_pins xlslice_1/Din]
+  connect_bd_net -net DDCWrapper_0_io_out_update [get_bd_pins DDCWrapper_0/io_out_update] [get_bd_pins s_p_0/clk]
+  connect_bd_net -net M00_ARESETN_1 [get_bd_pins ad2dma_rtl_0/resetn] [get_bd_pins axi_dma_1/axi_resetn] [get_bd_pins axi_mem_intercon1/ARESETN] [get_bd_pins axi_mem_intercon1/M00_ARESETN] [get_bd_pins axi_mem_intercon1/S00_ARESETN] [get_bd_pins axi_mem_intercon1/S01_ARESETN] [get_bd_pins ps7_0_axi_periph1/ARESETN] [get_bd_pins ps7_0_axi_periph1/M00_ARESETN] [get_bd_pins ps7_0_axi_periph1/M01_ARESETN] [get_bd_pins ps7_0_axi_periph1/S00_ARESETN] [get_bd_pins rst_ps7_0_4M/peripheral_aresetn]
+  connect_bd_net -net Net [get_bd_pins DDCWrapper_0/io_resetN] [get_bd_pins rst_ps7_0_200M/peripheral_aresetn] [get_bd_pins s_p_0/rst_n]
+  connect_bd_net -net ad2dma_rtl_0_da [get_bd_pins ad2dma_rtl_0/da] [get_bd_pins xlslice_1/Din]
   connect_bd_net -net ad_iq_1 [get_bd_pins ad_iq] [get_bd_pins DDCWrapper_0/io_in_data]
   connect_bd_net -net clk_200M_1 [get_bd_pins clk_200M] [get_bd_pins DDCWrapper_0/io_clock] [get_bd_pins rst_ps7_0_200M/slowest_sync_clk]
-  connect_bd_net -net clk_4M_1 [get_bd_pins clk_4M] [get_bd_pins ad2dma_2/ap_clk] [get_bd_pins axi_dma_1/m_axi_mm2s_aclk] [get_bd_pins axi_dma_1/m_axi_s2mm_aclk] [get_bd_pins axi_dma_1/s_axi_lite_aclk] [get_bd_pins axi_mem_intercon1/ACLK] [get_bd_pins axi_mem_intercon1/M00_ACLK] [get_bd_pins axi_mem_intercon1/S00_ACLK] [get_bd_pins axi_mem_intercon1/S01_ACLK] [get_bd_pins ps7_0_axi_periph1/ACLK] [get_bd_pins ps7_0_axi_periph1/M00_ACLK] [get_bd_pins ps7_0_axi_periph1/M01_ACLK] [get_bd_pins ps7_0_axi_periph1/S00_ACLK] [get_bd_pins rst_ps7_0_4M/slowest_sync_clk]
+  connect_bd_net -net clk_4M_1 [get_bd_pins clk_4M] [get_bd_pins ad2dma_rtl_0/clk] [get_bd_pins axi_dma_1/m_axi_mm2s_aclk] [get_bd_pins axi_dma_1/m_axi_s2mm_aclk] [get_bd_pins axi_dma_1/s_axi_lite_aclk] [get_bd_pins axi_mem_intercon1/ACLK] [get_bd_pins axi_mem_intercon1/M00_ACLK] [get_bd_pins axi_mem_intercon1/S00_ACLK] [get_bd_pins axi_mem_intercon1/S01_ACLK] [get_bd_pins ps7_0_axi_periph1/ACLK] [get_bd_pins ps7_0_axi_periph1/M00_ACLK] [get_bd_pins ps7_0_axi_periph1/M01_ACLK] [get_bd_pins ps7_0_axi_periph1/S00_ACLK] [get_bd_pins rst_ps7_0_4M/slowest_sync_clk]
   connect_bd_net -net data_in_1 [get_bd_pins data_in] [get_bd_pins xlconcat_1/In0]
   connect_bd_net -net data_in_serial_1 [get_bd_pins data_in_serial] [get_bd_pins s_p_0/data_in]
   connect_bd_net -net ext_reset_in_1 [get_bd_pins ext_reset_in] [get_bd_pins rst_ps7_0_200M/ext_reset_in] [get_bd_pins rst_ps7_0_4M/ext_reset_in]
   connect_bd_net -net s_p_0_data_out [get_bd_pins data_check] [get_bd_pins s_p_0/data_out]
-  connect_bd_net -net xlconcat_1_dout [get_bd_pins ad2dma_2/ad_q0] [get_bd_pins xlconcat_1/dout]
+  connect_bd_net -net xlconcat_1_dout [get_bd_pins ad2dma_rtl_0/ad] [get_bd_pins xlconcat_1/dout]
   connect_bd_net -net xlconstant_0_dout [get_bd_pins s_p_0/sync] [get_bd_pins xlconstant_0/dout]
   connect_bd_net -net xlconstant_1_dout [get_bd_pins xlconcat_1/In1] [get_bd_pins xlconstant_1/dout]
   connect_bd_net -net xlconstant_2_dout [get_bd_pins DDCWrapper_0/io_in_sync] [get_bd_pins xlconstant_2/dout]
@@ -1298,8 +1295,6 @@ Flash#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassign
   connect_bd_net -net sender_data_serial_out [get_bd_pins ila_0/probe1] [get_bd_pins reciever/data_in_serial] [get_bd_pins sender/data_serial_out]
 
   # Create address segments
-  assign_bd_address -offset 0x40000000 -range 0x00010000 -target_address_space [get_bd_addr_spaces processing_system7_0/Data] [get_bd_addr_segs sender/ad2dma_1/s_axi_control/Reg] -force
-  assign_bd_address -offset 0x80000000 -range 0x00010000 -target_address_space [get_bd_addr_spaces processing_system7_0/Data] [get_bd_addr_segs reciever/ad2dma_2/s_axi_control/Reg] -force
   assign_bd_address -offset 0x41E00000 -range 0x00010000 -target_address_space [get_bd_addr_spaces processing_system7_0/Data] [get_bd_addr_segs sender/axi_dma_0/S_AXI_LITE/Reg] -force
   assign_bd_address -offset 0x81E00000 -range 0x00010000 -target_address_space [get_bd_addr_spaces processing_system7_0/Data] [get_bd_addr_segs reciever/axi_dma_1/S_AXI_LITE/Reg] -force
   assign_bd_address -offset 0x00000000 -range 0x20000000 -target_address_space [get_bd_addr_spaces reciever/axi_dma_1/Data_MM2S] [get_bd_addr_segs processing_system7_0/S_AXI_HP1/HP1_DDR_LOWOCM] -force

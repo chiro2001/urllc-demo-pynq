@@ -26,7 +26,7 @@
   <ObjectList object_type="hw_probe" gui_info="">
     <Object name="urllc_i/reciever_data_check[7:0]" gui_info="Trigger Setup=1"/>
     <Object name="urllc_i/sender_data_out[7:0]" gui_info="Trigger Setup=0"/>
-    <Object name="urllc_i/sender_data_serial_out" gui_info="Trigger Setup=2"/>
+    <Object name="urllc_i/sender_data_serial_out" gui_info="Trigger Setup=0"/>
   </ObjectList>
   <probeset name="hw project" active="false">
     <probe type="ila" busType="bus" source="netlist" spec="ILA_V2_RT">

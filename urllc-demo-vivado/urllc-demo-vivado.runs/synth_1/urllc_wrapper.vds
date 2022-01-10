@@ -2,8 +2,8 @@
 # Vivado v2021.1 (64-bit)
 # SW Build 3247384 on Thu Jun 10 19:36:33 MDT 2021
 # IP Build 3246043 on Fri Jun 11 00:30:35 MDT 2021
-# Start of session at: Mon Jan 10 16:46:41 2022
-# Process ID: 17172
+# Start of session at: Mon Jan 10 23:18:05 2022
+# Process ID: 20872
 # Current directory: G:/Chiro/Programs/urllc-demo-pynq/urllc-demo-vivado/urllc-demo-vivado.runs/synth_1
 # Command line: vivado.exe -log urllc_wrapper.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source urllc_wrapper.tcl
 # Log file: G:/Chiro/Programs/urllc-demo-pynq/urllc-demo-vivado/urllc-demo-vivado.runs/synth_1/urllc_wrapper.vds
@@ -13,7 +13,7 @@ source urllc_wrapper.tcl -notrace
 INFO: [IP_Flow 19-234] Refreshing IP repositories
 INFO: [IP_Flow 19-1700] Loaded user IP repository 'g:/Chiro/Programs/urllc-demo-pynq/ips'.
 INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'C:/Xilinx/Vivado/2021.1/data/ip'.
-add_files: Time (s): cpu = 00:00:05 ; elapsed = 00:00:08 . Memory (MB): peak = 1258.773 ; gain = 0.000
+add_files: Time (s): cpu = 00:00:05 ; elapsed = 00:00:09 . Memory (MB): peak = 1257.992 ; gain = 0.000
 Command: synth_design -top urllc_wrapper -part xc7z020clg400-2
 Starting synth_design
 Attempting to get a license for feature 'Synthesis' and/or device 'xc7z020'
@@ -21,243 +21,236 @@ INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7z020
 INFO: [Device 21-403] Loading part xc7z020clg400-2
 INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 2 processes.
 INFO: [Synth 8-7078] Launching helper process for spawning children vivado processes
-INFO: [Synth 8-7075] Helper process launched with PID 16476
+INFO: [Synth 8-7075] Helper process launched with PID 11972
 ---------------------------------------------------------------------------------
-Starting RTL Elaboration : Time (s): cpu = 00:00:03 ; elapsed = 00:00:04 . Memory (MB): peak = 1258.773 ; gain = 0.000
+Starting RTL Elaboration : Time (s): cpu = 00:00:05 ; elapsed = 00:00:05 . Memory (MB): peak = 1257.992 ; gain = 0.000
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-6157] synthesizing module 'urllc_wrapper' [G:/Chiro/Programs/urllc-demo-pynq/urllc-demo-vivado/urllc-demo-vivado.gen/sources_1/bd/urllc/hdl/urllc_wrapper.v:12]
-INFO: [Synth 8-6157] synthesizing module 'urllc' [g:/Chiro/Programs/urllc-demo-pynq/urllc-demo-vivado/urllc-demo-vivado.gen/sources_1/bd/urllc/synth/urllc.v:3827]
-WARNING: [Synth 8-4446] all outputs are unconnected for this instance and logic may be removed [g:/Chiro/Programs/urllc-demo-pynq/urllc-demo-vivado/urllc-demo-vivado.gen/sources_1/bd/urllc/synth/urllc.v:4069]
-INFO: [Synth 8-6157] synthesizing module 'urllc_ila_0_0' [G:/Chiro/Programs/urllc-demo-pynq/urllc-demo-vivado/urllc-demo-vivado.runs/synth_1/.Xil/Vivado-17172-WIN-544SHHHOI8Q/realtime/urllc_ila_0_0_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'urllc_ila_0_0' (1#1) [G:/Chiro/Programs/urllc-demo-pynq/urllc-demo-vivado/urllc-demo-vivado.runs/synth_1/.Xil/Vivado-17172-WIN-544SHHHOI8Q/realtime/urllc_ila_0_0_stub.v:6]
-INFO: [Synth 8-6157] synthesizing module 'urllc_processing_system7_0_0' [G:/Chiro/Programs/urllc-demo-pynq/urllc-demo-vivado/urllc-demo-vivado.runs/synth_1/.Xil/Vivado-17172-WIN-544SHHHOI8Q/realtime/urllc_processing_system7_0_0_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'urllc_processing_system7_0_0' (2#1) [G:/Chiro/Programs/urllc-demo-pynq/urllc-demo-vivado/urllc-demo-vivado.runs/synth_1/.Xil/Vivado-17172-WIN-544SHHHOI8Q/realtime/urllc_processing_system7_0_0_stub.v:6]
-WARNING: [Synth 8-7071] port 'ENET0_MDIO_MDC' of module 'urllc_processing_system7_0_0' is unconnected for instance 'processing_system7_0' [g:/Chiro/Programs/urllc-demo-pynq/urllc-demo-vivado/urllc-demo-vivado.gen/sources_1/bd/urllc/synth/urllc.v:4074]
-WARNING: [Synth 8-7071] port 'ENET0_MDIO_O' of module 'urllc_processing_system7_0_0' is unconnected for instance 'processing_system7_0' [g:/Chiro/Programs/urllc-demo-pynq/urllc-demo-vivado/urllc-demo-vivado.gen/sources_1/bd/urllc/synth/urllc.v:4074]
-WARNING: [Synth 8-7071] port 'ENET0_MDIO_T' of module 'urllc_processing_system7_0_0' is unconnected for instance 'processing_system7_0' [g:/Chiro/Programs/urllc-demo-pynq/urllc-demo-vivado/urllc-demo-vivado.gen/sources_1/bd/urllc/synth/urllc.v:4074]
-WARNING: [Synth 8-7071] port 'USB0_PORT_INDCTL' of module 'urllc_processing_system7_0_0' is unconnected for instance 'processing_system7_0' [g:/Chiro/Programs/urllc-demo-pynq/urllc-demo-vivado/urllc-demo-vivado.gen/sources_1/bd/urllc/synth/urllc.v:4074]
-WARNING: [Synth 8-7071] port 'USB0_VBUS_PWRSELECT' of module 'urllc_processing_system7_0_0' is unconnected for instance 'processing_system7_0' [g:/Chiro/Programs/urllc-demo-pynq/urllc-demo-vivado/urllc-demo-vivado.gen/sources_1/bd/urllc/synth/urllc.v:4074]
-WARNING: [Synth 8-7071] port 'S_AXI_HP0_RCOUNT' of module 'urllc_processing_system7_0_0' is unconnected for instance 'processing_system7_0' [g:/Chiro/Programs/urllc-demo-pynq/urllc-demo-vivado/urllc-demo-vivado.gen/sources_1/bd/urllc/synth/urllc.v:4074]
-WARNING: [Synth 8-7071] port 'S_AXI_HP0_WCOUNT' of module 'urllc_processing_system7_0_0' is unconnected for instance 'processing_system7_0' [g:/Chiro/Programs/urllc-demo-pynq/urllc-demo-vivado/urllc-demo-vivado.gen/sources_1/bd/urllc/synth/urllc.v:4074]
-WARNING: [Synth 8-7071] port 'S_AXI_HP0_RACOUNT' of module 'urllc_processing_system7_0_0' is unconnected for instance 'processing_system7_0' [g:/Chiro/Programs/urllc-demo-pynq/urllc-demo-vivado/urllc-demo-vivado.gen/sources_1/bd/urllc/synth/urllc.v:4074]
-WARNING: [Synth 8-7071] port 'S_AXI_HP0_WACOUNT' of module 'urllc_processing_system7_0_0' is unconnected for instance 'processing_system7_0' [g:/Chiro/Programs/urllc-demo-pynq/urllc-demo-vivado/urllc-demo-vivado.gen/sources_1/bd/urllc/synth/urllc.v:4074]
-WARNING: [Synth 8-7071] port 'S_AXI_HP1_RCOUNT' of module 'urllc_processing_system7_0_0' is unconnected for instance 'processing_system7_0' [g:/Chiro/Programs/urllc-demo-pynq/urllc-demo-vivado/urllc-demo-vivado.gen/sources_1/bd/urllc/synth/urllc.v:4074]
-WARNING: [Synth 8-7071] port 'S_AXI_HP1_WCOUNT' of module 'urllc_processing_system7_0_0' is unconnected for instance 'processing_system7_0' [g:/Chiro/Programs/urllc-demo-pynq/urllc-demo-vivado/urllc-demo-vivado.gen/sources_1/bd/urllc/synth/urllc.v:4074]
-WARNING: [Synth 8-7071] port 'S_AXI_HP1_RACOUNT' of module 'urllc_processing_system7_0_0' is unconnected for instance 'processing_system7_0' [g:/Chiro/Programs/urllc-demo-pynq/urllc-demo-vivado/urllc-demo-vivado.gen/sources_1/bd/urllc/synth/urllc.v:4074]
-WARNING: [Synth 8-7071] port 'S_AXI_HP1_WACOUNT' of module 'urllc_processing_system7_0_0' is unconnected for instance 'processing_system7_0' [g:/Chiro/Programs/urllc-demo-pynq/urllc-demo-vivado/urllc-demo-vivado.gen/sources_1/bd/urllc/synth/urllc.v:4074]
-WARNING: [Synth 8-7023] instance 'processing_system7_0' of module 'urllc_processing_system7_0_0' has 201 connections declared, but only 188 given [g:/Chiro/Programs/urllc-demo-pynq/urllc-demo-vivado/urllc-demo-vivado.gen/sources_1/bd/urllc/synth/urllc.v:4074]
-INFO: [Synth 8-6157] synthesizing module 'reciever_imp_12N1QB0' [g:/Chiro/Programs/urllc-demo-pynq/urllc-demo-vivado/urllc-demo-vivado.gen/sources_1/bd/urllc/synth/urllc.v:1336]
-INFO: [Synth 8-6157] synthesizing module 'urllc_DDCWrapper_0_0' [G:/Chiro/Programs/urllc-demo-pynq/urllc-demo-vivado/urllc-demo-vivado.runs/synth_1/.Xil/Vivado-17172-WIN-544SHHHOI8Q/realtime/urllc_DDCWrapper_0_0_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'urllc_DDCWrapper_0_0' (3#1) [G:/Chiro/Programs/urllc-demo-pynq/urllc-demo-vivado/urllc-demo-vivado.runs/synth_1/.Xil/Vivado-17172-WIN-544SHHHOI8Q/realtime/urllc_DDCWrapper_0_0_stub.v:6]
-WARNING: [Synth 8-7071] port 'io_out_data' of module 'urllc_DDCWrapper_0_0' is unconnected for instance 'DDCWrapper_0' [g:/Chiro/Programs/urllc-demo-pynq/urllc-demo-vivado/urllc-demo-vivado.gen/sources_1/bd/urllc/synth/urllc.v:1755]
-WARNING: [Synth 8-7071] port 'io_out_readData' of module 'urllc_DDCWrapper_0_0' is unconnected for instance 'DDCWrapper_0' [g:/Chiro/Programs/urllc-demo-pynq/urllc-demo-vivado/urllc-demo-vivado.gen/sources_1/bd/urllc/synth/urllc.v:1755]
-WARNING: [Synth 8-7071] port 'io_out_value' of module 'urllc_DDCWrapper_0_0' is unconnected for instance 'DDCWrapper_0' [g:/Chiro/Programs/urllc-demo-pynq/urllc-demo-vivado/urllc-demo-vivado.gen/sources_1/bd/urllc/synth/urllc.v:1755]
-WARNING: [Synth 8-7023] instance 'DDCWrapper_0' of module 'urllc_DDCWrapper_0_0' has 8 connections declared, but only 5 given [g:/Chiro/Programs/urllc-demo-pynq/urllc-demo-vivado/urllc-demo-vivado.gen/sources_1/bd/urllc/synth/urllc.v:1755]
-INFO: [Synth 8-6157] synthesizing module 'urllc_ad2dma_1_1' [G:/Chiro/Programs/urllc-demo-pynq/urllc-demo-vivado/urllc-demo-vivado.runs/synth_1/.Xil/Vivado-17172-WIN-544SHHHOI8Q/realtime/urllc_ad2dma_1_1_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'urllc_ad2dma_1_1' (4#1) [G:/Chiro/Programs/urllc-demo-pynq/urllc-demo-vivado/urllc-demo-vivado.runs/synth_1/.Xil/Vivado-17172-WIN-544SHHHOI8Q/realtime/urllc_ad2dma_1_1_stub.v:6]
-WARNING: [Synth 8-7071] port 'ad_ce0' of module 'urllc_ad2dma_1_1' is unconnected for instance 'ad2dma_2' [g:/Chiro/Programs/urllc-demo-pynq/urllc-demo-vivado/urllc-demo-vivado.gen/sources_1/bd/urllc/synth/urllc.v:1761]
-WARNING: [Synth 8-7071] port 'da_ce0' of module 'urllc_ad2dma_1_1' is unconnected for instance 'ad2dma_2' [g:/Chiro/Programs/urllc-demo-pynq/urllc-demo-vivado/urllc-demo-vivado.gen/sources_1/bd/urllc/synth/urllc.v:1761]
-WARNING: [Synth 8-7071] port 'da_we0' of module 'urllc_ad2dma_1_1' is unconnected for instance 'ad2dma_2' [g:/Chiro/Programs/urllc-demo-pynq/urllc-demo-vivado/urllc-demo-vivado.gen/sources_1/bd/urllc/synth/urllc.v:1761]
-WARNING: [Synth 8-7071] port 'interrupt' of module 'urllc_ad2dma_1_1' is unconnected for instance 'ad2dma_2' [g:/Chiro/Programs/urllc-demo-pynq/urllc-demo-vivado/urllc-demo-vivado.gen/sources_1/bd/urllc/synth/urllc.v:1761]
-WARNING: [Synth 8-7071] port 'outs_TDEST' of module 'urllc_ad2dma_1_1' is unconnected for instance 'ad2dma_2' [g:/Chiro/Programs/urllc-demo-pynq/urllc-demo-vivado/urllc-demo-vivado.gen/sources_1/bd/urllc/synth/urllc.v:1761]
-WARNING: [Synth 8-7071] port 'outs_TSTRB' of module 'urllc_ad2dma_1_1' is unconnected for instance 'ad2dma_2' [g:/Chiro/Programs/urllc-demo-pynq/urllc-demo-vivado/urllc-demo-vivado.gen/sources_1/bd/urllc/synth/urllc.v:1761]
-WARNING: [Synth 8-7071] port 'outs_TUSER' of module 'urllc_ad2dma_1_1' is unconnected for instance 'ad2dma_2' [g:/Chiro/Programs/urllc-demo-pynq/urllc-demo-vivado/urllc-demo-vivado.gen/sources_1/bd/urllc/synth/urllc.v:1761]
-WARNING: [Synth 8-7071] port 'outs_TID' of module 'urllc_ad2dma_1_1' is unconnected for instance 'ad2dma_2' [g:/Chiro/Programs/urllc-demo-pynq/urllc-demo-vivado/urllc-demo-vivado.gen/sources_1/bd/urllc/synth/urllc.v:1761]
-WARNING: [Synth 8-7071] port 'ad_address0' of module 'urllc_ad2dma_1_1' is unconnected for instance 'ad2dma_2' [g:/Chiro/Programs/urllc-demo-pynq/urllc-demo-vivado/urllc-demo-vivado.gen/sources_1/bd/urllc/synth/urllc.v:1761]
-WARNING: [Synth 8-7071] port 'da_address0' of module 'urllc_ad2dma_1_1' is unconnected for instance 'ad2dma_2' [g:/Chiro/Programs/urllc-demo-pynq/urllc-demo-vivado/urllc-demo-vivado.gen/sources_1/bd/urllc/synth/urllc.v:1761]
-WARNING: [Synth 8-7023] instance 'ad2dma_2' of module 'urllc_ad2dma_1_1' has 45 connections declared, but only 35 given [g:/Chiro/Programs/urllc-demo-pynq/urllc-demo-vivado/urllc-demo-vivado.gen/sources_1/bd/urllc/synth/urllc.v:1761]
-INFO: [Synth 8-6157] synthesizing module 'urllc_axi_dma_0_1' [G:/Chiro/Programs/urllc-demo-pynq/urllc-demo-vivado/urllc-demo-vivado.runs/synth_1/.Xil/Vivado-17172-WIN-544SHHHOI8Q/realtime/urllc_axi_dma_0_1_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'urllc_axi_dma_0_1' (5#1) [G:/Chiro/Programs/urllc-demo-pynq/urllc-demo-vivado/urllc-demo-vivado.runs/synth_1/.Xil/Vivado-17172-WIN-544SHHHOI8Q/realtime/urllc_axi_dma_0_1_stub.v:6]
-WARNING: [Synth 8-7071] port 'mm2s_prmry_reset_out_n' of module 'urllc_axi_dma_0_1' is unconnected for instance 'axi_dma_1' [g:/Chiro/Programs/urllc-demo-pynq/urllc-demo-vivado/urllc-demo-vivado.gen/sources_1/bd/urllc/synth/urllc.v:1797]
-WARNING: [Synth 8-7071] port 's2mm_prmry_reset_out_n' of module 'urllc_axi_dma_0_1' is unconnected for instance 'axi_dma_1' [g:/Chiro/Programs/urllc-demo-pynq/urllc-demo-vivado/urllc-demo-vivado.gen/sources_1/bd/urllc/synth/urllc.v:1797]
-WARNING: [Synth 8-7071] port 'mm2s_introut' of module 'urllc_axi_dma_0_1' is unconnected for instance 'axi_dma_1' [g:/Chiro/Programs/urllc-demo-pynq/urllc-demo-vivado/urllc-demo-vivado.gen/sources_1/bd/urllc/synth/urllc.v:1797]
-WARNING: [Synth 8-7071] port 's2mm_introut' of module 'urllc_axi_dma_0_1' is unconnected for instance 'axi_dma_1' [g:/Chiro/Programs/urllc-demo-pynq/urllc-demo-vivado/urllc-demo-vivado.gen/sources_1/bd/urllc/synth/urllc.v:1797]
-WARNING: [Synth 8-7071] port 'axi_dma_tstvec' of module 'urllc_axi_dma_0_1' is unconnected for instance 'axi_dma_1' [g:/Chiro/Programs/urllc-demo-pynq/urllc-demo-vivado/urllc-demo-vivado.gen/sources_1/bd/urllc/synth/urllc.v:1797]
-WARNING: [Synth 8-7023] instance 'axi_dma_1' of module 'urllc_axi_dma_0_1' has 64 connections declared, but only 59 given [g:/Chiro/Programs/urllc-demo-pynq/urllc-demo-vivado/urllc-demo-vivado.gen/sources_1/bd/urllc/synth/urllc.v:1797]
-INFO: [Synth 8-6157] synthesizing module 'urllc_axi_mem_intercon_1' [g:/Chiro/Programs/urllc-demo-pynq/urllc-demo-vivado/urllc-demo-vivado.gen/sources_1/bd/urllc/synth/urllc.v:5026]
-INFO: [Synth 8-6157] synthesizing module 'm00_couplers_imp_AQ2LI5' [g:/Chiro/Programs/urllc-demo-pynq/urllc-demo-vivado/urllc-demo-vivado.gen/sources_1/bd/urllc/synth/urllc.v:549]
-INFO: [Synth 8-6157] synthesizing module 'urllc_auto_pc_3' [G:/Chiro/Programs/urllc-demo-pynq/urllc-demo-vivado/urllc-demo-vivado.runs/synth_1/.Xil/Vivado-17172-WIN-544SHHHOI8Q/realtime/urllc_auto_pc_3_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'urllc_auto_pc_3' (6#1) [G:/Chiro/Programs/urllc-demo-pynq/urllc-demo-vivado/urllc-demo-vivado.runs/synth_1/.Xil/Vivado-17172-WIN-544SHHHOI8Q/realtime/urllc_auto_pc_3_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'm00_couplers_imp_AQ2LI5' (7#1) [g:/Chiro/Programs/urllc-demo-pynq/urllc-demo-vivado/urllc-demo-vivado.gen/sources_1/bd/urllc/synth/urllc.v:549]
-INFO: [Synth 8-6157] synthesizing module 's00_couplers_imp_VB0A7Q' [g:/Chiro/Programs/urllc-demo-pynq/urllc-demo-vivado/urllc-demo-vivado.gen/sources_1/bd/urllc/synth/urllc.v:2765]
-INFO: [Synth 8-6155] done synthesizing module 's00_couplers_imp_VB0A7Q' (8#1) [g:/Chiro/Programs/urllc-demo-pynq/urllc-demo-vivado/urllc-demo-vivado.gen/sources_1/bd/urllc/synth/urllc.v:2765]
-INFO: [Synth 8-6157] synthesizing module 's01_couplers_imp_1JTAR8E' [g:/Chiro/Programs/urllc-demo-pynq/urllc-demo-vivado/urllc-demo-vivado.gen/sources_1/bd/urllc/synth/urllc.v:2869]
-INFO: [Synth 8-6155] done synthesizing module 's01_couplers_imp_1JTAR8E' (9#1) [g:/Chiro/Programs/urllc-demo-pynq/urllc-demo-vivado/urllc-demo-vivado.gen/sources_1/bd/urllc/synth/urllc.v:2869]
-INFO: [Synth 8-6157] synthesizing module 'urllc_xbar_4' [G:/Chiro/Programs/urllc-demo-pynq/urllc-demo-vivado/urllc-demo-vivado.runs/synth_1/.Xil/Vivado-17172-WIN-544SHHHOI8Q/realtime/urllc_xbar_4_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'urllc_xbar_4' (10#1) [G:/Chiro/Programs/urllc-demo-pynq/urllc-demo-vivado/urllc-demo-vivado.runs/synth_1/.Xil/Vivado-17172-WIN-544SHHHOI8Q/realtime/urllc_xbar_4_stub.v:6]
-WARNING: [Synth 8-689] width (1) of port connection 's_axi_arready' does not match port width (2) of module 'urllc_xbar_4' [g:/Chiro/Programs/urllc-demo-pynq/urllc-demo-vivado/urllc-demo-vivado.gen/sources_1/bd/urllc/synth/urllc.v:5589]
-WARNING: [Synth 8-689] width (32) of port connection 's_axi_rdata' does not match port width (64) of module 'urllc_xbar_4' [g:/Chiro/Programs/urllc-demo-pynq/urllc-demo-vivado/urllc-demo-vivado.gen/sources_1/bd/urllc/synth/urllc.v:5606]
-WARNING: [Synth 8-689] width (1) of port connection 's_axi_rlast' does not match port width (2) of module 'urllc_xbar_4' [g:/Chiro/Programs/urllc-demo-pynq/urllc-demo-vivado/urllc-demo-vivado.gen/sources_1/bd/urllc/synth/urllc.v:5607]
-WARNING: [Synth 8-689] width (2) of port connection 's_axi_rresp' does not match port width (4) of module 'urllc_xbar_4' [g:/Chiro/Programs/urllc-demo-pynq/urllc-demo-vivado/urllc-demo-vivado.gen/sources_1/bd/urllc/synth/urllc.v:5609]
-WARNING: [Synth 8-689] width (1) of port connection 's_axi_rvalid' does not match port width (2) of module 'urllc_xbar_4' [g:/Chiro/Programs/urllc-demo-pynq/urllc-demo-vivado/urllc-demo-vivado.gen/sources_1/bd/urllc/synth/urllc.v:5610]
-WARNING: [Synth 8-7071] port 's_axi_bid' of module 'urllc_xbar_4' is unconnected for instance 'xbar' [g:/Chiro/Programs/urllc-demo-pynq/urllc-demo-vivado/urllc-demo-vivado.gen/sources_1/bd/urllc/synth/urllc.v:5539]
-WARNING: [Synth 8-7071] port 's_axi_rid' of module 'urllc_xbar_4' is unconnected for instance 'xbar' [g:/Chiro/Programs/urllc-demo-pynq/urllc-demo-vivado/urllc-demo-vivado.gen/sources_1/bd/urllc/synth/urllc.v:5539]
-WARNING: [Synth 8-7023] instance 'xbar' of module 'urllc_xbar_4' has 78 connections declared, but only 76 given [g:/Chiro/Programs/urllc-demo-pynq/urllc-demo-vivado/urllc-demo-vivado.gen/sources_1/bd/urllc/synth/urllc.v:5539]
-INFO: [Synth 8-6155] done synthesizing module 'urllc_axi_mem_intercon_1' (11#1) [g:/Chiro/Programs/urllc-demo-pynq/urllc-demo-vivado/urllc-demo-vivado.gen/sources_1/bd/urllc/synth/urllc.v:5026]
-WARNING: [Synth 8-4446] all outputs are unconnected for this instance and logic may be removed [g:/Chiro/Programs/urllc-demo-pynq/urllc-demo-vivado/urllc-demo-vivado.gen/sources_1/bd/urllc/synth/urllc.v:1933]
-INFO: [Synth 8-6157] synthesizing module 'urllc_div8_0_1' [G:/Chiro/Programs/urllc-demo-pynq/urllc-demo-vivado/urllc-demo-vivado.runs/synth_1/.Xil/Vivado-17172-WIN-544SHHHOI8Q/realtime/urllc_div8_0_1_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'urllc_div8_0_1' (12#1) [G:/Chiro/Programs/urllc-demo-pynq/urllc-demo-vivado/urllc-demo-vivado.runs/synth_1/.Xil/Vivado-17172-WIN-544SHHHOI8Q/realtime/urllc_div8_0_1_stub.v:6]
-WARNING: [Synth 8-7071] port 'clk_out' of module 'urllc_div8_0_1' is unconnected for instance 'div8_1' [g:/Chiro/Programs/urllc-demo-pynq/urllc-demo-vivado/urllc-demo-vivado.gen/sources_1/bd/urllc/synth/urllc.v:1933]
-WARNING: [Synth 8-7023] instance 'div8_1' of module 'urllc_div8_0_1' has 3 connections declared, but only 2 given [g:/Chiro/Programs/urllc-demo-pynq/urllc-demo-vivado/urllc-demo-vivado.gen/sources_1/bd/urllc/synth/urllc.v:1933]
-INFO: [Synth 8-6157] synthesizing module 'urllc_ps7_0_axi_periph_1' [g:/Chiro/Programs/urllc-demo-pynq/urllc-demo-vivado/urllc-demo-vivado.gen/sources_1/bd/urllc/synth/urllc.v:6156]
-INFO: [Synth 8-6157] synthesizing module 'm00_couplers_imp_VTAAL0' [g:/Chiro/Programs/urllc-demo-pynq/urllc-demo-vivado/urllc-demo-vivado.gen/sources_1/bd/urllc/synth/urllc.v:954]
-INFO: [Synth 8-6155] done synthesizing module 'm00_couplers_imp_VTAAL0' (13#1) [g:/Chiro/Programs/urllc-demo-pynq/urllc-demo-vivado/urllc-demo-vivado.gen/sources_1/bd/urllc/synth/urllc.v:954]
-INFO: [Synth 8-6157] synthesizing module 'm01_couplers_imp_1KEZ5Z0' [g:/Chiro/Programs/urllc-demo-pynq/urllc-demo-vivado/urllc-demo-vivado.gen/sources_1/bd/urllc/synth/urllc.v:1211]
-INFO: [Synth 8-6155] done synthesizing module 'm01_couplers_imp_1KEZ5Z0' (14#1) [g:/Chiro/Programs/urllc-demo-pynq/urllc-demo-vivado/urllc-demo-vivado.gen/sources_1/bd/urllc/synth/urllc.v:1211]
-INFO: [Synth 8-6157] synthesizing module 's00_couplers_imp_A87VUN' [g:/Chiro/Programs/urllc-demo-pynq/urllc-demo-vivado/urllc-demo-vivado.gen/sources_1/bd/urllc/synth/urllc.v:2155]
-INFO: [Synth 8-6157] synthesizing module 'urllc_auto_pc_2' [G:/Chiro/Programs/urllc-demo-pynq/urllc-demo-vivado/urllc-demo-vivado.runs/synth_1/.Xil/Vivado-17172-WIN-544SHHHOI8Q/realtime/urllc_auto_pc_2_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'urllc_auto_pc_2' (15#1) [G:/Chiro/Programs/urllc-demo-pynq/urllc-demo-vivado/urllc-demo-vivado.runs/synth_1/.Xil/Vivado-17172-WIN-544SHHHOI8Q/realtime/urllc_auto_pc_2_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 's00_couplers_imp_A87VUN' (16#1) [g:/Chiro/Programs/urllc-demo-pynq/urllc-demo-vivado/urllc-demo-vivado.gen/sources_1/bd/urllc/synth/urllc.v:2155]
-INFO: [Synth 8-6157] synthesizing module 'urllc_xbar_5' [G:/Chiro/Programs/urllc-demo-pynq/urllc-demo-vivado/urllc-demo-vivado.runs/synth_1/.Xil/Vivado-17172-WIN-544SHHHOI8Q/realtime/urllc_xbar_5_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'urllc_xbar_5' (17#1) [G:/Chiro/Programs/urllc-demo-pynq/urllc-demo-vivado/urllc-demo-vivado.runs/synth_1/.Xil/Vivado-17172-WIN-544SHHHOI8Q/realtime/urllc_xbar_5_stub.v:6]
-WARNING: [Synth 8-689] width (4) of port connection 'm_axi_wstrb' does not match port width (8) of module 'urllc_xbar_5' [g:/Chiro/Programs/urllc-demo-pynq/urllc-demo-vivado/urllc-demo-vivado.gen/sources_1/bd/urllc/synth/urllc.v:6671]
-WARNING: [Synth 8-7071] port 'm_axi_awprot' of module 'urllc_xbar_5' is unconnected for instance 'xbar' [g:/Chiro/Programs/urllc-demo-pynq/urllc-demo-vivado/urllc-demo-vivado.gen/sources_1/bd/urllc/synth/urllc.v:6653]
-WARNING: [Synth 8-7071] port 'm_axi_arprot' of module 'urllc_xbar_5' is unconnected for instance 'xbar' [g:/Chiro/Programs/urllc-demo-pynq/urllc-demo-vivado/urllc-demo-vivado.gen/sources_1/bd/urllc/synth/urllc.v:6653]
-WARNING: [Synth 8-7023] instance 'xbar' of module 'urllc_xbar_5' has 40 connections declared, but only 38 given [g:/Chiro/Programs/urllc-demo-pynq/urllc-demo-vivado/urllc-demo-vivado.gen/sources_1/bd/urllc/synth/urllc.v:6653]
-INFO: [Synth 8-6155] done synthesizing module 'urllc_ps7_0_axi_periph_1' (18#1) [g:/Chiro/Programs/urllc-demo-pynq/urllc-demo-vivado/urllc-demo-vivado.gen/sources_1/bd/urllc/synth/urllc.v:6156]
-INFO: [Synth 8-6157] synthesizing module 'urllc_proc_sys_reset_0_0' [G:/Chiro/Programs/urllc-demo-pynq/urllc-demo-vivado/urllc-demo-vivado.runs/synth_1/.Xil/Vivado-17172-WIN-544SHHHOI8Q/realtime/urllc_proc_sys_reset_0_0_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'urllc_proc_sys_reset_0_0' (19#1) [G:/Chiro/Programs/urllc-demo-pynq/urllc-demo-vivado/urllc-demo-vivado.runs/synth_1/.Xil/Vivado-17172-WIN-544SHHHOI8Q/realtime/urllc_proc_sys_reset_0_0_stub.v:6]
-WARNING: [Synth 8-7071] port 'mb_reset' of module 'urllc_proc_sys_reset_0_0' is unconnected for instance 'rst_ps7_0_200M' [g:/Chiro/Programs/urllc-demo-pynq/urllc-demo-vivado/urllc-demo-vivado.gen/sources_1/bd/urllc/synth/urllc.v:2016]
-WARNING: [Synth 8-7071] port 'bus_struct_reset' of module 'urllc_proc_sys_reset_0_0' is unconnected for instance 'rst_ps7_0_200M' [g:/Chiro/Programs/urllc-demo-pynq/urllc-demo-vivado/urllc-demo-vivado.gen/sources_1/bd/urllc/synth/urllc.v:2016]
-WARNING: [Synth 8-7071] port 'peripheral_reset' of module 'urllc_proc_sys_reset_0_0' is unconnected for instance 'rst_ps7_0_200M' [g:/Chiro/Programs/urllc-demo-pynq/urllc-demo-vivado/urllc-demo-vivado.gen/sources_1/bd/urllc/synth/urllc.v:2016]
-WARNING: [Synth 8-7071] port 'interconnect_aresetn' of module 'urllc_proc_sys_reset_0_0' is unconnected for instance 'rst_ps7_0_200M' [g:/Chiro/Programs/urllc-demo-pynq/urllc-demo-vivado/urllc-demo-vivado.gen/sources_1/bd/urllc/synth/urllc.v:2016]
-WARNING: [Synth 8-7023] instance 'rst_ps7_0_200M' of module 'urllc_proc_sys_reset_0_0' has 10 connections declared, but only 6 given [g:/Chiro/Programs/urllc-demo-pynq/urllc-demo-vivado/urllc-demo-vivado.gen/sources_1/bd/urllc/synth/urllc.v:2016]
-INFO: [Synth 8-6157] synthesizing module 'urllc_rst_ps7_0_50M_0' [G:/Chiro/Programs/urllc-demo-pynq/urllc-demo-vivado/urllc-demo-vivado.runs/synth_1/.Xil/Vivado-17172-WIN-544SHHHOI8Q/realtime/urllc_rst_ps7_0_50M_0_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'urllc_rst_ps7_0_50M_0' (20#1) [G:/Chiro/Programs/urllc-demo-pynq/urllc-demo-vivado/urllc-demo-vivado.runs/synth_1/.Xil/Vivado-17172-WIN-544SHHHOI8Q/realtime/urllc_rst_ps7_0_50M_0_stub.v:6]
-WARNING: [Synth 8-7071] port 'mb_reset' of module 'urllc_rst_ps7_0_50M_0' is unconnected for instance 'rst_ps7_0_4M' [g:/Chiro/Programs/urllc-demo-pynq/urllc-demo-vivado/urllc-demo-vivado.gen/sources_1/bd/urllc/synth/urllc.v:2023]
-WARNING: [Synth 8-7071] port 'bus_struct_reset' of module 'urllc_rst_ps7_0_50M_0' is unconnected for instance 'rst_ps7_0_4M' [g:/Chiro/Programs/urllc-demo-pynq/urllc-demo-vivado/urllc-demo-vivado.gen/sources_1/bd/urllc/synth/urllc.v:2023]
-WARNING: [Synth 8-7071] port 'peripheral_reset' of module 'urllc_rst_ps7_0_50M_0' is unconnected for instance 'rst_ps7_0_4M' [g:/Chiro/Programs/urllc-demo-pynq/urllc-demo-vivado/urllc-demo-vivado.gen/sources_1/bd/urllc/synth/urllc.v:2023]
-WARNING: [Synth 8-7071] port 'interconnect_aresetn' of module 'urllc_rst_ps7_0_50M_0' is unconnected for instance 'rst_ps7_0_4M' [g:/Chiro/Programs/urllc-demo-pynq/urllc-demo-vivado/urllc-demo-vivado.gen/sources_1/bd/urllc/synth/urllc.v:2023]
-WARNING: [Synth 8-7023] instance 'rst_ps7_0_4M' of module 'urllc_rst_ps7_0_50M_0' has 10 connections declared, but only 6 given [g:/Chiro/Programs/urllc-demo-pynq/urllc-demo-vivado/urllc-demo-vivado.gen/sources_1/bd/urllc/synth/urllc.v:2023]
-INFO: [Synth 8-6157] synthesizing module 'urllc_s_p_0_0' [G:/Chiro/Programs/urllc-demo-pynq/urllc-demo-vivado/urllc-demo-vivado.runs/synth_1/.Xil/Vivado-17172-WIN-544SHHHOI8Q/realtime/urllc_s_p_0_0_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'urllc_s_p_0_0' (21#1) [G:/Chiro/Programs/urllc-demo-pynq/urllc-demo-vivado/urllc-demo-vivado.runs/synth_1/.Xil/Vivado-17172-WIN-544SHHHOI8Q/realtime/urllc_s_p_0_0_stub.v:6]
+INFO: [Synth 8-6157] synthesizing module 'urllc' [g:/Chiro/Programs/urllc-demo-pynq/urllc-demo-vivado/urllc-demo-vivado.gen/sources_1/bd/urllc/synth/urllc.v:3757]
+WARNING: [Synth 8-4446] all outputs are unconnected for this instance and logic may be removed [g:/Chiro/Programs/urllc-demo-pynq/urllc-demo-vivado/urllc-demo-vivado.gen/sources_1/bd/urllc/synth/urllc.v:3999]
+INFO: [Synth 8-6157] synthesizing module 'urllc_ila_0_0' [G:/Chiro/Programs/urllc-demo-pynq/urllc-demo-vivado/urllc-demo-vivado.runs/synth_1/.Xil/Vivado-20872-WIN-544SHHHOI8Q/realtime/urllc_ila_0_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'urllc_ila_0_0' (1#1) [G:/Chiro/Programs/urllc-demo-pynq/urllc-demo-vivado/urllc-demo-vivado.runs/synth_1/.Xil/Vivado-20872-WIN-544SHHHOI8Q/realtime/urllc_ila_0_0_stub.v:6]
+INFO: [Synth 8-6157] synthesizing module 'urllc_processing_system7_0_0' [G:/Chiro/Programs/urllc-demo-pynq/urllc-demo-vivado/urllc-demo-vivado.runs/synth_1/.Xil/Vivado-20872-WIN-544SHHHOI8Q/realtime/urllc_processing_system7_0_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'urllc_processing_system7_0_0' (2#1) [G:/Chiro/Programs/urllc-demo-pynq/urllc-demo-vivado/urllc-demo-vivado.runs/synth_1/.Xil/Vivado-20872-WIN-544SHHHOI8Q/realtime/urllc_processing_system7_0_0_stub.v:6]
+WARNING: [Synth 8-7071] port 'ENET0_MDIO_MDC' of module 'urllc_processing_system7_0_0' is unconnected for instance 'processing_system7_0' [g:/Chiro/Programs/urllc-demo-pynq/urllc-demo-vivado/urllc-demo-vivado.gen/sources_1/bd/urllc/synth/urllc.v:4004]
+WARNING: [Synth 8-7071] port 'ENET0_MDIO_O' of module 'urllc_processing_system7_0_0' is unconnected for instance 'processing_system7_0' [g:/Chiro/Programs/urllc-demo-pynq/urllc-demo-vivado/urllc-demo-vivado.gen/sources_1/bd/urllc/synth/urllc.v:4004]
+WARNING: [Synth 8-7071] port 'ENET0_MDIO_T' of module 'urllc_processing_system7_0_0' is unconnected for instance 'processing_system7_0' [g:/Chiro/Programs/urllc-demo-pynq/urllc-demo-vivado/urllc-demo-vivado.gen/sources_1/bd/urllc/synth/urllc.v:4004]
+WARNING: [Synth 8-7071] port 'USB0_PORT_INDCTL' of module 'urllc_processing_system7_0_0' is unconnected for instance 'processing_system7_0' [g:/Chiro/Programs/urllc-demo-pynq/urllc-demo-vivado/urllc-demo-vivado.gen/sources_1/bd/urllc/synth/urllc.v:4004]
+WARNING: [Synth 8-7071] port 'USB0_VBUS_PWRSELECT' of module 'urllc_processing_system7_0_0' is unconnected for instance 'processing_system7_0' [g:/Chiro/Programs/urllc-demo-pynq/urllc-demo-vivado/urllc-demo-vivado.gen/sources_1/bd/urllc/synth/urllc.v:4004]
+WARNING: [Synth 8-7071] port 'S_AXI_HP0_RCOUNT' of module 'urllc_processing_system7_0_0' is unconnected for instance 'processing_system7_0' [g:/Chiro/Programs/urllc-demo-pynq/urllc-demo-vivado/urllc-demo-vivado.gen/sources_1/bd/urllc/synth/urllc.v:4004]
+WARNING: [Synth 8-7071] port 'S_AXI_HP0_WCOUNT' of module 'urllc_processing_system7_0_0' is unconnected for instance 'processing_system7_0' [g:/Chiro/Programs/urllc-demo-pynq/urllc-demo-vivado/urllc-demo-vivado.gen/sources_1/bd/urllc/synth/urllc.v:4004]
+WARNING: [Synth 8-7071] port 'S_AXI_HP0_RACOUNT' of module 'urllc_processing_system7_0_0' is unconnected for instance 'processing_system7_0' [g:/Chiro/Programs/urllc-demo-pynq/urllc-demo-vivado/urllc-demo-vivado.gen/sources_1/bd/urllc/synth/urllc.v:4004]
+WARNING: [Synth 8-7071] port 'S_AXI_HP0_WACOUNT' of module 'urllc_processing_system7_0_0' is unconnected for instance 'processing_system7_0' [g:/Chiro/Programs/urllc-demo-pynq/urllc-demo-vivado/urllc-demo-vivado.gen/sources_1/bd/urllc/synth/urllc.v:4004]
+WARNING: [Synth 8-7071] port 'S_AXI_HP1_RCOUNT' of module 'urllc_processing_system7_0_0' is unconnected for instance 'processing_system7_0' [g:/Chiro/Programs/urllc-demo-pynq/urllc-demo-vivado/urllc-demo-vivado.gen/sources_1/bd/urllc/synth/urllc.v:4004]
+WARNING: [Synth 8-7071] port 'S_AXI_HP1_WCOUNT' of module 'urllc_processing_system7_0_0' is unconnected for instance 'processing_system7_0' [g:/Chiro/Programs/urllc-demo-pynq/urllc-demo-vivado/urllc-demo-vivado.gen/sources_1/bd/urllc/synth/urllc.v:4004]
+WARNING: [Synth 8-7071] port 'S_AXI_HP1_RACOUNT' of module 'urllc_processing_system7_0_0' is unconnected for instance 'processing_system7_0' [g:/Chiro/Programs/urllc-demo-pynq/urllc-demo-vivado/urllc-demo-vivado.gen/sources_1/bd/urllc/synth/urllc.v:4004]
+WARNING: [Synth 8-7071] port 'S_AXI_HP1_WACOUNT' of module 'urllc_processing_system7_0_0' is unconnected for instance 'processing_system7_0' [g:/Chiro/Programs/urllc-demo-pynq/urllc-demo-vivado/urllc-demo-vivado.gen/sources_1/bd/urllc/synth/urllc.v:4004]
+WARNING: [Synth 8-7023] instance 'processing_system7_0' of module 'urllc_processing_system7_0_0' has 201 connections declared, but only 188 given [g:/Chiro/Programs/urllc-demo-pynq/urllc-demo-vivado/urllc-demo-vivado.gen/sources_1/bd/urllc/synth/urllc.v:4004]
+INFO: [Synth 8-6157] synthesizing module 'reciever_imp_12N1QB0' [g:/Chiro/Programs/urllc-demo-pynq/urllc-demo-vivado/urllc-demo-vivado.gen/sources_1/bd/urllc/synth/urllc.v:1364]
+INFO: [Synth 8-6157] synthesizing module 'urllc_DDCWrapper_0_0' [G:/Chiro/Programs/urllc-demo-pynq/urllc-demo-vivado/urllc-demo-vivado.runs/synth_1/.Xil/Vivado-20872-WIN-544SHHHOI8Q/realtime/urllc_DDCWrapper_0_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'urllc_DDCWrapper_0_0' (3#1) [G:/Chiro/Programs/urllc-demo-pynq/urllc-demo-vivado/urllc-demo-vivado.runs/synth_1/.Xil/Vivado-20872-WIN-544SHHHOI8Q/realtime/urllc_DDCWrapper_0_0_stub.v:6]
+WARNING: [Synth 8-7071] port 'io_out_data' of module 'urllc_DDCWrapper_0_0' is unconnected for instance 'DDCWrapper_0' [g:/Chiro/Programs/urllc-demo-pynq/urllc-demo-vivado/urllc-demo-vivado.gen/sources_1/bd/urllc/synth/urllc.v:1766]
+WARNING: [Synth 8-7071] port 'io_out_readData' of module 'urllc_DDCWrapper_0_0' is unconnected for instance 'DDCWrapper_0' [g:/Chiro/Programs/urllc-demo-pynq/urllc-demo-vivado/urllc-demo-vivado.gen/sources_1/bd/urllc/synth/urllc.v:1766]
+WARNING: [Synth 8-7071] port 'io_out_value' of module 'urllc_DDCWrapper_0_0' is unconnected for instance 'DDCWrapper_0' [g:/Chiro/Programs/urllc-demo-pynq/urllc-demo-vivado/urllc-demo-vivado.gen/sources_1/bd/urllc/synth/urllc.v:1766]
+WARNING: [Synth 8-7023] instance 'DDCWrapper_0' of module 'urllc_DDCWrapper_0_0' has 8 connections declared, but only 5 given [g:/Chiro/Programs/urllc-demo-pynq/urllc-demo-vivado/urllc-demo-vivado.gen/sources_1/bd/urllc/synth/urllc.v:1766]
+INFO: [Synth 8-6157] synthesizing module 'urllc_ad2dma_rtl_0_1' [G:/Chiro/Programs/urllc-demo-pynq/urllc-demo-vivado/urllc-demo-vivado.runs/synth_1/.Xil/Vivado-20872-WIN-544SHHHOI8Q/realtime/urllc_ad2dma_rtl_0_1_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'urllc_ad2dma_rtl_0_1' (4#1) [G:/Chiro/Programs/urllc-demo-pynq/urllc-demo-vivado/urllc-demo-vivado.runs/synth_1/.Xil/Vivado-20872-WIN-544SHHHOI8Q/realtime/urllc_ad2dma_rtl_0_1_stub.v:6]
+INFO: [Synth 8-6157] synthesizing module 'urllc_axi_dma_0_1' [G:/Chiro/Programs/urllc-demo-pynq/urllc-demo-vivado/urllc-demo-vivado.runs/synth_1/.Xil/Vivado-20872-WIN-544SHHHOI8Q/realtime/urllc_axi_dma_0_1_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'urllc_axi_dma_0_1' (5#1) [G:/Chiro/Programs/urllc-demo-pynq/urllc-demo-vivado/urllc-demo-vivado.runs/synth_1/.Xil/Vivado-20872-WIN-544SHHHOI8Q/realtime/urllc_axi_dma_0_1_stub.v:6]
+WARNING: [Synth 8-7071] port 'mm2s_prmry_reset_out_n' of module 'urllc_axi_dma_0_1' is unconnected for instance 'axi_dma_1' [g:/Chiro/Programs/urllc-demo-pynq/urllc-demo-vivado/urllc-demo-vivado.gen/sources_1/bd/urllc/synth/urllc.v:1787]
+WARNING: [Synth 8-7071] port 's2mm_prmry_reset_out_n' of module 'urllc_axi_dma_0_1' is unconnected for instance 'axi_dma_1' [g:/Chiro/Programs/urllc-demo-pynq/urllc-demo-vivado/urllc-demo-vivado.gen/sources_1/bd/urllc/synth/urllc.v:1787]
+WARNING: [Synth 8-7071] port 'mm2s_introut' of module 'urllc_axi_dma_0_1' is unconnected for instance 'axi_dma_1' [g:/Chiro/Programs/urllc-demo-pynq/urllc-demo-vivado/urllc-demo-vivado.gen/sources_1/bd/urllc/synth/urllc.v:1787]
+WARNING: [Synth 8-7071] port 's2mm_introut' of module 'urllc_axi_dma_0_1' is unconnected for instance 'axi_dma_1' [g:/Chiro/Programs/urllc-demo-pynq/urllc-demo-vivado/urllc-demo-vivado.gen/sources_1/bd/urllc/synth/urllc.v:1787]
+WARNING: [Synth 8-7071] port 'axi_dma_tstvec' of module 'urllc_axi_dma_0_1' is unconnected for instance 'axi_dma_1' [g:/Chiro/Programs/urllc-demo-pynq/urllc-demo-vivado/urllc-demo-vivado.gen/sources_1/bd/urllc/synth/urllc.v:1787]
+WARNING: [Synth 8-7023] instance 'axi_dma_1' of module 'urllc_axi_dma_0_1' has 64 connections declared, but only 59 given [g:/Chiro/Programs/urllc-demo-pynq/urllc-demo-vivado/urllc-demo-vivado.gen/sources_1/bd/urllc/synth/urllc.v:1787]
+INFO: [Synth 8-6157] synthesizing module 'urllc_axi_mem_intercon_1' [g:/Chiro/Programs/urllc-demo-pynq/urllc-demo-vivado/urllc-demo-vivado.gen/sources_1/bd/urllc/synth/urllc.v:4956]
+INFO: [Synth 8-6157] synthesizing module 'm00_couplers_imp_AQ2LI5' [g:/Chiro/Programs/urllc-demo-pynq/urllc-demo-vivado/urllc-demo-vivado.gen/sources_1/bd/urllc/synth/urllc.v:563]
+INFO: [Synth 8-6157] synthesizing module 'urllc_auto_pc_3' [G:/Chiro/Programs/urllc-demo-pynq/urllc-demo-vivado/urllc-demo-vivado.runs/synth_1/.Xil/Vivado-20872-WIN-544SHHHOI8Q/realtime/urllc_auto_pc_3_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'urllc_auto_pc_3' (6#1) [G:/Chiro/Programs/urllc-demo-pynq/urllc-demo-vivado/urllc-demo-vivado.runs/synth_1/.Xil/Vivado-20872-WIN-544SHHHOI8Q/realtime/urllc_auto_pc_3_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'm00_couplers_imp_AQ2LI5' (7#1) [g:/Chiro/Programs/urllc-demo-pynq/urllc-demo-vivado/urllc-demo-vivado.gen/sources_1/bd/urllc/synth/urllc.v:563]
+INFO: [Synth 8-6157] synthesizing module 's00_couplers_imp_VB0A7Q' [g:/Chiro/Programs/urllc-demo-pynq/urllc-demo-vivado/urllc-demo-vivado.gen/sources_1/bd/urllc/synth/urllc.v:2743]
+INFO: [Synth 8-6155] done synthesizing module 's00_couplers_imp_VB0A7Q' (8#1) [g:/Chiro/Programs/urllc-demo-pynq/urllc-demo-vivado/urllc-demo-vivado.gen/sources_1/bd/urllc/synth/urllc.v:2743]
+INFO: [Synth 8-6157] synthesizing module 's01_couplers_imp_1JTAR8E' [g:/Chiro/Programs/urllc-demo-pynq/urllc-demo-vivado/urllc-demo-vivado.gen/sources_1/bd/urllc/synth/urllc.v:2847]
+INFO: [Synth 8-6155] done synthesizing module 's01_couplers_imp_1JTAR8E' (9#1) [g:/Chiro/Programs/urllc-demo-pynq/urllc-demo-vivado/urllc-demo-vivado.gen/sources_1/bd/urllc/synth/urllc.v:2847]
+INFO: [Synth 8-6157] synthesizing module 'urllc_xbar_4' [G:/Chiro/Programs/urllc-demo-pynq/urllc-demo-vivado/urllc-demo-vivado.runs/synth_1/.Xil/Vivado-20872-WIN-544SHHHOI8Q/realtime/urllc_xbar_4_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'urllc_xbar_4' (10#1) [G:/Chiro/Programs/urllc-demo-pynq/urllc-demo-vivado/urllc-demo-vivado.runs/synth_1/.Xil/Vivado-20872-WIN-544SHHHOI8Q/realtime/urllc_xbar_4_stub.v:6]
+WARNING: [Synth 8-689] width (1) of port connection 's_axi_arready' does not match port width (2) of module 'urllc_xbar_4' [g:/Chiro/Programs/urllc-demo-pynq/urllc-demo-vivado/urllc-demo-vivado.gen/sources_1/bd/urllc/synth/urllc.v:5519]
+WARNING: [Synth 8-689] width (32) of port connection 's_axi_rdata' does not match port width (64) of module 'urllc_xbar_4' [g:/Chiro/Programs/urllc-demo-pynq/urllc-demo-vivado/urllc-demo-vivado.gen/sources_1/bd/urllc/synth/urllc.v:5536]
+WARNING: [Synth 8-689] width (1) of port connection 's_axi_rlast' does not match port width (2) of module 'urllc_xbar_4' [g:/Chiro/Programs/urllc-demo-pynq/urllc-demo-vivado/urllc-demo-vivado.gen/sources_1/bd/urllc/synth/urllc.v:5537]
+WARNING: [Synth 8-689] width (2) of port connection 's_axi_rresp' does not match port width (4) of module 'urllc_xbar_4' [g:/Chiro/Programs/urllc-demo-pynq/urllc-demo-vivado/urllc-demo-vivado.gen/sources_1/bd/urllc/synth/urllc.v:5539]
+WARNING: [Synth 8-689] width (1) of port connection 's_axi_rvalid' does not match port width (2) of module 'urllc_xbar_4' [g:/Chiro/Programs/urllc-demo-pynq/urllc-demo-vivado/urllc-demo-vivado.gen/sources_1/bd/urllc/synth/urllc.v:5540]
+WARNING: [Synth 8-7071] port 's_axi_bid' of module 'urllc_xbar_4' is unconnected for instance 'xbar' [g:/Chiro/Programs/urllc-demo-pynq/urllc-demo-vivado/urllc-demo-vivado.gen/sources_1/bd/urllc/synth/urllc.v:5469]
+WARNING: [Synth 8-7071] port 's_axi_rid' of module 'urllc_xbar_4' is unconnected for instance 'xbar' [g:/Chiro/Programs/urllc-demo-pynq/urllc-demo-vivado/urllc-demo-vivado.gen/sources_1/bd/urllc/synth/urllc.v:5469]
+WARNING: [Synth 8-7023] instance 'xbar' of module 'urllc_xbar_4' has 78 connections declared, but only 76 given [g:/Chiro/Programs/urllc-demo-pynq/urllc-demo-vivado/urllc-demo-vivado.gen/sources_1/bd/urllc/synth/urllc.v:5469]
+INFO: [Synth 8-6155] done synthesizing module 'urllc_axi_mem_intercon_1' (11#1) [g:/Chiro/Programs/urllc-demo-pynq/urllc-demo-vivado/urllc-demo-vivado.gen/sources_1/bd/urllc/synth/urllc.v:4956]
+INFO: [Synth 8-6157] synthesizing module 'urllc_ps7_0_axi_periph_1' [g:/Chiro/Programs/urllc-demo-pynq/urllc-demo-vivado/urllc-demo-vivado.gen/sources_1/bd/urllc/synth/urllc.v:6102]
+INFO: [Synth 8-6157] synthesizing module 'm00_couplers_imp_VTAAL0' [g:/Chiro/Programs/urllc-demo-pynq/urllc-demo-vivado/urllc-demo-vivado.gen/sources_1/bd/urllc/synth/urllc.v:968]
+INFO: [Synth 8-6155] done synthesizing module 'm00_couplers_imp_VTAAL0' (12#1) [g:/Chiro/Programs/urllc-demo-pynq/urllc-demo-vivado/urllc-demo-vivado.gen/sources_1/bd/urllc/synth/urllc.v:968]
+INFO: [Synth 8-6157] synthesizing module 'm01_couplers_imp_1KEZ5Z0' [g:/Chiro/Programs/urllc-demo-pynq/urllc-demo-vivado/urllc-demo-vivado.gen/sources_1/bd/urllc/synth/urllc.v:1239]
+INFO: [Synth 8-6155] done synthesizing module 'm01_couplers_imp_1KEZ5Z0' (13#1) [g:/Chiro/Programs/urllc-demo-pynq/urllc-demo-vivado/urllc-demo-vivado.gen/sources_1/bd/urllc/synth/urllc.v:1239]
+INFO: [Synth 8-6157] synthesizing module 's00_couplers_imp_A87VUN' [g:/Chiro/Programs/urllc-demo-pynq/urllc-demo-vivado/urllc-demo-vivado.gen/sources_1/bd/urllc/synth/urllc.v:2133]
+INFO: [Synth 8-6157] synthesizing module 'urllc_auto_pc_2' [G:/Chiro/Programs/urllc-demo-pynq/urllc-demo-vivado/urllc-demo-vivado.runs/synth_1/.Xil/Vivado-20872-WIN-544SHHHOI8Q/realtime/urllc_auto_pc_2_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'urllc_auto_pc_2' (14#1) [G:/Chiro/Programs/urllc-demo-pynq/urllc-demo-vivado/urllc-demo-vivado.runs/synth_1/.Xil/Vivado-20872-WIN-544SHHHOI8Q/realtime/urllc_auto_pc_2_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 's00_couplers_imp_A87VUN' (15#1) [g:/Chiro/Programs/urllc-demo-pynq/urllc-demo-vivado/urllc-demo-vivado.gen/sources_1/bd/urllc/synth/urllc.v:2133]
+INFO: [Synth 8-6157] synthesizing module 'urllc_xbar_5' [G:/Chiro/Programs/urllc-demo-pynq/urllc-demo-vivado/urllc-demo-vivado.runs/synth_1/.Xil/Vivado-20872-WIN-544SHHHOI8Q/realtime/urllc_xbar_5_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'urllc_xbar_5' (16#1) [G:/Chiro/Programs/urllc-demo-pynq/urllc-demo-vivado/urllc-demo-vivado.runs/synth_1/.Xil/Vivado-20872-WIN-544SHHHOI8Q/realtime/urllc_xbar_5_stub.v:6]
+WARNING: [Synth 8-689] width (3) of port connection 'm_axi_arprot' does not match port width (6) of module 'urllc_xbar_5' [g:/Chiro/Programs/urllc-demo-pynq/urllc-demo-vivado/urllc-demo-vivado.gen/sources_1/bd/urllc/synth/urllc.v:6617]
+WARNING: [Synth 8-689] width (3) of port connection 'm_axi_awprot' does not match port width (6) of module 'urllc_xbar_5' [g:/Chiro/Programs/urllc-demo-pynq/urllc-demo-vivado/urllc-demo-vivado.gen/sources_1/bd/urllc/synth/urllc.v:6621]
+WARNING: [Synth 8-689] width (4) of port connection 'm_axi_wstrb' does not match port width (8) of module 'urllc_xbar_5' [g:/Chiro/Programs/urllc-demo-pynq/urllc-demo-vivado/urllc-demo-vivado.gen/sources_1/bd/urllc/synth/urllc.v:6633]
+INFO: [Synth 8-6155] done synthesizing module 'urllc_ps7_0_axi_periph_1' (17#1) [g:/Chiro/Programs/urllc-demo-pynq/urllc-demo-vivado/urllc-demo-vivado.gen/sources_1/bd/urllc/synth/urllc.v:6102]
+WARNING: [Synth 8-7071] port 'M00_AXI_araddr' of module 'urllc_ps7_0_axi_periph_1' is unconnected for instance 'ps7_0_axi_periph1' [g:/Chiro/Programs/urllc-demo-pynq/urllc-demo-vivado/urllc-demo-vivado.gen/sources_1/bd/urllc/synth/urllc.v:1923]
+WARNING: [Synth 8-7071] port 'M00_AXI_arprot' of module 'urllc_ps7_0_axi_periph_1' is unconnected for instance 'ps7_0_axi_periph1' [g:/Chiro/Programs/urllc-demo-pynq/urllc-demo-vivado/urllc-demo-vivado.gen/sources_1/bd/urllc/synth/urllc.v:1923]
+WARNING: [Synth 8-7071] port 'M00_AXI_arvalid' of module 'urllc_ps7_0_axi_periph_1' is unconnected for instance 'ps7_0_axi_periph1' [g:/Chiro/Programs/urllc-demo-pynq/urllc-demo-vivado/urllc-demo-vivado.gen/sources_1/bd/urllc/synth/urllc.v:1923]
+WARNING: [Synth 8-7071] port 'M00_AXI_awaddr' of module 'urllc_ps7_0_axi_periph_1' is unconnected for instance 'ps7_0_axi_periph1' [g:/Chiro/Programs/urllc-demo-pynq/urllc-demo-vivado/urllc-demo-vivado.gen/sources_1/bd/urllc/synth/urllc.v:1923]
+WARNING: [Synth 8-7071] port 'M00_AXI_awprot' of module 'urllc_ps7_0_axi_periph_1' is unconnected for instance 'ps7_0_axi_periph1' [g:/Chiro/Programs/urllc-demo-pynq/urllc-demo-vivado/urllc-demo-vivado.gen/sources_1/bd/urllc/synth/urllc.v:1923]
+WARNING: [Synth 8-7071] port 'M00_AXI_awvalid' of module 'urllc_ps7_0_axi_periph_1' is unconnected for instance 'ps7_0_axi_periph1' [g:/Chiro/Programs/urllc-demo-pynq/urllc-demo-vivado/urllc-demo-vivado.gen/sources_1/bd/urllc/synth/urllc.v:1923]
+WARNING: [Synth 8-7071] port 'M00_AXI_bready' of module 'urllc_ps7_0_axi_periph_1' is unconnected for instance 'ps7_0_axi_periph1' [g:/Chiro/Programs/urllc-demo-pynq/urllc-demo-vivado/urllc-demo-vivado.gen/sources_1/bd/urllc/synth/urllc.v:1923]
+WARNING: [Synth 8-7071] port 'M00_AXI_rready' of module 'urllc_ps7_0_axi_periph_1' is unconnected for instance 'ps7_0_axi_periph1' [g:/Chiro/Programs/urllc-demo-pynq/urllc-demo-vivado/urllc-demo-vivado.gen/sources_1/bd/urllc/synth/urllc.v:1923]
+WARNING: [Synth 8-7071] port 'M00_AXI_wdata' of module 'urllc_ps7_0_axi_periph_1' is unconnected for instance 'ps7_0_axi_periph1' [g:/Chiro/Programs/urllc-demo-pynq/urllc-demo-vivado/urllc-demo-vivado.gen/sources_1/bd/urllc/synth/urllc.v:1923]
+WARNING: [Synth 8-7071] port 'M00_AXI_wstrb' of module 'urllc_ps7_0_axi_periph_1' is unconnected for instance 'ps7_0_axi_periph1' [g:/Chiro/Programs/urllc-demo-pynq/urllc-demo-vivado/urllc-demo-vivado.gen/sources_1/bd/urllc/synth/urllc.v:1923]
+WARNING: [Synth 8-7071] port 'M00_AXI_wvalid' of module 'urllc_ps7_0_axi_periph_1' is unconnected for instance 'ps7_0_axi_periph1' [g:/Chiro/Programs/urllc-demo-pynq/urllc-demo-vivado/urllc-demo-vivado.gen/sources_1/bd/urllc/synth/urllc.v:1923]
+WARNING: [Synth 8-7023] instance 'ps7_0_axi_periph1' of module 'urllc_ps7_0_axi_periph_1' has 81 connections declared, but only 70 given [g:/Chiro/Programs/urllc-demo-pynq/urllc-demo-vivado/urllc-demo-vivado.gen/sources_1/bd/urllc/synth/urllc.v:1923]
+INFO: [Synth 8-6157] synthesizing module 'urllc_proc_sys_reset_0_0' [G:/Chiro/Programs/urllc-demo-pynq/urllc-demo-vivado/urllc-demo-vivado.runs/synth_1/.Xil/Vivado-20872-WIN-544SHHHOI8Q/realtime/urllc_proc_sys_reset_0_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'urllc_proc_sys_reset_0_0' (18#1) [G:/Chiro/Programs/urllc-demo-pynq/urllc-demo-vivado/urllc-demo-vivado.runs/synth_1/.Xil/Vivado-20872-WIN-544SHHHOI8Q/realtime/urllc_proc_sys_reset_0_0_stub.v:6]
+WARNING: [Synth 8-7071] port 'mb_reset' of module 'urllc_proc_sys_reset_0_0' is unconnected for instance 'rst_ps7_0_200M' [g:/Chiro/Programs/urllc-demo-pynq/urllc-demo-vivado/urllc-demo-vivado.gen/sources_1/bd/urllc/synth/urllc.v:1994]
+WARNING: [Synth 8-7071] port 'bus_struct_reset' of module 'urllc_proc_sys_reset_0_0' is unconnected for instance 'rst_ps7_0_200M' [g:/Chiro/Programs/urllc-demo-pynq/urllc-demo-vivado/urllc-demo-vivado.gen/sources_1/bd/urllc/synth/urllc.v:1994]
+WARNING: [Synth 8-7071] port 'peripheral_reset' of module 'urllc_proc_sys_reset_0_0' is unconnected for instance 'rst_ps7_0_200M' [g:/Chiro/Programs/urllc-demo-pynq/urllc-demo-vivado/urllc-demo-vivado.gen/sources_1/bd/urllc/synth/urllc.v:1994]
+WARNING: [Synth 8-7071] port 'interconnect_aresetn' of module 'urllc_proc_sys_reset_0_0' is unconnected for instance 'rst_ps7_0_200M' [g:/Chiro/Programs/urllc-demo-pynq/urllc-demo-vivado/urllc-demo-vivado.gen/sources_1/bd/urllc/synth/urllc.v:1994]
+WARNING: [Synth 8-7023] instance 'rst_ps7_0_200M' of module 'urllc_proc_sys_reset_0_0' has 10 connections declared, but only 6 given [g:/Chiro/Programs/urllc-demo-pynq/urllc-demo-vivado/urllc-demo-vivado.gen/sources_1/bd/urllc/synth/urllc.v:1994]
+INFO: [Synth 8-6157] synthesizing module 'urllc_rst_ps7_0_50M_0' [G:/Chiro/Programs/urllc-demo-pynq/urllc-demo-vivado/urllc-demo-vivado.runs/synth_1/.Xil/Vivado-20872-WIN-544SHHHOI8Q/realtime/urllc_rst_ps7_0_50M_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'urllc_rst_ps7_0_50M_0' (19#1) [G:/Chiro/Programs/urllc-demo-pynq/urllc-demo-vivado/urllc-demo-vivado.runs/synth_1/.Xil/Vivado-20872-WIN-544SHHHOI8Q/realtime/urllc_rst_ps7_0_50M_0_stub.v:6]
+WARNING: [Synth 8-7071] port 'mb_reset' of module 'urllc_rst_ps7_0_50M_0' is unconnected for instance 'rst_ps7_0_4M' [g:/Chiro/Programs/urllc-demo-pynq/urllc-demo-vivado/urllc-demo-vivado.gen/sources_1/bd/urllc/synth/urllc.v:2001]
+WARNING: [Synth 8-7071] port 'bus_struct_reset' of module 'urllc_rst_ps7_0_50M_0' is unconnected for instance 'rst_ps7_0_4M' [g:/Chiro/Programs/urllc-demo-pynq/urllc-demo-vivado/urllc-demo-vivado.gen/sources_1/bd/urllc/synth/urllc.v:2001]
+WARNING: [Synth 8-7071] port 'peripheral_reset' of module 'urllc_rst_ps7_0_50M_0' is unconnected for instance 'rst_ps7_0_4M' [g:/Chiro/Programs/urllc-demo-pynq/urllc-demo-vivado/urllc-demo-vivado.gen/sources_1/bd/urllc/synth/urllc.v:2001]
+WARNING: [Synth 8-7071] port 'interconnect_aresetn' of module 'urllc_rst_ps7_0_50M_0' is unconnected for instance 'rst_ps7_0_4M' [g:/Chiro/Programs/urllc-demo-pynq/urllc-demo-vivado/urllc-demo-vivado.gen/sources_1/bd/urllc/synth/urllc.v:2001]
+WARNING: [Synth 8-7023] instance 'rst_ps7_0_4M' of module 'urllc_rst_ps7_0_50M_0' has 10 connections declared, but only 6 given [g:/Chiro/Programs/urllc-demo-pynq/urllc-demo-vivado/urllc-demo-vivado.gen/sources_1/bd/urllc/synth/urllc.v:2001]
+INFO: [Synth 8-6157] synthesizing module 'urllc_s_p_0_0' [G:/Chiro/Programs/urllc-demo-pynq/urllc-demo-vivado/urllc-demo-vivado.runs/synth_1/.Xil/Vivado-20872-WIN-544SHHHOI8Q/realtime/urllc_s_p_0_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'urllc_s_p_0_0' (20#1) [G:/Chiro/Programs/urllc-demo-pynq/urllc-demo-vivado/urllc-demo-vivado.runs/synth_1/.Xil/Vivado-20872-WIN-544SHHHOI8Q/realtime/urllc_s_p_0_0_stub.v:6]
 INFO: [Synth 8-6157] synthesizing module 'urllc_xlconcat_0_1' [g:/Chiro/Programs/urllc-demo-pynq/urllc-demo-vivado/urllc-demo-vivado.gen/sources_1/bd/urllc/ip/urllc_xlconcat_0_1/synth/urllc_xlconcat_0_1.v:57]
 INFO: [Synth 8-6157] synthesizing module 'xlconcat_v2_1_4_xlconcat' [g:/Chiro/Programs/urllc-demo-pynq/urllc-demo-vivado/urllc-demo-vivado.gen/sources_1/bd/urllc/ipshared/4b67/hdl/xlconcat_v2_1_vl_rfs.v:14]
-INFO: [Synth 8-6155] done synthesizing module 'xlconcat_v2_1_4_xlconcat' (22#1) [g:/Chiro/Programs/urllc-demo-pynq/urllc-demo-vivado/urllc-demo-vivado.gen/sources_1/bd/urllc/ipshared/4b67/hdl/xlconcat_v2_1_vl_rfs.v:14]
-INFO: [Synth 8-6155] done synthesizing module 'urllc_xlconcat_0_1' (23#1) [g:/Chiro/Programs/urllc-demo-pynq/urllc-demo-vivado/urllc-demo-vivado.gen/sources_1/bd/urllc/ip/urllc_xlconcat_0_1/synth/urllc_xlconcat_0_1.v:57]
+INFO: [Synth 8-6155] done synthesizing module 'xlconcat_v2_1_4_xlconcat' (21#1) [g:/Chiro/Programs/urllc-demo-pynq/urllc-demo-vivado/urllc-demo-vivado.gen/sources_1/bd/urllc/ipshared/4b67/hdl/xlconcat_v2_1_vl_rfs.v:14]
+INFO: [Synth 8-6155] done synthesizing module 'urllc_xlconcat_0_1' (22#1) [g:/Chiro/Programs/urllc-demo-pynq/urllc-demo-vivado/urllc-demo-vivado.gen/sources_1/bd/urllc/ip/urllc_xlconcat_0_1/synth/urllc_xlconcat_0_1.v:57]
 INFO: [Synth 8-6157] synthesizing module 'urllc_xlconstant_0_2' [g:/Chiro/Programs/urllc-demo-pynq/urllc-demo-vivado/urllc-demo-vivado.gen/sources_1/bd/urllc/ip/urllc_xlconstant_0_2/synth/urllc_xlconstant_0_2.v:57]
 INFO: [Synth 8-6157] synthesizing module 'xlconstant_v1_1_7_xlconstant' [g:/Chiro/Programs/urllc-demo-pynq/urllc-demo-vivado/urllc-demo-vivado.gen/sources_1/bd/urllc/ipshared/fcfc/hdl/xlconstant_v1_1_vl_rfs.v:23]
-INFO: [Synth 8-6155] done synthesizing module 'xlconstant_v1_1_7_xlconstant' (24#1) [g:/Chiro/Programs/urllc-demo-pynq/urllc-demo-vivado/urllc-demo-vivado.gen/sources_1/bd/urllc/ipshared/fcfc/hdl/xlconstant_v1_1_vl_rfs.v:23]
-INFO: [Synth 8-6155] done synthesizing module 'urllc_xlconstant_0_2' (25#1) [g:/Chiro/Programs/urllc-demo-pynq/urllc-demo-vivado/urllc-demo-vivado.gen/sources_1/bd/urllc/ip/urllc_xlconstant_0_2/synth/urllc_xlconstant_0_2.v:57]
+INFO: [Synth 8-6155] done synthesizing module 'xlconstant_v1_1_7_xlconstant' (23#1) [g:/Chiro/Programs/urllc-demo-pynq/urllc-demo-vivado/urllc-demo-vivado.gen/sources_1/bd/urllc/ipshared/fcfc/hdl/xlconstant_v1_1_vl_rfs.v:23]
+INFO: [Synth 8-6155] done synthesizing module 'urllc_xlconstant_0_2' (24#1) [g:/Chiro/Programs/urllc-demo-pynq/urllc-demo-vivado/urllc-demo-vivado.gen/sources_1/bd/urllc/ip/urllc_xlconstant_0_2/synth/urllc_xlconstant_0_2.v:57]
 INFO: [Synth 8-6157] synthesizing module 'urllc_xlconstant_0_1' [g:/Chiro/Programs/urllc-demo-pynq/urllc-demo-vivado/urllc-demo-vivado.gen/sources_1/bd/urllc/ip/urllc_xlconstant_0_1/synth/urllc_xlconstant_0_1.v:57]
 INFO: [Synth 8-6157] synthesizing module 'xlconstant_v1_1_7_xlconstant__parameterized0' [g:/Chiro/Programs/urllc-demo-pynq/urllc-demo-vivado/urllc-demo-vivado.gen/sources_1/bd/urllc/ipshared/fcfc/hdl/xlconstant_v1_1_vl_rfs.v:23]
-INFO: [Synth 8-6155] done synthesizing module 'xlconstant_v1_1_7_xlconstant__parameterized0' (25#1) [g:/Chiro/Programs/urllc-demo-pynq/urllc-demo-vivado/urllc-demo-vivado.gen/sources_1/bd/urllc/ipshared/fcfc/hdl/xlconstant_v1_1_vl_rfs.v:23]
-INFO: [Synth 8-6155] done synthesizing module 'urllc_xlconstant_0_1' (26#1) [g:/Chiro/Programs/urllc-demo-pynq/urllc-demo-vivado/urllc-demo-vivado.gen/sources_1/bd/urllc/ip/urllc_xlconstant_0_1/synth/urllc_xlconstant_0_1.v:57]
+INFO: [Synth 8-6155] done synthesizing module 'xlconstant_v1_1_7_xlconstant__parameterized0' (24#1) [g:/Chiro/Programs/urllc-demo-pynq/urllc-demo-vivado/urllc-demo-vivado.gen/sources_1/bd/urllc/ipshared/fcfc/hdl/xlconstant_v1_1_vl_rfs.v:23]
+INFO: [Synth 8-6155] done synthesizing module 'urllc_xlconstant_0_1' (25#1) [g:/Chiro/Programs/urllc-demo-pynq/urllc-demo-vivado/urllc-demo-vivado.gen/sources_1/bd/urllc/ip/urllc_xlconstant_0_1/synth/urllc_xlconstant_0_1.v:57]
 INFO: [Synth 8-6157] synthesizing module 'urllc_xlconstant_2_0' [g:/Chiro/Programs/urllc-demo-pynq/urllc-demo-vivado/urllc-demo-vivado.gen/sources_1/bd/urllc/ip/urllc_xlconstant_2_0/synth/urllc_xlconstant_2_0.v:57]
-INFO: [Synth 8-6155] done synthesizing module 'urllc_xlconstant_2_0' (27#1) [g:/Chiro/Programs/urllc-demo-pynq/urllc-demo-vivado/urllc-demo-vivado.gen/sources_1/bd/urllc/ip/urllc_xlconstant_2_0/synth/urllc_xlconstant_2_0.v:57]
+INFO: [Synth 8-6155] done synthesizing module 'urllc_xlconstant_2_0' (26#1) [g:/Chiro/Programs/urllc-demo-pynq/urllc-demo-vivado/urllc-demo-vivado.gen/sources_1/bd/urllc/ip/urllc_xlconstant_2_0/synth/urllc_xlconstant_2_0.v:57]
 INFO: [Synth 8-6157] synthesizing module 'urllc_xlslice_0_1' [g:/Chiro/Programs/urllc-demo-pynq/urllc-demo-vivado/urllc-demo-vivado.gen/sources_1/bd/urllc/ip/urllc_xlslice_0_1/synth/urllc_xlslice_0_1.v:57]
 INFO: [Synth 8-6157] synthesizing module 'xlslice_v1_0_2_xlslice' [g:/Chiro/Programs/urllc-demo-pynq/urllc-demo-vivado/urllc-demo-vivado.gen/sources_1/bd/urllc/ipshared/11d0/hdl/xlslice_v1_0_vl_rfs.v:13]
-INFO: [Synth 8-6155] done synthesizing module 'xlslice_v1_0_2_xlslice' (28#1) [g:/Chiro/Programs/urllc-demo-pynq/urllc-demo-vivado/urllc-demo-vivado.gen/sources_1/bd/urllc/ipshared/11d0/hdl/xlslice_v1_0_vl_rfs.v:13]
-INFO: [Synth 8-6155] done synthesizing module 'urllc_xlslice_0_1' (29#1) [g:/Chiro/Programs/urllc-demo-pynq/urllc-demo-vivado/urllc-demo-vivado.gen/sources_1/bd/urllc/ip/urllc_xlslice_0_1/synth/urllc_xlslice_0_1.v:57]
-INFO: [Synth 8-6155] done synthesizing module 'reciever_imp_12N1QB0' (30#1) [g:/Chiro/Programs/urllc-demo-pynq/urllc-demo-vivado/urllc-demo-vivado.gen/sources_1/bd/urllc/synth/urllc.v:1336]
-INFO: [Synth 8-6157] synthesizing module 'sender_imp_1DF97Y2' [g:/Chiro/Programs/urllc-demo-pynq/urllc-demo-vivado/urllc-demo-vivado.gen/sources_1/bd/urllc/synth/urllc.v:3119]
-INFO: [Synth 8-6157] synthesizing module 'urllc_DUCWrapper_0_0' [G:/Chiro/Programs/urllc-demo-pynq/urllc-demo-vivado/urllc-demo-vivado.runs/synth_1/.Xil/Vivado-17172-WIN-544SHHHOI8Q/realtime/urllc_DUCWrapper_0_0_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'urllc_DUCWrapper_0_0' (31#1) [G:/Chiro/Programs/urllc-demo-pynq/urllc-demo-vivado/urllc-demo-vivado.runs/synth_1/.Xil/Vivado-17172-WIN-544SHHHOI8Q/realtime/urllc_DUCWrapper_0_0_stub.v:6]
-INFO: [Synth 8-6157] synthesizing module 'urllc_ad2dma_1_0' [G:/Chiro/Programs/urllc-demo-pynq/urllc-demo-vivado/urllc-demo-vivado.runs/synth_1/.Xil/Vivado-17172-WIN-544SHHHOI8Q/realtime/urllc_ad2dma_1_0_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'urllc_ad2dma_1_0' (32#1) [G:/Chiro/Programs/urllc-demo-pynq/urllc-demo-vivado/urllc-demo-vivado.runs/synth_1/.Xil/Vivado-17172-WIN-544SHHHOI8Q/realtime/urllc_ad2dma_1_0_stub.v:6]
-WARNING: [Synth 8-7071] port 'ad_ce0' of module 'urllc_ad2dma_1_0' is unconnected for instance 'ad2dma_1' [g:/Chiro/Programs/urllc-demo-pynq/urllc-demo-vivado/urllc-demo-vivado.gen/sources_1/bd/urllc/synth/urllc.v:3538]
-WARNING: [Synth 8-7071] port 'da_ce0' of module 'urllc_ad2dma_1_0' is unconnected for instance 'ad2dma_1' [g:/Chiro/Programs/urllc-demo-pynq/urllc-demo-vivado/urllc-demo-vivado.gen/sources_1/bd/urllc/synth/urllc.v:3538]
-WARNING: [Synth 8-7071] port 'da_we0' of module 'urllc_ad2dma_1_0' is unconnected for instance 'ad2dma_1' [g:/Chiro/Programs/urllc-demo-pynq/urllc-demo-vivado/urllc-demo-vivado.gen/sources_1/bd/urllc/synth/urllc.v:3538]
-WARNING: [Synth 8-7071] port 'interrupt' of module 'urllc_ad2dma_1_0' is unconnected for instance 'ad2dma_1' [g:/Chiro/Programs/urllc-demo-pynq/urllc-demo-vivado/urllc-demo-vivado.gen/sources_1/bd/urllc/synth/urllc.v:3538]
-WARNING: [Synth 8-7071] port 'outs_TDEST' of module 'urllc_ad2dma_1_0' is unconnected for instance 'ad2dma_1' [g:/Chiro/Programs/urllc-demo-pynq/urllc-demo-vivado/urllc-demo-vivado.gen/sources_1/bd/urllc/synth/urllc.v:3538]
-WARNING: [Synth 8-7071] port 'outs_TSTRB' of module 'urllc_ad2dma_1_0' is unconnected for instance 'ad2dma_1' [g:/Chiro/Programs/urllc-demo-pynq/urllc-demo-vivado/urllc-demo-vivado.gen/sources_1/bd/urllc/synth/urllc.v:3538]
-WARNING: [Synth 8-7071] port 'outs_TUSER' of module 'urllc_ad2dma_1_0' is unconnected for instance 'ad2dma_1' [g:/Chiro/Programs/urllc-demo-pynq/urllc-demo-vivado/urllc-demo-vivado.gen/sources_1/bd/urllc/synth/urllc.v:3538]
-WARNING: [Synth 8-7071] port 'outs_TID' of module 'urllc_ad2dma_1_0' is unconnected for instance 'ad2dma_1' [g:/Chiro/Programs/urllc-demo-pynq/urllc-demo-vivado/urllc-demo-vivado.gen/sources_1/bd/urllc/synth/urllc.v:3538]
-WARNING: [Synth 8-7071] port 'ad_address0' of module 'urllc_ad2dma_1_0' is unconnected for instance 'ad2dma_1' [g:/Chiro/Programs/urllc-demo-pynq/urllc-demo-vivado/urllc-demo-vivado.gen/sources_1/bd/urllc/synth/urllc.v:3538]
-WARNING: [Synth 8-7071] port 'da_address0' of module 'urllc_ad2dma_1_0' is unconnected for instance 'ad2dma_1' [g:/Chiro/Programs/urllc-demo-pynq/urllc-demo-vivado/urllc-demo-vivado.gen/sources_1/bd/urllc/synth/urllc.v:3538]
-WARNING: [Synth 8-7023] instance 'ad2dma_1' of module 'urllc_ad2dma_1_0' has 45 connections declared, but only 35 given [g:/Chiro/Programs/urllc-demo-pynq/urllc-demo-vivado/urllc-demo-vivado.gen/sources_1/bd/urllc/synth/urllc.v:3538]
-INFO: [Synth 8-6157] synthesizing module 'urllc_axi_dma_0_0' [G:/Chiro/Programs/urllc-demo-pynq/urllc-demo-vivado/urllc-demo-vivado.runs/synth_1/.Xil/Vivado-17172-WIN-544SHHHOI8Q/realtime/urllc_axi_dma_0_0_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'urllc_axi_dma_0_0' (33#1) [G:/Chiro/Programs/urllc-demo-pynq/urllc-demo-vivado/urllc-demo-vivado.runs/synth_1/.Xil/Vivado-17172-WIN-544SHHHOI8Q/realtime/urllc_axi_dma_0_0_stub.v:6]
-WARNING: [Synth 8-7071] port 'mm2s_prmry_reset_out_n' of module 'urllc_axi_dma_0_0' is unconnected for instance 'axi_dma_0' [g:/Chiro/Programs/urllc-demo-pynq/urllc-demo-vivado/urllc-demo-vivado.gen/sources_1/bd/urllc/synth/urllc.v:3574]
-WARNING: [Synth 8-7071] port 's2mm_prmry_reset_out_n' of module 'urllc_axi_dma_0_0' is unconnected for instance 'axi_dma_0' [g:/Chiro/Programs/urllc-demo-pynq/urllc-demo-vivado/urllc-demo-vivado.gen/sources_1/bd/urllc/synth/urllc.v:3574]
-WARNING: [Synth 8-7071] port 'mm2s_introut' of module 'urllc_axi_dma_0_0' is unconnected for instance 'axi_dma_0' [g:/Chiro/Programs/urllc-demo-pynq/urllc-demo-vivado/urllc-demo-vivado.gen/sources_1/bd/urllc/synth/urllc.v:3574]
-WARNING: [Synth 8-7071] port 's2mm_introut' of module 'urllc_axi_dma_0_0' is unconnected for instance 'axi_dma_0' [g:/Chiro/Programs/urllc-demo-pynq/urllc-demo-vivado/urllc-demo-vivado.gen/sources_1/bd/urllc/synth/urllc.v:3574]
-WARNING: [Synth 8-7071] port 'axi_dma_tstvec' of module 'urllc_axi_dma_0_0' is unconnected for instance 'axi_dma_0' [g:/Chiro/Programs/urllc-demo-pynq/urllc-demo-vivado/urllc-demo-vivado.gen/sources_1/bd/urllc/synth/urllc.v:3574]
-WARNING: [Synth 8-7023] instance 'axi_dma_0' of module 'urllc_axi_dma_0_0' has 64 connections declared, but only 59 given [g:/Chiro/Programs/urllc-demo-pynq/urllc-demo-vivado/urllc-demo-vivado.gen/sources_1/bd/urllc/synth/urllc.v:3574]
-INFO: [Synth 8-6157] synthesizing module 'urllc_axi_mem_intercon_0' [g:/Chiro/Programs/urllc-demo-pynq/urllc-demo-vivado/urllc-demo-vivado.gen/sources_1/bd/urllc/synth/urllc.v:4434]
+INFO: [Synth 8-6155] done synthesizing module 'xlslice_v1_0_2_xlslice' (27#1) [g:/Chiro/Programs/urllc-demo-pynq/urllc-demo-vivado/urllc-demo-vivado.gen/sources_1/bd/urllc/ipshared/11d0/hdl/xlslice_v1_0_vl_rfs.v:13]
+INFO: [Synth 8-6155] done synthesizing module 'urllc_xlslice_0_1' (28#1) [g:/Chiro/Programs/urllc-demo-pynq/urllc-demo-vivado/urllc-demo-vivado.gen/sources_1/bd/urllc/ip/urllc_xlslice_0_1/synth/urllc_xlslice_0_1.v:57]
+INFO: [Synth 8-6155] done synthesizing module 'reciever_imp_12N1QB0' (29#1) [g:/Chiro/Programs/urllc-demo-pynq/urllc-demo-vivado/urllc-demo-vivado.gen/sources_1/bd/urllc/synth/urllc.v:1364]
+INFO: [Synth 8-6157] synthesizing module 'sender_imp_1DF97Y2' [g:/Chiro/Programs/urllc-demo-pynq/urllc-demo-vivado/urllc-demo-vivado.gen/sources_1/bd/urllc/synth/urllc.v:3097]
+INFO: [Synth 8-6157] synthesizing module 'urllc_DUCWrapper_0_0' [G:/Chiro/Programs/urllc-demo-pynq/urllc-demo-vivado/urllc-demo-vivado.runs/synth_1/.Xil/Vivado-20872-WIN-544SHHHOI8Q/realtime/urllc_DUCWrapper_0_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'urllc_DUCWrapper_0_0' (30#1) [G:/Chiro/Programs/urllc-demo-pynq/urllc-demo-vivado/urllc-demo-vivado.runs/synth_1/.Xil/Vivado-20872-WIN-544SHHHOI8Q/realtime/urllc_DUCWrapper_0_0_stub.v:6]
+INFO: [Synth 8-6157] synthesizing module 'urllc_ad2dma_rtl_0_0' [G:/Chiro/Programs/urllc-demo-pynq/urllc-demo-vivado/urllc-demo-vivado.runs/synth_1/.Xil/Vivado-20872-WIN-544SHHHOI8Q/realtime/urllc_ad2dma_rtl_0_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'urllc_ad2dma_rtl_0_0' (31#1) [G:/Chiro/Programs/urllc-demo-pynq/urllc-demo-vivado/urllc-demo-vivado.runs/synth_1/.Xil/Vivado-20872-WIN-544SHHHOI8Q/realtime/urllc_ad2dma_rtl_0_0_stub.v:6]
+INFO: [Synth 8-6157] synthesizing module 'urllc_axi_dma_0_0' [G:/Chiro/Programs/urllc-demo-pynq/urllc-demo-vivado/urllc-demo-vivado.runs/synth_1/.Xil/Vivado-20872-WIN-544SHHHOI8Q/realtime/urllc_axi_dma_0_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'urllc_axi_dma_0_0' (32#1) [G:/Chiro/Programs/urllc-demo-pynq/urllc-demo-vivado/urllc-demo-vivado.runs/synth_1/.Xil/Vivado-20872-WIN-544SHHHOI8Q/realtime/urllc_axi_dma_0_0_stub.v:6]
+WARNING: [Synth 8-7071] port 'mm2s_prmry_reset_out_n' of module 'urllc_axi_dma_0_0' is unconnected for instance 'axi_dma_0' [g:/Chiro/Programs/urllc-demo-pynq/urllc-demo-vivado/urllc-demo-vivado.gen/sources_1/bd/urllc/synth/urllc.v:3514]
+WARNING: [Synth 8-7071] port 's2mm_prmry_reset_out_n' of module 'urllc_axi_dma_0_0' is unconnected for instance 'axi_dma_0' [g:/Chiro/Programs/urllc-demo-pynq/urllc-demo-vivado/urllc-demo-vivado.gen/sources_1/bd/urllc/synth/urllc.v:3514]
+WARNING: [Synth 8-7071] port 'mm2s_introut' of module 'urllc_axi_dma_0_0' is unconnected for instance 'axi_dma_0' [g:/Chiro/Programs/urllc-demo-pynq/urllc-demo-vivado/urllc-demo-vivado.gen/sources_1/bd/urllc/synth/urllc.v:3514]
+WARNING: [Synth 8-7071] port 's2mm_introut' of module 'urllc_axi_dma_0_0' is unconnected for instance 'axi_dma_0' [g:/Chiro/Programs/urllc-demo-pynq/urllc-demo-vivado/urllc-demo-vivado.gen/sources_1/bd/urllc/synth/urllc.v:3514]
+WARNING: [Synth 8-7071] port 'axi_dma_tstvec' of module 'urllc_axi_dma_0_0' is unconnected for instance 'axi_dma_0' [g:/Chiro/Programs/urllc-demo-pynq/urllc-demo-vivado/urllc-demo-vivado.gen/sources_1/bd/urllc/synth/urllc.v:3514]
+WARNING: [Synth 8-7023] instance 'axi_dma_0' of module 'urllc_axi_dma_0_0' has 64 connections declared, but only 59 given [g:/Chiro/Programs/urllc-demo-pynq/urllc-demo-vivado/urllc-demo-vivado.gen/sources_1/bd/urllc/synth/urllc.v:3514]
+INFO: [Synth 8-6157] synthesizing module 'urllc_axi_mem_intercon_0' [g:/Chiro/Programs/urllc-demo-pynq/urllc-demo-vivado/urllc-demo-vivado.gen/sources_1/bd/urllc/synth/urllc.v:4364]
 INFO: [Synth 8-6157] synthesizing module 'm00_couplers_imp_1KQ53OP' [g:/Chiro/Programs/urllc-demo-pynq/urllc-demo-vivado/urllc-demo-vivado.gen/sources_1/bd/urllc/synth/urllc.v:12]
-INFO: [Synth 8-6157] synthesizing module 'urllc_auto_pc_1' [G:/Chiro/Programs/urllc-demo-pynq/urllc-demo-vivado/urllc-demo-vivado.runs/synth_1/.Xil/Vivado-17172-WIN-544SHHHOI8Q/realtime/urllc_auto_pc_1_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'urllc_auto_pc_1' (34#1) [G:/Chiro/Programs/urllc-demo-pynq/urllc-demo-vivado/urllc-demo-vivado.runs/synth_1/.Xil/Vivado-17172-WIN-544SHHHOI8Q/realtime/urllc_auto_pc_1_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'm00_couplers_imp_1KQ53OP' (35#1) [g:/Chiro/Programs/urllc-demo-pynq/urllc-demo-vivado/urllc-demo-vivado.gen/sources_1/bd/urllc/synth/urllc.v:12]
-INFO: [Synth 8-6157] synthesizing module 's00_couplers_imp_16QG3YA' [g:/Chiro/Programs/urllc-demo-pynq/urllc-demo-vivado/urllc-demo-vivado.gen/sources_1/bd/urllc/synth/urllc.v:2051]
-INFO: [Synth 8-6155] done synthesizing module 's00_couplers_imp_16QG3YA' (36#1) [g:/Chiro/Programs/urllc-demo-pynq/urllc-demo-vivado/urllc-demo-vivado.gen/sources_1/bd/urllc/synth/urllc.v:2051]
-INFO: [Synth 8-6157] synthesizing module 's01_couplers_imp_9ZKIJU' [g:/Chiro/Programs/urllc-demo-pynq/urllc-demo-vivado/urllc-demo-vivado.gen/sources_1/bd/urllc/synth/urllc.v:2994]
-INFO: [Synth 8-6155] done synthesizing module 's01_couplers_imp_9ZKIJU' (37#1) [g:/Chiro/Programs/urllc-demo-pynq/urllc-demo-vivado/urllc-demo-vivado.gen/sources_1/bd/urllc/synth/urllc.v:2994]
-INFO: [Synth 8-6157] synthesizing module 'urllc_xbar_2' [G:/Chiro/Programs/urllc-demo-pynq/urllc-demo-vivado/urllc-demo-vivado.runs/synth_1/.Xil/Vivado-17172-WIN-544SHHHOI8Q/realtime/urllc_xbar_2_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'urllc_xbar_2' (38#1) [G:/Chiro/Programs/urllc-demo-pynq/urllc-demo-vivado/urllc-demo-vivado.runs/synth_1/.Xil/Vivado-17172-WIN-544SHHHOI8Q/realtime/urllc_xbar_2_stub.v:6]
-WARNING: [Synth 8-689] width (1) of port connection 's_axi_arready' does not match port width (2) of module 'urllc_xbar_2' [g:/Chiro/Programs/urllc-demo-pynq/urllc-demo-vivado/urllc-demo-vivado.gen/sources_1/bd/urllc/synth/urllc.v:4997]
-WARNING: [Synth 8-689] width (32) of port connection 's_axi_rdata' does not match port width (64) of module 'urllc_xbar_2' [g:/Chiro/Programs/urllc-demo-pynq/urllc-demo-vivado/urllc-demo-vivado.gen/sources_1/bd/urllc/synth/urllc.v:5014]
-WARNING: [Synth 8-689] width (1) of port connection 's_axi_rlast' does not match port width (2) of module 'urllc_xbar_2' [g:/Chiro/Programs/urllc-demo-pynq/urllc-demo-vivado/urllc-demo-vivado.gen/sources_1/bd/urllc/synth/urllc.v:5015]
-WARNING: [Synth 8-689] width (2) of port connection 's_axi_rresp' does not match port width (4) of module 'urllc_xbar_2' [g:/Chiro/Programs/urllc-demo-pynq/urllc-demo-vivado/urllc-demo-vivado.gen/sources_1/bd/urllc/synth/urllc.v:5017]
-WARNING: [Synth 8-689] width (1) of port connection 's_axi_rvalid' does not match port width (2) of module 'urllc_xbar_2' [g:/Chiro/Programs/urllc-demo-pynq/urllc-demo-vivado/urllc-demo-vivado.gen/sources_1/bd/urllc/synth/urllc.v:5018]
-WARNING: [Synth 8-7071] port 's_axi_bid' of module 'urllc_xbar_2' is unconnected for instance 'xbar' [g:/Chiro/Programs/urllc-demo-pynq/urllc-demo-vivado/urllc-demo-vivado.gen/sources_1/bd/urllc/synth/urllc.v:4947]
-WARNING: [Synth 8-7071] port 's_axi_rid' of module 'urllc_xbar_2' is unconnected for instance 'xbar' [g:/Chiro/Programs/urllc-demo-pynq/urllc-demo-vivado/urllc-demo-vivado.gen/sources_1/bd/urllc/synth/urllc.v:4947]
-WARNING: [Synth 8-7023] instance 'xbar' of module 'urllc_xbar_2' has 78 connections declared, but only 76 given [g:/Chiro/Programs/urllc-demo-pynq/urllc-demo-vivado/urllc-demo-vivado.gen/sources_1/bd/urllc/synth/urllc.v:4947]
-INFO: [Synth 8-6155] done synthesizing module 'urllc_axi_mem_intercon_0' (39#1) [g:/Chiro/Programs/urllc-demo-pynq/urllc-demo-vivado/urllc-demo-vivado.gen/sources_1/bd/urllc/synth/urllc.v:4434]
-WARNING: [Synth 8-4446] all outputs are unconnected for this instance and logic may be removed [g:/Chiro/Programs/urllc-demo-pynq/urllc-demo-vivado/urllc-demo-vivado.gen/sources_1/bd/urllc/synth/urllc.v:3710]
-INFO: [Synth 8-6157] synthesizing module 'urllc_div8_0_0' [G:/Chiro/Programs/urllc-demo-pynq/urllc-demo-vivado/urllc-demo-vivado.runs/synth_1/.Xil/Vivado-17172-WIN-544SHHHOI8Q/realtime/urllc_div8_0_0_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'urllc_div8_0_0' (40#1) [G:/Chiro/Programs/urllc-demo-pynq/urllc-demo-vivado/urllc-demo-vivado.runs/synth_1/.Xil/Vivado-17172-WIN-544SHHHOI8Q/realtime/urllc_div8_0_0_stub.v:6]
-WARNING: [Synth 8-7071] port 'clk_out' of module 'urllc_div8_0_0' is unconnected for instance 'div8_0' [g:/Chiro/Programs/urllc-demo-pynq/urllc-demo-vivado/urllc-demo-vivado.gen/sources_1/bd/urllc/synth/urllc.v:3710]
-WARNING: [Synth 8-7023] instance 'div8_0' of module 'urllc_div8_0_0' has 3 connections declared, but only 2 given [g:/Chiro/Programs/urllc-demo-pynq/urllc-demo-vivado/urllc-demo-vivado.gen/sources_1/bd/urllc/synth/urllc.v:3710]
-INFO: [Synth 8-6157] synthesizing module 'urllc_p_s_0_1' [G:/Chiro/Programs/urllc-demo-pynq/urllc-demo-vivado/urllc-demo-vivado.runs/synth_1/.Xil/Vivado-17172-WIN-544SHHHOI8Q/realtime/urllc_p_s_0_1_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'urllc_p_s_0_1' (41#1) [G:/Chiro/Programs/urllc-demo-pynq/urllc-demo-vivado/urllc-demo-vivado.runs/synth_1/.Xil/Vivado-17172-WIN-544SHHHOI8Q/realtime/urllc_p_s_0_1_stub.v:6]
-INFO: [Synth 8-6157] synthesizing module 'urllc_ps7_0_axi_periph_0' [g:/Chiro/Programs/urllc-demo-pynq/urllc-demo-vivado/urllc-demo-vivado.gen/sources_1/bd/urllc/synth/urllc.v:5618]
+INFO: [Synth 8-6157] synthesizing module 'urllc_auto_pc_1' [G:/Chiro/Programs/urllc-demo-pynq/urllc-demo-vivado/urllc-demo-vivado.runs/synth_1/.Xil/Vivado-20872-WIN-544SHHHOI8Q/realtime/urllc_auto_pc_1_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'urllc_auto_pc_1' (33#1) [G:/Chiro/Programs/urllc-demo-pynq/urllc-demo-vivado/urllc-demo-vivado.runs/synth_1/.Xil/Vivado-20872-WIN-544SHHHOI8Q/realtime/urllc_auto_pc_1_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'm00_couplers_imp_1KQ53OP' (34#1) [g:/Chiro/Programs/urllc-demo-pynq/urllc-demo-vivado/urllc-demo-vivado.gen/sources_1/bd/urllc/synth/urllc.v:12]
+INFO: [Synth 8-6157] synthesizing module 's00_couplers_imp_16QG3YA' [g:/Chiro/Programs/urllc-demo-pynq/urllc-demo-vivado/urllc-demo-vivado.gen/sources_1/bd/urllc/synth/urllc.v:2029]
+INFO: [Synth 8-6155] done synthesizing module 's00_couplers_imp_16QG3YA' (35#1) [g:/Chiro/Programs/urllc-demo-pynq/urllc-demo-vivado/urllc-demo-vivado.gen/sources_1/bd/urllc/synth/urllc.v:2029]
+INFO: [Synth 8-6157] synthesizing module 's01_couplers_imp_9ZKIJU' [g:/Chiro/Programs/urllc-demo-pynq/urllc-demo-vivado/urllc-demo-vivado.gen/sources_1/bd/urllc/synth/urllc.v:2972]
+INFO: [Synth 8-6155] done synthesizing module 's01_couplers_imp_9ZKIJU' (36#1) [g:/Chiro/Programs/urllc-demo-pynq/urllc-demo-vivado/urllc-demo-vivado.gen/sources_1/bd/urllc/synth/urllc.v:2972]
+INFO: [Synth 8-6157] synthesizing module 'urllc_xbar_2' [G:/Chiro/Programs/urllc-demo-pynq/urllc-demo-vivado/urllc-demo-vivado.runs/synth_1/.Xil/Vivado-20872-WIN-544SHHHOI8Q/realtime/urllc_xbar_2_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'urllc_xbar_2' (37#1) [G:/Chiro/Programs/urllc-demo-pynq/urllc-demo-vivado/urllc-demo-vivado.runs/synth_1/.Xil/Vivado-20872-WIN-544SHHHOI8Q/realtime/urllc_xbar_2_stub.v:6]
+WARNING: [Synth 8-689] width (1) of port connection 's_axi_arready' does not match port width (2) of module 'urllc_xbar_2' [g:/Chiro/Programs/urllc-demo-pynq/urllc-demo-vivado/urllc-demo-vivado.gen/sources_1/bd/urllc/synth/urllc.v:4927]
+WARNING: [Synth 8-689] width (32) of port connection 's_axi_rdata' does not match port width (64) of module 'urllc_xbar_2' [g:/Chiro/Programs/urllc-demo-pynq/urllc-demo-vivado/urllc-demo-vivado.gen/sources_1/bd/urllc/synth/urllc.v:4944]
+WARNING: [Synth 8-689] width (1) of port connection 's_axi_rlast' does not match port width (2) of module 'urllc_xbar_2' [g:/Chiro/Programs/urllc-demo-pynq/urllc-demo-vivado/urllc-demo-vivado.gen/sources_1/bd/urllc/synth/urllc.v:4945]
+WARNING: [Synth 8-689] width (2) of port connection 's_axi_rresp' does not match port width (4) of module 'urllc_xbar_2' [g:/Chiro/Programs/urllc-demo-pynq/urllc-demo-vivado/urllc-demo-vivado.gen/sources_1/bd/urllc/synth/urllc.v:4947]
+WARNING: [Synth 8-689] width (1) of port connection 's_axi_rvalid' does not match port width (2) of module 'urllc_xbar_2' [g:/Chiro/Programs/urllc-demo-pynq/urllc-demo-vivado/urllc-demo-vivado.gen/sources_1/bd/urllc/synth/urllc.v:4948]
+WARNING: [Synth 8-7071] port 's_axi_bid' of module 'urllc_xbar_2' is unconnected for instance 'xbar' [g:/Chiro/Programs/urllc-demo-pynq/urllc-demo-vivado/urllc-demo-vivado.gen/sources_1/bd/urllc/synth/urllc.v:4877]
+WARNING: [Synth 8-7071] port 's_axi_rid' of module 'urllc_xbar_2' is unconnected for instance 'xbar' [g:/Chiro/Programs/urllc-demo-pynq/urllc-demo-vivado/urllc-demo-vivado.gen/sources_1/bd/urllc/synth/urllc.v:4877]
+WARNING: [Synth 8-7023] instance 'xbar' of module 'urllc_xbar_2' has 78 connections declared, but only 76 given [g:/Chiro/Programs/urllc-demo-pynq/urllc-demo-vivado/urllc-demo-vivado.gen/sources_1/bd/urllc/synth/urllc.v:4877]
+INFO: [Synth 8-6155] done synthesizing module 'urllc_axi_mem_intercon_0' (38#1) [g:/Chiro/Programs/urllc-demo-pynq/urllc-demo-vivado/urllc-demo-vivado.gen/sources_1/bd/urllc/synth/urllc.v:4364]
+INFO: [Synth 8-6157] synthesizing module 'urllc_div_n_0_0' [G:/Chiro/Programs/urllc-demo-pynq/urllc-demo-vivado/urllc-demo-vivado.runs/synth_1/.Xil/Vivado-20872-WIN-544SHHHOI8Q/realtime/urllc_div_n_0_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'urllc_div_n_0_0' (39#1) [G:/Chiro/Programs/urllc-demo-pynq/urllc-demo-vivado/urllc-demo-vivado.runs/synth_1/.Xil/Vivado-20872-WIN-544SHHHOI8Q/realtime/urllc_div_n_0_0_stub.v:6]
+WARNING: [Synth 8-7071] port 'clk_div2' of module 'urllc_div_n_0_0' is unconnected for instance 'div_n_0' [g:/Chiro/Programs/urllc-demo-pynq/urllc-demo-vivado/urllc-demo-vivado.gen/sources_1/bd/urllc/synth/urllc.v:3650]
+WARNING: [Synth 8-7071] port 'clk_div4' of module 'urllc_div_n_0_0' is unconnected for instance 'div_n_0' [g:/Chiro/Programs/urllc-demo-pynq/urllc-demo-vivado/urllc-demo-vivado.gen/sources_1/bd/urllc/synth/urllc.v:3650]
+WARNING: [Synth 8-7023] instance 'div_n_0' of module 'urllc_div_n_0_0' has 5 connections declared, but only 3 given [g:/Chiro/Programs/urllc-demo-pynq/urllc-demo-vivado/urllc-demo-vivado.gen/sources_1/bd/urllc/synth/urllc.v:3650]
+INFO: [Synth 8-6157] synthesizing module 'urllc_p_s_0_1' [G:/Chiro/Programs/urllc-demo-pynq/urllc-demo-vivado/urllc-demo-vivado.runs/synth_1/.Xil/Vivado-20872-WIN-544SHHHOI8Q/realtime/urllc_p_s_0_1_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'urllc_p_s_0_1' (40#1) [G:/Chiro/Programs/urllc-demo-pynq/urllc-demo-vivado/urllc-demo-vivado.runs/synth_1/.Xil/Vivado-20872-WIN-544SHHHOI8Q/realtime/urllc_p_s_0_1_stub.v:6]
+INFO: [Synth 8-6157] synthesizing module 'urllc_ps7_0_axi_periph_0' [g:/Chiro/Programs/urllc-demo-pynq/urllc-demo-vivado/urllc-demo-vivado.gen/sources_1/bd/urllc/synth/urllc.v:5548]
 INFO: [Synth 8-6157] synthesizing module 'm00_couplers_imp_7ZTTSV' [g:/Chiro/Programs/urllc-demo-pynq/urllc-demo-vivado/urllc-demo-vivado.gen/sources_1/bd/urllc/synth/urllc.v:417]
-INFO: [Synth 8-6155] done synthesizing module 'm00_couplers_imp_7ZTTSV' (42#1) [g:/Chiro/Programs/urllc-demo-pynq/urllc-demo-vivado/urllc-demo-vivado.gen/sources_1/bd/urllc/synth/urllc.v:417]
-INFO: [Synth 8-6157] synthesizing module 'm01_couplers_imp_19TTXPZ' [g:/Chiro/Programs/urllc-demo-pynq/urllc-demo-vivado/urllc-demo-vivado.gen/sources_1/bd/urllc/synth/urllc.v:1086]
-INFO: [Synth 8-6155] done synthesizing module 'm01_couplers_imp_19TTXPZ' (43#1) [g:/Chiro/Programs/urllc-demo-pynq/urllc-demo-vivado/urllc-demo-vivado.gen/sources_1/bd/urllc/synth/urllc.v:1086]
-INFO: [Synth 8-6157] synthesizing module 's00_couplers_imp_KPMX9W' [g:/Chiro/Programs/urllc-demo-pynq/urllc-demo-vivado/urllc-demo-vivado.gen/sources_1/bd/urllc/synth/urllc.v:2460]
-INFO: [Synth 8-6157] synthesizing module 'urllc_auto_pc_0' [G:/Chiro/Programs/urllc-demo-pynq/urllc-demo-vivado/urllc-demo-vivado.runs/synth_1/.Xil/Vivado-17172-WIN-544SHHHOI8Q/realtime/urllc_auto_pc_0_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'urllc_auto_pc_0' (44#1) [G:/Chiro/Programs/urllc-demo-pynq/urllc-demo-vivado/urllc-demo-vivado.runs/synth_1/.Xil/Vivado-17172-WIN-544SHHHOI8Q/realtime/urllc_auto_pc_0_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 's00_couplers_imp_KPMX9W' (45#1) [g:/Chiro/Programs/urllc-demo-pynq/urllc-demo-vivado/urllc-demo-vivado.gen/sources_1/bd/urllc/synth/urllc.v:2460]
-INFO: [Synth 8-6157] synthesizing module 'urllc_xbar_3' [G:/Chiro/Programs/urllc-demo-pynq/urllc-demo-vivado/urllc-demo-vivado.runs/synth_1/.Xil/Vivado-17172-WIN-544SHHHOI8Q/realtime/urllc_xbar_3_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'urllc_xbar_3' (46#1) [G:/Chiro/Programs/urllc-demo-pynq/urllc-demo-vivado/urllc-demo-vivado.runs/synth_1/.Xil/Vivado-17172-WIN-544SHHHOI8Q/realtime/urllc_xbar_3_stub.v:6]
-WARNING: [Synth 8-689] width (4) of port connection 'm_axi_wstrb' does not match port width (8) of module 'urllc_xbar_3' [g:/Chiro/Programs/urllc-demo-pynq/urllc-demo-vivado/urllc-demo-vivado.gen/sources_1/bd/urllc/synth/urllc.v:6133]
-WARNING: [Synth 8-7071] port 'm_axi_awprot' of module 'urllc_xbar_3' is unconnected for instance 'xbar' [g:/Chiro/Programs/urllc-demo-pynq/urllc-demo-vivado/urllc-demo-vivado.gen/sources_1/bd/urllc/synth/urllc.v:6115]
-WARNING: [Synth 8-7071] port 'm_axi_arprot' of module 'urllc_xbar_3' is unconnected for instance 'xbar' [g:/Chiro/Programs/urllc-demo-pynq/urllc-demo-vivado/urllc-demo-vivado.gen/sources_1/bd/urllc/synth/urllc.v:6115]
-WARNING: [Synth 8-7023] instance 'xbar' of module 'urllc_xbar_3' has 40 connections declared, but only 38 given [g:/Chiro/Programs/urllc-demo-pynq/urllc-demo-vivado/urllc-demo-vivado.gen/sources_1/bd/urllc/synth/urllc.v:6115]
-INFO: [Synth 8-6155] done synthesizing module 'urllc_ps7_0_axi_periph_0' (47#1) [g:/Chiro/Programs/urllc-demo-pynq/urllc-demo-vivado/urllc-demo-vivado.gen/sources_1/bd/urllc/synth/urllc.v:5618]
-INFO: [Synth 8-6157] synthesizing module 'urllc_rst_ps7_0_60M_0' [G:/Chiro/Programs/urllc-demo-pynq/urllc-demo-vivado/urllc-demo-vivado.runs/synth_1/.Xil/Vivado-17172-WIN-544SHHHOI8Q/realtime/urllc_rst_ps7_0_60M_0_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'urllc_rst_ps7_0_60M_0' (48#1) [G:/Chiro/Programs/urllc-demo-pynq/urllc-demo-vivado/urllc-demo-vivado.runs/synth_1/.Xil/Vivado-17172-WIN-544SHHHOI8Q/realtime/urllc_rst_ps7_0_60M_0_stub.v:6]
-WARNING: [Synth 8-7071] port 'mb_reset' of module 'urllc_rst_ps7_0_60M_0' is unconnected for instance 'rst_ps7_0_120M' [g:/Chiro/Programs/urllc-demo-pynq/urllc-demo-vivado/urllc-demo-vivado.gen/sources_1/bd/urllc/synth/urllc.v:3799]
-WARNING: [Synth 8-7071] port 'bus_struct_reset' of module 'urllc_rst_ps7_0_60M_0' is unconnected for instance 'rst_ps7_0_120M' [g:/Chiro/Programs/urllc-demo-pynq/urllc-demo-vivado/urllc-demo-vivado.gen/sources_1/bd/urllc/synth/urllc.v:3799]
-WARNING: [Synth 8-7071] port 'peripheral_reset' of module 'urllc_rst_ps7_0_60M_0' is unconnected for instance 'rst_ps7_0_120M' [g:/Chiro/Programs/urllc-demo-pynq/urllc-demo-vivado/urllc-demo-vivado.gen/sources_1/bd/urllc/synth/urllc.v:3799]
-WARNING: [Synth 8-7071] port 'interconnect_aresetn' of module 'urllc_rst_ps7_0_60M_0' is unconnected for instance 'rst_ps7_0_120M' [g:/Chiro/Programs/urllc-demo-pynq/urllc-demo-vivado/urllc-demo-vivado.gen/sources_1/bd/urllc/synth/urllc.v:3799]
-WARNING: [Synth 8-7023] instance 'rst_ps7_0_120M' of module 'urllc_rst_ps7_0_60M_0' has 10 connections declared, but only 6 given [g:/Chiro/Programs/urllc-demo-pynq/urllc-demo-vivado/urllc-demo-vivado.gen/sources_1/bd/urllc/synth/urllc.v:3799]
-INFO: [Synth 8-6157] synthesizing module 'urllc_rst_ps7_0_4M_0' [G:/Chiro/Programs/urllc-demo-pynq/urllc-demo-vivado/urllc-demo-vivado.runs/synth_1/.Xil/Vivado-17172-WIN-544SHHHOI8Q/realtime/urllc_rst_ps7_0_4M_0_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'urllc_rst_ps7_0_4M_0' (49#1) [G:/Chiro/Programs/urllc-demo-pynq/urllc-demo-vivado/urllc-demo-vivado.runs/synth_1/.Xil/Vivado-17172-WIN-544SHHHOI8Q/realtime/urllc_rst_ps7_0_4M_0_stub.v:6]
-WARNING: [Synth 8-7071] port 'mb_reset' of module 'urllc_rst_ps7_0_4M_0' is unconnected for instance 'rst_ps7_0_4M' [g:/Chiro/Programs/urllc-demo-pynq/urllc-demo-vivado/urllc-demo-vivado.gen/sources_1/bd/urllc/synth/urllc.v:3806]
-WARNING: [Synth 8-7071] port 'bus_struct_reset' of module 'urllc_rst_ps7_0_4M_0' is unconnected for instance 'rst_ps7_0_4M' [g:/Chiro/Programs/urllc-demo-pynq/urllc-demo-vivado/urllc-demo-vivado.gen/sources_1/bd/urllc/synth/urllc.v:3806]
-WARNING: [Synth 8-7071] port 'peripheral_reset' of module 'urllc_rst_ps7_0_4M_0' is unconnected for instance 'rst_ps7_0_4M' [g:/Chiro/Programs/urllc-demo-pynq/urllc-demo-vivado/urllc-demo-vivado.gen/sources_1/bd/urllc/synth/urllc.v:3806]
-WARNING: [Synth 8-7071] port 'interconnect_aresetn' of module 'urllc_rst_ps7_0_4M_0' is unconnected for instance 'rst_ps7_0_4M' [g:/Chiro/Programs/urllc-demo-pynq/urllc-demo-vivado/urllc-demo-vivado.gen/sources_1/bd/urllc/synth/urllc.v:3806]
-WARNING: [Synth 8-7023] instance 'rst_ps7_0_4M' of module 'urllc_rst_ps7_0_4M_0' has 10 connections declared, but only 6 given [g:/Chiro/Programs/urllc-demo-pynq/urllc-demo-vivado/urllc-demo-vivado.gen/sources_1/bd/urllc/synth/urllc.v:3806]
+INFO: [Synth 8-6155] done synthesizing module 'm00_couplers_imp_7ZTTSV' (41#1) [g:/Chiro/Programs/urllc-demo-pynq/urllc-demo-vivado/urllc-demo-vivado.gen/sources_1/bd/urllc/synth/urllc.v:417]
+INFO: [Synth 8-6157] synthesizing module 'm01_couplers_imp_19TTXPZ' [g:/Chiro/Programs/urllc-demo-pynq/urllc-demo-vivado/urllc-demo-vivado.gen/sources_1/bd/urllc/synth/urllc.v:1114]
+INFO: [Synth 8-6155] done synthesizing module 'm01_couplers_imp_19TTXPZ' (42#1) [g:/Chiro/Programs/urllc-demo-pynq/urllc-demo-vivado/urllc-demo-vivado.gen/sources_1/bd/urllc/synth/urllc.v:1114]
+INFO: [Synth 8-6157] synthesizing module 's00_couplers_imp_KPMX9W' [g:/Chiro/Programs/urllc-demo-pynq/urllc-demo-vivado/urllc-demo-vivado.gen/sources_1/bd/urllc/synth/urllc.v:2438]
+INFO: [Synth 8-6157] synthesizing module 'urllc_auto_pc_0' [G:/Chiro/Programs/urllc-demo-pynq/urllc-demo-vivado/urllc-demo-vivado.runs/synth_1/.Xil/Vivado-20872-WIN-544SHHHOI8Q/realtime/urllc_auto_pc_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'urllc_auto_pc_0' (43#1) [G:/Chiro/Programs/urllc-demo-pynq/urllc-demo-vivado/urllc-demo-vivado.runs/synth_1/.Xil/Vivado-20872-WIN-544SHHHOI8Q/realtime/urllc_auto_pc_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 's00_couplers_imp_KPMX9W' (44#1) [g:/Chiro/Programs/urllc-demo-pynq/urllc-demo-vivado/urllc-demo-vivado.gen/sources_1/bd/urllc/synth/urllc.v:2438]
+INFO: [Synth 8-6157] synthesizing module 'urllc_xbar_3' [G:/Chiro/Programs/urllc-demo-pynq/urllc-demo-vivado/urllc-demo-vivado.runs/synth_1/.Xil/Vivado-20872-WIN-544SHHHOI8Q/realtime/urllc_xbar_3_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'urllc_xbar_3' (45#1) [G:/Chiro/Programs/urllc-demo-pynq/urllc-demo-vivado/urllc-demo-vivado.runs/synth_1/.Xil/Vivado-20872-WIN-544SHHHOI8Q/realtime/urllc_xbar_3_stub.v:6]
+WARNING: [Synth 8-689] width (3) of port connection 'm_axi_arprot' does not match port width (6) of module 'urllc_xbar_3' [g:/Chiro/Programs/urllc-demo-pynq/urllc-demo-vivado/urllc-demo-vivado.gen/sources_1/bd/urllc/synth/urllc.v:6063]
+WARNING: [Synth 8-689] width (3) of port connection 'm_axi_awprot' does not match port width (6) of module 'urllc_xbar_3' [g:/Chiro/Programs/urllc-demo-pynq/urllc-demo-vivado/urllc-demo-vivado.gen/sources_1/bd/urllc/synth/urllc.v:6067]
+WARNING: [Synth 8-689] width (4) of port connection 'm_axi_wstrb' does not match port width (8) of module 'urllc_xbar_3' [g:/Chiro/Programs/urllc-demo-pynq/urllc-demo-vivado/urllc-demo-vivado.gen/sources_1/bd/urllc/synth/urllc.v:6079]
+INFO: [Synth 8-6155] done synthesizing module 'urllc_ps7_0_axi_periph_0' (46#1) [g:/Chiro/Programs/urllc-demo-pynq/urllc-demo-vivado/urllc-demo-vivado.gen/sources_1/bd/urllc/synth/urllc.v:5548]
+WARNING: [Synth 8-7071] port 'M00_AXI_araddr' of module 'urllc_ps7_0_axi_periph_0' is unconnected for instance 'ps7_0_axi_periph' [g:/Chiro/Programs/urllc-demo-pynq/urllc-demo-vivado/urllc-demo-vivado.gen/sources_1/bd/urllc/synth/urllc.v:3660]
+WARNING: [Synth 8-7071] port 'M00_AXI_arprot' of module 'urllc_ps7_0_axi_periph_0' is unconnected for instance 'ps7_0_axi_periph' [g:/Chiro/Programs/urllc-demo-pynq/urllc-demo-vivado/urllc-demo-vivado.gen/sources_1/bd/urllc/synth/urllc.v:3660]
+WARNING: [Synth 8-7071] port 'M00_AXI_arvalid' of module 'urllc_ps7_0_axi_periph_0' is unconnected for instance 'ps7_0_axi_periph' [g:/Chiro/Programs/urllc-demo-pynq/urllc-demo-vivado/urllc-demo-vivado.gen/sources_1/bd/urllc/synth/urllc.v:3660]
+WARNING: [Synth 8-7071] port 'M00_AXI_awaddr' of module 'urllc_ps7_0_axi_periph_0' is unconnected for instance 'ps7_0_axi_periph' [g:/Chiro/Programs/urllc-demo-pynq/urllc-demo-vivado/urllc-demo-vivado.gen/sources_1/bd/urllc/synth/urllc.v:3660]
+WARNING: [Synth 8-7071] port 'M00_AXI_awprot' of module 'urllc_ps7_0_axi_periph_0' is unconnected for instance 'ps7_0_axi_periph' [g:/Chiro/Programs/urllc-demo-pynq/urllc-demo-vivado/urllc-demo-vivado.gen/sources_1/bd/urllc/synth/urllc.v:3660]
+WARNING: [Synth 8-7071] port 'M00_AXI_awvalid' of module 'urllc_ps7_0_axi_periph_0' is unconnected for instance 'ps7_0_axi_periph' [g:/Chiro/Programs/urllc-demo-pynq/urllc-demo-vivado/urllc-demo-vivado.gen/sources_1/bd/urllc/synth/urllc.v:3660]
+WARNING: [Synth 8-7071] port 'M00_AXI_bready' of module 'urllc_ps7_0_axi_periph_0' is unconnected for instance 'ps7_0_axi_periph' [g:/Chiro/Programs/urllc-demo-pynq/urllc-demo-vivado/urllc-demo-vivado.gen/sources_1/bd/urllc/synth/urllc.v:3660]
+WARNING: [Synth 8-7071] port 'M00_AXI_rready' of module 'urllc_ps7_0_axi_periph_0' is unconnected for instance 'ps7_0_axi_periph' [g:/Chiro/Programs/urllc-demo-pynq/urllc-demo-vivado/urllc-demo-vivado.gen/sources_1/bd/urllc/synth/urllc.v:3660]
+WARNING: [Synth 8-7071] port 'M00_AXI_wdata' of module 'urllc_ps7_0_axi_periph_0' is unconnected for instance 'ps7_0_axi_periph' [g:/Chiro/Programs/urllc-demo-pynq/urllc-demo-vivado/urllc-demo-vivado.gen/sources_1/bd/urllc/synth/urllc.v:3660]
+WARNING: [Synth 8-7071] port 'M00_AXI_wstrb' of module 'urllc_ps7_0_axi_periph_0' is unconnected for instance 'ps7_0_axi_periph' [g:/Chiro/Programs/urllc-demo-pynq/urllc-demo-vivado/urllc-demo-vivado.gen/sources_1/bd/urllc/synth/urllc.v:3660]
+WARNING: [Synth 8-7071] port 'M00_AXI_wvalid' of module 'urllc_ps7_0_axi_periph_0' is unconnected for instance 'ps7_0_axi_periph' [g:/Chiro/Programs/urllc-demo-pynq/urllc-demo-vivado/urllc-demo-vivado.gen/sources_1/bd/urllc/synth/urllc.v:3660]
+WARNING: [Synth 8-7023] instance 'ps7_0_axi_periph' of module 'urllc_ps7_0_axi_periph_0' has 81 connections declared, but only 70 given [g:/Chiro/Programs/urllc-demo-pynq/urllc-demo-vivado/urllc-demo-vivado.gen/sources_1/bd/urllc/synth/urllc.v:3660]
+INFO: [Synth 8-6157] synthesizing module 'urllc_rst_ps7_0_60M_0' [G:/Chiro/Programs/urllc-demo-pynq/urllc-demo-vivado/urllc-demo-vivado.runs/synth_1/.Xil/Vivado-20872-WIN-544SHHHOI8Q/realtime/urllc_rst_ps7_0_60M_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'urllc_rst_ps7_0_60M_0' (47#1) [G:/Chiro/Programs/urllc-demo-pynq/urllc-demo-vivado/urllc-demo-vivado.runs/synth_1/.Xil/Vivado-20872-WIN-544SHHHOI8Q/realtime/urllc_rst_ps7_0_60M_0_stub.v:6]
+WARNING: [Synth 8-7071] port 'mb_reset' of module 'urllc_rst_ps7_0_60M_0' is unconnected for instance 'rst_ps7_0_120M' [g:/Chiro/Programs/urllc-demo-pynq/urllc-demo-vivado/urllc-demo-vivado.gen/sources_1/bd/urllc/synth/urllc.v:3731]
+WARNING: [Synth 8-7071] port 'bus_struct_reset' of module 'urllc_rst_ps7_0_60M_0' is unconnected for instance 'rst_ps7_0_120M' [g:/Chiro/Programs/urllc-demo-pynq/urllc-demo-vivado/urllc-demo-vivado.gen/sources_1/bd/urllc/synth/urllc.v:3731]
+WARNING: [Synth 8-7071] port 'peripheral_reset' of module 'urllc_rst_ps7_0_60M_0' is unconnected for instance 'rst_ps7_0_120M' [g:/Chiro/Programs/urllc-demo-pynq/urllc-demo-vivado/urllc-demo-vivado.gen/sources_1/bd/urllc/synth/urllc.v:3731]
+WARNING: [Synth 8-7071] port 'interconnect_aresetn' of module 'urllc_rst_ps7_0_60M_0' is unconnected for instance 'rst_ps7_0_120M' [g:/Chiro/Programs/urllc-demo-pynq/urllc-demo-vivado/urllc-demo-vivado.gen/sources_1/bd/urllc/synth/urllc.v:3731]
+WARNING: [Synth 8-7023] instance 'rst_ps7_0_120M' of module 'urllc_rst_ps7_0_60M_0' has 10 connections declared, but only 6 given [g:/Chiro/Programs/urllc-demo-pynq/urllc-demo-vivado/urllc-demo-vivado.gen/sources_1/bd/urllc/synth/urllc.v:3731]
+INFO: [Synth 8-6157] synthesizing module 'urllc_rst_ps7_0_4M_0' [G:/Chiro/Programs/urllc-demo-pynq/urllc-demo-vivado/urllc-demo-vivado.runs/synth_1/.Xil/Vivado-20872-WIN-544SHHHOI8Q/realtime/urllc_rst_ps7_0_4M_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'urllc_rst_ps7_0_4M_0' (48#1) [G:/Chiro/Programs/urllc-demo-pynq/urllc-demo-vivado/urllc-demo-vivado.runs/synth_1/.Xil/Vivado-20872-WIN-544SHHHOI8Q/realtime/urllc_rst_ps7_0_4M_0_stub.v:6]
+WARNING: [Synth 8-7071] port 'mb_reset' of module 'urllc_rst_ps7_0_4M_0' is unconnected for instance 'rst_ps7_0_4M' [g:/Chiro/Programs/urllc-demo-pynq/urllc-demo-vivado/urllc-demo-vivado.gen/sources_1/bd/urllc/synth/urllc.v:3738]
+WARNING: [Synth 8-7071] port 'bus_struct_reset' of module 'urllc_rst_ps7_0_4M_0' is unconnected for instance 'rst_ps7_0_4M' [g:/Chiro/Programs/urllc-demo-pynq/urllc-demo-vivado/urllc-demo-vivado.gen/sources_1/bd/urllc/synth/urllc.v:3738]
+WARNING: [Synth 8-7071] port 'peripheral_reset' of module 'urllc_rst_ps7_0_4M_0' is unconnected for instance 'rst_ps7_0_4M' [g:/Chiro/Programs/urllc-demo-pynq/urllc-demo-vivado/urllc-demo-vivado.gen/sources_1/bd/urllc/synth/urllc.v:3738]
+WARNING: [Synth 8-7071] port 'interconnect_aresetn' of module 'urllc_rst_ps7_0_4M_0' is unconnected for instance 'rst_ps7_0_4M' [g:/Chiro/Programs/urllc-demo-pynq/urllc-demo-vivado/urllc-demo-vivado.gen/sources_1/bd/urllc/synth/urllc.v:3738]
+WARNING: [Synth 8-7023] instance 'rst_ps7_0_4M' of module 'urllc_rst_ps7_0_4M_0' has 10 connections declared, but only 6 given [g:/Chiro/Programs/urllc-demo-pynq/urllc-demo-vivado/urllc-demo-vivado.gen/sources_1/bd/urllc/synth/urllc.v:3738]
 INFO: [Synth 8-6157] synthesizing module 'urllc_xlconcat_0_0' [g:/Chiro/Programs/urllc-demo-pynq/urllc-demo-vivado/urllc-demo-vivado.gen/sources_1/bd/urllc/ip/urllc_xlconcat_0_0/synth/urllc_xlconcat_0_0.v:57]
-INFO: [Synth 8-6155] done synthesizing module 'urllc_xlconcat_0_0' (50#1) [g:/Chiro/Programs/urllc-demo-pynq/urllc-demo-vivado/urllc-demo-vivado.gen/sources_1/bd/urllc/ip/urllc_xlconcat_0_0/synth/urllc_xlconcat_0_0.v:57]
+INFO: [Synth 8-6155] done synthesizing module 'urllc_xlconcat_0_0' (49#1) [g:/Chiro/Programs/urllc-demo-pynq/urllc-demo-vivado/urllc-demo-vivado.gen/sources_1/bd/urllc/ip/urllc_xlconcat_0_0/synth/urllc_xlconcat_0_0.v:57]
 INFO: [Synth 8-6157] synthesizing module 'urllc_xlconstant_0_0' [g:/Chiro/Programs/urllc-demo-pynq/urllc-demo-vivado/urllc-demo-vivado.gen/sources_1/bd/urllc/ip/urllc_xlconstant_0_0/synth/urllc_xlconstant_0_0.v:57]
-INFO: [Synth 8-6155] done synthesizing module 'urllc_xlconstant_0_0' (51#1) [g:/Chiro/Programs/urllc-demo-pynq/urllc-demo-vivado/urllc-demo-vivado.gen/sources_1/bd/urllc/ip/urllc_xlconstant_0_0/synth/urllc_xlconstant_0_0.v:57]
-INFO: [Synth 8-6157] synthesizing module 'urllc_xlconstant_1_0' [g:/Chiro/Programs/urllc-demo-pynq/urllc-demo-vivado/urllc-demo-vivado.gen/sources_1/bd/urllc/ip/urllc_xlconstant_1_0/synth/urllc_xlconstant_1_0.v:57]
-INFO: [Synth 8-6155] done synthesizing module 'urllc_xlconstant_1_0' (52#1) [g:/Chiro/Programs/urllc-demo-pynq/urllc-demo-vivado/urllc-demo-vivado.gen/sources_1/bd/urllc/ip/urllc_xlconstant_1_0/synth/urllc_xlconstant_1_0.v:57]
+INFO: [Synth 8-6155] done synthesizing module 'urllc_xlconstant_0_0' (50#1) [g:/Chiro/Programs/urllc-demo-pynq/urllc-demo-vivado/urllc-demo-vivado.gen/sources_1/bd/urllc/ip/urllc_xlconstant_0_0/synth/urllc_xlconstant_0_0.v:57]
 INFO: [Synth 8-6157] synthesizing module 'urllc_xlslice_0_0' [g:/Chiro/Programs/urllc-demo-pynq/urllc-demo-vivado/urllc-demo-vivado.gen/sources_1/bd/urllc/ip/urllc_xlslice_0_0/synth/urllc_xlslice_0_0.v:57]
-INFO: [Synth 8-6155] done synthesizing module 'urllc_xlslice_0_0' (53#1) [g:/Chiro/Programs/urllc-demo-pynq/urllc-demo-vivado/urllc-demo-vivado.gen/sources_1/bd/urllc/ip/urllc_xlslice_0_0/synth/urllc_xlslice_0_0.v:57]
-INFO: [Synth 8-6155] done synthesizing module 'sender_imp_1DF97Y2' (54#1) [g:/Chiro/Programs/urllc-demo-pynq/urllc-demo-vivado/urllc-demo-vivado.gen/sources_1/bd/urllc/synth/urllc.v:3119]
-INFO: [Synth 8-6071] Mark debug on the nets applies keep_hierarchy on instance 'sender'. This will prevent further optimization [g:/Chiro/Programs/urllc-demo-pynq/urllc-demo-vivado/urllc-demo-vivado.gen/sources_1/bd/urllc/synth/urllc.v:4348]
-INFO: [Synth 8-6071] Mark debug on the nets applies keep_hierarchy on instance 'reciever'. This will prevent further optimization [g:/Chiro/Programs/urllc-demo-pynq/urllc-demo-vivado/urllc-demo-vivado.gen/sources_1/bd/urllc/synth/urllc.v:4263]
-INFO: [Synth 8-6071] Mark debug on the nets applies keep_hierarchy on instance 'ila_0'. This will prevent further optimization [g:/Chiro/Programs/urllc-demo-pynq/urllc-demo-vivado/urllc-demo-vivado.gen/sources_1/bd/urllc/synth/urllc.v:4069]
-INFO: [Synth 8-6155] done synthesizing module 'urllc' (55#1) [g:/Chiro/Programs/urllc-demo-pynq/urllc-demo-vivado/urllc-demo-vivado.gen/sources_1/bd/urllc/synth/urllc.v:3827]
-INFO: [Synth 8-6155] done synthesizing module 'urllc_wrapper' (56#1) [G:/Chiro/Programs/urllc-demo-pynq/urllc-demo-vivado/urllc-demo-vivado.gen/sources_1/bd/urllc/hdl/urllc_wrapper.v:12]
+INFO: [Synth 8-6155] done synthesizing module 'urllc_xlslice_0_0' (51#1) [g:/Chiro/Programs/urllc-demo-pynq/urllc-demo-vivado/urllc-demo-vivado.gen/sources_1/bd/urllc/ip/urllc_xlslice_0_0/synth/urllc_xlslice_0_0.v:57]
+INFO: [Synth 8-6155] done synthesizing module 'sender_imp_1DF97Y2' (52#1) [g:/Chiro/Programs/urllc-demo-pynq/urllc-demo-vivado/urllc-demo-vivado.gen/sources_1/bd/urllc/synth/urllc.v:3097]
+INFO: [Synth 8-6071] Mark debug on the nets applies keep_hierarchy on instance 'sender'. This will prevent further optimization [g:/Chiro/Programs/urllc-demo-pynq/urllc-demo-vivado/urllc-demo-vivado.gen/sources_1/bd/urllc/synth/urllc.v:4278]
+INFO: [Synth 8-6071] Mark debug on the nets applies keep_hierarchy on instance 'reciever'. This will prevent further optimization [g:/Chiro/Programs/urllc-demo-pynq/urllc-demo-vivado/urllc-demo-vivado.gen/sources_1/bd/urllc/synth/urllc.v:4193]
+INFO: [Synth 8-6071] Mark debug on the nets applies keep_hierarchy on instance 'ila_0'. This will prevent further optimization [g:/Chiro/Programs/urllc-demo-pynq/urllc-demo-vivado/urllc-demo-vivado.gen/sources_1/bd/urllc/synth/urllc.v:3999]
+INFO: [Synth 8-6155] done synthesizing module 'urllc' (53#1) [g:/Chiro/Programs/urllc-demo-pynq/urllc-demo-vivado/urllc-demo-vivado.gen/sources_1/bd/urllc/synth/urllc.v:3757]
+INFO: [Synth 8-6155] done synthesizing module 'urllc_wrapper' (54#1) [G:/Chiro/Programs/urllc-demo-pynq/urllc-demo-vivado/urllc-demo-vivado.gen/sources_1/bd/urllc/hdl/urllc_wrapper.v:12]
 ---------------------------------------------------------------------------------
-Finished RTL Elaboration : Time (s): cpu = 00:00:05 ; elapsed = 00:00:05 . Memory (MB): peak = 1258.773 ; gain = 0.000
+Finished RTL Elaboration : Time (s): cpu = 00:00:07 ; elapsed = 00:00:07 . Memory (MB): peak = 1257.992 ; gain = 0.000
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:05 ; elapsed = 00:00:06 . Memory (MB): peak = 1258.773 ; gain = 0.000
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:07 ; elapsed = 00:00:07 . Memory (MB): peak = 1257.992 ; gain = 0.000
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:05 ; elapsed = 00:00:06 . Memory (MB): peak = 1258.773 ; gain = 0.000
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:07 ; elapsed = 00:00:07 . Memory (MB): peak = 1257.992 ; gain = 0.000
 ---------------------------------------------------------------------------------
-Netlist sorting complete. Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.078 . Memory (MB): peak = 1258.773 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.087 . Memory (MB): peak = 1257.992 ; gain = 0.000
 INFO: [Project 1-570] Preparing netlist for logic optimization
 
 Processing XDC Constraints
@@ -270,8 +263,6 @@ Parsing XDC File [g:/Chiro/Programs/urllc-demo-pynq/urllc-demo-vivado/urllc-demo
 Finished Parsing XDC File [g:/Chiro/Programs/urllc-demo-pynq/urllc-demo-vivado/urllc-demo-vivado.gen/sources_1/bd/urllc/ip/urllc_xbar_3/urllc_xbar_3/urllc_xbar_3_in_context.xdc] for cell 'urllc_i/sender/ps7_0_axi_periph/xbar'
 Parsing XDC File [g:/Chiro/Programs/urllc-demo-pynq/urllc-demo-vivado/urllc-demo-vivado.gen/sources_1/bd/urllc/ip/urllc_auto_pc_0/urllc_auto_pc_0/urllc_auto_pc_1_in_context.xdc] for cell 'urllc_i/sender/ps7_0_axi_periph/s00_couplers/auto_pc'
 Finished Parsing XDC File [g:/Chiro/Programs/urllc-demo-pynq/urllc-demo-vivado/urllc-demo-vivado.gen/sources_1/bd/urllc/ip/urllc_auto_pc_0/urllc_auto_pc_0/urllc_auto_pc_1_in_context.xdc] for cell 'urllc_i/sender/ps7_0_axi_periph/s00_couplers/auto_pc'
-Parsing XDC File [g:/Chiro/Programs/urllc-demo-pynq/urllc-demo-vivado/urllc-demo-vivado.gen/sources_1/bd/urllc/ip/urllc_ad2dma_1_0/urllc_ad2dma_1_0/urllc_ad2dma_1_0_in_context.xdc] for cell 'urllc_i/sender/ad2dma_1'
-Finished Parsing XDC File [g:/Chiro/Programs/urllc-demo-pynq/urllc-demo-vivado/urllc-demo-vivado.gen/sources_1/bd/urllc/ip/urllc_ad2dma_1_0/urllc_ad2dma_1_0/urllc_ad2dma_1_0_in_context.xdc] for cell 'urllc_i/sender/ad2dma_1'
 Parsing XDC File [g:/Chiro/Programs/urllc-demo-pynq/urllc-demo-vivado/urllc-demo-vivado.gen/sources_1/bd/urllc/ip/urllc_axi_dma_0_0/urllc_axi_dma_0_0/urllc_axi_dma_0_0_in_context.xdc] for cell 'urllc_i/sender/axi_dma_0'
 Finished Parsing XDC File [g:/Chiro/Programs/urllc-demo-pynq/urllc-demo-vivado/urllc-demo-vivado.gen/sources_1/bd/urllc/ip/urllc_axi_dma_0_0/urllc_axi_dma_0_0/urllc_axi_dma_0_0_in_context.xdc] for cell 'urllc_i/sender/axi_dma_0'
 Parsing XDC File [g:/Chiro/Programs/urllc-demo-pynq/urllc-demo-vivado/urllc-demo-vivado.gen/sources_1/bd/urllc/ip/urllc_xbar_2/urllc_xbar_2/urllc_xbar_2_in_context.xdc] for cell 'urllc_i/sender/axi_mem_intercon/xbar'
@@ -282,32 +273,32 @@ Parsing XDC File [g:/Chiro/Programs/urllc-demo-pynq/urllc-demo-vivado/urllc-demo
 Finished Parsing XDC File [g:/Chiro/Programs/urllc-demo-pynq/urllc-demo-vivado/urllc-demo-vivado.gen/sources_1/bd/urllc/ip/urllc_DUCWrapper_0_0/urllc_DUCWrapper_0_0/urllc_DUCWrapper_0_0_in_context.xdc] for cell 'urllc_i/sender/DUCWrapper_0'
 Parsing XDC File [g:/Chiro/Programs/urllc-demo-pynq/urllc-demo-vivado/urllc-demo-vivado.gen/sources_1/bd/urllc/ip/urllc_rst_ps7_0_60M_0/urllc_rst_ps7_0_60M_0/urllc_rst_ps7_0_60M_0_in_context.xdc] for cell 'urllc_i/sender/rst_ps7_0_120M'
 Finished Parsing XDC File [g:/Chiro/Programs/urllc-demo-pynq/urllc-demo-vivado/urllc-demo-vivado.gen/sources_1/bd/urllc/ip/urllc_rst_ps7_0_60M_0/urllc_rst_ps7_0_60M_0/urllc_rst_ps7_0_60M_0_in_context.xdc] for cell 'urllc_i/sender/rst_ps7_0_120M'
-Parsing XDC File [g:/Chiro/Programs/urllc-demo-pynq/urllc-demo-vivado/urllc-demo-vivado.gen/sources_1/bd/urllc/ip/urllc_div8_0_0/urllc_div8_0_0/urllc_div8_0_0_in_context.xdc] for cell 'urllc_i/sender/div8_0'
-Finished Parsing XDC File [g:/Chiro/Programs/urllc-demo-pynq/urllc-demo-vivado/urllc-demo-vivado.gen/sources_1/bd/urllc/ip/urllc_div8_0_0/urllc_div8_0_0/urllc_div8_0_0_in_context.xdc] for cell 'urllc_i/sender/div8_0'
 Parsing XDC File [g:/Chiro/Programs/urllc-demo-pynq/urllc-demo-vivado/urllc-demo-vivado.gen/sources_1/bd/urllc/ip/urllc_p_s_0_1/urllc_p_s_0_1/urllc_p_s_0_1_in_context.xdc] for cell 'urllc_i/sender/p_s_0'
 Finished Parsing XDC File [g:/Chiro/Programs/urllc-demo-pynq/urllc-demo-vivado/urllc-demo-vivado.gen/sources_1/bd/urllc/ip/urllc_p_s_0_1/urllc_p_s_0_1/urllc_p_s_0_1_in_context.xdc] for cell 'urllc_i/sender/p_s_0'
+Parsing XDC File [g:/Chiro/Programs/urllc-demo-pynq/urllc-demo-vivado/urllc-demo-vivado.gen/sources_1/bd/urllc/ip/urllc_div_n_0_0/urllc_div_n_0_0/urllc_div_n_0_0_in_context.xdc] for cell 'urllc_i/sender/div_n_0'
+Finished Parsing XDC File [g:/Chiro/Programs/urllc-demo-pynq/urllc-demo-vivado/urllc-demo-vivado.gen/sources_1/bd/urllc/ip/urllc_div_n_0_0/urllc_div_n_0_0/urllc_div_n_0_0_in_context.xdc] for cell 'urllc_i/sender/div_n_0'
+Parsing XDC File [g:/Chiro/Programs/urllc-demo-pynq/urllc-demo-vivado/urllc-demo-vivado.gen/sources_1/bd/urllc/ip/urllc_ad2dma_rtl_0_0/urllc_ad2dma_rtl_0_0/urllc_ad2dma_rtl_0_0_in_context.xdc] for cell 'urllc_i/sender/ad2dma_rtl_0'
+Finished Parsing XDC File [g:/Chiro/Programs/urllc-demo-pynq/urllc-demo-vivado/urllc-demo-vivado.gen/sources_1/bd/urllc/ip/urllc_ad2dma_rtl_0_0/urllc_ad2dma_rtl_0_0/urllc_ad2dma_rtl_0_0_in_context.xdc] for cell 'urllc_i/sender/ad2dma_rtl_0'
 Parsing XDC File [g:/Chiro/Programs/urllc-demo-pynq/urllc-demo-vivado/urllc-demo-vivado.gen/sources_1/bd/urllc/ip/urllc_xbar_5/urllc_xbar_5/urllc_xbar_5_in_context.xdc] for cell 'urllc_i/reciever/ps7_0_axi_periph1/xbar'
 Finished Parsing XDC File [g:/Chiro/Programs/urllc-demo-pynq/urllc-demo-vivado/urllc-demo-vivado.gen/sources_1/bd/urllc/ip/urllc_xbar_5/urllc_xbar_5/urllc_xbar_5_in_context.xdc] for cell 'urllc_i/reciever/ps7_0_axi_periph1/xbar'
 Parsing XDC File [g:/Chiro/Programs/urllc-demo-pynq/urllc-demo-vivado/urllc-demo-vivado.gen/sources_1/bd/urllc/ip/urllc_auto_pc_2/urllc_auto_pc_2/urllc_auto_pc_1_in_context.xdc] for cell 'urllc_i/reciever/ps7_0_axi_periph1/s00_couplers/auto_pc'
 Finished Parsing XDC File [g:/Chiro/Programs/urllc-demo-pynq/urllc-demo-vivado/urllc-demo-vivado.gen/sources_1/bd/urllc/ip/urllc_auto_pc_2/urllc_auto_pc_2/urllc_auto_pc_1_in_context.xdc] for cell 'urllc_i/reciever/ps7_0_axi_periph1/s00_couplers/auto_pc'
 Parsing XDC File [g:/Chiro/Programs/urllc-demo-pynq/urllc-demo-vivado/urllc-demo-vivado.gen/sources_1/bd/urllc/ip/urllc_axi_dma_0_1/urllc_axi_dma_0_1/urllc_axi_dma_0_0_in_context.xdc] for cell 'urllc_i/reciever/axi_dma_1'
 Finished Parsing XDC File [g:/Chiro/Programs/urllc-demo-pynq/urllc-demo-vivado/urllc-demo-vivado.gen/sources_1/bd/urllc/ip/urllc_axi_dma_0_1/urllc_axi_dma_0_1/urllc_axi_dma_0_0_in_context.xdc] for cell 'urllc_i/reciever/axi_dma_1'
-Parsing XDC File [g:/Chiro/Programs/urllc-demo-pynq/urllc-demo-vivado/urllc-demo-vivado.gen/sources_1/bd/urllc/ip/urllc_ad2dma_1_1/urllc_ad2dma_1_1/urllc_ad2dma_1_0_in_context.xdc] for cell 'urllc_i/reciever/ad2dma_2'
-Finished Parsing XDC File [g:/Chiro/Programs/urllc-demo-pynq/urllc-demo-vivado/urllc-demo-vivado.gen/sources_1/bd/urllc/ip/urllc_ad2dma_1_1/urllc_ad2dma_1_1/urllc_ad2dma_1_0_in_context.xdc] for cell 'urllc_i/reciever/ad2dma_2'
 Parsing XDC File [g:/Chiro/Programs/urllc-demo-pynq/urllc-demo-vivado/urllc-demo-vivado.gen/sources_1/bd/urllc/ip/urllc_rst_ps7_0_50M_0/urllc_rst_ps7_0_50M_0/urllc_proc_sys_reset_0_0_in_context.xdc] for cell 'urllc_i/reciever/rst_ps7_0_4M'
 Finished Parsing XDC File [g:/Chiro/Programs/urllc-demo-pynq/urllc-demo-vivado/urllc-demo-vivado.gen/sources_1/bd/urllc/ip/urllc_rst_ps7_0_50M_0/urllc_rst_ps7_0_50M_0/urllc_proc_sys_reset_0_0_in_context.xdc] for cell 'urllc_i/reciever/rst_ps7_0_4M'
 Parsing XDC File [g:/Chiro/Programs/urllc-demo-pynq/urllc-demo-vivado/urllc-demo-vivado.gen/sources_1/bd/urllc/ip/urllc_xbar_4/urllc_xbar_4/urllc_xbar_2_in_context.xdc] for cell 'urllc_i/reciever/axi_mem_intercon1/xbar'
 Finished Parsing XDC File [g:/Chiro/Programs/urllc-demo-pynq/urllc-demo-vivado/urllc-demo-vivado.gen/sources_1/bd/urllc/ip/urllc_xbar_4/urllc_xbar_4/urllc_xbar_2_in_context.xdc] for cell 'urllc_i/reciever/axi_mem_intercon1/xbar'
 Parsing XDC File [g:/Chiro/Programs/urllc-demo-pynq/urllc-demo-vivado/urllc-demo-vivado.gen/sources_1/bd/urllc/ip/urllc_auto_pc_3/urllc_auto_pc_3/urllc_auto_pc_0_in_context.xdc] for cell 'urllc_i/reciever/axi_mem_intercon1/m00_couplers/auto_pc'
 Finished Parsing XDC File [g:/Chiro/Programs/urllc-demo-pynq/urllc-demo-vivado/urllc-demo-vivado.gen/sources_1/bd/urllc/ip/urllc_auto_pc_3/urllc_auto_pc_3/urllc_auto_pc_0_in_context.xdc] for cell 'urllc_i/reciever/axi_mem_intercon1/m00_couplers/auto_pc'
-Parsing XDC File [g:/Chiro/Programs/urllc-demo-pynq/urllc-demo-vivado/urllc-demo-vivado.gen/sources_1/bd/urllc/ip/urllc_div8_0_1/urllc_div8_0_1/urllc_div8_0_1_in_context.xdc] for cell 'urllc_i/reciever/div8_1'
-Finished Parsing XDC File [g:/Chiro/Programs/urllc-demo-pynq/urllc-demo-vivado/urllc-demo-vivado.gen/sources_1/bd/urllc/ip/urllc_div8_0_1/urllc_div8_0_1/urllc_div8_0_1_in_context.xdc] for cell 'urllc_i/reciever/div8_1'
 Parsing XDC File [g:/Chiro/Programs/urllc-demo-pynq/urllc-demo-vivado/urllc-demo-vivado.gen/sources_1/bd/urllc/ip/urllc_s_p_0_0/urllc_s_p_0_0/urllc_s_p_0_0_in_context.xdc] for cell 'urllc_i/reciever/s_p_0'
 Finished Parsing XDC File [g:/Chiro/Programs/urllc-demo-pynq/urllc-demo-vivado/urllc-demo-vivado.gen/sources_1/bd/urllc/ip/urllc_s_p_0_0/urllc_s_p_0_0/urllc_s_p_0_0_in_context.xdc] for cell 'urllc_i/reciever/s_p_0'
 Parsing XDC File [g:/Chiro/Programs/urllc-demo-pynq/urllc-demo-vivado/urllc-demo-vivado.gen/sources_1/bd/urllc/ip/urllc_DDCWrapper_0_0/urllc_DDCWrapper_0_0/urllc_DDCWrapper_0_0_in_context.xdc] for cell 'urllc_i/reciever/DDCWrapper_0'
 Finished Parsing XDC File [g:/Chiro/Programs/urllc-demo-pynq/urllc-demo-vivado/urllc-demo-vivado.gen/sources_1/bd/urllc/ip/urllc_DDCWrapper_0_0/urllc_DDCWrapper_0_0/urllc_DDCWrapper_0_0_in_context.xdc] for cell 'urllc_i/reciever/DDCWrapper_0'
 Parsing XDC File [g:/Chiro/Programs/urllc-demo-pynq/urllc-demo-vivado/urllc-demo-vivado.gen/sources_1/bd/urllc/ip/urllc_proc_sys_reset_0_0/urllc_proc_sys_reset_0_0/urllc_rst_ps7_0_50M_0_in_context.xdc] for cell 'urllc_i/reciever/rst_ps7_0_200M'
 Finished Parsing XDC File [g:/Chiro/Programs/urllc-demo-pynq/urllc-demo-vivado/urllc-demo-vivado.gen/sources_1/bd/urllc/ip/urllc_proc_sys_reset_0_0/urllc_proc_sys_reset_0_0/urllc_rst_ps7_0_50M_0_in_context.xdc] for cell 'urllc_i/reciever/rst_ps7_0_200M'
+Parsing XDC File [g:/Chiro/Programs/urllc-demo-pynq/urllc-demo-vivado/urllc-demo-vivado.gen/sources_1/bd/urllc/ip/urllc_ad2dma_rtl_0_1/urllc_ad2dma_rtl_0_1/urllc_ad2dma_rtl_0_1_in_context.xdc] for cell 'urllc_i/reciever/ad2dma_rtl_0'
+Finished Parsing XDC File [g:/Chiro/Programs/urllc-demo-pynq/urllc-demo-vivado/urllc-demo-vivado.gen/sources_1/bd/urllc/ip/urllc_ad2dma_rtl_0_1/urllc_ad2dma_rtl_0_1/urllc_ad2dma_rtl_0_1_in_context.xdc] for cell 'urllc_i/reciever/ad2dma_rtl_0'
 Parsing XDC File [g:/Chiro/Programs/urllc-demo-pynq/urllc-demo-vivado/urllc-demo-vivado.gen/sources_1/bd/urllc/ip/urllc_ila_0_0/urllc_ila_0_0/urllc_ila_0_0_in_context.xdc] for cell 'urllc_i/ila_0'
 Finished Parsing XDC File [g:/Chiro/Programs/urllc-demo-pynq/urllc-demo-vivado/urllc-demo-vivado.gen/sources_1/bd/urllc/ip/urllc_ila_0_0/urllc_ila_0_0/urllc_ila_0_0_in_context.xdc] for cell 'urllc_i/ila_0'
 Parsing XDC File [G:/Chiro/Programs/urllc-demo-pynq/urllc-demo-vivado/urllc-demo-vivado.srcs/constrs_1/imports/new/urllc.xdc]
@@ -318,20 +309,20 @@ Parsing XDC File [G:/Chiro/Programs/urllc-demo-pynq/urllc-demo-vivado/urllc-demo
 Finished Parsing XDC File [G:/Chiro/Programs/urllc-demo-pynq/urllc-demo-vivado/urllc-demo-vivado.runs/synth_1/dont_touch.xdc]
 Completed Processing XDC Constraints
 
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1276.496 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1274.988 ; gain = 0.000
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
-Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.011 . Memory (MB): peak = 1276.496 ; gain = 0.000
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.015 . Memory (MB): peak = 1274.988 ; gain = 0.000
 ---------------------------------------------------------------------------------
-Finished Constraint Validation : Time (s): cpu = 00:00:11 ; elapsed = 00:00:12 . Memory (MB): peak = 1276.496 ; gain = 17.723
+Finished Constraint Validation : Time (s): cpu = 00:00:15 ; elapsed = 00:00:15 . Memory (MB): peak = 1274.988 ; gain = 16.996
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Loading Part and Timing Information
 ---------------------------------------------------------------------------------
 Loading part: xc7z020clg400-2
 ---------------------------------------------------------------------------------
-Finished Loading Part and Timing Information : Time (s): cpu = 00:00:11 ; elapsed = 00:00:12 . Memory (MB): peak = 1276.496 ; gain = 17.723
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:15 ; elapsed = 00:00:15 . Memory (MB): peak = 1274.988 ; gain = 16.996
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying 'set_property' XDC Constraints
@@ -602,7 +593,6 @@ Applied set_property KEEP_HIERARCHY = SOFT for urllc_i/sender/rst_ps7_0_4M. (con
 Applied set_property KEEP_HIERARCHY = SOFT for urllc_i/sender/ps7_0_axi_periph/xbar. (constraint file  auto generated constraint).
 Applied set_property KEEP_HIERARCHY = SOFT for urllc_i/sender/ps7_0_axi_periph/s00_couplers/auto_pc. (constraint file  auto generated constraint).
 Applied set_property KEEP_HIERARCHY = SOFT for urllc_i/sender/ps7_0_axi_periph. (constraint file  auto generated constraint).
-Applied set_property KEEP_HIERARCHY = SOFT for urllc_i/sender/ad2dma_1. (constraint file  auto generated constraint).
 Applied set_property KEEP_HIERARCHY = SOFT for urllc_i/sender/axi_dma_0. (constraint file  auto generated constraint).
 Applied set_property KEEP_HIERARCHY = SOFT for urllc_i/sender/axi_mem_intercon/xbar. (constraint file  auto generated constraint).
 Applied set_property KEEP_HIERARCHY = SOFT for urllc_i/sender/axi_mem_intercon/m00_couplers/auto_pc. (constraint file  auto generated constraint).
@@ -612,15 +602,14 @@ Applied set_property KEEP_HIERARCHY = SOFT for urllc_i/sender/xlconstant_0. (con
 Applied set_property KEEP_HIERARCHY = SOFT for urllc_i/sender/xlslice_0. (constraint file  auto generated constraint).
 Applied set_property KEEP_HIERARCHY = SOFT for urllc_i/sender/DUCWrapper_0. (constraint file  auto generated constraint).
 Applied set_property KEEP_HIERARCHY = SOFT for urllc_i/sender/rst_ps7_0_120M. (constraint file  auto generated constraint).
-Applied set_property KEEP_HIERARCHY = SOFT for urllc_i/sender/div8_0. (constraint file  auto generated constraint).
 Applied set_property KEEP_HIERARCHY = SOFT for urllc_i/sender/p_s_0. (constraint file  auto generated constraint).
-Applied set_property KEEP_HIERARCHY = SOFT for urllc_i/sender/xlconstant_1. (constraint file  auto generated constraint).
+Applied set_property KEEP_HIERARCHY = SOFT for urllc_i/sender/div_n_0. (constraint file  auto generated constraint).
+Applied set_property KEEP_HIERARCHY = SOFT for urllc_i/sender/ad2dma_rtl_0. (constraint file  auto generated constraint).
 Applied set_property KEEP_HIERARCHY = SOFT for urllc_i/reciever/ps7_0_axi_periph1/xbar. (constraint file  auto generated constraint).
 Applied set_property KEEP_HIERARCHY = SOFT for urllc_i/reciever/ps7_0_axi_periph1/s00_couplers/auto_pc. (constraint file  auto generated constraint).
 Applied set_property KEEP_HIERARCHY = SOFT for urllc_i/reciever/ps7_0_axi_periph1. (constraint file  auto generated constraint).
 Applied set_property KEEP_HIERARCHY = SOFT for urllc_i/reciever/axi_dma_1. (constraint file  auto generated constraint).
 Applied set_property KEEP_HIERARCHY = SOFT for urllc_i/reciever/xlconcat_1. (constraint file  auto generated constraint).
-Applied set_property KEEP_HIERARCHY = SOFT for urllc_i/reciever/ad2dma_2. (constraint file  auto generated constraint).
 Applied set_property KEEP_HIERARCHY = SOFT for urllc_i/reciever/xlconstant_1. (constraint file  auto generated constraint).
 Applied set_property KEEP_HIERARCHY = SOFT for urllc_i/reciever/xlconstant_2. (constraint file  auto generated constraint).
 Applied set_property KEEP_HIERARCHY = SOFT for urllc_i/reciever/rst_ps7_0_4M. (constraint file  auto generated constraint).
@@ -628,17 +617,17 @@ Applied set_property KEEP_HIERARCHY = SOFT for urllc_i/reciever/axi_mem_intercon
 Applied set_property KEEP_HIERARCHY = SOFT for urllc_i/reciever/axi_mem_intercon1/m00_couplers/auto_pc. (constraint file  auto generated constraint).
 Applied set_property KEEP_HIERARCHY = SOFT for urllc_i/reciever/axi_mem_intercon1. (constraint file  auto generated constraint).
 Applied set_property KEEP_HIERARCHY = SOFT for urllc_i/reciever/xlslice_1. (constraint file  auto generated constraint).
-Applied set_property KEEP_HIERARCHY = SOFT for urllc_i/reciever/div8_1. (constraint file  auto generated constraint).
 Applied set_property KEEP_HIERARCHY = SOFT for urllc_i/reciever/s_p_0. (constraint file  auto generated constraint).
-Applied set_property KEEP_HIERARCHY = SOFT for urllc_i/reciever/xlconstant_0. (constraint file  auto generated constraint).
 Applied set_property KEEP_HIERARCHY = SOFT for urllc_i/reciever/DDCWrapper_0. (constraint file  auto generated constraint).
 Applied set_property KEEP_HIERARCHY = SOFT for urllc_i/reciever/rst_ps7_0_200M. (constraint file  auto generated constraint).
+Applied set_property KEEP_HIERARCHY = SOFT for urllc_i/reciever/xlconstant_0. (constraint file  auto generated constraint).
+Applied set_property KEEP_HIERARCHY = SOFT for urllc_i/reciever/ad2dma_rtl_0. (constraint file  auto generated constraint).
 Applied set_property KEEP_HIERARCHY = SOFT for urllc_i/ila_0. (constraint file  auto generated constraint).
 ---------------------------------------------------------------------------------
-Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:12 ; elapsed = 00:00:13 . Memory (MB): peak = 1276.496 ; gain = 17.723
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:15 ; elapsed = 00:00:15 . Memory (MB): peak = 1274.988 ; gain = 16.996
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:12 ; elapsed = 00:00:13 . Memory (MB): peak = 1276.496 ; gain = 17.723
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:15 ; elapsed = 00:00:16 . Memory (MB): peak = 1274.988 ; gain = 16.996
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start RTL Component Statistics 
@@ -660,25 +649,25 @@ Finished Part Resource Summary
 Start Cross Boundary and Area Optimization
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:13 ; elapsed = 00:00:14 . Memory (MB): peak = 1276.496 ; gain = 17.723
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:17 ; elapsed = 00:00:17 . Memory (MB): peak = 1274.988 ; gain = 16.996
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying XDC Timing Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:19 ; elapsed = 00:00:20 . Memory (MB): peak = 1312.043 ; gain = 53.270
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:23 ; elapsed = 00:00:24 . Memory (MB): peak = 1310.785 ; gain = 52.793
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Timing Optimization
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Timing Optimization : Time (s): cpu = 00:00:19 ; elapsed = 00:00:20 . Memory (MB): peak = 1313.336 ; gain = 54.562
+Finished Timing Optimization : Time (s): cpu = 00:00:23 ; elapsed = 00:00:24 . Memory (MB): peak = 1312.207 ; gain = 54.215
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Technology Mapping
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Technology Mapping : Time (s): cpu = 00:00:19 ; elapsed = 00:00:20 . Memory (MB): peak = 1332.441 ; gain = 73.668
+Finished Technology Mapping : Time (s): cpu = 00:00:24 ; elapsed = 00:00:25 . Memory (MB): peak = 1331.324 ; gain = 73.332
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start IO Insertion
@@ -696,37 +685,37 @@ Start Final Netlist Cleanup
 Finished Final Netlist Cleanup
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished IO Insertion : Time (s): cpu = 00:00:22 ; elapsed = 00:00:23 . Memory (MB): peak = 1339.211 ; gain = 80.438
+Finished IO Insertion : Time (s): cpu = 00:00:27 ; elapsed = 00:00:28 . Memory (MB): peak = 1337.086 ; gain = 79.094
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Instances
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Instances : Time (s): cpu = 00:00:22 ; elapsed = 00:00:23 . Memory (MB): peak = 1339.211 ; gain = 80.438
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:27 ; elapsed = 00:00:28 . Memory (MB): peak = 1337.086 ; gain = 79.094
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Rebuilding User Hierarchy
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:22 ; elapsed = 00:00:23 . Memory (MB): peak = 1339.211 ; gain = 80.438
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:27 ; elapsed = 00:00:28 . Memory (MB): peak = 1337.086 ; gain = 79.094
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Ports
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Ports : Time (s): cpu = 00:00:22 ; elapsed = 00:00:23 . Memory (MB): peak = 1339.211 ; gain = 80.438
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:27 ; elapsed = 00:00:28 . Memory (MB): peak = 1337.086 ; gain = 79.094
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:22 ; elapsed = 00:00:23 . Memory (MB): peak = 1339.211 ; gain = 80.438
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:27 ; elapsed = 00:00:28 . Memory (MB): peak = 1337.086 ; gain = 79.094
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Nets
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Nets : Time (s): cpu = 00:00:22 ; elapsed = 00:00:23 . Memory (MB): peak = 1339.211 ; gain = 80.438
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:27 ; elapsed = 00:00:28 . Memory (MB): peak = 1337.086 ; gain = 79.094
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Writing Synthesis Report
@@ -741,25 +730,24 @@ Report BlackBoxes:
 |3     |urllc_xbar_5                 |         1|
 |4     |urllc_auto_pc_2              |         1|
 |5     |urllc_DDCWrapper_0_0         |         1|
-|6     |urllc_ad2dma_1_1             |         1|
+|6     |urllc_ad2dma_rtl_0_1         |         1|
 |7     |urllc_axi_dma_0_1            |         1|
-|8     |urllc_div8_0_1               |         1|
-|9     |urllc_proc_sys_reset_0_0     |         1|
-|10    |urllc_rst_ps7_0_50M_0        |         1|
-|11    |urllc_s_p_0_0                |         1|
-|12    |urllc_xbar_2                 |         1|
-|13    |urllc_auto_pc_1              |         1|
-|14    |urllc_xbar_3                 |         1|
-|15    |urllc_auto_pc_0              |         1|
-|16    |urllc_DUCWrapper_0_0         |         1|
-|17    |urllc_ad2dma_1_0             |         1|
-|18    |urllc_axi_dma_0_0            |         1|
-|19    |urllc_div8_0_0               |         1|
-|20    |urllc_p_s_0_1                |         1|
-|21    |urllc_rst_ps7_0_60M_0        |         1|
-|22    |urllc_rst_ps7_0_4M_0         |         1|
-|23    |urllc_ila_0_0                |         1|
-|24    |urllc_processing_system7_0_0 |         1|
+|8     |urllc_proc_sys_reset_0_0     |         1|
+|9     |urllc_rst_ps7_0_50M_0        |         1|
+|10    |urllc_s_p_0_0                |         1|
+|11    |urllc_xbar_2                 |         1|
+|12    |urllc_auto_pc_1              |         1|
+|13    |urllc_xbar_3                 |         1|
+|14    |urllc_auto_pc_0              |         1|
+|15    |urllc_DUCWrapper_0_0         |         1|
+|16    |urllc_ad2dma_rtl_0_0         |         1|
+|17    |urllc_axi_dma_0_0            |         1|
+|18    |urllc_div_n_0_0              |         1|
+|19    |urllc_p_s_0_1                |         1|
+|20    |urllc_rst_ps7_0_60M_0        |         1|
+|21    |urllc_rst_ps7_0_4M_0         |         1|
+|22    |urllc_ila_0_0                |         1|
+|23    |urllc_processing_system7_0_0 |         1|
 +------+-----------------------------+----------+
 
 Report Cell Usage: 
@@ -768,41 +756,41 @@ Report Cell Usage:
 +------+---------------------------+------+
 |1     |urllc_DDCWrapper_0         |     1|
 |2     |urllc_DUCWrapper_0         |     1|
-|3     |urllc_ad2dma_1             |     2|
+|3     |urllc_ad2dma_rtl_0         |     2|
 |5     |urllc_auto_pc              |     4|
 |9     |urllc_axi_dma_0            |     2|
-|11    |urllc_div8_0               |     2|
-|13    |urllc_ila_0                |     1|
-|14    |urllc_p_s_0                |     1|
-|15    |urllc_proc_sys_reset_0     |     1|
-|16    |urllc_processing_system7_0 |     1|
-|17    |urllc_rst_ps7_0_4M         |     1|
-|18    |urllc_rst_ps7_0_50M        |     1|
-|19    |urllc_rst_ps7_0_60M        |     1|
-|20    |urllc_s_p_0                |     1|
-|21    |urllc_xbar                 |     4|
-|25    |IBUF                       |    16|
-|26    |OBUF                       |    16|
+|11    |urllc_div_n_0              |     1|
+|12    |urllc_ila_0                |     1|
+|13    |urllc_p_s_0                |     1|
+|14    |urllc_proc_sys_reset_0     |     1|
+|15    |urllc_processing_system7_0 |     1|
+|16    |urllc_rst_ps7_0_4M         |     1|
+|17    |urllc_rst_ps7_0_50M        |     1|
+|18    |urllc_rst_ps7_0_60M        |     1|
+|19    |urllc_s_p_0                |     1|
+|20    |urllc_xbar                 |     4|
+|24    |IBUF                       |    16|
+|25    |OBUF                       |    16|
 +------+---------------------------+------+
 ---------------------------------------------------------------------------------
-Finished Writing Synthesis Report : Time (s): cpu = 00:00:22 ; elapsed = 00:00:23 . Memory (MB): peak = 1339.211 ; gain = 80.438
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:27 ; elapsed = 00:00:28 . Memory (MB): peak = 1337.086 ; gain = 79.094
 ---------------------------------------------------------------------------------
 Synthesis finished with 0 errors, 0 critical warnings and 0 warnings.
-Synthesis Optimization Runtime : Time (s): cpu = 00:00:14 ; elapsed = 00:00:21 . Memory (MB): peak = 1339.211 ; gain = 62.715
-Synthesis Optimization Complete : Time (s): cpu = 00:00:22 ; elapsed = 00:00:23 . Memory (MB): peak = 1339.211 ; gain = 80.438
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:17 ; elapsed = 00:00:25 . Memory (MB): peak = 1337.086 ; gain = 62.098
+Synthesis Optimization Complete : Time (s): cpu = 00:00:27 ; elapsed = 00:00:28 . Memory (MB): peak = 1337.086 ; gain = 79.094
 INFO: [Project 1-571] Translating synthesized netlist
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.062 . Memory (MB): peak = 1351.262 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.064 . Memory (MB): peak = 1349.109 ; gain = 0.000
 INFO: [Project 1-570] Preparing netlist for logic optimization
 INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1366.840 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 1364.363 ; gain = 0.000
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
-Synth Design complete, checksum: 2b5fa6e3
+Synth Design complete, checksum: e6b7b3f8
 INFO: [Common 17-83] Releasing license: Synthesis
-133 Infos, 103 Warnings, 0 Critical Warnings and 0 Errors encountered.
+129 Infos, 100 Warnings, 0 Critical Warnings and 0 Errors encountered.
 synth_design completed successfully
-synth_design: Time (s): cpu = 00:00:27 ; elapsed = 00:00:28 . Memory (MB): peak = 1366.840 ; gain = 108.066
+synth_design: Time (s): cpu = 00:00:31 ; elapsed = 00:00:33 . Memory (MB): peak = 1364.363 ; gain = 106.371
 INFO: [Common 17-1381] The checkpoint 'G:/Chiro/Programs/urllc-demo-pynq/urllc-demo-vivado/urllc-demo-vivado.runs/synth_1/urllc_wrapper.dcp' has been generated.
 INFO: [runtcl-4] Executing : report_utilization -file urllc_wrapper_utilization_synth.rpt -pb urllc_wrapper_utilization_synth.pb
-INFO: [Common 17-206] Exiting Vivado at Mon Jan 10 16:47:22 2022...
+INFO: [Common 17-206] Exiting Vivado at Mon Jan 10 23:18:53 2022...

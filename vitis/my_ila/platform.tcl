@@ -24,3 +24,7 @@ platform config -updatehw {G:/Chiro/Programs/urllc-demo-pynq/platforms/urllc/url
 platform generate -domains 
 bsp reload
 platform generate -domains 
+platform active {my_ila}
+platform config -updatehw {G:/Chiro/Programs/urllc-demo-pynq/platforms/urllc/urllc_ila.xsa}
+platform generate -domains 
+platform generate -domains standalone_ps7_cortexa9_0 
