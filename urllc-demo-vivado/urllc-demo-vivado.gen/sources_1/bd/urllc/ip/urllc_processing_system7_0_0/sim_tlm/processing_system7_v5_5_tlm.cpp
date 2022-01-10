@@ -144,6 +144,13 @@ void add_extensions_to_tlm(const xtlm::aximm_payload* xtlm_pay, tlm::tlm_generic
 
 processing_system7_v5_5_tlm :: processing_system7_v5_5_tlm (sc_core::sc_module_name name,
     xsc::common_cpp::properties& _prop): sc_module(name)//registering module name with parent
+        ,ENET0_MDIO_MDC("ENET0_MDIO_MDC")
+        ,ENET0_MDIO_O("ENET0_MDIO_O")
+        ,ENET0_MDIO_T("ENET0_MDIO_T")
+        ,ENET0_MDIO_I("ENET0_MDIO_I")
+        ,USB0_PORT_INDCTL("USB0_PORT_INDCTL")
+        ,USB0_VBUS_PWRSELECT("USB0_VBUS_PWRSELECT")
+        ,USB0_VBUS_PWRFAULT("USB0_VBUS_PWRFAULT")
         ,M_AXI_GP0_ACLK("M_AXI_GP0_ACLK")
         ,M_AXI_GP1_ACLK("M_AXI_GP1_ACLK")
         ,S_AXI_HP0_RCOUNT("S_AXI_HP0_RCOUNT")
@@ -163,6 +170,7 @@ processing_system7_v5_5_tlm :: processing_system7_v5_5_tlm (sc_core::sc_module_n
         ,FCLK_CLK0("FCLK_CLK0")
         ,FCLK_CLK1("FCLK_CLK1")
         ,FCLK_CLK2("FCLK_CLK2")
+        ,FCLK_CLK3("FCLK_CLK3")
         ,FCLK_RESET0_N("FCLK_RESET0_N")
         ,MIO("MIO")
         ,DDR_CAS_n("DDR_CAS_n")
@@ -190,8 +198,9 @@ processing_system7_v5_5_tlm :: processing_system7_v5_5_tlm (sc_core::sc_module_n
     ,m_rp_bridge_M_AXI_GP0("m_rp_bridge_M_AXI_GP0")     
     ,m_rp_bridge_M_AXI_GP1("m_rp_bridge_M_AXI_GP1")     
         ,FCLK_CLK0_clk("FCLK_CLK0_clk", sc_time(250000.0,sc_core::SC_PS))//clock period in picoseconds = 1000000/freq(in MZ)
-        ,FCLK_CLK1_clk("FCLK_CLK1_clk", sc_time(8333.333333333334,sc_core::SC_PS))//clock period in picoseconds = 1000000/freq(in MZ)
-        ,FCLK_CLK2_clk("FCLK_CLK2_clk", sc_time(16666.666666666668,sc_core::SC_PS))//clock period in picoseconds = 1000000/freq(in MZ)
+        ,FCLK_CLK1_clk("FCLK_CLK1_clk", sc_time(8000.0,sc_core::SC_PS))//clock period in picoseconds = 1000000/freq(in MZ)
+        ,FCLK_CLK2_clk("FCLK_CLK2_clk", sc_time(5000.0,sc_core::SC_PS))//clock period in picoseconds = 1000000/freq(in MZ)
+        ,FCLK_CLK3_clk("FCLK_CLK3_clk", sc_time(50000.0,sc_core::SC_PS))//clock period in picoseconds = 1000000/freq(in MZ)
     ,prop(_prop)
     {
         //creating instances of xtlm slave sockets
@@ -273,6 +282,9 @@ processing_system7_v5_5_tlm :: processing_system7_v5_5_tlm (sc_core::sc_module_n
         SC_METHOD(trigger_FCLK_CLK2_pin);
         sensitive << FCLK_CLK2_clk;
         dont_initialize();
+        SC_METHOD(trigger_FCLK_CLK3_pin);
+        sensitive << FCLK_CLK3_clk;
+        dont_initialize();
         S_AXI_HP0_xtlm_brdg.registerUserExtensionHandlerCallback(&add_extensions_to_tlm);
         S_AXI_HP1_xtlm_brdg.registerUserExtensionHandlerCallback(&add_extensions_to_tlm);
         m_rp_bridge_M_AXI_GP0.registerUserExtensionHandlerCallback(&get_extensions_from_tlm);
@@ -307,6 +319,11 @@ processing_system7_v5_5_tlm :: ~processing_system7_v5_5_tlm() {
     //FCLK_CLK2 pin written based on FCLK_CLK2_clk clock value 
     void processing_system7_v5_5_tlm ::trigger_FCLK_CLK2_pin()    {
         FCLK_CLK2.write(FCLK_CLK2_clk.read());
+    }
+    //Method which is sentive to FCLK_CLK3_clk sc_clock object
+    //FCLK_CLK3 pin written based on FCLK_CLK3_clk clock value 
+    void processing_system7_v5_5_tlm ::trigger_FCLK_CLK3_pin()    {
+        FCLK_CLK3.write(FCLK_CLK3_clk.read());
     }
     //ps2pl_rst[0] output reset pin
     void processing_system7_v5_5_tlm :: FCLK_RESET0_N_trigger()   {

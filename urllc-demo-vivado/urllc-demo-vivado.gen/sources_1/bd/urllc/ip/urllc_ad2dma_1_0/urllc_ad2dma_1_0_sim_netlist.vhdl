@@ -3,8 +3,8 @@
 -- Tool Version: Vivado v.2021.1 (win64) Build 3247384 Thu Jun 10 19:36:33 MDT 2021
 -- Date        : Wed Dec 29 00:45:12 2021
 -- Host        : DESKTOP-DAG2M26 running 64-bit major release  (build 9200)
--- Command     : write_vhdl -force -mode funcsim
---               h:/Chiro/gits/urllc-demo-pynq/urllc-demo-vivado/urllc-demo-vivado.gen/sources_1/bd/urllc/ip/urllc_ad2dma_1_0/urllc_ad2dma_1_0_sim_netlist.vhdl
+-- Command     : write_vhdl -force -mode funcsim -rename_top urllc_ad2dma_1_0 -prefix
+--               urllc_ad2dma_1_0_ urllc_ad2dma_1_0_sim_netlist.vhdl
 -- Design      : urllc_ad2dma_1_0
 -- Purpose     : This VHDL netlist is a functional simulation representation of the design and should not be modified or
 --               synthesized. This netlist cannot be used for SDF annotated simulation.
@@ -50,8 +50,6 @@ entity urllc_ad2dma_1_0_ad2dma_control_s_axi is
     ap_condition_exit_pp0_iter0_stage0 : in STD_LOGIC;
     s_axi_control_AWADDR : in STD_LOGIC_VECTOR ( 3 downto 0 )
   );
-  attribute ORIG_REF_NAME : string;
-  attribute ORIG_REF_NAME of urllc_ad2dma_1_0_ad2dma_control_s_axi : entity is "ad2dma_control_s_axi";
 end urllc_ad2dma_1_0_ad2dma_control_s_axi;
 
 architecture STRUCTURE of urllc_ad2dma_1_0_ad2dma_control_s_axi is
@@ -958,8 +956,6 @@ entity urllc_ad2dma_1_0_ad2dma_flow_control_loop_pipe is
     Q : in STD_LOGIC_VECTOR ( 7 downto 0 );
     ap_enable_reg_pp0_iter2 : in STD_LOGIC
   );
-  attribute ORIG_REF_NAME : string;
-  attribute ORIG_REF_NAME of urllc_ad2dma_1_0_ad2dma_flow_control_loop_pipe : entity is "ad2dma_flow_control_loop_pipe";
 end urllc_ad2dma_1_0_ad2dma_flow_control_loop_pipe;
 
 architecture STRUCTURE of urllc_ad2dma_1_0_ad2dma_flow_control_loop_pipe is
@@ -1214,8 +1210,6 @@ entity urllc_ad2dma_1_0_ad2dma_regslice_both is
     ap_rst_n : in STD_LOGIC;
     inputs_TDATA : in STD_LOGIC_VECTOR ( 31 downto 0 )
   );
-  attribute ORIG_REF_NAME : string;
-  attribute ORIG_REF_NAME of urllc_ad2dma_1_0_ad2dma_regslice_both : entity is "ad2dma_regslice_both";
 end urllc_ad2dma_1_0_ad2dma_regslice_both;
 
 architecture STRUCTURE of urllc_ad2dma_1_0_ad2dma_regslice_both is
@@ -5641,8 +5635,6 @@ entity urllc_ad2dma_1_0_ad2dma is
   attribute C_S_AXI_DATA_WIDTH of urllc_ad2dma_1_0_ad2dma : entity is 32;
   attribute C_S_AXI_WSTRB_WIDTH : integer;
   attribute C_S_AXI_WSTRB_WIDTH of urllc_ad2dma_1_0_ad2dma : entity is 4;
-  attribute ORIG_REF_NAME : string;
-  attribute ORIG_REF_NAME of urllc_ad2dma_1_0_ad2dma : entity is "ad2dma";
   attribute ap_ST_fsm_pp0_stage0 : string;
   attribute ap_ST_fsm_pp0_stage0 of urllc_ad2dma_1_0_ad2dma : entity is "1'b1";
   attribute hls_module : string;

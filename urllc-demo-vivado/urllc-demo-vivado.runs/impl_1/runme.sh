@@ -24,7 +24,7 @@ else
 fi
 export LD_LIBRARY_PATH
 
-HD_PWD='H:/Chiro/gits/urllc-demo-pynq/urllc-demo-vivado/urllc-demo-vivado.runs/impl_1'
+HD_PWD='G:/Chiro/Programs/urllc-demo-pynq/urllc-demo-vivado/urllc-demo-vivado.runs/impl_1'
 cd "$HD_PWD"
 
 HD_LOG=runme.log

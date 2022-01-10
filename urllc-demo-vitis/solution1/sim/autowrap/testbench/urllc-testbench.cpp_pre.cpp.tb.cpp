@@ -2,11 +2,11 @@
 // Vitis HLS - High-Level Synthesis from C, C++ and OpenCL v2021.1 (64-bit)
 // Copyright 1986-2021 Xilinx, Inc. All Rights Reserved.
 // ==============================================================
-# 1 "H:/Chiro/gits/urllc-demo-pynq/src/vitis_ip/urllc-testbench.cpp"
+# 1 "G:/Chiro/Programs/urllc-demo-pynq/src/vitis_ip/urllc-testbench.cpp"
 # 1 "<built-in>"
 # 1 "<command-line>"
-# 1 "H:/Chiro/gits/urllc-demo-pynq/src/vitis_ip/urllc-testbench.cpp"
-# 1 "H:/Chiro/gits/urllc-demo-pynq/src/vitis_ip/urllc.h" 1
+# 1 "G:/Chiro/Programs/urllc-demo-pynq/src/vitis_ip/urllc-testbench.cpp"
+# 1 "G:/Chiro/Programs/urllc-demo-pynq/src/vitis_ip/urllc.h" 1
 # 1 "C:/Xilinx/Vitis_HLS/2021.1/include/ap_int.h" 1
 # 55 "C:/Xilinx/Vitis_HLS/2021.1/include/ap_int.h"
 # 1 "C:/Xilinx/Vitis_HLS/2021.1/include/ap_common.h" 1
@@ -55110,7 +55110,7 @@ inline bool operator!=(
 }
 # 396 "C:/Xilinx/Vitis_HLS/2021.1/include/ap_fixed.h" 2
 # 381 "C:/Xilinx/Vitis_HLS/2021.1/include/ap_int.h" 2
-# 2 "H:/Chiro/gits/urllc-demo-pynq/src/vitis_ip/urllc.h" 2
+# 2 "G:/Chiro/Programs/urllc-demo-pynq/src/vitis_ip/urllc.h" 2
 # 1 "C:/Xilinx/Vitis_HLS/2021.1/include/ap_axi_sdata.h" 1
 # 87 "C:/Xilinx/Vitis_HLS/2021.1/include/ap_axi_sdata.h"
 # 1 "C:/Xilinx/Vitis_HLS/2021.1/tps/win64/msys64/mingw64/include/c++/6.2.0/climits" 1 3
@@ -55273,7 +55273,7 @@ template <std::size_t WData> struct qdma_axis<WData, 0, 0, 0> {
     return *this;
   }
 };
-# 3 "H:/Chiro/gits/urllc-demo-pynq/src/vitis_ip/urllc.h" 2
+# 3 "G:/Chiro/Programs/urllc-demo-pynq/src/vitis_ip/urllc.h" 2
 
 # 1 "C:/Xilinx/Vitis_HLS/2021.1/include/hls_stream.h" 1
 # 61 "C:/Xilinx/Vitis_HLS/2021.1/include/hls_stream.h"
@@ -68118,7 +68118,7 @@ public:
 
 }
 # 62 "C:/Xilinx/Vitis_HLS/2021.1/include/hls_stream.h" 2
-# 5 "H:/Chiro/gits/urllc-demo-pynq/src/vitis_ip/urllc.h" 2
+# 5 "G:/Chiro/Programs/urllc-demo-pynq/src/vitis_ip/urllc.h" 2
 
 
 
@@ -68126,7 +68126,7 @@ public:
 # 39 "C:/Xilinx/Vitis_HLS/2021.1/tps/win64/msys64/mingw64/include/c++/6.2.0/cstdio" 3
        
 # 40 "C:/Xilinx/Vitis_HLS/2021.1/tps/win64/msys64/mingw64/include/c++/6.2.0/cstdio" 3
-# 9 "H:/Chiro/gits/urllc-demo-pynq/src/vitis_ip/urllc.h" 2
+# 9 "G:/Chiro/Programs/urllc-demo-pynq/src/vitis_ip/urllc.h" 2
 
 
 typedef uint32_t u32;
@@ -68137,7 +68137,7 @@ typedef uint32_t u32;
 using AXI_STREAM = hls::stream<ap_axiu<32,1,1,1>>;
 
 void ad2dma(ap_uint<32> ad[200], ap_uint<32> da[200], AXI_STREAM &inputs, AXI_STREAM &outs);
-# 2 "H:/Chiro/gits/urllc-demo-pynq/src/vitis_ip/urllc-testbench.cpp" 2
+# 2 "G:/Chiro/Programs/urllc-demo-pynq/src/vitis_ip/urllc-testbench.cpp" 2
 
 
 
@@ -68146,24 +68146,40 @@ void ad2dma(ap_uint<32> ad[200], ap_uint<32> da[200], AXI_STREAM &inputs, AXI_ST
 extern "C"
 #endif
 void apatb_ad2dma_sw(ap_uint<32> *, ap_uint<32> *, hls::stream<hls::axis<ap_uint<32>, 1, 1, 1>, 0> &, hls::stream<hls::axis<ap_uint<32>, 1, 1, 1>, 0> &);
-# 5 "H:/Chiro/gits/urllc-demo-pynq/src/vitis_ip/urllc-testbench.cpp"
+# 5 "G:/Chiro/Programs/urllc-demo-pynq/src/vitis_ip/urllc-testbench.cpp"
 int main() {
  ap_uint<32> ad[200], da[200];
  AXI_STREAM inputs, outs;
+
+ int n = 20;
  for (int i = 0; i < 200; i++) {
-  ad[i] = i;
+  ad[i] = i * 2;
+ }
+ ap_axiu<32, 1, 1, 1> t;
+ for (int i = 0; i < 200; i++) {
+  t.data = i;
+  if (i == n - 1) t.last = 1;
+  else t.last = 0;
+
+  inputs << t;
  }
  
 #ifndef HLS_FASTSIM
 #define ad2dma apatb_ad2dma_sw
 #endif
-# 11 "H:/Chiro/gits/urllc-demo-pynq/src/vitis_ip/urllc-testbench.cpp"
+# 21 "G:/Chiro/Programs/urllc-demo-pynq/src/vitis_ip/urllc-testbench.cpp"
 ad2dma(ad, da, inputs, outs);
 #undef ad2dma
-# 11 "H:/Chiro/gits/urllc-demo-pynq/src/vitis_ip/urllc-testbench.cpp"
+# 21 "G:/Chiro/Programs/urllc-demo-pynq/src/vitis_ip/urllc-testbench.cpp"
+
+
+ for (int i = 0; i < 200; i++) {
+  outs >> t;
+  printf("[%3d] %3d%s\n", i, (int)t.data, (t.last ? ", last=True" : ""));
+ }
 
  return 0;
 }
 #endif
-# 13 "H:/Chiro/gits/urllc-demo-pynq/src/vitis_ip/urllc-testbench.cpp"
+# 29 "G:/Chiro/Programs/urllc-demo-pynq/src/vitis_ip/urllc-testbench.cpp"
 

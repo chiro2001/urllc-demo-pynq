@@ -7,7 +7,7 @@
     </downStreamTool>
     <synthesis askAgain="true"/>
     <config>
-        <config_export display_name="urllc_axi_io" library="chilib" output="H:/Chiro/gits/urllc-demo-pynq/ips/urllc/ad2dma.zip" vendor="chiro.urllc.axi_input" version="0.7" format="ip_catalog" rtl="verilog"/>
+        <config_export display_name="urllc_axi_io" format="ip_catalog" library="chilib" output="H:/Chiro/gits/urllc-demo-pynq/ips/urllc/ad2dma.zip" rtl="verilog" vendor="chiro.urllc.axi_input" version="0.7"/>
     </config>
     <UIConfigurations>
         <UIAutosynConf hideTrivialOp="true" isBasedOnBoard="false" isSolutionDirty="false" isStopAskAgain="false" showDetailDesignViewer="false">
@@ -42,15 +42,15 @@
         </UIAutoSimConf>
     </UIConfigurations>
     <ExportDesign askAgain="true" evaluate="false" flow="false" flowChoice="syn" formatName="ip_catalog" output="H:/Chiro/gits/urllc-demo-pynq/ips/urllc/ad2dma.zip" rtl="verilog" rtlButton="true" rtlCombo="verilog">
-        <Format formatName="ip_catalog" description="" vendor="chiro.urllc.axi_input" library="chilib" ipname="ad2dma" version="0.7" display_name="urllc_axi_io" taxonomy=""/>
+        <Format display_name="urllc_axi_io" formatName="ip_catalog" library="chilib" vendor="chiro.urllc.axi_input" version="0.7"/>
         <Format formatName="sysgen"/>
         <Format formatName="sysgen_ise"/>
         <Format formatName="syn_dcp"/>
         <Format formatName="pcore" use_netlist="none"/>
         <Format formatName="xo"/>
     </ExportDesign>
-    <Simulation>
-        <SimFlow askAgain="true" clangSanitizer="false" compile="false" compileChoice="gcc" disableDeadlockDetect="false" dumpTrace="none" enableDataflowProfiling="false" enableFifoSizing="false" name="cosim" optimizeCompile="false" random_stall="false" reduce_diskspace="false" setup="false" toolName="Auto" waveDebug="false">
+    <Simulation argv="">
+        <SimFlow askAgain="true" clangSanitizer="false" compile="false" compileChoice="gcc" disableDeadlockDetect="false" dumpTrace="none" enableDataflowProfiling="false" enableFifoSizing="false" name="cosim" optimizeCompile="false" random_stall="false" reduce_diskspace="false" setup="false" toolName="auto" waveDebug="false" ldflags="" mflags="" compiledLibrary="">
             <Rtl active="false" name="systemc"/>
             <Rtl active="true" name="verilog"/>
             <Rtl active="false" name="vhdl"/>
@@ -70,7 +70,7 @@
         <library value="xilinx/zynq/zynq" name="DefaultPlatform"/>
     </libraryList>
     <clockList>
-        <clock default="false" name="default" period="10"/>
+        <clock name="default" default="false" period="64"/>
     </clockList>
 </solution>
 

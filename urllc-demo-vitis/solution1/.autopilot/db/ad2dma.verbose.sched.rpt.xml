@@ -1,7 +1,7 @@
 <profile>
 
 <section name = "Vitis HLS Report for 'ad2dma'" level="0">
-<item name = "Date">Wed Dec 29 00:35:30 2021
+<item name = "Date">Mon Jan 10 19:33:46 2022
 </item>
 <item name = "Version">2021.1 (Build 3247384 on Thu Jun 10 19:36:33 MDT 2021)</item>
 <item name = "Project">urllc-demo-vitis</item>
@@ -15,7 +15,7 @@
 <section name = "" level="1">
 <item name = "Summary"><table name="" hasTotal="0">
 <keys size="4">Clock, Target, Estimated, Uncertainty</keys>
-<column name="ap_clk">10.00 ns, 4.085 ns, 2.70 ns</column>
+<column name="ap_clk">64.00 ns, 4.085 ns, 17.28 ns</column>
 </table>
 </item>
 </section>
@@ -24,7 +24,7 @@
 <section name = "" level="1">
 <item name = "Summary"><table name="" hasTotal="0">
 <keys size="8">, min, max, min, max, min, max, Type</keys>
-<column name="">203, 203, 2.030 us, 2.030 us, 204, 204, no</column>
+<column name="">203, 203, 12.992 us, 12.992 us, 204, 204, no</column>
 </table>
 </item>
 <item name = "Detail">

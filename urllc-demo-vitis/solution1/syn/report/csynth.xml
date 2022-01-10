@@ -7,8 +7,8 @@
         <ProductFamily>zynq</ProductFamily>
         <Part>xc7z020-clg400-2</Part>
         <TopModelName>ad2dma</TopModelName>
-        <TargetClockPeriod>10.00</TargetClockPeriod>
-        <ClockUncertainty>2.70</ClockUncertainty>
+        <TargetClockPeriod>64.00</TargetClockPeriod>
+        <ClockUncertainty>17.28</ClockUncertainty>
         <FlowTarget>vivado</FlowTarget>
     </UserAssignments>
     <PerformanceEstimates>
@@ -22,9 +22,9 @@
             <Best-caseLatency>203</Best-caseLatency>
             <Average-caseLatency>203</Average-caseLatency>
             <Worst-caseLatency>203</Worst-caseLatency>
-            <Best-caseRealTimeLatency>2.030 us</Best-caseRealTimeLatency>
-            <Average-caseRealTimeLatency>2.030 us</Average-caseRealTimeLatency>
-            <Worst-caseRealTimeLatency>2.030 us</Worst-caseRealTimeLatency>
+            <Best-caseRealTimeLatency>12.992 us</Best-caseRealTimeLatency>
+            <Average-caseRealTimeLatency>12.992 us</Average-caseRealTimeLatency>
+            <Worst-caseRealTimeLatency>12.992 us</Worst-caseRealTimeLatency>
             <Interval-min>204</Interval-min>
             <Interval-max>204</Interval-max>
         </SummaryOfOverallLatency>
@@ -32,7 +32,7 @@
             <VITIS_LOOP_11_1>
                 <TripCount>200</TripCount>
                 <Latency>201</Latency>
-                <AbsoluteTimeLatency>2010</AbsoluteTimeLatency>
+                <AbsoluteTimeLatency>12864</AbsoluteTimeLatency>
                 <PipelineII>1</PipelineII>
                 <PipelineDepth>3</PipelineDepth>
             </VITIS_LOOP_11_1>
@@ -590,17 +590,17 @@
             </Loops>
             <PerformanceEstimates>
                 <SummaryOfTimingAnalysis>
-                    <TargetClockPeriod>10.00</TargetClockPeriod>
-                    <ClockUncertainty>2.70</ClockUncertainty>
+                    <TargetClockPeriod>64.00</TargetClockPeriod>
+                    <ClockUncertainty>17.28</ClockUncertainty>
                     <EstimatedClockPeriod>4.085</EstimatedClockPeriod>
                 </SummaryOfTimingAnalysis>
                 <SummaryOfOverallLatency>
                     <Best-caseLatency>203</Best-caseLatency>
                     <Average-caseLatency>203</Average-caseLatency>
                     <Worst-caseLatency>203</Worst-caseLatency>
-                    <Best-caseRealTimeLatency>2.030 us</Best-caseRealTimeLatency>
-                    <Average-caseRealTimeLatency>2.030 us</Average-caseRealTimeLatency>
-                    <Worst-caseRealTimeLatency>2.030 us</Worst-caseRealTimeLatency>
+                    <Best-caseRealTimeLatency>12.992 us</Best-caseRealTimeLatency>
+                    <Average-caseRealTimeLatency>12.992 us</Average-caseRealTimeLatency>
+                    <Worst-caseRealTimeLatency>12.992 us</Worst-caseRealTimeLatency>
                     <PipelineInitiationInterval>204</PipelineInitiationInterval>
                     <PipelineType>no</PipelineType>
                 </SummaryOfOverallLatency>
@@ -609,7 +609,7 @@
                         <Name>VITIS_LOOP_11_1</Name>
                         <TripCount>200</TripCount>
                         <Latency>201</Latency>
-                        <AbsoluteTimeLatency>2.010 us</AbsoluteTimeLatency>
+                        <AbsoluteTimeLatency>12.864 us</AbsoluteTimeLatency>
                         <PipelineII>1</PipelineII>
                         <PipelineDepth>3</PipelineDepth>
                         <PipelineType>yes</PipelineType>
@@ -642,7 +642,7 @@
     </ModuleInformation>
     <FIFOInformation/>
     <UserConfigCommands>
-        <config_export display_name="urllc_axi_io" library="chilib" output="H:/Chiro/gits/urllc-demo-pynq/ips/urllc/ad2dma.zip" vendor="chiro.urllc.axi_input" version="0.6"/>
+        <config_export display_name="urllc_axi_io" library="chilib" output="H:/Chiro/gits/urllc-demo-pynq/ips/urllc/ad2dma.zip" vendor="chiro.urllc.axi_input" version="0.7"/>
     </UserConfigCommands>
     <Args>
         <Arg ArgName="ad" index="0" direction="in" srcType="ap_uint&lt;32&gt;*" srcSize="32">

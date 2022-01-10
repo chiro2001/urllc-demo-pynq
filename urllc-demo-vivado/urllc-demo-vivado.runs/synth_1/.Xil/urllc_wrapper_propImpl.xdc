@@ -1,4 +1,4 @@
-set_property SRC_FILE_INFO {cfile:H:/Chiro/gits/urllc-demo-pynq/urllc-demo-vivado/urllc-demo-vivado.srcs/constrs_1/imports/new/urllc.xdc rfile:../../../urllc-demo-vivado.srcs/constrs_1/imports/new/urllc.xdc id:1} [current_design]
+set_property SRC_FILE_INFO {cfile:G:/Chiro/Programs/urllc-demo-pynq/urllc-demo-vivado/urllc-demo-vivado.srcs/constrs_1/imports/new/urllc.xdc rfile:../../../urllc-demo-vivado.srcs/constrs_1/imports/new/urllc.xdc id:1} [current_design]
 set_property src_info {type:XDC file:1 line:17 export:INPUT save:INPUT read:READ} [current_design]
 set_property PACKAGE_PIN A20 [get_ports {ad[7]}]
 set_property src_info {type:XDC file:1 line:18 export:INPUT save:INPUT read:READ} [current_design]

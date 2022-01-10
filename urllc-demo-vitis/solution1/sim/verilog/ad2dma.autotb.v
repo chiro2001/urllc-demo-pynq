@@ -12,7 +12,7 @@
 `define AUTOTB_PER_RESULT_TRANS_FILE "ad2dma.performance.result.transaction.xml"
 `define AUTOTB_TOP_INST AESL_inst_apatb_ad2dma_top
 `define AUTOTB_MAX_ALLOW_LATENCY  15000000
-`define AUTOTB_CLOCK_PERIOD_DIV2 5.00
+`define AUTOTB_CLOCK_PERIOD_DIV2 32.00
 
 `define AESL_MEM_ad AESL_automem_ad
 `define AESL_MEM_INST_ad mem_inst_ad
@@ -87,13 +87,13 @@ parameter PROGRESS_TIMEOUT = 10000000;
 parameter LATENCY_ESTIMATION = 203;
 parameter LENGTH_ad = 200;
 parameter LENGTH_da = 200;
-parameter LENGTH_inputs_V_data_V = 0;
-parameter LENGTH_inputs_V_keep_V = 0;
-parameter LENGTH_inputs_V_strb_V = 0;
-parameter LENGTH_inputs_V_user_V = 0;
-parameter LENGTH_inputs_V_last_V = 0;
-parameter LENGTH_inputs_V_id_V = 0;
-parameter LENGTH_inputs_V_dest_V = 0;
+parameter LENGTH_inputs_V_data_V = 200;
+parameter LENGTH_inputs_V_keep_V = 200;
+parameter LENGTH_inputs_V_strb_V = 200;
+parameter LENGTH_inputs_V_user_V = 200;
+parameter LENGTH_inputs_V_last_V = 200;
+parameter LENGTH_inputs_V_id_V = 200;
+parameter LENGTH_inputs_V_dest_V = 200;
 parameter LENGTH_outs_V_data_V = 200;
 parameter LENGTH_outs_V_keep_V = 200;
 parameter LENGTH_outs_V_strb_V = 200;

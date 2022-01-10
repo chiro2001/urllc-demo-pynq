@@ -2,11 +2,11 @@
 # Vivado v2021.1 (64-bit)
 # SW Build 3247384 on Thu Jun 10 19:36:33 MDT 2021
 # IP Build 3246043 on Fri Jun 11 00:30:35 MDT 2021
-# Start of session at: Sun Jan  2 21:35:28 2022
-# Process ID: 267344
-# Current directory: H:/Chiro/gits/urllc-demo-pynq/urllc-demo-vivado/urllc-demo-vivado.runs/urllc_xbar_5_synth_1
+# Start of session at: Sun Jan  9 23:27:50 2022
+# Process ID: 18140
+# Current directory: G:/Chiro/Programs/urllc-demo-pynq/urllc-demo-vivado/urllc-demo-vivado.runs/urllc_xbar_5_synth_1
 # Command line: vivado.exe -log urllc_xbar_5.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source urllc_xbar_5.tcl
-# Log file: H:/Chiro/gits/urllc-demo-pynq/urllc-demo-vivado/urllc-demo-vivado.runs/urllc_xbar_5_synth_1/urllc_xbar_5.vds
-# Journal file: H:/Chiro/gits/urllc-demo-pynq/urllc-demo-vivado/urllc-demo-vivado.runs/urllc_xbar_5_synth_1\vivado.jou
+# Log file: G:/Chiro/Programs/urllc-demo-pynq/urllc-demo-vivado/urllc-demo-vivado.runs/urllc_xbar_5_synth_1/urllc_xbar_5.vds
+# Journal file: G:/Chiro/Programs/urllc-demo-pynq/urllc-demo-vivado/urllc-demo-vivado.runs/urllc_xbar_5_synth_1\vivado.jou
 #-----------------------------------------------------------
 source urllc_xbar_5.tcl -notrace

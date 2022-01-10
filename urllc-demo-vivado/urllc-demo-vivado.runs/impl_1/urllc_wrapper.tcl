@@ -17,7 +17,7 @@ proc create_report { reportName command } {
   }
 }
 namespace eval ::optrace {
-  variable script "H:/Chiro/gits/urllc-demo-pynq/urllc-demo-vivado/urllc-demo-vivado.runs/impl_1/urllc_wrapper.tcl"
+  variable script "G:/Chiro/Programs/urllc-demo-pynq/urllc-demo-vivado/urllc-demo-vivado.runs/impl_1/urllc_wrapper.tcl"
   variable category "vivado_impl"
 }
 
@@ -116,9 +116,6 @@ OPTRACE "impl_1" END { }
 }
 
 set_msg_config -id {Common 17-41} -limit 10000000
-set_msg_config -id {HDL-1065} -limit 10000
-set_msg_config -id {Synth 8-256} -limit 10000
-set_msg_config -id {Synth 8-638} -limit 10000
 
 OPTRACE "impl_1" START { ROLLUP_1 }
 OPTRACE "Phase: Init Design" START { ROLLUP_AUTO }
@@ -126,30 +123,30 @@ start_step init_design
 set ACTIVE_STEP init_design
 set rc [catch {
   create_msg_db init_design.pb
-  set_param checkpoint.writeSynthRtdsInDcp 1
   set_param chipscope.maxJobs 16
+  set_param xicom.use_bs_reader 1
 OPTRACE "create in-memory project" START { }
   create_project -in_memory -part xc7z020clg400-2
   set_property design_mode GateLvl [current_fileset]
   set_param project.singleFileAddWarning.threshold 0
 OPTRACE "create in-memory project" END { }
 OPTRACE "set parameters" START { }
-  set_property webtalk.parent_dir H:/Chiro/gits/urllc-demo-pynq/urllc-demo-vivado/urllc-demo-vivado.cache/wt [current_project]
-  set_property parent.project_path H:/Chiro/gits/urllc-demo-pynq/urllc-demo-vivado/urllc-demo-vivado.xpr [current_project]
-  set_property ip_repo_paths H:/Chiro/gits/urllc-demo-pynq/ips [current_project]
+  set_property webtalk.parent_dir G:/Chiro/Programs/urllc-demo-pynq/urllc-demo-vivado/urllc-demo-vivado.cache/wt [current_project]
+  set_property parent.project_path G:/Chiro/Programs/urllc-demo-pynq/urllc-demo-vivado/urllc-demo-vivado.xpr [current_project]
+  set_property ip_repo_paths G:/Chiro/Programs/urllc-demo-pynq/ips [current_project]
   update_ip_catalog
-  set_property ip_output_repo H:/Chiro/gits/urllc-demo-pynq/urllc-demo-vivado/urllc-demo-vivado.cache/ip [current_project]
+  set_property ip_output_repo G:/Chiro/Programs/urllc-demo-pynq/urllc-demo-vivado/urllc-demo-vivado.cache/ip [current_project]
   set_property ip_cache_permissions {read write} [current_project]
   set_property XPM_LIBRARIES {XPM_CDC XPM_FIFO XPM_MEMORY} [current_project]
 OPTRACE "set parameters" END { }
 OPTRACE "add files" START { }
-  add_files -quiet H:/Chiro/gits/urllc-demo-pynq/urllc-demo-vivado/urllc-demo-vivado.runs/synth_1/urllc_wrapper.dcp
+  add_files -quiet G:/Chiro/Programs/urllc-demo-pynq/urllc-demo-vivado/urllc-demo-vivado.runs/synth_1/urllc_wrapper.dcp
   set_msg_config -source 4 -id {BD 41-1661} -limit 0
   set_param project.isImplRun true
-  add_files H:/Chiro/gits/urllc-demo-pynq/urllc-demo-vivado/urllc-demo-vivado.srcs/sources_1/bd/urllc/urllc.bd
+  add_files G:/Chiro/Programs/urllc-demo-pynq/urllc-demo-vivado/urllc-demo-vivado.srcs/sources_1/bd/urllc/urllc.bd
   set_param project.isImplRun false
 OPTRACE "read constraints: implementation" START { }
-  read_xdc H:/Chiro/gits/urllc-demo-pynq/urllc-demo-vivado/urllc-demo-vivado.srcs/constrs_1/imports/new/urllc.xdc
+  read_xdc G:/Chiro/Programs/urllc-demo-pynq/urllc-demo-vivado/urllc-demo-vivado.srcs/constrs_1/imports/new/urllc.xdc
 OPTRACE "read constraints: implementation" END { }
 OPTRACE "add files" END { }
 OPTRACE "link_design" START { }

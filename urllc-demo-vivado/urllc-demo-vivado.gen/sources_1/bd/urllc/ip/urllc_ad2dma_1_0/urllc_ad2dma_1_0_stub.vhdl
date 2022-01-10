@@ -3,8 +3,8 @@
 -- Tool Version: Vivado v.2021.1 (win64) Build 3247384 Thu Jun 10 19:36:33 MDT 2021
 -- Date        : Wed Dec 29 00:45:12 2021
 -- Host        : DESKTOP-DAG2M26 running 64-bit major release  (build 9200)
--- Command     : write_vhdl -force -mode synth_stub
---               h:/Chiro/gits/urllc-demo-pynq/urllc-demo-vivado/urllc-demo-vivado.gen/sources_1/bd/urllc/ip/urllc_ad2dma_1_0/urllc_ad2dma_1_0_stub.vhdl
+-- Command     : write_vhdl -force -mode synth_stub -rename_top urllc_ad2dma_1_0 -prefix
+--               urllc_ad2dma_1_0_ urllc_ad2dma_1_0_stub.vhdl
 -- Design      : urllc_ad2dma_1_0
 -- Purpose     : Stub declaration of top-level module interface
 -- Device      : xc7z020clg400-2

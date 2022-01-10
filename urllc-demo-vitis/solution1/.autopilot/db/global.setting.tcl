@@ -1,6 +1,6 @@
 
 set TopModule "ad2dma"
-set ClockPeriod 10
+set ClockPeriod 64
 set ClockList ap_clk
 set HasVivadoClockPeriod 0
 set CombLogicFlag 0
@@ -44,7 +44,7 @@ set SCTraceOption all
 set TargetInfo xc7z020:-clg400:-2
 set SourceFiles {sc {} c ../../src/vitis_ip/urllc-vitis-top.cpp}
 set SourceFlags {sc {} c {{}}}
-set DirectiveFile H:/Chiro/gits/urllc-demo-pynq/urllc-demo-vitis/solution1/solution1.directive
+set DirectiveFile G:/Chiro/Programs/urllc-demo-pynq/urllc-demo-vitis/solution1/solution1.directive
 set TBFiles {verilog ../../src/vitis_ip/urllc-testbench.cpp bc ../../src/vitis_ip/urllc-testbench.cpp vhdl ../../src/vitis_ip/urllc-testbench.cpp sc ../../src/vitis_ip/urllc-testbench.cpp cas ../../src/vitis_ip/urllc-testbench.cpp c {}}
 set SpecLanguage C
 set TVInFiles {bc {} c {} sc {} cas {} vhdl {} verilog {}}

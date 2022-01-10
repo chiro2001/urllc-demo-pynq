@@ -1,10 +1,10 @@
 -- Copyright 1986-2021 Xilinx, Inc. All Rights Reserved.
 -- --------------------------------------------------------------------------------
 -- Tool Version: Vivado v.2021.1 (win64) Build 3247384 Thu Jun 10 19:36:33 MDT 2021
--- Date        : Sun Jan  2 23:30:27 2022
--- Host        : DESKTOP-DAG2M26 running 64-bit major release  (build 9200)
+-- Date        : Mon Jan 10 15:05:38 2022
+-- Host        : WIN-544SHHHOI8Q running 64-bit major release  (build 9200)
 -- Command     : write_vhdl -force -mode synth_stub
---               h:/Chiro/gits/urllc-demo-pynq/urllc-demo-vivado/urllc-demo-vivado.gen/sources_1/bd/urllc/ip/urllc_rst_ps7_0_60M_0/urllc_rst_ps7_0_60M_0_stub.vhdl
+--               g:/Chiro/Programs/urllc-demo-pynq/urllc-demo-vivado/urllc-demo-vivado.gen/sources_1/bd/urllc/ip/urllc_rst_ps7_0_60M_0/urllc_rst_ps7_0_60M_0_stub.vhdl
 -- Design      : urllc_rst_ps7_0_60M_0
 -- Purpose     : Stub declaration of top-level module interface
 -- Device      : xc7z020clg400-2

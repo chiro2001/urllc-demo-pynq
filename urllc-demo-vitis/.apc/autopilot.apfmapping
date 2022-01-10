@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <autopilotfilemapping:AutoPilotFileMapping xmlns:autopilotfilemapping="www.autoesl.com/autopilotfilemapping">
   <source>
-    <originFiles name="urllc.h" path="H:\Chiro\gits\urllc-demo-pynq\src\vitis_ip\urllc.h"/>
-    <originFiles name="urllc-vitis-top.cpp" path="H:\Chiro\gits\urllc-demo-pynq\src\vitis_ip\urllc-vitis-top.cpp"/>
+    <originFiles name="urllc.h" path="G:\Chiro\Programs\urllc-demo-pynq\src\vitis_ip\urllc.h"/>
+    <originFiles name="urllc-vitis-top.cpp" path="G:\Chiro\Programs\urllc-demo-pynq\src\vitis_ip\urllc-vitis-top.cpp"/>
   </source>
   <testbench>
-    <originFiles name="urllc-testbench.cpp" path="H:\Chiro\gits\urllc-demo-pynq\src\vitis_ip\urllc-testbench.cpp"/>
+    <originFiles name="urllc-testbench.cpp" path="G:\Chiro\Programs\urllc-demo-pynq\src\vitis_ip\urllc-testbench.cpp"/>
   </testbench>
 </autopilotfilemapping:AutoPilotFileMapping>

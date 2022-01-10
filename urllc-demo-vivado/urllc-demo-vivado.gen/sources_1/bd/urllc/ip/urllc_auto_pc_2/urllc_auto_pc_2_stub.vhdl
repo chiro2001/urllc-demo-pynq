@@ -1,11 +1,11 @@
 -- Copyright 1986-2021 Xilinx, Inc. All Rights Reserved.
 -- --------------------------------------------------------------------------------
 -- Tool Version: Vivado v.2021.1 (win64) Build 3247384 Thu Jun 10 19:36:33 MDT 2021
--- Date        : Sun Jan  2 21:12:56 2022
+-- Date        : Sun Jan  2 16:51:48 2022
 -- Host        : DESKTOP-DAG2M26 running 64-bit major release  (build 9200)
 -- Command     : write_vhdl -force -mode synth_stub -rename_top urllc_auto_pc_2 -prefix
---               urllc_auto_pc_2_ urllc_auto_pc_3_stub.vhdl
--- Design      : urllc_auto_pc_3
+--               urllc_auto_pc_2_ urllc_auto_pc_1_stub.vhdl
+-- Design      : urllc_auto_pc_1
 -- Purpose     : Stub declaration of top-level module interface
 -- Device      : xc7z020clg400-2
 -- --------------------------------------------------------------------------------

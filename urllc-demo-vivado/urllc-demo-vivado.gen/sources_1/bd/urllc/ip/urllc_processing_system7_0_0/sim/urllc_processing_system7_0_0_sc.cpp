@@ -115,7 +115,7 @@ urllc_processing_system7_0_0_sc::urllc_processing_system7_0_0_sc(const sc_core::
     model_param_props.addString("C_FCLK_CLK0_BUF", "TRUE");
     model_param_props.addString("C_FCLK_CLK1_BUF", "TRUE");
     model_param_props.addString("C_FCLK_CLK2_BUF", "TRUE");
-    model_param_props.addString("C_FCLK_CLK3_BUF", "FALSE");
+    model_param_props.addString("C_FCLK_CLK3_BUF", "TRUE");
     model_param_props.addString("C_PACKAGE_NAME", "clg400");
 
   mp_impl = new processing_system7_v5_5_tlm("inst", model_param_props);

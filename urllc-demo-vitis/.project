@@ -29,47 +29,67 @@
 		<link>
 			<name>source</name>
 			<type>2</type>
-			<location>H:/Chiro/gits/urllc-demo-pynq/urllc-demo-vitis/.apc/.src</location>
+			<location>G:/Chiro/Programs/urllc-demo-pynq/urllc-demo-vitis/.apc/.src</location>
 		</link>
 		<link>
 			<name>testbench</name>
 			<type>2</type>
-			<location>H:/Chiro/gits/urllc-demo-pynq/urllc-demo-vitis/.apc/.tb</location>
+			<location>G:/Chiro/Programs/urllc-demo-pynq/urllc-demo-vitis/.apc/.tb</location>
+		</link>
+		<link>
+			<name>.reference/ap_axi_sdata.h</name>
+			<type>1</type>
+			<location>C:/Xilinx/Vitis_HLS/2021.1/include/ap_axi_sdata.h</location>
+		</link>
+		<link>
+			<name>.reference/ap_fixed.h</name>
+			<type>1</type>
+			<location>C:/Xilinx/Vitis_HLS/2021.1/include/ap_fixed.h</location>
+		</link>
+		<link>
+			<name>.reference/hls_stream.h</name>
+			<type>1</type>
+			<location>C:/Xilinx/Vitis_HLS/2021.1/include/hls_stream.h</location>
+		</link>
+		<link>
+			<name>.reference/hls_stream_thread_unsafe.h</name>
+			<type>1</type>
+			<location>C:/Xilinx/Vitis_HLS/2021.1/include/hls_stream_thread_unsafe.h</location>
 		</link>
 		<link>
 			<name>solution1/constraints</name>
 			<type>2</type>
-			<location>H:/Chiro/gits/urllc-demo-pynq/urllc-demo-vitis/solution1/.tcls</location>
+			<location>G:/Chiro/Programs/urllc-demo-pynq/urllc-demo-vitis/solution1/.tcls</location>
 		</link>
 		<link>
 			<name>source/urllc-vitis-top.cpp</name>
 			<type>1</type>
-			<location>H:/Chiro/gits/urllc-demo-pynq/src/vitis_ip/urllc-vitis-top.cpp</location>
+			<location>G:/Chiro/Programs/urllc-demo-pynq/src/vitis_ip/urllc-vitis-top.cpp</location>
 		</link>
 		<link>
 			<name>source/urllc.h</name>
 			<type>1</type>
-			<location>H:/Chiro/gits/urllc-demo-pynq/src/vitis_ip/urllc.h</location>
+			<location>G:/Chiro/Programs/urllc-demo-pynq/src/vitis_ip/urllc.h</location>
 		</link>
 		<link>
 			<name>testbench/urllc-testbench.cpp</name>
 			<type>1</type>
-			<location>H:/Chiro/gits/urllc-demo-pynq/src/vitis_ip/urllc-testbench.cpp</location>
+			<location>G:/Chiro/Programs/urllc-demo-pynq/src/vitis_ip/urllc-testbench.cpp</location>
 		</link>
 		<link>
 			<name>solution1/constraints/.xml.directive</name>
 			<type>1</type>
-			<location>H:/Chiro/gits/urllc-demo-pynq/urllc-demo-vitis/solution1/solution1.directive</location>
+			<location>G:/Chiro/Programs/urllc-demo-pynq/urllc-demo-vitis/solution1/solution1.directive</location>
 		</link>
 		<link>
 			<name>solution1/constraints/directives.tcl</name>
 			<type>1</type>
-			<location>H:/Chiro/gits/urllc-demo-pynq/urllc-demo-vitis/solution1/directives.tcl</location>
+			<location>G:/Chiro/Programs/urllc-demo-pynq/urllc-demo-vitis/solution1/directives.tcl</location>
 		</link>
 		<link>
 			<name>solution1/constraints/script.tcl</name>
 			<type>1</type>
-			<location>H:/Chiro/gits/urllc-demo-pynq/urllc-demo-vitis/solution1/script.tcl</location>
+			<location>G:/Chiro/Programs/urllc-demo-pynq/urllc-demo-vitis/solution1/script.tcl</location>
 		</link>
 	</linkedResources>
 </projectDescription>

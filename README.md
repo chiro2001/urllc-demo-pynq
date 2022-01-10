@@ -24,7 +24,6 @@ Ultra Reliable Low Latency Communication demo for pynq.
      - [ ] 根据帧同步和时钟同步信息对ADC采集的数据进行时间上的调整（频偏等）
      - [ ] 模拟波形数据→数据波形
      - [ ] 传输到DAC
-     
 ### FPGA框图
 
 #### 发送端
@@ -52,16 +51,16 @@ serial("串行转并行")
 data_process("数字处理")
 dac("DAC输出")
 
-input_iq --12.W,65M--> ddc --1.W,4M--> serial --8.W,500K--> data_process --8.W,500K--> dac
+input_iq --12.W,200M--> ddc --1.W,4M--> serial --8.W,500K--> data_process --8.W,500K--> dac
 ```
 
-![image-20220102153950845](README.assets/image-20220102153950845.png)
+![image-20220109213423691](README.assets/image-20220109213423691.png)
 
 **关于采样率等：**
 
 ![image-20220102202303012](README.assets/image-20220102202303012.png)
 
-![image-20220102202723597](README.assets/image-20220102202723597.png)
+![image-20220109212030378](README.assets\image-20220109212030378.png)
 
 ### 数字上变频DUC&&下变频DDC
 

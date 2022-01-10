@@ -1,8 +1,8 @@
 Copyright 1986-2021 Xilinx, Inc. All Rights Reserved.
 ------------------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2021.1 (win64) Build 3247384 Thu Jun 10 19:36:33 MDT 2021
-| Date         : Sun Jan  2 23:32:21 2022
-| Host         : DESKTOP-DAG2M26 running 64-bit major release  (build 9200)
+| Date         : Mon Jan 10 16:48:36 2022
+| Host         : WIN-544SHHHOI8Q running 64-bit major release  (build 9200)
 | Command      : report_drc -file urllc_wrapper_drc_opted.rpt -pb urllc_wrapper_drc_opted.pb -rpx urllc_wrapper_drc_opted.rpx
 | Design       : urllc_wrapper
 | Device       : xc7z020clg400-2

@@ -1,10 +1,10 @@
 -- Copyright 1986-2021 Xilinx, Inc. All Rights Reserved.
 -- --------------------------------------------------------------------------------
 -- Tool Version: Vivado v.2021.1 (win64) Build 3247384 Thu Jun 10 19:36:33 MDT 2021
--- Date        : Sun Jan  2 23:30:26 2022
+-- Date        : Sun Jan  2 23:30:25 2022
 -- Host        : DESKTOP-DAG2M26 running 64-bit major release  (build 9200)
--- Command     : write_vhdl -force -mode synth_stub
---               h:/Chiro/gits/urllc-demo-pynq/urllc-demo-vivado/urllc-demo-vivado.gen/sources_1/bd/urllc/ip/urllc_DUCWrapper_0_0/urllc_DUCWrapper_0_0_stub.vhdl
+-- Command     : write_vhdl -force -mode synth_stub -rename_top urllc_DUCWrapper_0_0 -prefix
+--               urllc_DUCWrapper_0_0_ urllc_DUCWrapper_0_0_stub.vhdl
 -- Design      : urllc_DUCWrapper_0_0
 -- Purpose     : Stub declaration of top-level module interface
 -- Device      : xc7z020clg400-2

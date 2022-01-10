@@ -1,10 +1,10 @@
 -- Copyright 1986-2021 Xilinx, Inc. All Rights Reserved.
 -- --------------------------------------------------------------------------------
 -- Tool Version: Vivado v.2021.1 (win64) Build 3247384 Thu Jun 10 19:36:33 MDT 2021
--- Date        : Sun Jan  2 16:51:53 2022
+-- Date        : Sun Jan  2 16:51:52 2022
 -- Host        : DESKTOP-DAG2M26 running 64-bit major release  (build 9200)
--- Command     : write_vhdl -force -mode funcsim
---               h:/Chiro/gits/urllc-demo-pynq/urllc-demo-vivado/urllc-demo-vivado.gen/sources_1/bd/urllc/ip/urllc_xbar_2/urllc_xbar_2_sim_netlist.vhdl
+-- Command     : write_vhdl -force -mode funcsim -rename_top urllc_xbar_2 -prefix
+--               urllc_xbar_2_ urllc_xbar_2_sim_netlist.vhdl
 -- Design      : urllc_xbar_2
 -- Purpose     : This VHDL netlist is a functional simulation representation of the design and should not be modified or
 --               synthesized. This netlist cannot be used for SDF annotated simulation.
@@ -48,8 +48,6 @@ entity urllc_xbar_2_axi_crossbar_v2_1_25_addr_arbiter is
     \gen_single_thread.active_target_enc\ : in STD_LOGIC;
     \gen_arbiter.last_rr_hot_reg[1]_0\ : in STD_LOGIC_VECTOR ( 0 to 0 )
   );
-  attribute ORIG_REF_NAME : string;
-  attribute ORIG_REF_NAME of urllc_xbar_2_axi_crossbar_v2_1_25_addr_arbiter : entity is "axi_crossbar_v2_1_25_addr_arbiter";
 end urllc_xbar_2_axi_crossbar_v2_1_25_addr_arbiter;
 
 architecture STRUCTURE of urllc_xbar_2_axi_crossbar_v2_1_25_addr_arbiter is
@@ -2469,8 +2467,6 @@ entity urllc_xbar_2_axi_crossbar_v2_1_25_decerr_slave is
     \gen_axi.s_axi_wready_i_reg_1\ : in STD_LOGIC;
     \FSM_onehot_gen_axi.write_cs_reg[2]_1\ : in STD_LOGIC
   );
-  attribute ORIG_REF_NAME : string;
-  attribute ORIG_REF_NAME of urllc_xbar_2_axi_crossbar_v2_1_25_decerr_slave : entity is "axi_crossbar_v2_1_25_decerr_slave";
 end urllc_xbar_2_axi_crossbar_v2_1_25_decerr_slave;
 
 architecture STRUCTURE of urllc_xbar_2_axi_crossbar_v2_1_25_decerr_slave is
@@ -3016,8 +3012,6 @@ entity urllc_xbar_2_axi_crossbar_v2_1_25_si_transactor is
     \gen_arbiter.grant_hot[0]_i_2_0\ : in STD_LOGIC;
     D : in STD_LOGIC_VECTOR ( 2 downto 0 )
   );
-  attribute ORIG_REF_NAME : string;
-  attribute ORIG_REF_NAME of urllc_xbar_2_axi_crossbar_v2_1_25_si_transactor : entity is "axi_crossbar_v2_1_25_si_transactor";
 end urllc_xbar_2_axi_crossbar_v2_1_25_si_transactor;
 
 architecture STRUCTURE of urllc_xbar_2_axi_crossbar_v2_1_25_si_transactor is
@@ -3734,8 +3728,6 @@ entity urllc_xbar_2_axi_crossbar_v2_1_25_splitter is
     aresetn_d : in STD_LOGIC;
     aclk : in STD_LOGIC
   );
-  attribute ORIG_REF_NAME : string;
-  attribute ORIG_REF_NAME of urllc_xbar_2_axi_crossbar_v2_1_25_splitter : entity is "axi_crossbar_v2_1_25_splitter";
 end urllc_xbar_2_axi_crossbar_v2_1_25_splitter;
 
 architecture STRUCTURE of urllc_xbar_2_axi_crossbar_v2_1_25_splitter is
@@ -6041,8 +6033,6 @@ entity urllc_xbar_2_axi_data_fifo_v2_1_23_axic_reg_srl_fifo is
     s_axi_awaddr : in STD_LOGIC_VECTOR ( 2 downto 0 );
     sel_4 : in STD_LOGIC
   );
-  attribute ORIG_REF_NAME : string;
-  attribute ORIG_REF_NAME of urllc_xbar_2_axi_data_fifo_v2_1_23_axic_reg_srl_fifo : entity is "axi_data_fifo_v2_1_23_axic_reg_srl_fifo";
 end urllc_xbar_2_axi_data_fifo_v2_1_23_axic_reg_srl_fifo;
 
 architecture STRUCTURE of urllc_xbar_2_axi_data_fifo_v2_1_23_axic_reg_srl_fifo is
@@ -7443,8 +7433,6 @@ entity urllc_xbar_2_axi_register_slice_v2_1_24_axi_register_slice is
     m_axi_bid : in STD_LOGIC_VECTOR ( 0 to 0 );
     m_axi_bresp : in STD_LOGIC_VECTOR ( 1 downto 0 )
   );
-  attribute ORIG_REF_NAME : string;
-  attribute ORIG_REF_NAME of urllc_xbar_2_axi_register_slice_v2_1_24_axi_register_slice : entity is "axi_register_slice_v2_1_24_axi_register_slice";
 end urllc_xbar_2_axi_register_slice_v2_1_24_axi_register_slice;
 
 architecture STRUCTURE of urllc_xbar_2_axi_register_slice_v2_1_24_axi_register_slice is
@@ -7608,8 +7596,6 @@ entity urllc_xbar_2_axi_crossbar_v2_1_25_wdata_mux is
     D : in STD_LOGIC_VECTOR ( 0 to 0 );
     SR : in STD_LOGIC_VECTOR ( 0 to 0 )
   );
-  attribute ORIG_REF_NAME : string;
-  attribute ORIG_REF_NAME of urllc_xbar_2_axi_crossbar_v2_1_25_wdata_mux : entity is "axi_crossbar_v2_1_25_wdata_mux";
 end urllc_xbar_2_axi_crossbar_v2_1_25_wdata_mux;
 
 architecture STRUCTURE of urllc_xbar_2_axi_crossbar_v2_1_25_wdata_mux is
@@ -7742,8 +7728,6 @@ entity urllc_xbar_2_axi_crossbar_v2_1_25_wdata_router is
     s_axi_awaddr : in STD_LOGIC_VECTOR ( 2 downto 0 );
     sel_4 : in STD_LOGIC
   );
-  attribute ORIG_REF_NAME : string;
-  attribute ORIG_REF_NAME of urllc_xbar_2_axi_crossbar_v2_1_25_wdata_router : entity is "axi_crossbar_v2_1_25_wdata_router";
 end urllc_xbar_2_axi_crossbar_v2_1_25_wdata_router;
 
 architecture STRUCTURE of urllc_xbar_2_axi_crossbar_v2_1_25_wdata_router is
@@ -7834,8 +7818,6 @@ entity urllc_xbar_2_axi_crossbar_v2_1_25_crossbar is
     s_axi_awsize : in STD_LOGIC_VECTOR ( 2 downto 0 );
     s_axi_awlen : in STD_LOGIC_VECTOR ( 7 downto 0 )
   );
-  attribute ORIG_REF_NAME : string;
-  attribute ORIG_REF_NAME of urllc_xbar_2_axi_crossbar_v2_1_25_crossbar : entity is "axi_crossbar_v2_1_25_crossbar";
 end urllc_xbar_2_axi_crossbar_v2_1_25_crossbar;
 
 architecture STRUCTURE of urllc_xbar_2_axi_crossbar_v2_1_25_crossbar is
@@ -8606,8 +8588,6 @@ entity urllc_xbar_2_axi_crossbar_v2_1_25_axi_crossbar is
   attribute C_S_AXI_WRITE_ACCEPTANCE of urllc_xbar_2_axi_crossbar_v2_1_25_axi_crossbar : entity is "64'b0000000000000000000000000000100000000000000000000000000000000010";
   attribute DowngradeIPIdentifiedWarnings : string;
   attribute DowngradeIPIdentifiedWarnings of urllc_xbar_2_axi_crossbar_v2_1_25_axi_crossbar : entity is "yes";
-  attribute ORIG_REF_NAME : string;
-  attribute ORIG_REF_NAME of urllc_xbar_2_axi_crossbar_v2_1_25_axi_crossbar : entity is "axi_crossbar_v2_1_25_axi_crossbar";
   attribute P_ADDR_DECODE : integer;
   attribute P_ADDR_DECODE of urllc_xbar_2_axi_crossbar_v2_1_25_axi_crossbar : entity is 1;
   attribute P_AXI3 : integer;

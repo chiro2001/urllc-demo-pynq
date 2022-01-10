@@ -1,10 +1,10 @@
 // Copyright 1986-2021 Xilinx, Inc. All Rights Reserved.
 // --------------------------------------------------------------------------------
 // Tool Version: Vivado v.2021.1 (win64) Build 3247384 Thu Jun 10 19:36:33 MDT 2021
-// Date        : Sun Jan  2 23:30:26 2022
+// Date        : Sun Jan  2 23:30:25 2022
 // Host        : DESKTOP-DAG2M26 running 64-bit major release  (build 9200)
-// Command     : write_verilog -force -mode funcsim
-//               h:/Chiro/gits/urllc-demo-pynq/urllc-demo-vivado/urllc-demo-vivado.gen/sources_1/bd/urllc/ip/urllc_DUCWrapper_0_0/urllc_DUCWrapper_0_0_sim_netlist.v
+// Command     : write_verilog -force -mode funcsim -rename_top urllc_DUCWrapper_0_0 -prefix
+//               urllc_DUCWrapper_0_0_ urllc_DUCWrapper_0_0_sim_netlist.v
 // Design      : urllc_DUCWrapper_0_0
 // Purpose     : This verilog netlist is a functional simulation representation of the design and should not be modified
 //               or synthesized. This netlist cannot be used for SDF annotated simulation.
@@ -12,36 +12,6 @@
 // --------------------------------------------------------------------------------
 `timescale 1 ps / 1 ps
 
-(* CHECK_LICENSE_TYPE = "urllc_DUCWrapper_0_0,DUCWrapper,{}" *) (* DowngradeIPIdentifiedWarnings = "yes" *) (* IP_DEFINITION_SOURCE = "module_ref" *) 
-(* X_CORE_INFO = "DUCWrapper,Vivado 2021.1" *) 
-(* NotValidForBitStream *)
-module urllc_DUCWrapper_0_0
-   (io_in_data,
-    io_in_sync,
-    io_out_dac,
-    io_clock,
-    io_resetN);
-  input io_in_data;
-  input io_in_sync;
-  output [7:0]io_out_dac;
-  (* X_INTERFACE_INFO = "xilinx.com:signal:clock:1.0 io_clock CLK" *) (* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME io_clock, ASSOCIATED_RESET io_resetN, FREQ_HZ 120000000, FREQ_TOLERANCE_HZ 0, PHASE 0.0, CLK_DOMAIN urllc_processing_system7_0_0_FCLK_CLK1, INSERT_VIP 0" *) input io_clock;
-  (* X_INTERFACE_INFO = "xilinx.com:signal:reset:1.0 io_resetN RST" *) (* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME io_resetN, POLARITY ACTIVE_LOW, INSERT_VIP 0" *) input io_resetN;
-
-  wire io_clock;
-  wire io_in_data;
-  wire io_in_sync;
-  wire [7:0]io_out_dac;
-  wire io_resetN;
-
-  urllc_DUCWrapper_0_0_DUCWrapper inst
-       (.io_clock(io_clock),
-        .io_in_data(io_in_data),
-        .io_in_sync(io_in_sync),
-        .io_out_dac(io_out_dac),
-        .io_resetN(io_resetN));
-endmodule
-
-(* ORIG_REF_NAME = "DUC" *) 
 module urllc_DUCWrapper_0_0_DUC
    (io_out_dac,
     io_clock,
@@ -468,7 +438,6 @@ module urllc_DUCWrapper_0_0_DUC
         .R(1'b0));
 endmodule
 
-(* ORIG_REF_NAME = "DUCWrapper" *) 
 module urllc_DUCWrapper_0_0_DUCWrapper
    (io_out_dac,
     io_clock,
@@ -488,6 +457,35 @@ module urllc_DUCWrapper_0_0_DUCWrapper
   wire io_resetN;
 
   urllc_DUCWrapper_0_0_DUC module_
+       (.io_clock(io_clock),
+        .io_in_data(io_in_data),
+        .io_in_sync(io_in_sync),
+        .io_out_dac(io_out_dac),
+        .io_resetN(io_resetN));
+endmodule
+
+(* CHECK_LICENSE_TYPE = "urllc_DUCWrapper_0_0,DUCWrapper,{}" *) (* DowngradeIPIdentifiedWarnings = "yes" *) (* IP_DEFINITION_SOURCE = "module_ref" *) 
+(* X_CORE_INFO = "DUCWrapper,Vivado 2021.1" *) 
+(* NotValidForBitStream *)
+module urllc_DUCWrapper_0_0
+   (io_in_data,
+    io_in_sync,
+    io_out_dac,
+    io_clock,
+    io_resetN);
+  input io_in_data;
+  input io_in_sync;
+  output [7:0]io_out_dac;
+  (* X_INTERFACE_INFO = "xilinx.com:signal:clock:1.0 io_clock CLK" *) (* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME io_clock, ASSOCIATED_RESET io_resetN, FREQ_HZ 120000000, FREQ_TOLERANCE_HZ 0, PHASE 0.0, CLK_DOMAIN urllc_processing_system7_0_0_FCLK_CLK1, INSERT_VIP 0" *) input io_clock;
+  (* X_INTERFACE_INFO = "xilinx.com:signal:reset:1.0 io_resetN RST" *) (* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME io_resetN, POLARITY ACTIVE_LOW, INSERT_VIP 0" *) input io_resetN;
+
+  wire io_clock;
+  wire io_in_data;
+  wire io_in_sync;
+  wire [7:0]io_out_dac;
+  wire io_resetN;
+
+  urllc_DUCWrapper_0_0_DUCWrapper inst
        (.io_clock(io_clock),
         .io_in_data(io_in_data),
         .io_in_sync(io_in_sync),

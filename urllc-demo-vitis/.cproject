@@ -173,7 +173,7 @@
                                 								
                                 <listOptionValue builtIn="false" value="C:/Xilinx/Vitis_HLS/2021.1/include"/>
                                 								
-                                <listOptionValue builtIn="false" value="H:/Chiro/gits/urllc-demo-pynq"/>
+                                <listOptionValue builtIn="false" value="G:/Chiro/Programs/urllc-demo-pynq"/>
                                 								
                                 <listOptionValue builtIn="false" value="C:/Xilinx/Vitis_HLS/2021.1/win64/tools/systemc/include"/>
                                 							
@@ -189,7 +189,7 @@
                     					
                     <sourceEntries>
                         						
-                        <entry excluding=".apc|.settings|solution1|*.c*|*.C*" flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name=""/>
+                        <entry excluding=".apc|.reference|.settings|solution1|*.c*|*.C*" flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name=""/>
                         					
                     </sourceEntries>
                     				
@@ -351,7 +351,7 @@
                                 								
                                 <listOptionValue builtIn="false" value="C:/Xilinx/Vitis_HLS/2021.1/include"/>
                                 								
-                                <listOptionValue builtIn="false" value="H:/Chiro/gits/urllc-demo-pynq"/>
+                                <listOptionValue builtIn="false" value="G:/Chiro/Programs/urllc-demo-pynq"/>
                                 								
                                 <listOptionValue builtIn="false" value="C:/Xilinx/Vitis_HLS/2021.1/win64/tools/systemc/include"/>
                                 							
@@ -367,7 +367,7 @@
                     					
                     <sourceEntries>
                         						
-                        <entry excluding=".apc|.settings|solution1|*.c*|*.C*" flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name=""/>
+                        <entry excluding=".apc|.reference|.settings|solution1|*.c*|*.C*" flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name=""/>
                         					
                     </sourceEntries>
                     				

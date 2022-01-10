@@ -14,17 +14,17 @@
 </Loops>
 <PerformanceEstimates>
 <SummaryOfTimingAnalysis>
-<TargetClockPeriod>10.00</TargetClockPeriod>
-<ClockUncertainty>2.70</ClockUncertainty>
+<TargetClockPeriod>64.00</TargetClockPeriod>
+<ClockUncertainty>17.28</ClockUncertainty>
 <EstimatedClockPeriod>4.085</EstimatedClockPeriod>
 </SummaryOfTimingAnalysis>
 <SummaryOfOverallLatency>
 <Best-caseLatency>203</Best-caseLatency>
 <Average-caseLatency>203</Average-caseLatency>
 <Worst-caseLatency>203</Worst-caseLatency>
-<Best-caseRealTimeLatency>2.030 us</Best-caseRealTimeLatency>
-<Average-caseRealTimeLatency>2.030 us</Average-caseRealTimeLatency>
-<Worst-caseRealTimeLatency>2.030 us</Worst-caseRealTimeLatency>
+<Best-caseRealTimeLatency>12.992 us</Best-caseRealTimeLatency>
+<Average-caseRealTimeLatency>12.992 us</Average-caseRealTimeLatency>
+<Worst-caseRealTimeLatency>12.992 us</Worst-caseRealTimeLatency>
 <PipelineInitiationInterval>204</PipelineInitiationInterval>
 <PipelineType>no</PipelineType>
 </SummaryOfOverallLatency>
@@ -33,7 +33,7 @@
 <Name>VITIS_LOOP_11_1</Name>
 <TripCount>200</TripCount>
 <Latency>201</Latency>
-<AbsoluteTimeLatency>2.010 us</AbsoluteTimeLatency>
+<AbsoluteTimeLatency>12.864 us</AbsoluteTimeLatency>
 <PipelineII>1</PipelineII>
 <PipelineDepth>3</PipelineDepth>
 <PipelineType>yes</PipelineType>
