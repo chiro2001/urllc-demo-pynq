@@ -6,7 +6,7 @@
 module ad2dma_rtl #
 (
     // FREQ_HZ
-    parameter CLK_FREQ = 4000000,
+    parameter CLK_FREQ = 8000000,
     // Width of AXI stream interfaces in bits
     parameter DATA_WIDTH = 32,
     // Propagate tkeep signal
@@ -30,11 +30,11 @@ module ad2dma_rtl #
     // tuser mask for bad frame marker
     parameter USER_BAD_FRAME_MASK = 1'b1,
 
-    parameter in_axis_FREQ_HZ = 4000000,
-    parameter out_axis_FREQ_HZ = 4000000
+    parameter in_axis_FREQ_HZ = 8000000,
+    parameter out_axis_FREQ_HZ = 8000000
 )
 (
-    (* X_INTERFACE_PARAMETER = "FREQ_HZ 4000000" *)
+    (* X_INTERFACE_PARAMETER = "FREQ_HZ 8000000" *)
     input  wire                   clk,
     (* X_INTERFACE_PARAMETER = "POLARITY ACTIVE_LOW" *)
     input  wire                   resetn,
@@ -42,7 +42,7 @@ module ad2dma_rtl #
     /*
      * AXI input
      */
-     (* X_INTERFACE_PARAMETER = "FREQ_HZ 4000000" *)
+     (* X_INTERFACE_PARAMETER = "FREQ_HZ 8000000" *)
     input  wire [DATA_WIDTH-1:0]  in_axis_tdata,
     input  wire [KEEP_WIDTH-1:0]  in_axis_tkeep,
     input  wire                   in_axis_tvalid,
@@ -55,7 +55,7 @@ module ad2dma_rtl #
     /*
      * AXI output
      */
-     (* X_INTERFACE_PARAMETER = "FREQ_HZ 4000000" *)
+     (* X_INTERFACE_PARAMETER = "FREQ_HZ 8000000" *)
     output wire [DATA_WIDTH-1:0]  out_axis_tdata,
     output wire [KEEP_WIDTH-1:0]  out_axis_tkeep,
     output wire                   out_axis_tvalid,
@@ -79,6 +79,7 @@ module ad2dma_rtl #
     // reg [ID_WIDTH-1:0]    axis_tid;
     // reg [DEST_WIDTH-1:0]  axis_tdest;
     // reg [USER_WIDTH-1:0]  axis_tuser;
+    reg [DATA_WIDTH-1:0]   da_r;
 
     wire ready;
     assign ready = out_axis_tready && in_axis_tvalid;
@@ -92,7 +93,8 @@ module ad2dma_rtl #
     assign out_axis_tdata   = axis_tdata;
     assign in_axis_tready   = axis_tready;
 
-    assign da = ready ? axis_tdata : 0;
+    // assign da = ready ? in_axis_tdata : 0;
+    assign da = da_r;
 
     always @ (posedge clk or negedge resetn) begin
         if (!resetn) begin
@@ -104,9 +106,11 @@ module ad2dma_rtl #
             // axis_tid <= 0;
             // axis_tdest <= 0;
             // axis_tuser <= 0;
+            da_r <= 0;
         end
         else begin
             axis_tdata <= ready ? ad : 0;
+            da_r <= ready ? in_axis_tdata : 0;
 
             axis_tkeep <= ready ? in_axis_tkeep : 0;
             axis_tvalid <= ready;

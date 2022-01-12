@@ -28,3 +28,12 @@ platform active {my_ila}
 platform config -updatehw {G:/Chiro/Programs/urllc-demo-pynq/platforms/urllc/urllc_ila.xsa}
 platform generate -domains 
 platform generate -domains standalone_ps7_cortexa9_0 
+platform active {my_ila}
+platform config -updatehw {G:/Chiro/Programs/urllc-demo-pynq/platforms/urllc/urllc_ila.xsa}
+platform generate -domains 
+platform clean
+platform generate
+platform clean
+platform generate
+platform config -updatehw {G:/Chiro/Programs/urllc-demo-pynq/platforms/urllc/urllc_ila.xsa}
+platform generate -domains 

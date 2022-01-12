@@ -1,0 +1,45 @@
+{
+   "ActiveEmotionalView":"Default View",
+   "Default View_ScaleFactor":"1.10938",
+   "Default View_TopLeft":"-407,0",
+   "ExpandedHierarchyInLayout":"",
+   "guistr":"# # String gsaved with Nlview 7.0r6  2020-01-29 bk=1.5227 VDI=41 GEI=36 GUI=JA:10.0 non-TLS-threadsafe
+#  -string -flagsOSRD
+preplace port S_AXI -pg 1 -lvl 0 -x 0 -y 480 -defaultsOSRD
+preplace port port-id_s_axi_aresetn -pg 1 -lvl 0 -x 0 -y 520 -defaultsOSRD
+preplace port port-id_s_axi_aclk -pg 1 -lvl 0 -x 0 -y 500 -defaultsOSRD
+preplace portBus debug_disable_sync -pg 1 -lvl 3 -x 600 -y 60 -defaultsOSRD
+preplace portBus gpio_out -pg 1 -lvl 3 -x 600 -y 500 -defaultsOSRD
+preplace portBus debug_use_sender_serial -pg 1 -lvl 3 -x 600 -y 80 -defaultsOSRD
+preplace portBus debug_use_sender_iq -pg 1 -lvl 3 -x 600 -y 260 -defaultsOSRD
+preplace portBus data_out_router -pg 1 -lvl 3 -x 600 -y 280 -defaultsOSRD
+preplace portBus debug_pins -pg 1 -lvl 3 -x 600 -y 170 -defaultsOSRD
+preplace portBus ctrl_psincdec -pg 1 -lvl 3 -x 600 -y 560 -defaultsOSRD
+preplace portBus ctrkl_psen -pg 1 -lvl 3 -x 600 -y 440 -defaultsOSRD
+preplace portBus ctrl_psclk -pg 1 -lvl 3 -x 600 -y 340 -defaultsOSRD
+preplace inst xlslice_3_use_sender_iq -pg 1 -lvl 1 -x 160 -y 260 -defaultsOSRD
+preplace inst xlslice_1_use_sender_serial -pg 1 -lvl 1 -x 160 -y 160 -defaultsOSRD
+preplace inst xlslice_0_fun_out -pg 1 -lvl 1 -x 160 -y 360 -defaultsOSRD
+preplace inst xlslice_2_disable_sync -pg 1 -lvl 1 -x 160 -y 60 -defaultsOSRD
+preplace inst axi_gpio_0 -pg 1 -lvl 1 -x 160 -y 500 -defaultsOSRD
+preplace inst xlconcat_0 -pg 1 -lvl 2 -x 440 -y 170 -defaultsOSRD
+preplace inst xlslice_4_psclk -pg 1 -lvl 2 -x 440 -y 340 -defaultsOSRD
+preplace inst xlslice_5_psen -pg 1 -lvl 2 -x 440 -y 440 -defaultsOSRD
+preplace inst xlslice_6_psincdec -pg 1 -lvl 2 -x 440 -y 560 -defaultsOSRD
+preplace netloc axi_gpio_0_gpio_io_o 1 0 3 20 420 320 620 570J
+preplace netloc s_axi_aclk_1 1 0 1 NJ 500
+preplace netloc s_axi_aresetn_1 1 0 1 NJ 520
+preplace netloc xlconcat_0_dout 1 2 1 NJ 170
+preplace netloc xlslice_0_fun_out_Dout 1 1 2 310 10 560J
+preplace netloc xlslice_1_use_sender_serial_Dout 1 1 2 300 20 580J
+preplace netloc xlslice_2_disable_sync_Dout 1 1 2 330 30 570J
+preplace netloc xlslice_3_use_sender_iq_Dout 1 1 2 320 50 550J
+preplace netloc xlslice_6_psincdec_Dout 1 1 2 340 630 550J
+preplace netloc xlslice_5_psen_Dout 1 1 2 330 500 550J
+preplace netloc xlslice_4_psclk_Dout 1 1 2 340 40 540J
+preplace netloc Conn1 1 0 1 NJ 480
+levelinfo -pg 1 0 160 440 600
+pagesize -pg 1 -db -bbox -sgen -140 0 850 720
+"
+}
+

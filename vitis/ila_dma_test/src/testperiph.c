@@ -54,48 +54,49 @@ extern XAxiDma AxiDma;
     }                            \
   } while (0)
 
-#define DMA_SIZE 200
+#define DMA_SIZE 1024 * 1
 #define DMA_TIMEOUT 0xFFFFF
-uint8_t src[DMA_SIZE];
-uint8_t dst[DMA_SIZE];
+uint8_t src[DMA_SIZE] __attribute__ ((aligned (32)));
+uint8_t dst[DMA_SIZE] __attribute__ ((aligned (32)));
 
 int testPeriph() {
   XAxiDma_Config *CfgPtr;
-  // XAd2dma_Config *Ad2CfgPtr_Sender, *Ad2CfgPtr_Recv;
-  // XAd2dma sender, recv;
+  static XScuGic intc;
   int Status = XST_SUCCESS;
+
+  Xil_ICacheEnable();
+  Xil_DCacheEnable();
+
+  check(ScuGicSelfTestExample(XPAR_PS7_SCUGIC_0_DEVICE_ID));
+  check(ScuGicInterruptSetup(&intc, XPAR_PS7_SCUGIC_0_DEVICE_ID));
+  check(DcfgSelfTestExample(XPAR_PS7_DEV_CFG_0_DEVICE_ID));
+
+  Xil_ExceptionInit();
 
   CfgPtr = XAxiDma_LookupConfig(XPAR_SENDER_AXI_DMA_0_DEVICE_ID);
   if (!CfgPtr) {
     return XST_FAILURE;
   }
-  // Ad2CfgPtr_Sender = XAd2dma_LookupConfig(XPAR_SENDER_AD2DMA_1_DEVICE_ID);
-  // Ad2CfgPtr_Recv = XAd2dma_LookupConfig(XPAR_RECIEVER_AD2DMA_2_DEVICE_ID);
-  // if (!Ad2CfgPtr_Sender || !Ad2CfgPtr_Recv) {
-  //   return XST_FAILURE;
-  // }
-
-  // 启动ad2dma
-  // check(XAd2dma_CfgInitialize(&sender, Ad2CfgPtr_Sender));
-  // check(XAd2dma_CfgInitialize(&recv, Ad2CfgPtr_Recv));
-  // while (!XAd2dma_IsReady(&sender) || !XAd2dma_IsReady(&recv))
-  //   ;
-  // XAd2dma_Start(&sender);
-  // XAd2dma_Start(&recv);
-
   check(XAxiDma_CfgInitialize(&AxiDma, CfgPtr));
-
-  // check(XAxiDma_Selftest(&AxiDma));
 
   XAxiDma_IntrDisable(&AxiDma, XAXIDMA_IRQ_ALL_MASK, XAXIDMA_DEVICE_TO_DMA);
   XAxiDma_IntrDisable(&AxiDma, XAXIDMA_IRQ_ALL_MASK, XAXIDMA_DMA_TO_DEVICE);
 
-  for (size_t i = 0; i < DMA_SIZE; i++) src[i] = i, dst[i] = i;
+  // Soft Reset
+  XAxiDma_Reset(&AxiDma);
+  while (!XAxiDma_ResetIsDone(&AxiDma))
+    ;
 
-  XAxiDma_SimpleTransfer(&AxiDma, (UINTPTR)src, DMA_SIZE,
-                         XAXIDMA_DMA_TO_DEVICE);
+  // for (size_t i = 0; i < DMA_SIZE; i++) src[i] = ((i & 0x7F) & 0xFC), dst[i] = i;
+  for (size_t i = 0; i < DMA_SIZE; i++) src[i] = i & 0x07, dst[i] = i;
+
+  // flush cache
+  Xil_DCacheFlushRange((INTPTR)src, DMA_SIZE);
+
   XAxiDma_SimpleTransfer(&AxiDma, (UINTPTR)dst, DMA_SIZE,
                          XAXIDMA_DEVICE_TO_DMA);
+  XAxiDma_SimpleTransfer(&AxiDma, (UINTPTR)src, DMA_SIZE,
+                         XAXIDMA_DMA_TO_DEVICE);
 
   size_t i = 0;
   // 等待DMA发送完毕
@@ -125,7 +126,7 @@ int testPeriph() {
       break;
     }
   }
-	if (Status != XST_SUCCESS) return Status;
+  if (Status != XST_SUCCESS) return Status;
   printf("DMA Rx complete!\n");
 
   Status = XST_SUCCESS;

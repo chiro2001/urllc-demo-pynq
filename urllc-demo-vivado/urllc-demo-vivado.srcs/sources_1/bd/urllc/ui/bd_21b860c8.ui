@@ -1,0 +1,52 @@
+{
+   "ActiveEmotionalView":"Default View",
+   "Default View_ScaleFactor":"1.12436",
+   "Default View_TopLeft":"-127,39",
+   "ExpandedHierarchyInLayout":"",
+   "guistr":"# # String gsaved with Nlview 7.0r6  2020-01-29 bk=1.5227 VDI=41 GEI=36 GUI=JA:10.0 non-TLS-threadsafe
+#  -string -flagsOSRD
+preplace port S00_AXI -pg 1 -lvl 0 -x 0 -y 60 -defaultsOSRD
+preplace port M_AXI_MM2S -pg 1 -lvl 6 -x 1610 -y 140 -defaultsOSRD
+preplace port M_AXI_S2MM -pg 1 -lvl 6 -x 1610 -y 160 -defaultsOSRD
+preplace port port-id_clk_8M -pg 1 -lvl 0 -x 0 -y 400 -defaultsOSRD
+preplace port port-id_ext_reset_in -pg 1 -lvl 0 -x 0 -y 570 -defaultsOSRD
+preplace port port-id_clk_120M -pg 1 -lvl 0 -x 0 -y 870 -defaultsOSRD
+preplace port port-id_resetn_8M -pg 1 -lvl 0 -x 0 -y 310 -defaultsOSRD
+preplace portBus ad -pg 1 -lvl 0 -x 0 -y 750 -defaultsOSRD
+preplace portBus da_iq -pg 1 -lvl 6 -x 1610 -y 720 -defaultsOSRD
+preplace portBus data_serial_out -pg 1 -lvl 6 -x 1610 -y 540 -defaultsOSRD
+preplace portBus irq -pg 1 -lvl 6 -x 1610 -y 430 -defaultsOSRD
+preplace inst axi_dma_0 -pg 1 -lvl 4 -x 1080 -y 200 -defaultsOSRD
+preplace inst xlconcat_0 -pg 1 -lvl 2 -x 360 -y 760 -defaultsOSRD
+preplace inst xlconstant_0 -pg 1 -lvl 1 -x 100 -y 810 -defaultsOSRD
+preplace inst xlslice_0 -pg 1 -lvl 5 -x 1440 -y 540 -defaultsOSRD
+preplace inst DUCWrapper_0 -pg 1 -lvl 5 -x 1440 -y 720 -defaultsOSRD
+preplace inst rst_ps7_0_120M -pg 1 -lvl 4 -x 1080 -y 710 -defaultsOSRD
+preplace inst xlconcat_1 -pg 1 -lvl 5 -x 1440 -y 430 -defaultsOSRD
+preplace inst xlconstant_1 -pg 1 -lvl 3 -x 720 -y 620 -defaultsOSRD
+preplace inst ad2dma_rtl_0 -pg 1 -lvl 3 -x 720 -y 410 -defaultsOSRD
+preplace netloc ARESETN_1 1 0 4 N 310 N 310 470 250 N
+preplace netloc DUCWrapper_0_io_out_dac 1 5 1 NJ 720
+preplace netloc M00_ACLK_1 1 0 4 NJ 400 N 400 460 230 850
+preplace netloc ad2dma_rtl_0_da 1 3 2 NJ 420 1250J
+preplace netloc ad_1 1 0 2 NJ 750 NJ
+preplace netloc axi_dma_0_mm2s_introut 1 4 1 1270 240n
+preplace netloc axi_dma_0_s2mm_introut 1 4 1 1260 260n
+preplace netloc ext_reset_in_1 1 0 4 NJ 570 180 560 NJ 560 840J
+preplace netloc io_in_clockDac_1 1 0 5 NJ 870 NJ 870 NJ 870 850 810 1260J
+preplace netloc rst_ps7_0_120M_peripheral_aresetn 1 4 1 N 750
+preplace netloc xlconcat_0_dout 1 2 1 470 440n
+preplace netloc xlconcat_1_dout 1 5 1 NJ 430
+preplace netloc xlconstant_0_dout 1 1 1 180J 770n
+preplace netloc xlconstant_1_dout 1 3 2 850 610 1250
+preplace netloc xlslice_0_Dout 1 4 2 1260J 630 1580
+preplace netloc Conn1 1 4 2 NJ 140 NJ
+preplace netloc Conn2 1 4 2 NJ 160 NJ
+preplace netloc S00_AXI_1 1 0 4 NJ 60 NJ 60 NJ 60 840
+preplace netloc ad2dma_rtl_0_out_axis 1 3 1 840 170n
+preplace netloc axi_dma_0_M_AXIS_MM2S 1 2 3 480 320 NJ 320 1250
+levelinfo -pg 1 0 100 360 720 1080 1440 1610
+pagesize -pg 1 -db -bbox -sgen -130 -20 1790 890
+"
+}
+0

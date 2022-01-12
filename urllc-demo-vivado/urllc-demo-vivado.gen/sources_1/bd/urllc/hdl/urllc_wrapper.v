@@ -1,7 +1,7 @@
 //Copyright 1986-2021 Xilinx, Inc. All Rights Reserved.
 //--------------------------------------------------------------------------------
 //Tool Version: Vivado v.2021.1 (win64) Build 3247384 Thu Jun 10 19:36:33 MDT 2021
-//Date        : Mon Jan 10 23:16:55 2022
+//Date        : Wed Jan 12 19:42:44 2022
 //Host        : WIN-544SHHHOI8Q running 64-bit major release  (build 9200)
 //Command     : generate_target urllc_wrapper.bd
 //Design      : urllc_wrapper
@@ -31,10 +31,15 @@ module urllc_wrapper
     FIXED_IO_ps_clk,
     FIXED_IO_ps_porb,
     FIXED_IO_ps_srstb,
-    ad,
-    ad_iq,
-    da,
-    da_iq);
+    ad_sel1,
+    ad_sel1_ready,
+    ad_sel2,
+    ad_sel2_ready,
+    clk_200M_out,
+    clk_8M_out,
+    clk_da_120M,
+    clk_pl_50M,
+    da);
   inout [14:0]DDR_addr;
   inout [2:0]DDR_ba;
   inout DDR_cas_n;
@@ -56,10 +61,15 @@ module urllc_wrapper
   inout FIXED_IO_ps_clk;
   inout FIXED_IO_ps_porb;
   inout FIXED_IO_ps_srstb;
-  input [7:0]ad;
-  input [7:0]ad_iq;
+  input [7:0]ad_sel1;
+  input ad_sel1_ready;
+  input [7:0]ad_sel2;
+  input ad_sel2_ready;
+  output clk_200M_out;
+  output clk_8M_out;
+  output clk_da_120M;
+  input clk_pl_50M;
   output [7:0]da;
-  output [7:0]da_iq;
 
   wire [14:0]DDR_addr;
   wire [2:0]DDR_ba;
@@ -82,10 +92,15 @@ module urllc_wrapper
   wire FIXED_IO_ps_clk;
   wire FIXED_IO_ps_porb;
   wire FIXED_IO_ps_srstb;
-  wire [7:0]ad;
-  wire [7:0]ad_iq;
+  wire [7:0]ad_sel1;
+  wire ad_sel1_ready;
+  wire [7:0]ad_sel2;
+  wire ad_sel2_ready;
+  wire clk_200M_out;
+  wire clk_8M_out;
+  wire clk_da_120M;
+  wire clk_pl_50M;
   wire [7:0]da;
-  wire [7:0]da_iq;
 
   urllc urllc_i
        (.DDR_addr(DDR_addr),
@@ -109,8 +124,13 @@ module urllc_wrapper
         .FIXED_IO_ps_clk(FIXED_IO_ps_clk),
         .FIXED_IO_ps_porb(FIXED_IO_ps_porb),
         .FIXED_IO_ps_srstb(FIXED_IO_ps_srstb),
-        .ad(ad),
-        .ad_iq(ad_iq),
-        .da(da),
-        .da_iq(da_iq));
+        .ad_sel1(ad_sel1),
+        .ad_sel1_ready(ad_sel1_ready),
+        .ad_sel2(ad_sel2),
+        .ad_sel2_ready(ad_sel2_ready),
+        .clk_200M_out(clk_200M_out),
+        .clk_8M_out(clk_8M_out),
+        .clk_da_120M(clk_da_120M),
+        .clk_pl_50M(clk_pl_50M),
+        .da(da));
 endmodule
