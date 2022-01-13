@@ -37,3 +37,8 @@ platform clean
 platform generate
 platform config -updatehw {G:/Chiro/Programs/urllc-demo-pynq/platforms/urllc/urllc_ila.xsa}
 platform generate -domains 
+platform clean
+platform clean
+platform clean
+platform clean
+platform clean

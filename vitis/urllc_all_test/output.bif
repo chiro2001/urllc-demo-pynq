@@ -1,0 +1,7 @@
+//arch = zynq; split = false; format = BIN
+the_ROM_image:
+{
+	[bootloader]G:\Chiro\Programs\urllc-demo-pynq\vitis\urllc_sender\zynq_fsbl\fsbl.elf
+	G:\Chiro\Programs\urllc-demo-pynq\vitis\urllc_sender\hw\urllc_sender.bit
+	G:\Chiro\Programs\urllc-demo-pynq\vitis\urllc_all_test\Debug\urllc_all_test.elf
+}

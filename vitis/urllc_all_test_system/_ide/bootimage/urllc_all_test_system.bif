@@ -1,0 +1,12 @@
+/* C:/Users/Chiro/AppData/Local/Temp/bootgen_urllc_all_test_system16206995479431292788/sd_card_temp/boot.bif */
+/* Command to create bitstream .bin file:       */
+/*   bootgen -image <bif_file> -split bin -w    */
+/* Command to create BOOT.BIN file:             */
+/*   bootgen  -image <bif_file> -w -o i BOOT.BIN */
+/*urllc_sender*/
+the_ROM_image:
+{
+ [bootloader] G:/Chiro/Programs/urllc-demo-pynq/vitis/urllc_sender/export/urllc_sender/sw/urllc_sender/boot/fsbl.elf
+ G:/Chiro/Programs/urllc-demo-pynq/vitis/urllc_all_test/_ide/bitstream/urllc_sender.bit
+ G:/Chiro/Programs/urllc-demo-pynq/vitis/urllc_all_test/Debug/urllc_all_test.elf
+}

@@ -1,0 +1,59 @@
+{
+   "ActiveEmotionalView":"Default View",
+   "Default View_ScaleFactor":"0.844048",
+   "Default View_TopLeft":"-475,-19",
+   "ExpandedHierarchyInLayout":"",
+   "guistr":"# # String gsaved with Nlview 7.0r6  2020-01-29 bk=1.5227 VDI=41 GEI=36 GUI=JA:10.0 non-TLS-threadsafe
+#  -string -flagsOSRD
+preplace port S00_AXI -pg 1 -lvl 0 -x -20 -y 50 -defaultsOSRD
+preplace port M01_AXI -pg 1 -lvl 4 -x 1080 -y 70 -defaultsOSRD
+preplace port M02_AXI -pg 1 -lvl 4 -x 1080 -y 90 -defaultsOSRD
+preplace port M03_AXI -pg 1 -lvl 4 -x 1080 -y 110 -defaultsOSRD
+preplace port port-id_ACLK -pg 1 -lvl 0 -x -20 -y 70 -defaultsOSRD
+preplace port port-id_clk_out_ila_40M -pg 1 -lvl 4 -x 1080 -y 500 -defaultsOSRD
+preplace port port-id_clk_out_200M -pg 1 -lvl 4 -x 1080 -y 420 -defaultsOSRD
+preplace port port-id_ext_reset_in -pg 1 -lvl 0 -x -20 -y 620 -defaultsOSRD
+preplace port port-id_clk_out_120M -pg 1 -lvl 4 -x 1080 -y 520 -defaultsOSRD
+preplace port port-id_clk_pl_50M -pg 1 -lvl 0 -x -20 -y 230 -defaultsOSRD
+preplace port port-id_clk_out_8M -pg 1 -lvl 4 -x 1080 -y 480 -defaultsOSRD
+preplace port port-id_clock_dynamic_psclk -pg 1 -lvl 0 -x -20 -y 320 -defaultsOSRD
+preplace port port-id_clock_dynamic_psen -pg 1 -lvl 0 -x -20 -y 340 -defaultsOSRD
+preplace port port-id_clock_dynamic_psincdec -pg 1 -lvl 0 -x -20 -y 360 -defaultsOSRD
+preplace portBus resetn_8M -pg 1 -lvl 4 -x 1080 -y 680 -defaultsOSRD
+preplace portBus peripheral_aresetn -pg 1 -lvl 4 -x 1080 -y 540 -defaultsOSRD
+preplace portBus clock_info_out -pg 1 -lvl 4 -x 1080 -y 330 -defaultsOSRD
+preplace inst proc_clock_reset -pg 1 -lvl 2 -x 500 -y 720 -defaultsOSRD
+preplace inst clk_wiz_static -pg 1 -lvl 2 -x 500 -y 510 -defaultsOSRD
+preplace inst proc_data_reset_8M -pg 1 -lvl 3 -x 890 -y 640 -defaultsOSRD
+preplace inst smartconnect_outer -pg 1 -lvl 1 -x 160 -y 70 -defaultsOSRD
+preplace inst clk_wiz_dynamic -pg 1 -lvl 2 -x 500 -y 300 -defaultsOSRD
+preplace inst xlconcat_0 -pg 1 -lvl 3 -x 890 -y 330 -defaultsOSRD
+preplace inst clk_wiz_100M -pg 1 -lvl 1 -x 160 -y 220 -defaultsOSRD
+preplace netloc ACLK_1 1 0 2 10 310 310
+preplace netloc ARESETN_2 1 0 4 20 290 330 600 710 540 NJ
+preplace netloc clk_pl_50M_1 1 0 2 0 300 NJ
+preplace netloc clk_wiz_100M_clk_out1 1 1 1 300 210n
+preplace netloc clk_wiz_100M_locked 1 1 2 310 180 690J
+preplace netloc clk_wiz_dynamic_clk_out_200M 1 2 2 670J 240 1060J
+preplace netloc clk_wiz_dynamic_locked 1 2 1 N 320
+preplace netloc clk_wiz_dynamic_psdone 1 2 1 680 280n
+preplace netloc clk_wiz_static_clk_out_120M 1 2 2 NJ 520 NJ
+preplace netloc clk_wiz_static_clk_out_40M 1 2 2 NJ 500 NJ
+preplace netloc clk_wiz_static_locked 1 2 1 700 340n
+preplace netloc clock_dynamic_psclk_1 1 0 2 NJ 320 NJ
+preplace netloc clock_dynamic_psen_1 1 0 2 NJ 340 NJ
+preplace netloc clock_dynamic_psincdec_1 1 0 2 NJ 360 NJ
+preplace netloc div_n_0_clk_div2 1 2 2 720 480 NJ
+preplace netloc ext_reset_in_1 1 0 3 NJ 620 300 620 N
+preplace netloc proc_data_reset_4M_peripheral_aresetn 1 3 1 NJ 680
+preplace netloc xlconcat_0_dout 1 3 1 NJ 330
+preplace netloc S00_AXI_1 1 0 1 NJ 50
+preplace netloc smartconnect_0_M01_AXI 1 1 3 NJ 60 NJ 60 1060J
+preplace netloc smartconnect_0_M02_AXI 1 1 3 330J 90 NJ 90 NJ
+preplace netloc smartconnect_outer_M00_AXI 1 1 1 320 40n
+preplace netloc smartconnect_outer_M03_AXI 1 1 3 300J 110 NJ 110 NJ
+levelinfo -pg 1 -20 160 500 890 1080
+pagesize -pg 1 -db -bbox -sgen -230 -20 1280 820
+"
+}
+

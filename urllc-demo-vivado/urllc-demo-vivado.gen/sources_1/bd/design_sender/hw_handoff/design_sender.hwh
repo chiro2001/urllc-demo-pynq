@@ -1,0 +1,429 @@
+﻿<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
+<EDKSYSTEM EDWVERSION="1.2" TIMESTAMP="Thu Jan 13 20:46:41 2022" VIVADOVERSION="2021.1">
+
+  <SYSTEMINFO ARCH="zynq" DEVICE="7z020" NAME="design_sender" PACKAGE="clg400" SPEEDGRADE="-2"/>
+
+  <EXTERNALPORTS>
+    <PORT CLKFREQUENCY="50000000" DIR="I" NAME="clk_pl_50M" SIGIS="clk" SIGNAME="External_Ports_clk_pl_50M">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="urllc_core_0" PORT="clk_pl_50M"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="I" LEFT="7" NAME="sender_ad" RIGHT="0" SIGIS="data" SIGNAME="External_Ports_sender_ad">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="urllc_core_0" PORT="ad_sel1"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="O" LEFT="7" NAME="sender_da" RIGHT="0" SIGIS="data" SIGNAME="urllc_core_0_da">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="urllc_core_0" PORT="da"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT CLKFREQUENCY="8000000" DIR="O" NAME="sender_ad_clk_8M" SIGIS="clk" SIGNAME="urllc_core_0_clk_8M_out">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="urllc_core_0" PORT="clk_8M_out"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT CLKFREQUENCY="120000000" DIR="O" NAME="sender_da_clk_120M" SIGIS="clk" SIGNAME="urllc_core_0_clk_da_120M">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="urllc_core_0" PORT="clk_da_120M"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="IO" NAME="DDR_cas_n" SIGIS="undef" SIGNAME="urllc_core_0_DDR_cas_n">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="urllc_core_0" PORT="DDR_cas_n"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="IO" NAME="DDR_cke" SIGIS="undef" SIGNAME="urllc_core_0_DDR_cke">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="urllc_core_0" PORT="DDR_cke"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="IO" NAME="DDR_ck_n" SIGIS="undef" SIGNAME="urllc_core_0_DDR_ck_n">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="urllc_core_0" PORT="DDR_ck_n"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="IO" NAME="DDR_ck_p" SIGIS="undef" SIGNAME="urllc_core_0_DDR_ck_p">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="urllc_core_0" PORT="DDR_ck_p"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="IO" NAME="DDR_cs_n" SIGIS="undef" SIGNAME="urllc_core_0_DDR_cs_n">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="urllc_core_0" PORT="DDR_cs_n"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="IO" NAME="DDR_reset_n" SIGIS="undef" SIGNAME="urllc_core_0_DDR_reset_n">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="urllc_core_0" PORT="DDR_reset_n"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="IO" NAME="DDR_odt" SIGIS="undef" SIGNAME="urllc_core_0_DDR_odt">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="urllc_core_0" PORT="DDR_odt"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="IO" NAME="DDR_ras_n" SIGIS="undef" SIGNAME="urllc_core_0_DDR_ras_n">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="urllc_core_0" PORT="DDR_ras_n"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="IO" NAME="DDR_we_n" SIGIS="undef" SIGNAME="urllc_core_0_DDR_we_n">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="urllc_core_0" PORT="DDR_we_n"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="IO" LEFT="2" NAME="DDR_ba" RIGHT="0" SIGIS="undef" SIGNAME="urllc_core_0_DDR_ba">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="urllc_core_0" PORT="DDR_ba"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="IO" LEFT="14" NAME="DDR_addr" RIGHT="0" SIGIS="undef" SIGNAME="urllc_core_0_DDR_addr">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="urllc_core_0" PORT="DDR_addr"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="IO" LEFT="3" NAME="DDR_dm" RIGHT="0" SIGIS="undef" SIGNAME="urllc_core_0_DDR_dm">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="urllc_core_0" PORT="DDR_dm"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="IO" LEFT="31" NAME="DDR_dq" RIGHT="0" SIGIS="undef" SIGNAME="urllc_core_0_DDR_dq">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="urllc_core_0" PORT="DDR_dq"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="IO" LEFT="3" NAME="DDR_dqs_n" RIGHT="0" SIGIS="undef" SIGNAME="urllc_core_0_DDR_dqs_n">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="urllc_core_0" PORT="DDR_dqs_n"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="IO" LEFT="3" NAME="DDR_dqs_p" RIGHT="0" SIGIS="undef" SIGNAME="urllc_core_0_DDR_dqs_p">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="urllc_core_0" PORT="DDR_dqs_p"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="IO" LEFT="53" NAME="FIXED_IO_mio" RIGHT="0" SIGIS="undef" SIGNAME="urllc_core_0_FIXED_IO_mio">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="urllc_core_0" PORT="FIXED_IO_mio"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="IO" NAME="FIXED_IO_ddr_vrn" SIGIS="undef" SIGNAME="urllc_core_0_FIXED_IO_ddr_vrn">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="urllc_core_0" PORT="FIXED_IO_ddr_vrn"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="IO" NAME="FIXED_IO_ddr_vrp" SIGIS="undef" SIGNAME="urllc_core_0_FIXED_IO_ddr_vrp">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="urllc_core_0" PORT="FIXED_IO_ddr_vrp"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="IO" NAME="FIXED_IO_ps_srstb" SIGIS="undef" SIGNAME="urllc_core_0_FIXED_IO_ps_srstb">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="urllc_core_0" PORT="FIXED_IO_ps_srstb"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="IO" NAME="FIXED_IO_ps_clk" SIGIS="undef" SIGNAME="urllc_core_0_FIXED_IO_ps_clk">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="urllc_core_0" PORT="FIXED_IO_ps_clk"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="IO" NAME="FIXED_IO_ps_porb" SIGIS="undef" SIGNAME="urllc_core_0_FIXED_IO_ps_porb">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="urllc_core_0" PORT="FIXED_IO_ps_porb"/>
+      </CONNECTIONS>
+    </PORT>
+  </EXTERNALPORTS>
+
+  <EXTERNALINTERFACES>
+    <BUSINTERFACE BUSNAME="urllc_core_0_DDR" DATAWIDTH="8" NAME="DDR" TYPE="INITIATOR">
+      <PARAMETER NAME="CAN_DEBUG" VALUE="false"/>
+      <PARAMETER NAME="TIMEPERIOD_PS" VALUE="1250"/>
+      <PARAMETER NAME="MEMORY_TYPE" VALUE="COMPONENTS"/>
+      <PARAMETER NAME="MEMORY_PART"/>
+      <PARAMETER NAME="DATA_WIDTH" VALUE="8"/>
+      <PARAMETER NAME="CS_ENABLED" VALUE="true"/>
+      <PARAMETER NAME="DATA_MASK_ENABLED" VALUE="true"/>
+      <PARAMETER NAME="SLOT" VALUE="Single"/>
+      <PARAMETER NAME="CUSTOM_PARTS"/>
+      <PARAMETER NAME="MEM_ADDR_MAP" VALUE="ROW_COLUMN_BANK"/>
+      <PARAMETER NAME="BURST_LENGTH" VALUE="8"/>
+      <PARAMETER NAME="AXI_ARBITRATION_SCHEME" VALUE="TDM"/>
+      <PARAMETER NAME="CAS_LATENCY" VALUE="11"/>
+      <PARAMETER NAME="CAS_WRITE_LATENCY" VALUE="11"/>
+      <PORTMAPS>
+        <PORTMAP LOGICAL="CAS_N" PHYSICAL="DDR_cas_n"/>
+        <PORTMAP LOGICAL="CKE" PHYSICAL="DDR_cke"/>
+        <PORTMAP LOGICAL="CK_N" PHYSICAL="DDR_ck_n"/>
+        <PORTMAP LOGICAL="CK_P" PHYSICAL="DDR_ck_p"/>
+        <PORTMAP LOGICAL="CS_N" PHYSICAL="DDR_cs_n"/>
+        <PORTMAP LOGICAL="RESET_N" PHYSICAL="DDR_reset_n"/>
+        <PORTMAP LOGICAL="ODT" PHYSICAL="DDR_odt"/>
+        <PORTMAP LOGICAL="RAS_N" PHYSICAL="DDR_ras_n"/>
+        <PORTMAP LOGICAL="WE_N" PHYSICAL="DDR_we_n"/>
+        <PORTMAP LOGICAL="BA" PHYSICAL="DDR_ba"/>
+        <PORTMAP LOGICAL="ADDR" PHYSICAL="DDR_addr"/>
+        <PORTMAP LOGICAL="DM" PHYSICAL="DDR_dm"/>
+        <PORTMAP LOGICAL="DQ" PHYSICAL="DDR_dq"/>
+        <PORTMAP LOGICAL="DQS_N" PHYSICAL="DDR_dqs_n"/>
+        <PORTMAP LOGICAL="DQS_P" PHYSICAL="DDR_dqs_p"/>
+      </PORTMAPS>
+    </BUSINTERFACE>
+    <BUSINTERFACE BUSNAME="urllc_core_0_FIXED_IO" NAME="FIXED_IO" TYPE="INITIATOR">
+      <PARAMETER NAME="CAN_DEBUG" VALUE="false"/>
+      <PORTMAPS>
+        <PORTMAP LOGICAL="MIO" PHYSICAL="FIXED_IO_mio"/>
+        <PORTMAP LOGICAL="DDR_VRN" PHYSICAL="FIXED_IO_ddr_vrn"/>
+        <PORTMAP LOGICAL="DDR_VRP" PHYSICAL="FIXED_IO_ddr_vrp"/>
+        <PORTMAP LOGICAL="PS_SRSTB" PHYSICAL="FIXED_IO_ps_srstb"/>
+        <PORTMAP LOGICAL="PS_CLK" PHYSICAL="FIXED_IO_ps_clk"/>
+        <PORTMAP LOGICAL="PS_PORB" PHYSICAL="FIXED_IO_ps_porb"/>
+      </PORTMAPS>
+    </BUSINTERFACE>
+  </EXTERNALINTERFACES>
+
+  <MODULES>
+    <MODULE BD="urllc_core_inst_1" BDTYPE="BLOCK_CONTAINER" DRIVERMODE="SUBCORE" FULLNAME="/urllc_core_0" INSTANCE="urllc_core_0" IS_ENABLE="1">
+      <DOCUMENTS/>
+      <PARAMETERS>
+        <PARAMETER NAME="ACTIVE_SYNTH_BD" VALUE="urllc_core.bd"/>
+        <PARAMETER NAME="LOCK_PROPAGATE" VALUE="0"/>
+        <PARAMETER NAME="ACTIVE_SIM_BD" VALUE="urllc_core.bd"/>
+        <PARAMETER NAME="LIST_SYNTH_BD" VALUE="urllc_core.bd"/>
+        <PARAMETER NAME="LIST_SIM_BD" VALUE="urllc_core.bd"/>
+        <PARAMETER NAME="ENABLE_DFX" VALUE="0"/>
+      </PARAMETERS>
+      <PORTS>
+        <PORT DIR="I" LEFT="7" NAME="ad_sel1" RIGHT="0" SIGIS="data" SIGNAME="External_Ports_sender_ad">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External_Ports" PORT="sender_ad"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="ad_sel1_ready" SENSITIVITY="EDGE_RISING" SIGIS="INTERRUPT" SIGNAME="xlconstant_0_dout">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="xlconstant_0" PORT="dout"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="7" NAME="ad_sel2" RIGHT="0" SIGIS="data" SIGNAME="xlconstant_1_dout">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="xlconstant_1" PORT="dout"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="ad_sel2_ready" SENSITIVITY="EDGE_RISING" SIGIS="INTERRUPT" SIGNAME="xlconstant_0_dout">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="xlconstant_0" PORT="dout"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT CLKFREQUENCY="200000000" DIR="O" NAME="clk_200M_out" SIGIS="clk"/>
+        <PORT DIR="O" NAME="clk_8M_out" SIGIS="undef" SIGNAME="urllc_core_0_clk_8M_out">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External_Ports" PORT="sender_ad_clk_8M"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" NAME="clk_da_120M" SIGIS="undef" SIGNAME="urllc_core_0_clk_da_120M">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External_Ports" PORT="sender_da_clk_120M"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT CLKFREQUENCY="50000000" DIR="I" NAME="clk_pl_50M" SIGIS="clk" SIGNAME="External_Ports_clk_pl_50M">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External_Ports" PORT="clk_pl_50M"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" LEFT="7" NAME="da" RIGHT="0" SIGIS="undef" SIGNAME="urllc_core_0_da">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External_Ports" PORT="sender_da"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="IO" NAME="DDR_cas_n" SIGIS="undef" SIGNAME="urllc_core_0_DDR_cas_n">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="design_sender_imp" PORT="DDR_cas_n"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="IO" NAME="DDR_cke" SIGIS="undef" SIGNAME="urllc_core_0_DDR_cke">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="design_sender_imp" PORT="DDR_cke"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="IO" NAME="DDR_ck_n" SIGIS="undef" SIGNAME="urllc_core_0_DDR_ck_n">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="design_sender_imp" PORT="DDR_ck_n"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="IO" NAME="DDR_ck_p" SIGIS="undef" SIGNAME="urllc_core_0_DDR_ck_p">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="design_sender_imp" PORT="DDR_ck_p"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="IO" NAME="DDR_cs_n" SIGIS="undef" SIGNAME="urllc_core_0_DDR_cs_n">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="design_sender_imp" PORT="DDR_cs_n"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="IO" NAME="DDR_reset_n" POLARITY="ACTIVE_LOW" SIGIS="undef" SIGNAME="urllc_core_0_DDR_reset_n">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="design_sender_imp" PORT="DDR_reset_n"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="IO" NAME="DDR_odt" SIGIS="undef" SIGNAME="urllc_core_0_DDR_odt">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="design_sender_imp" PORT="DDR_odt"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="IO" NAME="DDR_ras_n" SIGIS="undef" SIGNAME="urllc_core_0_DDR_ras_n">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="design_sender_imp" PORT="DDR_ras_n"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="IO" NAME="DDR_we_n" SIGIS="undef" SIGNAME="urllc_core_0_DDR_we_n">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="design_sender_imp" PORT="DDR_we_n"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="IO" LEFT="2" NAME="DDR_ba" RIGHT="0" SIGIS="undef" SIGNAME="urllc_core_0_DDR_ba">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="design_sender_imp" PORT="DDR_ba"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="IO" LEFT="14" NAME="DDR_addr" RIGHT="0" SIGIS="undef" SIGNAME="urllc_core_0_DDR_addr">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="design_sender_imp" PORT="DDR_addr"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="IO" LEFT="3" NAME="DDR_dm" RIGHT="0" SIGIS="undef" SIGNAME="urllc_core_0_DDR_dm">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="design_sender_imp" PORT="DDR_dm"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="IO" LEFT="31" NAME="DDR_dq" RIGHT="0" SIGIS="undef" SIGNAME="urllc_core_0_DDR_dq">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="design_sender_imp" PORT="DDR_dq"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="IO" LEFT="3" NAME="DDR_dqs_n" RIGHT="0" SIGIS="undef" SIGNAME="urllc_core_0_DDR_dqs_n">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="design_sender_imp" PORT="DDR_dqs_n"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="IO" LEFT="3" NAME="DDR_dqs_p" RIGHT="0" SIGIS="undef" SIGNAME="urllc_core_0_DDR_dqs_p">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="design_sender_imp" PORT="DDR_dqs_p"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="IO" LEFT="53" NAME="FIXED_IO_mio" RIGHT="0" SIGIS="undef" SIGNAME="urllc_core_0_FIXED_IO_mio">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="design_sender_imp" PORT="FIXED_IO_mio"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="IO" NAME="FIXED_IO_ddr_vrn" SIGIS="undef" SIGNAME="urllc_core_0_FIXED_IO_ddr_vrn">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="design_sender_imp" PORT="FIXED_IO_ddr_vrn"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="IO" NAME="FIXED_IO_ddr_vrp" SIGIS="undef" SIGNAME="urllc_core_0_FIXED_IO_ddr_vrp">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="design_sender_imp" PORT="FIXED_IO_ddr_vrp"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="IO" NAME="FIXED_IO_ps_srstb" SIGIS="undef" SIGNAME="urllc_core_0_FIXED_IO_ps_srstb">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="design_sender_imp" PORT="FIXED_IO_ps_srstb"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="IO" NAME="FIXED_IO_ps_clk" SIGIS="undef" SIGNAME="urllc_core_0_FIXED_IO_ps_clk">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="design_sender_imp" PORT="FIXED_IO_ps_clk"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="IO" NAME="FIXED_IO_ps_porb" SIGIS="undef" SIGNAME="urllc_core_0_FIXED_IO_ps_porb">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="design_sender_imp" PORT="FIXED_IO_ps_porb"/>
+          </CONNECTIONS>
+        </PORT>
+      </PORTS>
+      <BUSINTERFACES>
+        <BUSINTERFACE BUSNAME="urllc_core_0_DDR" DATAWIDTH="8" NAME="DDR" TYPE="INITIATOR" VLNV="xilinx.com:interface:ddrx:1.0">
+          <PARAMETER NAME="CAN_DEBUG" VALUE="false"/>
+          <PARAMETER NAME="TIMEPERIOD_PS" VALUE="1250"/>
+          <PARAMETER NAME="MEMORY_TYPE" VALUE="COMPONENTS"/>
+          <PARAMETER NAME="MEMORY_PART"/>
+          <PARAMETER NAME="DATA_WIDTH" VALUE="8"/>
+          <PARAMETER NAME="CS_ENABLED" VALUE="true"/>
+          <PARAMETER NAME="DATA_MASK_ENABLED" VALUE="true"/>
+          <PARAMETER NAME="SLOT" VALUE="Single"/>
+          <PARAMETER NAME="CUSTOM_PARTS"/>
+          <PARAMETER NAME="MEM_ADDR_MAP" VALUE="ROW_COLUMN_BANK"/>
+          <PARAMETER NAME="BURST_LENGTH" VALUE="8"/>
+          <PARAMETER NAME="AXI_ARBITRATION_SCHEME" VALUE="TDM"/>
+          <PARAMETER NAME="CAS_LATENCY" VALUE="11"/>
+          <PARAMETER NAME="CAS_WRITE_LATENCY" VALUE="11"/>
+          <PORTMAPS>
+            <PORTMAP LOGICAL="CAS_N" PHYSICAL="DDR_cas_n"/>
+            <PORTMAP LOGICAL="CKE" PHYSICAL="DDR_cke"/>
+            <PORTMAP LOGICAL="CK_N" PHYSICAL="DDR_ck_n"/>
+            <PORTMAP LOGICAL="CK_P" PHYSICAL="DDR_ck_p"/>
+            <PORTMAP LOGICAL="CS_N" PHYSICAL="DDR_cs_n"/>
+            <PORTMAP LOGICAL="RESET_N" PHYSICAL="DDR_reset_n"/>
+            <PORTMAP LOGICAL="ODT" PHYSICAL="DDR_odt"/>
+            <PORTMAP LOGICAL="RAS_N" PHYSICAL="DDR_ras_n"/>
+            <PORTMAP LOGICAL="WE_N" PHYSICAL="DDR_we_n"/>
+            <PORTMAP LOGICAL="BA" PHYSICAL="DDR_ba"/>
+            <PORTMAP LOGICAL="ADDR" PHYSICAL="DDR_addr"/>
+            <PORTMAP LOGICAL="DM" PHYSICAL="DDR_dm"/>
+            <PORTMAP LOGICAL="DQ" PHYSICAL="DDR_dq"/>
+            <PORTMAP LOGICAL="DQS_N" PHYSICAL="DDR_dqs_n"/>
+            <PORTMAP LOGICAL="DQS_P" PHYSICAL="DDR_dqs_p"/>
+          </PORTMAPS>
+        </BUSINTERFACE>
+        <BUSINTERFACE BUSNAME="urllc_core_0_FIXED_IO" NAME="FIXED_IO" TYPE="INITIATOR" VLNV="xilinx.com:display_processing_system7:fixedio:1.0">
+          <PARAMETER NAME="CAN_DEBUG" VALUE="false"/>
+          <PORTMAPS>
+            <PORTMAP LOGICAL="MIO" PHYSICAL="FIXED_IO_mio"/>
+            <PORTMAP LOGICAL="DDR_VRN" PHYSICAL="FIXED_IO_ddr_vrn"/>
+            <PORTMAP LOGICAL="DDR_VRP" PHYSICAL="FIXED_IO_ddr_vrp"/>
+            <PORTMAP LOGICAL="PS_SRSTB" PHYSICAL="FIXED_IO_ps_srstb"/>
+            <PORTMAP LOGICAL="PS_CLK" PHYSICAL="FIXED_IO_ps_clk"/>
+            <PORTMAP LOGICAL="PS_PORB" PHYSICAL="FIXED_IO_ps_porb"/>
+          </PORTMAPS>
+        </BUSINTERFACE>
+      </BUSINTERFACES>
+    </MODULE>
+    <MODULE COREREVISION="7" FULLNAME="/xlconstant_0" HWVERSION="1.1" INSTANCE="xlconstant_0" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="xlconstant" VLNV="xilinx.com:ip:xlconstant:1.1">
+      <DOCUMENTS/>
+      <PARAMETERS>
+        <PARAMETER NAME="CONST_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="CONST_VAL" VALUE="0x0"/>
+        <PARAMETER NAME="Component_Name" VALUE="design_sender_xlconstant_0_0"/>
+        <PARAMETER NAME="EDK_IPTYPE" VALUE="PERIPHERAL"/>
+      </PARAMETERS>
+      <PORTS>
+        <PORT DIR="O" LEFT="0" NAME="dout" RIGHT="0" SIGIS="undef" SIGNAME="xlconstant_0_dout">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="urllc_core_0" PORT="ad_sel1_ready"/>
+            <CONNECTION INSTANCE="urllc_core_0" PORT="ad_sel2_ready"/>
+          </CONNECTIONS>
+        </PORT>
+      </PORTS>
+      <BUSINTERFACES/>
+    </MODULE>
+    <MODULE COREREVISION="7" FULLNAME="/xlconstant_1" HWVERSION="1.1" INSTANCE="xlconstant_1" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="xlconstant" VLNV="xilinx.com:ip:xlconstant:1.1">
+      <DOCUMENTS/>
+      <PARAMETERS>
+        <PARAMETER NAME="CONST_WIDTH" VALUE="8"/>
+        <PARAMETER NAME="CONST_VAL" VALUE="0x00"/>
+        <PARAMETER NAME="Component_Name" VALUE="design_sender_xlconstant_1_0"/>
+        <PARAMETER NAME="EDK_IPTYPE" VALUE="PERIPHERAL"/>
+      </PARAMETERS>
+      <PORTS>
+        <PORT DIR="O" LEFT="7" NAME="dout" RIGHT="0" SIGIS="undef" SIGNAME="xlconstant_1_dout">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="urllc_core_0" PORT="ad_sel2"/>
+          </CONNECTIONS>
+        </PORT>
+      </PORTS>
+      <BUSINTERFACES/>
+    </MODULE>
+  </MODULES>
+
+</EDKSYSTEM>

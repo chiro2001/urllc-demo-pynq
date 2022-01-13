@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section name="Workbench">
+	<item key="ila_dma_test_system-imgFile" value="G:/Chiro/Programs/urllc-demo-pynq/vitis/ila_dma_test_system/Debug/sd_card/BOOT.BIN"/>
+	<item key="ila_dma_test_system-offSet" value=""/>
+	<item key="ila_dma_test_system-initFile" value=""/>
+	<item key="ila_dma_test_system-verifyFlash" value="false"/>
+	<item key="ila_dma_test_system-blankCheck" value="false"/>
+	<item key="ila_dma_test_system-device" value="Auto Detect"/>
+	<item key="ila_dma_test_system-target" value="Local"/>
+	<item key="programflash.hwplatform" value="sender_fsbl_system"/>
+	<item key="urllc_all_test_system-imgFile" value="G:\Chiro\Programs\urllc-demo-pynq\vitis\urllc_all_test\BOOT.bin"/>
+	<item key="urllc_all_test_system-offSet" value=""/>
+	<item key="urllc_all_test_system-initFile" value="G:/Chiro/Programs/urllc-demo-pynq/vitis/urllc_sender/export/urllc_sender/sw/urllc_sender/boot/fsbl.elf"/>
+	<item key="urllc_all_test_system-flashType" value="qspi-x4-single"/>
+	<item key="urllc_all_test_system-verifyFlash" value="true"/>
+	<item key="urllc_all_test_system-blankCheck" value="false"/>
+	<item key="urllc_all_test_system-device" value="Auto Detect"/>
+	<item key="urllc_all_test_system-target" value="Local"/>
+	<item key="sender_fsbl_system-imgFile" value="G:/Chiro/Programs/urllc-demo-pynq/vitis/sender_fsbl_system/_ide/bootimage/BOOT.bin"/>
+	<item key="sender_fsbl_system-offSet" value=""/>
+	<item key="sender_fsbl_system-initFile" value="G:/Chiro/Programs/urllc-demo-pynq/vitis/urllc_sender/export/urllc_sender/sw/urllc_sender/boot/fsbl.elf"/>
+	<item key="sender_fsbl_system-flashType" value="qspi-x4-single"/>
+	<item key="sender_fsbl_system-verifyFlash" value="false"/>
+	<item key="sender_fsbl_system-blankCheck" value="false"/>
+	<item key="sender_fsbl_system-device" value="Auto Detect"/>
+	<item key="sender_fsbl_system-target" value="Local"/>
+</section>

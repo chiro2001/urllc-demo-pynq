@@ -1,4 +1,4 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <section name="Workbench">
-	<item key="sdx.custom.platform.repository.locations" value="H:\Chiro\gits\urllc-demo-pynq\vitis\urllc_io\export\urllc_io;G:\Chiro\Programs\urllc-demo-pynq\vitis\my_ila\export\my_ila"/>
+	<item key="sdx.custom.platform.repository.locations" value="H:\Chiro\gits\urllc-demo-pynq\vitis\urllc_io\export\urllc_io;G:\Chiro\Programs\urllc-demo-pynq\vitis\urllc_sender\export\urllc_sender"/>
 </section>

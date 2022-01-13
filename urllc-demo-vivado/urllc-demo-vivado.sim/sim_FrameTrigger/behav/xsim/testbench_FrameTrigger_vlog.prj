@@ -1,0 +1,10 @@
+# compile verilog/system verilog design source files
+verilog xil_defaultlib  --include "../../../../urllc-demo-vivado.gen/sources_1/bd/design_sender/bd/urllc_core_inst_1/ipshared/6dcf" --include "../../../../urllc-demo-vivado.gen/sources_1/bd/design_sender/bd/urllc_core_inst_1/ipshared/80cc/hdl/verilog" --include "../../../../urllc-demo-vivado.gen/sources_1/bd/design_sender/bd/urllc_core_inst_1/ipshared/22b9/hdl/verilog" --include "../../../../urllc-demo-vivado.gen/sources_1/bd/design_sender/bd/urllc_core_inst_1/ipshared/ec67/hdl" --include "../../../../urllc-demo-vivado.gen/sources_1/bd/design_sender/bd/urllc_core_inst_1/ipshared/f42d/hdl" --include "C:/Xilinx/Vivado/2021.1/data/xilinx_vip/include" \
+"../../../../../chisel-test-project/generated/FrameTrigger/FrameTriggerWrapper.v" \
+"../../../../urllc-demo-vivado.srcs/sim_FrameTrigger/new/testbench_FrameTrigger.v" \
+
+# compile glbl module
+verilog xil_defaultlib "glbl.v"
+
+# Do not sort compile order
+nosort

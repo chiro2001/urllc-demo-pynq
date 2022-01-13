@@ -1,0 +1,359 @@
+{
+  "design": {
+    "design_info": {
+      "boundary_crc": "0x0",
+      "device": "xc7z020clg400-2",
+      "gen_directory": "../../../../urllc-demo-vivado.gen/sources_1/bd/design_reciever",
+      "name": "design_reciever",
+      "rev_ctrl_bd_flag": "RevCtrlBdOff",
+      "synth_flow_mode": "Hierarchical",
+      "tool_version": "2021.1"
+    },
+    "design_tree": {
+      "urllc_core_0": ""
+    },
+    "interface_ports": {
+      "DDR": {
+        "mode": "Master",
+        "vlnv_bus_definition": "xilinx.com:interface:ddrx:1.0",
+        "vlnv": "xilinx.com:interface:ddrx_rtl:1.0"
+      },
+      "FIXED_IO": {
+        "mode": "Master",
+        "vlnv_bus_definition": "xilinx.com:display_processing_system7:fixedio:1.0",
+        "vlnv": "xilinx.com:display_processing_system7:fixedio_rtl:1.0"
+      }
+    },
+    "ports": {
+      "reciever_ad_sel1": {
+        "type": "data",
+        "direction": "I",
+        "left": "7",
+        "right": "0"
+      },
+      "reciever_ad_sel2": {
+        "type": "data",
+        "direction": "I",
+        "left": "7",
+        "right": "0"
+      },
+      "reciever_ad_sel1_ready": {
+        "type": "intr",
+        "direction": "I",
+        "parameters": {
+          "SENSITIVITY": {
+            "value": "EDGE_RISING"
+          }
+        }
+      },
+      "reciever_ad_sel2_ready": {
+        "type": "intr",
+        "direction": "I",
+        "parameters": {
+          "SENSITIVITY": {
+            "value": "EDGE_RISING"
+          }
+        }
+      },
+      "reciever_ad_clk_200M": {
+        "type": "clk",
+        "direction": "O"
+      },
+      "reciever_da_clk_8M": {
+        "type": "clk",
+        "direction": "O"
+      },
+      "reciever_da": {
+        "type": "data",
+        "direction": "O",
+        "left": "7",
+        "right": "0"
+      },
+      "clk_pl_50M": {
+        "type": "clk",
+        "direction": "I",
+        "parameters": {
+          "FREQ_HZ": {
+            "value": "50000000"
+          }
+        }
+      }
+    },
+    "components": {
+      "urllc_core_0": {
+        "parameters": {
+          "ACTIVE_SIM_BD": {
+            "value": "urllc_core.bd"
+          },
+          "ACTIVE_SYNTH_BD": {
+            "value": "urllc_core.bd"
+          },
+          "ENABLE_DFX": {
+            "value": "0"
+          },
+          "LIST_SIM_BD": {
+            "value": "urllc_core.bd"
+          },
+          "LIST_SYNTH_BD": {
+            "value": "urllc_core.bd"
+          },
+          "LOCK_PROPAGATE": {
+            "value": "0"
+          }
+        },
+        "interface_ports": {
+          "DDR": {
+            "mode": "Master",
+            "vlnv_bus_definition": "xilinx.com:interface:ddrx:1.0",
+            "vlnv": "xilinx.com:interface:ddrx_rtl:1.0"
+          },
+          "FIXED_IO": {
+            "mode": "Master",
+            "vlnv_bus_definition": "xilinx.com:display_processing_system7:fixedio:1.0",
+            "vlnv": "xilinx.com:display_processing_system7:fixedio_rtl:1.0"
+          }
+        },
+        "ports": {
+          "ad_sel1": {
+            "type": "data",
+            "direction": "I",
+            "left": "7",
+            "right": "0"
+          },
+          "ad_sel1_ready": {
+            "type": "intr",
+            "direction": "I"
+          },
+          "ad_sel2": {
+            "type": "data",
+            "direction": "I",
+            "left": "7",
+            "right": "0"
+          },
+          "ad_sel2_ready": {
+            "type": "intr",
+            "direction": "I"
+          },
+          "clk_200M_out": {
+            "type": "clk",
+            "direction": "O"
+          },
+          "clk_8M_out": {
+            "direction": "O"
+          },
+          "clk_da_120M": {
+            "direction": "O"
+          },
+          "clk_pl_50M": {
+            "type": "clk",
+            "direction": "I"
+          },
+          "da": {
+            "direction": "O",
+            "left": "7",
+            "right": "0"
+          }
+        },
+        "post_compiled_compname": "urllc_core_inst_2",
+        "architecture": "zynq",
+        "variant_info": {
+          "urllc_core.bd": {
+            "scoped_diagram": "urllc_core_inst_2.bd",
+            "design_checksum": "0x7DE99F79",
+            "ref_name": "urllc_core",
+            "ref_subinst_path": "design_reciever_urllc_core_0",
+            "ref_type": "Block Design",
+            "source_type": "all",
+            "active": "all"
+          }
+        }
+      }
+    },
+    "interface_nets": {
+      "urllc_core_0_DDR": {
+        "interface_ports": [
+          "DDR",
+          "urllc_core_0/DDR"
+        ]
+      },
+      "urllc_core_0_FIXED_IO": {
+        "interface_ports": [
+          "FIXED_IO",
+          "urllc_core_0/FIXED_IO"
+        ]
+      }
+    },
+    "nets": {
+      "clk_pl_50M_1": {
+        "ports": [
+          "clk_pl_50M",
+          "urllc_core_0/clk_pl_50M"
+        ]
+      },
+      "reciever_ad_sel1_1": {
+        "ports": [
+          "reciever_ad_sel1",
+          "urllc_core_0/ad_sel1"
+        ]
+      },
+      "reciever_ad_sel1_ready_1": {
+        "ports": [
+          "reciever_ad_sel1_ready",
+          "urllc_core_0/ad_sel1_ready"
+        ]
+      },
+      "reciever_ad_sel2_1": {
+        "ports": [
+          "reciever_ad_sel2",
+          "urllc_core_0/ad_sel2"
+        ]
+      },
+      "reciever_ad_sel2_ready_1": {
+        "ports": [
+          "reciever_ad_sel2_ready",
+          "urllc_core_0/ad_sel2_ready"
+        ]
+      },
+      "urllc_core_0_clk_200M_out": {
+        "ports": [
+          "urllc_core_0/clk_200M_out",
+          "reciever_ad_clk_200M"
+        ]
+      },
+      "urllc_core_0_clk_8M_out": {
+        "ports": [
+          "urllc_core_0/clk_8M_out",
+          "reciever_da_clk_8M"
+        ]
+      },
+      "urllc_core_0_da": {
+        "ports": [
+          "urllc_core_0/da",
+          "reciever_da"
+        ]
+      }
+    },
+    "addressing": {
+      "/urllc_core_0/data_area/reciever/axi_dma_1": {
+        "address_spaces": {
+          "Data_MM2S": {
+            "segments": {
+              "SEG_axi_dma_0_Reg": {
+                "address_block": "/urllc_core_0/data_area/sender/axi_dma_0/S_AXI_LITE/Reg",
+                "offset": "0x40010000",
+                "range": "64K",
+                "is_excluded": "TRUE"
+              },
+              "SEG_axi_dma_1_Reg": {
+                "address_block": "/urllc_core_0/data_area/reciever/axi_dma_1/S_AXI_LITE/Reg",
+                "offset": "0x40000000",
+                "range": "64K",
+                "is_excluded": "TRUE"
+              },
+              "SEG_processing_system7_0_HP0_DDR_LOWOCM": {
+                "address_block": "/urllc_core_0/processing_system7_0/S_AXI_HP0/HP0_DDR_LOWOCM",
+                "offset": "0x00000000",
+                "range": "512M"
+              }
+            }
+          },
+          "Data_S2MM": {
+            "segments": {
+              "SEG_axi_dma_0_Reg": {
+                "address_block": "/urllc_core_0/data_area/sender/axi_dma_0/S_AXI_LITE/Reg",
+                "offset": "0x40010000",
+                "range": "64K",
+                "is_excluded": "TRUE"
+              },
+              "SEG_axi_dma_1_Reg": {
+                "address_block": "/urllc_core_0/data_area/reciever/axi_dma_1/S_AXI_LITE/Reg",
+                "offset": "0x40000000",
+                "range": "64K",
+                "is_excluded": "TRUE"
+              },
+              "SEG_processing_system7_0_HP0_DDR_LOWOCM": {
+                "address_block": "/urllc_core_0/processing_system7_0/S_AXI_HP0/HP0_DDR_LOWOCM",
+                "offset": "0x00000000",
+                "range": "512M"
+              }
+            }
+          }
+        }
+      },
+      "/urllc_core_0/data_area/sender/axi_dma_0": {
+        "address_spaces": {
+          "Data_MM2S": {
+            "segments": {
+              "SEG_axi_dma_0_Reg": {
+                "address_block": "/urllc_core_0/data_area/sender/axi_dma_0/S_AXI_LITE/Reg",
+                "offset": "0x40010000",
+                "range": "64K",
+                "is_excluded": "TRUE"
+              },
+              "SEG_axi_dma_1_Reg": {
+                "address_block": "/urllc_core_0/data_area/reciever/axi_dma_1/S_AXI_LITE/Reg",
+                "offset": "0x40000000",
+                "range": "64K",
+                "is_excluded": "TRUE"
+              },
+              "SEG_processing_system7_0_HP0_DDR_LOWOCM": {
+                "address_block": "/urllc_core_0/processing_system7_0/S_AXI_HP0/HP0_DDR_LOWOCM",
+                "offset": "0x00000000",
+                "range": "512M"
+              }
+            }
+          },
+          "Data_S2MM": {
+            "segments": {
+              "SEG_axi_dma_0_Reg": {
+                "address_block": "/urllc_core_0/data_area/sender/axi_dma_0/S_AXI_LITE/Reg",
+                "offset": "0x40010000",
+                "range": "64K",
+                "is_excluded": "TRUE"
+              },
+              "SEG_axi_dma_1_Reg": {
+                "address_block": "/urllc_core_0/data_area/reciever/axi_dma_1/S_AXI_LITE/Reg",
+                "offset": "0x40000000",
+                "range": "64K",
+                "is_excluded": "TRUE"
+              },
+              "SEG_processing_system7_0_HP0_DDR_LOWOCM": {
+                "address_block": "/urllc_core_0/processing_system7_0/S_AXI_HP0/HP0_DDR_LOWOCM",
+                "offset": "0x00000000",
+                "range": "512M"
+              }
+            }
+          }
+        }
+      },
+      "/urllc_core_0/processing_system7_0": {
+        "address_spaces": {
+          "Data": {
+            "segments": {
+              "SEG_axi_dma_0_Reg": {
+                "address_block": "/urllc_core_0/data_area/sender/axi_dma_0/S_AXI_LITE/Reg",
+                "offset": "0x40010000",
+                "range": "64K"
+              },
+              "SEG_axi_dma_1_Reg": {
+                "address_block": "/urllc_core_0/data_area/reciever/axi_dma_1/S_AXI_LITE/Reg",
+                "offset": "0x40000000",
+                "range": "64K"
+              },
+              "SEG_axi_gpio_0_Reg": {
+                "address_block": "/urllc_core_0/debug_ports/axi_gpio_0/S_AXI/Reg",
+                "offset": "0x81200000",
+                "range": "64K"
+              },
+              "SEG_clk_wiz_dynamic_Reg": {
+                "address_block": "/urllc_core_0/multi_clock/clk_wiz_dynamic/s_axi_lite/Reg",
+                "offset": "0x83C00000",
+                "range": "64K"
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

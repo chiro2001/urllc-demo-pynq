@@ -141,24 +141,37 @@ input_iq --12.W,200M--> ddc --1.W,4M--> serial --8.W,500K--> data_process --8.W,
 
 ## TODO-List
 
-- [ ] Vitis HLS IP
+- [x] ~~Vitis HLS IP~~
     - [x] Create: ad-da(1/1)
-    - [ ] debug: AXI Stream DMA
+    - [x] debug: AXI Stream DMA
+    - [x] 弃用
 - [ ] 数字上变频和下变频
     - [x] Chisel(1/2)
-    - [ ] debug: 调试Chisel模块
+    - [x] debug: 调试Chisel模块
+      - [x] Frame Trigger
+      - [x] DUC
+      - [ ] DDC
 - [ ] 时钟同步问题
     - [ ] 调试同步sync
     - [ ] 添加异步sync
     - [ ] 调试异步sync
 - [ ] Vitis 嵌入式
-    - [ ] 所有模块的单元测试
+    - [x] 所有模块的单元测试
+    - [x] DMA LOOP Test
+    - [ ] Flash程序固化
 - [ ] PYNQ Module
+    - [ ] PYNQ 网络问题
     - [ ] PYNQ模块单元测试
+- [ ] 联调
+    - [x] Sender调试
 
 ## Debug Logs
 
-1. 2022年1月3日17:12:12
+1. 2022年1月13日22:53:10
+
+   1. 架构图
+
+2. 2022年1月3日17:12:12
 
    1. 架构图
 
