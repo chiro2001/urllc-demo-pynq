@@ -1,7 +1,7 @@
 //Copyright 1986-2021 Xilinx, Inc. All Rights Reserved.
 //--------------------------------------------------------------------------------
 //Tool Version: Vivado v.2021.1 (win64) Build 3247384 Thu Jun 10 19:36:33 MDT 2021
-//Date        : Thu Jan 13 20:45:53 2022
+//Date        : Fri Jan 14 19:39:47 2022
 //Host        : WIN-544SHHHOI8Q running 64-bit major release  (build 9200)
 //Command     : generate_target urllc_core_inst_1_wrapper.bd
 //Design      : urllc_core_inst_1_wrapper
@@ -39,7 +39,11 @@ module urllc_core_inst_1_wrapper
     clk_8M_out,
     clk_da_120M,
     clk_pl_50M,
-    da);
+    da,
+    reciever_frame_start,
+    reciever_serial_in,
+    sender_frame_avaliable,
+    sender_serial_out);
   inout [14:0]DDR_addr;
   inout [2:0]DDR_ba;
   inout DDR_cas_n;
@@ -70,6 +74,10 @@ module urllc_core_inst_1_wrapper
   output clk_da_120M;
   input clk_pl_50M;
   output [7:0]da;
+  output reciever_frame_start;
+  input reciever_serial_in;
+  output [0:0]sender_frame_avaliable;
+  output [0:0]sender_serial_out;
 
   wire [14:0]DDR_addr;
   wire [2:0]DDR_ba;
@@ -101,6 +109,10 @@ module urllc_core_inst_1_wrapper
   wire clk_da_120M;
   wire clk_pl_50M;
   wire [7:0]da;
+  wire reciever_frame_start;
+  wire reciever_serial_in;
+  wire [0:0]sender_frame_avaliable;
+  wire [0:0]sender_serial_out;
 
   urllc_core_inst_1 urllc_core_inst_1_i
        (.DDR_addr(DDR_addr),
@@ -132,5 +144,9 @@ module urllc_core_inst_1_wrapper
         .clk_8M_out(clk_8M_out),
         .clk_da_120M(clk_da_120M),
         .clk_pl_50M(clk_pl_50M),
-        .da(da));
+        .da(da),
+        .reciever_frame_start(reciever_frame_start),
+        .reciever_serial_in(reciever_serial_in),
+        .sender_frame_avaliable(sender_frame_avaliable),
+        .sender_serial_out(sender_serial_out));
 endmodule

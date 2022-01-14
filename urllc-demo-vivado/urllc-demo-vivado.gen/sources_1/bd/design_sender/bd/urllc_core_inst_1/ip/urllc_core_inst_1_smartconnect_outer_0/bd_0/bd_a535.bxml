@@ -2,10 +2,10 @@
 <Root MajorVersion="0" MinorVersion="39">
   <CompositeFile CompositeFileTopName="bd_a535" CanBeSetAsTop="true" CanDisplayChildGraph="true">
     <Description>Composite Fileset</Description>
-    <Generation Name="SYNTHESIS" State="RESET" Timestamp="1642084005"/>
-    <Generation Name="IMPLEMENTATION" State="STALE" Timestamp="1642083857"/>
-    <Generation Name="SIMULATION" State="RESET" Timestamp="1642084005"/>
-    <Generation Name="HW_HANDOFF" State="STALE" Timestamp="1642083857"/>
+    <Generation Name="SYNTHESIS" State="RESET" Timestamp="1642166955"/>
+    <Generation Name="IMPLEMENTATION" State="RESET" Timestamp="1642166955"/>
+    <Generation Name="SIMULATION" State="RESET" Timestamp="1642166955"/>
+    <Generation Name="HW_HANDOFF" State="RESET" Timestamp="1642166955"/>
     <FileCollection Name="SOURCES" Type="SOURCES"/>
   </CompositeFile>
 </Root>

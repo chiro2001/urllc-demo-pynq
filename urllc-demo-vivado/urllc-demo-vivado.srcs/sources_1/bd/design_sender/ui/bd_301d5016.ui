@@ -5,7 +5,7 @@
    "Color Coded_ScaleFactor":"0.88625",
    "Color Coded_TopLeft":"-759,0",
    "Default View_ScaleFactor":"1.25",
-   "Default View_TopLeft":"-414,-123",
+   "Default View_TopLeft":"-328,-118",
    "ExpandedHierarchyInLayout":"",
    "Interfaces View_ScaleFactor":"1.25",
    "Interfaces View_TopLeft":"-626,-278",
@@ -14,29 +14,33 @@
    "PinnedBlocks":"",
    "Reduced Jogs_ScaleFactor":"0.88625",
    "Reduced Jogs_TopLeft":"-759,0",
-   "guistr":"# # String gsaved with Nlview 7.0r6  2020-01-29 bk=1.5227 VDI=41 GEI=36 GUI=JA:10.0 non-TLS-threadsafe
+   "guistr":"# # String gsaved with Nlview 7.0r6  2020-01-29 bk=1.5227 VDI=41 GEI=36 GUI=JA:10.0 non-TLS
 #  -string -flagsOSRD
-preplace port DDR -pg 1 -lvl 3 -x 490 -y 130 -defaultsOSRD
-preplace port FIXED_IO -pg 1 -lvl 3 -x 490 -y 150 -defaultsOSRD
+preplace port DDR -pg 1 -lvl 3 -x 620 -y 110 -defaultsOSRD
+preplace port FIXED_IO -pg 1 -lvl 3 -x 620 -y 130 -defaultsOSRD
 preplace port port-id_clk_pl_50M -pg 1 -lvl 0 -x 0 -y 240 -defaultsOSRD
-preplace port port-id_sender_ad_clk_8M -pg 1 -lvl 3 -x 490 -y 190 -defaultsOSRD
-preplace port port-id_sender_da_clk_120M -pg 1 -lvl 3 -x 490 -y 210 -defaultsOSRD
+preplace port port-id_sender_ad_clk_8M -pg 1 -lvl 3 -x 620 -y 170 -defaultsOSRD
+preplace port port-id_sender_da_clk_120M -pg 1 -lvl 3 -x 620 -y 190 -defaultsOSRD
 preplace portBus sender_ad -pg 1 -lvl 0 -x 0 -y 20 -defaultsOSRD
-preplace portBus sender_da -pg 1 -lvl 3 -x 490 -y 230 -defaultsOSRD
+preplace portBus sender_da -pg 1 -lvl 3 -x 620 -y 210 -defaultsOSRD
+preplace portBus sender_serial_out -pg 1 -lvl 3 -x 620 -y 270 -defaultsOSRD
+preplace portBus sender_frame_avaliable -pg 1 -lvl 3 -x 620 -y 230 -defaultsOSRD
 preplace inst xlconstant_0 -pg 1 -lvl 1 -x 100 -y 80 -defaultsOSRD
 preplace inst xlconstant_1 -pg 1 -lvl 1 -x 100 -y 180 -defaultsOSRD
-preplace inst urllc_core_0 -pg 1 -lvl 2 -x 330 -y 180 -defaultsOSRD
-preplace netloc ad_sel1_ready_1 1 1 1 180 80n
-preplace netloc clk_pl_50M_1 1 0 2 NJ 240 190J
-preplace netloc sender_ad_1 1 0 2 NJ 20 190J
-preplace netloc urllc_core_0_clk_8M_out 1 2 1 NJ 190
-preplace netloc urllc_core_0_clk_da_120M 1 2 1 NJ 210
-preplace netloc urllc_core_0_da 1 2 1 NJ 230
+preplace inst urllc_core_0 -pg 1 -lvl 2 -x 400 -y 190 -defaultsOSRD
+preplace netloc ad_sel1_ready_1 1 1 1 190 80n
+preplace netloc clk_pl_50M_1 1 0 2 NJ 240 180J
+preplace netloc sender_ad_1 1 0 2 NJ 20 200J
+preplace netloc urllc_core_0_clk_8M_out 1 2 1 NJ 170
+preplace netloc urllc_core_0_clk_da_120M 1 2 1 NJ 190
+preplace netloc urllc_core_0_da 1 2 1 NJ 210
+preplace netloc urllc_core_0_sender_frame_avaliable 1 2 1 NJ 230
+preplace netloc urllc_core_0_sender_serial_out 1 2 1 NJ 270
 preplace netloc xlconstant_1_dout 1 1 1 NJ 180
-preplace netloc urllc_core_0_DDR 1 2 1 NJ 130
-preplace netloc urllc_core_0_FIXED_IO 1 2 1 NJ 150
-levelinfo -pg 1 0 100 330 490
-pagesize -pg 1 -db -bbox -sgen -150 0 680 290
+preplace netloc urllc_core_0_DDR 1 2 1 NJ 110
+preplace netloc urllc_core_0_FIXED_IO 1 2 1 NJ 130
+levelinfo -pg 1 0 100 400 620
+pagesize -pg 1 -db -bbox -sgen -150 0 850 330
 "
 }
 {

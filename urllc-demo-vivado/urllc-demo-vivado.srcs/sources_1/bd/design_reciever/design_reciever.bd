@@ -1,7 +1,7 @@
 {
   "design": {
     "design_info": {
-      "boundary_crc": "0x0",
+      "boundary_crc": "0x71D4D87B65F0877",
       "device": "xc7z020clg400-2",
       "gen_directory": "../../../../urllc-demo-vivado.gen/sources_1/bd/design_reciever",
       "name": "design_reciever",
@@ -10,7 +10,9 @@
       "tool_version": "2021.1"
     },
     "design_tree": {
-      "urllc_core_0": ""
+      "urllc_core_0": "",
+      "xlconstant_0": "",
+      "xlconstant_1": ""
     },
     "interface_ports": {
       "DDR": {
@@ -31,33 +33,14 @@
         "left": "7",
         "right": "0"
       },
-      "reciever_ad_sel2": {
-        "type": "data",
-        "direction": "I",
-        "left": "7",
-        "right": "0"
-      },
-      "reciever_ad_sel1_ready": {
-        "type": "intr",
-        "direction": "I",
-        "parameters": {
-          "SENSITIVITY": {
-            "value": "EDGE_RISING"
-          }
-        }
-      },
-      "reciever_ad_sel2_ready": {
-        "type": "intr",
-        "direction": "I",
-        "parameters": {
-          "SENSITIVITY": {
-            "value": "EDGE_RISING"
-          }
-        }
-      },
-      "reciever_ad_clk_200M": {
+      "reciever_ad_clk_60M": {
         "type": "clk",
-        "direction": "O"
+        "direction": "O",
+        "parameters": {
+          "FREQ_HZ": {
+            "value": "60000000"
+          }
+        }
       },
       "reciever_da_clk_8M": {
         "type": "clk",
@@ -77,6 +60,19 @@
             "value": "50000000"
           }
         }
+      },
+      "reciever_serial_in": {
+        "type": "intr",
+        "direction": "I",
+        "parameters": {
+          "SENSITIVITY": {
+            "value": "EDGE_RISING"
+          }
+        }
+      },
+      "reciever_frame_start": {
+        "type": "intr",
+        "direction": "O"
       }
     },
     "components": {
@@ -152,6 +148,26 @@
             "direction": "O",
             "left": "7",
             "right": "0"
+          },
+          "sender_frame_avaliable": {
+            "type": "intr",
+            "direction": "O",
+            "left": "0",
+            "right": "0"
+          },
+          "reciever_frame_start": {
+            "type": "intr",
+            "direction": "O"
+          },
+          "sender_serial_out": {
+            "type": "data",
+            "direction": "O",
+            "left": "0",
+            "right": "0"
+          },
+          "reciever_serial_in": {
+            "type": "data",
+            "direction": "I"
           }
         },
         "post_compiled_compname": "urllc_core_inst_2",
@@ -159,12 +175,37 @@
         "variant_info": {
           "urllc_core.bd": {
             "scoped_diagram": "urllc_core_inst_2.bd",
-            "design_checksum": "0x7DE99F79",
+            "design_checksum": "0xB262D899",
             "ref_name": "urllc_core",
             "ref_subinst_path": "design_reciever_urllc_core_0",
             "ref_type": "Block Design",
             "source_type": "all",
             "active": "all"
+          }
+        }
+      },
+      "xlconstant_0": {
+        "vlnv": "xilinx.com:ip:xlconstant:1.1",
+        "xci_name": "design_reciever_xlconstant_0_0",
+        "xci_path": "ip\\design_reciever_xlconstant_0_0\\design_reciever_xlconstant_0_0.xci",
+        "inst_hier_path": "xlconstant_0",
+        "parameters": {
+          "CONST_VAL": {
+            "value": "0"
+          }
+        }
+      },
+      "xlconstant_1": {
+        "vlnv": "xilinx.com:ip:xlconstant:1.1",
+        "xci_name": "design_reciever_xlconstant_1_0",
+        "xci_path": "ip\\design_reciever_xlconstant_1_0\\design_reciever_xlconstant_1_0.xci",
+        "inst_hier_path": "xlconstant_1",
+        "parameters": {
+          "CONST_VAL": {
+            "value": "0"
+          },
+          "CONST_WIDTH": {
+            "value": "8"
           }
         }
       }
@@ -196,28 +237,16 @@
           "urllc_core_0/ad_sel1"
         ]
       },
-      "reciever_ad_sel1_ready_1": {
+      "reciever_serial_in_1": {
         "ports": [
-          "reciever_ad_sel1_ready",
-          "urllc_core_0/ad_sel1_ready"
-        ]
-      },
-      "reciever_ad_sel2_1": {
-        "ports": [
-          "reciever_ad_sel2",
-          "urllc_core_0/ad_sel2"
-        ]
-      },
-      "reciever_ad_sel2_ready_1": {
-        "ports": [
-          "reciever_ad_sel2_ready",
-          "urllc_core_0/ad_sel2_ready"
+          "reciever_serial_in",
+          "urllc_core_0/reciever_serial_in"
         ]
       },
       "urllc_core_0_clk_200M_out": {
         "ports": [
           "urllc_core_0/clk_200M_out",
-          "reciever_ad_clk_200M"
+          "reciever_ad_clk_60M"
         ]
       },
       "urllc_core_0_clk_8M_out": {
@@ -230,6 +259,25 @@
         "ports": [
           "urllc_core_0/da",
           "reciever_da"
+        ]
+      },
+      "urllc_core_0_reciever_frame_start": {
+        "ports": [
+          "urllc_core_0/reciever_frame_start",
+          "reciever_frame_start"
+        ]
+      },
+      "xlconstant_0_dout": {
+        "ports": [
+          "xlconstant_0/dout",
+          "urllc_core_0/ad_sel1_ready",
+          "urllc_core_0/ad_sel2_ready"
+        ]
+      },
+      "xlconstant_1_dout": {
+        "ports": [
+          "xlconstant_1/dout",
+          "urllc_core_0/ad_sel2"
         ]
       }
     },
@@ -345,10 +393,27 @@
                 "offset": "0x81200000",
                 "range": "64K"
               },
+              "SEG_axi_gpio_1_Reg": {
+                "address_block": "/urllc_core_0/debug_ports/axi_gpio_1/S_AXI/Reg",
+                "offset": "0x81210000",
+                "range": "64K"
+              },
               "SEG_clk_wiz_dynamic_Reg": {
                 "address_block": "/urllc_core_0/multi_clock/clk_wiz_dynamic/s_axi_lite/Reg",
                 "offset": "0x83C00000",
                 "range": "64K"
+              },
+              "SEG_processing_system7_0_HP0_DDR_LOWOCM": {
+                "address_block": "/urllc_core_0/processing_system7_0/S_AXI_HP0/HP0_DDR_LOWOCM",
+                "offset": "0x00000000",
+                "range": "1",
+                "is_excluded": "TRUE"
+              },
+              "SEG_processing_system7_0_HP1_DDR_LOWOCM": {
+                "address_block": "/urllc_core_0/processing_system7_0/S_AXI_HP1/HP1_DDR_LOWOCM",
+                "offset": "0x00000000",
+                "range": "1",
+                "is_excluded": "TRUE"
               }
             }
           }

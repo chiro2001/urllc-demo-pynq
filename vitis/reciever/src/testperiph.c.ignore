@@ -1,0 +1,4 @@
+#define SELF "reciever.c"
+
+#include SELF
+

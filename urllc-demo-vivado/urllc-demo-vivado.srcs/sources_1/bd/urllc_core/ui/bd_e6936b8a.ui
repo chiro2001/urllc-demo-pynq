@@ -1,74 +1,84 @@
 {
    "ActiveEmotionalView":"Default View",
-   "Default View_ScaleFactor":"0.99824",
-   "Default View_TopLeft":"-214,-39",
+   "Default View_ScaleFactor":"0.851426",
+   "Default View_TopLeft":"-229,61",
    "ExpandedHierarchyInLayout":"",
-   "guistr":"# # String gsaved with Nlview 7.0r6  2020-01-29 bk=1.5227 VDI=41 GEI=36 GUI=JA:10.0 non-TLS-threadsafe
+   "guistr":"# # String gsaved with Nlview 7.0r6  2020-01-29 bk=1.5227 VDI=41 GEI=36 GUI=JA:10.0 non-TLS
 #  -string -flagsOSRD
-preplace port S00_AXI -pg 1 -lvl 0 -x -20 -y 260 -defaultsOSRD
-preplace port S00_AXI1 -pg 1 -lvl 0 -x -20 -y 50 -defaultsOSRD
-preplace port M_AXI_MM2S_reciever -pg 1 -lvl 5 -x 1300 -y 320 -defaultsOSRD
-preplace port M_AXI_S2MM_reciever -pg 1 -lvl 5 -x 1300 -y 340 -defaultsOSRD
-preplace port M_AXI_MM2S_sender -pg 1 -lvl 5 -x 1300 -y 60 -defaultsOSRD
-preplace port M_AXI_S2MM1_sender -pg 1 -lvl 5 -x 1300 -y 80 -defaultsOSRD
-preplace port port-id_ext_reset_in -pg 1 -lvl 0 -x -20 -y 500 -defaultsOSRD
-preplace port port-id_ad_sel1_ready -pg 1 -lvl 0 -x -20 -y 420 -defaultsOSRD
-preplace port port-id_ad_sel2_ready -pg 1 -lvl 0 -x -20 -y 440 -defaultsOSRD
-preplace port port-id_data_out_router -pg 1 -lvl 0 -x -20 -y 590 -defaultsOSRD
-preplace port port-id_debug_disable_sync -pg 1 -lvl 0 -x -20 -y 540 -defaultsOSRD
-preplace port port-id_debug_use_sender_serial -pg 1 -lvl 0 -x -20 -y 520 -defaultsOSRD
-preplace port port-id_debug_use_sender_iq -pg 1 -lvl 0 -x -20 -y 560 -defaultsOSRD
-preplace port port-id_clk_120M -pg 1 -lvl 0 -x -20 -y 130 -defaultsOSRD
-preplace port port-id_clk_200M -pg 1 -lvl 0 -x -20 -y 320 -defaultsOSRD
-preplace port port-id_clk_8M -pg 1 -lvl 0 -x -20 -y 300 -defaultsOSRD
-preplace port port-id_axi_resetn -pg 1 -lvl 0 -x -20 -y 280 -defaultsOSRD
-preplace port port-id_io_out_trigger -pg 1 -lvl 5 -x 1300 -y 410 -defaultsOSRD
-preplace port port-id_trigger_clear_input -pg 1 -lvl 0 -x -20 -y 480 -defaultsOSRD
-preplace portBus da -pg 1 -lvl 5 -x 1300 -y 570 -defaultsOSRD
-preplace portBus ad_sel1 -pg 1 -lvl 0 -x -20 -y 340 -defaultsOSRD
-preplace portBus ad_sel2 -pg 1 -lvl 0 -x -20 -y 400 -defaultsOSRD
-preplace portBus data_serial_out -pg 1 -lvl 5 -x 1300 -y 120 -defaultsOSRD
-preplace portBus irq -pg 1 -lvl 5 -x 1300 -y 250 -defaultsOSRD
-preplace inst reciever -pg 1 -lvl 3 -x 820 -y 360 -defaultsOSRD
-preplace inst mux -pg 1 -lvl 2 -x 450 -y 400 -defaultsOSRD
-preplace inst ad_buf_0 -pg 1 -lvl 1 -x 170 -y 400 -defaultsOSRD
-preplace inst sender -pg 1 -lvl 3 -x 820 -y 100 -defaultsOSRD
-preplace inst mux_0 -pg 1 -lvl 4 -x 1160 -y 570 -defaultsOSRD
-preplace inst xlconcat_irq -pg 1 -lvl 4 -x 1160 -y 250 -defaultsOSRD
-preplace netloc ad_buf_0_sel1 1 1 1 N 390
-preplace netloc ad_buf_0_sel2 1 1 1 N 410
-preplace netloc ad_sel1_1 1 0 3 30 110 NJ 110 NJ
-preplace netloc ad_sel1_ready_1 1 0 1 NJ 420
-preplace netloc ad_sel2_1 1 0 1 NJ 400
-preplace netloc ad_sel2_ready_1 1 0 1 NJ 440
-preplace netloc axi_resetn_1 1 0 3 NJ 280 NJ 280 600
-preplace netloc clk_1 1 0 3 20J 500 300 290 N
-preplace netloc clk_120M_1 1 0 3 NJ 130 NJ 130 NJ
-preplace netloc clk_4M_1 1 0 3 NJ 300 NJ 300 590
-preplace netloc debug_disable_sync_1 1 0 3 NJ 540 NJ 540 610J
-preplace netloc debug_use_sender_iq_1 1 0 3 NJ 560 NJ 560 630J
-preplace netloc debug_use_sender_serial_1 1 0 3 NJ 520 NJ 520 590J
-preplace netloc ext_reset_in_1 1 0 3 10J 270 NJ 270 580
-preplace netloc mux_0_data_out 1 4 1 NJ 570
-preplace netloc mux_mux_data_out 1 2 1 580 310n
-preplace netloc reciever_da 1 3 1 1000 350n
-preplace netloc reciever_irq 1 3 1 1040 260n
-preplace netloc reciever_resetn_200M 1 0 4 40 530 310 530 NJ 530 990
-preplace netloc router_1 1 0 4 NJ 590 NJ 590 NJ 590 NJ
-preplace netloc sender_da_iq 1 2 2 650 540 1030
-preplace netloc sender_data_serial_out 1 2 3 640 520 1010 120 NJ
-preplace netloc sender_irq 1 3 1 1020 140n
-preplace netloc xlconcat_irq_dout 1 4 1 NJ 250
-preplace netloc reciever_io_out_trigger 1 3 2 NJ 410 NJ
-preplace netloc io_in_clear_1 1 0 3 0J 510 NJ 510 620J
-preplace netloc Conn1 1 3 2 1000J 180 1280J
-preplace netloc Conn2 1 3 2 NJ 330 1280J
-preplace netloc Conn3 1 3 2 NJ 60 NJ
-preplace netloc Conn4 1 0 3 10J 250 NJ 250 NJ
-preplace netloc Conn5 1 0 3 NJ 50 NJ 50 NJ
-preplace netloc Conn6 1 3 2 NJ 80 NJ
-levelinfo -pg 1 -20 170 450 820 1160 1300
-pagesize -pg 1 -db -bbox -sgen -240 -10 1510 650
+preplace port S00_AXI -pg 1 -lvl 0 -x -10 -y 510 -defaultsOSRD
+preplace port S00_AXI1 -pg 1 -lvl 0 -x -10 -y 250 -defaultsOSRD
+preplace port M_AXI_MM2S_reciever -pg 1 -lvl 6 -x 1550 -y 450 -defaultsOSRD
+preplace port M_AXI_S2MM_reciever -pg 1 -lvl 6 -x 1550 -y 610 -defaultsOSRD
+preplace port M_AXI_MM2S_sender -pg 1 -lvl 6 -x 1550 -y 250 -defaultsOSRD
+preplace port M_AXI_S2MM1_sender -pg 1 -lvl 6 -x 1550 -y 270 -defaultsOSRD
+preplace port port-id_ext_reset_in -pg 1 -lvl 0 -x -10 -y 530 -defaultsOSRD
+preplace port port-id_ad_sel1_ready -pg 1 -lvl 0 -x -10 -y 130 -defaultsOSRD
+preplace port port-id_ad_sel2_ready -pg 1 -lvl 0 -x -10 -y 150 -defaultsOSRD
+preplace port port-id_data_out_router -pg 1 -lvl 0 -x -10 -y 450 -defaultsOSRD
+preplace port port-id_debug_disable_sync -pg 1 -lvl 0 -x -10 -y 650 -defaultsOSRD
+preplace port port-id_debug_use_sender_serial -pg 1 -lvl 0 -x -10 -y 630 -defaultsOSRD
+preplace port port-id_debug_use_sender_iq -pg 1 -lvl 0 -x -10 -y 670 -defaultsOSRD
+preplace port port-id_clk_120M -pg 1 -lvl 0 -x -10 -y 410 -defaultsOSRD
+preplace port port-id_clk_200M -pg 1 -lvl 0 -x -10 -y 210 -defaultsOSRD
+preplace port port-id_clk_8M -pg 1 -lvl 0 -x -10 -y 560 -defaultsOSRD
+preplace port port-id_axi_resetn -pg 1 -lvl 0 -x -10 -y 430 -defaultsOSRD
+preplace port port-id_io_out_trigger -pg 1 -lvl 6 -x 1550 -y 690 -defaultsOSRD
+preplace port port-id_trigger_clear_input -pg 1 -lvl 0 -x -10 -y 730 -defaultsOSRD
+preplace portBus da -pg 1 -lvl 6 -x 1550 -y 530 -defaultsOSRD
+preplace portBus ad_sel1 -pg 1 -lvl 0 -x -10 -y 90 -defaultsOSRD
+preplace portBus ad_sel2 -pg 1 -lvl 0 -x -10 -y 110 -defaultsOSRD
+preplace portBus data_serial_out -pg 1 -lvl 6 -x 1550 -y 310 -defaultsOSRD
+preplace portBus irq -pg 1 -lvl 6 -x 1550 -y 760 -defaultsOSRD
+preplace portBus sender_frame_avaliable -pg 1 -lvl 6 -x 1550 -y 350 -defaultsOSRD
+preplace portBus reciever_serial_in -pg 1 -lvl 0 -x -10 -y 750 -defaultsOSRD
+preplace portBus debug_use_input_serial -pg 1 -lvl 0 -x -10 -y 770 -defaultsOSRD
+preplace inst reciever -pg 1 -lvl 4 -x 1070 -y 640 -defaultsOSRD
+preplace inst mux -pg 1 -lvl 2 -x 420 -y 110 -defaultsOSRD
+preplace inst ad_buf_0 -pg 1 -lvl 1 -x 150 -y 110 -defaultsOSRD
+preplace inst sender -pg 1 -lvl 4 -x 1070 -y 300 -defaultsOSRD
+preplace inst mux_0 -pg 1 -lvl 5 -x 1410 -y 530 -defaultsOSRD
+preplace inst xlconcat_irq -pg 1 -lvl 5 -x 1410 -y 760 -defaultsOSRD
+preplace inst mux_disable_sel2 -pg 1 -lvl 3 -x 690 -y 330 -defaultsOSRD
+preplace inst xlconstant_0 -pg 1 -lvl 2 -x 420 -y 350 -defaultsOSRD
+preplace netloc ad_buf_0_sel1 1 1 1 N 100
+preplace netloc ad_buf_0_sel2 1 1 1 N 120
+preplace netloc ad_sel1_1 1 0 4 20 410 NJ 410 560 410 830
+preplace netloc ad_sel1_ready_1 1 0 1 NJ 130
+preplace netloc ad_sel2_1 1 0 1 NJ 110
+preplace netloc ad_sel2_ready_1 1 0 1 NJ 150
+preplace netloc axi_resetn_1 1 0 4 NJ 430 NJ 430 NJ 430 870
+preplace netloc clk_1 1 0 4 NJ 210 290 230 NJ 230 860J
+preplace netloc clk_120M_1 1 0 4 10J 290 NJ 290 570J 250 840J
+preplace netloc clk_4M_1 1 0 4 NJ 560 NJ 560 NJ 560 850
+preplace netloc debug_disable_sync_1 1 0 4 NJ 650 NJ 650 NJ 650 NJ
+preplace netloc debug_use_sender_iq_1 1 0 4 NJ 670 NJ 670 NJ 670 NJ
+preplace netloc debug_use_sender_serial_1 1 0 4 NJ 630 NJ 630 NJ 630 NJ
+preplace netloc ext_reset_in_1 1 0 4 NJ 530 NJ 530 NJ 530 820
+preplace netloc io_in_clear_1 1 0 4 NJ 730 NJ 730 NJ 730 NJ
+preplace netloc mux_0_data_out 1 5 1 NJ 530
+preplace netloc reciever_da 1 4 1 1290 530n
+preplace netloc reciever_io_out_trigger 1 4 2 NJ 690 NJ
+preplace netloc reciever_irq 1 4 1 1260 650n
+preplace netloc reciever_resetn_200M 1 0 5 20 10 280 190 NJ 190 NJ 190 1250
+preplace netloc reciever_serial_in_1 1 0 4 NJ 750 NJ 750 NJ 750 NJ
+preplace netloc router_1 1 0 5 NJ 450 NJ 450 NJ 450 NJ 450 1260J
+preplace netloc router_2 1 0 4 NJ 770 NJ 770 NJ 770 NJ
+preplace netloc sender_da_iq 1 3 2 890 440 1290
+preplace netloc sender_data_serial_out 1 3 3 880 400 1260 310 NJ
+preplace netloc sender_irq 1 4 1 1270 330n
+preplace netloc sender_sender_frame_avaliable 1 4 2 NJ 350 NJ
+preplace netloc xlconcat_irq_dout 1 5 1 NJ 760
+preplace netloc xlconstant_0_dout 1 2 1 NJ 350
+preplace netloc mux_mux_data_out 1 2 1 560 110n
+preplace netloc mux_disable_sel2_data_out 1 3 1 810 330n
+preplace netloc Conn1 1 4 2 1280J 450 NJ
+preplace netloc Conn2 1 4 2 NJ 610 NJ
+preplace netloc Conn3 1 4 2 NJ 250 NJ
+preplace netloc Conn4 1 0 4 NJ 510 NJ 510 NJ 510 NJ
+preplace netloc Conn5 1 0 4 NJ 250 NJ 250 550J 240 880J
+preplace netloc Conn6 1 4 2 NJ 270 NJ
+levelinfo -pg 1 -10 150 420 690 1070 1410 1550
+pagesize -pg 1 -db -bbox -sgen -240 0 1780 830
 "
 }
 0

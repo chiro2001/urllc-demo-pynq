@@ -1,7 +1,7 @@
 //Copyright 1986-2021 Xilinx, Inc. All Rights Reserved.
 //--------------------------------------------------------------------------------
 //Tool Version: Vivado v.2021.1 (win64) Build 3247384 Thu Jun 10 19:36:33 MDT 2021
-//Date        : Thu Jan 13 20:45:52 2022
+//Date        : Fri Jan 14 19:39:46 2022
 //Host        : WIN-544SHHHOI8Q running 64-bit major release  (build 9200)
 //Command     : generate_target design_sender_wrapper.bd
 //Design      : design_sender_wrapper
@@ -35,7 +35,9 @@ module design_sender_wrapper
     sender_ad,
     sender_ad_clk_8M,
     sender_da,
-    sender_da_clk_120M);
+    sender_da_clk_120M,
+    sender_frame_avaliable,
+    sender_serial_out);
   inout [14:0]DDR_addr;
   inout [2:0]DDR_ba;
   inout DDR_cas_n;
@@ -62,6 +64,8 @@ module design_sender_wrapper
   output sender_ad_clk_8M;
   output [7:0]sender_da;
   output sender_da_clk_120M;
+  output [0:0]sender_frame_avaliable;
+  output [0:0]sender_serial_out;
 
   wire [14:0]DDR_addr;
   wire [2:0]DDR_ba;
@@ -89,6 +93,8 @@ module design_sender_wrapper
   wire sender_ad_clk_8M;
   wire [7:0]sender_da;
   wire sender_da_clk_120M;
+  wire [0:0]sender_frame_avaliable;
+  wire [0:0]sender_serial_out;
 
   design_sender design_sender_i
        (.DDR_addr(DDR_addr),
@@ -116,5 +122,7 @@ module design_sender_wrapper
         .sender_ad(sender_ad),
         .sender_ad_clk_8M(sender_ad_clk_8M),
         .sender_da(sender_da),
-        .sender_da_clk_120M(sender_da_clk_120M));
+        .sender_da_clk_120M(sender_da_clk_120M),
+        .sender_frame_avaliable(sender_frame_avaliable),
+        .sender_serial_out(sender_serial_out));
 endmodule

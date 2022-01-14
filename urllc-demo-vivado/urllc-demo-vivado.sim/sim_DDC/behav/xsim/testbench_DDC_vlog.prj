@@ -1,0 +1,10 @@
+# compile verilog/system verilog design source files
+verilog xil_defaultlib  \
+"../../../../../chisel-test-project/generated/DDC/DDCWrapper.v" \
+"../../../../urllc-demo-vivado.srcs/sim_DDC/new/testbench_DDC.v" \
+
+# compile glbl module
+verilog xil_defaultlib "glbl.v"
+
+# Do not sort compile order
+nosort

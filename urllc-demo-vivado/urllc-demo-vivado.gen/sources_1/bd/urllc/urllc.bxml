@@ -2,10 +2,10 @@
 <Root MajorVersion="0" MinorVersion="39">
   <CompositeFile CompositeFileTopName="urllc" CanBeSetAsTop="false" CanDisplayChildGraph="true">
     <Description>Composite Fileset</Description>
-    <Generation Name="SYNTHESIS" State="STALE" Timestamp="1642076230"/>
-    <Generation Name="IMPLEMENTATION" State="STALE" Timestamp="1642076230"/>
-    <Generation Name="SIMULATION" State="STALE" Timestamp="1642076230"/>
-    <Generation Name="HW_HANDOFF" State="STALE" Timestamp="1642076230"/>
+    <Generation Name="SYNTHESIS" State="RESET" Timestamp="1642166958"/>
+    <Generation Name="IMPLEMENTATION" State="RESET" Timestamp="1642166958"/>
+    <Generation Name="SIMULATION" State="RESET" Timestamp="1642166958"/>
+    <Generation Name="HW_HANDOFF" State="RESET" Timestamp="1642166958"/>
     <FileCollection Name="SOURCES" Type="SOURCES"/>
     <BlockContainerCollection>
       <BlockContainer InstPath="/urllc_core" IsPR="false" State="Stale">
@@ -20,13 +20,13 @@
       <ModuleReference TargetName="urllc_core" Type="Block Design" SubInstancePath="urllc_urllc_core_0">
         <TopFile Name="..\..\..\..\urllc-demo-vivado.srcs\sources_1\bd\urllc_core\urllc_core.bd"/>
         <FileCollection>
-          <File Name="..\..\..\..\..\chisel-test-project\generated\DDC\DDCWrapper.v"/>
           <File Name="..\..\..\..\urllc-demo-vivado.srcs\sources_1\new\mux.v"/>
           <File Name="..\..\..\..\urllc-demo-vivado.srcs\sources_1\new\ad2dma_rtl.v"/>
+          <File Name="..\..\..\..\..\chisel-test-project\generated\FrameTrigger\FrameTriggerWrapper.v"/>
+          <File Name="..\..\..\..\..\chisel-test-project\generated\DDC\DDCWrapper.v"/>
           <File Name="..\..\..\..\urllc-demo-vivado.srcs\sources_1\new\div_n.v"/>
           <File Name="..\..\..\..\urllc-demo-vivado.srcs\sources_1\new\ad_buf.v"/>
           <File Name="..\..\..\..\..\chisel-test-project\generated\DUC\DUCWrapper.v"/>
-          <File Name="..\..\..\..\..\chisel-test-project\generated\FrameTrigger\FrameTriggerWrapper.v"/>
           <File Name="..\..\..\..\urllc-demo-vivado.srcs\sources_1\bd\urllc_core\urllc_core.bd"/>
         </FileCollection>
       </ModuleReference>

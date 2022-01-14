@@ -1,5 +1,9 @@
 {
   "files.associations": {
-    "xaxidma.h": "c"
-  }
+    "xaxidma.h": "c",
+    "xil_cache.h": "c",
+    "xscugic.h": "c",
+    "xil_types.h": "c"
+  },
+  "C_Cpp.errorSquiggles": "Disabled"
 }

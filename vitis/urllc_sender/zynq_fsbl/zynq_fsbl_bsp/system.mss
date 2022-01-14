@@ -234,6 +234,12 @@ BEGIN DRIVER
  PARAMETER HW_INSTANCE = urllc_core_0_multi_clock_clk_wiz_dynamic
 END
 
+BEGIN DRIVER
+ PARAMETER DRIVER_NAME = gpio
+ PARAMETER DRIVER_VER = 4.8
+ PARAMETER HW_INSTANCE = urllc_core_0_debug_ports_axi_gpio_1
+END
+
 
 BEGIN LIBRARY
  PARAMETER LIBRARY_NAME = xilffs

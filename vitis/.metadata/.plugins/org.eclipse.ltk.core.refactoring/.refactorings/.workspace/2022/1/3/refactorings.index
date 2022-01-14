@@ -8,3 +8,5 @@
 1641820156804	Delete resource 'xaxidma_example_simple_poll_1_system'
 1642016559379	Delete resource 'urllc_sender'
 1642016566784	Delete resource 'urllc_sender_all_test_system'
+1642152440576	Delete resource 'reciever/src/xgpio_intr_tapp_example.c'
+1642152446184	Delete resource 'reciever/src/xgpio_tapp_example.c'
