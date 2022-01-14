@@ -26,7 +26,7 @@
           "ad2dma_rtl_0": "",
           "mux_2": "",
           "DDCWrapper_0": "",
-          "FrameTriggerWrapper_0": ""
+          "FrameTrigger_0": ""
         },
         "mux": {
           "div_n_0": "",
@@ -1113,40 +1113,23 @@
                   }
                 }
               },
-              "FrameTriggerWrapper_0": {
-                "vlnv": "xilinx.com:module_ref:FrameTriggerWrapper:1.0",
-                "xci_name": "urllc_core_FrameTriggerWrapper_0_0",
-                "xci_path": "ip\\urllc_core_FrameTriggerWrapper_0_0\\urllc_core_FrameTriggerWrapper_0_0.xci",
-                "inst_hier_path": "data_area/reciever/FrameTriggerWrapper_0",
+              "FrameTrigger_0": {
+                "vlnv": "xilinx.com:module_ref:FrameTrigger:1.0",
+                "xci_name": "urllc_core_FrameTrigger_0_0",
+                "xci_path": "ip\\urllc_core_FrameTrigger_0_0\\urllc_core_FrameTrigger_0_0.xci",
+                "inst_hier_path": "data_area/reciever/FrameTrigger_0",
                 "reference_info": {
                   "ref_type": "hdl",
-                  "ref_name": "FrameTriggerWrapper",
+                  "ref_name": "FrameTrigger",
                   "boundary_crc": "0x0"
                 },
                 "ports": {
-                  "io_in_data": {
-                    "direction": "I",
-                    "left": "7",
-                    "right": "0"
-                  },
-                  "io_in_clear": {
-                    "direction": "I"
-                  },
-                  "io_out_trigger": {
-                    "direction": "O",
-                    "parameters": {
-                      "PortWidth": {
-                        "value": "1",
-                        "value_src": "default_prop"
-                      }
-                    }
-                  },
-                  "io_clock": {
+                  "clock": {
                     "type": "clk",
                     "direction": "I",
                     "parameters": {
                       "ASSOCIATED_RESET": {
-                        "value": "io_resetN",
+                        "value": "reset",
                         "value_src": "constant"
                       },
                       "FREQ_HZ": {
@@ -1163,13 +1146,30 @@
                       }
                     }
                   },
-                  "io_resetN": {
+                  "reset": {
                     "type": "rst",
                     "direction": "I",
                     "parameters": {
                       "POLARITY": {
                         "value": "ACTIVE_LOW",
-                        "value_src": "constant"
+                        "value_src": "const_prop"
+                      }
+                    }
+                  },
+                  "io_in_data": {
+                    "direction": "I",
+                    "left": "7",
+                    "right": "0"
+                  },
+                  "io_in_clear": {
+                    "direction": "I"
+                  },
+                  "io_out_trigger": {
+                    "direction": "O",
+                    "parameters": {
+                      "PortWidth": {
+                        "value": "1",
+                        "value_src": "default_prop"
                       }
                     }
                   }
@@ -1217,7 +1217,7 @@
               },
               "FrameTriggerWrapper_0_io_out_trigger": {
                 "ports": [
-                  "FrameTriggerWrapper_0/io_out_trigger",
+                  "FrameTrigger_0/io_out_trigger",
                   "xlconcat_irq/In2",
                   "io_out_trigger",
                   "mux_3/sel1"
@@ -1235,7 +1235,7 @@
                   "rst_ps7_0_200M/peripheral_aresetn",
                   "resetn_200M",
                   "DDCWrapper_0/io_resetN",
-                  "FrameTriggerWrapper_0/io_resetN"
+                  "FrameTrigger_0/reset"
                 ]
               },
               "ad2dma_rtl_0_da": {
@@ -1267,7 +1267,7 @@
                   "clk_200M",
                   "rst_ps7_0_200M/slowest_sync_clk",
                   "DDCWrapper_0/io_clock",
-                  "FrameTriggerWrapper_0/io_clock"
+                  "FrameTrigger_0/clock"
                 ]
               },
               "clk_4M_1": {
@@ -1309,17 +1309,17 @@
                   "rst_ps7_0_200M/ext_reset_in"
                 ]
               },
-              "io_in_clear_1": {
+              "frame_trigger_io_in_clear_1": {
                 "ports": [
                   "frame_trigger_io_in_clear",
-                  "FrameTriggerWrapper_0/io_in_clear"
+                  "FrameTrigger_0/io_in_clear"
                 ]
               },
               "mux_0_data_out": {
                 "ports": [
                   "mux_0/data_out",
                   "DDCWrapper_0/io_in_data",
-                  "FrameTriggerWrapper_0/io_in_data"
+                  "FrameTrigger_0/io_in_data"
                 ]
               },
               "mux_1_data_out": {
