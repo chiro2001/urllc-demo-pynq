@@ -245,6 +245,7 @@ int SenderLoop() {
     while (delay--)
       ;
     // Log("Delay Over");
+    print(".");
 
 #ifdef DMA_LOOP
   }

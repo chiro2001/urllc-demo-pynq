@@ -21,10 +21,10 @@
 #define GPIO_CHANNEL1 2
 #define DEBUG_CHANNEL 1
 
-#define SENDER_DELAY 0x1FFFF
+#define SENDER_DELAY 0xFFFF
 #define RECIEVER_DELAY 0xFFF
 
-// Xilinx ÂÆ≥‰∫∫‰∏çÊµÖÂïä
+// Xilinx ∫¶»À≤ª«≥∞°
 #define DEVICE_GPIO_IN_IRQN 65U
 
 enum {
