@@ -1,0 +1,35 @@
+{
+   "ActiveEmotionalView":"Default View",
+   "Default View_ScaleFactor":"1.25",
+   "Default View_TopLeft":"-386,-120",
+   "ExpandedHierarchyInLayout":"",
+   "guistr":"# # String gsaved with Nlview 7.0r6  2020-01-29 bk=1.5227 VDI=41 GEI=36 GUI=JA:10.0 non-TLS
+#  -string -flagsOSRD
+preplace port DDR -pg 1 -lvl 3 -x 610 -y 110 -defaultsOSRD
+preplace port FIXED_IO -pg 1 -lvl 3 -x 610 -y 130 -defaultsOSRD
+preplace port port-id_clk_pl_50M -pg 1 -lvl 0 -x 0 -y 240 -defaultsOSRD
+preplace port port-id_reciever_ad_clk_60M -pg 1 -lvl 3 -x 610 -y 150 -defaultsOSRD
+preplace port port-id_reciever_da_clk_8M -pg 1 -lvl 3 -x 610 -y 170 -defaultsOSRD
+preplace port port-id_reciever_frame_start -pg 1 -lvl 3 -x 610 -y 230 -defaultsOSRD
+preplace port port-id_reciever_serial_in -pg 1 -lvl 0 -x 0 -y 260 -defaultsOSRD
+preplace portBus reciever_ad_sel1 -pg 1 -lvl 0 -x 0 -y 20 -defaultsOSRD
+preplace portBus reciever_da -pg 1 -lvl 3 -x 610 -y 210 -defaultsOSRD
+preplace inst urllc_core_0 -pg 1 -lvl 2 -x 390 -y 190 -defaultsOSRD
+preplace inst xlconstant_0 -pg 1 -lvl 1 -x 100 -y 80 -defaultsOSRD
+preplace inst xlconstant_1 -pg 1 -lvl 1 -x 100 -y 180 -defaultsOSRD
+preplace netloc clk_pl_50M_1 1 0 2 NJ 240 180J
+preplace netloc reciever_ad_sel1_1 1 0 2 NJ 20 190J
+preplace netloc reciever_serial_in_1 1 0 2 NJ 260 190J
+preplace netloc urllc_core_0_clk_200M_out 1 2 1 NJ 150
+preplace netloc urllc_core_0_clk_8M_out 1 2 1 NJ 170
+preplace netloc urllc_core_0_da 1 2 1 NJ 210
+preplace netloc urllc_core_0_reciever_frame_start 1 2 1 NJ 230
+preplace netloc xlconstant_0_dout 1 1 1 180 80n
+preplace netloc xlconstant_1_dout 1 1 1 NJ 180
+preplace netloc urllc_core_0_DDR 1 2 1 NJ 110
+preplace netloc urllc_core_0_FIXED_IO 1 2 1 NJ 130
+levelinfo -pg 1 0 100 390 610
+pagesize -pg 1 -db -bbox -sgen -200 0 810 330
+"
+}
+0

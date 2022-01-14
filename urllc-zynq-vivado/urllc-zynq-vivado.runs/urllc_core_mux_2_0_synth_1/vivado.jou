@@ -1,0 +1,12 @@
+#-----------------------------------------------------------
+# Vivado v2021.1 (64-bit)
+# SW Build 3247384 on Thu Jun 10 19:36:33 MDT 2021
+# IP Build 3246043 on Fri Jun 11 00:30:35 MDT 2021
+# Start of session at: Fri Jan 14 22:29:30 2022
+# Process ID: 23584
+# Current directory: G:/Chiro/Programs/urllc-demo-pynq/urllc-zynq-vivado/urllc-zynq-vivado.runs/urllc_core_mux_2_0_synth_1
+# Command line: vivado.exe -log urllc_core_mux_2_0.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source urllc_core_mux_2_0.tcl
+# Log file: G:/Chiro/Programs/urllc-demo-pynq/urllc-zynq-vivado/urllc-zynq-vivado.runs/urllc_core_mux_2_0_synth_1/urllc_core_mux_2_0.vds
+# Journal file: G:/Chiro/Programs/urllc-demo-pynq/urllc-zynq-vivado/urllc-zynq-vivado.runs/urllc_core_mux_2_0_synth_1\vivado.jou
+#-----------------------------------------------------------
+source urllc_core_mux_2_0.tcl -notrace

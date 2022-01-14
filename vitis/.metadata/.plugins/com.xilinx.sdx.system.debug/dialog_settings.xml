@@ -7,7 +7,7 @@
 	<item key="ila_dma_test_system-blankCheck" value="false"/>
 	<item key="ila_dma_test_system-device" value="Auto Detect"/>
 	<item key="ila_dma_test_system-target" value="Local"/>
-	<item key="programflash.hwplatform" value="sender_fsbl_system"/>
+	<item key="programflash.hwplatform" value="sender_zynq_system"/>
 	<item key="urllc_all_test_system-imgFile" value="G:\Chiro\Programs\urllc-demo-pynq\vitis\urllc_all_test\BOOT.bin"/>
 	<item key="urllc_all_test_system-offSet" value=""/>
 	<item key="urllc_all_test_system-initFile" value="G:/Chiro/Programs/urllc-demo-pynq/vitis/urllc_sender/export/urllc_sender/sw/urllc_sender/boot/fsbl.elf"/>
@@ -24,4 +24,20 @@
 	<item key="sender_fsbl_system-blankCheck" value="false"/>
 	<item key="sender_fsbl_system-device" value="Auto Detect"/>
 	<item key="sender_fsbl_system-target" value="Local"/>
+	<item key="reciever_zynq_system-imgFile" value="G:/Chiro/Programs/urllc-demo-pynq/vitis/reciever_zynq_system/_ide/bootimage/BOOT.bin"/>
+	<item key="reciever_zynq_system-offSet" value=""/>
+	<item key="reciever_zynq_system-initFile" value="G:/Chiro/Programs/urllc-demo-pynq/vitis/zynq_reciever/export/zynq_reciever/sw/zynq_reciever/boot/fsbl.elf"/>
+	<item key="reciever_zynq_system-flashType" value="qspi-x4-single"/>
+	<item key="reciever_zynq_system-verifyFlash" value="false"/>
+	<item key="reciever_zynq_system-blankCheck" value="false"/>
+	<item key="reciever_zynq_system-device" value="Auto Detect"/>
+	<item key="reciever_zynq_system-target" value="Local"/>
+	<item key="sender_zynq_system-imgFile" value="G:/Chiro/Programs/urllc-demo-pynq/vitis/sender_zynq_system/_ide/bootimage/BOOT.bin"/>
+	<item key="sender_zynq_system-offSet" value=""/>
+	<item key="sender_zynq_system-initFile" value="G:/Chiro/Programs/urllc-demo-pynq/vitis/zynq_sender/export/zynq_sender/sw/zynq_sender/boot/fsbl.elf"/>
+	<item key="sender_zynq_system-flashType" value="qspi-x4-single"/>
+	<item key="sender_zynq_system-verifyFlash" value="false"/>
+	<item key="sender_zynq_system-blankCheck" value="false"/>
+	<item key="sender_zynq_system-device" value="Auto Detect"/>
+	<item key="sender_zynq_system-target" value="Local"/>
 </section>

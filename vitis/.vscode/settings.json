@@ -3,7 +3,8 @@
     "xaxidma.h": "c",
     "xil_cache.h": "c",
     "xscugic.h": "c",
-    "xil_types.h": "c"
+    "xil_types.h": "c",
+    "configs.h": "c"
   },
   "C_Cpp.errorSquiggles": "Disabled"
 }

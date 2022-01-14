@@ -1,0 +1,12 @@
+#-----------------------------------------------------------
+# Vivado v2021.1 (64-bit)
+# SW Build 3247384 on Thu Jun 10 19:36:33 MDT 2021
+# IP Build 3246043 on Fri Jun 11 00:30:35 MDT 2021
+# Start of session at: Sat Jan 15 02:45:56 2022
+# Process ID: 24624
+# Current directory: G:/Chiro/Programs/urllc-demo-pynq/urllc-zynq-vivado/urllc-zynq-vivado.runs/synth_sender
+# Command line: vivado.exe -log design_sender_wrapper.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source design_sender_wrapper.tcl
+# Log file: G:/Chiro/Programs/urllc-demo-pynq/urllc-zynq-vivado/urllc-zynq-vivado.runs/synth_sender/design_sender_wrapper.vds
+# Journal file: G:/Chiro/Programs/urllc-demo-pynq/urllc-zynq-vivado/urllc-zynq-vivado.runs/synth_sender\vivado.jou
+#-----------------------------------------------------------
+source design_sender_wrapper.tcl -notrace

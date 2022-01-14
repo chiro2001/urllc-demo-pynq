@@ -25,3 +25,18 @@ platform config -updatehw {G:/Chiro/Programs/urllc-demo-pynq/platforms/urllc_rec
 platform generate -domains 
 platform config -updatehw {G:/Chiro/Programs/urllc-demo-pynq/platforms/urllc_reciever.xsa}
 platform generate -domains 
+platform active {urllc_reciever}
+platform config -updatehw {G:/Chiro/Programs/urllc-demo-pynq/platforms/zynq_reciever.xsa}
+platform generate -domains 
+platform clean
+platform generate
+platform clean
+platform generate
+platform config -updatehw {G:/Chiro/Programs/urllc-demo-pynq/platforms/zynq_reciever.xsa}
+platform generate -domains 
+platform config -updatehw {G:/Chiro/Programs/urllc-demo-pynq/platforms/zynq_reciever.xsa}
+platform generate -domains 
+platform clean
+platform clean
+platform generate
+platform write

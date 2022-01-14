@@ -7,12 +7,24 @@
 	<item key="urllc_io_test_system-device" value="Auto Detect"/>
 	<item key="urllc_io_test_system-partial_bit" value="false"/>
 	<item key="urllc_io_test_system-skip_rev_check" value="false"/>
-	<item key="programfpga.sdxproject" value="ila_dma_test_system"/>
+	<item key="programfpga.sdxproject" value="sender_zynq_system"/>
 	<item key="devices_info_Local" value="{&quot;cables&quot;:[{&quot;name&quot;:&quot;Digilent JTAG-SMT2 210251A08870&quot;,&quot;indexContextMap&quot;:{&quot;2&quot;:&quot;jsn-JTAG-SMT2-210251A08870-4ba00477-0&quot;,&quot;3&quot;:&quot;jsn-JTAG-SMT2-210251A08870-23727093-0&quot;}}]}"/>
-	<item key="ila_dma_test_system-bitFile" value="G:\Chiro\Programs\urllc-demo-pynq\vitis\urllc_all_test\BOOT.bin"/>
+	<item key="ila_dma_test_system-bitFile" value="G:\Chiro\Programs\urllc-demo-pynq\vitis\reciever_test\_ide\bitstream\urllc_reciever.bit"/>
 	<item key="ila_dma_test_system-bmmFile" value=""/>
 	<item key="ila_dma_test_system-target" value="Local"/>
 	<item key="ila_dma_test_system-device" value="Auto Detect"/>
 	<item key="ila_dma_test_system-partial_bit" value="false"/>
 	<item key="ila_dma_test_system-skip_rev_check" value="false"/>
+	<item key="reciever_test_system-bitFile" value="${project_loc:reciever_test}/_ide/bitstream/urllc_reciever.bit"/>
+	<item key="reciever_test_system-bmmFile" value=""/>
+	<item key="reciever_test_system-target" value="chiropc"/>
+	<item key="reciever_test_system-device" value="Auto Detect"/>
+	<item key="reciever_test_system-partial_bit" value="false"/>
+	<item key="reciever_test_system-skip_rev_check" value="false"/>
+	<item key="sender_zynq_system-bitFile" value="${project_loc:sender_zynq}/_ide/bitstream/zynq_sender.bit"/>
+	<item key="sender_zynq_system-bmmFile" value=""/>
+	<item key="sender_zynq_system-target" value="Local"/>
+	<item key="sender_zynq_system-device" value="Auto Detect"/>
+	<item key="sender_zynq_system-partial_bit" value="false"/>
+	<item key="sender_zynq_system-skip_rev_check" value="false"/>
 </section>

@@ -1,0 +1,25 @@
+vhdl xil_defaultlib  \
+"../../../bd/urllc_core/ip/urllc_core_axi_dma_1_0/sim/urllc_core_axi_dma_1_0.vhd" \
+"../../../bd/urllc_core/ip/urllc_core_rst_ps7_0_200M_0/sim/urllc_core_rst_ps7_0_200M_0.vhd" \
+"../../../bd/urllc_core/ip/urllc_core_axi_dma_0_0/sim/urllc_core_axi_dma_0_0.vhd" \
+"../../../bd/urllc_core/ip/urllc_core_rst_ps7_0_120M_0/sim/urllc_core_rst_ps7_0_120M_0.vhd" \
+"../../../bd/urllc_core/ip/urllc_core_axi_gpio_0_0/sim/urllc_core_axi_gpio_0_0.vhd" \
+"../../../bd/urllc_core/ip/urllc_core_axi_gpio_1_0/sim/urllc_core_axi_gpio_1_0.vhd" \
+"../../../bd/urllc_core/ip/urllc_core_clk_wiz_dynamic_0/proc_common_v3_00_a/hdl/src/vhdl/urllc_core_clk_wiz_dynamic_0_conv_funs_pkg.vhd" \
+"../../../bd/urllc_core/ip/urllc_core_clk_wiz_dynamic_0/proc_common_v3_00_a/hdl/src/vhdl/urllc_core_clk_wiz_dynamic_0_proc_common_pkg.vhd" \
+"../../../bd/urllc_core/ip/urllc_core_clk_wiz_dynamic_0/proc_common_v3_00_a/hdl/src/vhdl/urllc_core_clk_wiz_dynamic_0_ipif_pkg.vhd" \
+"../../../bd/urllc_core/ip/urllc_core_clk_wiz_dynamic_0/proc_common_v3_00_a/hdl/src/vhdl/urllc_core_clk_wiz_dynamic_0_family_support.vhd" \
+"../../../bd/urllc_core/ip/urllc_core_clk_wiz_dynamic_0/proc_common_v3_00_a/hdl/src/vhdl/urllc_core_clk_wiz_dynamic_0_family.vhd" \
+"../../../bd/urllc_core/ip/urllc_core_clk_wiz_dynamic_0/proc_common_v3_00_a/hdl/src/vhdl/urllc_core_clk_wiz_dynamic_0_soft_reset.vhd" \
+"../../../bd/urllc_core/ip/urllc_core_clk_wiz_dynamic_0/proc_common_v3_00_a/hdl/src/vhdl/urllc_core_clk_wiz_dynamic_0_pselect_f.vhd" \
+"../../../bd/urllc_core/ip/urllc_core_clk_wiz_dynamic_0/axi_lite_ipif_v1_01_a/hdl/src/vhdl/urllc_core_clk_wiz_dynamic_0_address_decoder.vhd" \
+"../../../bd/urllc_core/ip/urllc_core_clk_wiz_dynamic_0/axi_lite_ipif_v1_01_a/hdl/src/vhdl/urllc_core_clk_wiz_dynamic_0_slave_attachment.vhd" \
+"../../../bd/urllc_core/ip/urllc_core_clk_wiz_dynamic_0/axi_lite_ipif_v1_01_a/hdl/src/vhdl/urllc_core_clk_wiz_dynamic_0_axi_lite_ipif.vhd" \
+"../../../bd/urllc_core/ip/urllc_core_clk_wiz_dynamic_0/urllc_core_clk_wiz_dynamic_0_clk_wiz_drp.vhd" \
+"../../../bd/urllc_core/ip/urllc_core_clk_wiz_dynamic_0/urllc_core_clk_wiz_dynamic_0_axi_clk_config.vhd" \
+"../../../bd/urllc_core/ip/urllc_core_proc_clock_reset_0/sim/urllc_core_proc_clock_reset_0.vhd" \
+"../../../bd/urllc_core/ip/urllc_core_proc_data_reset_8M_0/sim/urllc_core_proc_data_reset_8M_0.vhd" \
+"../../../bd/urllc_core/ip/urllc_core_smartconnect_outer_0/bd_0/ip/ip_1/sim/bd_e3a0_psr_aclk_0.vhd" \
+"../../../bd/urllc_core/ip/urllc_core_smartconnect_outer_1/bd_0/ip/ip_1/sim/bd_2361_psr_aclk_0.vhd" \
+
+nosort
