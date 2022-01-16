@@ -1,7 +1,7 @@
 {
   "design": {
     "design_info": {
-      "boundary_crc": "0xD94AF6350EEC2F8A",
+      "boundary_crc": "0xD94AF635A303C600",
       "design_src": "SBD",
       "device": "xc7z020clg400-2",
       "name": "bd_69e5",
@@ -125,7 +125,7 @@
           },
           "FREQ_HZ": {
             "value": "50000000",
-            "value_src": "default_prop"
+            "value_src": "user_prop"
           },
           "HAS_BRESP": {
             "value": "1",
@@ -210,8 +210,8 @@
             "value_src": "const_prop"
           },
           "SUPPORTS_NARROW_BURST": {
-            "value": "1",
-            "value_src": "default_prop"
+            "value": "0",
+            "value_src": "user_prop"
           },
           "WUSER_BITS_PER_BYTE": {
             "value": "0",
@@ -260,7 +260,7 @@
           },
           "FREQ_HZ": {
             "value": "50000000",
-            "value_src": "default_prop"
+            "value_src": "user_prop"
           },
           "HAS_BRESP": {
             "value": "1",
@@ -386,7 +386,7 @@
           },
           "FREQ_HZ": {
             "value": "50000000",
-            "value_src": "default_prop"
+            "value_src": "user_prop"
           },
           "HAS_BRESP": {
             "value": "1",
@@ -512,7 +512,7 @@
           },
           "FREQ_HZ": {
             "value": "50000000",
-            "value_src": "default_prop"
+            "value_src": "user_prop"
           },
           "HAS_BRESP": {
             "value": "1",
@@ -638,7 +638,7 @@
           },
           "FREQ_HZ": {
             "value": "50000000",
-            "value_src": "default_prop"
+            "value_src": "user_prop"
           },
           "HAS_BRESP": {
             "value": "1",
@@ -752,7 +752,7 @@
           },
           "FREQ_HZ": {
             "value": "50000000",
-            "value_src": "default_prop"
+            "value_src": "user_prop"
           },
           "FREQ_TOLERANCE_HZ": {
             "value": "0",
@@ -2736,7 +2736,7 @@
                 "value": "1"
               },
               "SUPPORTS_NARROW": {
-                "value": "1"
+                "value": "0"
               },
               "SUPPORTS_WRAP": {
                 "value": "0"
@@ -2956,7 +2956,7 @@
                 "value": "1"
               },
               "SUPPORTS_NARROW": {
-                "value": "1"
+                "value": "0"
               },
               "S_RUSER_BITS_PER_BYTE": {
                 "value": "0"

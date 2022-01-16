@@ -1,7 +1,7 @@
 LaunchTargetManager/org.eclipse.launchbar.core.launchTargetType.local,Local/arch=x86_64
 LaunchTargetManager/org.eclipse.launchbar.core.launchTargetType.local,Local/name=Local
 LaunchTargetManager/org.eclipse.launchbar.core.launchTargetType.local,Local/os=win32
-configDescList=org.eclipse.launchbar.core.descriptorType.default\:Debugger_ila_dma_test-Default,org.eclipse.launchbar.core.descriptorType.default\:Debugger_my_ila_per-Default,org.eclipse.launchbar.core.descriptorType.default\:Debugger_reciever (1),org.eclipse.launchbar.core.descriptorType.default\:Debugger_reciever,org.eclipse.launchbar.core.descriptorType.default\:Debugger_reciever_test,org.eclipse.launchbar.core.descriptorType.default\:Debugger_reciever_zynq,org.eclipse.launchbar.core.descriptorType.default\:Debugger_sender_all,org.eclipse.launchbar.core.descriptorType.default\:Debugger_sender_zynq
+configDescList=org.eclipse.launchbar.core.descriptorType.default\:Debugger_ila_dma_test-Default,org.eclipse.launchbar.core.descriptorType.default\:Debugger_my_ila_per-Default,org.eclipse.launchbar.core.descriptorType.default\:Debugger_reciever (1),org.eclipse.launchbar.core.descriptorType.default\:Debugger_reciever,org.eclipse.launchbar.core.descriptorType.default\:Debugger_reciever_test,org.eclipse.launchbar.core.descriptorType.default\:Debugger_reciever_zynq,org.eclipse.launchbar.core.descriptorType.default\:Debugger_sender_all,org.eclipse.launchbar.core.descriptorType.default\:Debugger_sender_zynq,org.eclipse.launchbar.core.descriptorType.default\:Debugger_sender_zynq_buffer,org.eclipse.launchbar.core.descriptorType.default\:Debugger_sender_zynq_fifo,org.eclipse.launchbar.core.descriptorType.default\:Debugger_sender_zynq_fifo_all,org.eclipse.launchbar.core.descriptorType.default\:Debugger_reciever_zynq_fifo_all
 eclipse.preferences.version=1
 org.eclipse.launchbar.core.descriptorType.default\:Debugger_ila_dma_test-Default/activeLaunchMode=debug
 org.eclipse.launchbar.core.descriptorType.default\:Debugger_ila_dma_test-Default/activeLaunchTarget=org.eclipse.launchbar.core.launchTargetType.local\:Local
@@ -10,6 +10,7 @@ org.eclipse.launchbar.core.descriptorType.default\:Debugger_my_ila_per-Default/a
 org.eclipse.launchbar.core.descriptorType.default\:Debugger_reciever/activeLaunchMode=debug
 org.eclipse.launchbar.core.descriptorType.default\:Debugger_reciever_test/activeLaunchMode=debug
 org.eclipse.launchbar.core.descriptorType.default\:Debugger_sender_all/activeLaunchMode=debug
+org.eclipse.launchbar.core.descriptorType.default\:Debugger_sender_zynq/activeLaunchMode=debug
 org.eclipse.launchbar.core.descriptorType.default\:Debugger_urllc_ila_test-Default/activeLaunchMode=run
 org.eclipse.launchbar.core.descriptorType.default\:Debugger_urllc_ila_test-Default/activeLaunchTarget=org.eclipse.launchbar.core.launchTargetType.local\:Local
 org.eclipse.launchbar.core.descriptorType.default\:Debugger_urllc_io_test-Default/activeLaunchMode=debug

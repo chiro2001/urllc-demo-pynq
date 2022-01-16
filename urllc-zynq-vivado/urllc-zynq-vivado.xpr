@@ -48,7 +48,7 @@
     <Option Name="SimulatorGccVersionRiviera" Val="6.2.0"/>
     <Option Name="SimulatorGccVersionActiveHdl" Val="6.2.0"/>
     <Option Name="BoardPart" Val=""/>
-    <Option Name="ActiveSimSet" Val="sim_FrameTrigger"/>
+    <Option Name="ActiveSimSet" Val="sim_DUC"/>
     <Option Name="DefaultLib" Val="xil_defaultlib"/>
     <Option Name="ProjectType" Val="Default"/>
     <Option Name="IPOutputRepo" Val="$PCACHEDIR/ip"/>
@@ -60,20 +60,20 @@
     <Option Name="IPUserFilesDir" Val="$PIPUSERFILESDIR"/>
     <Option Name="IPStaticSourceDir" Val="$PIPUSERFILESDIR/ipstatic"/>
     <Option Name="EnableBDX" Val="FALSE"/>
-    <Option Name="WTXSimLaunchSim" Val="6"/>
+    <Option Name="WTXSimLaunchSim" Val="45"/>
     <Option Name="WTModelSimLaunchSim" Val="0"/>
     <Option Name="WTQuestaLaunchSim" Val="0"/>
     <Option Name="WTIesLaunchSim" Val="0"/>
     <Option Name="WTVcsLaunchSim" Val="0"/>
     <Option Name="WTRivieraLaunchSim" Val="0"/>
     <Option Name="WTActivehdlLaunchSim" Val="0"/>
-    <Option Name="WTXSimExportSim" Val="2"/>
-    <Option Name="WTModelSimExportSim" Val="1"/>
-    <Option Name="WTQuestaExportSim" Val="1"/>
-    <Option Name="WTIesExportSim" Val="1"/>
-    <Option Name="WTVcsExportSim" Val="1"/>
-    <Option Name="WTRivieraExportSim" Val="1"/>
-    <Option Name="WTActivehdlExportSim" Val="1"/>
+    <Option Name="WTXSimExportSim" Val="3"/>
+    <Option Name="WTModelSimExportSim" Val="2"/>
+    <Option Name="WTQuestaExportSim" Val="2"/>
+    <Option Name="WTIesExportSim" Val="2"/>
+    <Option Name="WTVcsExportSim" Val="2"/>
+    <Option Name="WTRivieraExportSim" Val="2"/>
+    <Option Name="WTActivehdlExportSim" Val="2"/>
     <Option Name="GenerateIPUpgradeLog" Val="TRUE"/>
     <Option Name="XSimRadix" Val="hex"/>
     <Option Name="XSimTimeUnit" Val="ns"/>
@@ -90,21 +90,21 @@
   <FileSets Version="1" Minor="31">
     <FileSet Name="sources_1" Type="DesignSrcs" RelSrcDir="$PSRCDIR/sources_1" RelGenDir="$PGENDIR/sources_1">
       <Filter Type="Srcs"/>
-      <File Path="$PSRCDIR/sources_1/bd/design_sender/design_sender.bd">
-        <FileInfo>
-          <Attr Name="UsedIn" Val="synthesis"/>
-          <Attr Name="UsedIn" Val="implementation"/>
-          <Attr Name="UsedIn" Val="simulation"/>
-        </FileInfo>
-      </File>
-      <File Path="$PGENDIR/sources_1/bd/design_sender/hdl/design_sender_wrapper.v">
-        <FileInfo>
-          <Attr Name="UsedIn" Val="synthesis"/>
-          <Attr Name="UsedIn" Val="implementation"/>
-          <Attr Name="UsedIn" Val="simulation"/>
-        </FileInfo>
-      </File>
       <File Path="$PSRCDIR/sources_1/bd/design_reciever/design_reciever.bd">
+        <FileInfo>
+          <Attr Name="UsedIn" Val="synthesis"/>
+          <Attr Name="UsedIn" Val="implementation"/>
+          <Attr Name="UsedIn" Val="simulation"/>
+        </FileInfo>
+      </File>
+      <File Path="$PGENDIR/sources_1/bd/design_reciever/hdl/design_reciever_wrapper.v">
+        <FileInfo>
+          <Attr Name="UsedIn" Val="synthesis"/>
+          <Attr Name="UsedIn" Val="implementation"/>
+          <Attr Name="UsedIn" Val="simulation"/>
+        </FileInfo>
+      </File>
+      <File Path="$PSRCDIR/sources_1/bd/design_sender/design_sender.bd">
         <FileInfo>
           <Attr Name="AutoDisabled" Val="1"/>
           <Attr Name="UsedIn" Val="synthesis"/>
@@ -112,7 +112,7 @@
           <Attr Name="UsedIn" Val="simulation"/>
         </FileInfo>
       </File>
-      <File Path="$PGENDIR/sources_1/bd/design_reciever/hdl/design_reciever_wrapper.v">
+      <File Path="$PGENDIR/sources_1/bd/design_sender/hdl/design_sender_wrapper.v">
         <FileInfo>
           <Attr Name="AutoDisabled" Val="1"/>
           <Attr Name="UsedIn" Val="synthesis"/>
@@ -226,11 +226,80 @@
           <Attr Name="UsedIn" Val="implementation"/>
           <Attr Name="UsedIn" Val="simulation"/>
         </FileInfo>
+        <CompFileExtendedInfo CompFileName="urllc_core.bd" FileRelPathName="ip/urllc_core_processing_system7_0_0/urllc_core_processing_system7_0_0.xci">
+          <Proxy FileSetName="urllc_core_processing_system7_0_0"/>
+        </CompFileExtendedInfo>
+        <CompFileExtendedInfo CompFileName="urllc_core.bd" FileRelPathName="ip/urllc_core_clk_wiz_dynamic_0/urllc_core_clk_wiz_dynamic_0.xci">
+          <Proxy FileSetName="urllc_core_clk_wiz_dynamic_0"/>
+        </CompFileExtendedInfo>
+        <CompFileExtendedInfo CompFileName="urllc_core.bd" FileRelPathName="ip/urllc_core_clk_wiz_100M_0/urllc_core_clk_wiz_100M_0.xci">
+          <Proxy FileSetName="urllc_core_clk_wiz_100M_0"/>
+        </CompFileExtendedInfo>
+        <CompFileExtendedInfo CompFileName="urllc_core.bd" FileRelPathName="ip/urllc_core_clk_wiz_static_0/urllc_core_clk_wiz_static_0.xci">
+          <Proxy FileSetName="urllc_core_clk_wiz_static_0"/>
+        </CompFileExtendedInfo>
+        <CompFileExtendedInfo CompFileName="urllc_core.bd" FileRelPathName="ip/urllc_core_smartconnect_outer_0/urllc_core_smartconnect_outer_0.xci">
+          <Proxy FileSetName="urllc_core_smartconnect_outer_0"/>
+        </CompFileExtendedInfo>
+        <CompFileExtendedInfo CompFileName="urllc_core.bd" FileRelPathName="ip/urllc_core_proc_clock_reset_0/urllc_core_proc_clock_reset_0.xci">
+          <Proxy FileSetName="urllc_core_proc_clock_reset_0"/>
+        </CompFileExtendedInfo>
+        <CompFileExtendedInfo CompFileName="urllc_core.bd" FileRelPathName="ip/urllc_core_smartconnect_outer_1/urllc_core_smartconnect_outer_1.xci">
+          <Proxy FileSetName="urllc_core_smartconnect_outer_1"/>
+        </CompFileExtendedInfo>
+        <CompFileExtendedInfo CompFileName="urllc_core.bd" FileRelPathName="ip/urllc_core_ila_0_0/urllc_core_ila_0_0.xci">
+          <Proxy FileSetName="urllc_core_ila_0_0"/>
+        </CompFileExtendedInfo>
+        <CompFileExtendedInfo CompFileName="urllc_core.bd" FileRelPathName="ip/urllc_core_proc_data_reset_8M_0/urllc_core_proc_data_reset_8M_0.xci">
+          <Proxy FileSetName="urllc_core_proc_data_reset_8M_0"/>
+        </CompFileExtendedInfo>
+        <CompFileExtendedInfo CompFileName="urllc_core.bd" FileRelPathName="ip/urllc_core_axi_dma_0_0/urllc_core_axi_dma_0_0.xci">
+          <Proxy FileSetName="urllc_core_axi_dma_0_0"/>
+        </CompFileExtendedInfo>
+        <CompFileExtendedInfo CompFileName="urllc_core.bd" FileRelPathName="ip/urllc_core_rst_ps7_0_120M_0/urllc_core_rst_ps7_0_120M_0.xci">
+          <Proxy FileSetName="urllc_core_rst_ps7_0_120M_0"/>
+        </CompFileExtendedInfo>
+        <CompFileExtendedInfo CompFileName="urllc_core.bd" FileRelPathName="ip/urllc_core_axi_gpio_0_0/urllc_core_axi_gpio_0_0.xci">
+          <Proxy FileSetName="urllc_core_axi_gpio_0_0"/>
+        </CompFileExtendedInfo>
+        <CompFileExtendedInfo CompFileName="urllc_core.bd" FileRelPathName="ip/urllc_core_axi_gpio_1_0/urllc_core_axi_gpio_1_0.xci">
+          <Proxy FileSetName="urllc_core_axi_gpio_1_0"/>
+        </CompFileExtendedInfo>
+        <CompFileExtendedInfo CompFileName="urllc_core.bd" FileRelPathName="ip/urllc_core_mux_3_0/urllc_core_mux_3_0.xci">
+          <Proxy FileSetName="urllc_core_mux_3_0"/>
+        </CompFileExtendedInfo>
+        <CompFileExtendedInfo CompFileName="urllc_core.bd" FileRelPathName="ip/urllc_core_ad2dma_rtl_0_1/urllc_core_ad2dma_rtl_0_1.xci">
+          <Proxy FileSetName="urllc_core_ad2dma_rtl_0_1"/>
+        </CompFileExtendedInfo>
+        <CompFileExtendedInfo CompFileName="urllc_core.bd" FileRelPathName="ip/urllc_core_rst_ps7_0_200M_0/urllc_core_rst_ps7_0_200M_0.xci">
+          <Proxy FileSetName="urllc_core_rst_ps7_0_200M_0"/>
+        </CompFileExtendedInfo>
+        <CompFileExtendedInfo CompFileName="urllc_core.bd" FileRelPathName="ip/urllc_core_mux_1_0/urllc_core_mux_1_0.xci">
+          <Proxy FileSetName="urllc_core_mux_1_0"/>
+        </CompFileExtendedInfo>
+        <CompFileExtendedInfo CompFileName="urllc_core.bd" FileRelPathName="ip/urllc_core_mux_2_0/urllc_core_mux_2_0.xci">
+          <Proxy FileSetName="urllc_core_mux_2_0"/>
+        </CompFileExtendedInfo>
+        <CompFileExtendedInfo CompFileName="urllc_core.bd" FileRelPathName="ip/urllc_core_mux_rtl_0/urllc_core_mux_rtl_0.xci">
+          <Proxy FileSetName="urllc_core_mux_rtl_0"/>
+        </CompFileExtendedInfo>
+        <CompFileExtendedInfo CompFileName="urllc_core.bd" FileRelPathName="ip/urllc_core_DDCWrapper_0_0/urllc_core_DDCWrapper_0_0.xci">
+          <Proxy FileSetName="urllc_core_DDCWrapper_0_0"/>
+        </CompFileExtendedInfo>
+        <CompFileExtendedInfo CompFileName="urllc_core.bd" FileRelPathName="ip/urllc_core_ad2dma_rtl_0_0/urllc_core_ad2dma_rtl_0_0.xci">
+          <Proxy FileSetName="urllc_core_ad2dma_rtl_0_0"/>
+        </CompFileExtendedInfo>
         <CompFileExtendedInfo CompFileName="urllc_core.bd" FileRelPathName="ip/urllc_core_ad_buf_0_0/urllc_core_ad_buf_0_0.xci">
           <Proxy FileSetName="urllc_core_ad_buf_0_0"/>
         </CompFileExtendedInfo>
         <CompFileExtendedInfo CompFileName="urllc_core.bd" FileRelPathName="ip/urllc_core_mux_0_0/urllc_core_mux_0_0.xci">
           <Proxy FileSetName="urllc_core_mux_0_0"/>
+        </CompFileExtendedInfo>
+        <CompFileExtendedInfo CompFileName="urllc_core.bd" FileRelPathName="ip/urllc_core_axi_dma_1_0/urllc_core_axi_dma_1_0.xci">
+          <Proxy FileSetName="urllc_core_axi_dma_1_0"/>
+        </CompFileExtendedInfo>
+        <CompFileExtendedInfo CompFileName="urllc_core.bd" FileRelPathName="ip/urllc_core_mux_0_1/urllc_core_mux_0_1.xci">
+          <Proxy FileSetName="urllc_core_mux_0_1"/>
         </CompFileExtendedInfo>
         <CompFileExtendedInfo CompFileName="urllc_core.bd" FileRelPathName="ip/urllc_core_div_n_0_0/urllc_core_div_n_0_0.xci">
           <Proxy FileSetName="urllc_core_div_n_0_0"/>
@@ -238,82 +307,10 @@
         <CompFileExtendedInfo CompFileName="urllc_core.bd" FileRelPathName="ip/urllc_core_mux_disable_sel2_0/urllc_core_mux_disable_sel2_0.xci">
           <Proxy FileSetName="urllc_core_mux_disable_sel2_0"/>
         </CompFileExtendedInfo>
-        <CompFileExtendedInfo CompFileName="urllc_core.bd" FileRelPathName="ip/urllc_core_mux_rtl_0/urllc_core_mux_rtl_0.xci">
-          <Proxy FileSetName="urllc_core_mux_rtl_0"/>
-        </CompFileExtendedInfo>
-        <CompFileExtendedInfo CompFileName="urllc_core.bd" FileRelPathName="ip/urllc_core_mux_1_0/urllc_core_mux_1_0.xci">
-          <Proxy FileSetName="urllc_core_mux_1_0"/>
-        </CompFileExtendedInfo>
-        <CompFileExtendedInfo CompFileName="urllc_core.bd" FileRelPathName="ip/urllc_core_DUCWrapper_0_0/urllc_core_DUCWrapper_0_0.xci">
-          <Proxy FileSetName="urllc_core_DUCWrapper_0_0"/>
-        </CompFileExtendedInfo>
-        <CompFileExtendedInfo CompFileName="urllc_core.bd" FileRelPathName="ip/urllc_core_ad2dma_rtl_0_0/urllc_core_ad2dma_rtl_0_0.xci">
-          <Proxy FileSetName="urllc_core_ad2dma_rtl_0_0"/>
-        </CompFileExtendedInfo>
-        <CompFileExtendedInfo CompFileName="urllc_core.bd" FileRelPathName="ip/urllc_core_ad2dma_rtl_0_1/urllc_core_ad2dma_rtl_0_1.xci">
-          <Proxy FileSetName="urllc_core_ad2dma_rtl_0_1"/>
-        </CompFileExtendedInfo>
-        <CompFileExtendedInfo CompFileName="urllc_core.bd" FileRelPathName="ip/urllc_core_axi_dma_0_0/urllc_core_axi_dma_0_0.xci">
-          <Proxy FileSetName="urllc_core_axi_dma_0_0"/>
-        </CompFileExtendedInfo>
-        <CompFileExtendedInfo CompFileName="urllc_core.bd" FileRelPathName="ip/urllc_core_axi_dma_1_0/urllc_core_axi_dma_1_0.xci">
-          <Proxy FileSetName="urllc_core_axi_dma_1_0"/>
-        </CompFileExtendedInfo>
-        <CompFileExtendedInfo CompFileName="urllc_core.bd" FileRelPathName="ip/urllc_core_mux_2_0/urllc_core_mux_2_0.xci">
-          <Proxy FileSetName="urllc_core_mux_2_0"/>
-        </CompFileExtendedInfo>
-        <CompFileExtendedInfo CompFileName="urllc_core.bd" FileRelPathName="ip/urllc_core_DDCWrapper_0_0/urllc_core_DDCWrapper_0_0.xci">
-          <Proxy FileSetName="urllc_core_DDCWrapper_0_0"/>
-        </CompFileExtendedInfo>
-        <CompFileExtendedInfo CompFileName="urllc_core.bd" FileRelPathName="ip/urllc_core_rst_ps7_0_200M_0/urllc_core_rst_ps7_0_200M_0.xci">
-          <Proxy FileSetName="urllc_core_rst_ps7_0_200M_0"/>
-        </CompFileExtendedInfo>
-        <CompFileExtendedInfo CompFileName="urllc_core.bd" FileRelPathName="ip/urllc_core_mux_3_0/urllc_core_mux_3_0.xci">
-          <Proxy FileSetName="urllc_core_mux_3_0"/>
-        </CompFileExtendedInfo>
-        <CompFileExtendedInfo CompFileName="urllc_core.bd" FileRelPathName="ip/urllc_core_mux_0_1/urllc_core_mux_0_1.xci">
-          <Proxy FileSetName="urllc_core_mux_0_1"/>
-        </CompFileExtendedInfo>
-        <CompFileExtendedInfo CompFileName="urllc_core.bd" FileRelPathName="ip/urllc_core_rst_ps7_0_120M_0/urllc_core_rst_ps7_0_120M_0.xci">
-          <Proxy FileSetName="urllc_core_rst_ps7_0_120M_0"/>
-        </CompFileExtendedInfo>
-        <CompFileExtendedInfo CompFileName="urllc_core.bd" FileRelPathName="ip/urllc_core_axi_gpio_1_0/urllc_core_axi_gpio_1_0.xci">
-          <Proxy FileSetName="urllc_core_axi_gpio_1_0"/>
-        </CompFileExtendedInfo>
-        <CompFileExtendedInfo CompFileName="urllc_core.bd" FileRelPathName="ip/urllc_core_clk_wiz_static_0/urllc_core_clk_wiz_static_0.xci">
-          <Proxy FileSetName="urllc_core_clk_wiz_static_0"/>
-        </CompFileExtendedInfo>
-        <CompFileExtendedInfo CompFileName="urllc_core.bd" FileRelPathName="ip/urllc_core_proc_clock_reset_0/urllc_core_proc_clock_reset_0.xci">
-          <Proxy FileSetName="urllc_core_proc_clock_reset_0"/>
-        </CompFileExtendedInfo>
-        <CompFileExtendedInfo CompFileName="urllc_core.bd" FileRelPathName="ip/urllc_core_processing_system7_0_0/urllc_core_processing_system7_0_0.xci">
-          <Proxy FileSetName="urllc_core_processing_system7_0_0"/>
-        </CompFileExtendedInfo>
-        <CompFileExtendedInfo CompFileName="urllc_core.bd" FileRelPathName="ip/urllc_core_smartconnect_outer_1/urllc_core_smartconnect_outer_1.xci">
-          <Proxy FileSetName="urllc_core_smartconnect_outer_1"/>
-        </CompFileExtendedInfo>
-        <CompFileExtendedInfo CompFileName="urllc_core.bd" FileRelPathName="ip/urllc_core_clk_wiz_dynamic_0/urllc_core_clk_wiz_dynamic_0.xci">
-          <Proxy FileSetName="urllc_core_clk_wiz_dynamic_0"/>
-        </CompFileExtendedInfo>
-        <CompFileExtendedInfo CompFileName="urllc_core.bd" FileRelPathName="ip/urllc_core_smartconnect_outer_0/urllc_core_smartconnect_outer_0.xci">
-          <Proxy FileSetName="urllc_core_smartconnect_outer_0"/>
-        </CompFileExtendedInfo>
-        <CompFileExtendedInfo CompFileName="urllc_core.bd" FileRelPathName="ip/urllc_core_axi_gpio_0_0/urllc_core_axi_gpio_0_0.xci">
-          <Proxy FileSetName="urllc_core_axi_gpio_0_0"/>
-        </CompFileExtendedInfo>
-        <CompFileExtendedInfo CompFileName="urllc_core.bd" FileRelPathName="ip/urllc_core_proc_data_reset_8M_0/urllc_core_proc_data_reset_8M_0.xci">
-          <Proxy FileSetName="urllc_core_proc_data_reset_8M_0"/>
-        </CompFileExtendedInfo>
-        <CompFileExtendedInfo CompFileName="urllc_core.bd" FileRelPathName="ip/urllc_core_clk_wiz_100M_0/urllc_core_clk_wiz_100M_0.xci">
-          <Proxy FileSetName="urllc_core_clk_wiz_100M_0"/>
-        </CompFileExtendedInfo>
-        <CompFileExtendedInfo CompFileName="urllc_core.bd" FileRelPathName="ip/urllc_core_ila_0_0/urllc_core_ila_0_0.xci">
-          <Proxy FileSetName="urllc_core_ila_0_0"/>
-        </CompFileExtendedInfo>
       </File>
       <Config>
         <Option Name="DesignMode" Val="RTL"/>
-        <Option Name="TopModule" Val="design_sender_wrapper"/>
+        <Option Name="TopModule" Val="design_reciever_wrapper"/>
       </Config>
     </FileSet>
     <FileSet Name="constrs_1" Type="Constrs" RelSrcDir="$PSRCDIR/constrs_1" RelGenDir="$PGENDIR/constrs_1">
@@ -362,12 +359,6 @@
           <Attr Name="UsedIn" Val="implementation"/>
           <Attr Name="UsedIn" Val="simulation"/>
         </FileInfo>
-        <CompFileExtendedInfo CompFileName="urllc_core_inst_0.bd" FileRelPathName="ip/urllc_core_inst_0_FrameTriggerWrapper_0_0/urllc_core_inst_0_FrameTriggerWrapper_0_0.xci">
-          <Proxy FileSetName="urllc_core_inst_0_FrameTriggerWrapper_0_0"/>
-        </CompFileExtendedInfo>
-        <CompFileExtendedInfo CompFileName="urllc_core_inst_0.bd" FileRelPathName="ip/urllc_core_inst_0_smartconnect_outer_0/urllc_core_inst_0_smartconnect_outer_0.xci">
-          <Proxy FileSetName="urllc_core_inst_0_smartconnect_outer_0"/>
-        </CompFileExtendedInfo>
         <CompFileExtendedInfo CompFileName="urllc_core_inst_0.bd" FileRelPathName="ip/urllc_core_inst_0_smartconnect_outer_1/urllc_core_inst_0_smartconnect_outer_1.xci">
           <Proxy FileSetName="urllc_core_inst_0_smartconnect_outer_1"/>
         </CompFileExtendedInfo>
@@ -452,12 +443,6 @@
     <FileSet Name="urllc_core_rst_ps7_0_200M_0" Type="BlockSrcs" RelSrcDir="$PSRCDIR/urllc_core_rst_ps7_0_200M_0" RelGenDir="$PGENDIR/urllc_core_rst_ps7_0_200M_0">
       <Config>
         <Option Name="TopModule" Val="urllc_core_rst_ps7_0_200M_0"/>
-        <Option Name="UseBlackboxStub" Val="1"/>
-      </Config>
-    </FileSet>
-    <FileSet Name="urllc_core_DUCWrapper_0_0" Type="BlockSrcs" RelSrcDir="$PSRCDIR/urllc_core_DUCWrapper_0_0" RelGenDir="$PGENDIR/urllc_core_DUCWrapper_0_0">
-      <Config>
-        <Option Name="TopModule" Val="urllc_core_DUCWrapper_0_0"/>
         <Option Name="UseBlackboxStub" Val="1"/>
       </Config>
     </FileSet>
@@ -576,24 +561,6 @@
         <Option Name="XSimWcfgFile" Val="$PPRDIR/testbench_FrameTrigger_behav.wcfg"/>
       </Config>
     </FileSet>
-    <FileSet Name="urllc_core_inst_0_smartconnect_outer_1" Type="BlockSrcs" RelSrcDir="$PSRCDIR/urllc_core_inst_0_smartconnect_outer_1" RelGenDir="$PGENDIR/urllc_core_inst_0_smartconnect_outer_1">
-      <Config>
-        <Option Name="TopModule" Val="urllc_core_inst_0_smartconnect_outer_1"/>
-        <Option Name="UseBlackboxStub" Val="1"/>
-      </Config>
-    </FileSet>
-    <FileSet Name="urllc_core_inst_0_smartconnect_outer_0" Type="BlockSrcs" RelSrcDir="$PSRCDIR/urllc_core_inst_0_smartconnect_outer_0" RelGenDir="$PGENDIR/urllc_core_inst_0_smartconnect_outer_0">
-      <Config>
-        <Option Name="TopModule" Val="urllc_core_inst_0_smartconnect_outer_0"/>
-        <Option Name="UseBlackboxStub" Val="1"/>
-      </Config>
-    </FileSet>
-    <FileSet Name="urllc_core_inst_0_FrameTriggerWrapper_0_0" Type="BlockSrcs" RelSrcDir="$PSRCDIR/urllc_core_inst_0_FrameTriggerWrapper_0_0" RelGenDir="$PGENDIR/urllc_core_inst_0_FrameTriggerWrapper_0_0">
-      <Config>
-        <Option Name="TopModule" Val="urllc_core_inst_0_FrameTriggerWrapper_0_0"/>
-        <Option Name="UseBlackboxStub" Val="1"/>
-      </Config>
-    </FileSet>
     <FileSet Name="urllc_core_inst_1" Type="BlockSrcs" RelSrcDir="$PSRCDIR/urllc_core_inst_1" RelGenDir="$PGENDIR/urllc_core_inst_1">
       <File Path="$PGENDIR/sources_1/bd/design_sender/bd/urllc_core_inst_1/urllc_core_inst_1.bd">
         <FileInfo>
@@ -602,25 +569,44 @@
           <Attr Name="UsedIn" Val="implementation"/>
           <Attr Name="UsedIn" Val="simulation"/>
         </FileInfo>
-        <CompFileExtendedInfo CompFileName="urllc_core_inst_1.bd" FileRelPathName="ip/urllc_core_inst_1_smartconnect_outer_1/urllc_core_inst_1_smartconnect_outer_1.xci">
+        <CompFileExtendedInfo CompFileName="urllc_core_inst_1.bd" FileRelPathName="ip/urllc_core_inst_1_smartconnect_outer_1_1/urllc_core_inst_1_smartconnect_outer_1.xci">
           <Proxy FileSetName="urllc_core_inst_1_smartconnect_outer_1"/>
-        </CompFileExtendedInfo>
-        <CompFileExtendedInfo CompFileName="urllc_core_inst_1.bd" FileRelPathName="ip/urllc_core_inst_1_smartconnect_outer_0/urllc_core_inst_1_smartconnect_outer_0.xci">
-          <Proxy FileSetName="urllc_core_inst_1_smartconnect_outer_0"/>
-        </CompFileExtendedInfo>
-        <CompFileExtendedInfo CompFileName="urllc_core_inst_1.bd" FileRelPathName="ip/urllc_core_inst_1_clk_wiz_100M_0/urllc_core_inst_1_clk_wiz_100M_0.xci">
-          <Proxy FileSetName="urllc_core_inst_1_clk_wiz_100M_0"/>
-        </CompFileExtendedInfo>
-        <CompFileExtendedInfo CompFileName="urllc_core_inst_1.bd" FileRelPathName="ip/urllc_core_inst_1_clk_wiz_dynamic_0/urllc_core_inst_1_clk_wiz_dynamic_0.xci">
-          <Proxy FileSetName="urllc_core_inst_1_clk_wiz_dynamic_0"/>
-        </CompFileExtendedInfo>
-        <CompFileExtendedInfo CompFileName="urllc_core_inst_1.bd" FileRelPathName="ip/urllc_core_inst_1_clk_wiz_static_0/urllc_core_inst_1_clk_wiz_static_0.xci">
-          <Proxy FileSetName="urllc_core_inst_1_clk_wiz_static_0"/>
         </CompFileExtendedInfo>
       </File>
       <Config>
         <Option Name="TopModule" Val="urllc_core_inst_1"/>
         <Option Name="UseBlackboxStub" Val="1"/>
+      </Config>
+    </FileSet>
+    <FileSet Name="sim_DUC" Type="SimulationSrcs" RelSrcDir="$PSRCDIR/sim_DUC" RelGenDir="$PGENDIR/sim_DUC">
+      <Filter Type="Srcs"/>
+      <File Path="$PSRCDIR/sim_DUC/imports/new/testbench_duc.v">
+        <FileInfo>
+          <Attr Name="ImportPath" Val="$PPRDIR/../urllc-demo-vivado/urllc-demo-vivado.srcs/sim_duc/new/testbench_duc.v"/>
+          <Attr Name="ImportTime" Val="1642023653"/>
+          <Attr Name="UsedIn" Val="synthesis"/>
+          <Attr Name="UsedIn" Val="implementation"/>
+          <Attr Name="UsedIn" Val="simulation"/>
+        </FileInfo>
+      </File>
+      <File Path="$PPRDIR/testbench_duc_behav.wcfg">
+        <FileInfo>
+          <Attr Name="UsedIn" Val="simulation"/>
+        </FileInfo>
+      </File>
+      <Config>
+        <Option Name="DesignMode" Val="RTL"/>
+        <Option Name="TopModule" Val="testbench_duc"/>
+        <Option Name="TopLib" Val="xil_defaultlib"/>
+        <Option Name="TransportPathDelay" Val="0"/>
+        <Option Name="TransportIntDelay" Val="0"/>
+        <Option Name="SelectedSimModel" Val="rtl"/>
+        <Option Name="PamDesignTestbench" Val=""/>
+        <Option Name="PamDutBypassFile" Val="xil_dut_bypass"/>
+        <Option Name="PamSignalDriverFile" Val="xil_bypass_driver"/>
+        <Option Name="PamPseudoTop" Val="pseudo_tb"/>
+        <Option Name="SrcSet" Val="sources_1"/>
+        <Option Name="XSimWcfgFile" Val="$PPRDIR/testbench_duc_behav.wcfg"/>
       </Config>
     </FileSet>
     <FileSet Name="urllc_core_inst_1_smartconnect_outer_1" Type="BlockSrcs" RelSrcDir="$PSRCDIR/urllc_core_inst_1_smartconnect_outer_1" RelGenDir="$PGENDIR/urllc_core_inst_1_smartconnect_outer_1">
@@ -629,27 +615,9 @@
         <Option Name="UseBlackboxStub" Val="1"/>
       </Config>
     </FileSet>
-    <FileSet Name="urllc_core_inst_1_smartconnect_outer_0" Type="BlockSrcs" RelSrcDir="$PSRCDIR/urllc_core_inst_1_smartconnect_outer_0" RelGenDir="$PGENDIR/urllc_core_inst_1_smartconnect_outer_0">
+    <FileSet Name="urllc_core_inst_0_smartconnect_outer_1" Type="BlockSrcs" RelSrcDir="$PSRCDIR/urllc_core_inst_0_smartconnect_outer_1" RelGenDir="$PGENDIR/urllc_core_inst_0_smartconnect_outer_1">
       <Config>
-        <Option Name="TopModule" Val="urllc_core_inst_1_smartconnect_outer_0"/>
-        <Option Name="UseBlackboxStub" Val="1"/>
-      </Config>
-    </FileSet>
-    <FileSet Name="urllc_core_inst_1_clk_wiz_100M_0" Type="BlockSrcs" RelSrcDir="$PSRCDIR/urllc_core_inst_1_clk_wiz_100M_0" RelGenDir="$PGENDIR/urllc_core_inst_1_clk_wiz_100M_0">
-      <Config>
-        <Option Name="TopModule" Val="urllc_core_inst_1_clk_wiz_100M_0"/>
-        <Option Name="UseBlackboxStub" Val="1"/>
-      </Config>
-    </FileSet>
-    <FileSet Name="urllc_core_inst_1_clk_wiz_dynamic_0" Type="BlockSrcs" RelSrcDir="$PSRCDIR/urllc_core_inst_1_clk_wiz_dynamic_0" RelGenDir="$PGENDIR/urllc_core_inst_1_clk_wiz_dynamic_0">
-      <Config>
-        <Option Name="TopModule" Val="urllc_core_inst_1_clk_wiz_dynamic_0"/>
-        <Option Name="UseBlackboxStub" Val="1"/>
-      </Config>
-    </FileSet>
-    <FileSet Name="urllc_core_inst_1_clk_wiz_static_0" Type="BlockSrcs" RelSrcDir="$PSRCDIR/urllc_core_inst_1_clk_wiz_static_0" RelGenDir="$PGENDIR/urllc_core_inst_1_clk_wiz_static_0">
-      <Config>
-        <Option Name="TopModule" Val="urllc_core_inst_1_clk_wiz_static_0"/>
+        <Option Name="TopModule" Val="urllc_core_inst_0_smartconnect_outer_1"/>
         <Option Name="UseBlackboxStub" Val="1"/>
       </Config>
     </FileSet>
@@ -813,16 +781,6 @@
       <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
       <RQSFiles/>
     </Run>
-    <Run Id="urllc_core_DUCWrapper_0_0_synth_1" Type="Ft3:Synth" SrcSet="urllc_core_DUCWrapper_0_0" Part="xc7z020clg400-2" ConstrsSet="urllc_core_DUCWrapper_0_0" Description="Vivado Synthesis Defaults" AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" Dir="$PRUNDIR/urllc_core_DUCWrapper_0_0_synth_1" IncludeInArchive="true" IsChild="false" AutoIncrementalDir="$PSRCDIR/utils_1/imports/urllc_core_DUCWrapper_0_0_synth_1">
-      <Strategy Version="1" Minor="2">
-        <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2021"/>
-        <Step Id="synth_design"/>
-      </Strategy>
-      <GeneratedRun Dir="$PRUNDIR" File="gen_run.xml"/>
-      <ReportStrategy Name="Vivado Synthesis Default Reports" Flow="Vivado Synthesis 2021"/>
-      <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
-      <RQSFiles/>
-    </Run>
     <Run Id="urllc_core_ad2dma_rtl_0_1_synth_1" Type="Ft3:Synth" SrcSet="urllc_core_ad2dma_rtl_0_1" Part="xc7z020clg400-2" ConstrsSet="urllc_core_ad2dma_rtl_0_1" Description="Vivado Synthesis Defaults" AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" Dir="$PRUNDIR/urllc_core_ad2dma_rtl_0_1_synth_1" IncludeInArchive="true" IsChild="false" AutoIncrementalDir="$PSRCDIR/utils_1/imports/urllc_core_ad2dma_rtl_0_1_synth_1">
       <Strategy Version="1" Minor="2">
         <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2021"/>
@@ -963,41 +921,9 @@
       <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
       <RQSFiles/>
     </Run>
-    <Run Id="urllc_core_inst_0_smartconnect_outer_1_synth_1" Type="Ft3:Synth" SrcSet="urllc_core_inst_0_smartconnect_outer_1" Part="xc7z020clg400-2" ConstrsSet="urllc_core_inst_0_smartconnect_outer_1" Description="Vivado Synthesis Defaults" AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" Dir="$PRUNDIR/urllc_core_inst_0_smartconnect_outer_1_synth_1" IncludeInArchive="true" IsChild="false" AutoIncrementalDir="$PSRCDIR/utils_1/imports/urllc_core_inst_0_smartconnect_outer_1_synth_1">
-      <Strategy Version="1" Minor="2">
-        <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2021"/>
-        <Step Id="synth_design"/>
-      </Strategy>
-      <GeneratedRun Dir="$PRUNDIR" File="gen_run.xml"/>
-      <ReportStrategy Name="Vivado Synthesis Default Reports" Flow="Vivado Synthesis 2021"/>
-      <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
-      <RQSFiles/>
-    </Run>
-    <Run Id="urllc_core_inst_0_smartconnect_outer_0_synth_1" Type="Ft3:Synth" SrcSet="urllc_core_inst_0_smartconnect_outer_0" Part="xc7z020clg400-2" ConstrsSet="urllc_core_inst_0_smartconnect_outer_0" Description="Vivado Synthesis Defaults" AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" Dir="$PRUNDIR/urllc_core_inst_0_smartconnect_outer_0_synth_1" IncludeInArchive="true" IsChild="false" AutoIncrementalDir="$PSRCDIR/utils_1/imports/urllc_core_inst_0_smartconnect_outer_0_synth_1">
-      <Strategy Version="1" Minor="2">
-        <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2021"/>
-        <Step Id="synth_design"/>
-      </Strategy>
-      <GeneratedRun Dir="$PRUNDIR" File="gen_run.xml"/>
-      <ReportStrategy Name="Vivado Synthesis Default Reports" Flow="Vivado Synthesis 2021"/>
-      <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
-      <RQSFiles/>
-    </Run>
-    <Run Id="urllc_core_inst_0_FrameTriggerWrapper_0_0_synth_1" Type="Ft3:Synth" SrcSet="urllc_core_inst_0_FrameTriggerWrapper_0_0" Part="xc7z020clg400-2" ConstrsSet="urllc_core_inst_0_FrameTriggerWrapper_0_0" Description="Vivado Synthesis Defaults" AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" Dir="$PRUNDIR/urllc_core_inst_0_FrameTriggerWrapper_0_0_synth_1" IncludeInArchive="true" IsChild="false" AutoIncrementalDir="$PSRCDIR/utils_1/imports/urllc_core_inst_0_FrameTriggerWrapper_0_0_synth_1">
-      <Strategy Version="1" Minor="2">
-        <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2021"/>
-        <Step Id="synth_design"/>
-      </Strategy>
-      <GeneratedRun Dir="$PRUNDIR" File="gen_run.xml"/>
-      <ReportStrategy Name="Vivado Synthesis Default Reports" Flow="Vivado Synthesis 2021"/>
-      <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
-      <RQSFiles/>
-    </Run>
     <Run Id="synth_sender" Type="Ft3:Synth" SrcSet="sources_1" Part="xc7z020clg400-2" ConstrsSet="constrs_1" Description="Vivado Synthesis Defaults" AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" State="current" Dir="$PRUNDIR/synth_sender" IncludeInArchive="true" IsChild="false" AutoIncrementalDir="$PSRCDIR/utils_1/imports/synth_sender">
       <Strategy Version="1" Minor="2">
-        <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2021">
-          <Desc>Vivado Synthesis Defaults</Desc>
-        </StratHandle>
+        <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2021"/>
         <Step Id="synth_design"/>
       </Strategy>
       <GeneratedRun Dir="$PRUNDIR" File="gen_run.xml"/>
@@ -1017,43 +943,7 @@
       <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
       <RQSFiles/>
     </Run>
-    <Run Id="urllc_core_inst_1_smartconnect_outer_0_synth_1" Type="Ft3:Synth" SrcSet="urllc_core_inst_1_smartconnect_outer_0" Part="xc7z020clg400-2" ConstrsSet="urllc_core_inst_1_smartconnect_outer_0" Description="Vivado Synthesis Defaults" AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" Dir="$PRUNDIR/urllc_core_inst_1_smartconnect_outer_0_synth_1" IncludeInArchive="true" IsChild="false" AutoIncrementalDir="$PSRCDIR/utils_1/imports/urllc_core_inst_1_smartconnect_outer_0_synth_1">
-      <Strategy Version="1" Minor="2">
-        <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2021">
-          <Desc>Vivado Synthesis Defaults</Desc>
-        </StratHandle>
-        <Step Id="synth_design"/>
-      </Strategy>
-      <GeneratedRun Dir="$PRUNDIR" File="gen_run.xml"/>
-      <ReportStrategy Name="Vivado Synthesis Default Reports" Flow="Vivado Synthesis 2021"/>
-      <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
-      <RQSFiles/>
-    </Run>
-    <Run Id="urllc_core_inst_1_clk_wiz_100M_0_synth_1" Type="Ft3:Synth" SrcSet="urllc_core_inst_1_clk_wiz_100M_0" Part="xc7z020clg400-2" ConstrsSet="urllc_core_inst_1_clk_wiz_100M_0" Description="Vivado Synthesis Defaults" AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" Dir="$PRUNDIR/urllc_core_inst_1_clk_wiz_100M_0_synth_1" IncludeInArchive="true" IsChild="false" AutoIncrementalDir="$PSRCDIR/utils_1/imports/urllc_core_inst_1_clk_wiz_100M_0_synth_1">
-      <Strategy Version="1" Minor="2">
-        <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2021">
-          <Desc>Vivado Synthesis Defaults</Desc>
-        </StratHandle>
-        <Step Id="synth_design"/>
-      </Strategy>
-      <GeneratedRun Dir="$PRUNDIR" File="gen_run.xml"/>
-      <ReportStrategy Name="Vivado Synthesis Default Reports" Flow="Vivado Synthesis 2021"/>
-      <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
-      <RQSFiles/>
-    </Run>
-    <Run Id="urllc_core_inst_1_clk_wiz_dynamic_0_synth_1" Type="Ft3:Synth" SrcSet="urllc_core_inst_1_clk_wiz_dynamic_0" Part="xc7z020clg400-2" ConstrsSet="urllc_core_inst_1_clk_wiz_dynamic_0" Description="Vivado Synthesis Defaults" AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" Dir="$PRUNDIR/urllc_core_inst_1_clk_wiz_dynamic_0_synth_1" IncludeInArchive="true" IsChild="false" AutoIncrementalDir="$PSRCDIR/utils_1/imports/urllc_core_inst_1_clk_wiz_dynamic_0_synth_1">
-      <Strategy Version="1" Minor="2">
-        <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2021">
-          <Desc>Vivado Synthesis Defaults</Desc>
-        </StratHandle>
-        <Step Id="synth_design"/>
-      </Strategy>
-      <GeneratedRun Dir="$PRUNDIR" File="gen_run.xml"/>
-      <ReportStrategy Name="Vivado Synthesis Default Reports" Flow="Vivado Synthesis 2021"/>
-      <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
-      <RQSFiles/>
-    </Run>
-    <Run Id="urllc_core_inst_1_clk_wiz_static_0_synth_1" Type="Ft3:Synth" SrcSet="urllc_core_inst_1_clk_wiz_static_0" Part="xc7z020clg400-2" ConstrsSet="urllc_core_inst_1_clk_wiz_static_0" Description="Vivado Synthesis Defaults" AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" Dir="$PRUNDIR/urllc_core_inst_1_clk_wiz_static_0_synth_1" IncludeInArchive="true" IsChild="false" AutoIncrementalDir="$PSRCDIR/utils_1/imports/urllc_core_inst_1_clk_wiz_static_0_synth_1">
+    <Run Id="urllc_core_inst_0_smartconnect_outer_1_synth_1" Type="Ft3:Synth" SrcSet="urllc_core_inst_0_smartconnect_outer_1" Part="xc7z020clg400-2" ConstrsSet="urllc_core_inst_0_smartconnect_outer_1" Description="Vivado Synthesis Defaults" AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" Dir="$PRUNDIR/urllc_core_inst_0_smartconnect_outer_1_synth_1" IncludeInArchive="true" IsChild="false" AutoIncrementalDir="$PSRCDIR/utils_1/imports/urllc_core_inst_0_smartconnect_outer_1_synth_1">
       <Strategy Version="1" Minor="2">
         <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2021">
           <Desc>Vivado Synthesis Defaults</Desc>
@@ -1288,23 +1178,6 @@
       <RQSFiles/>
     </Run>
     <Run Id="urllc_core_rst_ps7_0_200M_0_impl_1" Type="Ft2:EntireDesign" Part="xc7z020clg400-2" ConstrsSet="urllc_core_rst_ps7_0_200M_0" Description="Default settings for Implementation." AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" SynthRun="urllc_core_rst_ps7_0_200M_0_synth_1" IncludeInArchive="false" IsChild="false" GenFullBitstream="true" AutoIncrementalDir="$PSRCDIR/utils_1/imports/urllc_core_rst_ps7_0_200M_0_impl_1">
-      <Strategy Version="1" Minor="2">
-        <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2021"/>
-        <Step Id="init_design"/>
-        <Step Id="opt_design"/>
-        <Step Id="power_opt_design"/>
-        <Step Id="place_design"/>
-        <Step Id="post_place_power_opt_design"/>
-        <Step Id="phys_opt_design"/>
-        <Step Id="route_design"/>
-        <Step Id="post_route_phys_opt_design"/>
-        <Step Id="write_bitstream"/>
-      </Strategy>
-      <ReportStrategy Name="Vivado Implementation Default Reports" Flow="Vivado Implementation 2021"/>
-      <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
-      <RQSFiles/>
-    </Run>
-    <Run Id="urllc_core_DUCWrapper_0_0_impl_1" Type="Ft2:EntireDesign" Part="xc7z020clg400-2" ConstrsSet="urllc_core_DUCWrapper_0_0" Description="Default settings for Implementation." AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" SynthRun="urllc_core_DUCWrapper_0_0_synth_1" IncludeInArchive="false" IsChild="false" GenFullBitstream="true" AutoIncrementalDir="$PSRCDIR/utils_1/imports/urllc_core_DUCWrapper_0_0_impl_1">
       <Strategy Version="1" Minor="2">
         <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2021"/>
         <Step Id="init_design"/>
@@ -1559,62 +1432,9 @@
       <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
       <RQSFiles/>
     </Run>
-    <Run Id="urllc_core_inst_0_smartconnect_outer_1_impl_1" Type="Ft2:EntireDesign" Part="xc7z020clg400-2" ConstrsSet="urllc_core_inst_0_smartconnect_outer_1" Description="Default settings for Implementation." AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" SynthRun="urllc_core_inst_0_smartconnect_outer_1_synth_1" IncludeInArchive="false" IsChild="false" GenFullBitstream="true" AutoIncrementalDir="$PSRCDIR/utils_1/imports/urllc_core_inst_0_smartconnect_outer_1_impl_1">
-      <Strategy Version="1" Minor="2">
-        <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2021"/>
-        <Step Id="init_design"/>
-        <Step Id="opt_design"/>
-        <Step Id="power_opt_design"/>
-        <Step Id="place_design"/>
-        <Step Id="post_place_power_opt_design"/>
-        <Step Id="phys_opt_design"/>
-        <Step Id="route_design"/>
-        <Step Id="post_route_phys_opt_design"/>
-        <Step Id="write_bitstream"/>
-      </Strategy>
-      <ReportStrategy Name="Vivado Implementation Default Reports" Flow="Vivado Implementation 2021"/>
-      <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
-      <RQSFiles/>
-    </Run>
-    <Run Id="urllc_core_inst_0_smartconnect_outer_0_impl_1" Type="Ft2:EntireDesign" Part="xc7z020clg400-2" ConstrsSet="urllc_core_inst_0_smartconnect_outer_0" Description="Default settings for Implementation." AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" SynthRun="urllc_core_inst_0_smartconnect_outer_0_synth_1" IncludeInArchive="false" IsChild="false" GenFullBitstream="true" AutoIncrementalDir="$PSRCDIR/utils_1/imports/urllc_core_inst_0_smartconnect_outer_0_impl_1">
-      <Strategy Version="1" Minor="2">
-        <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2021"/>
-        <Step Id="init_design"/>
-        <Step Id="opt_design"/>
-        <Step Id="power_opt_design"/>
-        <Step Id="place_design"/>
-        <Step Id="post_place_power_opt_design"/>
-        <Step Id="phys_opt_design"/>
-        <Step Id="route_design"/>
-        <Step Id="post_route_phys_opt_design"/>
-        <Step Id="write_bitstream"/>
-      </Strategy>
-      <ReportStrategy Name="Vivado Implementation Default Reports" Flow="Vivado Implementation 2021"/>
-      <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
-      <RQSFiles/>
-    </Run>
-    <Run Id="urllc_core_inst_0_FrameTriggerWrapper_0_0_impl_1" Type="Ft2:EntireDesign" Part="xc7z020clg400-2" ConstrsSet="urllc_core_inst_0_FrameTriggerWrapper_0_0" Description="Default settings for Implementation." AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" SynthRun="urllc_core_inst_0_FrameTriggerWrapper_0_0_synth_1" IncludeInArchive="false" IsChild="false" GenFullBitstream="true" AutoIncrementalDir="$PSRCDIR/utils_1/imports/urllc_core_inst_0_FrameTriggerWrapper_0_0_impl_1">
-      <Strategy Version="1" Minor="2">
-        <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2021"/>
-        <Step Id="init_design"/>
-        <Step Id="opt_design"/>
-        <Step Id="power_opt_design"/>
-        <Step Id="place_design"/>
-        <Step Id="post_place_power_opt_design"/>
-        <Step Id="phys_opt_design"/>
-        <Step Id="route_design"/>
-        <Step Id="post_route_phys_opt_design"/>
-        <Step Id="write_bitstream"/>
-      </Strategy>
-      <ReportStrategy Name="Vivado Implementation Default Reports" Flow="Vivado Implementation 2021"/>
-      <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
-      <RQSFiles/>
-    </Run>
     <Run Id="impl_2" Type="Ft2:EntireDesign" Part="xc7z020clg400-2" ConstrsSet="constrs_1" Description="Default settings for Implementation." AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" State="current" Dir="$PRUNDIR/impl_2" SynthRun="synth_sender" IncludeInArchive="true" IsChild="false" GenFullBitstream="true" AutoIncrementalDir="$PSRCDIR/utils_1/imports/impl_2">
       <Strategy Version="1" Minor="2">
-        <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2021">
-          <Desc>Default settings for Implementation.</Desc>
-        </StratHandle>
+        <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2021"/>
         <Step Id="init_design"/>
         <Step Id="opt_design"/>
         <Step Id="power_opt_design"/>
@@ -1632,9 +1452,7 @@
     </Run>
     <Run Id="impl_sender" Type="Ft2:EntireDesign" Part="xc7z020clg400-2" ConstrsSet="constrs_1" Description="Default settings for Implementation." AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" SynthRun="synth_sender" IncludeInArchive="true" IsChild="false" GenFullBitstream="true" AutoIncrementalDir="$PSRCDIR/utils_1/imports/impl_sender">
       <Strategy Version="1" Minor="2">
-        <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2021">
-          <Desc>Default settings for Implementation.</Desc>
-        </StratHandle>
+        <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2021"/>
         <Step Id="init_design"/>
         <Step Id="opt_design"/>
         <Step Id="power_opt_design"/>
@@ -1668,64 +1486,7 @@
       <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
       <RQSFiles/>
     </Run>
-    <Run Id="urllc_core_inst_1_smartconnect_outer_0_impl_1" Type="Ft2:EntireDesign" Part="xc7z020clg400-2" ConstrsSet="urllc_core_inst_1_smartconnect_outer_0" Description="Default settings for Implementation." AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" SynthRun="urllc_core_inst_1_smartconnect_outer_0_synth_1" IncludeInArchive="false" IsChild="false" GenFullBitstream="true" AutoIncrementalDir="$PSRCDIR/utils_1/imports/urllc_core_inst_1_smartconnect_outer_0_impl_1">
-      <Strategy Version="1" Minor="2">
-        <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2021">
-          <Desc>Default settings for Implementation.</Desc>
-        </StratHandle>
-        <Step Id="init_design"/>
-        <Step Id="opt_design"/>
-        <Step Id="power_opt_design"/>
-        <Step Id="place_design"/>
-        <Step Id="post_place_power_opt_design"/>
-        <Step Id="phys_opt_design"/>
-        <Step Id="route_design"/>
-        <Step Id="post_route_phys_opt_design"/>
-        <Step Id="write_bitstream"/>
-      </Strategy>
-      <ReportStrategy Name="Vivado Implementation Default Reports" Flow="Vivado Implementation 2021"/>
-      <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
-      <RQSFiles/>
-    </Run>
-    <Run Id="urllc_core_inst_1_clk_wiz_100M_0_impl_1" Type="Ft2:EntireDesign" Part="xc7z020clg400-2" ConstrsSet="urllc_core_inst_1_clk_wiz_100M_0" Description="Default settings for Implementation." AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" SynthRun="urllc_core_inst_1_clk_wiz_100M_0_synth_1" IncludeInArchive="false" IsChild="false" GenFullBitstream="true" AutoIncrementalDir="$PSRCDIR/utils_1/imports/urllc_core_inst_1_clk_wiz_100M_0_impl_1">
-      <Strategy Version="1" Minor="2">
-        <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2021">
-          <Desc>Default settings for Implementation.</Desc>
-        </StratHandle>
-        <Step Id="init_design"/>
-        <Step Id="opt_design"/>
-        <Step Id="power_opt_design"/>
-        <Step Id="place_design"/>
-        <Step Id="post_place_power_opt_design"/>
-        <Step Id="phys_opt_design"/>
-        <Step Id="route_design"/>
-        <Step Id="post_route_phys_opt_design"/>
-        <Step Id="write_bitstream"/>
-      </Strategy>
-      <ReportStrategy Name="Vivado Implementation Default Reports" Flow="Vivado Implementation 2021"/>
-      <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
-      <RQSFiles/>
-    </Run>
-    <Run Id="urllc_core_inst_1_clk_wiz_dynamic_0_impl_1" Type="Ft2:EntireDesign" Part="xc7z020clg400-2" ConstrsSet="urllc_core_inst_1_clk_wiz_dynamic_0" Description="Default settings for Implementation." AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" SynthRun="urllc_core_inst_1_clk_wiz_dynamic_0_synth_1" IncludeInArchive="false" IsChild="false" GenFullBitstream="true" AutoIncrementalDir="$PSRCDIR/utils_1/imports/urllc_core_inst_1_clk_wiz_dynamic_0_impl_1">
-      <Strategy Version="1" Minor="2">
-        <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2021">
-          <Desc>Default settings for Implementation.</Desc>
-        </StratHandle>
-        <Step Id="init_design"/>
-        <Step Id="opt_design"/>
-        <Step Id="power_opt_design"/>
-        <Step Id="place_design"/>
-        <Step Id="post_place_power_opt_design"/>
-        <Step Id="phys_opt_design"/>
-        <Step Id="route_design"/>
-        <Step Id="post_route_phys_opt_design"/>
-        <Step Id="write_bitstream"/>
-      </Strategy>
-      <ReportStrategy Name="Vivado Implementation Default Reports" Flow="Vivado Implementation 2021"/>
-      <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
-      <RQSFiles/>
-    </Run>
-    <Run Id="urllc_core_inst_1_clk_wiz_static_0_impl_1" Type="Ft2:EntireDesign" Part="xc7z020clg400-2" ConstrsSet="urllc_core_inst_1_clk_wiz_static_0" Description="Default settings for Implementation." AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" SynthRun="urllc_core_inst_1_clk_wiz_static_0_synth_1" IncludeInArchive="false" IsChild="false" GenFullBitstream="true" AutoIncrementalDir="$PSRCDIR/utils_1/imports/urllc_core_inst_1_clk_wiz_static_0_impl_1">
+    <Run Id="urllc_core_inst_0_smartconnect_outer_1_impl_1" Type="Ft2:EntireDesign" Part="xc7z020clg400-2" ConstrsSet="urllc_core_inst_0_smartconnect_outer_1" Description="Default settings for Implementation." AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" SynthRun="urllc_core_inst_0_smartconnect_outer_1_synth_1" IncludeInArchive="false" IsChild="false" GenFullBitstream="true" AutoIncrementalDir="$PSRCDIR/utils_1/imports/urllc_core_inst_0_smartconnect_outer_1_impl_1">
       <Strategy Version="1" Minor="2">
         <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2021">
           <Desc>Default settings for Implementation.</Desc>

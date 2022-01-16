@@ -3,7 +3,7 @@
 	<name>reciever_zynq</name>
 	<comment>Created by Vitis v2021.1</comment>
 	<projects>
-		<project>zynq_reciever</project>
+		<project>riciever_fifo_all</project>
 	</projects>
 	<buildSpec>
 		<buildCommand>

@@ -1,81 +1,216 @@
 {
    "ActiveEmotionalView":"Default View",
-   "Default View_ScaleFactor":"1.09847",
-   "Default View_TopLeft":"534,0",
-   "ExpandedHierarchyInLayout":"",
+   "Default View_ScaleFactor":"2.71865",
+   "Default View_TopLeft":"2575,1117",
+   "ExpandedHierarchyInLayout":"/data_area|/data_area/reciever|/data_area/sender",
    "guistr":"# # String gsaved with Nlview 7.0r6  2020-01-29 bk=1.5227 VDI=41 GEI=36 GUI=JA:10.0 non-TLS
 #  -string -flagsOSRD
-preplace port DDR -pg 1 -lvl 5 -x 1980 -y 130 -defaultsOSRD
-preplace port FIXED_IO -pg 1 -lvl 5 -x 1980 -y 150 -defaultsOSRD
-preplace port port-id_ad_sel1_ready -pg 1 -lvl 0 -x 0 -y 430 -defaultsOSRD
-preplace port port-id_ad_sel2_ready -pg 1 -lvl 0 -x 0 -y 470 -defaultsOSRD
-preplace port port-id_clk_200M_out -pg 1 -lvl 5 -x 1980 -y 990 -defaultsOSRD
-preplace port port-id_clk_8M_out -pg 1 -lvl 5 -x 1980 -y 970 -defaultsOSRD
-preplace port port-id_clk_da_120M -pg 1 -lvl 5 -x 1980 -y 950 -defaultsOSRD
-preplace port port-id_clk_pl_50M -pg 1 -lvl 0 -x 0 -y 760 -defaultsOSRD
-preplace port port-id_reciever_frame_start -pg 1 -lvl 5 -x 1980 -y 710 -defaultsOSRD
-preplace port port-id_reciever_serial_in -pg 1 -lvl 0 -x 0 -y 690 -defaultsOSRD
-preplace portBus ad_sel1 -pg 1 -lvl 0 -x 0 -y 410 -defaultsOSRD
-preplace portBus ad_sel2 -pg 1 -lvl 0 -x 0 -y 450 -defaultsOSRD
-preplace portBus da -pg 1 -lvl 5 -x 1980 -y 930 -defaultsOSRD
-preplace portBus sender_frame_avaliable -pg 1 -lvl 5 -x 1980 -y 1010 -defaultsOSRD
-preplace portBus sender_serial_out -pg 1 -lvl 5 -x 1980 -y 1030 -defaultsOSRD
-preplace inst data_area -pg 1 -lvl 1 -x 320 -y 540 -defaultsOSRD
-preplace inst debug_ports -pg 1 -lvl 3 -x 1380 -y 590 -defaultsOSRD
-preplace inst ila_0 -pg 1 -lvl 4 -x 1840 -y 830 -defaultsOSRD
-preplace inst multi_clock -pg 1 -lvl 2 -x 880 -y 620 -defaultsOSRD
-preplace inst processing_system7_0 -pg 1 -lvl 3 -x 1380 -y 180 -defaultsOSRD
-preplace inst smartconnect_outer -pg 1 -lvl 2 -x 880 -y 120 -defaultsOSRD
-preplace inst xlconcat_irq_all -pg 1 -lvl 2 -x 880 -y 370 -defaultsOSRD
-preplace netloc ARESETN_1 1 0 3 90 290 600 290 1070
-preplace netloc ad_sel1_1 1 0 1 NJ 410
-preplace netloc ad_sel1_ready_1 1 0 1 NJ 430
-preplace netloc ad_sel2_1 1 0 1 NJ 450
-preplace netloc ad_sel2_ready_1 1 0 1 NJ 470
-preplace netloc clk_pl_50M_1 1 0 2 NJ 760 580J
-preplace netloc clk_wiz_0_clk_out_200M 1 0 5 50 790 NJ 790 1100 790 1690J 990 NJ
-preplace netloc clock_dynamic_psclk_1 1 1 3 660 440 1100J 400 1620
-preplace netloc clock_dynamic_psen_1 1 1 3 670 450 1120J 410 1600
-preplace netloc clock_dynamic_psincdec_1 1 1 3 680 460 1130J 420 1610
-preplace netloc data_area_da 1 1 4 610 810 NJ 810 1700 950 1950J
-preplace netloc data_area_data_serial_out 1 1 4 600 800 NJ 800 1710 1030 NJ
-preplace netloc data_area_io_out_trigger 1 1 4 590 760 1160 760 1700J 700 1960J
-preplace netloc data_area_irq 1 1 1 570 360n
-preplace netloc data_area_sender_frame_avaliable 1 1 4 540J 1010 NJ 1010 NJ 1010 NJ
-preplace netloc debug_ports_Dout 1 0 4 60 820 NJ 820 NJ 820 1620
-preplace netloc debug_ports_Dout1 1 0 4 90 830 NJ 830 NJ 830 1600
-preplace netloc debug_ports_Dout2 1 0 4 70 840 NJ 840 NJ 840 1610
-preplace netloc debug_ports_Dout3 1 0 4 30 850 NJ 850 NJ 850 1660
-preplace netloc debug_ports_Dout5 1 0 4 40 860 NJ 860 NJ 860 1650
-preplace netloc debug_ports_dout4 1 3 1 1730 580n
-preplace netloc debug_ports_gpio_io_o 1 3 1 1720 660n
-preplace netloc debug_ports_ip2intc_irpt 1 1 3 640 870 NJ 870 1640
-preplace netloc div_n_0_clk_div2 1 0 5 30 250 570 250 1140 750 1710J 710 1940J
-preplace netloc io_in_clear_1 1 0 4 80 880 NJ 880 NJ 880 1630
-preplace netloc multi_clock_clk_out_120M 1 0 5 20 890 NJ 890 1080 960 NJ 960 1960J
-preplace netloc multi_clock_clk_out_40M 1 2 2 1120 770 NJ
-preplace netloc multi_clock_dout 1 2 2 1090 890 NJ
-preplace netloc processing_system7_0_FCLK_CLK0 1 1 3 690 770 1110 40 1610
-preplace netloc processing_system7_0_FCLK_RESET0_N 1 0 4 100 770 620 900 NJ 900 1680
-preplace netloc reciever_serial_in_1 1 0 1 NJ 690
-preplace netloc s_axi_aresetn_1 1 2 1 1150 630n
-preplace netloc xlconcat_irq_all_dout 1 2 2 1160 390 1740J
+preplace port DDR -pg 1 -lvl 5 -x 6140 -y 130 -defaultsOSRD
+preplace port FIXED_IO -pg 1 -lvl 5 -x 6140 -y 150 -defaultsOSRD
+preplace port port-id_ad_sel1_ready -pg 1 -lvl 0 -x -190 -y 430 -defaultsOSRD
+preplace port port-id_ad_sel2_ready -pg 1 -lvl 0 -x -190 -y 470 -defaultsOSRD
+preplace port port-id_clk_200M_out -pg 1 -lvl 5 -x 6140 -y 990 -defaultsOSRD
+preplace port port-id_clk_8M_out -pg 1 -lvl 5 -x 6140 -y 970 -defaultsOSRD
+preplace port port-id_clk_da_120M -pg 1 -lvl 5 -x 6140 -y 950 -defaultsOSRD
+preplace port port-id_clk_pl_50M -pg 1 -lvl 0 -x -190 -y 760 -defaultsOSRD
+preplace port port-id_reciever_frame_start -pg 1 -lvl 5 -x 6140 -y 710 -defaultsOSRD
+preplace port port-id_reciever_serial_in -pg 1 -lvl 0 -x -190 -y 690 -defaultsOSRD
+preplace portBus ad_sel1 -pg 1 -lvl 0 -x -190 -y 410 -defaultsOSRD
+preplace portBus ad_sel2 -pg 1 -lvl 0 -x -190 -y 450 -defaultsOSRD
+preplace portBus da -pg 1 -lvl 5 -x 6140 -y 930 -defaultsOSRD
+preplace portBus sender_frame_avaliable -pg 1 -lvl 5 -x 6140 -y 1010 -defaultsOSRD
+preplace portBus sender_serial_out -pg 1 -lvl 5 -x 6140 -y 1030 -defaultsOSRD
+preplace inst data_area -pg 1 -lvl 1 -x 320 -y 542 -defaultsOSRD
+preplace inst debug_ports -pg 1 -lvl 3 -x 5510 -y 590 -defaultsOSRD
+preplace inst ila_0 -pg 1 -lvl 4 -x 6000 -y 830 -defaultsOSRD
+preplace inst multi_clock -pg 1 -lvl 2 -x 4950 -y 620 -defaultsOSRD
+preplace inst processing_system7_0 -pg 1 -lvl 3 -x 5510 -y 180 -defaultsOSRD
+preplace inst smartconnect_outer -pg 1 -lvl 2 -x 4950 -y 120 -defaultsOSRD
+preplace inst xlconcat_irq_all -pg 1 -lvl 2 -x 4950 -y 370 -defaultsOSRD
+preplace inst data_area|ad_buf_0 -pg 1 -lvl 1 -x 350 -y 452 -defaultsOSRD
+preplace inst data_area|mux -pg 1 -lvl 2 -x 630 -y 472 -defaultsOSRD
+preplace inst data_area|mux_0 -pg 1 -lvl 5 -x 4290 -y 1002 -defaultsOSRD
+preplace inst data_area|mux_disable_sel2 -pg 1 -lvl 3 -x 890 -y 642 -defaultsOSRD
+preplace inst data_area|reciever -pg 1 -lvl 4 -x 1550 -y 1608 -defaultsOSRD
+preplace inst data_area|sender -pg 1 -lvl 4 -x 1550 -y 604 -defaultsOSRD
+preplace inst data_area|xlconcat_irq -pg 1 -lvl 5 -x 4290 -y 1152 -defaultsOSRD
+preplace inst data_area|xlconstant_0 -pg 1 -lvl 2 -x 630 -y 662 -defaultsOSRD
+preplace inst data_area|reciever|DDCWrapper_0 -pg 1 -lvl 3 -x 2150 -y 2198 -defaultsOSRD
+preplace inst data_area|reciever|ad2dma_rtl_0 -pg 1 -lvl 6 -x 2920 -y 1698 -defaultsOSRD
+preplace inst data_area|reciever|axi_dma_1 -pg 1 -lvl 8 -x 3510 -y 1928 -defaultsOSRD
+preplace inst data_area|reciever|mux_0 -pg 1 -lvl 2 -x 1800 -y 1958 -defaultsOSRD
+preplace inst data_area|reciever|mux_1 -pg 1 -lvl 4 -x 2460 -y 2168 -defaultsOSRD
+preplace inst data_area|reciever|mux_2 -pg 1 -lvl 3 -x 2150 -y 1968 -defaultsOSRD
+preplace inst data_area|reciever|mux_3 -pg 1 -lvl 2 -x 1800 -y 1528 -defaultsOSRD
+preplace inst data_area|reciever|rst_ps7_0_200M -pg 1 -lvl 8 -x 3510 -y 2468 -defaultsOSRD
+preplace inst data_area|reciever|xlconcat_1 -pg 1 -lvl 5 -x 2680 -y 1728 -defaultsOSRD
+preplace inst data_area|reciever|xlconcat_irq -pg 1 -lvl 9 -x 3800 -y 2068 -defaultsOSRD
+preplace inst data_area|reciever|xlconstant_0 -pg 1 -lvl 1 -x 1510 -y 1528 -defaultsOSRD
+preplace inst data_area|reciever|xlconstant_1 -pg 1 -lvl 4 -x 2460 -y 1738 -defaultsOSRD
+preplace inst data_area|reciever|xlslice_1 -pg 1 -lvl 9 -x 3800 -y 1948 -defaultsOSRD
+preplace inst data_area|reciever|FrameTriggerWrapper_0 -pg 1 -lvl 8 -x 3510 -y 2278 -defaultsOSRD
+preplace inst data_area|reciever|axis_data_fifo_0 -pg 1 -lvl 7 -x 3180 -y 1708 -defaultsOSRD
+preplace inst data_area|reciever|axis_data_fifo_1 -pg 1 -lvl 1 -x 1510 -y 1688 -defaultsOSRD
+preplace inst data_area|sender|ad2dma_rtl_0 -pg 1 -lvl 3 -x 2000 -y 614 -defaultsOSRD
+preplace inst data_area|sender|axi_dma_0 -pg 1 -lvl 5 -x 2590 -y 844 -defaultsOSRD
+preplace inst data_area|sender|rst_ps7_0_120M -pg 1 -lvl 5 -x 2590 -y 1044 -defaultsOSRD
+preplace inst data_area|sender|xlconcat_0 -pg 1 -lvl 2 -x 1760 -y 644 -defaultsOSRD
+preplace inst data_area|sender|xlconcat_1 -pg 1 -lvl 6 -x 2920 -y 894 -defaultsOSRD
+preplace inst data_area|sender|xlconstant_0 -pg 1 -lvl 1 -x 1530 -y 654 -defaultsOSRD
+preplace inst data_area|sender|xlslice_data -pg 1 -lvl 5 -x 2590 -y 1184 -defaultsOSRD
+preplace inst data_area|sender|xlslice_frame_avaliable -pg 1 -lvl 5 -x 2590 -y 1284 -defaultsOSRD
+preplace inst data_area|sender|axis_data_fifo_0 -pg 1 -lvl 4 -x 2260 -y 624 -defaultsOSRD
+preplace inst data_area|sender|DUCWrapper_0 -pg 1 -lvl 6 -x 2920 -y 1294 -defaultsOSRD
+preplace inst data_area|sender|axis_data_fifo_1 -pg 1 -lvl 1 -x 1530 -y 1124 -defaultsOSRD
+preplace netloc ARESETN_1 1 0 3 -70 190 4720 760 5130
+preplace netloc ad_sel1_1 1 0 1 -130J 410n
+preplace netloc ad_sel1_ready_1 1 0 1 -140J 430n
+preplace netloc ad_sel2_1 1 0 1 -160J 450n
+preplace netloc ad_sel2_ready_1 1 0 1 -170J 470n
+preplace netloc clk_pl_50M_1 1 0 2 -150J 250 4660J
+preplace netloc clk_wiz_0_clk_out_200M 1 0 5 -60 220 4670J 780 5160 750 5830J 700 6090J
+preplace netloc clock_dynamic_psclk_1 1 1 3 4750 460 5220J 420 5750
+preplace netloc clock_dynamic_psen_1 1 1 3 4760 800 NJ 800 5780
+preplace netloc clock_dynamic_psincdec_1 1 1 3 4770 810 NJ 810 5770
+preplace netloc data_area_da 1 1 4 4600 900 NJ 900 5900 950 6100J
+preplace netloc data_area_data_serial_out 1 1 4 N 912 NJ 912 5910 1030 NJ
+preplace netloc data_area_io_out_trigger 1 1 4 4750 890 5220 780 5860J 710 NJ
+preplace netloc data_area_irq 1 1 1 4680 360n
+preplace netloc data_area_sender_frame_avaliable 1 1 4 4770J 1040 NJ 1040 NJ 1040 6100J
+preplace netloc debug_ports_Dout 1 0 4 -100 200 4690J 300 5210J 320 5760
+preplace netloc debug_ports_Dout1 1 0 4 -120 210 4710J 250 5150J 10 5870
+preplace netloc debug_ports_Dout2 1 0 4 -80 230 4680J 260 5160J 20 5860
+preplace netloc debug_ports_Dout3 1 0 4 -40 270 NJ 270 5170J 30 5790
+preplace netloc debug_ports_Dout5 1 0 4 -30 290 NJ 290 5180J 40 5800
+preplace netloc debug_ports_dout4 1 3 1 5880 580n
+preplace netloc debug_ports_gpio_io_o 1 3 1 5840 660n
+preplace netloc debug_ports_ip2intc_irpt 1 1 3 4730 820 NJ 820 5750
+preplace netloc div_n_0_clk_div2 1 0 5 -110 180 4700 790 5250 790 5850J 690 6110J
+preplace netloc io_in_clear_1 1 0 4 -90 260 4610J 840 NJ 840 5790
+preplace netloc multi_clock_clk_out_120M 1 0 5 0 312 4650J 450 5210 400 NJ 400 6120J
+preplace netloc multi_clock_clk_out_40M 1 2 2 5240 760 5870J
+preplace netloc multi_clock_dout 1 2 2 5230 890 NJ
+preplace netloc processing_system7_0_FCLK_CLK0 1 1 3 4770 470 5260 330 5750
+preplace netloc processing_system7_0_FCLK_RESET0_N 1 0 4 -50 302 4600 830 NJ 830 5820
+preplace netloc reciever_serial_in_1 1 0 1 -170J 690n
+preplace netloc s_axi_aresetn_1 1 2 1 5270 630n
+preplace netloc xlconcat_irq_all_dout 1 2 2 5270 390 5890J
 preplace netloc S_AXI_1 1 2 1 N 550
-preplace netloc data_area_M_AXI_MM2S 1 1 1 530 80n
-preplace netloc data_area_M_AXI_MM2S1 1 1 1 540 120n
-preplace netloc data_area_M_AXI_S2MM 1 1 1 550 100n
-preplace netloc data_area_M_AXI_S2MM1 1 1 1 560 140n
-preplace netloc multi_clock_M01_AXI 1 2 1 1090 160n
+preplace netloc data_area_M_AXI_MM2S 1 1 1 4590 80n
+preplace netloc data_area_M_AXI_MM2S1 1 1 1 4620 120n
+preplace netloc data_area_M_AXI_S2MM 1 1 1 4630 100n
+preplace netloc data_area_M_AXI_S2MM1 1 1 1 4640 140n
+preplace netloc multi_clock_M01_AXI 1 2 1 5190 160n
 preplace netloc multi_clock_M03_AXI 1 2 1 N 570
 preplace netloc processing_system7_0_DDR 1 3 2 NJ 130 NJ
 preplace netloc processing_system7_0_FIXED_IO 1 3 2 NJ 150 NJ
-preplace netloc processing_system7_0_M_AXI_GP0 1 1 3 630 780 NJ 780 1670
-preplace netloc processing_system7_0_M_AXI_GP1 1 1 3 650 300 1130J 320 1600
-preplace netloc smartconnect_0_M00_AXI 1 0 3 50 240 NJ 240 1080
-preplace netloc smartconnect_0_M01_AXI 1 0 3 100 260 NJ 260 1070
+preplace netloc processing_system7_0_M_AXI_GP0 1 1 3 4740 770 NJ 770 5810
+preplace netloc processing_system7_0_M_AXI_GP1 1 1 3 4760 440 5200J 410 5780
+preplace netloc smartconnect_0_M00_AXI 1 0 3 -10 280 NJ 280 5140
+preplace netloc smartconnect_0_M01_AXI 1 0 3 -20 240 NJ 240 5130
 preplace netloc smartconnect_0_M02_AXI 1 2 1 N 140
-levelinfo -pg 1 0 320 880 1380 1840 1980
-pagesize -pg 1 -db -bbox -sgen -180 0 2230 1050
+preplace netloc data_area|ad_buf_0_sel1 1 1 1 N 442
+preplace netloc data_area|ad_buf_0_sel2 1 1 1 N 462
+preplace netloc data_area|ad_sel1_1 1 0 4 210 582 NJ 582 760 732 1140J
+preplace netloc data_area|ad_sel1_ready_1 1 0 1 190 472n
+preplace netloc data_area|ad_sel2_1 1 0 1 180 452n
+preplace netloc data_area|ad_sel2_ready_1 1 0 1 220 492n
+preplace netloc data_area|axi_resetn_1 1 0 4 NJ 742 NJ 742 NJ 742 1110
+preplace netloc data_area|clk_1 1 0 4 NJ 782 490 792 NJ 792 1100J
+preplace netloc data_area|clk_120M_1 1 0 4 NJ 762 NJ 762 NJ 762 1120
+preplace netloc data_area|clk_4M_1 1 0 4 NJ 802 NJ 802 NJ 802 1080
+preplace netloc data_area|debug_disable_sync_1 1 0 4 NJ 892 NJ 892 NJ 892 1070
+preplace netloc data_area|debug_use_sender_iq_1 1 0 4 NJ 932 NJ 932 NJ 932 1050
+preplace netloc data_area|debug_use_sender_serial_1 1 0 4 NJ 952 NJ 952 NJ 952 1040
+preplace netloc data_area|ext_reset_in_1 1 0 4 NJ 972 NJ 972 NJ 972 1030
+preplace netloc data_area|io_in_clear_1 1 0 4 NJ 1032 NJ 1032 NJ 1032 1010
+preplace netloc data_area|mux_0_data_out 1 5 1 4410 892n
+preplace netloc data_area|mux_disable_sel2_data_out 1 3 1 1130 642n
+preplace netloc data_area|mux_mux_data_out 1 2 1 770 472n
+preplace netloc data_area|reciever_da 1 4 1 4150 1002n
+preplace netloc data_area|reciever_io_out_trigger 1 4 2 4160 1082 NJ
+preplace netloc data_area|reciever_irq 1 4 1 4170 1162n
+preplace netloc data_area|reciever_resetn_200M 1 0 5 180 352 480 382 NJ 382 NJ 382 4060
+preplace netloc data_area|reciever_serial_in_1 1 0 4 NJ 1012 NJ 1012 NJ 1012 1020
+preplace netloc data_area|router_1 1 0 5 NJ 822 NJ 822 NJ 822 1090J 484 4120
+preplace netloc data_area|router_2 1 0 4 NJ 912 NJ 912 NJ 912 1060
+preplace netloc data_area|sender_da_iq 1 3 2 1170 494 4070
+preplace netloc data_area|sender_data_serial_out 1 3 3 1180 1404 4110 912 NJ
+preplace netloc data_area|sender_irq 1 4 1 4140 1142n
+preplace netloc data_area|sender_sender_frame_avaliable 1 4 2 N 1224 NJ
+preplace netloc data_area|xlconcat_irq_dout 1 5 1 N 1152
+preplace netloc data_area|xlconstant_0_dout 1 2 1 NJ 662
+preplace netloc data_area|Conn1 1 4 2 4100 532 NJ
+preplace netloc data_area|Conn2 1 4 2 4130 872 NJ
+preplace netloc data_area|Conn3 1 4 2 4080 552 NJ
+preplace netloc data_area|Conn4 1 0 4 200J 552 NJ 552 NJ 552 1150
+preplace netloc data_area|Conn5 1 0 4 NJ 562 NJ 562 NJ 562 1160
+preplace netloc data_area|Conn6 1 4 2 4090 572 NJ
+preplace netloc data_area|reciever|DDCWrapper_0_io_out_data 1 3 1 2320 2148n
+preplace netloc data_area|reciever|FrameTriggerWrapper_0_io_out_trigger 1 1 9 1680 2048 NJ 2048 NJ 2048 NJ 2048 NJ 2048 NJ 2048 NJ 2048 3680 2148 NJ
+preplace netloc data_area|reciever|M00_ARESETN_1 1 0 8 1370J 1468 1670J 1638 NJ 1638 NJ 1638 NJ 1638 2780 1598 3060 1618 3310J
+preplace netloc data_area|reciever|Net 1 2 8 1960 2288 NJ 2288 NJ 2288 NJ 2288 NJ 2288 3300 2368 3690 2368 NJ
+preplace netloc data_area|reciever|ad2dma_rtl_0_da 1 6 3 3050 1628 NJ 1628 3700J
+preplace netloc data_area|reciever|ad_iq_1 1 0 2 NJ 1768 1630
+preplace netloc data_area|reciever|axi_dma_1_mm2s_introut 1 8 1 3700 1968n
+preplace netloc data_area|reciever|axi_dma_1_s2mm_introut 1 8 1 3690 1988n
+preplace netloc data_area|reciever|clk_200M_1 1 0 8 NJ 1808 NJ 1808 1950 2078 NJ 2078 NJ 2078 NJ 2078 NJ 2078 3310
+preplace netloc data_area|reciever|clk_4M_1 1 0 8 1380J 1588 1660J 1628 NJ 1628 NJ 1628 NJ 1628 2800 1608 3040 1788 3300
+preplace netloc data_area|reciever|data_in_serial_1 1 0 3 NJ 1878 NJ 1878 1960
+preplace netloc data_area|reciever|debug_disable_sync_1 1 0 2 NJ 1898 1640
+preplace netloc data_area|reciever|debug_use_sender_iq_1 1 0 2 NJ 2048 1650
+preplace netloc data_area|reciever|debug_use_sender_serial_1 1 0 4 NJ 2068 NJ 2068 1920J 2058 2310
+preplace netloc data_area|reciever|ext_reset_in_1 1 0 8 NJ 2088 NJ 2088 1930J 2068 2320J 2058 NJ 2058 NJ 2058 NJ 2058 3320
+preplace netloc data_area|reciever|io_in_clear_1 1 0 8 NJ 2108 NJ 2108 NJ 2108 2330J 2068 NJ 2068 NJ 2068 NJ 2068 3340
+preplace netloc data_area|reciever|mux_0_data_out 1 2 6 1940 2088 NJ 2088 NJ 2088 NJ 2088 NJ 2088 3330
+preplace netloc data_area|reciever|mux_1_data_out 1 4 1 2580 1718n
+preplace netloc data_area|reciever|mux_2_data_out 1 3 1 2340 1968n
+preplace netloc data_area|reciever|mux_3_data_out 1 2 1 1980 1528n
+preplace netloc data_area|reciever|reciever_serial_in_1 1 0 3 1380J 1868 NJ 1868 1990
+preplace netloc data_area|reciever|router_1 1 0 3 1370J 1858 NJ 1858 1970
+preplace netloc data_area|reciever|sel2_1 1 0 2 1390J 1958 N
+preplace netloc data_area|reciever|xlconcat_0_dout 1 9 1 3900 2068n
+preplace netloc data_area|reciever|xlconcat_1_dout 1 5 1 N 1728
+preplace netloc data_area|reciever|xlconstant_0_dout 1 1 1 NJ 1528
+preplace netloc data_area|reciever|xlconstant_1_dout 1 4 1 NJ 1738
+preplace netloc data_area|reciever|xlslice_1_Dout 1 9 1 NJ 1948
+preplace netloc data_area|reciever|Conn1 1 8 2 N 1868 NJ
+preplace netloc data_area|reciever|Conn2 1 8 2 N 1888 NJ
+preplace netloc data_area|reciever|S00_AXI_1 1 0 8 NJ 1598 1650J 1618 1970J 1588 NJ 1588 NJ 1588 NJ 1588 NJ 1588 3340
+preplace netloc data_area|reciever|ad2dma_rtl_0_out_axis 1 6 1 N 1688
+preplace netloc data_area|reciever|axis_data_fifo_0_M_AXIS 1 7 1 3330 1708n
+preplace netloc data_area|reciever|axi_dma_1_M_AXIS_MM2S 1 0 9 1390 1608 NJ 1608 1950J 1578 NJ 1578 NJ 1578 NJ 1578 NJ 1578 NJ 1578 3680
+preplace netloc data_area|reciever|axis_data_fifo_1_M_AXIS 1 1 5 1660J 1658 NJ 1658 NJ 1658 NJ 1658 2790
+preplace netloc data_area|sender|ARESETN_1 1 0 5 1380J 564 NJ 564 1870 704 2130 704 2400J
+preplace netloc data_area|sender|DUCWrapper_0_io_out_dac 1 6 1 3070 1164n
+preplace netloc data_area|sender|M00_ACLK_1 1 0 5 1390J 714 NJ 714 1880 714 2140 714 2390
+preplace netloc data_area|sender|ad2dma_rtl_0_da 1 3 2 2120J 544 2410
+preplace netloc data_area|sender|ad_1 1 0 2 1400J 784 1660
+preplace netloc data_area|sender|axi_dma_0_mm2s_introut 1 5 1 N 884
+preplace netloc data_area|sender|axi_dma_0_s2mm_introut 1 5 1 N 904
+preplace netloc data_area|sender|ext_reset_in_1 1 0 5 NJ 1024 NJ 1024 NJ 1024 NJ 1024 N
+preplace netloc data_area|sender|io_in_clockDac_1 1 0 6 NJ 834 NJ 834 NJ 834 NJ 834 2380 1344 2770J
+preplace netloc data_area|sender|rst_ps7_0_120M_peripheral_aresetn 1 5 1 2760 1084n
+preplace netloc data_area|sender|xlconcat_0_dout 1 2 1 N 644
+preplace netloc data_area|sender|xlconcat_1_dout 1 6 1 3080 894n
+preplace netloc data_area|sender|xlconstant_0_dout 1 1 1 NJ 654
+preplace netloc data_area|sender|xlslice_0_Dout 1 5 2 2780 1184 NJ
+preplace netloc data_area|sender|xlslice_frame_avaliable_Dout 1 5 2 2770J 1204 3060
+preplace netloc data_area|sender|Conn1 1 5 2 N 784 NJ
+preplace netloc data_area|sender|Conn2 1 5 2 N 804 NJ
+preplace netloc data_area|sender|S00_AXI_1 1 0 5 NJ 794 NJ 794 NJ 794 NJ 794 N
+preplace netloc data_area|sender|ad2dma_rtl_0_out_axis 1 3 1 N 604
+preplace netloc data_area|sender|axis_data_fifo_0_M_AXIS 1 4 1 2420 624n
+preplace netloc data_area|sender|axi_dma_0_M_AXIS_MM2S 1 0 6 1410 724 NJ 724 NJ 724 NJ 724 NJ 724 2760
+preplace netloc data_area|sender|axis_data_fifo_1_M_AXIS 1 1 2 1650J 574 1860
+levelinfo -pg 1 -190 320 4950 5510 6000 6140
+levelinfo -hier data_area * 350 630 890 1550 4290 *
+levelinfo -hier data_area|reciever * 1510 1800 2150 2460 2680 2920 3180 3510 3800 *
+levelinfo -hier data_area|sender * 1530 1760 2000 2260 2590 2920 *
+pagesize -pg 1 -db -bbox -sgen -360 0 6370 2630
+pagesize -hier data_area -db -bbox -sgen 150 342 4440 2592
+pagesize -hier data_area|reciever -db -bbox -sgen 1340 1448 3930 2568
+pagesize -hier data_area|sender -db -bbox -sgen 1350 524 3110 1384
 "
 }
 0

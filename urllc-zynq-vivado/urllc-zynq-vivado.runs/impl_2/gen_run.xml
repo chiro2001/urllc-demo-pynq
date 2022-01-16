@@ -1,97 +1,97 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<GenRun Id="impl_2" LaunchPart="xc7z020clg400-2" LaunchTime="1642185633">
-  <File Type="ROUTE-PWR" Name="design_sender_wrapper_power_routed.rpt"/>
-  <File Type="PA-TCL" Name="design_sender_wrapper.tcl"/>
-  <File Type="BITSTR-MMI" Name="design_sender_wrapper.mmi"/>
-  <File Type="OPT-METHODOLOGY-DRC" Name="design_sender_wrapper_methodology_drc_opted.rpt"/>
-  <File Type="INIT-TIMING" Name="design_sender_wrapper_timing_summary_init.rpt"/>
-  <File Type="ROUTE-PWR-SUM" Name="design_sender_wrapper_power_summary_routed.pb"/>
-  <File Type="REPORTS-TCL" Name="design_sender_wrapper_reports.tcl"/>
-  <File Type="OPT-TIMING" Name="design_sender_wrapper_timing_summary_opted.rpt"/>
-  <File Type="OPT-DCP" Name="design_sender_wrapper_opt.dcp"/>
-  <File Type="OPT-DRC" Name="design_sender_wrapper_drc_opted.rpt"/>
-  <File Type="OPT-HWDEF" Name="design_sender_wrapper.hwdef"/>
-  <File Type="PWROPT-DCP" Name="design_sender_wrapper_pwropt.dcp"/>
-  <File Type="PWROPT-DRC" Name="design_sender_wrapper_drc_pwropted.rpt"/>
-  <File Type="PWROPT-TIMING" Name="design_sender_wrapper_timing_summary_pwropted.rpt"/>
-  <File Type="PLACE-DCP" Name="design_sender_wrapper_placed.dcp"/>
-  <File Type="PLACE-IO" Name="design_sender_wrapper_io_placed.rpt"/>
-  <File Type="PLACE-CLK" Name="design_sender_wrapper_clock_utilization_placed.rpt"/>
-  <File Type="PLACE-UTIL" Name="design_sender_wrapper_utilization_placed.rpt"/>
-  <File Type="PLACE-UTIL-PB" Name="design_sender_wrapper_utilization_placed.pb"/>
-  <File Type="PLACE-CTRL" Name="design_sender_wrapper_control_sets_placed.rpt"/>
-  <File Type="PLACE-SIMILARITY" Name="design_sender_wrapper_incremental_reuse_placed.rpt"/>
-  <File Type="PLACE-PRE-SIMILARITY" Name="design_sender_wrapper_incremental_reuse_pre_placed.rpt"/>
-  <File Type="BG-BIN" Name="design_sender_wrapper.bin"/>
-  <File Type="PLACE-TIMING" Name="design_sender_wrapper_timing_summary_placed.rpt"/>
-  <File Type="POSTPLACE-PWROPT-DCP" Name="design_sender_wrapper_postplace_pwropt.dcp"/>
-  <File Type="BITSTR-MSK" Name="design_sender_wrapper.msk"/>
-  <File Type="POSTPLACE-PWROPT-TIMING" Name="design_sender_wrapper_timing_summary_postplace_pwropted.rpt"/>
-  <File Type="PHYSOPT-DCP" Name="design_sender_wrapper_physopt.dcp"/>
-  <File Type="PHYSOPT-DRC" Name="design_sender_wrapper_drc_physopted.rpt"/>
-  <File Type="BITSTR-RBT" Name="design_sender_wrapper.rbt"/>
-  <File Type="PHYSOPT-TIMING" Name="design_sender_wrapper_timing_summary_physopted.rpt"/>
-  <File Type="ROUTE-ERROR-DCP" Name="design_sender_wrapper_routed_error.dcp"/>
-  <File Type="ROUTE-DCP" Name="design_sender_wrapper_routed.dcp"/>
-  <File Type="ROUTE-BLACKBOX-DCP" Name="design_sender_wrapper_routed_bb.dcp"/>
-  <File Type="ROUTE-DRC" Name="design_sender_wrapper_drc_routed.rpt"/>
-  <File Type="ROUTE-DRC-PB" Name="design_sender_wrapper_drc_routed.pb"/>
-  <File Type="ROUTE-DRC-RPX" Name="design_sender_wrapper_drc_routed.rpx"/>
-  <File Type="ROUTE-METHODOLOGY-DRC" Name="design_sender_wrapper_methodology_drc_routed.rpt"/>
-  <File Type="ROUTE-METHODOLOGY-DRC-RPX" Name="design_sender_wrapper_methodology_drc_routed.rpx"/>
-  <File Type="ROUTE-METHODOLOGY-DRC-PB" Name="design_sender_wrapper_methodology_drc_routed.pb"/>
-  <File Type="ROUTE-PWR-RPX" Name="design_sender_wrapper_power_routed.rpx"/>
-  <File Type="ROUTE-STATUS" Name="design_sender_wrapper_route_status.rpt"/>
-  <File Type="ROUTE-STATUS-PB" Name="design_sender_wrapper_route_status.pb"/>
-  <File Type="ROUTE-TIMINGSUMMARY" Name="design_sender_wrapper_timing_summary_routed.rpt"/>
-  <File Type="ROUTE-TIMING-PB" Name="design_sender_wrapper_timing_summary_routed.pb"/>
-  <File Type="ROUTE-TIMING-RPX" Name="design_sender_wrapper_timing_summary_routed.rpx"/>
-  <File Type="ROUTE-SIMILARITY" Name="design_sender_wrapper_incremental_reuse_routed.rpt"/>
-  <File Type="ROUTE-CLK" Name="design_sender_wrapper_clock_utilization_routed.rpt"/>
-  <File Type="ROUTE-BUS-SKEW" Name="design_sender_wrapper_bus_skew_routed.rpt"/>
-  <File Type="ROUTE-BUS-SKEW-PB" Name="design_sender_wrapper_bus_skew_routed.pb"/>
-  <File Type="ROUTE-BUS-SKEW-RPX" Name="design_sender_wrapper_bus_skew_routed.rpx"/>
-  <File Type="POSTROUTE-PHYSOPT-DCP" Name="design_sender_wrapper_postroute_physopt.dcp"/>
-  <File Type="POSTROUTE-PHYSOPT-BLACKBOX-DCP" Name="design_sender_wrapper_postroute_physopt_bb.dcp"/>
-  <File Type="POSTROUTE-PHYSOPT-TIMING" Name="design_sender_wrapper_timing_summary_postroute_physopted.rpt"/>
-  <File Type="POSTROUTE-PHYSOPT-TIMING-PB" Name="design_sender_wrapper_timing_summary_postroute_physopted.pb"/>
-  <File Type="POSTROUTE-PHYSOPT-TIMING-RPX" Name="design_sender_wrapper_timing_summary_postroute_physopted.rpx"/>
-  <File Type="POSTROUTE-PHYSOPT-BUS-SKEW" Name="design_sender_wrapper_bus_skew_postroute_physopted.rpt"/>
-  <File Type="BG-BIT" Name="design_sender_wrapper.bit"/>
-  <File Type="POSTROUTE-PHYSOPT-BUS-SKEW-PB" Name="design_sender_wrapper_bus_skew_postroute_physopted.pb"/>
-  <File Type="POSTROUTE-PHYSOPT-BUS-SKEW-RPX" Name="design_sender_wrapper_bus_skew_postroute_physopted.rpx"/>
-  <File Type="BITSTR-NKY" Name="design_sender_wrapper.nky"/>
-  <File Type="BITSTR-BMM" Name="design_sender_wrapper_bd.bmm"/>
-  <File Type="PDI-FILE" Name="design_sender_wrapper.pdi"/>
-  <File Type="RCFI_FILE" Name="design_sender_wrapper.rcfi"/>
-  <File Type="CFI_FILE" Name="design_sender_wrapper.cfi"/>
-  <File Type="RNPI_FILE" Name="design_sender_wrapper.rnpi"/>
-  <File Type="NPI_FILE" Name="design_sender_wrapper.npi"/>
-  <File Type="RBD_FILE" Name="design_sender_wrapper.rbd"/>
+<GenRun Id="impl_2" LaunchPart="xc7z020clg400-2" LaunchTime="1642344089">
+  <File Type="ROUTE-PWR" Name="design_reciever_wrapper_power_routed.rpt"/>
+  <File Type="PA-TCL" Name="design_reciever_wrapper.tcl"/>
+  <File Type="BITSTR-MMI" Name="design_reciever_wrapper.mmi"/>
+  <File Type="OPT-METHODOLOGY-DRC" Name="design_reciever_wrapper_methodology_drc_opted.rpt"/>
+  <File Type="INIT-TIMING" Name="design_reciever_wrapper_timing_summary_init.rpt"/>
+  <File Type="ROUTE-PWR-SUM" Name="design_reciever_wrapper_power_summary_routed.pb"/>
+  <File Type="REPORTS-TCL" Name="design_reciever_wrapper_reports.tcl"/>
+  <File Type="OPT-TIMING" Name="design_reciever_wrapper_timing_summary_opted.rpt"/>
+  <File Type="OPT-DCP" Name="design_reciever_wrapper_opt.dcp"/>
+  <File Type="OPT-DRC" Name="design_reciever_wrapper_drc_opted.rpt"/>
+  <File Type="OPT-HWDEF" Name="design_reciever_wrapper.hwdef"/>
+  <File Type="PWROPT-DCP" Name="design_reciever_wrapper_pwropt.dcp"/>
+  <File Type="PWROPT-DRC" Name="design_reciever_wrapper_drc_pwropted.rpt"/>
+  <File Type="PWROPT-TIMING" Name="design_reciever_wrapper_timing_summary_pwropted.rpt"/>
+  <File Type="PLACE-DCP" Name="design_reciever_wrapper_placed.dcp"/>
+  <File Type="PLACE-IO" Name="design_reciever_wrapper_io_placed.rpt"/>
+  <File Type="PLACE-CLK" Name="design_reciever_wrapper_clock_utilization_placed.rpt"/>
+  <File Type="PLACE-UTIL" Name="design_reciever_wrapper_utilization_placed.rpt"/>
+  <File Type="PLACE-UTIL-PB" Name="design_reciever_wrapper_utilization_placed.pb"/>
+  <File Type="PLACE-CTRL" Name="design_reciever_wrapper_control_sets_placed.rpt"/>
+  <File Type="PLACE-SIMILARITY" Name="design_reciever_wrapper_incremental_reuse_placed.rpt"/>
+  <File Type="PLACE-PRE-SIMILARITY" Name="design_reciever_wrapper_incremental_reuse_pre_placed.rpt"/>
+  <File Type="BG-BIN" Name="design_reciever_wrapper.bin"/>
+  <File Type="PLACE-TIMING" Name="design_reciever_wrapper_timing_summary_placed.rpt"/>
+  <File Type="POSTPLACE-PWROPT-DCP" Name="design_reciever_wrapper_postplace_pwropt.dcp"/>
+  <File Type="BITSTR-MSK" Name="design_reciever_wrapper.msk"/>
+  <File Type="POSTPLACE-PWROPT-TIMING" Name="design_reciever_wrapper_timing_summary_postplace_pwropted.rpt"/>
+  <File Type="PHYSOPT-DCP" Name="design_reciever_wrapper_physopt.dcp"/>
+  <File Type="PHYSOPT-DRC" Name="design_reciever_wrapper_drc_physopted.rpt"/>
+  <File Type="BITSTR-RBT" Name="design_reciever_wrapper.rbt"/>
+  <File Type="PHYSOPT-TIMING" Name="design_reciever_wrapper_timing_summary_physopted.rpt"/>
+  <File Type="ROUTE-ERROR-DCP" Name="design_reciever_wrapper_routed_error.dcp"/>
+  <File Type="ROUTE-DCP" Name="design_reciever_wrapper_routed.dcp"/>
+  <File Type="ROUTE-BLACKBOX-DCP" Name="design_reciever_wrapper_routed_bb.dcp"/>
+  <File Type="ROUTE-DRC" Name="design_reciever_wrapper_drc_routed.rpt"/>
+  <File Type="ROUTE-DRC-PB" Name="design_reciever_wrapper_drc_routed.pb"/>
+  <File Type="ROUTE-DRC-RPX" Name="design_reciever_wrapper_drc_routed.rpx"/>
+  <File Type="ROUTE-METHODOLOGY-DRC" Name="design_reciever_wrapper_methodology_drc_routed.rpt"/>
+  <File Type="ROUTE-METHODOLOGY-DRC-RPX" Name="design_reciever_wrapper_methodology_drc_routed.rpx"/>
+  <File Type="ROUTE-METHODOLOGY-DRC-PB" Name="design_reciever_wrapper_methodology_drc_routed.pb"/>
+  <File Type="ROUTE-PWR-RPX" Name="design_reciever_wrapper_power_routed.rpx"/>
+  <File Type="ROUTE-STATUS" Name="design_reciever_wrapper_route_status.rpt"/>
+  <File Type="ROUTE-STATUS-PB" Name="design_reciever_wrapper_route_status.pb"/>
+  <File Type="ROUTE-TIMINGSUMMARY" Name="design_reciever_wrapper_timing_summary_routed.rpt"/>
+  <File Type="ROUTE-TIMING-PB" Name="design_reciever_wrapper_timing_summary_routed.pb"/>
+  <File Type="ROUTE-TIMING-RPX" Name="design_reciever_wrapper_timing_summary_routed.rpx"/>
+  <File Type="ROUTE-SIMILARITY" Name="design_reciever_wrapper_incremental_reuse_routed.rpt"/>
+  <File Type="ROUTE-CLK" Name="design_reciever_wrapper_clock_utilization_routed.rpt"/>
+  <File Type="ROUTE-BUS-SKEW" Name="design_reciever_wrapper_bus_skew_routed.rpt"/>
+  <File Type="ROUTE-BUS-SKEW-PB" Name="design_reciever_wrapper_bus_skew_routed.pb"/>
+  <File Type="ROUTE-BUS-SKEW-RPX" Name="design_reciever_wrapper_bus_skew_routed.rpx"/>
+  <File Type="POSTROUTE-PHYSOPT-DCP" Name="design_reciever_wrapper_postroute_physopt.dcp"/>
+  <File Type="POSTROUTE-PHYSOPT-BLACKBOX-DCP" Name="design_reciever_wrapper_postroute_physopt_bb.dcp"/>
+  <File Type="POSTROUTE-PHYSOPT-TIMING" Name="design_reciever_wrapper_timing_summary_postroute_physopted.rpt"/>
+  <File Type="POSTROUTE-PHYSOPT-TIMING-PB" Name="design_reciever_wrapper_timing_summary_postroute_physopted.pb"/>
+  <File Type="POSTROUTE-PHYSOPT-TIMING-RPX" Name="design_reciever_wrapper_timing_summary_postroute_physopted.rpx"/>
+  <File Type="POSTROUTE-PHYSOPT-BUS-SKEW" Name="design_reciever_wrapper_bus_skew_postroute_physopted.rpt"/>
+  <File Type="BG-BIT" Name="design_reciever_wrapper.bit"/>
+  <File Type="POSTROUTE-PHYSOPT-BUS-SKEW-PB" Name="design_reciever_wrapper_bus_skew_postroute_physopted.pb"/>
+  <File Type="POSTROUTE-PHYSOPT-BUS-SKEW-RPX" Name="design_reciever_wrapper_bus_skew_postroute_physopted.rpx"/>
+  <File Type="BITSTR-NKY" Name="design_reciever_wrapper.nky"/>
+  <File Type="BITSTR-BMM" Name="design_reciever_wrapper_bd.bmm"/>
+  <File Type="PDI-FILE" Name="design_reciever_wrapper.pdi"/>
+  <File Type="RCFI_FILE" Name="design_reciever_wrapper.rcfi"/>
+  <File Type="CFI_FILE" Name="design_reciever_wrapper.cfi"/>
+  <File Type="RNPI_FILE" Name="design_reciever_wrapper.rnpi"/>
+  <File Type="NPI_FILE" Name="design_reciever_wrapper.npi"/>
+  <File Type="RBD_FILE" Name="design_reciever_wrapper.rbd"/>
   <File Type="BITSTR-LTX" Name="debug_nets.ltx"/>
-  <File Type="BITSTR-LTX" Name="design_sender_wrapper.ltx"/>
-  <File Type="BITSTR-SYSDEF" Name="design_sender_wrapper.sysdef"/>
-  <File Type="BG-BGN" Name="design_sender_wrapper.bgn"/>
-  <File Type="BG-DRC" Name="design_sender_wrapper.drc"/>
-  <File Type="RDI-RDI" Name="design_sender_wrapper.vdi"/>
+  <File Type="BITSTR-LTX" Name="design_reciever_wrapper.ltx"/>
+  <File Type="BITSTR-SYSDEF" Name="design_reciever_wrapper.sysdef"/>
+  <File Type="BG-BGN" Name="design_reciever_wrapper.bgn"/>
+  <File Type="BG-DRC" Name="design_reciever_wrapper.drc"/>
+  <File Type="RDI-RDI" Name="design_reciever_wrapper.vdi"/>
   <File Type="WBT-USG" Name="usage_statistics_webtalk.html"/>
   <FileSet Name="sources" Type="DesignSrcs" RelSrcDir="$PSRCDIR/sources_1" RelGenDir="$PGENDIR/sources_1">
     <Filter Type="Srcs"/>
-    <File Path="$PSRCDIR/sources_1/bd/design_sender/design_sender.bd">
-      <FileInfo>
-        <Attr Name="UsedIn" Val="synthesis"/>
-        <Attr Name="UsedIn" Val="implementation"/>
-        <Attr Name="UsedIn" Val="simulation"/>
-      </FileInfo>
-    </File>
-    <File Path="$PGENDIR/sources_1/bd/design_sender/hdl/design_sender_wrapper.v">
-      <FileInfo>
-        <Attr Name="UsedIn" Val="synthesis"/>
-        <Attr Name="UsedIn" Val="implementation"/>
-        <Attr Name="UsedIn" Val="simulation"/>
-      </FileInfo>
-    </File>
     <File Path="$PSRCDIR/sources_1/bd/design_reciever/design_reciever.bd">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PGENDIR/sources_1/bd/design_reciever/hdl/design_reciever_wrapper.v">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/bd/design_sender/design_sender.bd">
       <FileInfo>
         <Attr Name="AutoDisabled" Val="1"/>
         <Attr Name="UsedIn" Val="synthesis"/>
@@ -99,7 +99,7 @@
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
     </File>
-    <File Path="$PGENDIR/sources_1/bd/design_reciever/hdl/design_reciever_wrapper.v">
+    <File Path="$PGENDIR/sources_1/bd/design_sender/hdl/design_sender_wrapper.v">
       <FileInfo>
         <Attr Name="AutoDisabled" Val="1"/>
         <Attr Name="UsedIn" Val="synthesis"/>
@@ -216,7 +216,7 @@
     </File>
     <Config>
       <Option Name="DesignMode" Val="RTL"/>
-      <Option Name="TopModule" Val="design_sender_wrapper"/>
+      <Option Name="TopModule" Val="design_reciever_wrapper"/>
     </Config>
   </FileSet>
   <FileSet Name="constrs_in" Type="Constrs" RelSrcDir="$PSRCDIR/constrs_1">
@@ -240,9 +240,7 @@
     </Config>
   </FileSet>
   <Strategy Version="1" Minor="2">
-    <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2021">
-      <Desc>Default settings for Implementation.</Desc>
-    </StratHandle>
+    <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2021"/>
     <Step Id="init_design"/>
     <Step Id="opt_design"/>
     <Step Id="power_opt_design"/>
@@ -253,14 +251,16 @@
     <Step Id="post_route_phys_opt_design"/>
     <Step Id="write_bitstream"/>
   </Strategy>
+  <BlockFileSet Type="BlockSrcs" Name="urllc_core_smartconnect_outer_1"/>
+  <BlockFileSet Type="BlockSrcs" Name="urllc_core_mux_disable_sel2_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="urllc_core_ad2dma_rtl_0_1"/>
+  <BlockFileSet Type="BlockSrcs" Name="urllc_core_inst_0"/>
   <BlockFileSet Type="BlockSrcs" Name="urllc_core_ad_buf_0_0"/>
   <BlockFileSet Type="BlockSrcs" Name="urllc_core_mux_0_0"/>
   <BlockFileSet Type="BlockSrcs" Name="urllc_core_div_n_0_0"/>
   <BlockFileSet Type="BlockSrcs" Name="urllc_core_ad2dma_rtl_0_0"/>
   <BlockFileSet Type="BlockSrcs" Name="urllc_core_axi_gpio_0_0"/>
   <BlockFileSet Type="BlockSrcs" Name="urllc_core_mux_rtl_0"/>
-  <BlockFileSet Type="BlockSrcs" Name="urllc_core_smartconnect_outer_1"/>
-  <BlockFileSet Type="BlockSrcs" Name="urllc_core_mux_disable_sel2_0"/>
   <BlockFileSet Type="BlockSrcs" Name="urllc_core_ila_0_0"/>
   <BlockFileSet Type="BlockSrcs" Name="urllc_core_rst_ps7_0_200M_0"/>
   <BlockFileSet Type="BlockSrcs" Name="urllc_core_DDCWrapper_0_0"/>
@@ -270,24 +270,15 @@
   <BlockFileSet Type="BlockSrcs" Name="urllc_core_proc_clock_reset_0"/>
   <BlockFileSet Type="BlockSrcs" Name="urllc_core_mux_2_0"/>
   <BlockFileSet Type="BlockSrcs" Name="urllc_core_mux_3_0"/>
-  <BlockFileSet Type="BlockSrcs" Name="urllc_core_DUCWrapper_0_0"/>
-  <BlockFileSet Type="BlockSrcs" Name="urllc_core_ad2dma_rtl_0_1"/>
   <BlockFileSet Type="BlockSrcs" Name="urllc_core_axi_dma_0_0"/>
   <BlockFileSet Type="BlockSrcs" Name="urllc_core_rst_ps7_0_120M_0"/>
   <BlockFileSet Type="BlockSrcs" Name="urllc_core_axi_gpio_1_0"/>
   <BlockFileSet Type="BlockSrcs" Name="urllc_core_clk_wiz_100M_0"/>
   <BlockFileSet Type="BlockSrcs" Name="urllc_core_clk_wiz_dynamic_0"/>
   <BlockFileSet Type="BlockSrcs" Name="urllc_core_clk_wiz_static_0"/>
-  <BlockFileSet Type="BlockSrcs" Name="urllc_core_inst_0_FrameTriggerWrapper_0_0"/>
   <BlockFileSet Type="BlockSrcs" Name="urllc_core_proc_data_reset_8M_0"/>
   <BlockFileSet Type="BlockSrcs" Name="urllc_core_smartconnect_outer_0"/>
   <BlockFileSet Type="BlockSrcs" Name="urllc_core_processing_system7_0_0"/>
-  <BlockFileSet Type="BlockSrcs" Name="urllc_core_inst_0_smartconnect_outer_1"/>
   <BlockFileSet Type="BlockSrcs" Name="urllc_core_inst_1_smartconnect_outer_1"/>
-  <BlockFileSet Type="BlockSrcs" Name="urllc_core_inst_0_smartconnect_outer_0"/>
-  <BlockFileSet Type="BlockSrcs" Name="urllc_core_inst_1"/>
-  <BlockFileSet Type="BlockSrcs" Name="urllc_core_inst_1_smartconnect_outer_0"/>
-  <BlockFileSet Type="BlockSrcs" Name="urllc_core_inst_1_clk_wiz_100M_0"/>
-  <BlockFileSet Type="BlockSrcs" Name="urllc_core_inst_1_clk_wiz_dynamic_0"/>
-  <BlockFileSet Type="BlockSrcs" Name="urllc_core_inst_1_clk_wiz_static_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="urllc_core_inst_0_smartconnect_outer_1"/>
 </GenRun>

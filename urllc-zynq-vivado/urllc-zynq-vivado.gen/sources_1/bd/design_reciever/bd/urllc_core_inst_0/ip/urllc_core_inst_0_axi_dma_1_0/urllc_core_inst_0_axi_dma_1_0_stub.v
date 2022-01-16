@@ -1,11 +1,11 @@
 // Copyright 1986-2021 Xilinx, Inc. All Rights Reserved.
 // --------------------------------------------------------------------------------
 // Tool Version: Vivado v.2021.1 (win64) Build 3247384 Thu Jun 10 19:36:33 MDT 2021
-// Date        : Fri Jan 14 22:30:58 2022
+// Date        : Sun Jan 16 11:10:18 2022
 // Host        : WIN-544SHHHOI8Q running 64-bit major release  (build 9200)
 // Command     : write_verilog -force -mode synth_stub -rename_top urllc_core_inst_0_axi_dma_1_0 -prefix
-//               urllc_core_inst_0_axi_dma_1_0_ urllc_core_axi_dma_1_0_stub.v
-// Design      : urllc_core_axi_dma_1_0
+//               urllc_core_inst_0_axi_dma_1_0_ urllc_core_inst_1_axi_dma_1_0_stub.v
+// Design      : urllc_core_inst_1_axi_dma_1_0
 // Purpose     : Stub declaration of top-level module interface
 // Device      : xc7z020clg400-2
 // --------------------------------------------------------------------------------

@@ -33,10 +33,11 @@
           "xlconstant_0": "",
           "xlconstant_1": "",
           "xlslice_1": "",
-          "FrameTriggerWrapper_0": ""
+          "FrameTriggerWrapper_0": "",
+          "axis_data_fifo_0": "",
+          "axis_data_fifo_1": ""
         },
         "sender": {
-          "DUCWrapper_0": "",
           "ad2dma_rtl_0": "",
           "axi_dma_0": "",
           "rst_ps7_0_120M": "",
@@ -44,7 +45,10 @@
           "xlconcat_1": "",
           "xlconstant_0": "",
           "xlslice_data": "",
-          "xlslice_frame_avaliable": ""
+          "xlslice_frame_avaliable": "",
+          "axis_data_fifo_0": "",
+          "DUCWrapper_0": "",
+          "axis_data_fifo_1": ""
         },
         "xlconcat_irq": "",
         "xlconstant_0": ""
@@ -1149,6 +1153,15 @@
                   },
                   "c_micro_dma": {
                     "value": "0"
+                  },
+                  "c_mm2s_burst_size": {
+                    "value": "256"
+                  },
+                  "c_s2mm_burst_size": {
+                    "value": "256"
+                  },
+                  "c_sg_length_width": {
+                    "value": "26"
                   }
                 },
                 "interface_ports": {
@@ -1470,6 +1483,34 @@
                     }
                   }
                 }
+              },
+              "axis_data_fifo_0": {
+                "vlnv": "xilinx.com:ip:axis_data_fifo:2.0",
+                "xci_name": "urllc_core_axis_data_fifo_0_1",
+                "xci_path": "ip\\urllc_core_axis_data_fifo_0_1\\urllc_core_axis_data_fifo_0_1.xci",
+                "inst_hier_path": "data_area/reciever/axis_data_fifo_0",
+                "parameters": {
+                  "FIFO_DEPTH": {
+                    "value": "8192"
+                  },
+                  "FIFO_MODE": {
+                    "value": "2"
+                  }
+                }
+              },
+              "axis_data_fifo_1": {
+                "vlnv": "xilinx.com:ip:axis_data_fifo:2.0",
+                "xci_name": "urllc_core_axis_data_fifo_0_3",
+                "xci_path": "ip\\urllc_core_axis_data_fifo_0_3\\urllc_core_axis_data_fifo_0_3.xci",
+                "inst_hier_path": "data_area/reciever/axis_data_fifo_1",
+                "parameters": {
+                  "FIFO_DEPTH": {
+                    "value": "8192"
+                  },
+                  "FIFO_MODE": {
+                    "value": "2"
+                  }
+                }
               }
             },
             "interface_nets": {
@@ -1494,13 +1535,25 @@
               "ad2dma_rtl_0_out_axis": {
                 "interface_ports": [
                   "ad2dma_rtl_0/out_axis",
-                  "axi_dma_1/S_AXIS_S2MM"
+                  "axis_data_fifo_0/S_AXIS"
                 ]
               },
               "axi_dma_1_M_AXIS_MM2S": {
                 "interface_ports": [
-                  "ad2dma_rtl_0/in_axis",
-                  "axi_dma_1/M_AXIS_MM2S"
+                  "axi_dma_1/M_AXIS_MM2S",
+                  "axis_data_fifo_1/S_AXIS"
+                ]
+              },
+              "axis_data_fifo_0_M_AXIS": {
+                "interface_ports": [
+                  "axis_data_fifo_0/M_AXIS",
+                  "axi_dma_1/S_AXIS_S2MM"
+                ]
+              },
+              "axis_data_fifo_1_M_AXIS": {
+                "interface_ports": [
+                  "axis_data_fifo_1/M_AXIS",
+                  "ad2dma_rtl_0/in_axis"
                 ]
               }
             },
@@ -1523,7 +1576,9 @@
                 "ports": [
                   "axi_resetn",
                   "ad2dma_rtl_0/resetn",
-                  "axi_dma_1/axi_resetn"
+                  "axi_dma_1/axi_resetn",
+                  "axis_data_fifo_0/s_axis_aresetn",
+                  "axis_data_fifo_1/s_axis_aresetn"
                 ]
               },
               "Net": {
@@ -1572,7 +1627,9 @@
                   "ad2dma_rtl_0/clk",
                   "axi_dma_1/m_axi_mm2s_aclk",
                   "axi_dma_1/m_axi_s2mm_aclk",
-                  "axi_dma_1/s_axi_lite_aclk"
+                  "axi_dma_1/s_axi_lite_aclk",
+                  "axis_data_fifo_0/s_axis_aclk",
+                  "axis_data_fifo_1/s_axis_aclk"
                 ]
               },
               "data_in_serial_1": {
@@ -1747,68 +1804,6 @@
               }
             },
             "components": {
-              "DUCWrapper_0": {
-                "vlnv": "xilinx.com:module_ref:DUCWrapper:1.0",
-                "xci_name": "urllc_core_DUCWrapper_0_0",
-                "xci_path": "ip\\urllc_core_DUCWrapper_0_0\\urllc_core_DUCWrapper_0_0.xci",
-                "inst_hier_path": "data_area/sender/DUCWrapper_0",
-                "reference_info": {
-                  "ref_type": "hdl",
-                  "ref_name": "DUCWrapper",
-                  "boundary_crc": "0x0"
-                },
-                "ports": {
-                  "io_in_data": {
-                    "direction": "I"
-                  },
-                  "io_in_sync": {
-                    "direction": "I",
-                    "parameters": {
-                      "PortWidth": {
-                        "value": "1",
-                        "value_src": "default_prop"
-                      }
-                    }
-                  },
-                  "io_out_dac": {
-                    "direction": "O",
-                    "left": "7",
-                    "right": "0"
-                  },
-                  "io_clock": {
-                    "type": "clk",
-                    "direction": "I",
-                    "parameters": {
-                      "ASSOCIATED_RESET": {
-                        "value": "io_resetN",
-                        "value_src": "constant"
-                      },
-                      "FREQ_HZ": {
-                        "value": "120000000",
-                        "value_src": "ip_prop"
-                      },
-                      "PHASE": {
-                        "value": "0.0",
-                        "value_src": "ip_prop"
-                      },
-                      "CLK_DOMAIN": {
-                        "value": "/multi_clock/clk_wiz_static_clk_out1",
-                        "value_src": "ip_prop"
-                      }
-                    }
-                  },
-                  "io_resetN": {
-                    "type": "rst",
-                    "direction": "I",
-                    "parameters": {
-                      "POLARITY": {
-                        "value": "ACTIVE_LOW",
-                        "value_src": "constant"
-                      }
-                    }
-                  }
-                }
-              },
               "ad2dma_rtl_0": {
                 "vlnv": "xilinx.com:module_ref:ad2dma_rtl:1.0",
                 "xci_name": "urllc_core_ad2dma_rtl_0_1",
@@ -2041,6 +2036,15 @@
                   },
                   "c_micro_dma": {
                     "value": "0"
+                  },
+                  "c_mm2s_burst_size": {
+                    "value": "256"
+                  },
+                  "c_s2mm_burst_size": {
+                    "value": "256"
+                  },
+                  "c_sg_length_width": {
+                    "value": "26"
                   }
                 },
                 "interface_ports": {
@@ -2150,6 +2154,96 @@
                     "value": "1"
                   }
                 }
+              },
+              "axis_data_fifo_0": {
+                "vlnv": "xilinx.com:ip:axis_data_fifo:2.0",
+                "xci_name": "urllc_core_axis_data_fifo_0_0",
+                "xci_path": "ip\\urllc_core_axis_data_fifo_0_0\\urllc_core_axis_data_fifo_0_0.xci",
+                "inst_hier_path": "data_area/sender/axis_data_fifo_0",
+                "parameters": {
+                  "FIFO_DEPTH": {
+                    "value": "8192"
+                  },
+                  "FIFO_MODE": {
+                    "value": "2"
+                  }
+                }
+              },
+              "DUCWrapper_0": {
+                "vlnv": "xilinx.com:module_ref:DUCWrapper:1.0",
+                "xci_name": "urllc_core_DUCWrapper_0_0",
+                "xci_path": "ip\\urllc_core_DUCWrapper_0_0\\urllc_core_DUCWrapper_0_0.xci",
+                "inst_hier_path": "data_area/sender/DUCWrapper_0",
+                "reference_info": {
+                  "ref_type": "hdl",
+                  "ref_name": "DUCWrapper",
+                  "boundary_crc": "0x0"
+                },
+                "ports": {
+                  "io_in_data": {
+                    "direction": "I"
+                  },
+                  "io_in_sync": {
+                    "direction": "I",
+                    "parameters": {
+                      "PortWidth": {
+                        "value": "1",
+                        "value_src": "default_prop"
+                      }
+                    }
+                  },
+                  "io_out_dac": {
+                    "direction": "O",
+                    "left": "7",
+                    "right": "0"
+                  },
+                  "io_clock": {
+                    "type": "clk",
+                    "direction": "I",
+                    "parameters": {
+                      "ASSOCIATED_RESET": {
+                        "value": "io_resetN",
+                        "value_src": "constant"
+                      },
+                      "FREQ_HZ": {
+                        "value": "120000000",
+                        "value_src": "ip_prop"
+                      },
+                      "PHASE": {
+                        "value": "0.0",
+                        "value_src": "ip_prop"
+                      },
+                      "CLK_DOMAIN": {
+                        "value": "/multi_clock/clk_wiz_static_clk_out1",
+                        "value_src": "ip_prop"
+                      }
+                    }
+                  },
+                  "io_resetN": {
+                    "type": "rst",
+                    "direction": "I",
+                    "parameters": {
+                      "POLARITY": {
+                        "value": "ACTIVE_LOW",
+                        "value_src": "constant"
+                      }
+                    }
+                  }
+                }
+              },
+              "axis_data_fifo_1": {
+                "vlnv": "xilinx.com:ip:axis_data_fifo:2.0",
+                "xci_name": "urllc_core_axis_data_fifo_0_2",
+                "xci_path": "ip\\urllc_core_axis_data_fifo_0_2\\urllc_core_axis_data_fifo_0_2.xci",
+                "inst_hier_path": "data_area/sender/axis_data_fifo_1",
+                "parameters": {
+                  "FIFO_DEPTH": {
+                    "value": "8192"
+                  },
+                  "FIFO_MODE": {
+                    "value": "2"
+                  }
+                }
               }
             },
             "interface_nets": {
@@ -2174,13 +2268,25 @@
               "ad2dma_rtl_0_out_axis": {
                 "interface_ports": [
                   "ad2dma_rtl_0/out_axis",
-                  "axi_dma_0/S_AXIS_S2MM"
+                  "axis_data_fifo_0/S_AXIS"
                 ]
               },
               "axi_dma_0_M_AXIS_MM2S": {
                 "interface_ports": [
-                  "ad2dma_rtl_0/in_axis",
-                  "axi_dma_0/M_AXIS_MM2S"
+                  "axi_dma_0/M_AXIS_MM2S",
+                  "axis_data_fifo_1/S_AXIS"
+                ]
+              },
+              "axis_data_fifo_0_M_AXIS": {
+                "interface_ports": [
+                  "axis_data_fifo_0/M_AXIS",
+                  "axi_dma_0/S_AXIS_S2MM"
+                ]
+              },
+              "axis_data_fifo_1_M_AXIS": {
+                "interface_ports": [
+                  "axis_data_fifo_1/M_AXIS",
+                  "ad2dma_rtl_0/in_axis"
                 ]
               }
             },
@@ -2189,7 +2295,9 @@
                 "ports": [
                   "resetn_8M",
                   "ad2dma_rtl_0/resetn",
-                  "axi_dma_0/axi_resetn"
+                  "axi_dma_0/axi_resetn",
+                  "axis_data_fifo_0/s_axis_aresetn",
+                  "axis_data_fifo_1/s_axis_aresetn"
                 ]
               },
               "DUCWrapper_0_io_out_dac": {
@@ -2204,7 +2312,9 @@
                   "ad2dma_rtl_0/clk",
                   "axi_dma_0/m_axi_mm2s_aclk",
                   "axi_dma_0/m_axi_s2mm_aclk",
-                  "axi_dma_0/s_axi_lite_aclk"
+                  "axi_dma_0/s_axi_lite_aclk",
+                  "axis_data_fifo_0/s_axis_aclk",
+                  "axis_data_fifo_1/s_axis_aclk"
                 ]
               },
               "ad2dma_rtl_0_da": {
@@ -2241,8 +2351,8 @@
               "io_in_clockDac_1": {
                 "ports": [
                   "clk_120M",
-                  "DUCWrapper_0/io_clock",
-                  "rst_ps7_0_120M/slowest_sync_clk"
+                  "rst_ps7_0_120M/slowest_sync_clk",
+                  "DUCWrapper_0/io_clock"
                 ]
               },
               "rst_ps7_0_120M_peripheral_aresetn": {
@@ -2279,8 +2389,8 @@
               "xlslice_frame_avaliable_Dout": {
                 "ports": [
                   "xlslice_frame_avaliable/Dout",
-                  "sender_frame_avaliable",
-                  "DUCWrapper_0/io_in_sync"
+                  "DUCWrapper_0/io_in_sync",
+                  "sender_frame_avaliable"
                 ]
               }
             }

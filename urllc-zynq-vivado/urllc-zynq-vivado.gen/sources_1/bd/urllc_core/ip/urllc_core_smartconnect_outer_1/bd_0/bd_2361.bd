@@ -1,7 +1,7 @@
 {
   "design": {
     "design_info": {
-      "boundary_crc": "0x77F62EAA83438147",
+      "boundary_crc": "0x77F62EAA15F70BF4",
       "design_src": "SBD",
       "device": "xc7z020clg400-2",
       "name": "bd_2361",
@@ -326,7 +326,7 @@
             "value_src": "default"
           },
           "MAX_BURST_LENGTH": {
-            "value": "16",
+            "value": "256",
             "value_src": "user_prop"
           },
           "NUM_READ_OUTSTANDING": {
@@ -461,7 +461,7 @@
             "value_src": "default"
           },
           "MAX_BURST_LENGTH": {
-            "value": "16",
+            "value": "256",
             "value_src": "user_prop"
           },
           "NUM_READ_OUTSTANDING": {
@@ -596,7 +596,7 @@
             "value_src": "default"
           },
           "MAX_BURST_LENGTH": {
-            "value": "16",
+            "value": "256",
             "value_src": "user_prop"
           },
           "NUM_READ_OUTSTANDING": {
@@ -731,7 +731,7 @@
             "value_src": "default"
           },
           "MAX_BURST_LENGTH": {
-            "value": "16",
+            "value": "256",
             "value_src": "user_prop"
           },
           "NUM_READ_OUTSTANDING": {

@@ -1,7 +1,7 @@
 Copyright 1986-2021 Xilinx, Inc. All Rights Reserved.
 -----------------------------------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2021.1 (win64) Build 3247384 Thu Jun 10 19:36:33 MDT 2021
-| Date         : Fri Jan 14 23:47:32 2022
+| Date         : Sun Jan 16 22:46:47 2022
 | Host         : WIN-544SHHHOI8Q running 64-bit major release  (build 9200)
 | Command      : report_utilization -file urllc_core_inst_0_smartconnect_outer_1_utilization_synth.rpt -pb urllc_core_inst_0_smartconnect_outer_1_utilization_synth.pb
 | Design       : urllc_core_inst_0_smartconnect_outer_1
@@ -30,8 +30,8 @@ Table of Contents
 +----------------------------+------+-------+------------+-----------+-------+
 |          Site Type         | Used | Fixed | Prohibited | Available | Util% |
 +----------------------------+------+-------+------------+-----------+-------+
-| Slice LUTs*                | 8011 |     0 |          0 |     53200 | 15.06 |
-|   LUT as Logic             | 6708 |     0 |          0 |     53200 | 12.61 |
+| Slice LUTs*                | 8014 |     0 |          0 |     53200 | 15.06 |
+|   LUT as Logic             | 6711 |     0 |          0 |     53200 | 12.61 |
 |   LUT as Memory            | 1303 |     0 |          0 |     17400 |  7.49 |
 |     LUT as Distributed RAM |  902 |     0 |            |           |       |
 |     LUT as Shift Register  |  401 |     0 |            |           |       |
@@ -149,12 +149,12 @@ Table of Contents
 | Ref Name | Used | Functional Category |
 +----------+------+---------------------+
 | FDRE     | 8278 |        Flop & Latch |
-| LUT6     | 2367 |                 LUT |
-| LUT3     | 2238 |                 LUT |
-| LUT5     | 1442 |                 LUT |
-| LUT4     | 1404 |                 LUT |
+| LUT6     | 2365 |                 LUT |
+| LUT3     | 2237 |                 LUT |
+| LUT5     | 1440 |                 LUT |
+| LUT4     | 1407 |                 LUT |
 | RAMD32   | 1346 |  Distributed Memory |
-| LUT2     |  530 |                 LUT |
+| LUT2     |  532 |                 LUT |
 | LUT1     |  524 |                 LUT |
 | RAMS32   |  444 |  Distributed Memory |
 | FDSE     |  428 |        Flop & Latch |

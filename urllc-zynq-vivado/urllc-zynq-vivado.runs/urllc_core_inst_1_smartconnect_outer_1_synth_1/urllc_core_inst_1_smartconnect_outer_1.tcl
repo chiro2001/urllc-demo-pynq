@@ -70,9 +70,9 @@ proc create_report { reportName command } {
   }
 }
 OPTRACE "urllc_core_inst_1_smartconnect_outer_1_synth_1" START { ROLLUP_AUTO }
-set_param tcl.collectionResultDisplayLimit 0
 set_param chipscope.maxJobs 16
-set_param xicom.use_bs_reader 1
+set_msg_config -id {Common 17-41} -limit 10000000
+set_msg_config -id {HDL-1065} -limit 10000
 set_param project.vivado.isBlockSynthRun true
 set_msg_config -msgmgr_mode ooc_run
 OPTRACE "Creating in-memory project" START { }
@@ -91,53 +91,53 @@ set_property ip_output_repo g:/Chiro/Programs/urllc-demo-pynq/urllc-zynq-vivado/
 set_property ip_cache_permissions {read write} [current_project]
 OPTRACE "Creating in-memory project" END { }
 OPTRACE "Adding files" START { }
-read_ip -quiet g:/Chiro/Programs/urllc-demo-pynq/urllc-zynq-vivado/urllc-zynq-vivado.gen/sources_1/bd/design_sender/bd/urllc_core_inst_1/ip/urllc_core_inst_1_smartconnect_outer_1/urllc_core_inst_1_smartconnect_outer_1.xci
-set_property used_in_implementation false [get_files -all g:/Chiro/Programs/urllc-demo-pynq/urllc-zynq-vivado/urllc-zynq-vivado.gen/sources_1/bd/design_sender/bd/urllc_core_inst_1/ip/urllc_core_inst_1_smartconnect_outer_1/bd_0/ip/ip_1/bd_65f4_psr_aclk_0_board.xdc]
-set_property used_in_implementation false [get_files -all g:/Chiro/Programs/urllc-demo-pynq/urllc-zynq-vivado/urllc-zynq-vivado.gen/sources_1/bd/design_sender/bd/urllc_core_inst_1/ip/urllc_core_inst_1_smartconnect_outer_1/bd_0/ip/ip_1/bd_65f4_psr_aclk_0.xdc]
-set_property used_in_implementation false [get_files -all g:/Chiro/Programs/urllc-demo-pynq/urllc-zynq-vivado/urllc-zynq-vivado.gen/sources_1/bd/design_sender/bd/urllc_core_inst_1/ip/urllc_core_inst_1_smartconnect_outer_1/bd_0/ip/ip_2/bd_65f4_arsw_0_ooc.xdc]
-set_property used_in_implementation false [get_files -all g:/Chiro/Programs/urllc-demo-pynq/urllc-zynq-vivado/urllc-zynq-vivado.gen/sources_1/bd/design_sender/bd/urllc_core_inst_1/ip/urllc_core_inst_1_smartconnect_outer_1/bd_0/ip/ip_3/bd_65f4_rsw_0_ooc.xdc]
-set_property used_in_implementation false [get_files -all g:/Chiro/Programs/urllc-demo-pynq/urllc-zynq-vivado/urllc-zynq-vivado.gen/sources_1/bd/design_sender/bd/urllc_core_inst_1/ip/urllc_core_inst_1_smartconnect_outer_1/bd_0/ip/ip_4/bd_65f4_awsw_0_ooc.xdc]
-set_property used_in_implementation false [get_files -all g:/Chiro/Programs/urllc-demo-pynq/urllc-zynq-vivado/urllc-zynq-vivado.gen/sources_1/bd/design_sender/bd/urllc_core_inst_1/ip/urllc_core_inst_1_smartconnect_outer_1/bd_0/ip/ip_5/bd_65f4_wsw_0_ooc.xdc]
-set_property used_in_implementation false [get_files -all g:/Chiro/Programs/urllc-demo-pynq/urllc-zynq-vivado/urllc-zynq-vivado.gen/sources_1/bd/design_sender/bd/urllc_core_inst_1/ip/urllc_core_inst_1_smartconnect_outer_1/bd_0/ip/ip_6/bd_65f4_bsw_0_ooc.xdc]
-set_property used_in_implementation false [get_files -all g:/Chiro/Programs/urllc-demo-pynq/urllc-zynq-vivado/urllc-zynq-vivado.gen/sources_1/bd/design_sender/bd/urllc_core_inst_1/ip/urllc_core_inst_1_smartconnect_outer_1/bd_0/ip/ip_10/bd_65f4_s00a2s_0_ooc.xdc]
-set_property used_in_implementation false [get_files -all g:/Chiro/Programs/urllc-demo-pynq/urllc-zynq-vivado/urllc-zynq-vivado.gen/sources_1/bd/design_sender/bd/urllc_core_inst_1/ip/urllc_core_inst_1_smartconnect_outer_1/bd_0/ip/ip_11/bd_65f4_sarn_0_ooc.xdc]
-set_property used_in_implementation false [get_files -all g:/Chiro/Programs/urllc-demo-pynq/urllc-zynq-vivado/urllc-zynq-vivado.gen/sources_1/bd/design_sender/bd/urllc_core_inst_1/ip/urllc_core_inst_1_smartconnect_outer_1/bd_0/ip/ip_12/bd_65f4_srn_0_ooc.xdc]
-set_property used_in_implementation false [get_files -all g:/Chiro/Programs/urllc-demo-pynq/urllc-zynq-vivado/urllc-zynq-vivado.gen/sources_1/bd/design_sender/bd/urllc_core_inst_1/ip/urllc_core_inst_1_smartconnect_outer_1/bd_0/ip/ip_13/bd_65f4_sawn_0_ooc.xdc]
-set_property used_in_implementation false [get_files -all g:/Chiro/Programs/urllc-demo-pynq/urllc-zynq-vivado/urllc-zynq-vivado.gen/sources_1/bd/design_sender/bd/urllc_core_inst_1/ip/urllc_core_inst_1_smartconnect_outer_1/bd_0/ip/ip_14/bd_65f4_swn_0_ooc.xdc]
-set_property used_in_implementation false [get_files -all g:/Chiro/Programs/urllc-demo-pynq/urllc-zynq-vivado/urllc-zynq-vivado.gen/sources_1/bd/design_sender/bd/urllc_core_inst_1/ip/urllc_core_inst_1_smartconnect_outer_1/bd_0/ip/ip_15/bd_65f4_sbn_0_ooc.xdc]
-set_property used_in_implementation false [get_files -all g:/Chiro/Programs/urllc-demo-pynq/urllc-zynq-vivado/urllc-zynq-vivado.gen/sources_1/bd/design_sender/bd/urllc_core_inst_1/ip/urllc_core_inst_1_smartconnect_outer_1/bd_0/ip/ip_19/bd_65f4_s01a2s_0_ooc.xdc]
-set_property used_in_implementation false [get_files -all g:/Chiro/Programs/urllc-demo-pynq/urllc-zynq-vivado/urllc-zynq-vivado.gen/sources_1/bd/design_sender/bd/urllc_core_inst_1/ip/urllc_core_inst_1_smartconnect_outer_1/bd_0/ip/ip_20/bd_65f4_sarn_1_ooc.xdc]
-set_property used_in_implementation false [get_files -all g:/Chiro/Programs/urllc-demo-pynq/urllc-zynq-vivado/urllc-zynq-vivado.gen/sources_1/bd/design_sender/bd/urllc_core_inst_1/ip/urllc_core_inst_1_smartconnect_outer_1/bd_0/ip/ip_21/bd_65f4_srn_1_ooc.xdc]
-set_property used_in_implementation false [get_files -all g:/Chiro/Programs/urllc-demo-pynq/urllc-zynq-vivado/urllc-zynq-vivado.gen/sources_1/bd/design_sender/bd/urllc_core_inst_1/ip/urllc_core_inst_1_smartconnect_outer_1/bd_0/ip/ip_25/bd_65f4_s02a2s_0_ooc.xdc]
-set_property used_in_implementation false [get_files -all g:/Chiro/Programs/urllc-demo-pynq/urllc-zynq-vivado/urllc-zynq-vivado.gen/sources_1/bd/design_sender/bd/urllc_core_inst_1/ip/urllc_core_inst_1_smartconnect_outer_1/bd_0/ip/ip_26/bd_65f4_sawn_1_ooc.xdc]
-set_property used_in_implementation false [get_files -all g:/Chiro/Programs/urllc-demo-pynq/urllc-zynq-vivado/urllc-zynq-vivado.gen/sources_1/bd/design_sender/bd/urllc_core_inst_1/ip/urllc_core_inst_1_smartconnect_outer_1/bd_0/ip/ip_27/bd_65f4_swn_1_ooc.xdc]
-set_property used_in_implementation false [get_files -all g:/Chiro/Programs/urllc-demo-pynq/urllc-zynq-vivado/urllc-zynq-vivado.gen/sources_1/bd/design_sender/bd/urllc_core_inst_1/ip/urllc_core_inst_1_smartconnect_outer_1/bd_0/ip/ip_28/bd_65f4_sbn_1_ooc.xdc]
-set_property used_in_implementation false [get_files -all g:/Chiro/Programs/urllc-demo-pynq/urllc-zynq-vivado/urllc-zynq-vivado.gen/sources_1/bd/design_sender/bd/urllc_core_inst_1/ip/urllc_core_inst_1_smartconnect_outer_1/bd_0/ip/ip_32/bd_65f4_s03a2s_0_ooc.xdc]
-set_property used_in_implementation false [get_files -all g:/Chiro/Programs/urllc-demo-pynq/urllc-zynq-vivado/urllc-zynq-vivado.gen/sources_1/bd/design_sender/bd/urllc_core_inst_1/ip/urllc_core_inst_1_smartconnect_outer_1/bd_0/ip/ip_33/bd_65f4_sarn_2_ooc.xdc]
-set_property used_in_implementation false [get_files -all g:/Chiro/Programs/urllc-demo-pynq/urllc-zynq-vivado/urllc-zynq-vivado.gen/sources_1/bd/design_sender/bd/urllc_core_inst_1/ip/urllc_core_inst_1_smartconnect_outer_1/bd_0/ip/ip_34/bd_65f4_srn_2_ooc.xdc]
-set_property used_in_implementation false [get_files -all g:/Chiro/Programs/urllc-demo-pynq/urllc-zynq-vivado/urllc-zynq-vivado.gen/sources_1/bd/design_sender/bd/urllc_core_inst_1/ip/urllc_core_inst_1_smartconnect_outer_1/bd_0/ip/ip_38/bd_65f4_s04a2s_0_ooc.xdc]
-set_property used_in_implementation false [get_files -all g:/Chiro/Programs/urllc-demo-pynq/urllc-zynq-vivado/urllc-zynq-vivado.gen/sources_1/bd/design_sender/bd/urllc_core_inst_1/ip/urllc_core_inst_1_smartconnect_outer_1/bd_0/ip/ip_39/bd_65f4_sawn_2_ooc.xdc]
-set_property used_in_implementation false [get_files -all g:/Chiro/Programs/urllc-demo-pynq/urllc-zynq-vivado/urllc-zynq-vivado.gen/sources_1/bd/design_sender/bd/urllc_core_inst_1/ip/urllc_core_inst_1_smartconnect_outer_1/bd_0/ip/ip_40/bd_65f4_swn_2_ooc.xdc]
-set_property used_in_implementation false [get_files -all g:/Chiro/Programs/urllc-demo-pynq/urllc-zynq-vivado/urllc-zynq-vivado.gen/sources_1/bd/design_sender/bd/urllc_core_inst_1/ip/urllc_core_inst_1_smartconnect_outer_1/bd_0/ip/ip_41/bd_65f4_sbn_2_ooc.xdc]
-set_property used_in_implementation false [get_files -all g:/Chiro/Programs/urllc-demo-pynq/urllc-zynq-vivado/urllc-zynq-vivado.gen/sources_1/bd/design_sender/bd/urllc_core_inst_1/ip/urllc_core_inst_1_smartconnect_outer_1/bd_0/ip/ip_42/bd_65f4_m00s2a_0_ooc.xdc]
-set_property used_in_implementation false [get_files -all g:/Chiro/Programs/urllc-demo-pynq/urllc-zynq-vivado/urllc-zynq-vivado.gen/sources_1/bd/design_sender/bd/urllc_core_inst_1/ip/urllc_core_inst_1_smartconnect_outer_1/bd_0/ip/ip_43/bd_65f4_m00arn_0_ooc.xdc]
-set_property used_in_implementation false [get_files -all g:/Chiro/Programs/urllc-demo-pynq/urllc-zynq-vivado/urllc-zynq-vivado.gen/sources_1/bd/design_sender/bd/urllc_core_inst_1/ip/urllc_core_inst_1_smartconnect_outer_1/bd_0/ip/ip_44/bd_65f4_m00rn_0_ooc.xdc]
-set_property used_in_implementation false [get_files -all g:/Chiro/Programs/urllc-demo-pynq/urllc-zynq-vivado/urllc-zynq-vivado.gen/sources_1/bd/design_sender/bd/urllc_core_inst_1/ip/urllc_core_inst_1_smartconnect_outer_1/bd_0/ip/ip_45/bd_65f4_m00awn_0_ooc.xdc]
-set_property used_in_implementation false [get_files -all g:/Chiro/Programs/urllc-demo-pynq/urllc-zynq-vivado/urllc-zynq-vivado.gen/sources_1/bd/design_sender/bd/urllc_core_inst_1/ip/urllc_core_inst_1_smartconnect_outer_1/bd_0/ip/ip_46/bd_65f4_m00wn_0_ooc.xdc]
-set_property used_in_implementation false [get_files -all g:/Chiro/Programs/urllc-demo-pynq/urllc-zynq-vivado/urllc-zynq-vivado.gen/sources_1/bd/design_sender/bd/urllc_core_inst_1/ip/urllc_core_inst_1_smartconnect_outer_1/bd_0/ip/ip_47/bd_65f4_m00bn_0_ooc.xdc]
-set_property used_in_implementation false [get_files -all g:/Chiro/Programs/urllc-demo-pynq/urllc-zynq-vivado/urllc-zynq-vivado.gen/sources_1/bd/design_sender/bd/urllc_core_inst_1/ip/urllc_core_inst_1_smartconnect_outer_1/bd_0/ip/ip_49/bd_65f4_m01s2a_0_ooc.xdc]
-set_property used_in_implementation false [get_files -all g:/Chiro/Programs/urllc-demo-pynq/urllc-zynq-vivado/urllc-zynq-vivado.gen/sources_1/bd/design_sender/bd/urllc_core_inst_1/ip/urllc_core_inst_1_smartconnect_outer_1/bd_0/ip/ip_50/bd_65f4_m01arn_0_ooc.xdc]
-set_property used_in_implementation false [get_files -all g:/Chiro/Programs/urllc-demo-pynq/urllc-zynq-vivado/urllc-zynq-vivado.gen/sources_1/bd/design_sender/bd/urllc_core_inst_1/ip/urllc_core_inst_1_smartconnect_outer_1/bd_0/ip/ip_51/bd_65f4_m01rn_0_ooc.xdc]
-set_property used_in_implementation false [get_files -all g:/Chiro/Programs/urllc-demo-pynq/urllc-zynq-vivado/urllc-zynq-vivado.gen/sources_1/bd/design_sender/bd/urllc_core_inst_1/ip/urllc_core_inst_1_smartconnect_outer_1/bd_0/ip/ip_52/bd_65f4_m01awn_0_ooc.xdc]
-set_property used_in_implementation false [get_files -all g:/Chiro/Programs/urllc-demo-pynq/urllc-zynq-vivado/urllc-zynq-vivado.gen/sources_1/bd/design_sender/bd/urllc_core_inst_1/ip/urllc_core_inst_1_smartconnect_outer_1/bd_0/ip/ip_53/bd_65f4_m01wn_0_ooc.xdc]
-set_property used_in_implementation false [get_files -all g:/Chiro/Programs/urllc-demo-pynq/urllc-zynq-vivado/urllc-zynq-vivado.gen/sources_1/bd/design_sender/bd/urllc_core_inst_1/ip/urllc_core_inst_1_smartconnect_outer_1/bd_0/ip/ip_54/bd_65f4_m01bn_0_ooc.xdc]
-set_property used_in_implementation false [get_files -all g:/Chiro/Programs/urllc-demo-pynq/urllc-zynq-vivado/urllc-zynq-vivado.gen/sources_1/bd/design_sender/bd/urllc_core_inst_1/ip/urllc_core_inst_1_smartconnect_outer_1/bd_0/ip/ip_56/bd_65f4_m02s2a_0_ooc.xdc]
-set_property used_in_implementation false [get_files -all g:/Chiro/Programs/urllc-demo-pynq/urllc-zynq-vivado/urllc-zynq-vivado.gen/sources_1/bd/design_sender/bd/urllc_core_inst_1/ip/urllc_core_inst_1_smartconnect_outer_1/bd_0/ip/ip_57/bd_65f4_m02arn_0_ooc.xdc]
-set_property used_in_implementation false [get_files -all g:/Chiro/Programs/urllc-demo-pynq/urllc-zynq-vivado/urllc-zynq-vivado.gen/sources_1/bd/design_sender/bd/urllc_core_inst_1/ip/urllc_core_inst_1_smartconnect_outer_1/bd_0/ip/ip_58/bd_65f4_m02rn_0_ooc.xdc]
-set_property used_in_implementation false [get_files -all g:/Chiro/Programs/urllc-demo-pynq/urllc-zynq-vivado/urllc-zynq-vivado.gen/sources_1/bd/design_sender/bd/urllc_core_inst_1/ip/urllc_core_inst_1_smartconnect_outer_1/bd_0/ip/ip_59/bd_65f4_m02awn_0_ooc.xdc]
-set_property used_in_implementation false [get_files -all g:/Chiro/Programs/urllc-demo-pynq/urllc-zynq-vivado/urllc-zynq-vivado.gen/sources_1/bd/design_sender/bd/urllc_core_inst_1/ip/urllc_core_inst_1_smartconnect_outer_1/bd_0/ip/ip_60/bd_65f4_m02wn_0_ooc.xdc]
-set_property used_in_implementation false [get_files -all g:/Chiro/Programs/urllc-demo-pynq/urllc-zynq-vivado/urllc-zynq-vivado.gen/sources_1/bd/design_sender/bd/urllc_core_inst_1/ip/urllc_core_inst_1_smartconnect_outer_1/bd_0/ip/ip_61/bd_65f4_m02bn_0_ooc.xdc]
-set_property used_in_implementation false [get_files -all g:/Chiro/Programs/urllc-demo-pynq/urllc-zynq-vivado/urllc-zynq-vivado.gen/sources_1/bd/design_sender/bd/urllc_core_inst_1/ip/urllc_core_inst_1_smartconnect_outer_1/ooc.xdc]
+read_ip -quiet g:/Chiro/Programs/urllc-demo-pynq/urllc-zynq-vivado/urllc-zynq-vivado.gen/sources_1/bd/design_sender/bd/urllc_core_inst_1/ip/urllc_core_inst_1_smartconnect_outer_1_1/urllc_core_inst_1_smartconnect_outer_1.xci
+set_property used_in_implementation false [get_files -all g:/Chiro/Programs/urllc-demo-pynq/urllc-zynq-vivado/urllc-zynq-vivado.gen/sources_1/bd/design_sender/bd/urllc_core_inst_1/ip/urllc_core_inst_1_smartconnect_outer_1_1/bd_0/ip/ip_1/bd_65f4_psr_aclk_0_board.xdc]
+set_property used_in_implementation false [get_files -all g:/Chiro/Programs/urllc-demo-pynq/urllc-zynq-vivado/urllc-zynq-vivado.gen/sources_1/bd/design_sender/bd/urllc_core_inst_1/ip/urllc_core_inst_1_smartconnect_outer_1_1/bd_0/ip/ip_1/bd_65f4_psr_aclk_0.xdc]
+set_property used_in_implementation false [get_files -all g:/Chiro/Programs/urllc-demo-pynq/urllc-zynq-vivado/urllc-zynq-vivado.gen/sources_1/bd/design_sender/bd/urllc_core_inst_1/ip/urllc_core_inst_1_smartconnect_outer_1_1/bd_0/ip/ip_2/bd_65f4_arsw_0_ooc.xdc]
+set_property used_in_implementation false [get_files -all g:/Chiro/Programs/urllc-demo-pynq/urllc-zynq-vivado/urllc-zynq-vivado.gen/sources_1/bd/design_sender/bd/urllc_core_inst_1/ip/urllc_core_inst_1_smartconnect_outer_1_1/bd_0/ip/ip_3/bd_65f4_rsw_0_ooc.xdc]
+set_property used_in_implementation false [get_files -all g:/Chiro/Programs/urllc-demo-pynq/urllc-zynq-vivado/urllc-zynq-vivado.gen/sources_1/bd/design_sender/bd/urllc_core_inst_1/ip/urllc_core_inst_1_smartconnect_outer_1_1/bd_0/ip/ip_4/bd_65f4_awsw_0_ooc.xdc]
+set_property used_in_implementation false [get_files -all g:/Chiro/Programs/urllc-demo-pynq/urllc-zynq-vivado/urllc-zynq-vivado.gen/sources_1/bd/design_sender/bd/urllc_core_inst_1/ip/urllc_core_inst_1_smartconnect_outer_1_1/bd_0/ip/ip_5/bd_65f4_wsw_0_ooc.xdc]
+set_property used_in_implementation false [get_files -all g:/Chiro/Programs/urllc-demo-pynq/urllc-zynq-vivado/urllc-zynq-vivado.gen/sources_1/bd/design_sender/bd/urllc_core_inst_1/ip/urllc_core_inst_1_smartconnect_outer_1_1/bd_0/ip/ip_6/bd_65f4_bsw_0_ooc.xdc]
+set_property used_in_implementation false [get_files -all g:/Chiro/Programs/urllc-demo-pynq/urllc-zynq-vivado/urllc-zynq-vivado.gen/sources_1/bd/design_sender/bd/urllc_core_inst_1/ip/urllc_core_inst_1_smartconnect_outer_1_1/bd_0/ip/ip_10/bd_65f4_s00a2s_0_ooc.xdc]
+set_property used_in_implementation false [get_files -all g:/Chiro/Programs/urllc-demo-pynq/urllc-zynq-vivado/urllc-zynq-vivado.gen/sources_1/bd/design_sender/bd/urllc_core_inst_1/ip/urllc_core_inst_1_smartconnect_outer_1_1/bd_0/ip/ip_11/bd_65f4_sarn_0_ooc.xdc]
+set_property used_in_implementation false [get_files -all g:/Chiro/Programs/urllc-demo-pynq/urllc-zynq-vivado/urllc-zynq-vivado.gen/sources_1/bd/design_sender/bd/urllc_core_inst_1/ip/urllc_core_inst_1_smartconnect_outer_1_1/bd_0/ip/ip_12/bd_65f4_srn_0_ooc.xdc]
+set_property used_in_implementation false [get_files -all g:/Chiro/Programs/urllc-demo-pynq/urllc-zynq-vivado/urllc-zynq-vivado.gen/sources_1/bd/design_sender/bd/urllc_core_inst_1/ip/urllc_core_inst_1_smartconnect_outer_1_1/bd_0/ip/ip_13/bd_65f4_sawn_0_ooc.xdc]
+set_property used_in_implementation false [get_files -all g:/Chiro/Programs/urllc-demo-pynq/urllc-zynq-vivado/urllc-zynq-vivado.gen/sources_1/bd/design_sender/bd/urllc_core_inst_1/ip/urllc_core_inst_1_smartconnect_outer_1_1/bd_0/ip/ip_14/bd_65f4_swn_0_ooc.xdc]
+set_property used_in_implementation false [get_files -all g:/Chiro/Programs/urllc-demo-pynq/urllc-zynq-vivado/urllc-zynq-vivado.gen/sources_1/bd/design_sender/bd/urllc_core_inst_1/ip/urllc_core_inst_1_smartconnect_outer_1_1/bd_0/ip/ip_15/bd_65f4_sbn_0_ooc.xdc]
+set_property used_in_implementation false [get_files -all g:/Chiro/Programs/urllc-demo-pynq/urllc-zynq-vivado/urllc-zynq-vivado.gen/sources_1/bd/design_sender/bd/urllc_core_inst_1/ip/urllc_core_inst_1_smartconnect_outer_1_1/bd_0/ip/ip_19/bd_65f4_s01a2s_0_ooc.xdc]
+set_property used_in_implementation false [get_files -all g:/Chiro/Programs/urllc-demo-pynq/urllc-zynq-vivado/urllc-zynq-vivado.gen/sources_1/bd/design_sender/bd/urllc_core_inst_1/ip/urllc_core_inst_1_smartconnect_outer_1_1/bd_0/ip/ip_20/bd_65f4_sarn_1_ooc.xdc]
+set_property used_in_implementation false [get_files -all g:/Chiro/Programs/urllc-demo-pynq/urllc-zynq-vivado/urllc-zynq-vivado.gen/sources_1/bd/design_sender/bd/urllc_core_inst_1/ip/urllc_core_inst_1_smartconnect_outer_1_1/bd_0/ip/ip_21/bd_65f4_srn_1_ooc.xdc]
+set_property used_in_implementation false [get_files -all g:/Chiro/Programs/urllc-demo-pynq/urllc-zynq-vivado/urllc-zynq-vivado.gen/sources_1/bd/design_sender/bd/urllc_core_inst_1/ip/urllc_core_inst_1_smartconnect_outer_1_1/bd_0/ip/ip_25/bd_65f4_s02a2s_0_ooc.xdc]
+set_property used_in_implementation false [get_files -all g:/Chiro/Programs/urllc-demo-pynq/urllc-zynq-vivado/urllc-zynq-vivado.gen/sources_1/bd/design_sender/bd/urllc_core_inst_1/ip/urllc_core_inst_1_smartconnect_outer_1_1/bd_0/ip/ip_26/bd_65f4_sawn_1_ooc.xdc]
+set_property used_in_implementation false [get_files -all g:/Chiro/Programs/urllc-demo-pynq/urllc-zynq-vivado/urllc-zynq-vivado.gen/sources_1/bd/design_sender/bd/urllc_core_inst_1/ip/urllc_core_inst_1_smartconnect_outer_1_1/bd_0/ip/ip_27/bd_65f4_swn_1_ooc.xdc]
+set_property used_in_implementation false [get_files -all g:/Chiro/Programs/urllc-demo-pynq/urllc-zynq-vivado/urllc-zynq-vivado.gen/sources_1/bd/design_sender/bd/urllc_core_inst_1/ip/urllc_core_inst_1_smartconnect_outer_1_1/bd_0/ip/ip_28/bd_65f4_sbn_1_ooc.xdc]
+set_property used_in_implementation false [get_files -all g:/Chiro/Programs/urllc-demo-pynq/urllc-zynq-vivado/urllc-zynq-vivado.gen/sources_1/bd/design_sender/bd/urllc_core_inst_1/ip/urllc_core_inst_1_smartconnect_outer_1_1/bd_0/ip/ip_32/bd_65f4_s03a2s_0_ooc.xdc]
+set_property used_in_implementation false [get_files -all g:/Chiro/Programs/urllc-demo-pynq/urllc-zynq-vivado/urllc-zynq-vivado.gen/sources_1/bd/design_sender/bd/urllc_core_inst_1/ip/urllc_core_inst_1_smartconnect_outer_1_1/bd_0/ip/ip_33/bd_65f4_sarn_2_ooc.xdc]
+set_property used_in_implementation false [get_files -all g:/Chiro/Programs/urllc-demo-pynq/urllc-zynq-vivado/urllc-zynq-vivado.gen/sources_1/bd/design_sender/bd/urllc_core_inst_1/ip/urllc_core_inst_1_smartconnect_outer_1_1/bd_0/ip/ip_34/bd_65f4_srn_2_ooc.xdc]
+set_property used_in_implementation false [get_files -all g:/Chiro/Programs/urllc-demo-pynq/urllc-zynq-vivado/urllc-zynq-vivado.gen/sources_1/bd/design_sender/bd/urllc_core_inst_1/ip/urllc_core_inst_1_smartconnect_outer_1_1/bd_0/ip/ip_38/bd_65f4_s04a2s_0_ooc.xdc]
+set_property used_in_implementation false [get_files -all g:/Chiro/Programs/urllc-demo-pynq/urllc-zynq-vivado/urllc-zynq-vivado.gen/sources_1/bd/design_sender/bd/urllc_core_inst_1/ip/urllc_core_inst_1_smartconnect_outer_1_1/bd_0/ip/ip_39/bd_65f4_sawn_2_ooc.xdc]
+set_property used_in_implementation false [get_files -all g:/Chiro/Programs/urllc-demo-pynq/urllc-zynq-vivado/urllc-zynq-vivado.gen/sources_1/bd/design_sender/bd/urllc_core_inst_1/ip/urllc_core_inst_1_smartconnect_outer_1_1/bd_0/ip/ip_40/bd_65f4_swn_2_ooc.xdc]
+set_property used_in_implementation false [get_files -all g:/Chiro/Programs/urllc-demo-pynq/urllc-zynq-vivado/urllc-zynq-vivado.gen/sources_1/bd/design_sender/bd/urllc_core_inst_1/ip/urllc_core_inst_1_smartconnect_outer_1_1/bd_0/ip/ip_41/bd_65f4_sbn_2_ooc.xdc]
+set_property used_in_implementation false [get_files -all g:/Chiro/Programs/urllc-demo-pynq/urllc-zynq-vivado/urllc-zynq-vivado.gen/sources_1/bd/design_sender/bd/urllc_core_inst_1/ip/urllc_core_inst_1_smartconnect_outer_1_1/bd_0/ip/ip_42/bd_65f4_m00s2a_0_ooc.xdc]
+set_property used_in_implementation false [get_files -all g:/Chiro/Programs/urllc-demo-pynq/urllc-zynq-vivado/urllc-zynq-vivado.gen/sources_1/bd/design_sender/bd/urllc_core_inst_1/ip/urllc_core_inst_1_smartconnect_outer_1_1/bd_0/ip/ip_43/bd_65f4_m00arn_0_ooc.xdc]
+set_property used_in_implementation false [get_files -all g:/Chiro/Programs/urllc-demo-pynq/urllc-zynq-vivado/urllc-zynq-vivado.gen/sources_1/bd/design_sender/bd/urllc_core_inst_1/ip/urllc_core_inst_1_smartconnect_outer_1_1/bd_0/ip/ip_44/bd_65f4_m00rn_0_ooc.xdc]
+set_property used_in_implementation false [get_files -all g:/Chiro/Programs/urllc-demo-pynq/urllc-zynq-vivado/urllc-zynq-vivado.gen/sources_1/bd/design_sender/bd/urllc_core_inst_1/ip/urllc_core_inst_1_smartconnect_outer_1_1/bd_0/ip/ip_45/bd_65f4_m00awn_0_ooc.xdc]
+set_property used_in_implementation false [get_files -all g:/Chiro/Programs/urllc-demo-pynq/urllc-zynq-vivado/urllc-zynq-vivado.gen/sources_1/bd/design_sender/bd/urllc_core_inst_1/ip/urllc_core_inst_1_smartconnect_outer_1_1/bd_0/ip/ip_46/bd_65f4_m00wn_0_ooc.xdc]
+set_property used_in_implementation false [get_files -all g:/Chiro/Programs/urllc-demo-pynq/urllc-zynq-vivado/urllc-zynq-vivado.gen/sources_1/bd/design_sender/bd/urllc_core_inst_1/ip/urllc_core_inst_1_smartconnect_outer_1_1/bd_0/ip/ip_47/bd_65f4_m00bn_0_ooc.xdc]
+set_property used_in_implementation false [get_files -all g:/Chiro/Programs/urllc-demo-pynq/urllc-zynq-vivado/urllc-zynq-vivado.gen/sources_1/bd/design_sender/bd/urllc_core_inst_1/ip/urllc_core_inst_1_smartconnect_outer_1_1/bd_0/ip/ip_49/bd_65f4_m01s2a_0_ooc.xdc]
+set_property used_in_implementation false [get_files -all g:/Chiro/Programs/urllc-demo-pynq/urllc-zynq-vivado/urllc-zynq-vivado.gen/sources_1/bd/design_sender/bd/urllc_core_inst_1/ip/urllc_core_inst_1_smartconnect_outer_1_1/bd_0/ip/ip_50/bd_65f4_m01arn_0_ooc.xdc]
+set_property used_in_implementation false [get_files -all g:/Chiro/Programs/urllc-demo-pynq/urllc-zynq-vivado/urllc-zynq-vivado.gen/sources_1/bd/design_sender/bd/urllc_core_inst_1/ip/urllc_core_inst_1_smartconnect_outer_1_1/bd_0/ip/ip_51/bd_65f4_m01rn_0_ooc.xdc]
+set_property used_in_implementation false [get_files -all g:/Chiro/Programs/urllc-demo-pynq/urllc-zynq-vivado/urllc-zynq-vivado.gen/sources_1/bd/design_sender/bd/urllc_core_inst_1/ip/urllc_core_inst_1_smartconnect_outer_1_1/bd_0/ip/ip_52/bd_65f4_m01awn_0_ooc.xdc]
+set_property used_in_implementation false [get_files -all g:/Chiro/Programs/urllc-demo-pynq/urllc-zynq-vivado/urllc-zynq-vivado.gen/sources_1/bd/design_sender/bd/urllc_core_inst_1/ip/urllc_core_inst_1_smartconnect_outer_1_1/bd_0/ip/ip_53/bd_65f4_m01wn_0_ooc.xdc]
+set_property used_in_implementation false [get_files -all g:/Chiro/Programs/urllc-demo-pynq/urllc-zynq-vivado/urllc-zynq-vivado.gen/sources_1/bd/design_sender/bd/urllc_core_inst_1/ip/urllc_core_inst_1_smartconnect_outer_1_1/bd_0/ip/ip_54/bd_65f4_m01bn_0_ooc.xdc]
+set_property used_in_implementation false [get_files -all g:/Chiro/Programs/urllc-demo-pynq/urllc-zynq-vivado/urllc-zynq-vivado.gen/sources_1/bd/design_sender/bd/urllc_core_inst_1/ip/urllc_core_inst_1_smartconnect_outer_1_1/bd_0/ip/ip_56/bd_65f4_m02s2a_0_ooc.xdc]
+set_property used_in_implementation false [get_files -all g:/Chiro/Programs/urllc-demo-pynq/urllc-zynq-vivado/urllc-zynq-vivado.gen/sources_1/bd/design_sender/bd/urllc_core_inst_1/ip/urllc_core_inst_1_smartconnect_outer_1_1/bd_0/ip/ip_57/bd_65f4_m02arn_0_ooc.xdc]
+set_property used_in_implementation false [get_files -all g:/Chiro/Programs/urllc-demo-pynq/urllc-zynq-vivado/urllc-zynq-vivado.gen/sources_1/bd/design_sender/bd/urllc_core_inst_1/ip/urllc_core_inst_1_smartconnect_outer_1_1/bd_0/ip/ip_58/bd_65f4_m02rn_0_ooc.xdc]
+set_property used_in_implementation false [get_files -all g:/Chiro/Programs/urllc-demo-pynq/urllc-zynq-vivado/urllc-zynq-vivado.gen/sources_1/bd/design_sender/bd/urllc_core_inst_1/ip/urllc_core_inst_1_smartconnect_outer_1_1/bd_0/ip/ip_59/bd_65f4_m02awn_0_ooc.xdc]
+set_property used_in_implementation false [get_files -all g:/Chiro/Programs/urllc-demo-pynq/urllc-zynq-vivado/urllc-zynq-vivado.gen/sources_1/bd/design_sender/bd/urllc_core_inst_1/ip/urllc_core_inst_1_smartconnect_outer_1_1/bd_0/ip/ip_60/bd_65f4_m02wn_0_ooc.xdc]
+set_property used_in_implementation false [get_files -all g:/Chiro/Programs/urllc-demo-pynq/urllc-zynq-vivado/urllc-zynq-vivado.gen/sources_1/bd/design_sender/bd/urllc_core_inst_1/ip/urllc_core_inst_1_smartconnect_outer_1_1/bd_0/ip/ip_61/bd_65f4_m02bn_0_ooc.xdc]
+set_property used_in_implementation false [get_files -all g:/Chiro/Programs/urllc-demo-pynq/urllc-zynq-vivado/urllc-zynq-vivado.gen/sources_1/bd/design_sender/bd/urllc_core_inst_1/ip/urllc_core_inst_1_smartconnect_outer_1_1/ooc.xdc]
 
 OPTRACE "Adding files" END { }
 # Mark all dcp files as not used in implementation to prevent them from being
@@ -208,32 +208,32 @@ create_report "urllc_core_inst_1_smartconnect_outer_1_synth_1_synth_report_utili
 OPTRACE "synth reports" END { }
 
 if { [catch {
-  file copy -force G:/Chiro/Programs/urllc-demo-pynq/urllc-zynq-vivado/urllc-zynq-vivado.runs/urllc_core_inst_1_smartconnect_outer_1_synth_1/urllc_core_inst_1_smartconnect_outer_1.dcp g:/Chiro/Programs/urllc-demo-pynq/urllc-zynq-vivado/urllc-zynq-vivado.gen/sources_1/bd/design_sender/bd/urllc_core_inst_1/ip/urllc_core_inst_1_smartconnect_outer_1/urllc_core_inst_1_smartconnect_outer_1.dcp
+  file copy -force G:/Chiro/Programs/urllc-demo-pynq/urllc-zynq-vivado/urllc-zynq-vivado.runs/urllc_core_inst_1_smartconnect_outer_1_synth_1/urllc_core_inst_1_smartconnect_outer_1.dcp g:/Chiro/Programs/urllc-demo-pynq/urllc-zynq-vivado/urllc-zynq-vivado.gen/sources_1/bd/design_sender/bd/urllc_core_inst_1/ip/urllc_core_inst_1_smartconnect_outer_1_1/urllc_core_inst_1_smartconnect_outer_1.dcp
 } _RESULT ] } { 
   send_msg_id runtcl-3 status "ERROR: Unable to successfully create or copy the sub-design checkpoint file."
   error "ERROR: Unable to successfully create or copy the sub-design checkpoint file."
 }
 
 if { [catch {
-  write_verilog -force -mode synth_stub g:/Chiro/Programs/urllc-demo-pynq/urllc-zynq-vivado/urllc-zynq-vivado.gen/sources_1/bd/design_sender/bd/urllc_core_inst_1/ip/urllc_core_inst_1_smartconnect_outer_1/urllc_core_inst_1_smartconnect_outer_1_stub.v
+  write_verilog -force -mode synth_stub g:/Chiro/Programs/urllc-demo-pynq/urllc-zynq-vivado/urllc-zynq-vivado.gen/sources_1/bd/design_sender/bd/urllc_core_inst_1/ip/urllc_core_inst_1_smartconnect_outer_1_1/urllc_core_inst_1_smartconnect_outer_1_stub.v
 } _RESULT ] } { 
   puts "CRITICAL WARNING: Unable to successfully create a Verilog synthesis stub for the sub-design. This may lead to errors in top level synthesis of the design. Error reported: $_RESULT"
 }
 
 if { [catch {
-  write_vhdl -force -mode synth_stub g:/Chiro/Programs/urllc-demo-pynq/urllc-zynq-vivado/urllc-zynq-vivado.gen/sources_1/bd/design_sender/bd/urllc_core_inst_1/ip/urllc_core_inst_1_smartconnect_outer_1/urllc_core_inst_1_smartconnect_outer_1_stub.vhdl
+  write_vhdl -force -mode synth_stub g:/Chiro/Programs/urllc-demo-pynq/urllc-zynq-vivado/urllc-zynq-vivado.gen/sources_1/bd/design_sender/bd/urllc_core_inst_1/ip/urllc_core_inst_1_smartconnect_outer_1_1/urllc_core_inst_1_smartconnect_outer_1_stub.vhdl
 } _RESULT ] } { 
   puts "CRITICAL WARNING: Unable to successfully create a VHDL synthesis stub for the sub-design. This may lead to errors in top level synthesis of the design. Error reported: $_RESULT"
 }
 
 if { [catch {
-  write_verilog -force -mode funcsim g:/Chiro/Programs/urllc-demo-pynq/urllc-zynq-vivado/urllc-zynq-vivado.gen/sources_1/bd/design_sender/bd/urllc_core_inst_1/ip/urllc_core_inst_1_smartconnect_outer_1/urllc_core_inst_1_smartconnect_outer_1_sim_netlist.v
+  write_verilog -force -mode funcsim g:/Chiro/Programs/urllc-demo-pynq/urllc-zynq-vivado/urllc-zynq-vivado.gen/sources_1/bd/design_sender/bd/urllc_core_inst_1/ip/urllc_core_inst_1_smartconnect_outer_1_1/urllc_core_inst_1_smartconnect_outer_1_sim_netlist.v
 } _RESULT ] } { 
   puts "CRITICAL WARNING: Unable to successfully create the Verilog functional simulation sub-design file. Post-Synthesis Functional Simulation with this file may not be possible or may give incorrect results. Error reported: $_RESULT"
 }
 
 if { [catch {
-  write_vhdl -force -mode funcsim g:/Chiro/Programs/urllc-demo-pynq/urllc-zynq-vivado/urllc-zynq-vivado.gen/sources_1/bd/design_sender/bd/urllc_core_inst_1/ip/urllc_core_inst_1_smartconnect_outer_1/urllc_core_inst_1_smartconnect_outer_1_sim_netlist.vhdl
+  write_vhdl -force -mode funcsim g:/Chiro/Programs/urllc-demo-pynq/urllc-zynq-vivado/urllc-zynq-vivado.gen/sources_1/bd/design_sender/bd/urllc_core_inst_1/ip/urllc_core_inst_1_smartconnect_outer_1_1/urllc_core_inst_1_smartconnect_outer_1_sim_netlist.vhdl
 } _RESULT ] } { 
   puts "CRITICAL WARNING: Unable to successfully create the VHDL functional simulation sub-design file. Post-Synthesis Functional Simulation with this file may not be possible or may give incorrect results. Error reported: $_RESULT"
 }
@@ -243,32 +243,32 @@ if { [catch {
 
 
 if { [catch {
-  file copy -force G:/Chiro/Programs/urllc-demo-pynq/urllc-zynq-vivado/urllc-zynq-vivado.runs/urllc_core_inst_1_smartconnect_outer_1_synth_1/urllc_core_inst_1_smartconnect_outer_1.dcp g:/Chiro/Programs/urllc-demo-pynq/urllc-zynq-vivado/urllc-zynq-vivado.gen/sources_1/bd/design_sender/bd/urllc_core_inst_1/ip/urllc_core_inst_1_smartconnect_outer_1/urllc_core_inst_1_smartconnect_outer_1.dcp
+  file copy -force G:/Chiro/Programs/urllc-demo-pynq/urllc-zynq-vivado/urllc-zynq-vivado.runs/urllc_core_inst_1_smartconnect_outer_1_synth_1/urllc_core_inst_1_smartconnect_outer_1.dcp g:/Chiro/Programs/urllc-demo-pynq/urllc-zynq-vivado/urllc-zynq-vivado.gen/sources_1/bd/design_sender/bd/urllc_core_inst_1/ip/urllc_core_inst_1_smartconnect_outer_1_1/urllc_core_inst_1_smartconnect_outer_1.dcp
 } _RESULT ] } { 
   send_msg_id runtcl-3 status "ERROR: Unable to successfully create or copy the sub-design checkpoint file."
   error "ERROR: Unable to successfully create or copy the sub-design checkpoint file."
 }
 
 if { [catch {
-  file rename -force G:/Chiro/Programs/urllc-demo-pynq/urllc-zynq-vivado/urllc-zynq-vivado.runs/urllc_core_inst_1_smartconnect_outer_1_synth_1/urllc_core_inst_1_smartconnect_outer_1_stub.v g:/Chiro/Programs/urllc-demo-pynq/urllc-zynq-vivado/urllc-zynq-vivado.gen/sources_1/bd/design_sender/bd/urllc_core_inst_1/ip/urllc_core_inst_1_smartconnect_outer_1/urllc_core_inst_1_smartconnect_outer_1_stub.v
+  file rename -force G:/Chiro/Programs/urllc-demo-pynq/urllc-zynq-vivado/urllc-zynq-vivado.runs/urllc_core_inst_1_smartconnect_outer_1_synth_1/urllc_core_inst_1_smartconnect_outer_1_stub.v g:/Chiro/Programs/urllc-demo-pynq/urllc-zynq-vivado/urllc-zynq-vivado.gen/sources_1/bd/design_sender/bd/urllc_core_inst_1/ip/urllc_core_inst_1_smartconnect_outer_1_1/urllc_core_inst_1_smartconnect_outer_1_stub.v
 } _RESULT ] } { 
   puts "CRITICAL WARNING: Unable to successfully create a Verilog synthesis stub for the sub-design. This may lead to errors in top level synthesis of the design. Error reported: $_RESULT"
 }
 
 if { [catch {
-  file rename -force G:/Chiro/Programs/urllc-demo-pynq/urllc-zynq-vivado/urllc-zynq-vivado.runs/urllc_core_inst_1_smartconnect_outer_1_synth_1/urllc_core_inst_1_smartconnect_outer_1_stub.vhdl g:/Chiro/Programs/urllc-demo-pynq/urllc-zynq-vivado/urllc-zynq-vivado.gen/sources_1/bd/design_sender/bd/urllc_core_inst_1/ip/urllc_core_inst_1_smartconnect_outer_1/urllc_core_inst_1_smartconnect_outer_1_stub.vhdl
+  file rename -force G:/Chiro/Programs/urllc-demo-pynq/urllc-zynq-vivado/urllc-zynq-vivado.runs/urllc_core_inst_1_smartconnect_outer_1_synth_1/urllc_core_inst_1_smartconnect_outer_1_stub.vhdl g:/Chiro/Programs/urllc-demo-pynq/urllc-zynq-vivado/urllc-zynq-vivado.gen/sources_1/bd/design_sender/bd/urllc_core_inst_1/ip/urllc_core_inst_1_smartconnect_outer_1_1/urllc_core_inst_1_smartconnect_outer_1_stub.vhdl
 } _RESULT ] } { 
   puts "CRITICAL WARNING: Unable to successfully create a VHDL synthesis stub for the sub-design. This may lead to errors in top level synthesis of the design. Error reported: $_RESULT"
 }
 
 if { [catch {
-  file rename -force G:/Chiro/Programs/urllc-demo-pynq/urllc-zynq-vivado/urllc-zynq-vivado.runs/urllc_core_inst_1_smartconnect_outer_1_synth_1/urllc_core_inst_1_smartconnect_outer_1_sim_netlist.v g:/Chiro/Programs/urllc-demo-pynq/urllc-zynq-vivado/urllc-zynq-vivado.gen/sources_1/bd/design_sender/bd/urllc_core_inst_1/ip/urllc_core_inst_1_smartconnect_outer_1/urllc_core_inst_1_smartconnect_outer_1_sim_netlist.v
+  file rename -force G:/Chiro/Programs/urllc-demo-pynq/urllc-zynq-vivado/urllc-zynq-vivado.runs/urllc_core_inst_1_smartconnect_outer_1_synth_1/urllc_core_inst_1_smartconnect_outer_1_sim_netlist.v g:/Chiro/Programs/urllc-demo-pynq/urllc-zynq-vivado/urllc-zynq-vivado.gen/sources_1/bd/design_sender/bd/urllc_core_inst_1/ip/urllc_core_inst_1_smartconnect_outer_1_1/urllc_core_inst_1_smartconnect_outer_1_sim_netlist.v
 } _RESULT ] } { 
   puts "CRITICAL WARNING: Unable to successfully create the Verilog functional simulation sub-design file. Post-Synthesis Functional Simulation with this file may not be possible or may give incorrect results. Error reported: $_RESULT"
 }
 
 if { [catch {
-  file rename -force G:/Chiro/Programs/urllc-demo-pynq/urllc-zynq-vivado/urllc-zynq-vivado.runs/urllc_core_inst_1_smartconnect_outer_1_synth_1/urllc_core_inst_1_smartconnect_outer_1_sim_netlist.vhdl g:/Chiro/Programs/urllc-demo-pynq/urllc-zynq-vivado/urllc-zynq-vivado.gen/sources_1/bd/design_sender/bd/urllc_core_inst_1/ip/urllc_core_inst_1_smartconnect_outer_1/urllc_core_inst_1_smartconnect_outer_1_sim_netlist.vhdl
+  file rename -force G:/Chiro/Programs/urllc-demo-pynq/urllc-zynq-vivado/urllc-zynq-vivado.runs/urllc_core_inst_1_smartconnect_outer_1_synth_1/urllc_core_inst_1_smartconnect_outer_1_sim_netlist.vhdl g:/Chiro/Programs/urllc-demo-pynq/urllc-zynq-vivado/urllc-zynq-vivado.gen/sources_1/bd/design_sender/bd/urllc_core_inst_1/ip/urllc_core_inst_1_smartconnect_outer_1_1/urllc_core_inst_1_smartconnect_outer_1_sim_netlist.vhdl
 } _RESULT ] } { 
   puts "CRITICAL WARNING: Unable to successfully create the VHDL functional simulation sub-design file. Post-Synthesis Functional Simulation with this file may not be possible or may give incorrect results. Error reported: $_RESULT"
 }
@@ -277,13 +277,13 @@ if { [catch {
 
 if {[file isdir G:/Chiro/Programs/urllc-demo-pynq/urllc-zynq-vivado/urllc-zynq-vivado.ip_user_files/ip/urllc_core_inst_1_smartconnect_outer_1]} {
   catch { 
-    file copy -force g:/Chiro/Programs/urllc-demo-pynq/urllc-zynq-vivado/urllc-zynq-vivado.gen/sources_1/bd/design_sender/bd/urllc_core_inst_1/ip/urllc_core_inst_1_smartconnect_outer_1/urllc_core_inst_1_smartconnect_outer_1_stub.v G:/Chiro/Programs/urllc-demo-pynq/urllc-zynq-vivado/urllc-zynq-vivado.ip_user_files/ip/urllc_core_inst_1_smartconnect_outer_1
+    file copy -force g:/Chiro/Programs/urllc-demo-pynq/urllc-zynq-vivado/urllc-zynq-vivado.gen/sources_1/bd/design_sender/bd/urllc_core_inst_1/ip/urllc_core_inst_1_smartconnect_outer_1_1/urllc_core_inst_1_smartconnect_outer_1_stub.v G:/Chiro/Programs/urllc-demo-pynq/urllc-zynq-vivado/urllc-zynq-vivado.ip_user_files/ip/urllc_core_inst_1_smartconnect_outer_1
   }
 }
 
 if {[file isdir G:/Chiro/Programs/urllc-demo-pynq/urllc-zynq-vivado/urllc-zynq-vivado.ip_user_files/ip/urllc_core_inst_1_smartconnect_outer_1]} {
   catch { 
-    file copy -force g:/Chiro/Programs/urllc-demo-pynq/urllc-zynq-vivado/urllc-zynq-vivado.gen/sources_1/bd/design_sender/bd/urllc_core_inst_1/ip/urllc_core_inst_1_smartconnect_outer_1/urllc_core_inst_1_smartconnect_outer_1_stub.vhdl G:/Chiro/Programs/urllc-demo-pynq/urllc-zynq-vivado/urllc-zynq-vivado.ip_user_files/ip/urllc_core_inst_1_smartconnect_outer_1
+    file copy -force g:/Chiro/Programs/urllc-demo-pynq/urllc-zynq-vivado/urllc-zynq-vivado.gen/sources_1/bd/design_sender/bd/urllc_core_inst_1/ip/urllc_core_inst_1_smartconnect_outer_1_1/urllc_core_inst_1_smartconnect_outer_1_stub.vhdl G:/Chiro/Programs/urllc-demo-pynq/urllc-zynq-vivado/urllc-zynq-vivado.ip_user_files/ip/urllc_core_inst_1_smartconnect_outer_1
   }
 }
 file delete __synthesis_is_running__

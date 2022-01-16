@@ -1,7 +1,7 @@
 {
   "design": {
     "design_info": {
-      "boundary_crc": "0x22C8C4F9B12B15DF",
+      "boundary_crc": "0x22C8C4F9766CBC48",
       "device": "xc7z020clg400-2",
       "gen_directory": "../../../../urllc-zynq-vivado.gen/sources_1/bd/design_sender",
       "name": "design_sender",
@@ -398,14 +398,6 @@
                 "value": "8000000",
                 "value_src": "ip_prop"
               },
-              "FREQ_TOLERANCE_HZ": {
-                "value": "0",
-                "value_src": "default"
-              },
-              "INSERT_VIP": {
-                "value": "0",
-                "value_src": "default"
-              },
               "PHASE": {
                 "value": "0.0",
                 "value_src": "ip_prop"
@@ -422,14 +414,6 @@
               "FREQ_HZ": {
                 "value": "120000000",
                 "value_src": "ip_prop"
-              },
-              "FREQ_TOLERANCE_HZ": {
-                "value": "0",
-                "value_src": "default"
-              },
-              "INSERT_VIP": {
-                "value": "0",
-                "value_src": "default"
               },
               "PHASE": {
                 "value": "0.0",
@@ -526,7 +510,7 @@
         "variant_info": {
           "urllc_core.bd": {
             "scoped_diagram": "urllc_core_inst_1.bd",
-            "design_checksum": "0x20CAF9FC",
+            "design_checksum": "0x6DB8F8EA",
             "ref_name": "urllc_core",
             "ref_subinst_path": "design_sender_urllc_core_0",
             "ref_type": "Block Design",
@@ -640,13 +624,13 @@
             "segments": {
               "SEG_axi_dma_0_Reg": {
                 "address_block": "/urllc_core_0/data_area/sender/axi_dma_0/S_AXI_LITE/Reg",
-                "offset": "0x40010000",
+                "offset": "0x40410000",
                 "range": "64K",
                 "is_excluded": "TRUE"
               },
               "SEG_axi_dma_1_Reg": {
                 "address_block": "/urllc_core_0/data_area/reciever/axi_dma_1/S_AXI_LITE/Reg",
-                "offset": "0x40000000",
+                "offset": "0x40400000",
                 "range": "64K",
                 "is_excluded": "TRUE"
               },
@@ -661,13 +645,13 @@
             "segments": {
               "SEG_axi_dma_0_Reg": {
                 "address_block": "/urllc_core_0/data_area/sender/axi_dma_0/S_AXI_LITE/Reg",
-                "offset": "0x40010000",
+                "offset": "0x40410000",
                 "range": "64K",
                 "is_excluded": "TRUE"
               },
               "SEG_axi_dma_1_Reg": {
                 "address_block": "/urllc_core_0/data_area/reciever/axi_dma_1/S_AXI_LITE/Reg",
-                "offset": "0x40000000",
+                "offset": "0x40400000",
                 "range": "64K",
                 "is_excluded": "TRUE"
               },
@@ -686,13 +670,13 @@
             "segments": {
               "SEG_axi_dma_0_Reg": {
                 "address_block": "/urllc_core_0/data_area/sender/axi_dma_0/S_AXI_LITE/Reg",
-                "offset": "0x40010000",
+                "offset": "0x40410000",
                 "range": "64K",
                 "is_excluded": "TRUE"
               },
               "SEG_axi_dma_1_Reg": {
                 "address_block": "/urllc_core_0/data_area/reciever/axi_dma_1/S_AXI_LITE/Reg",
-                "offset": "0x40000000",
+                "offset": "0x40400000",
                 "range": "64K",
                 "is_excluded": "TRUE"
               },
@@ -707,13 +691,13 @@
             "segments": {
               "SEG_axi_dma_0_Reg": {
                 "address_block": "/urllc_core_0/data_area/sender/axi_dma_0/S_AXI_LITE/Reg",
-                "offset": "0x40010000",
+                "offset": "0x40410000",
                 "range": "64K",
                 "is_excluded": "TRUE"
               },
               "SEG_axi_dma_1_Reg": {
                 "address_block": "/urllc_core_0/data_area/reciever/axi_dma_1/S_AXI_LITE/Reg",
-                "offset": "0x40000000",
+                "offset": "0x40400000",
                 "range": "64K",
                 "is_excluded": "TRUE"
               },
@@ -732,12 +716,12 @@
             "segments": {
               "SEG_axi_dma_0_Reg": {
                 "address_block": "/urllc_core_0/data_area/sender/axi_dma_0/S_AXI_LITE/Reg",
-                "offset": "0x40010000",
+                "offset": "0x40410000",
                 "range": "64K"
               },
               "SEG_axi_dma_1_Reg": {
                 "address_block": "/urllc_core_0/data_area/reciever/axi_dma_1/S_AXI_LITE/Reg",
-                "offset": "0x40000000",
+                "offset": "0x40400000",
                 "range": "64K"
               },
               "SEG_axi_gpio_0_Reg": {

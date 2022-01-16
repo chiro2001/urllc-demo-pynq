@@ -1,14 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <GenRun Id="synth_1" LaunchPart="xc7z020clg400-2" LaunchTime="1642183642">
   <File Type="PA-TCL" Name="design_reciever_wrapper.tcl"/>
-  <File Type="RDS-PROPCONSTRS" Name="design_reciever_wrapper_drc_synth.rpt"/>
   <File Type="REPORTS-TCL" Name="design_reciever_wrapper_reports.tcl"/>
   <File Type="RDS-RDS" Name="design_reciever_wrapper.vds"/>
-  <File Type="RDS-UTIL" Name="design_reciever_wrapper_utilization_synth.rpt"/>
-  <File Type="RDS-UTIL-PB" Name="design_reciever_wrapper_utilization_synth.pb"/>
   <File Type="RDS-DCP" Name="design_reciever_wrapper.dcp"/>
-  <File Type="VDS-TIMINGSUMMARY" Name="design_reciever_wrapper_timing_summary_synth.rpt"/>
-  <File Type="VDS-TIMING-PB" Name="design_reciever_wrapper_timing_summary_synth.pb"/>
   <FileSet Name="sources" Type="DesignSrcs" RelSrcDir="$PSRCDIR/sources_1" RelGenDir="$PGENDIR/sources_1">
     <Filter Type="Srcs"/>
     <File Path="$PSRCDIR/sources_1/bd/design_reciever/design_reciever.bd">
@@ -169,24 +164,24 @@
     <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2021"/>
     <Step Id="synth_design"/>
   </Strategy>
-  <BlockFileSet Type="BlockSrcs" Name="urllc_core_smartconnect_outer_1"/>
-  <BlockFileSet Type="BlockSrcs" Name="urllc_core_mux_disable_sel2_0"/>
   <BlockFileSet Type="BlockSrcs" Name="urllc_core_ad2dma_rtl_0_1"/>
   <BlockFileSet Type="BlockSrcs" Name="urllc_core_inst_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="urllc_core_smartconnect_outer_1"/>
+  <BlockFileSet Type="BlockSrcs" Name="urllc_core_mux_disable_sel2_0"/>
   <BlockFileSet Type="BlockSrcs" Name="urllc_core_ad_buf_0_0"/>
-  <BlockFileSet Type="BlockSrcs" Name="urllc_core_mux_0_0"/>
   <BlockFileSet Type="BlockSrcs" Name="urllc_core_div_n_0_0"/>
-  <BlockFileSet Type="BlockSrcs" Name="urllc_core_ad2dma_rtl_0_0"/>
-  <BlockFileSet Type="BlockSrcs" Name="urllc_core_axi_gpio_0_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="urllc_core_mux_0_0"/>
   <BlockFileSet Type="BlockSrcs" Name="urllc_core_mux_rtl_0"/>
-  <BlockFileSet Type="BlockSrcs" Name="urllc_core_ila_0_0"/>
-  <BlockFileSet Type="BlockSrcs" Name="urllc_core_rst_ps7_0_200M_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="urllc_core_axi_gpio_0_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="urllc_core_ad2dma_rtl_0_0"/>
   <BlockFileSet Type="BlockSrcs" Name="urllc_core_DDCWrapper_0_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="urllc_core_rst_ps7_0_200M_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="urllc_core_ila_0_0"/>
   <BlockFileSet Type="BlockSrcs" Name="urllc_core_axi_dma_1_0"/>
-  <BlockFileSet Type="BlockSrcs" Name="urllc_core_mux_1_0"/>
   <BlockFileSet Type="BlockSrcs" Name="urllc_core_mux_0_1"/>
-  <BlockFileSet Type="BlockSrcs" Name="urllc_core_proc_clock_reset_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="urllc_core_mux_1_0"/>
   <BlockFileSet Type="BlockSrcs" Name="urllc_core_mux_2_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="urllc_core_proc_clock_reset_0"/>
   <BlockFileSet Type="BlockSrcs" Name="urllc_core_mux_3_0"/>
   <BlockFileSet Type="BlockSrcs" Name="urllc_core_DUCWrapper_0_0"/>
   <BlockFileSet Type="BlockSrcs" Name="urllc_core_axi_dma_0_0"/>
@@ -195,8 +190,8 @@
   <BlockFileSet Type="BlockSrcs" Name="urllc_core_clk_wiz_100M_0"/>
   <BlockFileSet Type="BlockSrcs" Name="urllc_core_clk_wiz_dynamic_0"/>
   <BlockFileSet Type="BlockSrcs" Name="urllc_core_clk_wiz_static_0"/>
-  <BlockFileSet Type="BlockSrcs" Name="urllc_core_inst_0_FrameTriggerWrapper_0_0"/>
   <BlockFileSet Type="BlockSrcs" Name="urllc_core_proc_data_reset_8M_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="urllc_core_inst_0_FrameTriggerWrapper_0_0"/>
   <BlockFileSet Type="BlockSrcs" Name="urllc_core_smartconnect_outer_0"/>
   <BlockFileSet Type="BlockSrcs" Name="urllc_core_processing_system7_0_0"/>
   <BlockFileSet Type="BlockSrcs" Name="urllc_core_inst_0_smartconnect_outer_1"/>

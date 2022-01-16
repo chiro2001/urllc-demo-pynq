@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
-<EDKSYSTEM EDWVERSION="1.2" TIMESTAMP="Sat Jan 15 02:40:17 2022" VIVADOVERSION="2021.1">
+<EDKSYSTEM EDWVERSION="1.2" TIMESTAMP="Sun Jan 16 22:22:19 2022" VIVADOVERSION="2021.1">
 
   <SYSTEMINFO ARCH="zynq" DEVICE="7z020" NAME="design_sender" PACKAGE="clg400" SPEEDGRADE="-2"/>
 
@@ -49,12 +49,12 @@
         <CONNECTION INSTANCE="urllc_core_0" PORT="DDR_cke"/>
       </CONNECTIONS>
     </PORT>
-    <PORT CLKFREQUENCY="100000000" DIR="IO" NAME="DDR_ck_n" SIGIS="clk" SIGNAME="urllc_core_0_DDR_ck_n">
+    <PORT DIR="IO" NAME="DDR_ck_n" SIGIS="undef" SIGNAME="urllc_core_0_DDR_ck_n">
       <CONNECTIONS>
         <CONNECTION INSTANCE="urllc_core_0" PORT="DDR_ck_n"/>
       </CONNECTIONS>
     </PORT>
-    <PORT CLKFREQUENCY="100000000" DIR="IO" NAME="DDR_ck_p" SIGIS="clk" SIGNAME="urllc_core_0_DDR_ck_p">
+    <PORT DIR="IO" NAME="DDR_ck_p" SIGIS="undef" SIGNAME="urllc_core_0_DDR_ck_p">
       <CONNECTIONS>
         <CONNECTION INSTANCE="urllc_core_0" PORT="DDR_ck_p"/>
       </CONNECTIONS>
@@ -64,7 +64,7 @@
         <CONNECTION INSTANCE="urllc_core_0" PORT="DDR_cs_n"/>
       </CONNECTIONS>
     </PORT>
-    <PORT DIR="IO" NAME="DDR_reset_n" POLARITY="ACTIVE_LOW" SIGIS="rst" SIGNAME="urllc_core_0_DDR_reset_n">
+    <PORT DIR="IO" NAME="DDR_reset_n" SIGIS="undef" SIGNAME="urllc_core_0_DDR_reset_n">
       <CONNECTIONS>
         <CONNECTION INSTANCE="urllc_core_0" PORT="DDR_reset_n"/>
       </CONNECTIONS>
@@ -205,63 +205,6 @@
         <PARAMETER NAME="ENABLE_DFX" VALUE="0"/>
       </PARAMETERS>
       <PORTS>
-        <PORT DIR="I" LEFT="7" NAME="ad_sel1" RIGHT="0" SIGIS="data" SIGNAME="External_Ports_sender_ad">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="External_Ports" PORT="sender_ad"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="I" NAME="ad_sel1_ready" SENSITIVITY="EDGE_RISING" SIGIS="INTERRUPT" SIGNAME="xlconstant_0_dout">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="xlconstant_0" PORT="dout"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="I" LEFT="7" NAME="ad_sel2" RIGHT="0" SIGIS="data" SIGNAME="xlconstant_1_dout">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="xlconstant_1" PORT="dout"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="I" NAME="ad_sel2_ready" SENSITIVITY="EDGE_RISING" SIGIS="INTERRUPT" SIGNAME="xlconstant_0_dout">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="xlconstant_0" PORT="dout"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT CLKFREQUENCY="60000000" DIR="O" NAME="clk_200M_out" SIGIS="clk"/>
-        <PORT DIR="O" NAME="clk_8M_out" SIGIS="undef" SIGNAME="urllc_core_0_clk_8M_out">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="External_Ports" PORT="sender_ad_clk_8M"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="O" NAME="clk_da_120M" SIGIS="undef" SIGNAME="urllc_core_0_clk_da_120M">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="External_Ports" PORT="sender_da_clk_120M"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT CLKFREQUENCY="50000000" DIR="I" NAME="clk_pl_50M" SIGIS="clk" SIGNAME="External_Ports_clk_pl_50M">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="External_Ports" PORT="clk_pl_50M"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="O" LEFT="7" NAME="da" RIGHT="0" SIGIS="undef" SIGNAME="urllc_core_0_da">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="External_Ports" PORT="sender_da"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="O" NAME="reciever_frame_start" SENSITIVITY="LEVEL_HIGH" SIGIS="INTERRUPT"/>
-        <PORT DIR="I" NAME="reciever_serial_in" SIGIS="data" SIGNAME="xlconstant_0_dout">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="xlconstant_0" PORT="dout"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="O" LEFT="0" NAME="sender_frame_avaliable" RIGHT="0" SENSITIVITY="LEVEL_HIGH" SIGIS="INTERRUPT" SIGNAME="urllc_core_0_sender_frame_avaliable">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="External_Ports" PORT="sender_frame_avaliable"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="O" LEFT="0" NAME="sender_serial_out" RIGHT="0" SIGIS="data" SIGNAME="urllc_core_0_sender_serial_out">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="External_Ports" PORT="sender_serial_out"/>
-          </CONNECTIONS>
-        </PORT>
         <PORT DIR="IO" NAME="DDR_cas_n" SIGIS="undef" SIGNAME="urllc_core_0_DDR_cas_n">
           <CONNECTIONS>
             <CONNECTION INSTANCE="design_sender_imp" PORT="DDR_cas_n"/>
@@ -272,12 +215,12 @@
             <CONNECTION INSTANCE="design_sender_imp" PORT="DDR_cke"/>
           </CONNECTIONS>
         </PORT>
-        <PORT CLKFREQUENCY="100000000" DIR="IO" NAME="DDR_ck_n" SIGIS="clk" SIGNAME="urllc_core_0_DDR_ck_n">
+        <PORT DIR="IO" NAME="DDR_ck_n" SIGIS="undef" SIGNAME="urllc_core_0_DDR_ck_n">
           <CONNECTIONS>
             <CONNECTION INSTANCE="design_sender_imp" PORT="DDR_ck_n"/>
           </CONNECTIONS>
         </PORT>
-        <PORT CLKFREQUENCY="100000000" DIR="IO" NAME="DDR_ck_p" SIGIS="clk" SIGNAME="urllc_core_0_DDR_ck_p">
+        <PORT DIR="IO" NAME="DDR_ck_p" SIGIS="undef" SIGNAME="urllc_core_0_DDR_ck_p">
           <CONNECTIONS>
             <CONNECTION INSTANCE="design_sender_imp" PORT="DDR_ck_p"/>
           </CONNECTIONS>
@@ -287,7 +230,7 @@
             <CONNECTION INSTANCE="design_sender_imp" PORT="DDR_cs_n"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="IO" NAME="DDR_reset_n" POLARITY="ACTIVE_LOW" SIGIS="rst" SIGNAME="urllc_core_0_DDR_reset_n">
+        <PORT DIR="IO" NAME="DDR_reset_n" SIGIS="undef" SIGNAME="urllc_core_0_DDR_reset_n">
           <CONNECTIONS>
             <CONNECTION INSTANCE="design_sender_imp" PORT="DDR_reset_n"/>
           </CONNECTIONS>
@@ -365,6 +308,63 @@
         <PORT DIR="IO" NAME="FIXED_IO_ps_porb" SIGIS="undef" SIGNAME="urllc_core_0_FIXED_IO_ps_porb">
           <CONNECTIONS>
             <CONNECTION INSTANCE="design_sender_imp" PORT="FIXED_IO_ps_porb"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="7" NAME="ad_sel1" RIGHT="0" SIGIS="data" SIGNAME="External_Ports_sender_ad">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External_Ports" PORT="sender_ad"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="ad_sel1_ready" SENSITIVITY="EDGE_RISING" SIGIS="INTERRUPT" SIGNAME="xlconstant_0_dout">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="xlconstant_0" PORT="dout"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="7" NAME="ad_sel2" RIGHT="0" SIGIS="data" SIGNAME="xlconstant_1_dout">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="xlconstant_1" PORT="dout"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="ad_sel2_ready" SENSITIVITY="EDGE_RISING" SIGIS="INTERRUPT" SIGNAME="xlconstant_0_dout">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="xlconstant_0" PORT="dout"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT CLKFREQUENCY="60000000" DIR="O" NAME="clk_200M_out" SIGIS="clk"/>
+        <PORT DIR="O" NAME="clk_8M_out" SIGIS="undef" SIGNAME="urllc_core_0_clk_8M_out">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External_Ports" PORT="sender_ad_clk_8M"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" NAME="clk_da_120M" SIGIS="undef" SIGNAME="urllc_core_0_clk_da_120M">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External_Ports" PORT="sender_da_clk_120M"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT CLKFREQUENCY="50000000" DIR="I" NAME="clk_pl_50M" SIGIS="clk" SIGNAME="External_Ports_clk_pl_50M">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External_Ports" PORT="clk_pl_50M"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" LEFT="7" NAME="da" RIGHT="0" SIGIS="undef" SIGNAME="urllc_core_0_da">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External_Ports" PORT="sender_da"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" NAME="reciever_frame_start" SENSITIVITY="LEVEL_HIGH" SIGIS="INTERRUPT"/>
+        <PORT DIR="I" NAME="reciever_serial_in" SIGIS="data" SIGNAME="xlconstant_0_dout">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="xlconstant_0" PORT="dout"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" LEFT="0" NAME="sender_frame_avaliable" RIGHT="0" SENSITIVITY="LEVEL_HIGH" SIGIS="INTERRUPT" SIGNAME="urllc_core_0_sender_frame_avaliable">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External_Ports" PORT="sender_frame_avaliable"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" LEFT="0" NAME="sender_serial_out" RIGHT="0" SIGIS="data" SIGNAME="urllc_core_0_sender_serial_out">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External_Ports" PORT="sender_serial_out"/>
           </CONNECTIONS>
         </PORT>
       </PORTS>

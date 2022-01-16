@@ -1,7 +1,7 @@
 // Copyright 1986-2021 Xilinx, Inc. All Rights Reserved.
 // --------------------------------------------------------------------------------
 // Tool Version: Vivado v.2021.1 (win64) Build 3247384 Thu Jun 10 19:36:33 MDT 2021
-// Date        : Fri Jan 14 23:47:32 2022
+// Date        : Sun Jan 16 22:46:47 2022
 // Host        : WIN-544SHHHOI8Q running 64-bit major release  (build 9200)
 // Command     : write_verilog -force -mode synth_stub
 //               g:/Chiro/Programs/urllc-demo-pynq/urllc-zynq-vivado/urllc-zynq-vivado.gen/sources_1/bd/design_reciever/bd/urllc_core_inst_0/ip/urllc_core_inst_0_smartconnect_outer_1/urllc_core_inst_0_smartconnect_outer_1_stub.v

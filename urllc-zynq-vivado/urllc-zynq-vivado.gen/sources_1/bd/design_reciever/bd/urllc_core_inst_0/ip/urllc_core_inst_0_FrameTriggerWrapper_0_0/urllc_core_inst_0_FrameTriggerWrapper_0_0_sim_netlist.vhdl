@@ -3,8 +3,8 @@
 -- Tool Version: Vivado v.2021.1 (win64) Build 3247384 Thu Jun 10 19:36:33 MDT 2021
 -- Date        : Fri Jan 14 23:42:59 2022
 -- Host        : WIN-544SHHHOI8Q running 64-bit major release  (build 9200)
--- Command     : write_vhdl -force -mode funcsim
---               g:/Chiro/Programs/urllc-demo-pynq/urllc-zynq-vivado/urllc-zynq-vivado.gen/sources_1/bd/design_reciever/bd/urllc_core_inst_0/ip/urllc_core_inst_0_FrameTriggerWrapper_0_0/urllc_core_inst_0_FrameTriggerWrapper_0_0_sim_netlist.vhdl
+-- Command     : write_vhdl -force -mode funcsim -rename_top urllc_core_inst_0_FrameTriggerWrapper_0_0 -prefix
+--               urllc_core_inst_0_FrameTriggerWrapper_0_0_ urllc_core_inst_0_FrameTriggerWrapper_0_0_sim_netlist.vhdl
 -- Design      : urllc_core_inst_0_FrameTriggerWrapper_0_0
 -- Purpose     : This VHDL netlist is a functional simulation representation of the design and should not be modified or
 --               synthesized. This netlist cannot be used for SDF annotated simulation.
@@ -22,8 +22,6 @@ entity urllc_core_inst_0_FrameTriggerWrapper_0_0_FrameTrigger is
     io_in_clear : in STD_LOGIC;
     io_resetN : in STD_LOGIC
   );
-  attribute ORIG_REF_NAME : string;
-  attribute ORIG_REF_NAME of urllc_core_inst_0_FrameTriggerWrapper_0_0_FrameTrigger : entity is "FrameTrigger";
 end urllc_core_inst_0_FrameTriggerWrapper_0_0_FrameTrigger;
 
 architecture STRUCTURE of urllc_core_inst_0_FrameTriggerWrapper_0_0_FrameTrigger is
@@ -1014,8 +1012,6 @@ entity urllc_core_inst_0_FrameTriggerWrapper_0_0_FrameTriggerWrapper is
     io_in_clear : in STD_LOGIC;
     io_resetN : in STD_LOGIC
   );
-  attribute ORIG_REF_NAME : string;
-  attribute ORIG_REF_NAME of urllc_core_inst_0_FrameTriggerWrapper_0_0_FrameTriggerWrapper : entity is "FrameTriggerWrapper";
 end urllc_core_inst_0_FrameTriggerWrapper_0_0_FrameTriggerWrapper;
 
 architecture STRUCTURE of urllc_core_inst_0_FrameTriggerWrapper_0_0_FrameTriggerWrapper is

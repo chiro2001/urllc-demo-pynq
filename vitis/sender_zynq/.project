@@ -3,7 +3,7 @@
 	<name>sender_zynq</name>
 	<comment>Created by Vitis v2021.1</comment>
 	<projects>
-		<project>zynq_sender</project>
+		<project>sender_fifo_all</project>
 	</projects>
 	<buildSpec>
 		<buildCommand>

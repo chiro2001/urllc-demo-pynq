@@ -14,15 +14,22 @@
 #define DEVICE_ID_GPIO_IN XPAR_URLLC_CORE_0_DEBUG_PORTS_AXI_GPIO_1_DEVICE_ID
 #define DEVICE_ID_GPIO_OUT XPAR_URLLC_CORE_0_DEBUG_PORTS_AXI_GPIO_0_DEVICE_ID
 
-#define DMA_SIZE 64 * 2 * 10
-#define DMA_TIMEOUT 0xFFFFF
+// #define DMA_SIZE 200
+#define DMA_HEADER_SIZE 18
+#define DMA_SIZE (1024 * 2)
+// #define DMA_SIZE 65
+// #define DMA_SIZE 16 * 4
+// #define DMA_SIZE 0x20 * 1
+// #define DMA_TIMEOUT 0xFFFFF
+// #define DMA_TIMEOUT 0x0
 #define DMA_LOOP
 // #define DMA_INTR
 #define GPIO_CHANNEL1 2
 #define DEBUG_CHANNEL 1
 
+// #define SENDER_DELAY 0xFFFFF
 #define SENDER_DELAY 0xFFFF
-#define RECIEVER_DELAY 0xFFF
+// #define RECIEVER_DELAY 0xFFF
 
 // Xilinx ∫¶»À≤ª«≥∞°
 #define DEVICE_GPIO_IN_IRQN 65U

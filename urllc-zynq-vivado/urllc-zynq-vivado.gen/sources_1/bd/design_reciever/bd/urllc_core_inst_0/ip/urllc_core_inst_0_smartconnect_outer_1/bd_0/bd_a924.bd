@@ -1,7 +1,7 @@
 {
   "design": {
     "design_info": {
-      "boundary_crc": "0x77F62EAAABD86E66",
+      "boundary_crc": "0x77F62EAA15F70BF4",
       "design_src": "SBD",
       "device": "xc7z020clg400-2",
       "name": "bd_a924",
@@ -229,8 +229,8 @@
             "value_src": "const_prop"
           },
           "SUPPORTS_NARROW_BURST": {
-            "value": "1",
-            "value_src": "default_prop"
+            "value": "0",
+            "value_src": "user_prop"
           },
           "WUSER_BITS_PER_BYTE": {
             "value": "0",
@@ -327,7 +327,7 @@
           },
           "MAX_BURST_LENGTH": {
             "value": "256",
-            "value_src": "default_prop"
+            "value_src": "user_prop"
           },
           "NUM_READ_OUTSTANDING": {
             "value": "16"
@@ -462,7 +462,7 @@
           },
           "MAX_BURST_LENGTH": {
             "value": "256",
-            "value_src": "default_prop"
+            "value_src": "user_prop"
           },
           "NUM_READ_OUTSTANDING": {
             "value": "2"
@@ -597,7 +597,7 @@
           },
           "MAX_BURST_LENGTH": {
             "value": "256",
-            "value_src": "default_prop"
+            "value_src": "user_prop"
           },
           "NUM_READ_OUTSTANDING": {
             "value": "16"
@@ -732,7 +732,7 @@
           },
           "MAX_BURST_LENGTH": {
             "value": "256",
-            "value_src": "default_prop"
+            "value_src": "user_prop"
           },
           "NUM_READ_OUTSTANDING": {
             "value": "2"
@@ -2535,7 +2535,7 @@
                 "value": "1"
               },
               "SUPPORTS_NARROW": {
-                "value": "1"
+                "value": "0"
               },
               "S_ARUSER_WIDTH": {
                 "value": "0"
@@ -2725,7 +2725,7 @@
                 "value": "32"
               },
               "SUPPORTS_NARROW": {
-                "value": "1"
+                "value": "0"
               },
               "S_RUSER_BITS_PER_BYTE": {
                 "value": "0"

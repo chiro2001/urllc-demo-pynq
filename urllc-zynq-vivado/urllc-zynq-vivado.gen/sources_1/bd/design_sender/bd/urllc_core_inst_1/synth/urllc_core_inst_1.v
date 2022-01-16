@@ -1,7 +1,7 @@
 //Copyright 1986-2021 Xilinx, Inc. All Rights Reserved.
 //--------------------------------------------------------------------------------
 //Tool Version: Vivado v.2021.1 (win64) Build 3247384 Thu Jun 10 19:36:33 MDT 2021
-//Date        : Sat Jan 15 02:39:27 2022
+//Date        : Sun Jan 16 22:21:27 2022
 //Host        : WIN-544SHHHOI8Q running 64-bit major release  (build 9200)
 //Command     : generate_target urllc_core_inst_1.bd
 //Design      : urllc_core_inst_1
@@ -1813,6 +1813,16 @@ module reciever_imp_64MS86
   wire axi_dma_1_M_AXIS_MM2S_TVALID;
   wire axi_dma_1_mm2s_introut;
   wire axi_dma_1_s2mm_introut;
+  wire [31:0]axis_data_fifo_0_M_AXIS_TDATA;
+  wire [3:0]axis_data_fifo_0_M_AXIS_TKEEP;
+  wire axis_data_fifo_0_M_AXIS_TLAST;
+  wire axis_data_fifo_0_M_AXIS_TREADY;
+  wire axis_data_fifo_0_M_AXIS_TVALID;
+  wire [31:0]axis_data_fifo_1_M_AXIS_TDATA;
+  wire [3:0]axis_data_fifo_1_M_AXIS_TKEEP;
+  wire axis_data_fifo_1_M_AXIS_TLAST;
+  wire axis_data_fifo_1_M_AXIS_TREADY;
+  wire axis_data_fifo_1_M_AXIS_TVALID;
   wire clk_200M_1;
   wire clk_4M_1;
   wire data_in_serial_1;
@@ -1912,11 +1922,11 @@ module reciever_imp_64MS86
        (.ad(xlconcat_1_dout),
         .clk(clk_4M_1),
         .da(ad2dma_rtl_0_da),
-        .in_axis_tdata(axi_dma_1_M_AXIS_MM2S_TDATA),
-        .in_axis_tkeep(axi_dma_1_M_AXIS_MM2S_TKEEP),
-        .in_axis_tlast(axi_dma_1_M_AXIS_MM2S_TLAST),
-        .in_axis_tready(axi_dma_1_M_AXIS_MM2S_TREADY),
-        .in_axis_tvalid(axi_dma_1_M_AXIS_MM2S_TVALID),
+        .in_axis_tdata(axis_data_fifo_1_M_AXIS_TDATA),
+        .in_axis_tkeep(axis_data_fifo_1_M_AXIS_TKEEP),
+        .in_axis_tlast(axis_data_fifo_1_M_AXIS_TLAST),
+        .in_axis_tready(axis_data_fifo_1_M_AXIS_TREADY),
+        .in_axis_tvalid(axis_data_fifo_1_M_AXIS_TVALID),
         .out_axis_tdata(ad2dma_rtl_0_out_axis_TDATA),
         .out_axis_tkeep(ad2dma_rtl_0_out_axis_TKEEP),
         .out_axis_tlast(ad2dma_rtl_0_out_axis_TLAST),
@@ -1980,11 +1990,37 @@ module reciever_imp_64MS86
         .s_axi_lite_wdata(S00_AXI_1_WDATA),
         .s_axi_lite_wready(S00_AXI_1_WREADY),
         .s_axi_lite_wvalid(S00_AXI_1_WVALID),
-        .s_axis_s2mm_tdata(ad2dma_rtl_0_out_axis_TDATA),
-        .s_axis_s2mm_tkeep(ad2dma_rtl_0_out_axis_TKEEP),
-        .s_axis_s2mm_tlast(ad2dma_rtl_0_out_axis_TLAST),
-        .s_axis_s2mm_tready(ad2dma_rtl_0_out_axis_TREADY),
-        .s_axis_s2mm_tvalid(ad2dma_rtl_0_out_axis_TVALID));
+        .s_axis_s2mm_tdata(axis_data_fifo_0_M_AXIS_TDATA),
+        .s_axis_s2mm_tkeep(axis_data_fifo_0_M_AXIS_TKEEP),
+        .s_axis_s2mm_tlast(axis_data_fifo_0_M_AXIS_TLAST),
+        .s_axis_s2mm_tready(axis_data_fifo_0_M_AXIS_TREADY),
+        .s_axis_s2mm_tvalid(axis_data_fifo_0_M_AXIS_TVALID));
+  urllc_core_inst_1_axis_data_fifo_0_0 axis_data_fifo_0
+       (.m_axis_tdata(axis_data_fifo_0_M_AXIS_TDATA),
+        .m_axis_tkeep(axis_data_fifo_0_M_AXIS_TKEEP),
+        .m_axis_tlast(axis_data_fifo_0_M_AXIS_TLAST),
+        .m_axis_tready(axis_data_fifo_0_M_AXIS_TREADY),
+        .m_axis_tvalid(axis_data_fifo_0_M_AXIS_TVALID),
+        .s_axis_aclk(clk_4M_1),
+        .s_axis_aresetn(M00_ARESETN_1),
+        .s_axis_tdata(ad2dma_rtl_0_out_axis_TDATA),
+        .s_axis_tkeep(ad2dma_rtl_0_out_axis_TKEEP),
+        .s_axis_tlast(ad2dma_rtl_0_out_axis_TLAST),
+        .s_axis_tready(ad2dma_rtl_0_out_axis_TREADY),
+        .s_axis_tvalid(ad2dma_rtl_0_out_axis_TVALID));
+  urllc_core_inst_1_axis_data_fifo_1_0 axis_data_fifo_1
+       (.m_axis_tdata(axis_data_fifo_1_M_AXIS_TDATA),
+        .m_axis_tkeep(axis_data_fifo_1_M_AXIS_TKEEP),
+        .m_axis_tlast(axis_data_fifo_1_M_AXIS_TLAST),
+        .m_axis_tready(axis_data_fifo_1_M_AXIS_TREADY),
+        .m_axis_tvalid(axis_data_fifo_1_M_AXIS_TVALID),
+        .s_axis_aclk(clk_4M_1),
+        .s_axis_aresetn(M00_ARESETN_1),
+        .s_axis_tdata(axi_dma_1_M_AXIS_MM2S_TDATA),
+        .s_axis_tkeep(axi_dma_1_M_AXIS_MM2S_TKEEP),
+        .s_axis_tlast(axi_dma_1_M_AXIS_MM2S_TLAST),
+        .s_axis_tready(axi_dma_1_M_AXIS_MM2S_TREADY),
+        .s_axis_tvalid(axi_dma_1_M_AXIS_MM2S_TVALID));
   urllc_core_inst_1_mux_0_1 mux_0
        (.data_out(mux_0_data_out),
         .router(debug_use_sender_iq_1),
@@ -2202,6 +2238,16 @@ module sender_imp_650BC
   wire axi_dma_0_M_AXIS_MM2S_TVALID;
   wire axi_dma_0_mm2s_introut;
   wire axi_dma_0_s2mm_introut;
+  wire [31:0]axis_data_fifo_0_M_AXIS_TDATA;
+  wire [3:0]axis_data_fifo_0_M_AXIS_TKEEP;
+  wire axis_data_fifo_0_M_AXIS_TLAST;
+  wire axis_data_fifo_0_M_AXIS_TREADY;
+  wire axis_data_fifo_0_M_AXIS_TVALID;
+  wire [31:0]axis_data_fifo_1_M_AXIS_TDATA;
+  wire [3:0]axis_data_fifo_1_M_AXIS_TKEEP;
+  wire axis_data_fifo_1_M_AXIS_TLAST;
+  wire axis_data_fifo_1_M_AXIS_TREADY;
+  wire axis_data_fifo_1_M_AXIS_TVALID;
   wire ext_reset_in_1;
   wire io_in_clockDac_1;
   wire [0:0]rst_ps7_0_120M_peripheral_aresetn;
@@ -2275,11 +2321,11 @@ module sender_imp_650BC
        (.ad(xlconcat_0_dout),
         .clk(M00_ACLK_1),
         .da(ad2dma_rtl_0_da),
-        .in_axis_tdata(axi_dma_0_M_AXIS_MM2S_TDATA),
-        .in_axis_tkeep(axi_dma_0_M_AXIS_MM2S_TKEEP),
-        .in_axis_tlast(axi_dma_0_M_AXIS_MM2S_TLAST),
-        .in_axis_tready(axi_dma_0_M_AXIS_MM2S_TREADY),
-        .in_axis_tvalid(axi_dma_0_M_AXIS_MM2S_TVALID),
+        .in_axis_tdata(axis_data_fifo_1_M_AXIS_TDATA),
+        .in_axis_tkeep(axis_data_fifo_1_M_AXIS_TKEEP),
+        .in_axis_tlast(axis_data_fifo_1_M_AXIS_TLAST),
+        .in_axis_tready(axis_data_fifo_1_M_AXIS_TREADY),
+        .in_axis_tvalid(axis_data_fifo_1_M_AXIS_TVALID),
         .out_axis_tdata(ad2dma_rtl_0_out_axis_TDATA),
         .out_axis_tkeep(ad2dma_rtl_0_out_axis_TKEEP),
         .out_axis_tlast(ad2dma_rtl_0_out_axis_TLAST),
@@ -2343,11 +2389,37 @@ module sender_imp_650BC
         .s_axi_lite_wdata(S00_AXI_1_WDATA),
         .s_axi_lite_wready(S00_AXI_1_WREADY),
         .s_axi_lite_wvalid(S00_AXI_1_WVALID),
-        .s_axis_s2mm_tdata(ad2dma_rtl_0_out_axis_TDATA),
-        .s_axis_s2mm_tkeep(ad2dma_rtl_0_out_axis_TKEEP),
-        .s_axis_s2mm_tlast(ad2dma_rtl_0_out_axis_TLAST),
-        .s_axis_s2mm_tready(ad2dma_rtl_0_out_axis_TREADY),
-        .s_axis_s2mm_tvalid(ad2dma_rtl_0_out_axis_TVALID));
+        .s_axis_s2mm_tdata(axis_data_fifo_0_M_AXIS_TDATA),
+        .s_axis_s2mm_tkeep(axis_data_fifo_0_M_AXIS_TKEEP),
+        .s_axis_s2mm_tlast(axis_data_fifo_0_M_AXIS_TLAST),
+        .s_axis_s2mm_tready(axis_data_fifo_0_M_AXIS_TREADY),
+        .s_axis_s2mm_tvalid(axis_data_fifo_0_M_AXIS_TVALID));
+  urllc_core_inst_1_axis_data_fifo_0_1 axis_data_fifo_0
+       (.m_axis_tdata(axis_data_fifo_0_M_AXIS_TDATA),
+        .m_axis_tkeep(axis_data_fifo_0_M_AXIS_TKEEP),
+        .m_axis_tlast(axis_data_fifo_0_M_AXIS_TLAST),
+        .m_axis_tready(axis_data_fifo_0_M_AXIS_TREADY),
+        .m_axis_tvalid(axis_data_fifo_0_M_AXIS_TVALID),
+        .s_axis_aclk(M00_ACLK_1),
+        .s_axis_aresetn(ARESETN_1),
+        .s_axis_tdata(ad2dma_rtl_0_out_axis_TDATA),
+        .s_axis_tkeep(ad2dma_rtl_0_out_axis_TKEEP),
+        .s_axis_tlast(ad2dma_rtl_0_out_axis_TLAST),
+        .s_axis_tready(ad2dma_rtl_0_out_axis_TREADY),
+        .s_axis_tvalid(ad2dma_rtl_0_out_axis_TVALID));
+  urllc_core_inst_1_axis_data_fifo_1_1 axis_data_fifo_1
+       (.m_axis_tdata(axis_data_fifo_1_M_AXIS_TDATA),
+        .m_axis_tkeep(axis_data_fifo_1_M_AXIS_TKEEP),
+        .m_axis_tlast(axis_data_fifo_1_M_AXIS_TLAST),
+        .m_axis_tready(axis_data_fifo_1_M_AXIS_TREADY),
+        .m_axis_tvalid(axis_data_fifo_1_M_AXIS_TVALID),
+        .s_axis_aclk(M00_ACLK_1),
+        .s_axis_aresetn(ARESETN_1),
+        .s_axis_tdata(axi_dma_0_M_AXIS_MM2S_TDATA),
+        .s_axis_tkeep(axi_dma_0_M_AXIS_MM2S_TKEEP),
+        .s_axis_tlast(axi_dma_0_M_AXIS_MM2S_TLAST),
+        .s_axis_tready(axi_dma_0_M_AXIS_MM2S_TREADY),
+        .s_axis_tvalid(axi_dma_0_M_AXIS_MM2S_TVALID));
   urllc_core_inst_1_rst_ps7_0_120M_0 rst_ps7_0_120M
        (.aux_reset_in(1'b1),
         .dcm_locked(1'b1),
@@ -2373,7 +2445,7 @@ module sender_imp_650BC
         .Dout(xlslice_frame_avaliable_Dout));
 endmodule
 
-(* CORE_GENERATION_INFO = "urllc_core_inst_1,IP_Integrator,{x_ipVendor=xilinx.com,x_ipLibrary=BlockDiagram,x_ipName=urllc_core_inst_1,x_ipVersion=1.00.a,x_ipLanguage=VERILOG,numBlks=61,numReposBlks=55,numNonXlnxBlks=0,numHierBlks=6,maxHierDepth=2,numSysgenBlks=0,numHlsBlks=0,numHdlrefBlks=14,numPkgbdBlks=0,bdsource=G_/Chiro/Programs/urllc-demo-pynq/urllc-zynq-vivado/urllc-zynq-vivado.srcs/sources_1/bd/urllc_core/urllc_core.bd,synth_mode=OOC_per_IP}" *) (* HW_HANDOFF = "urllc_core_inst_1.hwdef" *) 
+(* CORE_GENERATION_INFO = "urllc_core_inst_1,IP_Integrator,{x_ipVendor=xilinx.com,x_ipLibrary=BlockDiagram,x_ipName=urllc_core_inst_1,x_ipVersion=1.00.a,x_ipLanguage=VERILOG,numBlks=65,numReposBlks=59,numNonXlnxBlks=0,numHierBlks=6,maxHierDepth=2,numSysgenBlks=0,numHlsBlks=0,numHdlrefBlks=14,numPkgbdBlks=0,bdsource=G_/Chiro/Programs/urllc-demo-pynq/urllc-zynq-vivado/urllc-zynq-vivado.srcs/sources_1/bd/urllc_core/urllc_core.bd,synth_mode=OOC_per_IP}" *) (* HW_HANDOFF = "urllc_core_inst_1.hwdef" *) 
 module urllc_core_inst_1
    (DDR_addr,
     DDR_ba,

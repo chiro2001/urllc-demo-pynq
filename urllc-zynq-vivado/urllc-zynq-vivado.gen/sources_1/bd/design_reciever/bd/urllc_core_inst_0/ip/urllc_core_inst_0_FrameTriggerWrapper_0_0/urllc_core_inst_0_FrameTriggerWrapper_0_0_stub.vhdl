@@ -3,8 +3,8 @@
 -- Tool Version: Vivado v.2021.1 (win64) Build 3247384 Thu Jun 10 19:36:33 MDT 2021
 -- Date        : Fri Jan 14 23:42:59 2022
 -- Host        : WIN-544SHHHOI8Q running 64-bit major release  (build 9200)
--- Command     : write_vhdl -force -mode synth_stub
---               g:/Chiro/Programs/urllc-demo-pynq/urllc-zynq-vivado/urllc-zynq-vivado.gen/sources_1/bd/design_reciever/bd/urllc_core_inst_0/ip/urllc_core_inst_0_FrameTriggerWrapper_0_0/urllc_core_inst_0_FrameTriggerWrapper_0_0_stub.vhdl
+-- Command     : write_vhdl -force -mode synth_stub -rename_top urllc_core_inst_0_FrameTriggerWrapper_0_0 -prefix
+--               urllc_core_inst_0_FrameTriggerWrapper_0_0_ urllc_core_inst_0_FrameTriggerWrapper_0_0_stub.vhdl
 -- Design      : urllc_core_inst_0_FrameTriggerWrapper_0_0
 -- Purpose     : Stub declaration of top-level module interface
 -- Device      : xc7z020clg400-2

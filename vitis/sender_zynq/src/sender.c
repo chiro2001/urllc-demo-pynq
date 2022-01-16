@@ -57,8 +57,8 @@
 #include "configs.h"
 
 int Status = XST_SUCCESS;
-uint32_t src[DMA_SIZE] __attribute__((aligned(32)));
-uint32_t dst[DMA_SIZE] __attribute__((aligned(32)));
+uint32_t src[DMA_SIZE * sizeof(uint32_t) * 2] __attribute__((aligned(32)));
+uint32_t dst[DMA_SIZE * sizeof(uint32_t) * 2] __attribute__((aligned(32)));
 
 XAxiDma AxiDma;
 XAxiDma_Config *CfgPtr;
@@ -118,7 +118,11 @@ void DmaReset() {
  * @return int
  */
 int SystemInit() {
+  Xil_ICacheDisable();
+  Xil_DCacheDisable();
   Xil_ExceptionInit();
+
+  srand(0);
 
   check(ScuGicInterruptSetup(&intc, XPAR_PS7_SCUGIC_0_DEVICE_ID));
 
@@ -151,10 +155,8 @@ void GpioHandler(void *CallbackRef) {
 
 int RecieverGpioInit() {
   check(XGpio_Initialize(&GpioInput, DEVICE_ID_GPIO_IN));
-  check(GpioSetupIntrSystem(
-      &intc, &GpioInput, DEVICE_ID_GPIO_IN,
-      DEVICE_GPIO_IN_IRQN,
-      GPIO_CHANNEL1));
+  check(GpioSetupIntrSystem(&intc, &GpioInput, DEVICE_ID_GPIO_IN,
+                            DEVICE_GPIO_IN_IRQN, GPIO_CHANNEL1));
   return XST_SUCCESS;
 }
 
@@ -163,90 +165,92 @@ void ClearFrameTrigger() {
   SetupDebugBits(false, DEBUG_BIT_FRAME_TRIGGER_CLEAR);
 }
 
-int RecieverLoop() {
-  // 注册GPIO中断
-  Log("Init Reciever Gpio Input Intr");
-  // check(RecieverGpioInit());
-#ifdef DMA_LOOP
-  while (true) {
-#endif
-    // Log("Clear Frame Trigger");
-    ClearFrameTrigger();
-    // Log("Reciever Waiting for trigger to emit DMA...");
-    check(RecieverGpioInit());
-    // 等待gpio中断，gpio中断连接到FrameTrigger
-    uint32_t delay = RECIEVER_DELAY;
-    while (!IntrFlag && delay) delay--;
-    XGpio_InterruptClear(&GpioInput, GlobalIntrMask);
-    if (!delay) continue;
-    IntrFlag = 0;
-    DmaReset();
-    // 发送src，接收dst
-    XAxiDma_SimpleTransfer(&AxiDma, (UINTPTR)dst, DMA_SIZE,
-                           XAXIDMA_DEVICE_TO_DMA);
-    XAxiDma_SimpleTransfer(&AxiDma, (UINTPTR)src, DMA_SIZE,
-                           XAXIDMA_DMA_TO_DEVICE);
-    while (XAxiDma_Busy(&AxiDma, XAXIDMA_DMA_TO_DEVICE))
-      ;
-    while (XAxiDma_Busy(&AxiDma, XAXIDMA_DEVICE_TO_DMA))
-      ;
-    Log("Reciever DMA Done!");
-    // 发送完毕，解析下次应该发送的数据
-    // 8M 1bit (4M bit stream) (in uint32_t) => 500k 8bit
-    for (size_t i = 0; i < DMA_SIZE; i += 2 * 8) {
-      uint8_t val = 0;
-      for (size_t j = 0; j < 8; j++) {
-        val |= (dst[i + j] == 0 ? 0 : 1);
-      }
-      for (size_t k = 0; k < 2 * 8; k++) {
-        src[i + k] = val;
-      }
-    }
-
-#ifdef DMA_LOOP
-  }
-#endif
-
-  return XST_SUCCESS;
-}
 int SenderLoop() {
 #ifdef DMA_LOOP
+  // memset(src, 0, sizeof(uint32_t) * DMA_SIZE);
+  memset(dst, 0, sizeof(uint32_t) * DMA_SIZE);
+  // uint32_t size = 1;
+  uint32_t size = DMA_SIZE;
+  // enable all
+  // for (size_t i = 0; i < DMA_SIZE; i++) src[i] = 0x80000000 | (i & 0xFF);
   while (true) {
 #endif
     // Log("Sender DMA Sending...");
+    // memset(dst, 0, sizeof(uint32_t) * DMA_SIZE);
+    // for (size_t i = 0; i < DMA_SIZE; i++) src[i] = (i % 2 == 0) ? 0x8000000 :
+    // 0x0;
+    // for (size_t i = 0; i < DMA_SIZE; i++) src[i] = (i > DMA_SIZE / 5 ? 0 : (i
+    // % 2 == 0 ? 0xFFFFFFFF : 0)) | 0x80000000; for (size_t i = 0; i <
+    // DMA_SIZE; i++) src[i] = (i < DMA_HEADER_SIZE ? 1 : 0) | 0x80000000;
+    // for (size_t i = 0; i < DMA_SIZE; i++)
+    //   src[i] = (i < DMA_HEADER_SIZE
+    //                 ? 1
+    //                 : ((i - DMA_HEADER_SIZE < 500)
+    //                    ? (((i - DMA_HEADER_SIZE) / 100 % 2) == 0 ? 0 : 1) : 0
+    //                   ) |
+    //       0x80000000;
+    // for (size_t i = 0; i < DMA_SIZE; i++) {
+    //   if (i < DMA_HEADER_SIZE) {
+    //     src[i] = 1;
+    //   } else {
+    //     if (i < 500) {
+    //       src[i] = ((i - DMA_HEADER_SIZE) / 100 % 2) == 0 ? 0 : 1;
+    //     } else {
+    //       src[i] = 0;
+    //     }
+    //   }
+    // }
+    // for (size_t i = 0; i < DMA_SIZE; i++) {
+    //   if (i < DMA_HEADER_SIZE) {
+    //     src[i] = 1;
+    //   } else {
+    //     src[i] = rand() & 0xFF;
+    //     // src[i] = 0;
+    //   }
+    // }
+    // for (size_t i = 0; i < DMA_SIZE; i++) src[i] |= 0x80000000;
+    // for (size_t i = 0; i < DMA_SIZE; i++) src[i] = 0xFFFFFFFF;
+    DmaReset();
     // 发送src，接收dst
-    XAxiDma_SimpleTransfer(&AxiDma, (UINTPTR)dst, DMA_SIZE,
+    XAxiDma_SimpleTransfer(&AxiDma, (UINTPTR)dst, size * 8,
                            XAXIDMA_DEVICE_TO_DMA);
-    XAxiDma_SimpleTransfer(&AxiDma, (UINTPTR)src, DMA_SIZE,
+    XAxiDma_SimpleTransfer(&AxiDma, (UINTPTR)src, size * 8,
                            XAXIDMA_DMA_TO_DEVICE);
-    while (XAxiDma_Busy(&AxiDma, XAXIDMA_DMA_TO_DEVICE))
+    while ((XAxiDma_Busy(&AxiDma, XAXIDMA_DEVICE_TO_DMA)) ||
+           (XAxiDma_Busy(&AxiDma, XAXIDMA_DMA_TO_DEVICE)))
       ;
-    while (XAxiDma_Busy(&AxiDma, XAXIDMA_DEVICE_TO_DMA))
-      ;
+    // XAxiDma_SimpleTransfer(&AxiDma, (UINTPTR)dst, size,
+    // XAXIDMA_DEVICE_TO_DMA); while (XAxiDma_Busy(&AxiDma,
+    // XAXIDMA_DEVICE_TO_DMA))
+    //   ;
 
     // Log("Sender DMA Done!");
     // 发送完毕，解析下次应该发送的数据
     // 500k 8bit (in 8M uint32_t) => 4M 1bit (8M AXI)
     for (size_t i = 0; i < DMA_SIZE; i += 2 * 8) {
-      uint8_t val = (uint8_t)dst[i] & 0xFF;
+      uint8_t val = (uint8_t)(dst[i] & 0xFF);
       for (size_t k = 0; k < 8; k++) {
         for (size_t j = 0; j < 2; j++) {
-          src[i + j + k] = (((val & (1 << k)) == 0) ? 0 : 1) | 0x80000000;
+          src[i + j + k] = (((val & (1 << k)) == 0) ? 0 : 1);
+          // | 0x80000000;
         }
       }
     }
     // Log("Enabling FrameAvaliabe");
     // 使能 frame
-    // for (size_t i = 0; i < DMA_SIZE; i++) {
-    //   src[i] |= 0x80000000;
-    // }
+    for (size_t i = 0; i < DMA_SIZE; i++) {
+      src[i] |= 0x80000000;
+    }
     uint32_t delay = SENDER_DELAY;
     // printf("Delay for 0x%08x...", delay);
     while (delay--)
       ;
-    // Log("Delay Over");
-    print(".");
-
+      // Log("Delay Over");
+      // print(".");
+      // size++;
+      // if (size == DMA_SIZE) size = 1;
+      // size -= 4;
+      // if (size <= 4) size = DMA_SIZE;
 #ifdef DMA_LOOP
   }
 #endif

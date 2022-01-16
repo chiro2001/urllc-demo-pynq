@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="ASCII"?>
+<sdkproject:SdkProject xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:sdkproject="http://www.xilinx.com/sdkproject" name="sender_zynq" location="G:/Chiro/Programs/urllc-demo-pynq/vitis/sender_zynq" platform="G:/Chiro/Programs/urllc-demo-pynq/vitis/sender_fifo_all/export/sender_fifo_all/sender_fifo_all.xpfm" platformUID="xilinx:::0.0(custom)" systemProject="sender_zynq_system" sysConfig="sender_fifo_all" runtime="cpp" cpu="standalone_domain" cpuInstance="ps7_cortexa9_0" os="standalone" dimmRepoPath="" mssSignature="ddbf7799000de49cb1298654996fa5bb">
+  <configuration name="Debug" id="xilinx.gnu.armv7.exe.debug.2094838894" dirty="true">
+    <configBuildOptions xsi:type="sdkproject:SdkOptions"/>
+    <lastBuildOptions xsi:type="sdkproject:SdkOptions"/>
+  </configuration>
+  <configuration name="Release" id="xilinx.gnu.armv7.exe.release.2079419338" dirty="true">
+    <configBuildOptions xsi:type="sdkproject:SdkOptions"/>
+  </configuration>
+  <template appTemplateName="peripheral_tests"/>
+</sdkproject:SdkProject>
