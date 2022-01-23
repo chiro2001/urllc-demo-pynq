@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Root MajorVersion="0" MinorVersion="39">
+  <CompositeFile CompositeFileTopName="urllc_fifo" CanBeSetAsTop="false" CanDisplayChildGraph="true">
+    <Description>Composite Fileset</Description>
+    <Generation Name="SYNTHESIS" State="STALE" Timestamp="1642900616"/>
+    <Generation Name="IMPLEMENTATION" State="STALE" Timestamp="1642900616"/>
+    <Generation Name="SIMULATION" State="STALE" Timestamp="1642900616"/>
+    <Generation Name="HW_HANDOFF" State="STALE" Timestamp="1642900616"/>
+    <FileCollection Name="SOURCES" Type="SOURCES"/>
+    <BlockContainerCollection>
+      <BlockContainer InstPath="/urllc_fifo_core" IsPR="false" State="Stale">
+        <ActiveVariantSynth FileName="bd\urllc_fifo_core_inst_0\urllc_fifo_core_inst_0.bd"/>
+        <ActiveVariantSim FileName="bd\urllc_fifo_core_inst_0\urllc_fifo_core_inst_0.bd"/>
+        <VariantsCollection>
+          <BDFile BDFilePath="bd\urllc_fifo_core_inst_0\urllc_fifo_core_inst_0.bd" BDFileset="urllc_fifo_core_inst_0" BDSourceFile="..\..\..\..\urllc-fifo.srcs\sources_1\bd\urllc_fifo_core\urllc_fifo_core.bd" BDSourceFileset="sources_1" BDVariantType="ALL"/>
+        </VariantsCollection>
+      </BlockContainer>
+    </BlockContainerCollection>
+    <ReferenceCollection>
+      <ModuleReference TargetName="urllc_fifo_core" Type="Block Design" SubInstancePath="urllc_fifo_urllc_fifo_core_0">
+        <TopFile Name="..\..\..\..\urllc-fifo.srcs\sources_1\bd\urllc_fifo_core\urllc_fifo_core.bd"/>
+        <FileCollection>
+          <File Name="..\..\..\..\..\chisel-test-project\generated\DDC\DDCWrapper.v"/>
+          <File Name="..\..\..\..\urllc-fifo.srcs\sources_1\imports\new\mux.v"/>
+          <File Name="..\..\..\..\urllc-fifo.srcs\sources_1\new\count_trigger.v"/>
+          <File Name="..\..\..\..\urllc-fifo.srcs\sources_1\new\fifo_read_to_axis.v"/>
+          <File Name="..\..\..\..\urllc-fifo.srcs\sources_1\new\adc.v"/>
+          <File Name="..\..\..\..\urllc-fifo.srcs\sources_1\new\axis_write_to_fifo.v"/>
+          <File Name="..\..\..\..\urllc-fifo.srcs\sources_1\new\dac.v"/>
+          <File Name="..\..\..\..\..\chisel-test-project\generated\DUC\DUCWrapper.v"/>
+          <File Name="..\..\..\..\urllc-fifo.srcs\sources_1\bd\urllc_fifo_core\urllc_fifo_core.bd"/>
+        </FileCollection>
+      </ModuleReference>
+    </ReferenceCollection>
+  </CompositeFile>
+</Root>

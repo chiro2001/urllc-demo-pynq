@@ -1,21 +1,25 @@
 {
+   "ActiveEmotionalView":"Default View",
+   "Default View_ScaleFactor":"1.25",
+   "Default View_TopLeft":"-520,-185",
    "ExpandedHierarchyInLayout":"",
-   "guistr":"# # String gsaved with Nlview 6.8.11  2018-08-07 bk=1.4403 VDI=40 GEI=35 GUI=JA:9.0 non-TLS
+   "guistr":"# # String gsaved with Nlview 7.0r6  2020-01-29 bk=1.5227 VDI=41 GEI=36 GUI=JA:10.0 non-TLS
 #  -string -flagsOSRD
-preplace port DDR -pg 1 -y 60 -defaultsOSRD
-preplace port clk_da_200M -pg 1 -y 140 -defaultsOSRD
-preplace port clk_ad_static -pg 1 -y 100 -defaultsOSRD
-preplace port FIXED_IO -pg 1 -y 80 -defaultsOSRD
-preplace portBus da -pg 1 -y 120 -defaultsOSRD
-preplace portBus ad -pg 1 -y 100 -defaultsOSRD
-preplace inst urllc_fifo_core -pg 1 -lvl 1 -y 100 -defaultsOSRD
-preplace netloc processing_system7_0_FIXED_IO 1 1 1 NJ
-preplace netloc mux_0_data_out 1 1 1 NJ
-preplace netloc processing_system7_0_DDR 1 1 1 NJ
-preplace netloc clk_dynamic_clk_out_200M 1 1 1 NJ
-preplace netloc ad_1 1 0 1 N
-preplace netloc clk_wiz_0_clk_out1 1 1 1 NJ
-levelinfo -pg 1 0 130 260 -top 0 -bot 190
+preplace port DDR -pg 1 -lvl 2 -x 290 -y 60 -defaultsOSRD
+preplace port FIXED_IO -pg 1 -lvl 2 -x 290 -y 80 -defaultsOSRD
+preplace port port-id_clk_ad_static -pg 1 -lvl 2 -x 290 -y 100 -defaultsOSRD
+preplace port port-id_clk_da_200M -pg 1 -lvl 2 -x 290 -y 120 -defaultsOSRD
+preplace portBus ad -pg 1 -lvl 0 -x -10 -y 100 -defaultsOSRD
+preplace portBus da -pg 1 -lvl 2 -x 290 -y 140 -defaultsOSRD
+preplace inst urllc_fifo_core -pg 1 -lvl 1 -x 140 -y 100 -defaultsOSRD
+preplace netloc ad_1 1 0 1 N 100
+preplace netloc clk_dynamic_clk_out_200M 1 1 1 NJ 120
+preplace netloc clk_wiz_0_clk_out1 1 1 1 NJ 100
+preplace netloc mux_0_data_out 1 1 1 NJ 140
+preplace netloc processing_system7_0_DDR 1 1 1 NJ 60
+preplace netloc processing_system7_0_FIXED_IO 1 1 1 NJ 80
+levelinfo -pg 1 -10 140 290
+pagesize -pg 1 -db -bbox -sgen -110 0 430 200
 "
 }
 {
