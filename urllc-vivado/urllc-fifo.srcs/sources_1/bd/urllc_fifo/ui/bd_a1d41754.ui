@@ -1,0 +1,62 @@
+{
+   "ExpandedHierarchyInLayout":"",
+   "guistr":"# # String gsaved with Nlview 6.8.11  2018-08-07 bk=1.4403 VDI=40 GEI=35 GUI=JA:9.0 non-TLS
+#  -string -flagsOSRD
+preplace port DDR -pg 1 -y 790 -defaultsOSRD
+preplace port clk_da_200M -pg 1 -y 830 -defaultsOSRD
+preplace port clk_ad_static -pg 1 -y 850 -defaultsOSRD
+preplace port FIXED_IO -pg 1 -y 810 -defaultsOSRD
+preplace portBus da -pg 1 -y 600 -defaultsOSRD
+preplace portBus ad -pg 1 -y 780 -defaultsOSRD
+preplace inst dac -pg 1 -lvl 3 -y 620 -defaultsOSRD
+preplace inst ila_fifo_out -pg 1 -lvl 3 -y 1330 -defaultsOSRD
+preplace inst core -pg 1 -lvl 2 -y 940 -defaultsOSRD
+preplace inst ila_fifo_in -pg 1 -lvl 2 -y 1350 -defaultsOSRD
+preplace inst ila_0 -pg 1 -lvl 3 -y 1450 -defaultsOSRD
+preplace inst debug_ctrl -pg 1 -lvl 3 -y 180 -defaultsOSRD
+preplace inst adc -pg 1 -lvl 1 -y 880 -defaultsOSRD
+preplace netloc processing_system7_0_DDR 1 2 2 NJ 790 NJ
+preplace netloc debug_ctrl_Dout2 1 1 3 510 1260 NJ 1260 1450
+preplace netloc fifo_read_to_axis_0_axis 1 1 1 450
+preplace netloc xlslice_1_Dout 1 0 4 50 420 NJ 420 NJ 420 1360
+preplace netloc xlslice_duc_sync_6_Dout 1 2 2 930 360 1400
+preplace netloc ad_1 1 0 1 N
+preplace netloc debug_ctrl_Dout5 1 0 4 90 1210 NJ 1210 NJ 1210 1440
+preplace netloc fifo_dac_full 1 2 1 940
+preplace netloc debug_ctrl_Dout6 1 1 3 490 1240 NJ 1240 1430
+preplace netloc fifo_adc_data_count 1 0 3 40 1220 NJ 1220 860
+preplace netloc core_empty 1 0 3 80 1190 NJ 1190 870
+preplace netloc adc_0_ad_out_vld 1 1 1 N
+preplace netloc dac_0_da_in_vld 1 1 3 480 1230 NJ 1230 1350
+preplace netloc fifo_dac_dout 1 2 1 950
+preplace netloc xlslice_0_Dout1 1 2 2 960 390 1350
+preplace netloc axis_write_to_fifo_0_fifo_write_wd_en 1 1 3 470 1160 NJ 1160 1340
+preplace netloc clk_dynamic_clk_out_200M 1 2 2 930 830 NJ
+preplace netloc xlslice_reciever_out_8_Dout 1 0 4 110 410 NJ 410 NJ 410 1370
+preplace netloc axi_gpio_0_gpio_io_o 1 0 4 60 1150 NJ 1150 NJ 1150 1420
+preplace netloc core_dout 1 0 3 110 1180 NJ 1180 880
+preplace netloc xlslice_dac_8_15_Dout 1 2 2 970 440 1340
+preplace netloc xlconcat_irq_dout 1 2 1 890
+preplace netloc processing_system7_0_FIXED_IO 1 2 2 NJ 810 NJ
+preplace netloc clk_wiz_0_clk_out1 1 0 4 20 1280 430 1280 910 850 NJ
+preplace netloc xlslice_2_Dout 1 0 4 70 1200 NJ 1200 NJ 1200 1410
+preplace netloc rst_ps7_0_50M_peripheral_aresetn 1 0 3 30 1270 NJ 1270 900
+preplace netloc xlslice_reciever_out_7_Dout 1 2 2 980 370 1390
+preplace netloc adc_trigger_out 1 1 1 430
+preplace netloc rd_en_1 1 1 1 440
+preplace netloc axis_write_to_fifo_0_fifo_write_wd_data 1 1 3 460 1140 NJ 1140 1330
+preplace netloc Net 1 2 2 950 430 1330
+preplace netloc ps7_0_axi_periph_M00_AXI 1 2 1 850
+preplace netloc axi_dma_0_M_AXIS_MM2S 1 2 1 920
+preplace netloc xlslice_reciever_in_10_Dout 1 0 4 40 400 NJ 400 NJ 400 1330
+preplace netloc core_almost_empty 1 0 3 100 1170 NJ 1170 850
+preplace netloc adc_0_ad_out 1 1 1 N
+preplace netloc fifo_dac_almost_full 1 2 1 960
+preplace netloc mux_0_data_out 1 3 1 NJ
+preplace netloc debug_ctrl_Dout1 1 1 3 500 1250 NJ 1250 1460
+preplace netloc reset_dynamic_peripheral_aresetn 1 2 1 860
+preplace netloc xlslice_sender_Dout 1 2 2 990 380 1380
+levelinfo -pg 1 0 270 680 1160 1500 -top -10 -bot 1520
+"
+}
+

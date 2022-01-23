@@ -1,0 +1,49 @@
+{
+   "ExpandedHierarchyInLayout":"",
+   "guistr":"# # String gsaved with Nlview 6.8.11  2018-08-07 bk=1.4403 VDI=40 GEI=35 GUI=JA:9.0 non-TLS
+#  -string -flagsOSRD
+preplace port io_in_data -pg 1 -y 380 -defaultsOSRD
+preplace port fifo_write_wd_en -pg 1 -y 140 -defaultsOSRD
+preplace port io_resetN -pg 1 -y 440 -defaultsOSRD
+preplace port da_in_vld -pg 1 -y 20 -defaultsOSRD
+preplace port start -pg 1 -y 280 -defaultsOSRD
+preplace port resetn -pg 1 -y 160 -defaultsOSRD
+preplace port axis -pg 1 -y 80 -defaultsOSRD
+preplace port io_clock -pg 1 -y 420 -defaultsOSRD
+preplace port router -pg 1 -y 500 -defaultsOSRD
+preplace port clk -pg 1 -y 140 -defaultsOSRD
+preplace port io_in_sync -pg 1 -y 400 -defaultsOSRD
+preplace port fifo_write_almost_full -pg 1 -y 320 -defaultsOSRD
+preplace port fifo_write_full -pg 1 -y 300 -defaultsOSRD
+preplace portBus da_in -pg 1 -y 180 -defaultsOSRD
+preplace portBus div -pg 1 -y 200 -defaultsOSRD
+preplace portBus da -pg 1 -y 480 -defaultsOSRD
+preplace portBus fifo_write_wd_data -pg 1 -y 120 -defaultsOSRD
+preplace portBus da_out -pg 1 -y 240 -defaultsOSRD
+preplace inst mux_reciever_out -pg 1 -lvl 2 -y 480 -defaultsOSRD
+preplace inst DUCWrapper_0 -pg 1 -lvl 1 -y 410 -defaultsOSRD
+preplace inst axis_write_to_fifo_0 -pg 1 -lvl 2 -y 130 -defaultsOSRD
+preplace inst dac_0 -pg 1 -lvl 1 -y 170 -defaultsOSRD
+preplace netloc xlslice_duc_sync_6_Dout 1 0 1 NJ
+preplace netloc fifo_dac_full 1 0 2 NJ 300 350J
+preplace netloc dac_0_da_in_vld 1 1 2 330J 20 NJ
+preplace netloc fifo_dac_dout 1 0 1 NJ
+preplace netloc DUCWrapper_0_io_out_dac 1 1 1 310
+preplace netloc xlslice_0_Dout1 1 0 2 10J 60 340J
+preplace netloc axis_write_to_fifo_0_fifo_write_wd_en 1 2 1 NJ
+preplace netloc xlslice_dac_8_15_Dout 1 0 1 NJ
+preplace netloc clk_dynamic_clk_out_200M 1 0 1 NJ
+preplace netloc rst_ps7_0_50M_peripheral_aresetn 1 0 2 20 50 360J
+preplace netloc clk_wiz_0_clk_out1 1 0 2 30 70 350J
+preplace netloc xlslice_reciever_out_7_Dout 1 0 2 NJ 500 NJ
+preplace netloc axis_write_to_fifo_0_fifo_write_wd_data 1 2 1 NJ
+preplace netloc Net 1 1 2 320 240 NJ
+preplace netloc axi_dma_0_M_AXIS_MM2S 1 0 2 NJ 80 NJ
+preplace netloc fifo_dac_almost_full 1 0 2 30J 260 360J
+preplace netloc reset_dynamic_peripheral_aresetn 1 0 1 NJ
+preplace netloc xlslice_sender_Dout 1 0 1 NJ
+preplace netloc mux_0_data_out 1 2 1 NJ
+levelinfo -pg 1 -10 170 570 790 -top 0 -bot 560
+"
+}
+
