@@ -1,7 +1,7 @@
 //Copyright 1986-2021 Xilinx, Inc. All Rights Reserved.
 //--------------------------------------------------------------------------------
 //Tool Version: Vivado v.2021.1 (win64) Build 3247384 Thu Jun 10 19:36:33 MDT 2021
-//Date        : Sun Jan 23 11:43:33 2022
+//Date        : Mon Jan 24 08:20:01 2022
 //Host        : WIN-544SHHHOI8Q running 64-bit major release  (build 9200)
 //Command     : generate_target urllc_fifo_sender_wrapper.bd
 //Design      : urllc_fifo_sender_wrapper

@@ -2,10 +2,10 @@
 <Root MajorVersion="0" MinorVersion="39">
   <CompositeFile CompositeFileTopName="urllc_fifo_sender" CanBeSetAsTop="false" CanDisplayChildGraph="true">
     <Description>Composite Fileset</Description>
-    <Generation Name="SYNTHESIS" State="GENERATED" Timestamp="1642909446"/>
-    <Generation Name="IMPLEMENTATION" State="GENERATED" Timestamp="1642909446"/>
-    <Generation Name="SIMULATION" State="GENERATED" Timestamp="1642909446"/>
-    <Generation Name="HW_HANDOFF" State="GENERATED" Timestamp="1642909446"/>
+    <Generation Name="SYNTHESIS" State="GENERATED" Timestamp="1642983634"/>
+    <Generation Name="IMPLEMENTATION" State="GENERATED" Timestamp="1642983634"/>
+    <Generation Name="SIMULATION" State="GENERATED" Timestamp="1642983634"/>
+    <Generation Name="HW_HANDOFF" State="GENERATED" Timestamp="1642983634"/>
     <FileCollection Name="SOURCES" Type="SOURCES">
       <File Name="synth\urllc_fifo_sender.v" Type="Verilog">
         <Properties IsEditable="false" IsVisible="true" IsNetlistSimulation="false" Timestamp="0" IsTrackable="false" IsStatusTracked="false"/>
@@ -72,7 +72,6 @@
           <File Name="..\..\..\..\urllc-fifo.srcs\sources_1\new\axis_write_to_fifo.v"/>
           <File Name="..\..\..\..\urllc-fifo.srcs\sources_1\new\dac.v"/>
           <File Name="..\..\..\..\..\chisel-test-project\generated\DUC\DUCWrapper.v"/>
-          <File Name="..\..\..\..\urllc-fifo.srcs\sources_1\new\clk_slow_to_fast.v"/>
           <File Name="..\..\..\..\urllc-fifo.srcs\sources_1\bd\urllc_fifo_core\urllc_fifo_core.bd"/>
         </FileCollection>
       </ModuleReference>

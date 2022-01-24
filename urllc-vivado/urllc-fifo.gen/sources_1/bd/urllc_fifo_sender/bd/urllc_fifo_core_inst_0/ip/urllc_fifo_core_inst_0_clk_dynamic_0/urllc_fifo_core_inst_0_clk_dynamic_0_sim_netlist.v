@@ -1,7 +1,7 @@
 // Copyright 1986-2021 Xilinx, Inc. All Rights Reserved.
 // --------------------------------------------------------------------------------
 // Tool Version: Vivado v.2021.1 (win64) Build 3247384 Thu Jun 10 19:36:33 MDT 2021
-// Date        : Sun Jan 23 09:31:15 2022
+// Date        : Mon Jan 24 01:54:58 2022
 // Host        : WIN-544SHHHOI8Q running 64-bit major release  (build 9200)
 // Command     : write_verilog -force -mode funcsim -rename_top urllc_fifo_core_inst_0_clk_dynamic_0 -prefix
 //               urllc_fifo_core_inst_0_clk_dynamic_0_ urllc_fifo_core_inst_0_clk_dynamic_0_sim_netlist.v
@@ -14,7 +14,7 @@
 
 (* NotValidForBitStream *)
 module urllc_fifo_core_inst_0_clk_dynamic_0
-   (clk_out_200M,
+   (clk_out_dynamic,
     psclk,
     psen,
     psincdec,
@@ -22,7 +22,7 @@ module urllc_fifo_core_inst_0_clk_dynamic_0
     resetn,
     locked,
     clk_in1);
-  output clk_out_200M;
+  output clk_out_dynamic;
   input psclk;
   input psen;
   input psincdec;
@@ -32,7 +32,7 @@ module urllc_fifo_core_inst_0_clk_dynamic_0
   input clk_in1;
 
   (* IBUF_LOW_PWR *) wire clk_in1;
-  wire clk_out_200M;
+  wire clk_out_dynamic;
   wire locked;
   wire psclk;
   wire psdone;
@@ -42,7 +42,7 @@ module urllc_fifo_core_inst_0_clk_dynamic_0
 
   urllc_fifo_core_inst_0_clk_dynamic_0_urllc_fifo_core_inst_0_clk_dynamic_0_clk_wiz inst
        (.clk_in1(clk_in1),
-        .clk_out_200M(clk_out_200M),
+        .clk_out_dynamic(clk_out_dynamic),
         .locked(locked),
         .psclk(psclk),
         .psdone(psdone),
@@ -52,7 +52,7 @@ module urllc_fifo_core_inst_0_clk_dynamic_0
 endmodule
 
 module urllc_fifo_core_inst_0_clk_dynamic_0_urllc_fifo_core_inst_0_clk_dynamic_0_clk_wiz
-   (clk_out_200M,
+   (clk_out_dynamic,
     psclk,
     psen,
     psincdec,
@@ -60,7 +60,7 @@ module urllc_fifo_core_inst_0_clk_dynamic_0_urllc_fifo_core_inst_0_clk_dynamic_0
     resetn,
     locked,
     clk_in1);
-  output clk_out_200M;
+  output clk_out_dynamic;
   input psclk;
   input psen;
   input psincdec;
@@ -71,8 +71,8 @@ module urllc_fifo_core_inst_0_clk_dynamic_0_urllc_fifo_core_inst_0_clk_dynamic_0
 
   wire clk_in1;
   wire clk_in1_urllc_fifo_core_inst_0_clk_dynamic_0;
-  wire clk_out_200M;
-  wire clk_out_200M_urllc_fifo_core_inst_0_clk_dynamic_0;
+  wire clk_out_dynamic;
+  wire clk_out_dynamic_urllc_fifo_core_inst_0_clk_dynamic_0;
   wire clkfbout_buf_urllc_fifo_core_inst_0_clk_dynamic_0;
   wire clkfbout_urllc_fifo_core_inst_0_clk_dynamic_0;
   wire locked;
@@ -113,17 +113,17 @@ module urllc_fifo_core_inst_0_clk_dynamic_0_urllc_fifo_core_inst_0_clk_dynamic_0
         .O(clk_in1_urllc_fifo_core_inst_0_clk_dynamic_0));
   (* BOX_TYPE = "PRIMITIVE" *) 
   BUFG clkout1_buf
-       (.I(clk_out_200M_urllc_fifo_core_inst_0_clk_dynamic_0),
-        .O(clk_out_200M));
+       (.I(clk_out_dynamic_urllc_fifo_core_inst_0_clk_dynamic_0),
+        .O(clk_out_dynamic));
   (* BOX_TYPE = "PRIMITIVE" *) 
   MMCME2_ADV #(
     .BANDWIDTH("OPTIMIZED"),
-    .CLKFBOUT_MULT_F(20.000000),
+    .CLKFBOUT_MULT_F(18.000000),
     .CLKFBOUT_PHASE(0.000000),
     .CLKFBOUT_USE_FINE_PS("FALSE"),
     .CLKIN1_PERIOD(20.000000),
     .CLKIN2_PERIOD(0.000000),
-    .CLKOUT0_DIVIDE_F(5.000000),
+    .CLKOUT0_DIVIDE_F(15.000000),
     .CLKOUT0_DUTY_CYCLE(0.500000),
     .CLKOUT0_PHASE(0.000000),
     .CLKOUT0_USE_FINE_PS("FALSE"),
@@ -174,7 +174,7 @@ module urllc_fifo_core_inst_0_clk_dynamic_0_urllc_fifo_core_inst_0_clk_dynamic_0
         .CLKIN2(1'b0),
         .CLKINSEL(1'b1),
         .CLKINSTOPPED(NLW_mmcm_adv_inst_CLKINSTOPPED_UNCONNECTED),
-        .CLKOUT0(clk_out_200M_urllc_fifo_core_inst_0_clk_dynamic_0),
+        .CLKOUT0(clk_out_dynamic_urllc_fifo_core_inst_0_clk_dynamic_0),
         .CLKOUT0B(NLW_mmcm_adv_inst_CLKOUT0B_UNCONNECTED),
         .CLKOUT1(NLW_mmcm_adv_inst_CLKOUT1_UNCONNECTED),
         .CLKOUT1B(NLW_mmcm_adv_inst_CLKOUT1B_UNCONNECTED),

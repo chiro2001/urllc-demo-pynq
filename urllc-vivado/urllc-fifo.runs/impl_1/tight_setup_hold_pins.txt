@@ -1,7 +1,0 @@
-+--------------------------+--------------------------+----------------------------------------------------------------------------------------------------------+
-|       Launch Clock       |      Capture Clock       |                                                 Pin                                                      |
-+--------------------------+--------------------------+----------------------------------------------------------------------------------------------------------+
-| clk_out_200M_urllc_fifo_core_inst_0_clk_dynamic_0_1 |clk_out1_urllc_fifo_core_inst_0_clk_static_0 |                                        urllc_fifo_sender_i/urllc_fifo_core_0/adc/adc_0/inst/ad_reg[0]_C/D|
-| clk_out1_urllc_fifo_core_inst_0_clk_static_0 |clk_out_200M_urllc_fifo_core_inst_0_clk_dynamic_0_1 |                                urllc_fifo_sender_i/urllc_fifo_core_0/adc/clk_slow_to_fast_0/inst/r1_reg/D|
-| clk_out_200M_urllc_fifo_core_inst_0_clk_dynamic_0_1 |clk_out1_urllc_fifo_core_inst_0_clk_static_0 |                                        urllc_fifo_sender_i/urllc_fifo_core_0/adc/adc_0/inst/ad_reg[0]_P/D|
-+--------------------------+--------------------------+----------------------------------------------------------------------------------------------------------+

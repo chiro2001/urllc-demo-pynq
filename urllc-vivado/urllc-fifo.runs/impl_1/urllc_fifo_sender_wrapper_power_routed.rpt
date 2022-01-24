@@ -1,7 +1,7 @@
 Copyright 1986-2021 Xilinx, Inc. All Rights Reserved.
 -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version     : Vivado v.2021.1 (win64) Build 3247384 Thu Jun 10 19:36:33 MDT 2021
-| Date             : Sun Jan 23 11:51:08 2022
+| Date             : Mon Jan 24 08:25:20 2022
 | Host             : WIN-544SHHHOI8Q running 64-bit major release  (build 9200)
 | Command          : report_power -file urllc_fifo_sender_wrapper_power_routed.rpt -pb urllc_fifo_sender_wrapper_power_summary_routed.pb -rpx urllc_fifo_sender_wrapper_power_routed.rpx
 | Design           : urllc_fifo_sender_wrapper
@@ -30,14 +30,14 @@ Table of Contents
 ----------
 
 +--------------------------+--------------+
-| Total On-Chip Power (W)  | 1.738        |
+| Total On-Chip Power (W)  | 1.727        |
 | Design Power Budget (W)  | Unspecified* |
 | Power Budget Margin (W)  | NA           |
-| Dynamic (W)              | 1.589        |
+| Dynamic (W)              | 1.578        |
 | Device Static (W)        | 0.149        |
 | Effective TJA (C/W)      | 11.5         |
-| Max Ambient (C)          | 65.0         |
-| Junction Temperature (C) | 45.0         |
+| Max Ambient (C)          | 65.1         |
+| Junction Temperature (C) | 44.9         |
 | Confidence Level         | Low          |
 | Setting File             | ---          |
 | Simulation Activity File | ---          |
@@ -52,22 +52,22 @@ Table of Contents
 +--------------------------+-----------+----------+-----------+-----------------+
 | On-Chip                  | Power (W) | Used     | Available | Utilization (%) |
 +--------------------------+-----------+----------+-----------+-----------------+
-| Clocks                   |     0.033 |       10 |       --- |             --- |
-| Slice Logic              |     0.010 |    27007 |       --- |             --- |
-|   LUT as Logic           |     0.008 |     7729 |     53200 |           14.53 |
+| Clocks                   |     0.030 |       10 |       --- |             --- |
+| Slice Logic              |     0.008 |    26997 |       --- |             --- |
+|   LUT as Logic           |     0.007 |     7720 |     53200 |           14.51 |
 |   LUT as Distributed RAM |    <0.001 |      734 |     17400 |            4.22 |
-|   Register               |    <0.001 |    13078 |    106400 |           12.29 |
+|   Register               |    <0.001 |    13072 |    106400 |           12.29 |
 |   CARRY4                 |    <0.001 |      335 |     13300 |            2.52 |
 |   LUT as Shift Register  |    <0.001 |      505 |     17400 |            2.90 |
 |   F7/F8 Muxes            |    <0.001 |       29 |     53200 |            0.05 |
-|   Others                 |     0.000 |     1497 |       --- |             --- |
-| Signals                  |     0.012 |    18440 |       --- |             --- |
+|   Others                 |     0.000 |     1495 |       --- |             --- |
+| Signals                  |     0.010 |    18430 |       --- |             --- |
 | Block RAM                |     0.012 |       46 |       140 |           32.86 |
-| MMCM                     |     0.228 |        2 |         4 |           50.00 |
+| MMCM                     |     0.222 |        2 |         4 |           50.00 |
 | I/O                      |     0.016 |       18 |       125 |           14.40 |
 | PS7                      |     1.280 |        1 |       --- |             --- |
 | Static Power             |     0.149 |          |           |                 |
-| Total                    |     1.738 |          |           |                 |
+| Total                    |     1.727 |          |           |                 |
 +--------------------------+-----------+----------+-----------+-----------------+
 
 
@@ -77,8 +77,8 @@ Table of Contents
 +-----------+-------------+-----------+-------------+------------+-------------+-------------+------------+
 | Source    | Voltage (V) | Total (A) | Dynamic (A) | Static (A) | Powerup (A) | Budget (A)  | Margin (A) |
 +-----------+-------------+-----------+-------------+------------+-------------+-------------+------------+
-| Vccint    |       1.000 |     0.083 |       0.066 |      0.017 |       NA    | Unspecified | NA         |
-| Vccaux    |       1.800 |     0.142 |       0.127 |      0.015 |       NA    | Unspecified | NA         |
+| Vccint    |       1.000 |     0.076 |       0.060 |      0.017 |       NA    | Unspecified | NA         |
+| Vccaux    |       1.800 |     0.139 |       0.124 |      0.015 |       NA    | Unspecified | NA         |
 | Vcco33    |       3.300 |     0.005 |       0.004 |      0.001 |       NA    | Unspecified | NA         |
 | Vcco25    |       2.500 |     0.000 |       0.000 |      0.000 |       NA    | Unspecified | NA         |
 | Vcco18    |       1.800 |     0.000 |       0.000 |      0.000 |       NA    | Unspecified | NA         |
@@ -137,17 +137,17 @@ Table of Contents
 2.2 Clock Constraints
 ---------------------
 
-+--------------------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------+-----------------+
-| Clock                                                                                      | Domain                                                                                                        | Constraint (ns) |
-+--------------------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------+-----------------+
-| clk_fpga_0                                                                                 | urllc_fifo_sender_i/urllc_fifo_core_0/core/processing_system7_0/inst/FCLK_CLK0                                |            20.0 |
-| clk_fpga_0                                                                                 | urllc_fifo_sender_i/urllc_fifo_core_0/core/processing_system7_0/inst/FCLK_CLK_unbuffered[0]                   |            20.0 |
-| clk_out1_urllc_fifo_core_inst_0_clk_static_0                                               | urllc_fifo_sender_i/urllc_fifo_core_0/core/clk_static/inst/clk_out1_urllc_fifo_core_inst_0_clk_static_0       |            16.7 |
-| clk_out_200M_urllc_fifo_core_inst_0_clk_dynamic_0_1                                        | urllc_fifo_sender_i/urllc_fifo_core_0/core/clk_dynamic/inst/clk_out_200M_urllc_fifo_core_inst_0_clk_dynamic_0 |             5.0 |
-| clkfbout_urllc_fifo_core_inst_0_clk_dynamic_0_1                                            | urllc_fifo_sender_i/urllc_fifo_core_0/core/clk_dynamic/inst/clkfbout_urllc_fifo_core_inst_0_clk_dynamic_0     |            20.0 |
-| clkfbout_urllc_fifo_core_inst_0_clk_static_0                                               | urllc_fifo_sender_i/urllc_fifo_core_0/core/clk_static/inst/clkfbout_urllc_fifo_core_inst_0_clk_static_0       |            20.0 |
-| dbg_hub/inst/BSCANID.u_xsdbm_id/SWITCH_N_EXT_BSCAN.bscan_inst/SERIES7_BSCAN.bscan_inst/TCK | dbg_hub/inst/BSCANID.u_xsdbm_id/SWITCH_N_EXT_BSCAN.bscan_inst/tck_bs                                          |            33.0 |
-+--------------------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------+-----------------+
++--------------------------------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------+-----------------+
+| Clock                                                                                      | Domain                                                                                                           | Constraint (ns) |
++--------------------------------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------+-----------------+
+| clk_fpga_0                                                                                 | urllc_fifo_sender_i/urllc_fifo_core_0/core/processing_system7_0/inst/FCLK_CLK0                                   |            20.0 |
+| clk_fpga_0                                                                                 | urllc_fifo_sender_i/urllc_fifo_core_0/core/processing_system7_0/inst/FCLK_CLK_unbuffered[0]                      |            20.0 |
+| clk_out1_urllc_fifo_core_inst_0_clk_static_0                                               | urllc_fifo_sender_i/urllc_fifo_core_0/core/clk_static/inst/clk_out1_urllc_fifo_core_inst_0_clk_static_0          |            16.7 |
+| clk_out_dynamic_urllc_fifo_core_inst_0_clk_dynamic_0_1                                     | urllc_fifo_sender_i/urllc_fifo_core_0/core/clk_dynamic/inst/clk_out_dynamic_urllc_fifo_core_inst_0_clk_dynamic_0 |            16.7 |
+| clkfbout_urllc_fifo_core_inst_0_clk_dynamic_0_1                                            | urllc_fifo_sender_i/urllc_fifo_core_0/core/clk_dynamic/inst/clkfbout_urllc_fifo_core_inst_0_clk_dynamic_0        |            20.0 |
+| clkfbout_urllc_fifo_core_inst_0_clk_static_0                                               | urllc_fifo_sender_i/urllc_fifo_core_0/core/clk_static/inst/clkfbout_urllc_fifo_core_inst_0_clk_static_0          |            20.0 |
+| dbg_hub/inst/BSCANID.u_xsdbm_id/SWITCH_N_EXT_BSCAN.bscan_inst/SERIES7_BSCAN.bscan_inst/TCK | dbg_hub/inst/BSCANID.u_xsdbm_id/SWITCH_N_EXT_BSCAN.bscan_inst/tck_bs                                             |            33.0 |
++--------------------------------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------+-----------------+
 
 
 3. Detailed Reports
@@ -159,14 +159,14 @@ Table of Contents
 +---------------------------+-----------+
 | Name                      | Power (W) |
 +---------------------------+-----------+
-| urllc_fifo_sender_wrapper |     1.589 |
+| urllc_fifo_sender_wrapper |     1.578 |
 |   dbg_hub                 |     0.002 |
 |     inst                  |     0.002 |
 |       BSCANID.u_xsdbm_id  |     0.002 |
-|   urllc_fifo_sender_i     |     1.571 |
-|     urllc_fifo_core_0     |     1.571 |
-|       adc                 |     0.006 |
-|       core                |     1.550 |
+|   urllc_fifo_sender_i     |     1.560 |
+|     urllc_fifo_core_0     |     1.560 |
+|       adc                 |     0.002 |
+|       core                |     1.543 |
 |       ila_0               |     0.006 |
 |       ila_fifo_in         |     0.004 |
 |       ila_fifo_out        |     0.004 |

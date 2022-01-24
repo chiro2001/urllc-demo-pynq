@@ -1,7 +1,7 @@
 //Copyright 1986-2021 Xilinx, Inc. All Rights Reserved.
 //--------------------------------------------------------------------------------
 //Tool Version: Vivado v.2021.1 (win64) Build 3247384 Thu Jun 10 19:36:33 MDT 2021
-//Date        : Sun Jan 23 11:43:33 2022
+//Date        : Mon Jan 24 08:20:01 2022
 //Host        : WIN-544SHHHOI8Q running 64-bit major release  (build 9200)
 //Command     : generate_target urllc_fifo_sender.bd
 //Design      : urllc_fifo_sender
@@ -9,7 +9,7 @@
 //--------------------------------------------------------------------------------
 `timescale 1 ps / 1 ps
 
-(* CORE_GENERATION_INFO = "urllc_fifo_sender,IP_Integrator,{x_ipVendor=xilinx.com,x_ipLibrary=BlockDiagram,x_ipName=urllc_fifo_sender,x_ipVersion=1.00.a,x_ipLanguage=VERILOG,numBlks=52,numReposBlks=43,numNonXlnxBlks=0,numHierBlks=9,maxHierDepth=2,numSysgenBlks=0,numHlsBlks=0,numHdlrefBlks=11,numPkgbdBlks=1,bdsource=USER,synth_mode=OOC_per_IP}" *) (* HW_HANDOFF = "urllc_fifo_sender.hwdef" *) 
+(* CORE_GENERATION_INFO = "urllc_fifo_sender,IP_Integrator,{x_ipVendor=xilinx.com,x_ipLibrary=BlockDiagram,x_ipName=urllc_fifo_sender,x_ipVersion=1.00.a,x_ipLanguage=VERILOG,numBlks=50,numReposBlks=41,numNonXlnxBlks=0,numHierBlks=9,maxHierDepth=2,numSysgenBlks=0,numHlsBlks=0,numHdlrefBlks=9,numPkgbdBlks=1,bdsource=USER,synth_mode=OOC_per_IP}" *) (* HW_HANDOFF = "urllc_fifo_sender.hwdef" *) 
 module urllc_fifo_sender
    (DDR_addr,
     DDR_ba,

@@ -56,7 +56,7 @@
 //  Output     Output      Phase    Duty Cycle   Pk-to-Pk     Phase
 //   Clock     Freq (MHz)  (degrees)    (%)     Jitter (ps)  Error (ps)
 //----------------------------------------------------------------------------
-// clk_out_200M__200.00000______0.000______50.0______142.107____164.985
+// clk_out_dynamic__60.00000______0.000______50.0______199.644____161.614
 //
 //----------------------------------------------------------------------------
 // Input Clock   Freq (MHz)    Input Jitter (UI)
@@ -69,7 +69,7 @@ module urllc_fifo_core_inst_0_clk_dynamic_0_clk_wiz
 
  (// Clock in ports
   // Clock out ports
-  output        clk_out_200M,
+  output        clk_out_dynamic,
   // Dynamic phase shift ports
   input         psclk,
   input         psen,
@@ -98,7 +98,7 @@ wire clk_in2_urllc_fifo_core_inst_0_clk_dynamic_0;
   //    * Unused inputs are tied off
   //    * Unused outputs are labeled unused
 
-  wire        clk_out_200M_urllc_fifo_core_inst_0_clk_dynamic_0;
+  wire        clk_out_dynamic_urllc_fifo_core_inst_0_clk_dynamic_0;
   wire        clk_out2_urllc_fifo_core_inst_0_clk_dynamic_0;
   wire        clk_out3_urllc_fifo_core_inst_0_clk_dynamic_0;
   wire        clk_out4_urllc_fifo_core_inst_0_clk_dynamic_0;
@@ -132,10 +132,10 @@ wire clk_in2_urllc_fifo_core_inst_0_clk_dynamic_0;
     .COMPENSATION         ("ZHOLD"),
     .STARTUP_WAIT         ("FALSE"),
     .DIVCLK_DIVIDE        (1),
-    .CLKFBOUT_MULT_F      (20.000),
+    .CLKFBOUT_MULT_F      (18.000),
     .CLKFBOUT_PHASE       (0.000),
     .CLKFBOUT_USE_FINE_PS ("FALSE"),
-    .CLKOUT0_DIVIDE_F     (5.000),
+    .CLKOUT0_DIVIDE_F     (15.000),
     .CLKOUT0_PHASE        (0.000),
     .CLKOUT0_DUTY_CYCLE   (0.500),
     .CLKOUT0_USE_FINE_PS  ("FALSE"),
@@ -145,7 +145,7 @@ wire clk_in2_urllc_fifo_core_inst_0_clk_dynamic_0;
    (
     .CLKFBOUT            (clkfbout_urllc_fifo_core_inst_0_clk_dynamic_0),
     .CLKFBOUTB           (clkfboutb_unused),
-    .CLKOUT0             (clk_out_200M_urllc_fifo_core_inst_0_clk_dynamic_0),
+    .CLKOUT0             (clk_out_dynamic_urllc_fifo_core_inst_0_clk_dynamic_0),
     .CLKOUT0B            (clkout0b_unused),
     .CLKOUT1             (clkout1_unused),
     .CLKOUT1B            (clkout1b_unused),
@@ -199,8 +199,8 @@ wire clk_in2_urllc_fifo_core_inst_0_clk_dynamic_0;
 
 
   BUFG clkout1_buf
-   (.O   (clk_out_200M),
-    .I   (clk_out_200M_urllc_fifo_core_inst_0_clk_dynamic_0));
+   (.O   (clk_out_dynamic),
+    .I   (clk_out_dynamic_urllc_fifo_core_inst_0_clk_dynamic_0));
 
 
 

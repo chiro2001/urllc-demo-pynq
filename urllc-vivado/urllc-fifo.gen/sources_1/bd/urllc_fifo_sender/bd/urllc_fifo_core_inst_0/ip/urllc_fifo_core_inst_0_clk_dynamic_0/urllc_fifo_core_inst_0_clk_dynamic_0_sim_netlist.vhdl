@@ -1,7 +1,7 @@
 -- Copyright 1986-2021 Xilinx, Inc. All Rights Reserved.
 -- --------------------------------------------------------------------------------
 -- Tool Version: Vivado v.2021.1 (win64) Build 3247384 Thu Jun 10 19:36:33 MDT 2021
--- Date        : Sun Jan 23 09:31:15 2022
+-- Date        : Mon Jan 24 01:54:58 2022
 -- Host        : WIN-544SHHHOI8Q running 64-bit major release  (build 9200)
 -- Command     : write_vhdl -force -mode funcsim -rename_top urllc_fifo_core_inst_0_clk_dynamic_0 -prefix
 --               urllc_fifo_core_inst_0_clk_dynamic_0_ urllc_fifo_core_inst_0_clk_dynamic_0_sim_netlist.vhdl
@@ -16,7 +16,7 @@ library UNISIM;
 use UNISIM.VCOMPONENTS.ALL;
 entity urllc_fifo_core_inst_0_clk_dynamic_0_urllc_fifo_core_inst_0_clk_dynamic_0_clk_wiz is
   port (
-    clk_out_200M : out STD_LOGIC;
+    clk_out_dynamic : out STD_LOGIC;
     psclk : in STD_LOGIC;
     psen : in STD_LOGIC;
     psincdec : in STD_LOGIC;
@@ -29,7 +29,7 @@ end urllc_fifo_core_inst_0_clk_dynamic_0_urllc_fifo_core_inst_0_clk_dynamic_0_cl
 
 architecture STRUCTURE of urllc_fifo_core_inst_0_clk_dynamic_0_urllc_fifo_core_inst_0_clk_dynamic_0_clk_wiz is
   signal clk_in1_urllc_fifo_core_inst_0_clk_dynamic_0 : STD_LOGIC;
-  signal clk_out_200M_urllc_fifo_core_inst_0_clk_dynamic_0 : STD_LOGIC;
+  signal clk_out_dynamic_urllc_fifo_core_inst_0_clk_dynamic_0 : STD_LOGIC;
   signal clkfbout_buf_urllc_fifo_core_inst_0_clk_dynamic_0 : STD_LOGIC;
   signal clkfbout_urllc_fifo_core_inst_0_clk_dynamic_0 : STD_LOGIC;
   signal reset_high : STD_LOGIC;
@@ -75,18 +75,18 @@ clkin1_ibufg: unisim.vcomponents.IBUF
     );
 clkout1_buf: unisim.vcomponents.BUFG
      port map (
-      I => clk_out_200M_urllc_fifo_core_inst_0_clk_dynamic_0,
-      O => clk_out_200M
+      I => clk_out_dynamic_urllc_fifo_core_inst_0_clk_dynamic_0,
+      O => clk_out_dynamic
     );
 mmcm_adv_inst: unisim.vcomponents.MMCME2_ADV
     generic map(
       BANDWIDTH => "OPTIMIZED",
-      CLKFBOUT_MULT_F => 20.000000,
+      CLKFBOUT_MULT_F => 18.000000,
       CLKFBOUT_PHASE => 0.000000,
       CLKFBOUT_USE_FINE_PS => false,
       CLKIN1_PERIOD => 20.000000,
       CLKIN2_PERIOD => 0.000000,
-      CLKOUT0_DIVIDE_F => 5.000000,
+      CLKOUT0_DIVIDE_F => 15.000000,
       CLKOUT0_DUTY_CYCLE => 0.500000,
       CLKOUT0_PHASE => 0.000000,
       CLKOUT0_USE_FINE_PS => false,
@@ -138,7 +138,7 @@ mmcm_adv_inst: unisim.vcomponents.MMCME2_ADV
       CLKIN2 => '0',
       CLKINSEL => '1',
       CLKINSTOPPED => NLW_mmcm_adv_inst_CLKINSTOPPED_UNCONNECTED,
-      CLKOUT0 => clk_out_200M_urllc_fifo_core_inst_0_clk_dynamic_0,
+      CLKOUT0 => clk_out_dynamic_urllc_fifo_core_inst_0_clk_dynamic_0,
       CLKOUT0B => NLW_mmcm_adv_inst_CLKOUT0B_UNCONNECTED,
       CLKOUT1 => NLW_mmcm_adv_inst_CLKOUT1_UNCONNECTED,
       CLKOUT1B => NLW_mmcm_adv_inst_CLKOUT1B_UNCONNECTED,
@@ -179,7 +179,7 @@ library UNISIM;
 use UNISIM.VCOMPONENTS.ALL;
 entity urllc_fifo_core_inst_0_clk_dynamic_0 is
   port (
-    clk_out_200M : out STD_LOGIC;
+    clk_out_dynamic : out STD_LOGIC;
     psclk : in STD_LOGIC;
     psen : in STD_LOGIC;
     psincdec : in STD_LOGIC;
@@ -197,7 +197,7 @@ begin
 inst: entity work.urllc_fifo_core_inst_0_clk_dynamic_0_urllc_fifo_core_inst_0_clk_dynamic_0_clk_wiz
      port map (
       clk_in1 => clk_in1,
-      clk_out_200M => clk_out_200M,
+      clk_out_dynamic => clk_out_dynamic,
       locked => locked,
       psclk => psclk,
       psdone => psdone,

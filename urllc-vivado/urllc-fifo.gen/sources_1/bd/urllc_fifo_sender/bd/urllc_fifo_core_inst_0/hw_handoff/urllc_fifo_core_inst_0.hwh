@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
-<EDKSYSTEM EDWVERSION="1.2" TIMESTAMP="Sun Jan 23 11:44:05 2022" VIVADOVERSION="2021.1">
+<EDKSYSTEM EDWVERSION="1.2" TIMESTAMP="Mon Jan 24 08:20:34 2022" VIVADOVERSION="2021.1">
 
   <SYSTEMINFO ARCH="zynq" DEVICE="7z020" NAME="urllc_fifo_core_inst_0" PACKAGE="clg400" SPEEDGRADE="-2"/>
 
@@ -120,14 +120,14 @@
         <CONNECTION INSTANCE="core_clk_static" PORT="clk_out1"/>
       </CONNECTIONS>
     </PORT>
-    <PORT CLKFREQUENCY="200000000" DIR="O" NAME="clk_da_200M" SIGIS="clk" SIGNAME="core_clk_dynamic_clk_out_200M">
-      <CONNECTIONS>
-        <CONNECTION INSTANCE="core_clk_dynamic" PORT="clk_out_200M"/>
-      </CONNECTIONS>
-    </PORT>
     <PORT DIR="O" LEFT="7" NAME="da" RIGHT="0" SIGIS="undef" SIGNAME="dac_mux_reciever_out_data_out">
       <CONNECTIONS>
         <CONNECTION INSTANCE="dac_mux_reciever_out" PORT="data_out"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT CLKFREQUENCY="60000000" DIR="O" NAME="clk_da_dynamic" SIGIS="clk" SIGNAME="core_clk_dynamic_clk_out_dynamic">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="core_clk_dynamic" PORT="clk_out_dynamic"/>
       </CONNECTIONS>
     </PORT>
   </EXTERNALPORTS>
@@ -192,22 +192,22 @@
             <CONNECTION INSTANCE="External_Ports" PORT="ad"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" NAME="io_in_sync" SIGIS="undef" SIGNAME="adc_clk_slow_to_fast_0_data_out_fast">
+        <PORT DIR="I" NAME="io_in_sync" SIGIS="undef" SIGNAME="debug_ctrl_xlslice_ddc_sync_8_Dout">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="adc_clk_slow_to_fast_0" PORT="data_out_fast"/>
+            <CONNECTION INSTANCE="debug_ctrl_xlslice_ddc_sync_8" PORT="Dout"/>
           </CONNECTIONS>
         </PORT>
         <PORT DIR="O" NAME="io_out_data" SIGIS="undef" SIGNAME="adc_DDCWrapper_0_io_out_data">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="adc_clk_slow_to_fast_1" PORT="data_in_slow"/>
+            <CONNECTION INSTANCE="adc_xlconcat_0" PORT="In0"/>
           </CONNECTIONS>
         </PORT>
         <PORT DIR="O" NAME="io_out_update" SIGIS="undef"/>
         <PORT DIR="O" LEFT="7" NAME="io_out_readData" RIGHT="0" SIGIS="undef"/>
         <PORT DIR="O" LEFT="7" NAME="io_out_ave" RIGHT="0" SIGIS="undef"/>
-        <PORT CLKFREQUENCY="200000000" DIR="I" NAME="io_clock" SIGIS="clk" SIGNAME="core_clk_dynamic_clk_out_200M">
+        <PORT CLKFREQUENCY="60000000" DIR="I" NAME="io_clock" SIGIS="clk" SIGNAME="core_clk_dynamic_clk_out_dynamic">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="core_clk_dynamic" PORT="clk_out_200M"/>
+            <CONNECTION INSTANCE="core_clk_dynamic" PORT="clk_out_dynamic"/>
           </CONNECTIONS>
         </PORT>
         <PORT DIR="I" NAME="io_resetN" POLARITY="ACTIVE_LOW" SIGIS="rst" SIGNAME="core_reset_dynamic_peripheral_aresetn">
@@ -254,68 +254,6 @@
         <PORT DIR="O" NAME="ad_out_vld" SIGIS="undef" SIGNAME="adc_adc_0_ad_out_vld">
           <CONNECTIONS>
             <CONNECTION INSTANCE="core_fifo_adc" PORT="wr_en"/>
-          </CONNECTIONS>
-        </PORT>
-      </PORTS>
-      <BUSINTERFACES/>
-    </MODULE>
-    <MODULE COREREVISION="1" FULLNAME="/adc/clk_slow_to_fast_0" HWVERSION="1.0" INSTANCE="adc_clk_slow_to_fast_0" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="clk_slow_to_fast" VLNV="xilinx.com:module_ref:clk_slow_to_fast:1.0">
-      <DOCUMENTS/>
-      <PARAMETERS>
-        <PARAMETER NAME="DEFAULT" VALUE="&quot;0&quot;"/>
-        <PARAMETER NAME="Component_Name" VALUE="urllc_fifo_core_inst_0_clk_slow_to_fast_0_0"/>
-        <PARAMETER NAME="EDK_IPTYPE" VALUE="PERIPHERAL"/>
-      </PARAMETERS>
-      <PORTS>
-        <PORT DIR="I" NAME="clk_fast" SIGIS="undef" SIGNAME="core_clk_dynamic_clk_out_200M">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="core_clk_dynamic" PORT="clk_out_200M"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="I" NAME="resetn_fast" POLARITY="ACTIVE_LOW" SIGIS="undef" SIGNAME="core_reset_dynamic_peripheral_aresetn">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="core_reset_dynamic" PORT="peripheral_aresetn"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="I" NAME="data_in_slow" SIGIS="undef" SIGNAME="debug_ctrl_xlslice_ddc_sync_8_Dout">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="debug_ctrl_xlslice_ddc_sync_8" PORT="Dout"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="O" NAME="data_out_fast" SIGIS="undef" SIGNAME="adc_clk_slow_to_fast_0_data_out_fast">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="adc_DDCWrapper_0" PORT="io_in_sync"/>
-          </CONNECTIONS>
-        </PORT>
-      </PORTS>
-      <BUSINTERFACES/>
-    </MODULE>
-    <MODULE COREREVISION="1" FULLNAME="/adc/clk_slow_to_fast_1" HWVERSION="1.0" INSTANCE="adc_clk_slow_to_fast_1" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="clk_slow_to_fast" VLNV="xilinx.com:module_ref:clk_slow_to_fast:1.0">
-      <DOCUMENTS/>
-      <PARAMETERS>
-        <PARAMETER NAME="DEFAULT" VALUE="&quot;0&quot;"/>
-        <PARAMETER NAME="Component_Name" VALUE="urllc_fifo_core_inst_0_clk_slow_to_fast_1_0"/>
-        <PARAMETER NAME="EDK_IPTYPE" VALUE="PERIPHERAL"/>
-      </PARAMETERS>
-      <PORTS>
-        <PORT DIR="I" NAME="clk_fast" SIGIS="undef" SIGNAME="core_clk_dynamic_clk_out_200M">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="core_clk_dynamic" PORT="clk_out_200M"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="I" NAME="resetn_fast" POLARITY="ACTIVE_LOW" SIGIS="undef" SIGNAME="core_reset_dynamic_peripheral_aresetn">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="core_reset_dynamic" PORT="peripheral_aresetn"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="I" NAME="data_in_slow" SIGIS="undef" SIGNAME="adc_DDCWrapper_0_io_out_data">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="adc_DDCWrapper_0" PORT="io_out_data"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="O" NAME="data_out_fast" SIGIS="undef" SIGNAME="adc_clk_slow_to_fast_1_data_out_fast">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="adc_xlconcat_0" PORT="In0"/>
           </CONNECTIONS>
         </PORT>
       </PORTS>
@@ -618,9 +556,9 @@
         <PARAMETER NAME="EDK_IPTYPE" VALUE="PERIPHERAL"/>
       </PARAMETERS>
       <PORTS>
-        <PORT DIR="I" LEFT="0" NAME="In0" RIGHT="0" SIGIS="undef" SIGNAME="adc_clk_slow_to_fast_1_data_out_fast">
+        <PORT DIR="I" LEFT="0" NAME="In0" RIGHT="0" SIGIS="undef" SIGNAME="adc_DDCWrapper_0_io_out_data">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="adc_clk_slow_to_fast_1" PORT="data_out_fast"/>
+            <CONNECTION INSTANCE="adc_DDCWrapper_0" PORT="io_out_data"/>
           </CONNECTIONS>
         </PORT>
         <PORT DIR="I" LEFT="6" NAME="In1" RIGHT="0" SIGIS="undef" SIGNAME="adc_xlconstant_0_dout">
@@ -2895,14 +2833,14 @@
         <PARAMETER NAME="C_INCLK_SUM_ROW2" VALUE="no_secondary_input_clock"/>
         <PARAMETER NAME="C_OUTCLK_SUM_ROW0A" VALUE="Output     Output      Phase    Duty Cycle   Pk-to-Pk     Phase"/>
         <PARAMETER NAME="C_OUTCLK_SUM_ROW0B" VALUE="Clock     Freq (MHz)  (degrees)    (%)     Jitter (ps)  Error (ps)"/>
-        <PARAMETER NAME="C_OUTCLK_SUM_ROW1" VALUE="clk_out_200M__200.00000______0.000______50.0______142.107____164.985"/>
+        <PARAMETER NAME="C_OUTCLK_SUM_ROW1" VALUE="clk_out_dynamic__60.00000______0.000______50.0______199.644____161.614"/>
         <PARAMETER NAME="C_OUTCLK_SUM_ROW2" VALUE="no_CLK_OUT2_output"/>
         <PARAMETER NAME="C_OUTCLK_SUM_ROW3" VALUE="no_CLK_OUT3_output"/>
         <PARAMETER NAME="C_OUTCLK_SUM_ROW4" VALUE="no_CLK_OUT4_output"/>
         <PARAMETER NAME="C_OUTCLK_SUM_ROW5" VALUE="no_CLK_OUT5_output"/>
         <PARAMETER NAME="C_OUTCLK_SUM_ROW6" VALUE="no_CLK_OUT6_output"/>
         <PARAMETER NAME="C_OUTCLK_SUM_ROW7" VALUE="no_CLK_OUT7_output"/>
-        <PARAMETER NAME="C_CLKOUT1_REQUESTED_OUT_FREQ" VALUE="200.000"/>
+        <PARAMETER NAME="C_CLKOUT1_REQUESTED_OUT_FREQ" VALUE="60"/>
         <PARAMETER NAME="C_CLKOUT2_REQUESTED_OUT_FREQ" VALUE="100.000"/>
         <PARAMETER NAME="C_CLKOUT3_REQUESTED_OUT_FREQ" VALUE="100.000"/>
         <PARAMETER NAME="C_CLKOUT4_REQUESTED_OUT_FREQ" VALUE="100.000"/>
@@ -2923,7 +2861,7 @@
         <PARAMETER NAME="C_CLKOUT5_REQUESTED_DUTY_CYCLE" VALUE="50.000"/>
         <PARAMETER NAME="C_CLKOUT6_REQUESTED_DUTY_CYCLE" VALUE="50.000"/>
         <PARAMETER NAME="C_CLKOUT7_REQUESTED_DUTY_CYCLE" VALUE="50.000"/>
-        <PARAMETER NAME="C_CLKOUT1_OUT_FREQ" VALUE="200.00000"/>
+        <PARAMETER NAME="C_CLKOUT1_OUT_FREQ" VALUE="60.00000"/>
         <PARAMETER NAME="C_CLKOUT2_OUT_FREQ" VALUE="100.000"/>
         <PARAMETER NAME="C_CLKOUT3_OUT_FREQ" VALUE="100.000"/>
         <PARAMETER NAME="C_CLKOUT4_OUT_FREQ" VALUE="100.000"/>
@@ -2955,7 +2893,7 @@
         <PARAMETER NAME="C_CLKOUT7_SEQUENCE_NUMBER" VALUE="1"/>
         <PARAMETER NAME="C_MMCM_NOTES" VALUE="None"/>
         <PARAMETER NAME="C_MMCM_BANDWIDTH" VALUE="OPTIMIZED"/>
-        <PARAMETER NAME="C_MMCM_CLKFBOUT_MULT_F" VALUE="20.000"/>
+        <PARAMETER NAME="C_MMCM_CLKFBOUT_MULT_F" VALUE="18.000"/>
         <PARAMETER NAME="C_MMCM_CLKIN1_PERIOD" VALUE="20.000"/>
         <PARAMETER NAME="C_MMCM_CLKIN2_PERIOD" VALUE="10.0"/>
         <PARAMETER NAME="C_MMCM_CLKOUT4_CASCADE" VALUE="FALSE"/>
@@ -2965,7 +2903,7 @@
         <PARAMETER NAME="C_MMCM_REF_JITTER1" VALUE="0.010"/>
         <PARAMETER NAME="C_MMCM_REF_JITTER2" VALUE="0.010"/>
         <PARAMETER NAME="C_MMCM_STARTUP_WAIT" VALUE="FALSE"/>
-        <PARAMETER NAME="C_MMCM_CLKOUT0_DIVIDE_F" VALUE="5.000"/>
+        <PARAMETER NAME="C_MMCM_CLKOUT0_DIVIDE_F" VALUE="15.000"/>
         <PARAMETER NAME="C_MMCM_CLKOUT1_DIVIDE" VALUE="1"/>
         <PARAMETER NAME="C_MMCM_CLKOUT2_DIVIDE" VALUE="1"/>
         <PARAMETER NAME="C_MMCM_CLKOUT3_DIVIDE" VALUE="1"/>
@@ -3027,7 +2965,7 @@
         <PARAMETER NAME="C_OVERRIDE_PLL" VALUE="0"/>
         <PARAMETER NAME="C_PRIMARY_PORT" VALUE="clk_in1"/>
         <PARAMETER NAME="C_SECONDARY_PORT" VALUE="clk_in2"/>
-        <PARAMETER NAME="C_CLK_OUT1_PORT" VALUE="clk_out_200M"/>
+        <PARAMETER NAME="C_CLK_OUT1_PORT" VALUE="clk_out_dynamic"/>
         <PARAMETER NAME="C_CLK_OUT2_PORT" VALUE="clk_out2"/>
         <PARAMETER NAME="C_CLK_OUT3_PORT" VALUE="clk_out3"/>
         <PARAMETER NAME="C_CLK_OUT4_PORT" VALUE="clk_out4"/>
@@ -3097,12 +3035,12 @@
         <PARAMETER NAME="C_FILTER_1" VALUE="0000"/>
         <PARAMETER NAME="C_FILTER_2" VALUE="0000"/>
         <PARAMETER NAME="C_DIVIDE1_AUTO" VALUE="1"/>
-        <PARAMETER NAME="C_DIVIDE2_AUTO" VALUE="0.2"/>
-        <PARAMETER NAME="C_DIVIDE3_AUTO" VALUE="0.2"/>
-        <PARAMETER NAME="C_DIVIDE4_AUTO" VALUE="0.2"/>
-        <PARAMETER NAME="C_DIVIDE5_AUTO" VALUE="0.2"/>
-        <PARAMETER NAME="C_DIVIDE6_AUTO" VALUE="0.2"/>
-        <PARAMETER NAME="C_DIVIDE7_AUTO" VALUE="0.2"/>
+        <PARAMETER NAME="C_DIVIDE2_AUTO" VALUE="0.06666666666666667"/>
+        <PARAMETER NAME="C_DIVIDE3_AUTO" VALUE="0.06666666666666667"/>
+        <PARAMETER NAME="C_DIVIDE4_AUTO" VALUE="0.06666666666666667"/>
+        <PARAMETER NAME="C_DIVIDE5_AUTO" VALUE="0.06666666666666667"/>
+        <PARAMETER NAME="C_DIVIDE6_AUTO" VALUE="0.06666666666666667"/>
+        <PARAMETER NAME="C_DIVIDE7_AUTO" VALUE="0.06666666666666667"/>
         <PARAMETER NAME="C_PLLBUFGCEDIV" VALUE="false"/>
         <PARAMETER NAME="C_MMCMBUFGCEDIV" VALUE="false"/>
         <PARAMETER NAME="C_PLLBUFGCEDIV1" VALUE="false"/>
@@ -3123,7 +3061,7 @@
         <PARAMETER NAME="C_CLKOUT5_MATCHED_ROUTING" VALUE="false"/>
         <PARAMETER NAME="C_CLKOUT6_MATCHED_ROUTING" VALUE="false"/>
         <PARAMETER NAME="C_CLKOUT7_MATCHED_ROUTING" VALUE="false"/>
-        <PARAMETER NAME="C_CLKOUT0_ACTUAL_FREQ" VALUE="200.00000"/>
+        <PARAMETER NAME="C_CLKOUT0_ACTUAL_FREQ" VALUE="60.00000"/>
         <PARAMETER NAME="C_CLKOUT1_ACTUAL_FREQ" VALUE="100.000"/>
         <PARAMETER NAME="C_CLKOUT2_ACTUAL_FREQ" VALUE="100.000"/>
         <PARAMETER NAME="C_CLKOUT3_ACTUAL_FREQ" VALUE="100.000"/>
@@ -3197,7 +3135,7 @@
         <PARAMETER NAME="CLK_OUT6_USE_FINE_PS_GUI" VALUE="false"/>
         <PARAMETER NAME="CLK_OUT7_USE_FINE_PS_GUI" VALUE="false"/>
         <PARAMETER NAME="PRIMARY_PORT" VALUE="clk_in1"/>
-        <PARAMETER NAME="CLK_OUT1_PORT" VALUE="clk_out_200M"/>
+        <PARAMETER NAME="CLK_OUT1_PORT" VALUE="clk_out_dynamic"/>
         <PARAMETER NAME="CLK_OUT2_PORT" VALUE="clk_out2"/>
         <PARAMETER NAME="CLK_OUT3_PORT" VALUE="clk_out3"/>
         <PARAMETER NAME="CLK_OUT4_PORT" VALUE="clk_out4"/>
@@ -3215,7 +3153,7 @@
         <PARAMETER NAME="PSEN_PORT" VALUE="psen"/>
         <PARAMETER NAME="PSINCDEC_PORT" VALUE="psincdec"/>
         <PARAMETER NAME="PSDONE_PORT" VALUE="psdone"/>
-        <PARAMETER NAME="CLKOUT1_REQUESTED_OUT_FREQ" VALUE="200.000"/>
+        <PARAMETER NAME="CLKOUT1_REQUESTED_OUT_FREQ" VALUE="60"/>
         <PARAMETER NAME="CLKOUT1_REQUESTED_PHASE" VALUE="0.000"/>
         <PARAMETER NAME="CLKOUT1_REQUESTED_DUTY_CYCLE" VALUE="50.000"/>
         <PARAMETER NAME="CLKOUT2_REQUESTED_OUT_FREQ" VALUE="100.000"/>
@@ -3287,7 +3225,7 @@
         <PARAMETER NAME="MMCM_NOTES" VALUE="None"/>
         <PARAMETER NAME="MMCM_DIVCLK_DIVIDE" VALUE="1"/>
         <PARAMETER NAME="MMCM_BANDWIDTH" VALUE="OPTIMIZED"/>
-        <PARAMETER NAME="MMCM_CLKFBOUT_MULT_F" VALUE="20.000"/>
+        <PARAMETER NAME="MMCM_CLKFBOUT_MULT_F" VALUE="18.000"/>
         <PARAMETER NAME="MMCM_CLKFBOUT_PHASE" VALUE="0.000"/>
         <PARAMETER NAME="MMCM_CLKFBOUT_USE_FINE_PS" VALUE="false"/>
         <PARAMETER NAME="MMCM_CLKIN1_PERIOD" VALUE="20.000"/>
@@ -3298,7 +3236,7 @@
         <PARAMETER NAME="MMCM_REF_JITTER1" VALUE="0.010"/>
         <PARAMETER NAME="MMCM_REF_JITTER2" VALUE="0.010"/>
         <PARAMETER NAME="MMCM_STARTUP_WAIT" VALUE="false"/>
-        <PARAMETER NAME="MMCM_CLKOUT0_DIVIDE_F" VALUE="5.000"/>
+        <PARAMETER NAME="MMCM_CLKOUT0_DIVIDE_F" VALUE="15.000"/>
         <PARAMETER NAME="MMCM_CLKOUT0_DUTY_CYCLE" VALUE="0.500"/>
         <PARAMETER NAME="MMCM_CLKOUT0_PHASE" VALUE="0.000"/>
         <PARAMETER NAME="MMCM_CLKOUT0_USE_FINE_PS" VALUE="false"/>
@@ -3376,8 +3314,8 @@
         <PARAMETER NAME="CDDCREQ_PORT" VALUE="cddcreq"/>
         <PARAMETER NAME="ENABLE_CLKOUTPHY" VALUE="false"/>
         <PARAMETER NAME="CLKOUTPHY_REQUESTED_FREQ" VALUE="600.000"/>
-        <PARAMETER NAME="CLKOUT1_JITTER" VALUE="142.107"/>
-        <PARAMETER NAME="CLKOUT1_PHASE_ERROR" VALUE="164.985"/>
+        <PARAMETER NAME="CLKOUT1_JITTER" VALUE="199.644"/>
+        <PARAMETER NAME="CLKOUT1_PHASE_ERROR" VALUE="161.614"/>
         <PARAMETER NAME="CLKOUT2_JITTER" VALUE="0.0"/>
         <PARAMETER NAME="CLKOUT2_PHASE_ERROR" VALUE="0.0"/>
         <PARAMETER NAME="CLKOUT3_JITTER" VALUE="0.0"/>
@@ -3423,13 +3361,11 @@
           </CONNECTIONS>
         </PORT>
         <PORT DIR="O" NAME="psdone" SIGIS="undef"/>
-        <PORT CLKFREQUENCY="200000000" DIR="O" NAME="clk_out_200M" SIGIS="clk" SIGNAME="core_clk_dynamic_clk_out_200M">
+        <PORT CLKFREQUENCY="60000000" DIR="O" NAME="clk_out_dynamic" SIGIS="clk" SIGNAME="core_clk_dynamic_clk_out_dynamic">
           <CONNECTIONS>
             <CONNECTION INSTANCE="core_reset_dynamic" PORT="slowest_sync_clk"/>
-            <CONNECTION INSTANCE="External_Ports" PORT="clk_da_200M"/>
+            <CONNECTION INSTANCE="External_Ports" PORT="clk_da_dynamic"/>
             <CONNECTION INSTANCE="adc_DDCWrapper_0" PORT="io_clock"/>
-            <CONNECTION INSTANCE="adc_clk_slow_to_fast_0" PORT="clk_fast"/>
-            <CONNECTION INSTANCE="adc_clk_slow_to_fast_1" PORT="clk_fast"/>
           </CONNECTIONS>
         </PORT>
         <PORT DIR="O" NAME="locked" SIGIS="undef"/>
@@ -7773,9 +7709,9 @@
         <PARAMETER NAME="EDK_IPTYPE" VALUE="PERIPHERAL"/>
       </PARAMETERS>
       <PORTS>
-        <PORT CLKFREQUENCY="200000000" DIR="I" NAME="slowest_sync_clk" SIGIS="clk" SIGNAME="core_clk_dynamic_clk_out_200M">
+        <PORT CLKFREQUENCY="60000000" DIR="I" NAME="slowest_sync_clk" SIGIS="clk" SIGNAME="core_clk_dynamic_clk_out_dynamic">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="core_clk_dynamic" PORT="clk_out_200M"/>
+            <CONNECTION INSTANCE="core_clk_dynamic" PORT="clk_out_dynamic"/>
           </CONNECTIONS>
         </PORT>
         <PORT DIR="I" NAME="ext_reset_in" POLARITY="ACTIVE_LOW" SIGIS="rst" SIGNAME="core_processing_system7_0_FCLK_RESET0_N">
@@ -7793,8 +7729,6 @@
         <PORT DIR="O" LEFT="0" NAME="peripheral_aresetn" POLARITY="ACTIVE_LOW" RIGHT="0" SIGIS="rst" SIGNAME="core_reset_dynamic_peripheral_aresetn">
           <CONNECTIONS>
             <CONNECTION INSTANCE="adc_DDCWrapper_0" PORT="io_resetN"/>
-            <CONNECTION INSTANCE="adc_clk_slow_to_fast_0" PORT="resetn_fast"/>
-            <CONNECTION INSTANCE="adc_clk_slow_to_fast_1" PORT="resetn_fast"/>
             <CONNECTION INSTANCE="core_clk_dynamic" PORT="resetn"/>
           </CONNECTIONS>
         </PORT>
@@ -8761,7 +8695,7 @@
         </PORT>
         <PORT DIR="O" LEFT="0" NAME="Dout" RIGHT="0" SIGIS="undef" SIGNAME="debug_ctrl_xlslice_ddc_sync_8_Dout">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="adc_clk_slow_to_fast_0" PORT="data_in_slow"/>
+            <CONNECTION INSTANCE="adc_DDCWrapper_0" PORT="io_in_sync"/>
           </CONNECTIONS>
         </PORT>
       </PORTS>

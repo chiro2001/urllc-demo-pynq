@@ -1,7 +1,7 @@
 {
    "ActiveEmotionalView":"Default View",
    "Default View_ScaleFactor":"1.25",
-   "Default View_TopLeft":"-325,-9",
+   "Default View_TopLeft":"-305,-74",
    "ExpandedHierarchyInLayout":"",
    "guistr":"# # String gsaved with Nlview 7.0r6  2020-01-29 bk=1.5227 VDI=41 GEI=36 GUI=JA:10.0 non-TLS-threadsafe
 #  -string -flagsOSRD
@@ -14,15 +14,15 @@ preplace port port-id_resetn -pg 1 -lvl 0 -x 0 -y 400 -defaultsOSRD
 preplace port port-id_start -pg 1 -lvl 0 -x 0 -y 240 -defaultsOSRD
 preplace port port-id_fifo_write_full -pg 1 -lvl 0 -x 0 -y 260 -defaultsOSRD
 preplace port port-id_fifo_write_almost_full -pg 1 -lvl 0 -x 0 -y 280 -defaultsOSRD
-preplace port port-id_fifo_write_wd_en -pg 1 -lvl 3 -x 700 -y 240 -defaultsOSRD
-preplace port port-id_da_in_vld -pg 1 -lvl 3 -x 700 -y 100 -defaultsOSRD
-preplace portBus da_out -pg 1 -lvl 3 -x 700 -y 340 -defaultsOSRD
-preplace portBus da -pg 1 -lvl 3 -x 700 -y 440 -defaultsOSRD
-preplace portBus fifo_write_wd_data -pg 1 -lvl 3 -x 700 -y 220 -defaultsOSRD
+preplace port port-id_fifo_write_wd_en -pg 1 -lvl 3 -x 740 -y 240 -defaultsOSRD
+preplace port port-id_da_in_vld -pg 1 -lvl 3 -x 740 -y 100 -defaultsOSRD
+preplace portBus da_out -pg 1 -lvl 3 -x 740 -y 340 -defaultsOSRD
+preplace portBus da -pg 1 -lvl 3 -x 740 -y 440 -defaultsOSRD
+preplace portBus fifo_write_wd_data -pg 1 -lvl 3 -x 740 -y 220 -defaultsOSRD
 preplace portBus da_in -pg 1 -lvl 0 -x 0 -y 100 -defaultsOSRD
 preplace portBus div -pg 1 -lvl 0 -x 0 -y 120 -defaultsOSRD
-preplace inst mux_reciever_out -pg 1 -lvl 2 -x 500 -y 440 -defaultsOSRD
-preplace inst axis_write_to_fifo_0 -pg 1 -lvl 2 -x 500 -y 230 -defaultsOSRD
+preplace inst mux_reciever_out -pg 1 -lvl 2 -x 520 -y 440 -defaultsOSRD
+preplace inst axis_write_to_fifo_0 -pg 1 -lvl 2 -x 520 -y 230 -defaultsOSRD
 preplace inst dac_0 -pg 1 -lvl 1 -x 170 -y 90 -defaultsOSRD
 preplace inst DUCWrapper_0 -pg 1 -lvl 1 -x 170 -y 370 -defaultsOSRD
 preplace netloc DUCWrapper_0_io_out_dac 1 1 1 310 360n
@@ -38,12 +38,12 @@ preplace netloc mux_0_data_out 1 2 1 NJ 440
 preplace netloc rst_ps7_0_50M_peripheral_aresetn 1 0 2 30 220 NJ
 preplace netloc xlslice_0_Dout1 1 0 2 NJ 240 NJ
 preplace netloc xlslice_dac_8_15_Dout 1 0 1 NJ 120
+preplace netloc xlslice_duc_sync_6_Dout 1 0 1 NJ 360
 preplace netloc xlslice_reciever_out_7_Dout 1 0 2 NJ 460 NJ
 preplace netloc xlslice_sender_Dout 1 0 1 NJ 340
-preplace netloc xlslice_duc_sync_6_Dout 1 0 1 NJ 360
 preplace netloc axi_dma_0_M_AXIS_MM2S 1 0 2 NJ 180 NJ
-levelinfo -pg 1 0 170 500 700
-pagesize -pg 1 -db -bbox -sgen -190 0 900 520
+levelinfo -pg 1 0 170 520 740
+pagesize -pg 1 -db -bbox -sgen -190 0 940 520
 "
 }
 

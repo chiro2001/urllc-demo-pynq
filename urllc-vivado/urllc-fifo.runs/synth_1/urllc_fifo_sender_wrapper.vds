@@ -2,8 +2,8 @@
 # Vivado v2021.1 (64-bit)
 # SW Build 3247384 on Thu Jun 10 19:36:33 MDT 2021
 # IP Build 3246043 on Fri Jun 11 00:30:35 MDT 2021
-# Start of session at: Sun Jan 23 11:44:26 2022
-# Process ID: 16856
+# Start of session at: Mon Jan 24 08:20:54 2022
+# Process ID: 33956
 # Current directory: G:/Chiro/Programs/urllc-demo-pynq/urllc-vivado/urllc-fifo.runs/synth_1
 # Command line: vivado.exe -log urllc_fifo_sender_wrapper.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source urllc_fifo_sender_wrapper.tcl
 # Log file: G:/Chiro/Programs/urllc-demo-pynq/urllc-vivado/urllc-fifo.runs/synth_1/urllc_fifo_sender_wrapper.vds
@@ -13,7 +13,7 @@ source urllc_fifo_sender_wrapper.tcl -notrace
 INFO: [IP_Flow 19-234] Refreshing IP repositories
 INFO: [IP_Flow 19-1704] No user IP repositories specified
 INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'C:/Xilinx/Vivado/2021.1/data/ip'.
-add_files: Time (s): cpu = 00:00:07 ; elapsed = 00:00:11 . Memory (MB): peak = 1257.789 ; gain = 0.000
+add_files: Time (s): cpu = 00:00:07 ; elapsed = 00:00:11 . Memory (MB): peak = 1258.293 ; gain = 0.000
 WARNING: [Vivado 12-8448] Reference module source file g:/Chiro/Programs/urllc-demo-pynq/urllc-vivado/urllc-fifo.srcs/sources_1/bd/urllc_fifo_core/urllc_fifo_core.bd referred in sub-design urllc_fifo_sender is not added in project.
 Command: synth_design -top urllc_fifo_sender_wrapper -part xc7z020clg400-2
 Starting synth_design
@@ -22,223 +22,219 @@ INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7z020
 INFO: [Device 21-403] Loading part xc7z020clg400-2
 INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 4 processes.
 INFO: [Synth 8-7078] Launching helper process for spawning children vivado processes
-INFO: [Synth 8-7075] Helper process launched with PID 26752
+INFO: [Synth 8-7075] Helper process launched with PID 28284
 ---------------------------------------------------------------------------------
-Starting RTL Elaboration : Time (s): cpu = 00:00:04 ; elapsed = 00:00:04 . Memory (MB): peak = 1257.789 ; gain = 0.000
+Starting RTL Elaboration : Time (s): cpu = 00:00:04 ; elapsed = 00:00:04 . Memory (MB): peak = 1258.293 ; gain = 0.000
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-6157] synthesizing module 'urllc_fifo_sender_wrapper' [G:/Chiro/Programs/urllc-demo-pynq/urllc-vivado/urllc-fifo.gen/sources_1/bd/urllc_fifo_sender/hdl/urllc_fifo_sender_wrapper.v:12]
 INFO: [Synth 8-6157] synthesizing module 'urllc_fifo_sender' [g:/Chiro/Programs/urllc-demo-pynq/urllc-vivado/urllc-fifo.gen/sources_1/bd/urllc_fifo_sender/synth/urllc_fifo_sender.v:13]
-INFO: [Synth 8-6157] synthesizing module 'urllc_fifo_core_inst_0' [G:/Chiro/Programs/urllc-demo-pynq/urllc-vivado/urllc-fifo.gen/sources_1/bd/urllc_fifo_sender/bd/urllc_fifo_core_inst_0/synth/urllc_fifo_core_inst_0.v:1903]
+INFO: [Synth 8-6157] synthesizing module 'urllc_fifo_core_inst_0' [G:/Chiro/Programs/urllc-demo-pynq/urllc-vivado/urllc-fifo.gen/sources_1/bd/urllc_fifo_sender/bd/urllc_fifo_core_inst_0/synth/urllc_fifo_core_inst_0.v:1891]
 INFO: [Synth 8-6157] synthesizing module 'adc_imp_NVSO26' [G:/Chiro/Programs/urllc-demo-pynq/urllc-vivado/urllc-fifo.gen/sources_1/bd/urllc_fifo_sender/bd/urllc_fifo_core_inst_0/synth/urllc_fifo_core_inst_0.v:12]
-INFO: [Synth 8-6157] synthesizing module 'urllc_fifo_core_inst_0_DDCWrapper_0_0' [G:/Chiro/Programs/urllc-demo-pynq/urllc-vivado/urllc-fifo.runs/synth_1/.Xil/Vivado-16856-WIN-544SHHHOI8Q/realtime/urllc_fifo_core_inst_0_DDCWrapper_0_0_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'urllc_fifo_core_inst_0_DDCWrapper_0_0' (1#1) [G:/Chiro/Programs/urllc-demo-pynq/urllc-vivado/urllc-fifo.runs/synth_1/.Xil/Vivado-16856-WIN-544SHHHOI8Q/realtime/urllc_fifo_core_inst_0_DDCWrapper_0_0_stub.v:6]
-WARNING: [Synth 8-7071] port 'io_out_update' of module 'urllc_fifo_core_inst_0_DDCWrapper_0_0' is unconnected for instance 'DDCWrapper_0' [G:/Chiro/Programs/urllc-demo-pynq/urllc-vivado/urllc-fifo.gen/sources_1/bd/urllc_fifo_sender/bd/urllc_fifo_core_inst_0/synth/urllc_fifo_core_inst_0.v:114]
-WARNING: [Synth 8-7071] port 'io_out_readData' of module 'urllc_fifo_core_inst_0_DDCWrapper_0_0' is unconnected for instance 'DDCWrapper_0' [G:/Chiro/Programs/urllc-demo-pynq/urllc-vivado/urllc-fifo.gen/sources_1/bd/urllc_fifo_sender/bd/urllc_fifo_core_inst_0/synth/urllc_fifo_core_inst_0.v:114]
-WARNING: [Synth 8-7071] port 'io_out_ave' of module 'urllc_fifo_core_inst_0_DDCWrapper_0_0' is unconnected for instance 'DDCWrapper_0' [G:/Chiro/Programs/urllc-demo-pynq/urllc-vivado/urllc-fifo.gen/sources_1/bd/urllc_fifo_sender/bd/urllc_fifo_core_inst_0/synth/urllc_fifo_core_inst_0.v:114]
-WARNING: [Synth 8-7023] instance 'DDCWrapper_0' of module 'urllc_fifo_core_inst_0_DDCWrapper_0_0' has 8 connections declared, but only 5 given [G:/Chiro/Programs/urllc-demo-pynq/urllc-vivado/urllc-fifo.gen/sources_1/bd/urllc_fifo_sender/bd/urllc_fifo_core_inst_0/synth/urllc_fifo_core_inst_0.v:114]
-INFO: [Synth 8-6157] synthesizing module 'urllc_fifo_core_inst_0_adc_0_0' [G:/Chiro/Programs/urllc-demo-pynq/urllc-vivado/urllc-fifo.runs/synth_1/.Xil/Vivado-16856-WIN-544SHHHOI8Q/realtime/urllc_fifo_core_inst_0_adc_0_0_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'urllc_fifo_core_inst_0_adc_0_0' (2#1) [G:/Chiro/Programs/urllc-demo-pynq/urllc-vivado/urllc-fifo.runs/synth_1/.Xil/Vivado-16856-WIN-544SHHHOI8Q/realtime/urllc_fifo_core_inst_0_adc_0_0_stub.v:6]
-INFO: [Synth 8-6157] synthesizing module 'urllc_fifo_core_inst_0_clk_slow_to_fast_0_0' [G:/Chiro/Programs/urllc-demo-pynq/urllc-vivado/urllc-fifo.runs/synth_1/.Xil/Vivado-16856-WIN-544SHHHOI8Q/realtime/urllc_fifo_core_inst_0_clk_slow_to_fast_0_0_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'urllc_fifo_core_inst_0_clk_slow_to_fast_0_0' (3#1) [G:/Chiro/Programs/urllc-demo-pynq/urllc-vivado/urllc-fifo.runs/synth_1/.Xil/Vivado-16856-WIN-544SHHHOI8Q/realtime/urllc_fifo_core_inst_0_clk_slow_to_fast_0_0_stub.v:6]
-INFO: [Synth 8-6157] synthesizing module 'urllc_fifo_core_inst_0_clk_slow_to_fast_1_0' [G:/Chiro/Programs/urllc-demo-pynq/urllc-vivado/urllc-fifo.runs/synth_1/.Xil/Vivado-16856-WIN-544SHHHOI8Q/realtime/urllc_fifo_core_inst_0_clk_slow_to_fast_1_0_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'urllc_fifo_core_inst_0_clk_slow_to_fast_1_0' (4#1) [G:/Chiro/Programs/urllc-demo-pynq/urllc-vivado/urllc-fifo.runs/synth_1/.Xil/Vivado-16856-WIN-544SHHHOI8Q/realtime/urllc_fifo_core_inst_0_clk_slow_to_fast_1_0_stub.v:6]
-INFO: [Synth 8-6157] synthesizing module 'urllc_fifo_core_inst_0_count_trigger_0_0' [G:/Chiro/Programs/urllc-demo-pynq/urllc-vivado/urllc-fifo.runs/synth_1/.Xil/Vivado-16856-WIN-544SHHHOI8Q/realtime/urllc_fifo_core_inst_0_count_trigger_0_0_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'urllc_fifo_core_inst_0_count_trigger_0_0' (5#1) [G:/Chiro/Programs/urllc-demo-pynq/urllc-vivado/urllc-fifo.runs/synth_1/.Xil/Vivado-16856-WIN-544SHHHOI8Q/realtime/urllc_fifo_core_inst_0_count_trigger_0_0_stub.v:6]
-INFO: [Synth 8-6157] synthesizing module 'urllc_fifo_core_inst_0_fifo_read_to_axis_0_0' [G:/Chiro/Programs/urllc-demo-pynq/urllc-vivado/urllc-fifo.runs/synth_1/.Xil/Vivado-16856-WIN-544SHHHOI8Q/realtime/urllc_fifo_core_inst_0_fifo_read_to_axis_0_0_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'urllc_fifo_core_inst_0_fifo_read_to_axis_0_0' (6#1) [G:/Chiro/Programs/urllc-demo-pynq/urllc-vivado/urllc-fifo.runs/synth_1/.Xil/Vivado-16856-WIN-544SHHHOI8Q/realtime/urllc_fifo_core_inst_0_fifo_read_to_axis_0_0_stub.v:6]
-INFO: [Synth 8-6157] synthesizing module 'urllc_fifo_core_inst_0_mux_reciever_in_0' [G:/Chiro/Programs/urllc-demo-pynq/urllc-vivado/urllc-fifo.runs/synth_1/.Xil/Vivado-16856-WIN-544SHHHOI8Q/realtime/urllc_fifo_core_inst_0_mux_reciever_in_0_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'urllc_fifo_core_inst_0_mux_reciever_in_0' (7#1) [G:/Chiro/Programs/urllc-demo-pynq/urllc-vivado/urllc-fifo.runs/synth_1/.Xil/Vivado-16856-WIN-544SHHHOI8Q/realtime/urllc_fifo_core_inst_0_mux_reciever_in_0_stub.v:6]
+INFO: [Synth 8-6157] synthesizing module 'urllc_fifo_core_inst_0_DDCWrapper_0_0' [G:/Chiro/Programs/urllc-demo-pynq/urllc-vivado/urllc-fifo.runs/synth_1/.Xil/Vivado-33956-WIN-544SHHHOI8Q/realtime/urllc_fifo_core_inst_0_DDCWrapper_0_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'urllc_fifo_core_inst_0_DDCWrapper_0_0' (1#1) [G:/Chiro/Programs/urllc-demo-pynq/urllc-vivado/urllc-fifo.runs/synth_1/.Xil/Vivado-33956-WIN-544SHHHOI8Q/realtime/urllc_fifo_core_inst_0_DDCWrapper_0_0_stub.v:6]
+WARNING: [Synth 8-7071] port 'io_out_update' of module 'urllc_fifo_core_inst_0_DDCWrapper_0_0' is unconnected for instance 'DDCWrapper_0' [G:/Chiro/Programs/urllc-demo-pynq/urllc-vivado/urllc-fifo.gen/sources_1/bd/urllc_fifo_sender/bd/urllc_fifo_core_inst_0/synth/urllc_fifo_core_inst_0.v:112]
+WARNING: [Synth 8-7071] port 'io_out_readData' of module 'urllc_fifo_core_inst_0_DDCWrapper_0_0' is unconnected for instance 'DDCWrapper_0' [G:/Chiro/Programs/urllc-demo-pynq/urllc-vivado/urllc-fifo.gen/sources_1/bd/urllc_fifo_sender/bd/urllc_fifo_core_inst_0/synth/urllc_fifo_core_inst_0.v:112]
+WARNING: [Synth 8-7071] port 'io_out_ave' of module 'urllc_fifo_core_inst_0_DDCWrapper_0_0' is unconnected for instance 'DDCWrapper_0' [G:/Chiro/Programs/urllc-demo-pynq/urllc-vivado/urllc-fifo.gen/sources_1/bd/urllc_fifo_sender/bd/urllc_fifo_core_inst_0/synth/urllc_fifo_core_inst_0.v:112]
+WARNING: [Synth 8-7023] instance 'DDCWrapper_0' of module 'urllc_fifo_core_inst_0_DDCWrapper_0_0' has 8 connections declared, but only 5 given [G:/Chiro/Programs/urllc-demo-pynq/urllc-vivado/urllc-fifo.gen/sources_1/bd/urllc_fifo_sender/bd/urllc_fifo_core_inst_0/synth/urllc_fifo_core_inst_0.v:112]
+INFO: [Synth 8-6157] synthesizing module 'urllc_fifo_core_inst_0_adc_0_0' [G:/Chiro/Programs/urllc-demo-pynq/urllc-vivado/urllc-fifo.runs/synth_1/.Xil/Vivado-33956-WIN-544SHHHOI8Q/realtime/urllc_fifo_core_inst_0_adc_0_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'urllc_fifo_core_inst_0_adc_0_0' (2#1) [G:/Chiro/Programs/urllc-demo-pynq/urllc-vivado/urllc-fifo.runs/synth_1/.Xil/Vivado-33956-WIN-544SHHHOI8Q/realtime/urllc_fifo_core_inst_0_adc_0_0_stub.v:6]
+INFO: [Synth 8-6157] synthesizing module 'urllc_fifo_core_inst_0_count_trigger_0_0' [G:/Chiro/Programs/urllc-demo-pynq/urllc-vivado/urllc-fifo.runs/synth_1/.Xil/Vivado-33956-WIN-544SHHHOI8Q/realtime/urllc_fifo_core_inst_0_count_trigger_0_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'urllc_fifo_core_inst_0_count_trigger_0_0' (3#1) [G:/Chiro/Programs/urllc-demo-pynq/urllc-vivado/urllc-fifo.runs/synth_1/.Xil/Vivado-33956-WIN-544SHHHOI8Q/realtime/urllc_fifo_core_inst_0_count_trigger_0_0_stub.v:6]
+INFO: [Synth 8-6157] synthesizing module 'urllc_fifo_core_inst_0_fifo_read_to_axis_0_0' [G:/Chiro/Programs/urllc-demo-pynq/urllc-vivado/urllc-fifo.runs/synth_1/.Xil/Vivado-33956-WIN-544SHHHOI8Q/realtime/urllc_fifo_core_inst_0_fifo_read_to_axis_0_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'urllc_fifo_core_inst_0_fifo_read_to_axis_0_0' (4#1) [G:/Chiro/Programs/urllc-demo-pynq/urllc-vivado/urllc-fifo.runs/synth_1/.Xil/Vivado-33956-WIN-544SHHHOI8Q/realtime/urllc_fifo_core_inst_0_fifo_read_to_axis_0_0_stub.v:6]
+INFO: [Synth 8-6157] synthesizing module 'urllc_fifo_core_inst_0_mux_reciever_in_0' [G:/Chiro/Programs/urllc-demo-pynq/urllc-vivado/urllc-fifo.runs/synth_1/.Xil/Vivado-33956-WIN-544SHHHOI8Q/realtime/urllc_fifo_core_inst_0_mux_reciever_in_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'urllc_fifo_core_inst_0_mux_reciever_in_0' (5#1) [G:/Chiro/Programs/urllc-demo-pynq/urllc-vivado/urllc-fifo.runs/synth_1/.Xil/Vivado-33956-WIN-544SHHHOI8Q/realtime/urllc_fifo_core_inst_0_mux_reciever_in_0_stub.v:6]
 INFO: [Synth 8-6157] synthesizing module 'urllc_fifo_core_inst_0_xlconcat_0_0' [g:/Chiro/Programs/urllc-demo-pynq/urllc-vivado/urllc-fifo.gen/sources_1/bd/urllc_fifo_sender/bd/urllc_fifo_core_inst_0/ip/urllc_fifo_core_inst_0_xlconcat_0_0/synth/urllc_fifo_core_inst_0_xlconcat_0_0.v:60]
 INFO: [Synth 8-6157] synthesizing module 'xlconcat_v2_1_4_xlconcat' [g:/Chiro/Programs/urllc-demo-pynq/urllc-vivado/urllc-fifo.gen/sources_1/bd/urllc_fifo_sender/bd/urllc_fifo_core_inst_0/ipshared/4b67/hdl/xlconcat_v2_1_vl_rfs.v:14]
-INFO: [Synth 8-6155] done synthesizing module 'xlconcat_v2_1_4_xlconcat' (8#1) [g:/Chiro/Programs/urllc-demo-pynq/urllc-vivado/urllc-fifo.gen/sources_1/bd/urllc_fifo_sender/bd/urllc_fifo_core_inst_0/ipshared/4b67/hdl/xlconcat_v2_1_vl_rfs.v:14]
-INFO: [Synth 8-6155] done synthesizing module 'urllc_fifo_core_inst_0_xlconcat_0_0' (9#1) [g:/Chiro/Programs/urllc-demo-pynq/urllc-vivado/urllc-fifo.gen/sources_1/bd/urllc_fifo_sender/bd/urllc_fifo_core_inst_0/ip/urllc_fifo_core_inst_0_xlconcat_0_0/synth/urllc_fifo_core_inst_0_xlconcat_0_0.v:60]
+INFO: [Synth 8-6155] done synthesizing module 'xlconcat_v2_1_4_xlconcat' (6#1) [g:/Chiro/Programs/urllc-demo-pynq/urllc-vivado/urllc-fifo.gen/sources_1/bd/urllc_fifo_sender/bd/urllc_fifo_core_inst_0/ipshared/4b67/hdl/xlconcat_v2_1_vl_rfs.v:14]
+INFO: [Synth 8-6155] done synthesizing module 'urllc_fifo_core_inst_0_xlconcat_0_0' (7#1) [g:/Chiro/Programs/urllc-demo-pynq/urllc-vivado/urllc-fifo.gen/sources_1/bd/urllc_fifo_sender/bd/urllc_fifo_core_inst_0/ip/urllc_fifo_core_inst_0_xlconcat_0_0/synth/urllc_fifo_core_inst_0_xlconcat_0_0.v:60]
 INFO: [Synth 8-6157] synthesizing module 'urllc_fifo_core_inst_0_xlconstant_0_0' [g:/Chiro/Programs/urllc-demo-pynq/urllc-vivado/urllc-fifo.gen/sources_1/bd/urllc_fifo_sender/bd/urllc_fifo_core_inst_0/ip/urllc_fifo_core_inst_0_xlconstant_0_0/synth/urllc_fifo_core_inst_0_xlconstant_0_0.v:57]
 INFO: [Synth 8-6157] synthesizing module 'xlconstant_v1_1_7_xlconstant' [g:/Chiro/Programs/urllc-demo-pynq/urllc-vivado/urllc-fifo.gen/sources_1/bd/urllc_fifo_sender/bd/urllc_fifo_core_inst_0/ipshared/fcfc/hdl/xlconstant_v1_1_vl_rfs.v:23]
-INFO: [Synth 8-6155] done synthesizing module 'xlconstant_v1_1_7_xlconstant' (10#1) [g:/Chiro/Programs/urllc-demo-pynq/urllc-vivado/urllc-fifo.gen/sources_1/bd/urllc_fifo_sender/bd/urllc_fifo_core_inst_0/ipshared/fcfc/hdl/xlconstant_v1_1_vl_rfs.v:23]
-INFO: [Synth 8-6155] done synthesizing module 'urllc_fifo_core_inst_0_xlconstant_0_0' (11#1) [g:/Chiro/Programs/urllc-demo-pynq/urllc-vivado/urllc-fifo.gen/sources_1/bd/urllc_fifo_sender/bd/urllc_fifo_core_inst_0/ip/urllc_fifo_core_inst_0_xlconstant_0_0/synth/urllc_fifo_core_inst_0_xlconstant_0_0.v:57]
+INFO: [Synth 8-6155] done synthesizing module 'xlconstant_v1_1_7_xlconstant' (8#1) [g:/Chiro/Programs/urllc-demo-pynq/urllc-vivado/urllc-fifo.gen/sources_1/bd/urllc_fifo_sender/bd/urllc_fifo_core_inst_0/ipshared/fcfc/hdl/xlconstant_v1_1_vl_rfs.v:23]
+INFO: [Synth 8-6155] done synthesizing module 'urllc_fifo_core_inst_0_xlconstant_0_0' (9#1) [g:/Chiro/Programs/urllc-demo-pynq/urllc-vivado/urllc-fifo.gen/sources_1/bd/urllc_fifo_sender/bd/urllc_fifo_core_inst_0/ip/urllc_fifo_core_inst_0_xlconstant_0_0/synth/urllc_fifo_core_inst_0_xlconstant_0_0.v:57]
 INFO: [Synth 8-6157] synthesizing module 'urllc_fifo_core_inst_0_xlslice_adc_0_7_0' [g:/Chiro/Programs/urllc-demo-pynq/urllc-vivado/urllc-fifo.gen/sources_1/bd/urllc_fifo_sender/bd/urllc_fifo_core_inst_0/ip/urllc_fifo_core_inst_0_xlslice_adc_0_7_0/synth/urllc_fifo_core_inst_0_xlslice_adc_0_7_0.v:57]
 INFO: [Synth 8-6157] synthesizing module 'xlslice_v1_0_2_xlslice' [g:/Chiro/Programs/urllc-demo-pynq/urllc-vivado/urllc-fifo.gen/sources_1/bd/urllc_fifo_sender/bd/urllc_fifo_core_inst_0/ipshared/11d0/hdl/xlslice_v1_0_vl_rfs.v:13]
-INFO: [Synth 8-6155] done synthesizing module 'xlslice_v1_0_2_xlslice' (12#1) [g:/Chiro/Programs/urllc-demo-pynq/urllc-vivado/urllc-fifo.gen/sources_1/bd/urllc_fifo_sender/bd/urllc_fifo_core_inst_0/ipshared/11d0/hdl/xlslice_v1_0_vl_rfs.v:13]
-INFO: [Synth 8-6155] done synthesizing module 'urllc_fifo_core_inst_0_xlslice_adc_0_7_0' (13#1) [g:/Chiro/Programs/urllc-demo-pynq/urllc-vivado/urllc-fifo.gen/sources_1/bd/urllc_fifo_sender/bd/urllc_fifo_core_inst_0/ip/urllc_fifo_core_inst_0_xlslice_adc_0_7_0/synth/urllc_fifo_core_inst_0_xlslice_adc_0_7_0.v:57]
-INFO: [Synth 8-6155] done synthesizing module 'adc_imp_NVSO26' (14#1) [G:/Chiro/Programs/urllc-demo-pynq/urllc-vivado/urllc-fifo.gen/sources_1/bd/urllc_fifo_sender/bd/urllc_fifo_core_inst_0/synth/urllc_fifo_core_inst_0.v:12]
-INFO: [Synth 8-6157] synthesizing module 'core_imp_1490Y3Y' [G:/Chiro/Programs/urllc-demo-pynq/urllc-vivado/urllc-fifo.gen/sources_1/bd/urllc_fifo_sender/bd/urllc_fifo_core_inst_0/synth/urllc_fifo_core_inst_0.v:172]
-INFO: [Synth 8-6157] synthesizing module 'urllc_fifo_core_inst_0_axi_dma_0_0' [G:/Chiro/Programs/urllc-demo-pynq/urllc-vivado/urllc-fifo.runs/synth_1/.Xil/Vivado-16856-WIN-544SHHHOI8Q/realtime/urllc_fifo_core_inst_0_axi_dma_0_0_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'urllc_fifo_core_inst_0_axi_dma_0_0' (15#1) [G:/Chiro/Programs/urllc-demo-pynq/urllc-vivado/urllc-fifo.runs/synth_1/.Xil/Vivado-16856-WIN-544SHHHOI8Q/realtime/urllc_fifo_core_inst_0_axi_dma_0_0_stub.v:6]
-WARNING: [Synth 8-7071] port 'mm2s_prmry_reset_out_n' of module 'urllc_fifo_core_inst_0_axi_dma_0_0' is unconnected for instance 'axi_dma_0' [G:/Chiro/Programs/urllc-demo-pynq/urllc-vivado/urllc-fifo.gen/sources_1/bd/urllc_fifo_sender/bd/urllc_fifo_core_inst_0/synth/urllc_fifo_core_inst_0.v:584]
-WARNING: [Synth 8-7071] port 's2mm_prmry_reset_out_n' of module 'urllc_fifo_core_inst_0_axi_dma_0_0' is unconnected for instance 'axi_dma_0' [G:/Chiro/Programs/urllc-demo-pynq/urllc-vivado/urllc-fifo.gen/sources_1/bd/urllc_fifo_sender/bd/urllc_fifo_core_inst_0/synth/urllc_fifo_core_inst_0.v:584]
-WARNING: [Synth 8-7071] port 'axi_dma_tstvec' of module 'urllc_fifo_core_inst_0_axi_dma_0_0' is unconnected for instance 'axi_dma_0' [G:/Chiro/Programs/urllc-demo-pynq/urllc-vivado/urllc-fifo.gen/sources_1/bd/urllc_fifo_sender/bd/urllc_fifo_core_inst_0/synth/urllc_fifo_core_inst_0.v:584]
-WARNING: [Synth 8-7023] instance 'axi_dma_0' of module 'urllc_fifo_core_inst_0_axi_dma_0_0' has 64 connections declared, but only 61 given [G:/Chiro/Programs/urllc-demo-pynq/urllc-vivado/urllc-fifo.gen/sources_1/bd/urllc_fifo_sender/bd/urllc_fifo_core_inst_0/synth/urllc_fifo_core_inst_0.v:584]
-INFO: [Synth 8-6157] synthesizing module 'urllc_fifo_core_inst_0_axi_smc_0' [G:/Chiro/Programs/urllc-demo-pynq/urllc-vivado/urllc-fifo.runs/synth_1/.Xil/Vivado-16856-WIN-544SHHHOI8Q/realtime/urllc_fifo_core_inst_0_axi_smc_0_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'urllc_fifo_core_inst_0_axi_smc_0' (16#1) [G:/Chiro/Programs/urllc-demo-pynq/urllc-vivado/urllc-fifo.runs/synth_1/.Xil/Vivado-16856-WIN-544SHHHOI8Q/realtime/urllc_fifo_core_inst_0_axi_smc_0_stub.v:6]
-INFO: [Synth 8-6157] synthesizing module 'urllc_fifo_core_inst_0_clk_dynamic_0' [G:/Chiro/Programs/urllc-demo-pynq/urllc-vivado/urllc-fifo.runs/synth_1/.Xil/Vivado-16856-WIN-544SHHHOI8Q/realtime/urllc_fifo_core_inst_0_clk_dynamic_0_stub.v:5]
-INFO: [Synth 8-6155] done synthesizing module 'urllc_fifo_core_inst_0_clk_dynamic_0' (17#1) [G:/Chiro/Programs/urllc-demo-pynq/urllc-vivado/urllc-fifo.runs/synth_1/.Xil/Vivado-16856-WIN-544SHHHOI8Q/realtime/urllc_fifo_core_inst_0_clk_dynamic_0_stub.v:5]
-WARNING: [Synth 8-7071] port 'psdone' of module 'urllc_fifo_core_inst_0_clk_dynamic_0' is unconnected for instance 'clk_dynamic' [G:/Chiro/Programs/urllc-demo-pynq/urllc-vivado/urllc-fifo.gen/sources_1/bd/urllc_fifo_sender/bd/urllc_fifo_core_inst_0/synth/urllc_fifo_core_inst_0.v:748]
-WARNING: [Synth 8-7071] port 'locked' of module 'urllc_fifo_core_inst_0_clk_dynamic_0' is unconnected for instance 'clk_dynamic' [G:/Chiro/Programs/urllc-demo-pynq/urllc-vivado/urllc-fifo.gen/sources_1/bd/urllc_fifo_sender/bd/urllc_fifo_core_inst_0/synth/urllc_fifo_core_inst_0.v:748]
-WARNING: [Synth 8-7023] instance 'clk_dynamic' of module 'urllc_fifo_core_inst_0_clk_dynamic_0' has 8 connections declared, but only 6 given [G:/Chiro/Programs/urllc-demo-pynq/urllc-vivado/urllc-fifo.gen/sources_1/bd/urllc_fifo_sender/bd/urllc_fifo_core_inst_0/synth/urllc_fifo_core_inst_0.v:748]
-INFO: [Synth 8-6157] synthesizing module 'urllc_fifo_core_inst_0_clk_static_0' [G:/Chiro/Programs/urllc-demo-pynq/urllc-vivado/urllc-fifo.runs/synth_1/.Xil/Vivado-16856-WIN-544SHHHOI8Q/realtime/urllc_fifo_core_inst_0_clk_static_0_stub.v:5]
-INFO: [Synth 8-6155] done synthesizing module 'urllc_fifo_core_inst_0_clk_static_0' (18#1) [G:/Chiro/Programs/urllc-demo-pynq/urllc-vivado/urllc-fifo.runs/synth_1/.Xil/Vivado-16856-WIN-544SHHHOI8Q/realtime/urllc_fifo_core_inst_0_clk_static_0_stub.v:5]
-WARNING: [Synth 8-7071] port 'locked' of module 'urllc_fifo_core_inst_0_clk_static_0' is unconnected for instance 'clk_static' [G:/Chiro/Programs/urllc-demo-pynq/urllc-vivado/urllc-fifo.gen/sources_1/bd/urllc_fifo_sender/bd/urllc_fifo_core_inst_0/synth/urllc_fifo_core_inst_0.v:755]
-WARNING: [Synth 8-7023] instance 'clk_static' of module 'urllc_fifo_core_inst_0_clk_static_0' has 4 connections declared, but only 3 given [G:/Chiro/Programs/urllc-demo-pynq/urllc-vivado/urllc-fifo.gen/sources_1/bd/urllc_fifo_sender/bd/urllc_fifo_core_inst_0/synth/urllc_fifo_core_inst_0.v:755]
-INFO: [Synth 8-6157] synthesizing module 'urllc_fifo_core_inst_0_fifo_adc_0' [G:/Chiro/Programs/urllc-demo-pynq/urllc-vivado/urllc-fifo.runs/synth_1/.Xil/Vivado-16856-WIN-544SHHHOI8Q/realtime/urllc_fifo_core_inst_0_fifo_adc_0_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'urllc_fifo_core_inst_0_fifo_adc_0' (19#1) [G:/Chiro/Programs/urllc-demo-pynq/urllc-vivado/urllc-fifo.runs/synth_1/.Xil/Vivado-16856-WIN-544SHHHOI8Q/realtime/urllc_fifo_core_inst_0_fifo_adc_0_stub.v:6]
-WARNING: [Synth 8-7071] port 'full' of module 'urllc_fifo_core_inst_0_fifo_adc_0' is unconnected for instance 'fifo_adc' [G:/Chiro/Programs/urllc-demo-pynq/urllc-vivado/urllc-fifo.gen/sources_1/bd/urllc_fifo_sender/bd/urllc_fifo_core_inst_0/synth/urllc_fifo_core_inst_0.v:759]
-WARNING: [Synth 8-7071] port 'almost_full' of module 'urllc_fifo_core_inst_0_fifo_adc_0' is unconnected for instance 'fifo_adc' [G:/Chiro/Programs/urllc-demo-pynq/urllc-vivado/urllc-fifo.gen/sources_1/bd/urllc_fifo_sender/bd/urllc_fifo_core_inst_0/synth/urllc_fifo_core_inst_0.v:759]
-WARNING: [Synth 8-7023] instance 'fifo_adc' of module 'urllc_fifo_core_inst_0_fifo_adc_0' has 11 connections declared, but only 9 given [G:/Chiro/Programs/urllc-demo-pynq/urllc-vivado/urllc-fifo.gen/sources_1/bd/urllc_fifo_sender/bd/urllc_fifo_core_inst_0/synth/urllc_fifo_core_inst_0.v:759]
-INFO: [Synth 8-6157] synthesizing module 'urllc_fifo_core_inst_0_fifo_dac_0' [G:/Chiro/Programs/urllc-demo-pynq/urllc-vivado/urllc-fifo.runs/synth_1/.Xil/Vivado-16856-WIN-544SHHHOI8Q/realtime/urllc_fifo_core_inst_0_fifo_dac_0_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'urllc_fifo_core_inst_0_fifo_dac_0' (20#1) [G:/Chiro/Programs/urllc-demo-pynq/urllc-vivado/urllc-fifo.runs/synth_1/.Xil/Vivado-16856-WIN-544SHHHOI8Q/realtime/urllc_fifo_core_inst_0_fifo_dac_0_stub.v:6]
-WARNING: [Synth 8-7071] port 'empty' of module 'urllc_fifo_core_inst_0_fifo_dac_0' is unconnected for instance 'fifo_dac' [G:/Chiro/Programs/urllc-demo-pynq/urllc-vivado/urllc-fifo.gen/sources_1/bd/urllc_fifo_sender/bd/urllc_fifo_core_inst_0/synth/urllc_fifo_core_inst_0.v:769]
-WARNING: [Synth 8-7071] port 'almost_empty' of module 'urllc_fifo_core_inst_0_fifo_dac_0' is unconnected for instance 'fifo_dac' [G:/Chiro/Programs/urllc-demo-pynq/urllc-vivado/urllc-fifo.gen/sources_1/bd/urllc_fifo_sender/bd/urllc_fifo_core_inst_0/synth/urllc_fifo_core_inst_0.v:769]
-WARNING: [Synth 8-7071] port 'data_count' of module 'urllc_fifo_core_inst_0_fifo_dac_0' is unconnected for instance 'fifo_dac' [G:/Chiro/Programs/urllc-demo-pynq/urllc-vivado/urllc-fifo.gen/sources_1/bd/urllc_fifo_sender/bd/urllc_fifo_core_inst_0/synth/urllc_fifo_core_inst_0.v:769]
-WARNING: [Synth 8-7023] instance 'fifo_dac' of module 'urllc_fifo_core_inst_0_fifo_dac_0' has 11 connections declared, but only 8 given [G:/Chiro/Programs/urllc-demo-pynq/urllc-vivado/urllc-fifo.gen/sources_1/bd/urllc_fifo_sender/bd/urllc_fifo_core_inst_0/synth/urllc_fifo_core_inst_0.v:769]
-INFO: [Synth 8-6157] synthesizing module 'urllc_fifo_core_inst_0_processing_system7_0_0' [G:/Chiro/Programs/urllc-demo-pynq/urllc-vivado/urllc-fifo.runs/synth_1/.Xil/Vivado-16856-WIN-544SHHHOI8Q/realtime/urllc_fifo_core_inst_0_processing_system7_0_0_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'urllc_fifo_core_inst_0_processing_system7_0_0' (21#1) [G:/Chiro/Programs/urllc-demo-pynq/urllc-vivado/urllc-fifo.runs/synth_1/.Xil/Vivado-16856-WIN-544SHHHOI8Q/realtime/urllc_fifo_core_inst_0_processing_system7_0_0_stub.v:6]
-WARNING: [Synth 8-7071] port 'ENET0_MDIO_MDC' of module 'urllc_fifo_core_inst_0_processing_system7_0_0' is unconnected for instance 'processing_system7_0' [G:/Chiro/Programs/urllc-demo-pynq/urllc-vivado/urllc-fifo.gen/sources_1/bd/urllc_fifo_sender/bd/urllc_fifo_core_inst_0/synth/urllc_fifo_core_inst_0.v:778]
-WARNING: [Synth 8-7071] port 'ENET0_MDIO_O' of module 'urllc_fifo_core_inst_0_processing_system7_0_0' is unconnected for instance 'processing_system7_0' [G:/Chiro/Programs/urllc-demo-pynq/urllc-vivado/urllc-fifo.gen/sources_1/bd/urllc_fifo_sender/bd/urllc_fifo_core_inst_0/synth/urllc_fifo_core_inst_0.v:778]
-WARNING: [Synth 8-7071] port 'ENET0_MDIO_T' of module 'urllc_fifo_core_inst_0_processing_system7_0_0' is unconnected for instance 'processing_system7_0' [G:/Chiro/Programs/urllc-demo-pynq/urllc-vivado/urllc-fifo.gen/sources_1/bd/urllc_fifo_sender/bd/urllc_fifo_core_inst_0/synth/urllc_fifo_core_inst_0.v:778]
-WARNING: [Synth 8-7071] port 'S_AXI_HP0_BID' of module 'urllc_fifo_core_inst_0_processing_system7_0_0' is unconnected for instance 'processing_system7_0' [G:/Chiro/Programs/urllc-demo-pynq/urllc-vivado/urllc-fifo.gen/sources_1/bd/urllc_fifo_sender/bd/urllc_fifo_core_inst_0/synth/urllc_fifo_core_inst_0.v:778]
-WARNING: [Synth 8-7071] port 'S_AXI_HP0_RID' of module 'urllc_fifo_core_inst_0_processing_system7_0_0' is unconnected for instance 'processing_system7_0' [G:/Chiro/Programs/urllc-demo-pynq/urllc-vivado/urllc-fifo.gen/sources_1/bd/urllc_fifo_sender/bd/urllc_fifo_core_inst_0/synth/urllc_fifo_core_inst_0.v:778]
-WARNING: [Synth 8-7071] port 'S_AXI_HP0_RCOUNT' of module 'urllc_fifo_core_inst_0_processing_system7_0_0' is unconnected for instance 'processing_system7_0' [G:/Chiro/Programs/urllc-demo-pynq/urllc-vivado/urllc-fifo.gen/sources_1/bd/urllc_fifo_sender/bd/urllc_fifo_core_inst_0/synth/urllc_fifo_core_inst_0.v:778]
-WARNING: [Synth 8-7071] port 'S_AXI_HP0_WCOUNT' of module 'urllc_fifo_core_inst_0_processing_system7_0_0' is unconnected for instance 'processing_system7_0' [G:/Chiro/Programs/urllc-demo-pynq/urllc-vivado/urllc-fifo.gen/sources_1/bd/urllc_fifo_sender/bd/urllc_fifo_core_inst_0/synth/urllc_fifo_core_inst_0.v:778]
-WARNING: [Synth 8-7071] port 'S_AXI_HP0_RACOUNT' of module 'urllc_fifo_core_inst_0_processing_system7_0_0' is unconnected for instance 'processing_system7_0' [G:/Chiro/Programs/urllc-demo-pynq/urllc-vivado/urllc-fifo.gen/sources_1/bd/urllc_fifo_sender/bd/urllc_fifo_core_inst_0/synth/urllc_fifo_core_inst_0.v:778]
-WARNING: [Synth 8-7071] port 'S_AXI_HP0_WACOUNT' of module 'urllc_fifo_core_inst_0_processing_system7_0_0' is unconnected for instance 'processing_system7_0' [G:/Chiro/Programs/urllc-demo-pynq/urllc-vivado/urllc-fifo.gen/sources_1/bd/urllc_fifo_sender/bd/urllc_fifo_core_inst_0/synth/urllc_fifo_core_inst_0.v:778]
-WARNING: [Synth 8-7071] port 'S_AXI_HP1_BID' of module 'urllc_fifo_core_inst_0_processing_system7_0_0' is unconnected for instance 'processing_system7_0' [G:/Chiro/Programs/urllc-demo-pynq/urllc-vivado/urllc-fifo.gen/sources_1/bd/urllc_fifo_sender/bd/urllc_fifo_core_inst_0/synth/urllc_fifo_core_inst_0.v:778]
-WARNING: [Synth 8-7071] port 'S_AXI_HP1_RID' of module 'urllc_fifo_core_inst_0_processing_system7_0_0' is unconnected for instance 'processing_system7_0' [G:/Chiro/Programs/urllc-demo-pynq/urllc-vivado/urllc-fifo.gen/sources_1/bd/urllc_fifo_sender/bd/urllc_fifo_core_inst_0/synth/urllc_fifo_core_inst_0.v:778]
-WARNING: [Synth 8-7071] port 'S_AXI_HP1_RCOUNT' of module 'urllc_fifo_core_inst_0_processing_system7_0_0' is unconnected for instance 'processing_system7_0' [G:/Chiro/Programs/urllc-demo-pynq/urllc-vivado/urllc-fifo.gen/sources_1/bd/urllc_fifo_sender/bd/urllc_fifo_core_inst_0/synth/urllc_fifo_core_inst_0.v:778]
-WARNING: [Synth 8-7071] port 'S_AXI_HP1_WCOUNT' of module 'urllc_fifo_core_inst_0_processing_system7_0_0' is unconnected for instance 'processing_system7_0' [G:/Chiro/Programs/urllc-demo-pynq/urllc-vivado/urllc-fifo.gen/sources_1/bd/urllc_fifo_sender/bd/urllc_fifo_core_inst_0/synth/urllc_fifo_core_inst_0.v:778]
-WARNING: [Synth 8-7071] port 'S_AXI_HP1_RACOUNT' of module 'urllc_fifo_core_inst_0_processing_system7_0_0' is unconnected for instance 'processing_system7_0' [G:/Chiro/Programs/urllc-demo-pynq/urllc-vivado/urllc-fifo.gen/sources_1/bd/urllc_fifo_sender/bd/urllc_fifo_core_inst_0/synth/urllc_fifo_core_inst_0.v:778]
-WARNING: [Synth 8-7071] port 'S_AXI_HP1_WACOUNT' of module 'urllc_fifo_core_inst_0_processing_system7_0_0' is unconnected for instance 'processing_system7_0' [G:/Chiro/Programs/urllc-demo-pynq/urllc-vivado/urllc-fifo.gen/sources_1/bd/urllc_fifo_sender/bd/urllc_fifo_core_inst_0/synth/urllc_fifo_core_inst_0.v:778]
-WARNING: [Synth 8-7023] instance 'processing_system7_0' of module 'urllc_fifo_core_inst_0_processing_system7_0_0' has 157 connections declared, but only 142 given [G:/Chiro/Programs/urllc-demo-pynq/urllc-vivado/urllc-fifo.gen/sources_1/bd/urllc_fifo_sender/bd/urllc_fifo_core_inst_0/synth/urllc_fifo_core_inst_0.v:778]
-INFO: [Synth 8-6157] synthesizing module 'urllc_fifo_core_inst_0_ps7_0_axi_periph_0' [G:/Chiro/Programs/urllc-demo-pynq/urllc-vivado/urllc-fifo.gen/sources_1/bd/urllc_fifo_sender/bd/urllc_fifo_core_inst_0/synth/urllc_fifo_core_inst_0.v:2220]
-INFO: [Synth 8-6157] synthesizing module 'm00_couplers_imp_1FDMWNJ' [G:/Chiro/Programs/urllc-demo-pynq/urllc-vivado/urllc-fifo.gen/sources_1/bd/urllc_fifo_sender/bd/urllc_fifo_core_inst_0/synth/urllc_fifo_core_inst_0.v:1340]
-INFO: [Synth 8-6155] done synthesizing module 'm00_couplers_imp_1FDMWNJ' (22#1) [G:/Chiro/Programs/urllc-demo-pynq/urllc-vivado/urllc-fifo.gen/sources_1/bd/urllc_fifo_sender/bd/urllc_fifo_core_inst_0/synth/urllc_fifo_core_inst_0.v:1340]
-INFO: [Synth 8-6157] synthesizing module 'm01_couplers_imp_K8SI1X' [G:/Chiro/Programs/urllc-demo-pynq/urllc-vivado/urllc-fifo.gen/sources_1/bd/urllc_fifo_sender/bd/urllc_fifo_core_inst_0/synth/urllc_fifo_core_inst_0.v:1472]
-INFO: [Synth 8-6155] done synthesizing module 'm01_couplers_imp_K8SI1X' (23#1) [G:/Chiro/Programs/urllc-demo-pynq/urllc-vivado/urllc-fifo.gen/sources_1/bd/urllc_fifo_sender/bd/urllc_fifo_core_inst_0/synth/urllc_fifo_core_inst_0.v:1472]
-INFO: [Synth 8-6157] synthesizing module 's00_couplers_imp_1FBGI7D' [G:/Chiro/Programs/urllc-demo-pynq/urllc-vivado/urllc-fifo.gen/sources_1/bd/urllc_fifo_sender/bd/urllc_fifo_core_inst_0/synth/urllc_fifo_core_inst_0.v:1597]
-INFO: [Synth 8-6157] synthesizing module 'urllc_fifo_core_inst_0_auto_pc_0' [G:/Chiro/Programs/urllc-demo-pynq/urllc-vivado/urllc-fifo.runs/synth_1/.Xil/Vivado-16856-WIN-544SHHHOI8Q/realtime/urllc_fifo_core_inst_0_auto_pc_0_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'urllc_fifo_core_inst_0_auto_pc_0' (24#1) [G:/Chiro/Programs/urllc-demo-pynq/urllc-vivado/urllc-fifo.runs/synth_1/.Xil/Vivado-16856-WIN-544SHHHOI8Q/realtime/urllc_fifo_core_inst_0_auto_pc_0_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 's00_couplers_imp_1FBGI7D' (25#1) [G:/Chiro/Programs/urllc-demo-pynq/urllc-vivado/urllc-fifo.gen/sources_1/bd/urllc_fifo_sender/bd/urllc_fifo_core_inst_0/synth/urllc_fifo_core_inst_0.v:1597]
-INFO: [Synth 8-6157] synthesizing module 'urllc_fifo_core_inst_0_xbar_0' [G:/Chiro/Programs/urllc-demo-pynq/urllc-vivado/urllc-fifo.runs/synth_1/.Xil/Vivado-16856-WIN-544SHHHOI8Q/realtime/urllc_fifo_core_inst_0_xbar_0_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'urllc_fifo_core_inst_0_xbar_0' (26#1) [G:/Chiro/Programs/urllc-demo-pynq/urllc-vivado/urllc-fifo.runs/synth_1/.Xil/Vivado-16856-WIN-544SHHHOI8Q/realtime/urllc_fifo_core_inst_0_xbar_0_stub.v:6]
-WARNING: [Synth 8-689] width (4) of port connection 'm_axi_wstrb' does not match port width (8) of module 'urllc_fifo_core_inst_0_xbar_0' [G:/Chiro/Programs/urllc-demo-pynq/urllc-vivado/urllc-fifo.gen/sources_1/bd/urllc_fifo_sender/bd/urllc_fifo_core_inst_0/synth/urllc_fifo_core_inst_0.v:2735]
-WARNING: [Synth 8-7071] port 'm_axi_awprot' of module 'urllc_fifo_core_inst_0_xbar_0' is unconnected for instance 'xbar' [G:/Chiro/Programs/urllc-demo-pynq/urllc-vivado/urllc-fifo.gen/sources_1/bd/urllc_fifo_sender/bd/urllc_fifo_core_inst_0/synth/urllc_fifo_core_inst_0.v:2717]
-WARNING: [Synth 8-7071] port 'm_axi_arprot' of module 'urllc_fifo_core_inst_0_xbar_0' is unconnected for instance 'xbar' [G:/Chiro/Programs/urllc-demo-pynq/urllc-vivado/urllc-fifo.gen/sources_1/bd/urllc_fifo_sender/bd/urllc_fifo_core_inst_0/synth/urllc_fifo_core_inst_0.v:2717]
-WARNING: [Synth 8-7023] instance 'xbar' of module 'urllc_fifo_core_inst_0_xbar_0' has 40 connections declared, but only 38 given [G:/Chiro/Programs/urllc-demo-pynq/urllc-vivado/urllc-fifo.gen/sources_1/bd/urllc_fifo_sender/bd/urllc_fifo_core_inst_0/synth/urllc_fifo_core_inst_0.v:2717]
-INFO: [Synth 8-6155] done synthesizing module 'urllc_fifo_core_inst_0_ps7_0_axi_periph_0' (27#1) [G:/Chiro/Programs/urllc-demo-pynq/urllc-vivado/urllc-fifo.gen/sources_1/bd/urllc_fifo_sender/bd/urllc_fifo_core_inst_0/synth/urllc_fifo_core_inst_0.v:2220]
-INFO: [Synth 8-6157] synthesizing module 'urllc_fifo_core_inst_0_reset_dynamic_0' [G:/Chiro/Programs/urllc-demo-pynq/urllc-vivado/urllc-fifo.runs/synth_1/.Xil/Vivado-16856-WIN-544SHHHOI8Q/realtime/urllc_fifo_core_inst_0_reset_dynamic_0_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'urllc_fifo_core_inst_0_reset_dynamic_0' (28#1) [G:/Chiro/Programs/urllc-demo-pynq/urllc-vivado/urllc-fifo.runs/synth_1/.Xil/Vivado-16856-WIN-544SHHHOI8Q/realtime/urllc_fifo_core_inst_0_reset_dynamic_0_stub.v:6]
-WARNING: [Synth 8-7071] port 'mb_reset' of module 'urllc_fifo_core_inst_0_reset_dynamic_0' is unconnected for instance 'reset_dynamic' [G:/Chiro/Programs/urllc-demo-pynq/urllc-vivado/urllc-fifo.gen/sources_1/bd/urllc_fifo_sender/bd/urllc_fifo_core_inst_0/synth/urllc_fifo_core_inst_0.v:1001]
-WARNING: [Synth 8-7071] port 'bus_struct_reset' of module 'urllc_fifo_core_inst_0_reset_dynamic_0' is unconnected for instance 'reset_dynamic' [G:/Chiro/Programs/urllc-demo-pynq/urllc-vivado/urllc-fifo.gen/sources_1/bd/urllc_fifo_sender/bd/urllc_fifo_core_inst_0/synth/urllc_fifo_core_inst_0.v:1001]
-WARNING: [Synth 8-7071] port 'peripheral_reset' of module 'urllc_fifo_core_inst_0_reset_dynamic_0' is unconnected for instance 'reset_dynamic' [G:/Chiro/Programs/urllc-demo-pynq/urllc-vivado/urllc-fifo.gen/sources_1/bd/urllc_fifo_sender/bd/urllc_fifo_core_inst_0/synth/urllc_fifo_core_inst_0.v:1001]
-WARNING: [Synth 8-7071] port 'interconnect_aresetn' of module 'urllc_fifo_core_inst_0_reset_dynamic_0' is unconnected for instance 'reset_dynamic' [G:/Chiro/Programs/urllc-demo-pynq/urllc-vivado/urllc-fifo.gen/sources_1/bd/urllc_fifo_sender/bd/urllc_fifo_core_inst_0/synth/urllc_fifo_core_inst_0.v:1001]
-WARNING: [Synth 8-7023] instance 'reset_dynamic' of module 'urllc_fifo_core_inst_0_reset_dynamic_0' has 10 connections declared, but only 6 given [G:/Chiro/Programs/urllc-demo-pynq/urllc-vivado/urllc-fifo.gen/sources_1/bd/urllc_fifo_sender/bd/urllc_fifo_core_inst_0/synth/urllc_fifo_core_inst_0.v:1001]
-INFO: [Synth 8-6157] synthesizing module 'urllc_fifo_core_inst_0_reset_static_0' [G:/Chiro/Programs/urllc-demo-pynq/urllc-vivado/urllc-fifo.runs/synth_1/.Xil/Vivado-16856-WIN-544SHHHOI8Q/realtime/urllc_fifo_core_inst_0_reset_static_0_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'urllc_fifo_core_inst_0_reset_static_0' (29#1) [G:/Chiro/Programs/urllc-demo-pynq/urllc-vivado/urllc-fifo.runs/synth_1/.Xil/Vivado-16856-WIN-544SHHHOI8Q/realtime/urllc_fifo_core_inst_0_reset_static_0_stub.v:6]
-WARNING: [Synth 8-7071] port 'mb_reset' of module 'urllc_fifo_core_inst_0_reset_static_0' is unconnected for instance 'reset_static' [G:/Chiro/Programs/urllc-demo-pynq/urllc-vivado/urllc-fifo.gen/sources_1/bd/urllc_fifo_sender/bd/urllc_fifo_core_inst_0/synth/urllc_fifo_core_inst_0.v:1008]
-WARNING: [Synth 8-7071] port 'bus_struct_reset' of module 'urllc_fifo_core_inst_0_reset_static_0' is unconnected for instance 'reset_static' [G:/Chiro/Programs/urllc-demo-pynq/urllc-vivado/urllc-fifo.gen/sources_1/bd/urllc_fifo_sender/bd/urllc_fifo_core_inst_0/synth/urllc_fifo_core_inst_0.v:1008]
-WARNING: [Synth 8-7071] port 'interconnect_aresetn' of module 'urllc_fifo_core_inst_0_reset_static_0' is unconnected for instance 'reset_static' [G:/Chiro/Programs/urllc-demo-pynq/urllc-vivado/urllc-fifo.gen/sources_1/bd/urllc_fifo_sender/bd/urllc_fifo_core_inst_0/synth/urllc_fifo_core_inst_0.v:1008]
-WARNING: [Synth 8-7023] instance 'reset_static' of module 'urllc_fifo_core_inst_0_reset_static_0' has 10 connections declared, but only 7 given [G:/Chiro/Programs/urllc-demo-pynq/urllc-vivado/urllc-fifo.gen/sources_1/bd/urllc_fifo_sender/bd/urllc_fifo_core_inst_0/synth/urllc_fifo_core_inst_0.v:1008]
+INFO: [Synth 8-6155] done synthesizing module 'xlslice_v1_0_2_xlslice' (10#1) [g:/Chiro/Programs/urllc-demo-pynq/urllc-vivado/urllc-fifo.gen/sources_1/bd/urllc_fifo_sender/bd/urllc_fifo_core_inst_0/ipshared/11d0/hdl/xlslice_v1_0_vl_rfs.v:13]
+INFO: [Synth 8-6155] done synthesizing module 'urllc_fifo_core_inst_0_xlslice_adc_0_7_0' (11#1) [g:/Chiro/Programs/urllc-demo-pynq/urllc-vivado/urllc-fifo.gen/sources_1/bd/urllc_fifo_sender/bd/urllc_fifo_core_inst_0/ip/urllc_fifo_core_inst_0_xlslice_adc_0_7_0/synth/urllc_fifo_core_inst_0_xlslice_adc_0_7_0.v:57]
+INFO: [Synth 8-6155] done synthesizing module 'adc_imp_NVSO26' (12#1) [G:/Chiro/Programs/urllc-demo-pynq/urllc-vivado/urllc-fifo.gen/sources_1/bd/urllc_fifo_sender/bd/urllc_fifo_core_inst_0/synth/urllc_fifo_core_inst_0.v:12]
+INFO: [Synth 8-6157] synthesizing module 'core_imp_1490Y3Y' [G:/Chiro/Programs/urllc-demo-pynq/urllc-vivado/urllc-fifo.gen/sources_1/bd/urllc_fifo_sender/bd/urllc_fifo_core_inst_0/synth/urllc_fifo_core_inst_0.v:160]
+INFO: [Synth 8-6157] synthesizing module 'urllc_fifo_core_inst_0_axi_dma_0_0' [G:/Chiro/Programs/urllc-demo-pynq/urllc-vivado/urllc-fifo.runs/synth_1/.Xil/Vivado-33956-WIN-544SHHHOI8Q/realtime/urllc_fifo_core_inst_0_axi_dma_0_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'urllc_fifo_core_inst_0_axi_dma_0_0' (13#1) [G:/Chiro/Programs/urllc-demo-pynq/urllc-vivado/urllc-fifo.runs/synth_1/.Xil/Vivado-33956-WIN-544SHHHOI8Q/realtime/urllc_fifo_core_inst_0_axi_dma_0_0_stub.v:6]
+WARNING: [Synth 8-7071] port 'mm2s_prmry_reset_out_n' of module 'urllc_fifo_core_inst_0_axi_dma_0_0' is unconnected for instance 'axi_dma_0' [G:/Chiro/Programs/urllc-demo-pynq/urllc-vivado/urllc-fifo.gen/sources_1/bd/urllc_fifo_sender/bd/urllc_fifo_core_inst_0/synth/urllc_fifo_core_inst_0.v:572]
+WARNING: [Synth 8-7071] port 's2mm_prmry_reset_out_n' of module 'urllc_fifo_core_inst_0_axi_dma_0_0' is unconnected for instance 'axi_dma_0' [G:/Chiro/Programs/urllc-demo-pynq/urllc-vivado/urllc-fifo.gen/sources_1/bd/urllc_fifo_sender/bd/urllc_fifo_core_inst_0/synth/urllc_fifo_core_inst_0.v:572]
+WARNING: [Synth 8-7071] port 'axi_dma_tstvec' of module 'urllc_fifo_core_inst_0_axi_dma_0_0' is unconnected for instance 'axi_dma_0' [G:/Chiro/Programs/urllc-demo-pynq/urllc-vivado/urllc-fifo.gen/sources_1/bd/urllc_fifo_sender/bd/urllc_fifo_core_inst_0/synth/urllc_fifo_core_inst_0.v:572]
+WARNING: [Synth 8-7023] instance 'axi_dma_0' of module 'urllc_fifo_core_inst_0_axi_dma_0_0' has 64 connections declared, but only 61 given [G:/Chiro/Programs/urllc-demo-pynq/urllc-vivado/urllc-fifo.gen/sources_1/bd/urllc_fifo_sender/bd/urllc_fifo_core_inst_0/synth/urllc_fifo_core_inst_0.v:572]
+INFO: [Synth 8-6157] synthesizing module 'urllc_fifo_core_inst_0_axi_smc_0' [G:/Chiro/Programs/urllc-demo-pynq/urllc-vivado/urllc-fifo.runs/synth_1/.Xil/Vivado-33956-WIN-544SHHHOI8Q/realtime/urllc_fifo_core_inst_0_axi_smc_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'urllc_fifo_core_inst_0_axi_smc_0' (14#1) [G:/Chiro/Programs/urllc-demo-pynq/urllc-vivado/urllc-fifo.runs/synth_1/.Xil/Vivado-33956-WIN-544SHHHOI8Q/realtime/urllc_fifo_core_inst_0_axi_smc_0_stub.v:6]
+INFO: [Synth 8-6157] synthesizing module 'urllc_fifo_core_inst_0_clk_dynamic_0' [G:/Chiro/Programs/urllc-demo-pynq/urllc-vivado/urllc-fifo.runs/synth_1/.Xil/Vivado-33956-WIN-544SHHHOI8Q/realtime/urllc_fifo_core_inst_0_clk_dynamic_0_stub.v:5]
+INFO: [Synth 8-6155] done synthesizing module 'urllc_fifo_core_inst_0_clk_dynamic_0' (15#1) [G:/Chiro/Programs/urllc-demo-pynq/urllc-vivado/urllc-fifo.runs/synth_1/.Xil/Vivado-33956-WIN-544SHHHOI8Q/realtime/urllc_fifo_core_inst_0_clk_dynamic_0_stub.v:5]
+WARNING: [Synth 8-7071] port 'psdone' of module 'urllc_fifo_core_inst_0_clk_dynamic_0' is unconnected for instance 'clk_dynamic' [G:/Chiro/Programs/urllc-demo-pynq/urllc-vivado/urllc-fifo.gen/sources_1/bd/urllc_fifo_sender/bd/urllc_fifo_core_inst_0/synth/urllc_fifo_core_inst_0.v:736]
+WARNING: [Synth 8-7071] port 'locked' of module 'urllc_fifo_core_inst_0_clk_dynamic_0' is unconnected for instance 'clk_dynamic' [G:/Chiro/Programs/urllc-demo-pynq/urllc-vivado/urllc-fifo.gen/sources_1/bd/urllc_fifo_sender/bd/urllc_fifo_core_inst_0/synth/urllc_fifo_core_inst_0.v:736]
+WARNING: [Synth 8-7023] instance 'clk_dynamic' of module 'urllc_fifo_core_inst_0_clk_dynamic_0' has 8 connections declared, but only 6 given [G:/Chiro/Programs/urllc-demo-pynq/urllc-vivado/urllc-fifo.gen/sources_1/bd/urllc_fifo_sender/bd/urllc_fifo_core_inst_0/synth/urllc_fifo_core_inst_0.v:736]
+INFO: [Synth 8-6157] synthesizing module 'urllc_fifo_core_inst_0_clk_static_0' [G:/Chiro/Programs/urllc-demo-pynq/urllc-vivado/urllc-fifo.runs/synth_1/.Xil/Vivado-33956-WIN-544SHHHOI8Q/realtime/urllc_fifo_core_inst_0_clk_static_0_stub.v:5]
+INFO: [Synth 8-6155] done synthesizing module 'urllc_fifo_core_inst_0_clk_static_0' (16#1) [G:/Chiro/Programs/urllc-demo-pynq/urllc-vivado/urllc-fifo.runs/synth_1/.Xil/Vivado-33956-WIN-544SHHHOI8Q/realtime/urllc_fifo_core_inst_0_clk_static_0_stub.v:5]
+WARNING: [Synth 8-7071] port 'locked' of module 'urllc_fifo_core_inst_0_clk_static_0' is unconnected for instance 'clk_static' [G:/Chiro/Programs/urllc-demo-pynq/urllc-vivado/urllc-fifo.gen/sources_1/bd/urllc_fifo_sender/bd/urllc_fifo_core_inst_0/synth/urllc_fifo_core_inst_0.v:743]
+WARNING: [Synth 8-7023] instance 'clk_static' of module 'urllc_fifo_core_inst_0_clk_static_0' has 4 connections declared, but only 3 given [G:/Chiro/Programs/urllc-demo-pynq/urllc-vivado/urllc-fifo.gen/sources_1/bd/urllc_fifo_sender/bd/urllc_fifo_core_inst_0/synth/urllc_fifo_core_inst_0.v:743]
+INFO: [Synth 8-6157] synthesizing module 'urllc_fifo_core_inst_0_fifo_adc_0' [G:/Chiro/Programs/urllc-demo-pynq/urllc-vivado/urllc-fifo.runs/synth_1/.Xil/Vivado-33956-WIN-544SHHHOI8Q/realtime/urllc_fifo_core_inst_0_fifo_adc_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'urllc_fifo_core_inst_0_fifo_adc_0' (17#1) [G:/Chiro/Programs/urllc-demo-pynq/urllc-vivado/urllc-fifo.runs/synth_1/.Xil/Vivado-33956-WIN-544SHHHOI8Q/realtime/urllc_fifo_core_inst_0_fifo_adc_0_stub.v:6]
+WARNING: [Synth 8-7071] port 'full' of module 'urllc_fifo_core_inst_0_fifo_adc_0' is unconnected for instance 'fifo_adc' [G:/Chiro/Programs/urllc-demo-pynq/urllc-vivado/urllc-fifo.gen/sources_1/bd/urllc_fifo_sender/bd/urllc_fifo_core_inst_0/synth/urllc_fifo_core_inst_0.v:747]
+WARNING: [Synth 8-7071] port 'almost_full' of module 'urllc_fifo_core_inst_0_fifo_adc_0' is unconnected for instance 'fifo_adc' [G:/Chiro/Programs/urllc-demo-pynq/urllc-vivado/urllc-fifo.gen/sources_1/bd/urllc_fifo_sender/bd/urllc_fifo_core_inst_0/synth/urllc_fifo_core_inst_0.v:747]
+WARNING: [Synth 8-7023] instance 'fifo_adc' of module 'urllc_fifo_core_inst_0_fifo_adc_0' has 11 connections declared, but only 9 given [G:/Chiro/Programs/urllc-demo-pynq/urllc-vivado/urllc-fifo.gen/sources_1/bd/urllc_fifo_sender/bd/urllc_fifo_core_inst_0/synth/urllc_fifo_core_inst_0.v:747]
+INFO: [Synth 8-6157] synthesizing module 'urllc_fifo_core_inst_0_fifo_dac_0' [G:/Chiro/Programs/urllc-demo-pynq/urllc-vivado/urllc-fifo.runs/synth_1/.Xil/Vivado-33956-WIN-544SHHHOI8Q/realtime/urllc_fifo_core_inst_0_fifo_dac_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'urllc_fifo_core_inst_0_fifo_dac_0' (18#1) [G:/Chiro/Programs/urllc-demo-pynq/urllc-vivado/urllc-fifo.runs/synth_1/.Xil/Vivado-33956-WIN-544SHHHOI8Q/realtime/urllc_fifo_core_inst_0_fifo_dac_0_stub.v:6]
+WARNING: [Synth 8-7071] port 'empty' of module 'urllc_fifo_core_inst_0_fifo_dac_0' is unconnected for instance 'fifo_dac' [G:/Chiro/Programs/urllc-demo-pynq/urllc-vivado/urllc-fifo.gen/sources_1/bd/urllc_fifo_sender/bd/urllc_fifo_core_inst_0/synth/urllc_fifo_core_inst_0.v:757]
+WARNING: [Synth 8-7071] port 'almost_empty' of module 'urllc_fifo_core_inst_0_fifo_dac_0' is unconnected for instance 'fifo_dac' [G:/Chiro/Programs/urllc-demo-pynq/urllc-vivado/urllc-fifo.gen/sources_1/bd/urllc_fifo_sender/bd/urllc_fifo_core_inst_0/synth/urllc_fifo_core_inst_0.v:757]
+WARNING: [Synth 8-7071] port 'data_count' of module 'urllc_fifo_core_inst_0_fifo_dac_0' is unconnected for instance 'fifo_dac' [G:/Chiro/Programs/urllc-demo-pynq/urllc-vivado/urllc-fifo.gen/sources_1/bd/urllc_fifo_sender/bd/urllc_fifo_core_inst_0/synth/urllc_fifo_core_inst_0.v:757]
+WARNING: [Synth 8-7023] instance 'fifo_dac' of module 'urllc_fifo_core_inst_0_fifo_dac_0' has 11 connections declared, but only 8 given [G:/Chiro/Programs/urllc-demo-pynq/urllc-vivado/urllc-fifo.gen/sources_1/bd/urllc_fifo_sender/bd/urllc_fifo_core_inst_0/synth/urllc_fifo_core_inst_0.v:757]
+INFO: [Synth 8-6157] synthesizing module 'urllc_fifo_core_inst_0_processing_system7_0_0' [G:/Chiro/Programs/urllc-demo-pynq/urllc-vivado/urllc-fifo.runs/synth_1/.Xil/Vivado-33956-WIN-544SHHHOI8Q/realtime/urllc_fifo_core_inst_0_processing_system7_0_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'urllc_fifo_core_inst_0_processing_system7_0_0' (19#1) [G:/Chiro/Programs/urllc-demo-pynq/urllc-vivado/urllc-fifo.runs/synth_1/.Xil/Vivado-33956-WIN-544SHHHOI8Q/realtime/urllc_fifo_core_inst_0_processing_system7_0_0_stub.v:6]
+WARNING: [Synth 8-7071] port 'ENET0_MDIO_MDC' of module 'urllc_fifo_core_inst_0_processing_system7_0_0' is unconnected for instance 'processing_system7_0' [G:/Chiro/Programs/urllc-demo-pynq/urllc-vivado/urllc-fifo.gen/sources_1/bd/urllc_fifo_sender/bd/urllc_fifo_core_inst_0/synth/urllc_fifo_core_inst_0.v:766]
+WARNING: [Synth 8-7071] port 'ENET0_MDIO_O' of module 'urllc_fifo_core_inst_0_processing_system7_0_0' is unconnected for instance 'processing_system7_0' [G:/Chiro/Programs/urllc-demo-pynq/urllc-vivado/urllc-fifo.gen/sources_1/bd/urllc_fifo_sender/bd/urllc_fifo_core_inst_0/synth/urllc_fifo_core_inst_0.v:766]
+WARNING: [Synth 8-7071] port 'ENET0_MDIO_T' of module 'urllc_fifo_core_inst_0_processing_system7_0_0' is unconnected for instance 'processing_system7_0' [G:/Chiro/Programs/urllc-demo-pynq/urllc-vivado/urllc-fifo.gen/sources_1/bd/urllc_fifo_sender/bd/urllc_fifo_core_inst_0/synth/urllc_fifo_core_inst_0.v:766]
+WARNING: [Synth 8-7071] port 'S_AXI_HP0_BID' of module 'urllc_fifo_core_inst_0_processing_system7_0_0' is unconnected for instance 'processing_system7_0' [G:/Chiro/Programs/urllc-demo-pynq/urllc-vivado/urllc-fifo.gen/sources_1/bd/urllc_fifo_sender/bd/urllc_fifo_core_inst_0/synth/urllc_fifo_core_inst_0.v:766]
+WARNING: [Synth 8-7071] port 'S_AXI_HP0_RID' of module 'urllc_fifo_core_inst_0_processing_system7_0_0' is unconnected for instance 'processing_system7_0' [G:/Chiro/Programs/urllc-demo-pynq/urllc-vivado/urllc-fifo.gen/sources_1/bd/urllc_fifo_sender/bd/urllc_fifo_core_inst_0/synth/urllc_fifo_core_inst_0.v:766]
+WARNING: [Synth 8-7071] port 'S_AXI_HP0_RCOUNT' of module 'urllc_fifo_core_inst_0_processing_system7_0_0' is unconnected for instance 'processing_system7_0' [G:/Chiro/Programs/urllc-demo-pynq/urllc-vivado/urllc-fifo.gen/sources_1/bd/urllc_fifo_sender/bd/urllc_fifo_core_inst_0/synth/urllc_fifo_core_inst_0.v:766]
+WARNING: [Synth 8-7071] port 'S_AXI_HP0_WCOUNT' of module 'urllc_fifo_core_inst_0_processing_system7_0_0' is unconnected for instance 'processing_system7_0' [G:/Chiro/Programs/urllc-demo-pynq/urllc-vivado/urllc-fifo.gen/sources_1/bd/urllc_fifo_sender/bd/urllc_fifo_core_inst_0/synth/urllc_fifo_core_inst_0.v:766]
+WARNING: [Synth 8-7071] port 'S_AXI_HP0_RACOUNT' of module 'urllc_fifo_core_inst_0_processing_system7_0_0' is unconnected for instance 'processing_system7_0' [G:/Chiro/Programs/urllc-demo-pynq/urllc-vivado/urllc-fifo.gen/sources_1/bd/urllc_fifo_sender/bd/urllc_fifo_core_inst_0/synth/urllc_fifo_core_inst_0.v:766]
+WARNING: [Synth 8-7071] port 'S_AXI_HP0_WACOUNT' of module 'urllc_fifo_core_inst_0_processing_system7_0_0' is unconnected for instance 'processing_system7_0' [G:/Chiro/Programs/urllc-demo-pynq/urllc-vivado/urllc-fifo.gen/sources_1/bd/urllc_fifo_sender/bd/urllc_fifo_core_inst_0/synth/urllc_fifo_core_inst_0.v:766]
+WARNING: [Synth 8-7071] port 'S_AXI_HP1_BID' of module 'urllc_fifo_core_inst_0_processing_system7_0_0' is unconnected for instance 'processing_system7_0' [G:/Chiro/Programs/urllc-demo-pynq/urllc-vivado/urllc-fifo.gen/sources_1/bd/urllc_fifo_sender/bd/urllc_fifo_core_inst_0/synth/urllc_fifo_core_inst_0.v:766]
+WARNING: [Synth 8-7071] port 'S_AXI_HP1_RID' of module 'urllc_fifo_core_inst_0_processing_system7_0_0' is unconnected for instance 'processing_system7_0' [G:/Chiro/Programs/urllc-demo-pynq/urllc-vivado/urllc-fifo.gen/sources_1/bd/urllc_fifo_sender/bd/urllc_fifo_core_inst_0/synth/urllc_fifo_core_inst_0.v:766]
+WARNING: [Synth 8-7071] port 'S_AXI_HP1_RCOUNT' of module 'urllc_fifo_core_inst_0_processing_system7_0_0' is unconnected for instance 'processing_system7_0' [G:/Chiro/Programs/urllc-demo-pynq/urllc-vivado/urllc-fifo.gen/sources_1/bd/urllc_fifo_sender/bd/urllc_fifo_core_inst_0/synth/urllc_fifo_core_inst_0.v:766]
+WARNING: [Synth 8-7071] port 'S_AXI_HP1_WCOUNT' of module 'urllc_fifo_core_inst_0_processing_system7_0_0' is unconnected for instance 'processing_system7_0' [G:/Chiro/Programs/urllc-demo-pynq/urllc-vivado/urllc-fifo.gen/sources_1/bd/urllc_fifo_sender/bd/urllc_fifo_core_inst_0/synth/urllc_fifo_core_inst_0.v:766]
+WARNING: [Synth 8-7071] port 'S_AXI_HP1_RACOUNT' of module 'urllc_fifo_core_inst_0_processing_system7_0_0' is unconnected for instance 'processing_system7_0' [G:/Chiro/Programs/urllc-demo-pynq/urllc-vivado/urllc-fifo.gen/sources_1/bd/urllc_fifo_sender/bd/urllc_fifo_core_inst_0/synth/urllc_fifo_core_inst_0.v:766]
+WARNING: [Synth 8-7071] port 'S_AXI_HP1_WACOUNT' of module 'urllc_fifo_core_inst_0_processing_system7_0_0' is unconnected for instance 'processing_system7_0' [G:/Chiro/Programs/urllc-demo-pynq/urllc-vivado/urllc-fifo.gen/sources_1/bd/urllc_fifo_sender/bd/urllc_fifo_core_inst_0/synth/urllc_fifo_core_inst_0.v:766]
+WARNING: [Synth 8-7023] instance 'processing_system7_0' of module 'urllc_fifo_core_inst_0_processing_system7_0_0' has 157 connections declared, but only 142 given [G:/Chiro/Programs/urllc-demo-pynq/urllc-vivado/urllc-fifo.gen/sources_1/bd/urllc_fifo_sender/bd/urllc_fifo_core_inst_0/synth/urllc_fifo_core_inst_0.v:766]
+INFO: [Synth 8-6157] synthesizing module 'urllc_fifo_core_inst_0_ps7_0_axi_periph_0' [G:/Chiro/Programs/urllc-demo-pynq/urllc-vivado/urllc-fifo.gen/sources_1/bd/urllc_fifo_sender/bd/urllc_fifo_core_inst_0/synth/urllc_fifo_core_inst_0.v:2208]
+INFO: [Synth 8-6157] synthesizing module 'm00_couplers_imp_1FDMWNJ' [G:/Chiro/Programs/urllc-demo-pynq/urllc-vivado/urllc-fifo.gen/sources_1/bd/urllc_fifo_sender/bd/urllc_fifo_core_inst_0/synth/urllc_fifo_core_inst_0.v:1328]
+INFO: [Synth 8-6155] done synthesizing module 'm00_couplers_imp_1FDMWNJ' (20#1) [G:/Chiro/Programs/urllc-demo-pynq/urllc-vivado/urllc-fifo.gen/sources_1/bd/urllc_fifo_sender/bd/urllc_fifo_core_inst_0/synth/urllc_fifo_core_inst_0.v:1328]
+INFO: [Synth 8-6157] synthesizing module 'm01_couplers_imp_K8SI1X' [G:/Chiro/Programs/urllc-demo-pynq/urllc-vivado/urllc-fifo.gen/sources_1/bd/urllc_fifo_sender/bd/urllc_fifo_core_inst_0/synth/urllc_fifo_core_inst_0.v:1460]
+INFO: [Synth 8-6155] done synthesizing module 'm01_couplers_imp_K8SI1X' (21#1) [G:/Chiro/Programs/urllc-demo-pynq/urllc-vivado/urllc-fifo.gen/sources_1/bd/urllc_fifo_sender/bd/urllc_fifo_core_inst_0/synth/urllc_fifo_core_inst_0.v:1460]
+INFO: [Synth 8-6157] synthesizing module 's00_couplers_imp_1FBGI7D' [G:/Chiro/Programs/urllc-demo-pynq/urllc-vivado/urllc-fifo.gen/sources_1/bd/urllc_fifo_sender/bd/urllc_fifo_core_inst_0/synth/urllc_fifo_core_inst_0.v:1585]
+INFO: [Synth 8-6157] synthesizing module 'urllc_fifo_core_inst_0_auto_pc_0' [G:/Chiro/Programs/urllc-demo-pynq/urllc-vivado/urllc-fifo.runs/synth_1/.Xil/Vivado-33956-WIN-544SHHHOI8Q/realtime/urllc_fifo_core_inst_0_auto_pc_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'urllc_fifo_core_inst_0_auto_pc_0' (22#1) [G:/Chiro/Programs/urllc-demo-pynq/urllc-vivado/urllc-fifo.runs/synth_1/.Xil/Vivado-33956-WIN-544SHHHOI8Q/realtime/urllc_fifo_core_inst_0_auto_pc_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 's00_couplers_imp_1FBGI7D' (23#1) [G:/Chiro/Programs/urllc-demo-pynq/urllc-vivado/urllc-fifo.gen/sources_1/bd/urllc_fifo_sender/bd/urllc_fifo_core_inst_0/synth/urllc_fifo_core_inst_0.v:1585]
+INFO: [Synth 8-6157] synthesizing module 'urllc_fifo_core_inst_0_xbar_0' [G:/Chiro/Programs/urllc-demo-pynq/urllc-vivado/urllc-fifo.runs/synth_1/.Xil/Vivado-33956-WIN-544SHHHOI8Q/realtime/urllc_fifo_core_inst_0_xbar_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'urllc_fifo_core_inst_0_xbar_0' (24#1) [G:/Chiro/Programs/urllc-demo-pynq/urllc-vivado/urllc-fifo.runs/synth_1/.Xil/Vivado-33956-WIN-544SHHHOI8Q/realtime/urllc_fifo_core_inst_0_xbar_0_stub.v:6]
+WARNING: [Synth 8-689] width (4) of port connection 'm_axi_wstrb' does not match port width (8) of module 'urllc_fifo_core_inst_0_xbar_0' [G:/Chiro/Programs/urllc-demo-pynq/urllc-vivado/urllc-fifo.gen/sources_1/bd/urllc_fifo_sender/bd/urllc_fifo_core_inst_0/synth/urllc_fifo_core_inst_0.v:2723]
+WARNING: [Synth 8-7071] port 'm_axi_awprot' of module 'urllc_fifo_core_inst_0_xbar_0' is unconnected for instance 'xbar' [G:/Chiro/Programs/urllc-demo-pynq/urllc-vivado/urllc-fifo.gen/sources_1/bd/urllc_fifo_sender/bd/urllc_fifo_core_inst_0/synth/urllc_fifo_core_inst_0.v:2705]
+WARNING: [Synth 8-7071] port 'm_axi_arprot' of module 'urllc_fifo_core_inst_0_xbar_0' is unconnected for instance 'xbar' [G:/Chiro/Programs/urllc-demo-pynq/urllc-vivado/urllc-fifo.gen/sources_1/bd/urllc_fifo_sender/bd/urllc_fifo_core_inst_0/synth/urllc_fifo_core_inst_0.v:2705]
+WARNING: [Synth 8-7023] instance 'xbar' of module 'urllc_fifo_core_inst_0_xbar_0' has 40 connections declared, but only 38 given [G:/Chiro/Programs/urllc-demo-pynq/urllc-vivado/urllc-fifo.gen/sources_1/bd/urllc_fifo_sender/bd/urllc_fifo_core_inst_0/synth/urllc_fifo_core_inst_0.v:2705]
+INFO: [Synth 8-6155] done synthesizing module 'urllc_fifo_core_inst_0_ps7_0_axi_periph_0' (25#1) [G:/Chiro/Programs/urllc-demo-pynq/urllc-vivado/urllc-fifo.gen/sources_1/bd/urllc_fifo_sender/bd/urllc_fifo_core_inst_0/synth/urllc_fifo_core_inst_0.v:2208]
+INFO: [Synth 8-6157] synthesizing module 'urllc_fifo_core_inst_0_reset_dynamic_0' [G:/Chiro/Programs/urllc-demo-pynq/urllc-vivado/urllc-fifo.runs/synth_1/.Xil/Vivado-33956-WIN-544SHHHOI8Q/realtime/urllc_fifo_core_inst_0_reset_dynamic_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'urllc_fifo_core_inst_0_reset_dynamic_0' (26#1) [G:/Chiro/Programs/urllc-demo-pynq/urllc-vivado/urllc-fifo.runs/synth_1/.Xil/Vivado-33956-WIN-544SHHHOI8Q/realtime/urllc_fifo_core_inst_0_reset_dynamic_0_stub.v:6]
+WARNING: [Synth 8-7071] port 'mb_reset' of module 'urllc_fifo_core_inst_0_reset_dynamic_0' is unconnected for instance 'reset_dynamic' [G:/Chiro/Programs/urllc-demo-pynq/urllc-vivado/urllc-fifo.gen/sources_1/bd/urllc_fifo_sender/bd/urllc_fifo_core_inst_0/synth/urllc_fifo_core_inst_0.v:989]
+WARNING: [Synth 8-7071] port 'bus_struct_reset' of module 'urllc_fifo_core_inst_0_reset_dynamic_0' is unconnected for instance 'reset_dynamic' [G:/Chiro/Programs/urllc-demo-pynq/urllc-vivado/urllc-fifo.gen/sources_1/bd/urllc_fifo_sender/bd/urllc_fifo_core_inst_0/synth/urllc_fifo_core_inst_0.v:989]
+WARNING: [Synth 8-7071] port 'peripheral_reset' of module 'urllc_fifo_core_inst_0_reset_dynamic_0' is unconnected for instance 'reset_dynamic' [G:/Chiro/Programs/urllc-demo-pynq/urllc-vivado/urllc-fifo.gen/sources_1/bd/urllc_fifo_sender/bd/urllc_fifo_core_inst_0/synth/urllc_fifo_core_inst_0.v:989]
+WARNING: [Synth 8-7071] port 'interconnect_aresetn' of module 'urllc_fifo_core_inst_0_reset_dynamic_0' is unconnected for instance 'reset_dynamic' [G:/Chiro/Programs/urllc-demo-pynq/urllc-vivado/urllc-fifo.gen/sources_1/bd/urllc_fifo_sender/bd/urllc_fifo_core_inst_0/synth/urllc_fifo_core_inst_0.v:989]
+WARNING: [Synth 8-7023] instance 'reset_dynamic' of module 'urllc_fifo_core_inst_0_reset_dynamic_0' has 10 connections declared, but only 6 given [G:/Chiro/Programs/urllc-demo-pynq/urllc-vivado/urllc-fifo.gen/sources_1/bd/urllc_fifo_sender/bd/urllc_fifo_core_inst_0/synth/urllc_fifo_core_inst_0.v:989]
+INFO: [Synth 8-6157] synthesizing module 'urllc_fifo_core_inst_0_reset_static_0' [G:/Chiro/Programs/urllc-demo-pynq/urllc-vivado/urllc-fifo.runs/synth_1/.Xil/Vivado-33956-WIN-544SHHHOI8Q/realtime/urllc_fifo_core_inst_0_reset_static_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'urllc_fifo_core_inst_0_reset_static_0' (27#1) [G:/Chiro/Programs/urllc-demo-pynq/urllc-vivado/urllc-fifo.runs/synth_1/.Xil/Vivado-33956-WIN-544SHHHOI8Q/realtime/urllc_fifo_core_inst_0_reset_static_0_stub.v:6]
+WARNING: [Synth 8-7071] port 'mb_reset' of module 'urllc_fifo_core_inst_0_reset_static_0' is unconnected for instance 'reset_static' [G:/Chiro/Programs/urllc-demo-pynq/urllc-vivado/urllc-fifo.gen/sources_1/bd/urllc_fifo_sender/bd/urllc_fifo_core_inst_0/synth/urllc_fifo_core_inst_0.v:996]
+WARNING: [Synth 8-7071] port 'bus_struct_reset' of module 'urllc_fifo_core_inst_0_reset_static_0' is unconnected for instance 'reset_static' [G:/Chiro/Programs/urllc-demo-pynq/urllc-vivado/urllc-fifo.gen/sources_1/bd/urllc_fifo_sender/bd/urllc_fifo_core_inst_0/synth/urllc_fifo_core_inst_0.v:996]
+WARNING: [Synth 8-7071] port 'interconnect_aresetn' of module 'urllc_fifo_core_inst_0_reset_static_0' is unconnected for instance 'reset_static' [G:/Chiro/Programs/urllc-demo-pynq/urllc-vivado/urllc-fifo.gen/sources_1/bd/urllc_fifo_sender/bd/urllc_fifo_core_inst_0/synth/urllc_fifo_core_inst_0.v:996]
+WARNING: [Synth 8-7023] instance 'reset_static' of module 'urllc_fifo_core_inst_0_reset_static_0' has 10 connections declared, but only 7 given [G:/Chiro/Programs/urllc-demo-pynq/urllc-vivado/urllc-fifo.gen/sources_1/bd/urllc_fifo_sender/bd/urllc_fifo_core_inst_0/synth/urllc_fifo_core_inst_0.v:996]
 INFO: [Synth 8-6157] synthesizing module 'urllc_fifo_core_inst_0_xlconcat_irq_0' [g:/Chiro/Programs/urllc-demo-pynq/urllc-vivado/urllc-fifo.gen/sources_1/bd/urllc_fifo_sender/bd/urllc_fifo_core_inst_0/ip/urllc_fifo_core_inst_0_xlconcat_irq_0/synth/urllc_fifo_core_inst_0_xlconcat_irq_0.v:60]
 INFO: [Synth 8-6157] synthesizing module 'xlconcat_v2_1_4_xlconcat__parameterized0' [g:/Chiro/Programs/urllc-demo-pynq/urllc-vivado/urllc-fifo.gen/sources_1/bd/urllc_fifo_sender/bd/urllc_fifo_core_inst_0/ipshared/4b67/hdl/xlconcat_v2_1_vl_rfs.v:14]
-INFO: [Synth 8-6155] done synthesizing module 'xlconcat_v2_1_4_xlconcat__parameterized0' (29#1) [g:/Chiro/Programs/urllc-demo-pynq/urllc-vivado/urllc-fifo.gen/sources_1/bd/urllc_fifo_sender/bd/urllc_fifo_core_inst_0/ipshared/4b67/hdl/xlconcat_v2_1_vl_rfs.v:14]
-INFO: [Synth 8-6155] done synthesizing module 'urllc_fifo_core_inst_0_xlconcat_irq_0' (30#1) [g:/Chiro/Programs/urllc-demo-pynq/urllc-vivado/urllc-fifo.gen/sources_1/bd/urllc_fifo_sender/bd/urllc_fifo_core_inst_0/ip/urllc_fifo_core_inst_0_xlconcat_irq_0/synth/urllc_fifo_core_inst_0_xlconcat_irq_0.v:60]
-INFO: [Synth 8-6155] done synthesizing module 'core_imp_1490Y3Y' (31#1) [G:/Chiro/Programs/urllc-demo-pynq/urllc-vivado/urllc-fifo.gen/sources_1/bd/urllc_fifo_sender/bd/urllc_fifo_core_inst_0/synth/urllc_fifo_core_inst_0.v:172]
-INFO: [Synth 8-6157] synthesizing module 'dac_imp_1Q5Q6V7' [G:/Chiro/Programs/urllc-demo-pynq/urllc-vivado/urllc-fifo.gen/sources_1/bd/urllc_fifo_sender/bd/urllc_fifo_core_inst_0/synth/urllc_fifo_core_inst_0.v:1023]
-INFO: [Synth 8-6157] synthesizing module 'urllc_fifo_core_inst_0_DUCWrapper_0_0' [G:/Chiro/Programs/urllc-demo-pynq/urllc-vivado/urllc-fifo.runs/synth_1/.Xil/Vivado-16856-WIN-544SHHHOI8Q/realtime/urllc_fifo_core_inst_0_DUCWrapper_0_0_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'urllc_fifo_core_inst_0_DUCWrapper_0_0' (32#1) [G:/Chiro/Programs/urllc-demo-pynq/urllc-vivado/urllc-fifo.runs/synth_1/.Xil/Vivado-16856-WIN-544SHHHOI8Q/realtime/urllc_fifo_core_inst_0_DUCWrapper_0_0_stub.v:6]
-WARNING: [Synth 8-7071] port 'io_out_sync' of module 'urllc_fifo_core_inst_0_DUCWrapper_0_0' is unconnected for instance 'DUCWrapper_0' [G:/Chiro/Programs/urllc-demo-pynq/urllc-vivado/urllc-fifo.gen/sources_1/bd/urllc_fifo_sender/bd/urllc_fifo_core_inst_0/synth/urllc_fifo_core_inst_0.v:1105]
-WARNING: [Synth 8-7023] instance 'DUCWrapper_0' of module 'urllc_fifo_core_inst_0_DUCWrapper_0_0' has 6 connections declared, but only 5 given [G:/Chiro/Programs/urllc-demo-pynq/urllc-vivado/urllc-fifo.gen/sources_1/bd/urllc_fifo_sender/bd/urllc_fifo_core_inst_0/synth/urllc_fifo_core_inst_0.v:1105]
-INFO: [Synth 8-6157] synthesizing module 'urllc_fifo_core_inst_0_axis_write_to_fifo_0_0' [G:/Chiro/Programs/urllc-demo-pynq/urllc-vivado/urllc-fifo.runs/synth_1/.Xil/Vivado-16856-WIN-544SHHHOI8Q/realtime/urllc_fifo_core_inst_0_axis_write_to_fifo_0_0_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'urllc_fifo_core_inst_0_axis_write_to_fifo_0_0' (33#1) [G:/Chiro/Programs/urllc-demo-pynq/urllc-vivado/urllc-fifo.runs/synth_1/.Xil/Vivado-16856-WIN-544SHHHOI8Q/realtime/urllc_fifo_core_inst_0_axis_write_to_fifo_0_0_stub.v:6]
-INFO: [Synth 8-6157] synthesizing module 'urllc_fifo_core_inst_0_dac_0_0' [G:/Chiro/Programs/urllc-demo-pynq/urllc-vivado/urllc-fifo.runs/synth_1/.Xil/Vivado-16856-WIN-544SHHHOI8Q/realtime/urllc_fifo_core_inst_0_dac_0_0_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'urllc_fifo_core_inst_0_dac_0_0' (34#1) [G:/Chiro/Programs/urllc-demo-pynq/urllc-vivado/urllc-fifo.runs/synth_1/.Xil/Vivado-16856-WIN-544SHHHOI8Q/realtime/urllc_fifo_core_inst_0_dac_0_0_stub.v:6]
-INFO: [Synth 8-6157] synthesizing module 'urllc_fifo_core_inst_0_mux_reciever_out_0' [G:/Chiro/Programs/urllc-demo-pynq/urllc-vivado/urllc-fifo.runs/synth_1/.Xil/Vivado-16856-WIN-544SHHHOI8Q/realtime/urllc_fifo_core_inst_0_mux_reciever_out_0_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'urllc_fifo_core_inst_0_mux_reciever_out_0' (35#1) [G:/Chiro/Programs/urllc-demo-pynq/urllc-vivado/urllc-fifo.runs/synth_1/.Xil/Vivado-16856-WIN-544SHHHOI8Q/realtime/urllc_fifo_core_inst_0_mux_reciever_out_0_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'dac_imp_1Q5Q6V7' (36#1) [G:/Chiro/Programs/urllc-demo-pynq/urllc-vivado/urllc-fifo.gen/sources_1/bd/urllc_fifo_sender/bd/urllc_fifo_core_inst_0/synth/urllc_fifo_core_inst_0.v:1023]
-INFO: [Synth 8-6157] synthesizing module 'debug_ctrl_imp_91QJM7' [G:/Chiro/Programs/urllc-demo-pynq/urllc-vivado/urllc-fifo.gen/sources_1/bd/urllc_fifo_sender/bd/urllc_fifo_core_inst_0/synth/urllc_fifo_core_inst_0.v:1137]
-INFO: [Synth 8-6157] synthesizing module 'urllc_fifo_core_inst_0_axi_gpio_0_0' [G:/Chiro/Programs/urllc-demo-pynq/urllc-vivado/urllc-fifo.runs/synth_1/.Xil/Vivado-16856-WIN-544SHHHOI8Q/realtime/urllc_fifo_core_inst_0_axi_gpio_0_0_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'urllc_fifo_core_inst_0_axi_gpio_0_0' (37#1) [G:/Chiro/Programs/urllc-demo-pynq/urllc-vivado/urllc-fifo.runs/synth_1/.Xil/Vivado-16856-WIN-544SHHHOI8Q/realtime/urllc_fifo_core_inst_0_axi_gpio_0_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'xlconcat_v2_1_4_xlconcat__parameterized0' (27#1) [g:/Chiro/Programs/urllc-demo-pynq/urllc-vivado/urllc-fifo.gen/sources_1/bd/urllc_fifo_sender/bd/urllc_fifo_core_inst_0/ipshared/4b67/hdl/xlconcat_v2_1_vl_rfs.v:14]
+INFO: [Synth 8-6155] done synthesizing module 'urllc_fifo_core_inst_0_xlconcat_irq_0' (28#1) [g:/Chiro/Programs/urllc-demo-pynq/urllc-vivado/urllc-fifo.gen/sources_1/bd/urllc_fifo_sender/bd/urllc_fifo_core_inst_0/ip/urllc_fifo_core_inst_0_xlconcat_irq_0/synth/urllc_fifo_core_inst_0_xlconcat_irq_0.v:60]
+INFO: [Synth 8-6155] done synthesizing module 'core_imp_1490Y3Y' (29#1) [G:/Chiro/Programs/urllc-demo-pynq/urllc-vivado/urllc-fifo.gen/sources_1/bd/urllc_fifo_sender/bd/urllc_fifo_core_inst_0/synth/urllc_fifo_core_inst_0.v:160]
+INFO: [Synth 8-6157] synthesizing module 'dac_imp_1Q5Q6V7' [G:/Chiro/Programs/urllc-demo-pynq/urllc-vivado/urllc-fifo.gen/sources_1/bd/urllc_fifo_sender/bd/urllc_fifo_core_inst_0/synth/urllc_fifo_core_inst_0.v:1011]
+INFO: [Synth 8-6157] synthesizing module 'urllc_fifo_core_inst_0_DUCWrapper_0_0' [G:/Chiro/Programs/urllc-demo-pynq/urllc-vivado/urllc-fifo.runs/synth_1/.Xil/Vivado-33956-WIN-544SHHHOI8Q/realtime/urllc_fifo_core_inst_0_DUCWrapper_0_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'urllc_fifo_core_inst_0_DUCWrapper_0_0' (30#1) [G:/Chiro/Programs/urllc-demo-pynq/urllc-vivado/urllc-fifo.runs/synth_1/.Xil/Vivado-33956-WIN-544SHHHOI8Q/realtime/urllc_fifo_core_inst_0_DUCWrapper_0_0_stub.v:6]
+WARNING: [Synth 8-7071] port 'io_out_sync' of module 'urllc_fifo_core_inst_0_DUCWrapper_0_0' is unconnected for instance 'DUCWrapper_0' [G:/Chiro/Programs/urllc-demo-pynq/urllc-vivado/urllc-fifo.gen/sources_1/bd/urllc_fifo_sender/bd/urllc_fifo_core_inst_0/synth/urllc_fifo_core_inst_0.v:1093]
+WARNING: [Synth 8-7023] instance 'DUCWrapper_0' of module 'urllc_fifo_core_inst_0_DUCWrapper_0_0' has 6 connections declared, but only 5 given [G:/Chiro/Programs/urllc-demo-pynq/urllc-vivado/urllc-fifo.gen/sources_1/bd/urllc_fifo_sender/bd/urllc_fifo_core_inst_0/synth/urllc_fifo_core_inst_0.v:1093]
+INFO: [Synth 8-6157] synthesizing module 'urllc_fifo_core_inst_0_axis_write_to_fifo_0_0' [G:/Chiro/Programs/urllc-demo-pynq/urllc-vivado/urllc-fifo.runs/synth_1/.Xil/Vivado-33956-WIN-544SHHHOI8Q/realtime/urllc_fifo_core_inst_0_axis_write_to_fifo_0_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'urllc_fifo_core_inst_0_axis_write_to_fifo_0_0' (31#1) [G:/Chiro/Programs/urllc-demo-pynq/urllc-vivado/urllc-fifo.runs/synth_1/.Xil/Vivado-33956-WIN-544SHHHOI8Q/realtime/urllc_fifo_core_inst_0_axis_write_to_fifo_0_0_stub.v:6]
+INFO: [Synth 8-6157] synthesizing module 'urllc_fifo_core_inst_0_dac_0_0' [G:/Chiro/Programs/urllc-demo-pynq/urllc-vivado/urllc-fifo.runs/synth_1/.Xil/Vivado-33956-WIN-544SHHHOI8Q/realtime/urllc_fifo_core_inst_0_dac_0_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'urllc_fifo_core_inst_0_dac_0_0' (32#1) [G:/Chiro/Programs/urllc-demo-pynq/urllc-vivado/urllc-fifo.runs/synth_1/.Xil/Vivado-33956-WIN-544SHHHOI8Q/realtime/urllc_fifo_core_inst_0_dac_0_0_stub.v:6]
+INFO: [Synth 8-6157] synthesizing module 'urllc_fifo_core_inst_0_mux_reciever_out_0' [G:/Chiro/Programs/urllc-demo-pynq/urllc-vivado/urllc-fifo.runs/synth_1/.Xil/Vivado-33956-WIN-544SHHHOI8Q/realtime/urllc_fifo_core_inst_0_mux_reciever_out_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'urllc_fifo_core_inst_0_mux_reciever_out_0' (33#1) [G:/Chiro/Programs/urllc-demo-pynq/urllc-vivado/urllc-fifo.runs/synth_1/.Xil/Vivado-33956-WIN-544SHHHOI8Q/realtime/urllc_fifo_core_inst_0_mux_reciever_out_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'dac_imp_1Q5Q6V7' (34#1) [G:/Chiro/Programs/urllc-demo-pynq/urllc-vivado/urllc-fifo.gen/sources_1/bd/urllc_fifo_sender/bd/urllc_fifo_core_inst_0/synth/urllc_fifo_core_inst_0.v:1011]
+INFO: [Synth 8-6157] synthesizing module 'debug_ctrl_imp_91QJM7' [G:/Chiro/Programs/urllc-demo-pynq/urllc-vivado/urllc-fifo.gen/sources_1/bd/urllc_fifo_sender/bd/urllc_fifo_core_inst_0/synth/urllc_fifo_core_inst_0.v:1125]
+INFO: [Synth 8-6157] synthesizing module 'urllc_fifo_core_inst_0_axi_gpio_0_0' [G:/Chiro/Programs/urllc-demo-pynq/urllc-vivado/urllc-fifo.runs/synth_1/.Xil/Vivado-33956-WIN-544SHHHOI8Q/realtime/urllc_fifo_core_inst_0_axi_gpio_0_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'urllc_fifo_core_inst_0_axi_gpio_0_0' (35#1) [G:/Chiro/Programs/urllc-demo-pynq/urllc-vivado/urllc-fifo.runs/synth_1/.Xil/Vivado-33956-WIN-544SHHHOI8Q/realtime/urllc_fifo_core_inst_0_axi_gpio_0_0_stub.v:6]
 INFO: [Synth 8-6157] synthesizing module 'urllc_fifo_core_inst_0_xlslice_clk_psclk_3_0' [g:/Chiro/Programs/urllc-demo-pynq/urllc-vivado/urllc-fifo.gen/sources_1/bd/urllc_fifo_sender/bd/urllc_fifo_core_inst_0/ip/urllc_fifo_core_inst_0_xlslice_clk_psclk_3_0/synth/urllc_fifo_core_inst_0_xlslice_clk_psclk_3_0.v:57]
 INFO: [Synth 8-6157] synthesizing module 'xlslice_v1_0_2_xlslice__parameterized0' [g:/Chiro/Programs/urllc-demo-pynq/urllc-vivado/urllc-fifo.gen/sources_1/bd/urllc_fifo_sender/bd/urllc_fifo_core_inst_0/ipshared/11d0/hdl/xlslice_v1_0_vl_rfs.v:13]
-INFO: [Synth 8-6155] done synthesizing module 'xlslice_v1_0_2_xlslice__parameterized0' (37#1) [g:/Chiro/Programs/urllc-demo-pynq/urllc-vivado/urllc-fifo.gen/sources_1/bd/urllc_fifo_sender/bd/urllc_fifo_core_inst_0/ipshared/11d0/hdl/xlslice_v1_0_vl_rfs.v:13]
-INFO: [Synth 8-6155] done synthesizing module 'urllc_fifo_core_inst_0_xlslice_clk_psclk_3_0' (38#1) [g:/Chiro/Programs/urllc-demo-pynq/urllc-vivado/urllc-fifo.gen/sources_1/bd/urllc_fifo_sender/bd/urllc_fifo_core_inst_0/ip/urllc_fifo_core_inst_0_xlslice_clk_psclk_3_0/synth/urllc_fifo_core_inst_0_xlslice_clk_psclk_3_0.v:57]
+INFO: [Synth 8-6155] done synthesizing module 'xlslice_v1_0_2_xlslice__parameterized0' (35#1) [g:/Chiro/Programs/urllc-demo-pynq/urllc-vivado/urllc-fifo.gen/sources_1/bd/urllc_fifo_sender/bd/urllc_fifo_core_inst_0/ipshared/11d0/hdl/xlslice_v1_0_vl_rfs.v:13]
+INFO: [Synth 8-6155] done synthesizing module 'urllc_fifo_core_inst_0_xlslice_clk_psclk_3_0' (36#1) [g:/Chiro/Programs/urllc-demo-pynq/urllc-vivado/urllc-fifo.gen/sources_1/bd/urllc_fifo_sender/bd/urllc_fifo_core_inst_0/ip/urllc_fifo_core_inst_0_xlslice_clk_psclk_3_0/synth/urllc_fifo_core_inst_0_xlslice_clk_psclk_3_0.v:57]
 INFO: [Synth 8-6157] synthesizing module 'urllc_fifo_core_inst_0_xlslice_clk_psen_4_0' [g:/Chiro/Programs/urllc-demo-pynq/urllc-vivado/urllc-fifo.gen/sources_1/bd/urllc_fifo_sender/bd/urllc_fifo_core_inst_0/ip/urllc_fifo_core_inst_0_xlslice_clk_psen_4_0/synth/urllc_fifo_core_inst_0_xlslice_clk_psen_4_0.v:57]
 INFO: [Synth 8-6157] synthesizing module 'xlslice_v1_0_2_xlslice__parameterized1' [g:/Chiro/Programs/urllc-demo-pynq/urllc-vivado/urllc-fifo.gen/sources_1/bd/urllc_fifo_sender/bd/urllc_fifo_core_inst_0/ipshared/11d0/hdl/xlslice_v1_0_vl_rfs.v:13]
-INFO: [Synth 8-6155] done synthesizing module 'xlslice_v1_0_2_xlslice__parameterized1' (38#1) [g:/Chiro/Programs/urllc-demo-pynq/urllc-vivado/urllc-fifo.gen/sources_1/bd/urllc_fifo_sender/bd/urllc_fifo_core_inst_0/ipshared/11d0/hdl/xlslice_v1_0_vl_rfs.v:13]
-INFO: [Synth 8-6155] done synthesizing module 'urllc_fifo_core_inst_0_xlslice_clk_psen_4_0' (39#1) [g:/Chiro/Programs/urllc-demo-pynq/urllc-vivado/urllc-fifo.gen/sources_1/bd/urllc_fifo_sender/bd/urllc_fifo_core_inst_0/ip/urllc_fifo_core_inst_0_xlslice_clk_psen_4_0/synth/urllc_fifo_core_inst_0_xlslice_clk_psen_4_0.v:57]
+INFO: [Synth 8-6155] done synthesizing module 'xlslice_v1_0_2_xlslice__parameterized1' (36#1) [g:/Chiro/Programs/urllc-demo-pynq/urllc-vivado/urllc-fifo.gen/sources_1/bd/urllc_fifo_sender/bd/urllc_fifo_core_inst_0/ipshared/11d0/hdl/xlslice_v1_0_vl_rfs.v:13]
+INFO: [Synth 8-6155] done synthesizing module 'urllc_fifo_core_inst_0_xlslice_clk_psen_4_0' (37#1) [g:/Chiro/Programs/urllc-demo-pynq/urllc-vivado/urllc-fifo.gen/sources_1/bd/urllc_fifo_sender/bd/urllc_fifo_core_inst_0/ip/urllc_fifo_core_inst_0_xlslice_clk_psen_4_0/synth/urllc_fifo_core_inst_0_xlslice_clk_psen_4_0.v:57]
 INFO: [Synth 8-6157] synthesizing module 'urllc_fifo_core_inst_0_xlslice_clk_psincdec_5_0' [g:/Chiro/Programs/urllc-demo-pynq/urllc-vivado/urllc-fifo.gen/sources_1/bd/urllc_fifo_sender/bd/urllc_fifo_core_inst_0/ip/urllc_fifo_core_inst_0_xlslice_clk_psincdec_5_0/synth/urllc_fifo_core_inst_0_xlslice_clk_psincdec_5_0.v:57]
 INFO: [Synth 8-6157] synthesizing module 'xlslice_v1_0_2_xlslice__parameterized2' [g:/Chiro/Programs/urllc-demo-pynq/urllc-vivado/urllc-fifo.gen/sources_1/bd/urllc_fifo_sender/bd/urllc_fifo_core_inst_0/ipshared/11d0/hdl/xlslice_v1_0_vl_rfs.v:13]
-INFO: [Synth 8-6155] done synthesizing module 'xlslice_v1_0_2_xlslice__parameterized2' (39#1) [g:/Chiro/Programs/urllc-demo-pynq/urllc-vivado/urllc-fifo.gen/sources_1/bd/urllc_fifo_sender/bd/urllc_fifo_core_inst_0/ipshared/11d0/hdl/xlslice_v1_0_vl_rfs.v:13]
-INFO: [Synth 8-6155] done synthesizing module 'urllc_fifo_core_inst_0_xlslice_clk_psincdec_5_0' (40#1) [g:/Chiro/Programs/urllc-demo-pynq/urllc-vivado/urllc-fifo.gen/sources_1/bd/urllc_fifo_sender/bd/urllc_fifo_core_inst_0/ip/urllc_fifo_core_inst_0_xlslice_clk_psincdec_5_0/synth/urllc_fifo_core_inst_0_xlslice_clk_psincdec_5_0.v:57]
+INFO: [Synth 8-6155] done synthesizing module 'xlslice_v1_0_2_xlslice__parameterized2' (37#1) [g:/Chiro/Programs/urllc-demo-pynq/urllc-vivado/urllc-fifo.gen/sources_1/bd/urllc_fifo_sender/bd/urllc_fifo_core_inst_0/ipshared/11d0/hdl/xlslice_v1_0_vl_rfs.v:13]
+INFO: [Synth 8-6155] done synthesizing module 'urllc_fifo_core_inst_0_xlslice_clk_psincdec_5_0' (38#1) [g:/Chiro/Programs/urllc-demo-pynq/urllc-vivado/urllc-fifo.gen/sources_1/bd/urllc_fifo_sender/bd/urllc_fifo_core_inst_0/ip/urllc_fifo_core_inst_0_xlslice_clk_psincdec_5_0/synth/urllc_fifo_core_inst_0_xlslice_clk_psincdec_5_0.v:57]
 INFO: [Synth 8-6157] synthesizing module 'urllc_fifo_core_inst_0_xlslice_count_trigger_clear_0_0' [g:/Chiro/Programs/urllc-demo-pynq/urllc-vivado/urllc-fifo.gen/sources_1/bd/urllc_fifo_sender/bd/urllc_fifo_core_inst_0/ip/urllc_fifo_core_inst_0_xlslice_count_trigger_clear_0_0/synth/urllc_fifo_core_inst_0_xlslice_count_trigger_clear_0_0.v:57]
 INFO: [Synth 8-6157] synthesizing module 'xlslice_v1_0_2_xlslice__parameterized3' [g:/Chiro/Programs/urllc-demo-pynq/urllc-vivado/urllc-fifo.gen/sources_1/bd/urllc_fifo_sender/bd/urllc_fifo_core_inst_0/ipshared/11d0/hdl/xlslice_v1_0_vl_rfs.v:13]
-INFO: [Synth 8-6155] done synthesizing module 'xlslice_v1_0_2_xlslice__parameterized3' (40#1) [g:/Chiro/Programs/urllc-demo-pynq/urllc-vivado/urllc-fifo.gen/sources_1/bd/urllc_fifo_sender/bd/urllc_fifo_core_inst_0/ipshared/11d0/hdl/xlslice_v1_0_vl_rfs.v:13]
-INFO: [Synth 8-6155] done synthesizing module 'urllc_fifo_core_inst_0_xlslice_count_trigger_clear_0_0' (41#1) [g:/Chiro/Programs/urllc-demo-pynq/urllc-vivado/urllc-fifo.gen/sources_1/bd/urllc_fifo_sender/bd/urllc_fifo_core_inst_0/ip/urllc_fifo_core_inst_0_xlslice_count_trigger_clear_0_0/synth/urllc_fifo_core_inst_0_xlslice_count_trigger_clear_0_0.v:57]
+INFO: [Synth 8-6155] done synthesizing module 'xlslice_v1_0_2_xlslice__parameterized3' (38#1) [g:/Chiro/Programs/urllc-demo-pynq/urllc-vivado/urllc-fifo.gen/sources_1/bd/urllc_fifo_sender/bd/urllc_fifo_core_inst_0/ipshared/11d0/hdl/xlslice_v1_0_vl_rfs.v:13]
+INFO: [Synth 8-6155] done synthesizing module 'urllc_fifo_core_inst_0_xlslice_count_trigger_clear_0_0' (39#1) [g:/Chiro/Programs/urllc-demo-pynq/urllc-vivado/urllc-fifo.gen/sources_1/bd/urllc_fifo_sender/bd/urllc_fifo_core_inst_0/ip/urllc_fifo_core_inst_0_xlslice_count_trigger_clear_0_0/synth/urllc_fifo_core_inst_0_xlslice_count_trigger_clear_0_0.v:57]
 INFO: [Synth 8-6157] synthesizing module 'urllc_fifo_core_inst_0_xlslice_counter_trigger_16_31_0' [g:/Chiro/Programs/urllc-demo-pynq/urllc-vivado/urllc-fifo.gen/sources_1/bd/urllc_fifo_sender/bd/urllc_fifo_core_inst_0/ip/urllc_fifo_core_inst_0_xlslice_counter_trigger_16_31_0/synth/urllc_fifo_core_inst_0_xlslice_counter_trigger_16_31_0.v:57]
 INFO: [Synth 8-6157] synthesizing module 'xlslice_v1_0_2_xlslice__parameterized4' [g:/Chiro/Programs/urllc-demo-pynq/urllc-vivado/urllc-fifo.gen/sources_1/bd/urllc_fifo_sender/bd/urllc_fifo_core_inst_0/ipshared/11d0/hdl/xlslice_v1_0_vl_rfs.v:13]
-INFO: [Synth 8-6155] done synthesizing module 'xlslice_v1_0_2_xlslice__parameterized4' (41#1) [g:/Chiro/Programs/urllc-demo-pynq/urllc-vivado/urllc-fifo.gen/sources_1/bd/urllc_fifo_sender/bd/urllc_fifo_core_inst_0/ipshared/11d0/hdl/xlslice_v1_0_vl_rfs.v:13]
-INFO: [Synth 8-6155] done synthesizing module 'urllc_fifo_core_inst_0_xlslice_counter_trigger_16_31_0' (42#1) [g:/Chiro/Programs/urllc-demo-pynq/urllc-vivado/urllc-fifo.gen/sources_1/bd/urllc_fifo_sender/bd/urllc_fifo_core_inst_0/ip/urllc_fifo_core_inst_0_xlslice_counter_trigger_16_31_0/synth/urllc_fifo_core_inst_0_xlslice_counter_trigger_16_31_0.v:57]
+INFO: [Synth 8-6155] done synthesizing module 'xlslice_v1_0_2_xlslice__parameterized4' (39#1) [g:/Chiro/Programs/urllc-demo-pynq/urllc-vivado/urllc-fifo.gen/sources_1/bd/urllc_fifo_sender/bd/urllc_fifo_core_inst_0/ipshared/11d0/hdl/xlslice_v1_0_vl_rfs.v:13]
+INFO: [Synth 8-6155] done synthesizing module 'urllc_fifo_core_inst_0_xlslice_counter_trigger_16_31_0' (40#1) [g:/Chiro/Programs/urllc-demo-pynq/urllc-vivado/urllc-fifo.gen/sources_1/bd/urllc_fifo_sender/bd/urllc_fifo_core_inst_0/ip/urllc_fifo_core_inst_0_xlslice_counter_trigger_16_31_0/synth/urllc_fifo_core_inst_0_xlslice_counter_trigger_16_31_0.v:57]
 INFO: [Synth 8-6157] synthesizing module 'urllc_fifo_core_inst_0_xlslice_dac_8_15_0' [g:/Chiro/Programs/urllc-demo-pynq/urllc-vivado/urllc-fifo.gen/sources_1/bd/urllc_fifo_sender/bd/urllc_fifo_core_inst_0/ip/urllc_fifo_core_inst_0_xlslice_dac_8_15_0/synth/urllc_fifo_core_inst_0_xlslice_dac_8_15_0.v:57]
 INFO: [Synth 8-6157] synthesizing module 'xlslice_v1_0_2_xlslice__parameterized5' [g:/Chiro/Programs/urllc-demo-pynq/urllc-vivado/urllc-fifo.gen/sources_1/bd/urllc_fifo_sender/bd/urllc_fifo_core_inst_0/ipshared/11d0/hdl/xlslice_v1_0_vl_rfs.v:13]
-INFO: [Synth 8-6155] done synthesizing module 'xlslice_v1_0_2_xlslice__parameterized5' (42#1) [g:/Chiro/Programs/urllc-demo-pynq/urllc-vivado/urllc-fifo.gen/sources_1/bd/urllc_fifo_sender/bd/urllc_fifo_core_inst_0/ipshared/11d0/hdl/xlslice_v1_0_vl_rfs.v:13]
-INFO: [Synth 8-6155] done synthesizing module 'urllc_fifo_core_inst_0_xlslice_dac_8_15_0' (43#1) [g:/Chiro/Programs/urllc-demo-pynq/urllc-vivado/urllc-fifo.gen/sources_1/bd/urllc_fifo_sender/bd/urllc_fifo_core_inst_0/ip/urllc_fifo_core_inst_0_xlslice_dac_8_15_0/synth/urllc_fifo_core_inst_0_xlslice_dac_8_15_0.v:57]
+INFO: [Synth 8-6155] done synthesizing module 'xlslice_v1_0_2_xlslice__parameterized5' (40#1) [g:/Chiro/Programs/urllc-demo-pynq/urllc-vivado/urllc-fifo.gen/sources_1/bd/urllc_fifo_sender/bd/urllc_fifo_core_inst_0/ipshared/11d0/hdl/xlslice_v1_0_vl_rfs.v:13]
+INFO: [Synth 8-6155] done synthesizing module 'urllc_fifo_core_inst_0_xlslice_dac_8_15_0' (41#1) [g:/Chiro/Programs/urllc-demo-pynq/urllc-vivado/urllc-fifo.gen/sources_1/bd/urllc_fifo_sender/bd/urllc_fifo_core_inst_0/ip/urllc_fifo_core_inst_0_xlslice_dac_8_15_0/synth/urllc_fifo_core_inst_0_xlslice_dac_8_15_0.v:57]
 INFO: [Synth 8-6157] synthesizing module 'urllc_fifo_core_inst_0_xlslice_ddc_sync_8_0' [g:/Chiro/Programs/urllc-demo-pynq/urllc-vivado/urllc-fifo.gen/sources_1/bd/urllc_fifo_sender/bd/urllc_fifo_core_inst_0/ip/urllc_fifo_core_inst_0_xlslice_ddc_sync_8_0/synth/urllc_fifo_core_inst_0_xlslice_ddc_sync_8_0.v:57]
 INFO: [Synth 8-6157] synthesizing module 'xlslice_v1_0_2_xlslice__parameterized6' [g:/Chiro/Programs/urllc-demo-pynq/urllc-vivado/urllc-fifo.gen/sources_1/bd/urllc_fifo_sender/bd/urllc_fifo_core_inst_0/ipshared/11d0/hdl/xlslice_v1_0_vl_rfs.v:13]
-INFO: [Synth 8-6155] done synthesizing module 'xlslice_v1_0_2_xlslice__parameterized6' (43#1) [g:/Chiro/Programs/urllc-demo-pynq/urllc-vivado/urllc-fifo.gen/sources_1/bd/urllc_fifo_sender/bd/urllc_fifo_core_inst_0/ipshared/11d0/hdl/xlslice_v1_0_vl_rfs.v:13]
-INFO: [Synth 8-6155] done synthesizing module 'urllc_fifo_core_inst_0_xlslice_ddc_sync_8_0' (44#1) [g:/Chiro/Programs/urllc-demo-pynq/urllc-vivado/urllc-fifo.gen/sources_1/bd/urllc_fifo_sender/bd/urllc_fifo_core_inst_0/ip/urllc_fifo_core_inst_0_xlslice_ddc_sync_8_0/synth/urllc_fifo_core_inst_0_xlslice_ddc_sync_8_0.v:57]
+INFO: [Synth 8-6155] done synthesizing module 'xlslice_v1_0_2_xlslice__parameterized6' (41#1) [g:/Chiro/Programs/urllc-demo-pynq/urllc-vivado/urllc-fifo.gen/sources_1/bd/urllc_fifo_sender/bd/urllc_fifo_core_inst_0/ipshared/11d0/hdl/xlslice_v1_0_vl_rfs.v:13]
+INFO: [Synth 8-6155] done synthesizing module 'urllc_fifo_core_inst_0_xlslice_ddc_sync_8_0' (42#1) [g:/Chiro/Programs/urllc-demo-pynq/urllc-vivado/urllc-fifo.gen/sources_1/bd/urllc_fifo_sender/bd/urllc_fifo_core_inst_0/ip/urllc_fifo_core_inst_0_xlslice_ddc_sync_8_0/synth/urllc_fifo_core_inst_0_xlslice_ddc_sync_8_0.v:57]
 INFO: [Synth 8-6157] synthesizing module 'urllc_fifo_core_inst_0_xlslice_duc_sync_6_0' [g:/Chiro/Programs/urllc-demo-pynq/urllc-vivado/urllc-fifo.gen/sources_1/bd/urllc_fifo_sender/bd/urllc_fifo_core_inst_0/ip/urllc_fifo_core_inst_0_xlslice_duc_sync_6_0/synth/urllc_fifo_core_inst_0_xlslice_duc_sync_6_0.v:57]
 INFO: [Synth 8-6157] synthesizing module 'xlslice_v1_0_2_xlslice__parameterized7' [g:/Chiro/Programs/urllc-demo-pynq/urllc-vivado/urllc-fifo.gen/sources_1/bd/urllc_fifo_sender/bd/urllc_fifo_core_inst_0/ipshared/11d0/hdl/xlslice_v1_0_vl_rfs.v:13]
-INFO: [Synth 8-6155] done synthesizing module 'xlslice_v1_0_2_xlslice__parameterized7' (44#1) [g:/Chiro/Programs/urllc-demo-pynq/urllc-vivado/urllc-fifo.gen/sources_1/bd/urllc_fifo_sender/bd/urllc_fifo_core_inst_0/ipshared/11d0/hdl/xlslice_v1_0_vl_rfs.v:13]
-INFO: [Synth 8-6155] done synthesizing module 'urllc_fifo_core_inst_0_xlslice_duc_sync_6_0' (45#1) [g:/Chiro/Programs/urllc-demo-pynq/urllc-vivado/urllc-fifo.gen/sources_1/bd/urllc_fifo_sender/bd/urllc_fifo_core_inst_0/ip/urllc_fifo_core_inst_0_xlslice_duc_sync_6_0/synth/urllc_fifo_core_inst_0_xlslice_duc_sync_6_0.v:57]
+INFO: [Synth 8-6155] done synthesizing module 'xlslice_v1_0_2_xlslice__parameterized7' (42#1) [g:/Chiro/Programs/urllc-demo-pynq/urllc-vivado/urllc-fifo.gen/sources_1/bd/urllc_fifo_sender/bd/urllc_fifo_core_inst_0/ipshared/11d0/hdl/xlslice_v1_0_vl_rfs.v:13]
+INFO: [Synth 8-6155] done synthesizing module 'urllc_fifo_core_inst_0_xlslice_duc_sync_6_0' (43#1) [g:/Chiro/Programs/urllc-demo-pynq/urllc-vivado/urllc-fifo.gen/sources_1/bd/urllc_fifo_sender/bd/urllc_fifo_core_inst_0/ip/urllc_fifo_core_inst_0_xlslice_duc_sync_6_0/synth/urllc_fifo_core_inst_0_xlslice_duc_sync_6_0.v:57]
 INFO: [Synth 8-6157] synthesizing module 'urllc_fifo_core_inst_0_xlslice_fifo_read_start_2_0' [g:/Chiro/Programs/urllc-demo-pynq/urllc-vivado/urllc-fifo.gen/sources_1/bd/urllc_fifo_sender/bd/urllc_fifo_core_inst_0/ip/urllc_fifo_core_inst_0_xlslice_fifo_read_start_2_0/synth/urllc_fifo_core_inst_0_xlslice_fifo_read_start_2_0.v:57]
 INFO: [Synth 8-6157] synthesizing module 'xlslice_v1_0_2_xlslice__parameterized8' [g:/Chiro/Programs/urllc-demo-pynq/urllc-vivado/urllc-fifo.gen/sources_1/bd/urllc_fifo_sender/bd/urllc_fifo_core_inst_0/ipshared/11d0/hdl/xlslice_v1_0_vl_rfs.v:13]
-INFO: [Synth 8-6155] done synthesizing module 'xlslice_v1_0_2_xlslice__parameterized8' (45#1) [g:/Chiro/Programs/urllc-demo-pynq/urllc-vivado/urllc-fifo.gen/sources_1/bd/urllc_fifo_sender/bd/urllc_fifo_core_inst_0/ipshared/11d0/hdl/xlslice_v1_0_vl_rfs.v:13]
-INFO: [Synth 8-6155] done synthesizing module 'urllc_fifo_core_inst_0_xlslice_fifo_read_start_2_0' (46#1) [g:/Chiro/Programs/urllc-demo-pynq/urllc-vivado/urllc-fifo.gen/sources_1/bd/urllc_fifo_sender/bd/urllc_fifo_core_inst_0/ip/urllc_fifo_core_inst_0_xlslice_fifo_read_start_2_0/synth/urllc_fifo_core_inst_0_xlslice_fifo_read_start_2_0.v:57]
+INFO: [Synth 8-6155] done synthesizing module 'xlslice_v1_0_2_xlslice__parameterized8' (43#1) [g:/Chiro/Programs/urllc-demo-pynq/urllc-vivado/urllc-fifo.gen/sources_1/bd/urllc_fifo_sender/bd/urllc_fifo_core_inst_0/ipshared/11d0/hdl/xlslice_v1_0_vl_rfs.v:13]
+INFO: [Synth 8-6155] done synthesizing module 'urllc_fifo_core_inst_0_xlslice_fifo_read_start_2_0' (44#1) [g:/Chiro/Programs/urllc-demo-pynq/urllc-vivado/urllc-fifo.gen/sources_1/bd/urllc_fifo_sender/bd/urllc_fifo_core_inst_0/ip/urllc_fifo_core_inst_0_xlslice_fifo_read_start_2_0/synth/urllc_fifo_core_inst_0_xlslice_fifo_read_start_2_0.v:57]
 INFO: [Synth 8-6157] synthesizing module 'urllc_fifo_core_inst_0_xlslice_fifo_write_start_1_0' [g:/Chiro/Programs/urllc-demo-pynq/urllc-vivado/urllc-fifo.gen/sources_1/bd/urllc_fifo_sender/bd/urllc_fifo_core_inst_0/ip/urllc_fifo_core_inst_0_xlslice_fifo_write_start_1_0/synth/urllc_fifo_core_inst_0_xlslice_fifo_write_start_1_0.v:57]
-INFO: [Synth 8-6155] done synthesizing module 'urllc_fifo_core_inst_0_xlslice_fifo_write_start_1_0' (47#1) [g:/Chiro/Programs/urllc-demo-pynq/urllc-vivado/urllc-fifo.gen/sources_1/bd/urllc_fifo_sender/bd/urllc_fifo_core_inst_0/ip/urllc_fifo_core_inst_0_xlslice_fifo_write_start_1_0/synth/urllc_fifo_core_inst_0_xlslice_fifo_write_start_1_0.v:57]
+INFO: [Synth 8-6155] done synthesizing module 'urllc_fifo_core_inst_0_xlslice_fifo_write_start_1_0' (45#1) [g:/Chiro/Programs/urllc-demo-pynq/urllc-vivado/urllc-fifo.gen/sources_1/bd/urllc_fifo_sender/bd/urllc_fifo_core_inst_0/ip/urllc_fifo_core_inst_0_xlslice_fifo_write_start_1_0/synth/urllc_fifo_core_inst_0_xlslice_fifo_write_start_1_0.v:57]
 INFO: [Synth 8-6157] synthesizing module 'urllc_fifo_core_inst_0_xlslice_reciever_in_10_0' [g:/Chiro/Programs/urllc-demo-pynq/urllc-vivado/urllc-fifo.gen/sources_1/bd/urllc_fifo_sender/bd/urllc_fifo_core_inst_0/ip/urllc_fifo_core_inst_0_xlslice_reciever_in_10_0/synth/urllc_fifo_core_inst_0_xlslice_reciever_in_10_0.v:57]
-INFO: [Synth 8-6155] done synthesizing module 'urllc_fifo_core_inst_0_xlslice_reciever_in_10_0' (48#1) [g:/Chiro/Programs/urllc-demo-pynq/urllc-vivado/urllc-fifo.gen/sources_1/bd/urllc_fifo_sender/bd/urllc_fifo_core_inst_0/ip/urllc_fifo_core_inst_0_xlslice_reciever_in_10_0/synth/urllc_fifo_core_inst_0_xlslice_reciever_in_10_0.v:57]
+INFO: [Synth 8-6155] done synthesizing module 'urllc_fifo_core_inst_0_xlslice_reciever_in_10_0' (46#1) [g:/Chiro/Programs/urllc-demo-pynq/urllc-vivado/urllc-fifo.gen/sources_1/bd/urllc_fifo_sender/bd/urllc_fifo_core_inst_0/ip/urllc_fifo_core_inst_0_xlslice_reciever_in_10_0/synth/urllc_fifo_core_inst_0_xlslice_reciever_in_10_0.v:57]
 INFO: [Synth 8-6157] synthesizing module 'urllc_fifo_core_inst_0_xlslice_reciever_out_7_0' [g:/Chiro/Programs/urllc-demo-pynq/urllc-vivado/urllc-fifo.gen/sources_1/bd/urllc_fifo_sender/bd/urllc_fifo_core_inst_0/ip/urllc_fifo_core_inst_0_xlslice_reciever_out_7_0/synth/urllc_fifo_core_inst_0_xlslice_reciever_out_7_0.v:57]
 INFO: [Synth 8-6157] synthesizing module 'xlslice_v1_0_2_xlslice__parameterized9' [g:/Chiro/Programs/urllc-demo-pynq/urllc-vivado/urllc-fifo.gen/sources_1/bd/urllc_fifo_sender/bd/urllc_fifo_core_inst_0/ipshared/11d0/hdl/xlslice_v1_0_vl_rfs.v:13]
-INFO: [Synth 8-6155] done synthesizing module 'xlslice_v1_0_2_xlslice__parameterized9' (48#1) [g:/Chiro/Programs/urllc-demo-pynq/urllc-vivado/urllc-fifo.gen/sources_1/bd/urllc_fifo_sender/bd/urllc_fifo_core_inst_0/ipshared/11d0/hdl/xlslice_v1_0_vl_rfs.v:13]
-INFO: [Synth 8-6155] done synthesizing module 'urllc_fifo_core_inst_0_xlslice_reciever_out_7_0' (49#1) [g:/Chiro/Programs/urllc-demo-pynq/urllc-vivado/urllc-fifo.gen/sources_1/bd/urllc_fifo_sender/bd/urllc_fifo_core_inst_0/ip/urllc_fifo_core_inst_0_xlslice_reciever_out_7_0/synth/urllc_fifo_core_inst_0_xlslice_reciever_out_7_0.v:57]
+INFO: [Synth 8-6155] done synthesizing module 'xlslice_v1_0_2_xlslice__parameterized9' (46#1) [g:/Chiro/Programs/urllc-demo-pynq/urllc-vivado/urllc-fifo.gen/sources_1/bd/urllc_fifo_sender/bd/urllc_fifo_core_inst_0/ipshared/11d0/hdl/xlslice_v1_0_vl_rfs.v:13]
+INFO: [Synth 8-6155] done synthesizing module 'urllc_fifo_core_inst_0_xlslice_reciever_out_7_0' (47#1) [g:/Chiro/Programs/urllc-demo-pynq/urllc-vivado/urllc-fifo.gen/sources_1/bd/urllc_fifo_sender/bd/urllc_fifo_core_inst_0/ip/urllc_fifo_core_inst_0_xlslice_reciever_out_7_0/synth/urllc_fifo_core_inst_0_xlslice_reciever_out_7_0.v:57]
 INFO: [Synth 8-6157] synthesizing module 'urllc_fifo_core_inst_0_xlslice_sender_0' [g:/Chiro/Programs/urllc-demo-pynq/urllc-vivado/urllc-fifo.gen/sources_1/bd/urllc_fifo_sender/bd/urllc_fifo_core_inst_0/ip/urllc_fifo_core_inst_0_xlslice_sender_0/synth/urllc_fifo_core_inst_0_xlslice_sender_0.v:57]
 INFO: [Synth 8-6157] synthesizing module 'xlslice_v1_0_2_xlslice__parameterized10' [g:/Chiro/Programs/urllc-demo-pynq/urllc-vivado/urllc-fifo.gen/sources_1/bd/urllc_fifo_sender/bd/urllc_fifo_core_inst_0/ipshared/11d0/hdl/xlslice_v1_0_vl_rfs.v:13]
-INFO: [Synth 8-6155] done synthesizing module 'xlslice_v1_0_2_xlslice__parameterized10' (49#1) [g:/Chiro/Programs/urllc-demo-pynq/urllc-vivado/urllc-fifo.gen/sources_1/bd/urllc_fifo_sender/bd/urllc_fifo_core_inst_0/ipshared/11d0/hdl/xlslice_v1_0_vl_rfs.v:13]
-INFO: [Synth 8-6155] done synthesizing module 'urllc_fifo_core_inst_0_xlslice_sender_0' (50#1) [g:/Chiro/Programs/urllc-demo-pynq/urllc-vivado/urllc-fifo.gen/sources_1/bd/urllc_fifo_sender/bd/urllc_fifo_core_inst_0/ip/urllc_fifo_core_inst_0_xlslice_sender_0/synth/urllc_fifo_core_inst_0_xlslice_sender_0.v:57]
-INFO: [Synth 8-6155] done synthesizing module 'debug_ctrl_imp_91QJM7' (51#1) [G:/Chiro/Programs/urllc-demo-pynq/urllc-vivado/urllc-fifo.gen/sources_1/bd/urllc_fifo_sender/bd/urllc_fifo_core_inst_0/synth/urllc_fifo_core_inst_0.v:1137]
-WARNING: [Synth 8-4446] all outputs are unconnected for this instance and logic may be removed [G:/Chiro/Programs/urllc-demo-pynq/urllc-vivado/urllc-fifo.gen/sources_1/bd/urllc_fifo_sender/bd/urllc_fifo_core_inst_0/synth/urllc_fifo_core_inst_0.v:2193]
-INFO: [Synth 8-6157] synthesizing module 'urllc_fifo_core_inst_0_ila_0_0' [G:/Chiro/Programs/urllc-demo-pynq/urllc-vivado/urllc-fifo.runs/synth_1/.Xil/Vivado-16856-WIN-544SHHHOI8Q/realtime/urllc_fifo_core_inst_0_ila_0_0_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'urllc_fifo_core_inst_0_ila_0_0' (52#1) [G:/Chiro/Programs/urllc-demo-pynq/urllc-vivado/urllc-fifo.runs/synth_1/.Xil/Vivado-16856-WIN-544SHHHOI8Q/realtime/urllc_fifo_core_inst_0_ila_0_0_stub.v:6]
-WARNING: [Synth 8-4446] all outputs are unconnected for this instance and logic may be removed [G:/Chiro/Programs/urllc-demo-pynq/urllc-vivado/urllc-fifo.gen/sources_1/bd/urllc_fifo_sender/bd/urllc_fifo_core_inst_0/synth/urllc_fifo_core_inst_0.v:2196]
-INFO: [Synth 8-6157] synthesizing module 'urllc_fifo_core_inst_0_ila_fifo_in_0' [G:/Chiro/Programs/urllc-demo-pynq/urllc-vivado/urllc-fifo.runs/synth_1/.Xil/Vivado-16856-WIN-544SHHHOI8Q/realtime/urllc_fifo_core_inst_0_ila_fifo_in_0_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'urllc_fifo_core_inst_0_ila_fifo_in_0' (53#1) [G:/Chiro/Programs/urllc-demo-pynq/urllc-vivado/urllc-fifo.runs/synth_1/.Xil/Vivado-16856-WIN-544SHHHOI8Q/realtime/urllc_fifo_core_inst_0_ila_fifo_in_0_stub.v:6]
-WARNING: [Synth 8-4446] all outputs are unconnected for this instance and logic may be removed [G:/Chiro/Programs/urllc-demo-pynq/urllc-vivado/urllc-fifo.gen/sources_1/bd/urllc_fifo_sender/bd/urllc_fifo_core_inst_0/synth/urllc_fifo_core_inst_0.v:2207]
-INFO: [Synth 8-6157] synthesizing module 'urllc_fifo_core_inst_0_ila_fifo_out_0' [G:/Chiro/Programs/urllc-demo-pynq/urllc-vivado/urllc-fifo.runs/synth_1/.Xil/Vivado-16856-WIN-544SHHHOI8Q/realtime/urllc_fifo_core_inst_0_ila_fifo_out_0_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'urllc_fifo_core_inst_0_ila_fifo_out_0' (54#1) [G:/Chiro/Programs/urllc-demo-pynq/urllc-vivado/urllc-fifo.runs/synth_1/.Xil/Vivado-16856-WIN-544SHHHOI8Q/realtime/urllc_fifo_core_inst_0_ila_fifo_out_0_stub.v:6]
-INFO: [Synth 8-6071] Mark debug on the nets applies keep_hierarchy on instance 'core'. This will prevent further optimization [G:/Chiro/Programs/urllc-demo-pynq/urllc-vivado/urllc-fifo.gen/sources_1/bd/urllc_fifo_sender/bd/urllc_fifo_core_inst_0/synth/urllc_fifo_core_inst_0.v:2067]
-INFO: [Synth 8-6071] Mark debug on the nets applies keep_hierarchy on instance 'ila_0'. This will prevent further optimization [G:/Chiro/Programs/urllc-demo-pynq/urllc-vivado/urllc-fifo.gen/sources_1/bd/urllc_fifo_sender/bd/urllc_fifo_core_inst_0/synth/urllc_fifo_core_inst_0.v:2193]
-INFO: [Synth 8-6071] Mark debug on the nets applies keep_hierarchy on instance 'ila_fifo_in'. This will prevent further optimization [G:/Chiro/Programs/urllc-demo-pynq/urllc-vivado/urllc-fifo.gen/sources_1/bd/urllc_fifo_sender/bd/urllc_fifo_core_inst_0/synth/urllc_fifo_core_inst_0.v:2196]
-INFO: [Synth 8-6071] Mark debug on the nets applies keep_hierarchy on instance 'adc'. This will prevent further optimization [G:/Chiro/Programs/urllc-demo-pynq/urllc-vivado/urllc-fifo.gen/sources_1/bd/urllc_fifo_sender/bd/urllc_fifo_core_inst_0/synth/urllc_fifo_core_inst_0.v:2043]
-INFO: [Synth 8-6071] Mark debug on the nets applies keep_hierarchy on instance 'dac'. This will prevent further optimization [G:/Chiro/Programs/urllc-demo-pynq/urllc-vivado/urllc-fifo.gen/sources_1/bd/urllc_fifo_sender/bd/urllc_fifo_core_inst_0/synth/urllc_fifo_core_inst_0.v:2137]
-INFO: [Synth 8-6071] Mark debug on the nets applies keep_hierarchy on instance 'ila_fifo_out'. This will prevent further optimization [G:/Chiro/Programs/urllc-demo-pynq/urllc-vivado/urllc-fifo.gen/sources_1/bd/urllc_fifo_sender/bd/urllc_fifo_core_inst_0/synth/urllc_fifo_core_inst_0.v:2207]
-INFO: [Synth 8-6155] done synthesizing module 'urllc_fifo_core_inst_0' (55#1) [G:/Chiro/Programs/urllc-demo-pynq/urllc-vivado/urllc-fifo.gen/sources_1/bd/urllc_fifo_sender/bd/urllc_fifo_core_inst_0/synth/urllc_fifo_core_inst_0.v:1903]
-WARNING: [Synth 8-7071] port 'clk_da_200M' of module 'urllc_fifo_core_inst_0' is unconnected for instance 'urllc_fifo_core_0' [g:/Chiro/Programs/urllc-demo-pynq/urllc-vivado/urllc-fifo.gen/sources_1/bd/urllc_fifo_sender/synth/urllc_fifo_sender.v:94]
+INFO: [Synth 8-6155] done synthesizing module 'xlslice_v1_0_2_xlslice__parameterized10' (47#1) [g:/Chiro/Programs/urllc-demo-pynq/urllc-vivado/urllc-fifo.gen/sources_1/bd/urllc_fifo_sender/bd/urllc_fifo_core_inst_0/ipshared/11d0/hdl/xlslice_v1_0_vl_rfs.v:13]
+INFO: [Synth 8-6155] done synthesizing module 'urllc_fifo_core_inst_0_xlslice_sender_0' (48#1) [g:/Chiro/Programs/urllc-demo-pynq/urllc-vivado/urllc-fifo.gen/sources_1/bd/urllc_fifo_sender/bd/urllc_fifo_core_inst_0/ip/urllc_fifo_core_inst_0_xlslice_sender_0/synth/urllc_fifo_core_inst_0_xlslice_sender_0.v:57]
+INFO: [Synth 8-6155] done synthesizing module 'debug_ctrl_imp_91QJM7' (49#1) [G:/Chiro/Programs/urllc-demo-pynq/urllc-vivado/urllc-fifo.gen/sources_1/bd/urllc_fifo_sender/bd/urllc_fifo_core_inst_0/synth/urllc_fifo_core_inst_0.v:1125]
+WARNING: [Synth 8-4446] all outputs are unconnected for this instance and logic may be removed [G:/Chiro/Programs/urllc-demo-pynq/urllc-vivado/urllc-fifo.gen/sources_1/bd/urllc_fifo_sender/bd/urllc_fifo_core_inst_0/synth/urllc_fifo_core_inst_0.v:2181]
+INFO: [Synth 8-6157] synthesizing module 'urllc_fifo_core_inst_0_ila_0_0' [G:/Chiro/Programs/urllc-demo-pynq/urllc-vivado/urllc-fifo.runs/synth_1/.Xil/Vivado-33956-WIN-544SHHHOI8Q/realtime/urllc_fifo_core_inst_0_ila_0_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'urllc_fifo_core_inst_0_ila_0_0' (50#1) [G:/Chiro/Programs/urllc-demo-pynq/urllc-vivado/urllc-fifo.runs/synth_1/.Xil/Vivado-33956-WIN-544SHHHOI8Q/realtime/urllc_fifo_core_inst_0_ila_0_0_stub.v:6]
+WARNING: [Synth 8-4446] all outputs are unconnected for this instance and logic may be removed [G:/Chiro/Programs/urllc-demo-pynq/urllc-vivado/urllc-fifo.gen/sources_1/bd/urllc_fifo_sender/bd/urllc_fifo_core_inst_0/synth/urllc_fifo_core_inst_0.v:2184]
+INFO: [Synth 8-6157] synthesizing module 'urllc_fifo_core_inst_0_ila_fifo_in_0' [G:/Chiro/Programs/urllc-demo-pynq/urllc-vivado/urllc-fifo.runs/synth_1/.Xil/Vivado-33956-WIN-544SHHHOI8Q/realtime/urllc_fifo_core_inst_0_ila_fifo_in_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'urllc_fifo_core_inst_0_ila_fifo_in_0' (51#1) [G:/Chiro/Programs/urllc-demo-pynq/urllc-vivado/urllc-fifo.runs/synth_1/.Xil/Vivado-33956-WIN-544SHHHOI8Q/realtime/urllc_fifo_core_inst_0_ila_fifo_in_0_stub.v:6]
+WARNING: [Synth 8-4446] all outputs are unconnected for this instance and logic may be removed [G:/Chiro/Programs/urllc-demo-pynq/urllc-vivado/urllc-fifo.gen/sources_1/bd/urllc_fifo_sender/bd/urllc_fifo_core_inst_0/synth/urllc_fifo_core_inst_0.v:2195]
+INFO: [Synth 8-6157] synthesizing module 'urllc_fifo_core_inst_0_ila_fifo_out_0' [G:/Chiro/Programs/urllc-demo-pynq/urllc-vivado/urllc-fifo.runs/synth_1/.Xil/Vivado-33956-WIN-544SHHHOI8Q/realtime/urllc_fifo_core_inst_0_ila_fifo_out_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'urllc_fifo_core_inst_0_ila_fifo_out_0' (52#1) [G:/Chiro/Programs/urllc-demo-pynq/urllc-vivado/urllc-fifo.runs/synth_1/.Xil/Vivado-33956-WIN-544SHHHOI8Q/realtime/urllc_fifo_core_inst_0_ila_fifo_out_0_stub.v:6]
+INFO: [Synth 8-6071] Mark debug on the nets applies keep_hierarchy on instance 'core'. This will prevent further optimization [G:/Chiro/Programs/urllc-demo-pynq/urllc-vivado/urllc-fifo.gen/sources_1/bd/urllc_fifo_sender/bd/urllc_fifo_core_inst_0/synth/urllc_fifo_core_inst_0.v:2055]
+INFO: [Synth 8-6071] Mark debug on the nets applies keep_hierarchy on instance 'ila_0'. This will prevent further optimization [G:/Chiro/Programs/urllc-demo-pynq/urllc-vivado/urllc-fifo.gen/sources_1/bd/urllc_fifo_sender/bd/urllc_fifo_core_inst_0/synth/urllc_fifo_core_inst_0.v:2181]
+INFO: [Synth 8-6071] Mark debug on the nets applies keep_hierarchy on instance 'ila_fifo_in'. This will prevent further optimization [G:/Chiro/Programs/urllc-demo-pynq/urllc-vivado/urllc-fifo.gen/sources_1/bd/urllc_fifo_sender/bd/urllc_fifo_core_inst_0/synth/urllc_fifo_core_inst_0.v:2184]
+INFO: [Synth 8-6071] Mark debug on the nets applies keep_hierarchy on instance 'adc'. This will prevent further optimization [G:/Chiro/Programs/urllc-demo-pynq/urllc-vivado/urllc-fifo.gen/sources_1/bd/urllc_fifo_sender/bd/urllc_fifo_core_inst_0/synth/urllc_fifo_core_inst_0.v:2031]
+INFO: [Synth 8-6071] Mark debug on the nets applies keep_hierarchy on instance 'dac'. This will prevent further optimization [G:/Chiro/Programs/urllc-demo-pynq/urllc-vivado/urllc-fifo.gen/sources_1/bd/urllc_fifo_sender/bd/urllc_fifo_core_inst_0/synth/urllc_fifo_core_inst_0.v:2125]
+INFO: [Synth 8-6071] Mark debug on the nets applies keep_hierarchy on instance 'ila_fifo_out'. This will prevent further optimization [G:/Chiro/Programs/urllc-demo-pynq/urllc-vivado/urllc-fifo.gen/sources_1/bd/urllc_fifo_sender/bd/urllc_fifo_core_inst_0/synth/urllc_fifo_core_inst_0.v:2195]
+INFO: [Synth 8-6155] done synthesizing module 'urllc_fifo_core_inst_0' (53#1) [G:/Chiro/Programs/urllc-demo-pynq/urllc-vivado/urllc-fifo.gen/sources_1/bd/urllc_fifo_sender/bd/urllc_fifo_core_inst_0/synth/urllc_fifo_core_inst_0.v:1891]
+WARNING: [Synth 8-7071] port 'clk_da_dynamic' of module 'urllc_fifo_core_inst_0' is unconnected for instance 'urllc_fifo_core_0' [g:/Chiro/Programs/urllc-demo-pynq/urllc-vivado/urllc-fifo.gen/sources_1/bd/urllc_fifo_sender/synth/urllc_fifo_sender.v:94]
 WARNING: [Synth 8-7023] instance 'urllc_fifo_core_0' of module 'urllc_fifo_core_inst_0' has 25 connections declared, but only 24 given [g:/Chiro/Programs/urllc-demo-pynq/urllc-vivado/urllc-fifo.gen/sources_1/bd/urllc_fifo_sender/synth/urllc_fifo_sender.v:94]
-INFO: [Synth 8-6155] done synthesizing module 'urllc_fifo_sender' (56#1) [g:/Chiro/Programs/urllc-demo-pynq/urllc-vivado/urllc-fifo.gen/sources_1/bd/urllc_fifo_sender/synth/urllc_fifo_sender.v:13]
-INFO: [Synth 8-6155] done synthesizing module 'urllc_fifo_sender_wrapper' (57#1) [G:/Chiro/Programs/urllc-demo-pynq/urllc-vivado/urllc-fifo.gen/sources_1/bd/urllc_fifo_sender/hdl/urllc_fifo_sender_wrapper.v:12]
+INFO: [Synth 8-6155] done synthesizing module 'urllc_fifo_sender' (54#1) [g:/Chiro/Programs/urllc-demo-pynq/urllc-vivado/urllc-fifo.gen/sources_1/bd/urllc_fifo_sender/synth/urllc_fifo_sender.v:13]
+INFO: [Synth 8-6155] done synthesizing module 'urllc_fifo_sender_wrapper' (55#1) [G:/Chiro/Programs/urllc-demo-pynq/urllc-vivado/urllc-fifo.gen/sources_1/bd/urllc_fifo_sender/hdl/urllc_fifo_sender_wrapper.v:12]
 ---------------------------------------------------------------------------------
-Finished RTL Elaboration : Time (s): cpu = 00:00:05 ; elapsed = 00:00:06 . Memory (MB): peak = 1268.129 ; gain = 10.340
+Finished RTL Elaboration : Time (s): cpu = 00:00:05 ; elapsed = 00:00:05 . Memory (MB): peak = 1267.742 ; gain = 9.449
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:06 ; elapsed = 00:00:06 . Memory (MB): peak = 1268.129 ; gain = 10.340
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:05 ; elapsed = 00:00:06 . Memory (MB): peak = 1267.742 ; gain = 9.449
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:06 ; elapsed = 00:00:06 . Memory (MB): peak = 1268.129 ; gain = 10.340
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:05 ; elapsed = 00:00:06 . Memory (MB): peak = 1267.742 ; gain = 9.449
 ---------------------------------------------------------------------------------
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.037 . Memory (MB): peak = 1268.129 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.037 . Memory (MB): peak = 1267.742 ; gain = 0.000
 INFO: [Project 1-570] Preparing netlist for logic optimization
 
 Processing XDC Constraints
@@ -253,14 +249,10 @@ Parsing XDC File [g:/Chiro/Programs/urllc-demo-pynq/urllc-vivado/urllc-fifo.gen/
 Finished Parsing XDC File [g:/Chiro/Programs/urllc-demo-pynq/urllc-vivado/urllc-fifo.gen/sources_1/bd/urllc_fifo_sender/bd/urllc_fifo_core_inst_0/ip/urllc_fifo_core_inst_0_fifo_read_to_axis_0_0/urllc_fifo_core_inst_0_fifo_read_to_axis_0_0/urllc_fifo_core_inst_0_fifo_read_to_axis_0_0_in_context.xdc] for cell 'urllc_fifo_sender_i/urllc_fifo_core_0/adc/fifo_read_to_axis_0'
 Parsing XDC File [g:/Chiro/Programs/urllc-demo-pynq/urllc-vivado/urllc-fifo.gen/sources_1/bd/urllc_fifo_sender/bd/urllc_fifo_core_inst_0/ip/urllc_fifo_core_inst_0_adc_0_0/urllc_fifo_core_inst_0_adc_0_0/urllc_fifo_core_inst_0_adc_0_0_in_context.xdc] for cell 'urllc_fifo_sender_i/urllc_fifo_core_0/adc/adc_0'
 Finished Parsing XDC File [g:/Chiro/Programs/urllc-demo-pynq/urllc-vivado/urllc-fifo.gen/sources_1/bd/urllc_fifo_sender/bd/urllc_fifo_core_inst_0/ip/urllc_fifo_core_inst_0_adc_0_0/urllc_fifo_core_inst_0_adc_0_0/urllc_fifo_core_inst_0_adc_0_0_in_context.xdc] for cell 'urllc_fifo_sender_i/urllc_fifo_core_0/adc/adc_0'
-Parsing XDC File [g:/Chiro/Programs/urllc-demo-pynq/urllc-vivado/urllc-fifo.gen/sources_1/bd/urllc_fifo_sender/bd/urllc_fifo_core_inst_0/ip/urllc_fifo_core_inst_0_clk_slow_to_fast_0_0/urllc_fifo_core_inst_0_clk_slow_to_fast_0_0/urllc_fifo_core_inst_0_clk_slow_to_fast_0_0_in_context.xdc] for cell 'urllc_fifo_sender_i/urllc_fifo_core_0/adc/clk_slow_to_fast_0'
-Finished Parsing XDC File [g:/Chiro/Programs/urllc-demo-pynq/urllc-vivado/urllc-fifo.gen/sources_1/bd/urllc_fifo_sender/bd/urllc_fifo_core_inst_0/ip/urllc_fifo_core_inst_0_clk_slow_to_fast_0_0/urllc_fifo_core_inst_0_clk_slow_to_fast_0_0/urllc_fifo_core_inst_0_clk_slow_to_fast_0_0_in_context.xdc] for cell 'urllc_fifo_sender_i/urllc_fifo_core_0/adc/clk_slow_to_fast_0'
-Parsing XDC File [g:/Chiro/Programs/urllc-demo-pynq/urllc-vivado/urllc-fifo.gen/sources_1/bd/urllc_fifo_sender/bd/urllc_fifo_core_inst_0/ip/urllc_fifo_core_inst_0_clk_slow_to_fast_1_0/urllc_fifo_core_inst_0_clk_slow_to_fast_1_0/urllc_fifo_core_inst_0_clk_slow_to_fast_0_0_in_context.xdc] for cell 'urllc_fifo_sender_i/urllc_fifo_core_0/adc/clk_slow_to_fast_1'
-Finished Parsing XDC File [g:/Chiro/Programs/urllc-demo-pynq/urllc-vivado/urllc-fifo.gen/sources_1/bd/urllc_fifo_sender/bd/urllc_fifo_core_inst_0/ip/urllc_fifo_core_inst_0_clk_slow_to_fast_1_0/urllc_fifo_core_inst_0_clk_slow_to_fast_1_0/urllc_fifo_core_inst_0_clk_slow_to_fast_0_0_in_context.xdc] for cell 'urllc_fifo_sender_i/urllc_fifo_core_0/adc/clk_slow_to_fast_1'
 Parsing XDC File [g:/Chiro/Programs/urllc-demo-pynq/urllc-vivado/urllc-fifo.gen/sources_1/bd/urllc_fifo_sender/bd/urllc_fifo_core_inst_0/ip/urllc_fifo_core_inst_0_processing_system7_0_0/urllc_fifo_core_inst_0_processing_system7_0_0/urllc_fifo_core_inst_0_processing_system7_0_0_in_context.xdc] for cell 'urllc_fifo_sender_i/urllc_fifo_core_0/core/processing_system7_0'
 Finished Parsing XDC File [g:/Chiro/Programs/urllc-demo-pynq/urllc-vivado/urllc-fifo.gen/sources_1/bd/urllc_fifo_sender/bd/urllc_fifo_core_inst_0/ip/urllc_fifo_core_inst_0_processing_system7_0_0/urllc_fifo_core_inst_0_processing_system7_0_0/urllc_fifo_core_inst_0_processing_system7_0_0_in_context.xdc] for cell 'urllc_fifo_sender_i/urllc_fifo_core_0/core/processing_system7_0'
-Parsing XDC File [g:/Chiro/Programs/urllc-demo-pynq/urllc-vivado/urllc-fifo.gen/sources_1/bd/urllc_fifo_sender/bd/urllc_fifo_core_inst_0/ip/urllc_fifo_core_inst_0_reset_dynamic_0/urllc_fifo_core_inst_0_reset_dynamic_0/urllc_fifo_core_inst_0_reset_dynamic_0_in_context.xdc] for cell 'urllc_fifo_sender_i/urllc_fifo_core_0/core/reset_dynamic'
-Finished Parsing XDC File [g:/Chiro/Programs/urllc-demo-pynq/urllc-vivado/urllc-fifo.gen/sources_1/bd/urllc_fifo_sender/bd/urllc_fifo_core_inst_0/ip/urllc_fifo_core_inst_0_reset_dynamic_0/urllc_fifo_core_inst_0_reset_dynamic_0/urllc_fifo_core_inst_0_reset_dynamic_0_in_context.xdc] for cell 'urllc_fifo_sender_i/urllc_fifo_core_0/core/reset_dynamic'
+Parsing XDC File [g:/Chiro/Programs/urllc-demo-pynq/urllc-vivado/urllc-fifo.gen/sources_1/bd/urllc_fifo_sender/bd/urllc_fifo_core_inst_0/ip/urllc_fifo_core_inst_0_reset_dynamic_0/urllc_fifo_core_inst_0_reset_dynamic_0/urllc_fifo_core_inst_0_reset_static_0_in_context.xdc] for cell 'urllc_fifo_sender_i/urllc_fifo_core_0/core/reset_dynamic'
+Finished Parsing XDC File [g:/Chiro/Programs/urllc-demo-pynq/urllc-vivado/urllc-fifo.gen/sources_1/bd/urllc_fifo_sender/bd/urllc_fifo_core_inst_0/ip/urllc_fifo_core_inst_0_reset_dynamic_0/urllc_fifo_core_inst_0_reset_dynamic_0/urllc_fifo_core_inst_0_reset_static_0_in_context.xdc] for cell 'urllc_fifo_sender_i/urllc_fifo_core_0/core/reset_dynamic'
 Parsing XDC File [g:/Chiro/Programs/urllc-demo-pynq/urllc-vivado/urllc-fifo.gen/sources_1/bd/urllc_fifo_sender/bd/urllc_fifo_core_inst_0/ip/urllc_fifo_core_inst_0_reset_static_0/urllc_fifo_core_inst_0_reset_static_0/urllc_fifo_core_inst_0_reset_static_0_in_context.xdc] for cell 'urllc_fifo_sender_i/urllc_fifo_core_0/core/reset_static'
 Finished Parsing XDC File [g:/Chiro/Programs/urllc-demo-pynq/urllc-vivado/urllc-fifo.gen/sources_1/bd/urllc_fifo_sender/bd/urllc_fifo_core_inst_0/ip/urllc_fifo_core_inst_0_reset_static_0/urllc_fifo_core_inst_0_reset_static_0/urllc_fifo_core_inst_0_reset_static_0_in_context.xdc] for cell 'urllc_fifo_sender_i/urllc_fifo_core_0/core/reset_static'
 Parsing XDC File [g:/Chiro/Programs/urllc-demo-pynq/urllc-vivado/urllc-fifo.gen/sources_1/bd/urllc_fifo_sender/bd/urllc_fifo_core_inst_0/ip/urllc_fifo_core_inst_0_axi_dma_0_0/urllc_fifo_core_inst_0_axi_dma_0_0/urllc_fifo_core_inst_0_axi_dma_0_0_in_context.xdc] for cell 'urllc_fifo_sender_i/urllc_fifo_core_0/core/axi_dma_0'
@@ -363,20 +355,20 @@ Parsing XDC File [G:/Chiro/Programs/urllc-demo-pynq/urllc-vivado/urllc-fifo.runs
 Finished Parsing XDC File [G:/Chiro/Programs/urllc-demo-pynq/urllc-vivado/urllc-fifo.runs/synth_1/dont_touch.xdc]
 Completed Processing XDC Constraints
 
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 1312.562 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 1311.629 ; gain = 0.000
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
-Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.014 . Memory (MB): peak = 1312.562 ; gain = 0.000
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.014 . Memory (MB): peak = 1311.629 ; gain = 0.000
 ---------------------------------------------------------------------------------
-Finished Constraint Validation : Time (s): cpu = 00:00:12 ; elapsed = 00:00:12 . Memory (MB): peak = 1312.562 ; gain = 54.773
+Finished Constraint Validation : Time (s): cpu = 00:00:12 ; elapsed = 00:00:12 . Memory (MB): peak = 1311.629 ; gain = 53.336
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Loading Part and Timing Information
 ---------------------------------------------------------------------------------
 Loading part: xc7z020clg400-2
 ---------------------------------------------------------------------------------
-Finished Loading Part and Timing Information : Time (s): cpu = 00:00:12 ; elapsed = 00:00:12 . Memory (MB): peak = 1312.562 ; gain = 54.773
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:12 ; elapsed = 00:00:12 . Memory (MB): peak = 1311.629 ; gain = 53.336
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying 'set_property' XDC Constraints
@@ -650,8 +642,6 @@ Applied set_property KEEP_HIERARCHY = SOFT for urllc_fifo_sender_i/urllc_fifo_co
 Applied set_property KEEP_HIERARCHY = SOFT for urllc_fifo_sender_i/urllc_fifo_core_0/adc/xlconcat_0. (constraint file  auto generated constraint).
 Applied set_property KEEP_HIERARCHY = SOFT for urllc_fifo_sender_i/urllc_fifo_core_0/adc/xlconstant_0. (constraint file  auto generated constraint).
 Applied set_property KEEP_HIERARCHY = SOFT for urllc_fifo_sender_i/urllc_fifo_core_0/adc/xlslice_adc_0_7. (constraint file  auto generated constraint).
-Applied set_property KEEP_HIERARCHY = SOFT for urllc_fifo_sender_i/urllc_fifo_core_0/adc/clk_slow_to_fast_0. (constraint file  auto generated constraint).
-Applied set_property KEEP_HIERARCHY = SOFT for urllc_fifo_sender_i/urllc_fifo_core_0/adc/clk_slow_to_fast_1. (constraint file  auto generated constraint).
 Applied set_property KEEP_HIERARCHY = SOFT for urllc_fifo_sender_i/urllc_fifo_core_0/core/processing_system7_0. (constraint file  auto generated constraint).
 Applied set_property KEEP_HIERARCHY = SOFT for urllc_fifo_sender_i/urllc_fifo_core_0/core/reset_dynamic. (constraint file  auto generated constraint).
 Applied set_property KEEP_HIERARCHY = SOFT for urllc_fifo_sender_i/urllc_fifo_core_0/core/reset_static. (constraint file  auto generated constraint).
@@ -688,10 +678,10 @@ Applied set_property KEEP_HIERARCHY = SOFT for urllc_fifo_sender_i/urllc_fifo_co
 Applied set_property KEEP_HIERARCHY = SOFT for urllc_fifo_sender_i/urllc_fifo_core_0/ila_fifo_out. (constraint file  auto generated constraint).
 Applied set_property KEEP_HIERARCHY = SOFT for urllc_fifo_sender_i. (constraint file  auto generated constraint).
 ---------------------------------------------------------------------------------
-Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:12 ; elapsed = 00:00:13 . Memory (MB): peak = 1312.562 ; gain = 54.773
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:12 ; elapsed = 00:00:13 . Memory (MB): peak = 1311.629 ; gain = 53.336
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:13 ; elapsed = 00:00:13 . Memory (MB): peak = 1312.562 ; gain = 54.773
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:12 ; elapsed = 00:00:13 . Memory (MB): peak = 1311.629 ; gain = 53.336
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start RTL Component Statistics 
@@ -713,25 +703,25 @@ Finished Part Resource Summary
 Start Cross Boundary and Area Optimization
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:14 ; elapsed = 00:00:14 . Memory (MB): peak = 1312.562 ; gain = 54.773
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:14 ; elapsed = 00:00:14 . Memory (MB): peak = 1311.629 ; gain = 53.336
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying XDC Timing Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:20 ; elapsed = 00:00:20 . Memory (MB): peak = 1345.188 ; gain = 87.398
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:19 ; elapsed = 00:00:20 . Memory (MB): peak = 1352.395 ; gain = 94.102
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Timing Optimization
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Timing Optimization : Time (s): cpu = 00:00:20 ; elapsed = 00:00:20 . Memory (MB): peak = 1345.930 ; gain = 88.141
+Finished Timing Optimization : Time (s): cpu = 00:00:19 ; elapsed = 00:00:20 . Memory (MB): peak = 1352.988 ; gain = 94.695
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Technology Mapping
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Technology Mapping : Time (s): cpu = 00:00:20 ; elapsed = 00:00:20 . Memory (MB): peak = 1365.559 ; gain = 107.770
+Finished Technology Mapping : Time (s): cpu = 00:00:20 ; elapsed = 00:00:20 . Memory (MB): peak = 1372.113 ; gain = 113.820
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start IO Insertion
@@ -749,37 +739,37 @@ Start Final Netlist Cleanup
 Finished Final Netlist Cleanup
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished IO Insertion : Time (s): cpu = 00:00:23 ; elapsed = 00:00:23 . Memory (MB): peak = 1372.328 ; gain = 114.539
+Finished IO Insertion : Time (s): cpu = 00:00:22 ; elapsed = 00:00:23 . Memory (MB): peak = 1377.230 ; gain = 118.938
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Instances
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Instances : Time (s): cpu = 00:00:23 ; elapsed = 00:00:23 . Memory (MB): peak = 1372.328 ; gain = 114.539
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:22 ; elapsed = 00:00:23 . Memory (MB): peak = 1377.230 ; gain = 118.938
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Rebuilding User Hierarchy
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:23 ; elapsed = 00:00:23 . Memory (MB): peak = 1372.328 ; gain = 114.539
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:22 ; elapsed = 00:00:23 . Memory (MB): peak = 1377.230 ; gain = 118.938
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Ports
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Ports : Time (s): cpu = 00:00:23 ; elapsed = 00:00:23 . Memory (MB): peak = 1372.328 ; gain = 114.539
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:22 ; elapsed = 00:00:23 . Memory (MB): peak = 1377.230 ; gain = 118.938
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:23 ; elapsed = 00:00:23 . Memory (MB): peak = 1372.328 ; gain = 114.539
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:22 ; elapsed = 00:00:23 . Memory (MB): peak = 1377.230 ; gain = 118.938
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Nets
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Nets : Time (s): cpu = 00:00:23 ; elapsed = 00:00:23 . Memory (MB): peak = 1372.328 ; gain = 114.539
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:22 ; elapsed = 00:00:23 . Memory (MB): peak = 1377.230 ; gain = 118.938
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Writing Synthesis Report
@@ -791,30 +781,28 @@ Report BlackBoxes:
 +------+----------------------------------------------+----------+
 |1     |urllc_fifo_core_inst_0_DDCWrapper_0_0         |         1|
 |2     |urllc_fifo_core_inst_0_adc_0_0                |         1|
-|3     |urllc_fifo_core_inst_0_clk_slow_to_fast_0_0   |         1|
-|4     |urllc_fifo_core_inst_0_clk_slow_to_fast_1_0   |         1|
-|5     |urllc_fifo_core_inst_0_count_trigger_0_0      |         1|
-|6     |urllc_fifo_core_inst_0_fifo_read_to_axis_0_0  |         1|
-|7     |urllc_fifo_core_inst_0_mux_reciever_in_0      |         1|
-|8     |urllc_fifo_core_inst_0_xbar_0                 |         1|
-|9     |urllc_fifo_core_inst_0_auto_pc_0              |         1|
-|10    |urllc_fifo_core_inst_0_axi_dma_0_0            |         1|
-|11    |urllc_fifo_core_inst_0_axi_smc_0              |         1|
-|12    |urllc_fifo_core_inst_0_clk_dynamic_0          |         1|
-|13    |urllc_fifo_core_inst_0_clk_static_0           |         1|
-|14    |urllc_fifo_core_inst_0_fifo_adc_0             |         1|
-|15    |urllc_fifo_core_inst_0_fifo_dac_0             |         1|
-|16    |urllc_fifo_core_inst_0_processing_system7_0_0 |         1|
-|17    |urllc_fifo_core_inst_0_reset_dynamic_0        |         1|
-|18    |urllc_fifo_core_inst_0_reset_static_0         |         1|
-|19    |urllc_fifo_core_inst_0_DUCWrapper_0_0         |         1|
-|20    |urllc_fifo_core_inst_0_axis_write_to_fifo_0_0 |         1|
-|21    |urllc_fifo_core_inst_0_dac_0_0                |         1|
-|22    |urllc_fifo_core_inst_0_mux_reciever_out_0     |         1|
-|23    |urllc_fifo_core_inst_0_ila_0_0                |         1|
-|24    |urllc_fifo_core_inst_0_ila_fifo_in_0          |         1|
-|25    |urllc_fifo_core_inst_0_ila_fifo_out_0         |         1|
-|26    |urllc_fifo_core_inst_0_axi_gpio_0_0           |         1|
+|3     |urllc_fifo_core_inst_0_count_trigger_0_0      |         1|
+|4     |urllc_fifo_core_inst_0_fifo_read_to_axis_0_0  |         1|
+|5     |urllc_fifo_core_inst_0_mux_reciever_in_0      |         1|
+|6     |urllc_fifo_core_inst_0_xbar_0                 |         1|
+|7     |urllc_fifo_core_inst_0_auto_pc_0              |         1|
+|8     |urllc_fifo_core_inst_0_axi_dma_0_0            |         1|
+|9     |urllc_fifo_core_inst_0_axi_smc_0              |         1|
+|10    |urllc_fifo_core_inst_0_clk_dynamic_0          |         1|
+|11    |urllc_fifo_core_inst_0_clk_static_0           |         1|
+|12    |urllc_fifo_core_inst_0_fifo_adc_0             |         1|
+|13    |urllc_fifo_core_inst_0_fifo_dac_0             |         1|
+|14    |urllc_fifo_core_inst_0_processing_system7_0_0 |         1|
+|15    |urllc_fifo_core_inst_0_reset_dynamic_0        |         1|
+|16    |urllc_fifo_core_inst_0_reset_static_0         |         1|
+|17    |urllc_fifo_core_inst_0_DUCWrapper_0_0         |         1|
+|18    |urllc_fifo_core_inst_0_axis_write_to_fifo_0_0 |         1|
+|19    |urllc_fifo_core_inst_0_dac_0_0                |         1|
+|20    |urllc_fifo_core_inst_0_mux_reciever_out_0     |         1|
+|21    |urllc_fifo_core_inst_0_ila_0_0                |         1|
+|22    |urllc_fifo_core_inst_0_ila_fifo_in_0          |         1|
+|23    |urllc_fifo_core_inst_0_ila_fifo_out_0         |         1|
+|24    |urllc_fifo_core_inst_0_axi_gpio_0_0           |         1|
 +------+----------------------------------------------+----------+
 
 Report Cell Usage: 
@@ -830,47 +818,45 @@ Report Cell Usage:
 |7     |urllc_fifo_core_inst_0_axi_smc              |     1|
 |8     |urllc_fifo_core_inst_0_axis_write_to_fifo_0 |     1|
 |9     |urllc_fifo_core_inst_0_clk_dynamic          |     1|
-|10    |urllc_fifo_core_inst_0_clk_slow_to_fast_0   |     1|
-|11    |urllc_fifo_core_inst_0_clk_slow_to_fast_1   |     1|
-|12    |urllc_fifo_core_inst_0_clk_static           |     1|
-|13    |urllc_fifo_core_inst_0_count_trigger_0      |     1|
-|14    |urllc_fifo_core_inst_0_dac_0                |     1|
-|15    |urllc_fifo_core_inst_0_fifo_adc             |     1|
-|16    |urllc_fifo_core_inst_0_fifo_dac             |     1|
-|17    |urllc_fifo_core_inst_0_fifo_read_to_axis_0  |     1|
-|18    |urllc_fifo_core_inst_0_ila_0                |     1|
-|19    |urllc_fifo_core_inst_0_ila_fifo_in          |     1|
-|20    |urllc_fifo_core_inst_0_ila_fifo_out         |     1|
-|21    |urllc_fifo_core_inst_0_mux_reciever_in      |     1|
-|22    |urllc_fifo_core_inst_0_mux_reciever_out     |     1|
-|23    |urllc_fifo_core_inst_0_processing_system7_0 |     1|
-|24    |urllc_fifo_core_inst_0_reset_dynamic        |     1|
-|25    |urllc_fifo_core_inst_0_reset_static         |     1|
-|26    |urllc_fifo_core_inst_0_xbar                 |     1|
-|27    |IBUF                                        |     8|
-|28    |OBUF                                        |    10|
+|10    |urllc_fifo_core_inst_0_clk_static           |     1|
+|11    |urllc_fifo_core_inst_0_count_trigger_0      |     1|
+|12    |urllc_fifo_core_inst_0_dac_0                |     1|
+|13    |urllc_fifo_core_inst_0_fifo_adc             |     1|
+|14    |urllc_fifo_core_inst_0_fifo_dac             |     1|
+|15    |urllc_fifo_core_inst_0_fifo_read_to_axis_0  |     1|
+|16    |urllc_fifo_core_inst_0_ila_0                |     1|
+|17    |urllc_fifo_core_inst_0_ila_fifo_in          |     1|
+|18    |urllc_fifo_core_inst_0_ila_fifo_out         |     1|
+|19    |urllc_fifo_core_inst_0_mux_reciever_in      |     1|
+|20    |urllc_fifo_core_inst_0_mux_reciever_out     |     1|
+|21    |urllc_fifo_core_inst_0_processing_system7_0 |     1|
+|22    |urllc_fifo_core_inst_0_reset_dynamic        |     1|
+|23    |urllc_fifo_core_inst_0_reset_static         |     1|
+|24    |urllc_fifo_core_inst_0_xbar                 |     1|
+|25    |IBUF                                        |     8|
+|26    |OBUF                                        |    10|
 +------+--------------------------------------------+------+
 ---------------------------------------------------------------------------------
-Finished Writing Synthesis Report : Time (s): cpu = 00:00:23 ; elapsed = 00:00:23 . Memory (MB): peak = 1372.328 ; gain = 114.539
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:22 ; elapsed = 00:00:23 . Memory (MB): peak = 1377.230 ; gain = 118.938
 ---------------------------------------------------------------------------------
 Synthesis finished with 0 errors, 0 critical warnings and 0 warnings.
-Synthesis Optimization Runtime : Time (s): cpu = 00:00:15 ; elapsed = 00:00:20 . Memory (MB): peak = 1372.328 ; gain = 70.105
-Synthesis Optimization Complete : Time (s): cpu = 00:00:23 ; elapsed = 00:00:23 . Memory (MB): peak = 1372.328 ; gain = 114.539
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:14 ; elapsed = 00:00:20 . Memory (MB): peak = 1377.230 ; gain = 75.051
+Synthesis Optimization Complete : Time (s): cpu = 00:00:22 ; elapsed = 00:00:23 . Memory (MB): peak = 1377.230 ; gain = 118.938
 INFO: [Project 1-571] Translating synthesized netlist
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.030 . Memory (MB): peak = 1384.352 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.030 . Memory (MB): peak = 1390.297 ; gain = 0.000
 INFO: [Project 1-570] Preparing netlist for logic optimization
 INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1396.020 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1401.898 ; gain = 0.000
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
-Synth Design complete, checksum: 68e6c94d
+Synth Design complete, checksum: 4a6421b6
 INFO: [Common 17-83] Releasing license: Synthesis
-160 Infos, 117 Warnings, 0 Critical Warnings and 0 Errors encountered.
+156 Infos, 117 Warnings, 0 Critical Warnings and 0 Errors encountered.
 synth_design completed successfully
-synth_design: Time (s): cpu = 00:00:27 ; elapsed = 00:00:28 . Memory (MB): peak = 1396.020 ; gain = 138.230
+synth_design: Time (s): cpu = 00:00:27 ; elapsed = 00:00:28 . Memory (MB): peak = 1401.898 ; gain = 143.605
 INFO: [Common 17-600] The following parameters have non-default value.
 general.maxThreads
 INFO: [Common 17-1381] The checkpoint 'G:/Chiro/Programs/urllc-demo-pynq/urllc-vivado/urllc-fifo.runs/synth_1/urllc_fifo_sender_wrapper.dcp' has been generated.
 INFO: [runtcl-4] Executing : report_utilization -file urllc_fifo_sender_wrapper_utilization_synth.rpt -pb urllc_fifo_sender_wrapper_utilization_synth.pb
-INFO: [Common 17-206] Exiting Vivado at Sun Jan 23 11:45:13 2022...
+INFO: [Common 17-206] Exiting Vivado at Mon Jan 24 08:21:41 2022...

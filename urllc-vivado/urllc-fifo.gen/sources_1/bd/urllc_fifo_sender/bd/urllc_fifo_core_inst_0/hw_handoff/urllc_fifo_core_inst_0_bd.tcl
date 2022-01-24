@@ -40,7 +40,7 @@ if { [string first $scripts_vivado_version $current_vivado_version] == -1 } {
 
 # The design that will be created by this Tcl script contains the following 
 # module references:
-# DDCWrapper, adc, clk_slow_to_fast, clk_slow_to_fast, count_trigger, fifo_read_to_axis, mux, DUCWrapper, axis_write_to_fifo, dac, mux
+# DDCWrapper, adc, count_trigger, fifo_read_to_axis, mux, DUCWrapper, axis_write_to_fifo, dac, mux
 
 # Please add the sources of those modules before sourcing this Tcl script.
 
@@ -499,7 +499,7 @@ proc create_hier_cell_core { parentCell nameHier } {
   create_bd_pin -dir O almost_empty
   create_bd_pin -dir O almost_full
   create_bd_pin -dir O -type clk clk_out1
-  create_bd_pin -dir O -type clk clk_out_200M
+  create_bd_pin -dir O -type clk clk_out_dynamic
   create_bd_pin -dir O -from 15 -to 0 data_count
   create_bd_pin -dir I -from 7 -to 0 din
   create_bd_pin -dir I -from 7 -to 0 din1
@@ -539,14 +539,14 @@ proc create_hier_cell_core { parentCell nameHier } {
   set clk_dynamic [ create_bd_cell -type ip -vlnv xilinx.com:ip:clk_wiz:6.0 clk_dynamic ]
   set_property -dict [ list \
    CONFIG.CLKIN1_JITTER_PS {200.0} \
-   CONFIG.CLKOUT1_JITTER {142.107} \
-   CONFIG.CLKOUT1_PHASE_ERROR {164.985} \
-   CONFIG.CLKOUT1_REQUESTED_OUT_FREQ {200.000} \
-   CONFIG.CLK_OUT1_PORT {clk_out_200M} \
-   CONFIG.MMCM_CLKFBOUT_MULT_F {20.000} \
+   CONFIG.CLKOUT1_JITTER {199.644} \
+   CONFIG.CLKOUT1_PHASE_ERROR {161.614} \
+   CONFIG.CLKOUT1_REQUESTED_OUT_FREQ {60} \
+   CONFIG.CLK_OUT1_PORT {clk_out_dynamic} \
+   CONFIG.MMCM_CLKFBOUT_MULT_F {18.000} \
    CONFIG.MMCM_CLKIN1_PERIOD {20.000} \
    CONFIG.MMCM_CLKIN2_PERIOD {10.0} \
-   CONFIG.MMCM_CLKOUT0_DIVIDE_F {5.000} \
+   CONFIG.MMCM_CLKOUT0_DIVIDE_F {15.000} \
    CONFIG.MMCM_DIVCLK_DIVIDE {1} \
    CONFIG.RESET_PORT {resetn} \
    CONFIG.RESET_TYPE {ACTIVE_LOW} \
@@ -1340,7 +1340,7 @@ Flash#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassign
   connect_bd_net -net axi_dma_0_s2mm_introut [get_bd_pins axi_dma_0/s2mm_introut] [get_bd_pins xlconcat_irq/In2]
   connect_bd_net -net axis_write_to_fifo_0_fifo_write_wd_data [get_bd_pins din1] [get_bd_pins fifo_dac/din]
   connect_bd_net -net axis_write_to_fifo_0_fifo_write_wd_en [get_bd_pins wr_en1] [get_bd_pins fifo_dac/wr_en]
-  connect_bd_net -net clk_dynamic_clk_out_200M [get_bd_pins clk_out_200M] [get_bd_pins clk_dynamic/clk_out_200M] [get_bd_pins reset_dynamic/slowest_sync_clk]
+  connect_bd_net -net clk_dynamic_clk_out_200M [get_bd_pins clk_out_dynamic] [get_bd_pins clk_dynamic/clk_out_dynamic] [get_bd_pins reset_dynamic/slowest_sync_clk]
   connect_bd_net -net clk_static_clk_out1 [get_bd_pins clk_out1] [get_bd_pins axi_dma_0/m_axi_mm2s_aclk] [get_bd_pins axi_dma_0/m_axi_s2mm_aclk] [get_bd_pins axi_dma_0/s_axi_lite_aclk] [get_bd_pins axi_smc/aclk] [get_bd_pins clk_static/clk_out1] [get_bd_pins fifo_adc/clk] [get_bd_pins fifo_dac/clk] [get_bd_pins processing_system7_0/M_AXI_GP0_ACLK] [get_bd_pins processing_system7_0/S_AXI_HP0_ACLK] [get_bd_pins processing_system7_0/S_AXI_HP1_ACLK] [get_bd_pins ps7_0_axi_periph/ACLK] [get_bd_pins ps7_0_axi_periph/M00_ACLK] [get_bd_pins ps7_0_axi_periph/M01_ACLK] [get_bd_pins ps7_0_axi_periph/S00_ACLK] [get_bd_pins reset_static/slowest_sync_clk]
   connect_bd_net -net dac_0_da_in_vld [get_bd_pins rd_en1] [get_bd_pins fifo_dac/rd_en]
   connect_bd_net -net fifo_adc_almost_empty [get_bd_pins almost_empty] [get_bd_pins fifo_adc/almost_empty]
@@ -1446,28 +1446,6 @@ proc create_hier_cell_adc { parentCell nameHier } {
      return 1
    }
   
-  # Create instance: clk_slow_to_fast_0, and set properties
-  set block_name clk_slow_to_fast
-  set block_cell_name clk_slow_to_fast_0
-  if { [catch {set clk_slow_to_fast_0 [create_bd_cell -type module -reference $block_name $block_cell_name] } errmsg] } {
-     catch {common::send_gid_msg -ssname BD::TCL -id 2095 -severity "ERROR" "Unable to add referenced block <$block_name>. Please add the files for ${block_name}'s definition into the project."}
-     return 1
-   } elseif { $clk_slow_to_fast_0 eq "" } {
-     catch {common::send_gid_msg -ssname BD::TCL -id 2096 -severity "ERROR" "Unable to referenced block <$block_name>. Please add the files for ${block_name}'s definition into the project."}
-     return 1
-   }
-  
-  # Create instance: clk_slow_to_fast_1, and set properties
-  set block_name clk_slow_to_fast
-  set block_cell_name clk_slow_to_fast_1
-  if { [catch {set clk_slow_to_fast_1 [create_bd_cell -type module -reference $block_name $block_cell_name] } errmsg] } {
-     catch {common::send_gid_msg -ssname BD::TCL -id 2095 -severity "ERROR" "Unable to add referenced block <$block_name>. Please add the files for ${block_name}'s definition into the project."}
-     return 1
-   } elseif { $clk_slow_to_fast_1 eq "" } {
-     catch {common::send_gid_msg -ssname BD::TCL -id 2096 -severity "ERROR" "Unable to referenced block <$block_name>. Please add the files for ${block_name}'s definition into the project."}
-     return 1
-   }
-  
   # Create instance: count_trigger_0, and set properties
   set block_name count_trigger
   set block_cell_name count_trigger_0
@@ -1522,24 +1500,22 @@ proc create_hier_cell_adc { parentCell nameHier } {
   connect_bd_intf_net -intf_net Conn1 [get_bd_intf_pins axis] [get_bd_intf_pins fifo_read_to_axis_0/axis]
 
   # Create port connections
-  connect_bd_net -net DDCWrapper_0_io_out_data [get_bd_pins DDCWrapper_0/io_out_data] [get_bd_pins clk_slow_to_fast_1/data_in_slow]
+  connect_bd_net -net DDCWrapper_0_io_out_data [get_bd_pins DDCWrapper_0/io_out_data] [get_bd_pins xlconcat_0/In0]
   connect_bd_net -net Net [get_bd_pins clk] [get_bd_pins adc_0/clk] [get_bd_pins count_trigger_0/clk] [get_bd_pins fifo_read_to_axis_0/clk]
   connect_bd_net -net Net1 [get_bd_pins resetn] [get_bd_pins adc_0/resetn] [get_bd_pins count_trigger_0/resetn] [get_bd_pins fifo_read_to_axis_0/resetn]
+  connect_bd_net -net Net2 [get_bd_pins io_clock] [get_bd_pins DDCWrapper_0/io_clock]
+  connect_bd_net -net Net3 [get_bd_pins io_resetN] [get_bd_pins DDCWrapper_0/io_resetN]
   connect_bd_net -net ad_1 [get_bd_pins ad] [get_bd_pins DDCWrapper_0/io_in_data] [get_bd_pins mux_reciever_in/sel1]
   connect_bd_net -net adc_0_ad_out [get_bd_pins ad_out] [get_bd_pins adc_0/ad_out]
   connect_bd_net -net adc_0_ad_out_vld [get_bd_pins ad_out_vld] [get_bd_pins adc_0/ad_out_vld]
   connect_bd_net -net axi_gpio_0_gpio_io_o [get_bd_pins Din] [get_bd_pins xlslice_adc_0_7/Din]
-  connect_bd_net -net clk_slow_to_fast_0_data_out_fast [get_bd_pins DDCWrapper_0/io_in_sync] [get_bd_pins clk_slow_to_fast_0/data_out_fast]
-  connect_bd_net -net clk_slow_to_fast_1_data_out_fast [get_bd_pins clk_slow_to_fast_1/data_out_fast] [get_bd_pins xlconcat_0/In0]
   connect_bd_net -net count_trigger_0_trigger_out [get_bd_pins trigger_out] [get_bd_pins count_trigger_0/trigger_out]
   connect_bd_net -net fifo_adc_data_count [get_bd_pins count] [get_bd_pins count_trigger_0/count]
   connect_bd_net -net fifo_read_almost_empty_1 [get_bd_pins fifo_read_almost_empty] [get_bd_pins fifo_read_to_axis_0/fifo_read_almost_empty]
   connect_bd_net -net fifo_read_empty_1 [get_bd_pins fifo_read_empty] [get_bd_pins fifo_read_to_axis_0/fifo_read_empty]
   connect_bd_net -net fifo_read_rd_data_1 [get_bd_pins fifo_read_rd_data] [get_bd_pins fifo_read_to_axis_0/fifo_read_rd_data]
   connect_bd_net -net fifo_read_to_axis_0_fifo_read_rd_en [get_bd_pins fifo_read_rd_en] [get_bd_pins fifo_read_to_axis_0/fifo_read_rd_en]
-  connect_bd_net -net io_clock_1 [get_bd_pins io_clock] [get_bd_pins DDCWrapper_0/io_clock] [get_bd_pins clk_slow_to_fast_0/clk_fast] [get_bd_pins clk_slow_to_fast_1/clk_fast]
-  connect_bd_net -net io_in_sync_1 [get_bd_pins io_in_sync] [get_bd_pins clk_slow_to_fast_0/data_in_slow]
-  connect_bd_net -net io_resetN_1 [get_bd_pins io_resetN] [get_bd_pins DDCWrapper_0/io_resetN] [get_bd_pins clk_slow_to_fast_0/resetn_fast] [get_bd_pins clk_slow_to_fast_1/resetn_fast]
+  connect_bd_net -net io_in_sync_1 [get_bd_pins io_in_sync] [get_bd_pins DDCWrapper_0/io_in_sync]
   connect_bd_net -net mux_reciever_in_data_out [get_bd_pins adc_0/ad_in] [get_bd_pins mux_reciever_in/data_out]
   connect_bd_net -net start_1 [get_bd_pins start] [get_bd_pins fifo_read_to_axis_0/start]
   connect_bd_net -net xlconcat_0_dout [get_bd_pins mux_reciever_in/sel2] [get_bd_pins xlconcat_0/dout]
@@ -1595,7 +1571,7 @@ proc create_root_design { parentCell } {
   # Create ports
   set ad [ create_bd_port -dir I -from 7 -to 0 ad ]
   set clk_ad_static [ create_bd_port -dir O -type clk clk_ad_static ]
-  set clk_da_200M [ create_bd_port -dir O -type clk clk_da_200M ]
+  set clk_da_dynamic [ create_bd_port -dir O -type clk clk_da_dynamic ]
   set da [ create_bd_port -dir O -from 7 -to 0 da ]
 
   # Create instance: adc
@@ -1656,7 +1632,7 @@ connect_bd_intf_net -intf_net [get_bd_intf_nets fifo_read_to_axis_0_axis] [get_b
   connect_bd_net -net axi_gpio_0_gpio_io_o [get_bd_pins adc/Din] [get_bd_pins debug_ctrl/Din1]
   connect_bd_net -net axis_write_to_fifo_0_fifo_write_wd_data [get_bd_pins core/din1] [get_bd_pins dac/fifo_write_wd_data]
   connect_bd_net -net axis_write_to_fifo_0_fifo_write_wd_en [get_bd_pins core/wr_en1] [get_bd_pins dac/fifo_write_wd_en]
-  connect_bd_net -net clk_dynamic_clk_out_200M [get_bd_ports clk_da_200M] [get_bd_pins adc/io_clock] [get_bd_pins core/clk_out_200M]
+  connect_bd_net -net clk_dynamic_clk_out_200M [get_bd_ports clk_da_dynamic] [get_bd_pins adc/io_clock] [get_bd_pins core/clk_out_dynamic]
   connect_bd_net -net clk_wiz_0_clk_out1 [get_bd_ports clk_ad_static] [get_bd_pins adc/clk] [get_bd_pins core/clk_out1] [get_bd_pins dac/clk] [get_bd_pins debug_ctrl/s_axi_aclk] [get_bd_pins ila_0/clk] [get_bd_pins ila_fifo_in/clk] [get_bd_pins ila_fifo_out/clk]
   connect_bd_net -net core_almost_empty [get_bd_pins adc/fifo_read_almost_empty] [get_bd_pins core/almost_empty]
   connect_bd_net -net core_dout [get_bd_pins adc/fifo_read_rd_data] [get_bd_pins core/dout]

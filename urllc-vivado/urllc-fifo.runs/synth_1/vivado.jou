@@ -2,8 +2,8 @@
 # Vivado v2021.1 (64-bit)
 # SW Build 3247384 on Thu Jun 10 19:36:33 MDT 2021
 # IP Build 3246043 on Fri Jun 11 00:30:35 MDT 2021
-# Start of session at: Sun Jan 23 11:44:26 2022
-# Process ID: 16856
+# Start of session at: Mon Jan 24 08:20:54 2022
+# Process ID: 33956
 # Current directory: G:/Chiro/Programs/urllc-demo-pynq/urllc-vivado/urllc-fifo.runs/synth_1
 # Command line: vivado.exe -log urllc_fifo_sender_wrapper.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source urllc_fifo_sender_wrapper.tcl
 # Log file: G:/Chiro/Programs/urllc-demo-pynq/urllc-vivado/urllc-fifo.runs/synth_1/urllc_fifo_sender_wrapper.vds

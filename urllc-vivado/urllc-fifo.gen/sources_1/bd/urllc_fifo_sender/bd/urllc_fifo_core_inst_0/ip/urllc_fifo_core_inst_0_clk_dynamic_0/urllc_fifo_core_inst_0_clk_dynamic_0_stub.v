@@ -1,7 +1,7 @@
 // Copyright 1986-2021 Xilinx, Inc. All Rights Reserved.
 // --------------------------------------------------------------------------------
 // Tool Version: Vivado v.2021.1 (win64) Build 3247384 Thu Jun 10 19:36:33 MDT 2021
-// Date        : Sun Jan 23 09:31:15 2022
+// Date        : Mon Jan 24 01:54:58 2022
 // Host        : WIN-544SHHHOI8Q running 64-bit major release  (build 9200)
 // Command     : write_verilog -force -mode synth_stub -rename_top urllc_fifo_core_inst_0_clk_dynamic_0 -prefix
 //               urllc_fifo_core_inst_0_clk_dynamic_0_ urllc_fifo_core_inst_0_clk_dynamic_0_stub.v
@@ -13,10 +13,10 @@
 // This empty module with port declaration file causes synthesis tools to infer a black box for IP.
 // The synthesis directives are for Synopsys Synplify support to prevent IO buffer insertion.
 // Please paste the declaration into a Verilog source file or add the file as an additional source.
-module urllc_fifo_core_inst_0_clk_dynamic_0(clk_out_200M, psclk, psen, psincdec, psdone, 
+module urllc_fifo_core_inst_0_clk_dynamic_0(clk_out_dynamic, psclk, psen, psincdec, psdone, 
   resetn, locked, clk_in1)
-/* synthesis syn_black_box black_box_pad_pin="clk_out_200M,psclk,psen,psincdec,psdone,resetn,locked,clk_in1" */;
-  output clk_out_200M;
+/* synthesis syn_black_box black_box_pad_pin="clk_out_dynamic,psclk,psen,psincdec,psdone,resetn,locked,clk_in1" */;
+  output clk_out_dynamic;
   input psclk;
   input psen;
   input psincdec;

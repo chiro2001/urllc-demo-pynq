@@ -1,7 +1,7 @@
 //Copyright 1986-2021 Xilinx, Inc. All Rights Reserved.
 //--------------------------------------------------------------------------------
 //Tool Version: Vivado v.2021.1 (win64) Build 3247384 Thu Jun 10 19:36:33 MDT 2021
-//Date        : Sun Jan 23 11:43:34 2022
+//Date        : Mon Jan 24 08:20:02 2022
 //Host        : WIN-544SHHHOI8Q running 64-bit major release  (build 9200)
 //Command     : generate_target urllc_fifo_core_inst_0_wrapper.bd
 //Design      : urllc_fifo_core_inst_0_wrapper
@@ -33,7 +33,7 @@ module urllc_fifo_core_inst_0_wrapper
     FIXED_IO_ps_srstb,
     ad,
     clk_ad_static,
-    clk_da_200M,
+    clk_da_dynamic,
     da);
   inout [14:0]DDR_addr;
   inout [2:0]DDR_ba;
@@ -58,7 +58,7 @@ module urllc_fifo_core_inst_0_wrapper
   inout FIXED_IO_ps_srstb;
   input [7:0]ad;
   output clk_ad_static;
-  output clk_da_200M;
+  output clk_da_dynamic;
   output [7:0]da;
 
   wire [14:0]DDR_addr;
@@ -84,7 +84,7 @@ module urllc_fifo_core_inst_0_wrapper
   wire FIXED_IO_ps_srstb;
   wire [7:0]ad;
   wire clk_ad_static;
-  wire clk_da_200M;
+  wire clk_da_dynamic;
   wire [7:0]da;
 
   urllc_fifo_core_inst_0 urllc_fifo_core_inst_0_i
@@ -111,6 +111,6 @@ module urllc_fifo_core_inst_0_wrapper
         .FIXED_IO_ps_srstb(FIXED_IO_ps_srstb),
         .ad(ad),
         .clk_ad_static(clk_ad_static),
-        .clk_da_200M(clk_da_200M),
+        .clk_da_dynamic(clk_da_dynamic),
         .da(da));
 endmodule

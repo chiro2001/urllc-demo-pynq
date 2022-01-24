@@ -4,8 +4,8 @@
 -- Date        : Sun Jan 23 09:31:16 2022
 -- Host        : WIN-544SHHHOI8Q running 64-bit major release  (build 9200)
 -- Command     : write_vhdl -force -mode synth_stub -rename_top urllc_fifo_core_inst_0_reset_dynamic_0 -prefix
---               urllc_fifo_core_inst_0_reset_dynamic_0_ urllc_fifo_core_inst_0_reset_dynamic_0_stub.vhdl
--- Design      : urllc_fifo_core_inst_0_reset_dynamic_0
+--               urllc_fifo_core_inst_0_reset_dynamic_0_ urllc_fifo_core_inst_0_reset_static_0_stub.vhdl
+-- Design      : urllc_fifo_core_inst_0_reset_static_0
 -- Purpose     : Stub declaration of top-level module interface
 -- Device      : xc7z020clg400-2
 -- --------------------------------------------------------------------------------

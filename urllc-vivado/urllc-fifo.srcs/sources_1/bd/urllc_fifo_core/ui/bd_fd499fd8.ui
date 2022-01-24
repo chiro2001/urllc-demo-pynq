@@ -1,9 +1,9 @@
 {
    "ActiveEmotionalView":"Default View",
-   "Default View_ScaleFactor":"1.0",
-   "Default View_TopLeft":"-212,503",
+   "Default View_ScaleFactor":"0.50289",
+   "Default View_TopLeft":"-968,0",
    "ExpandedHierarchyInLayout":"",
-   "guistr":"# # String gsaved with Nlview 7.0r6  2020-01-29 bk=1.5227 VDI=41 GEI=36 GUI=JA:10.0 non-TLS
+   "guistr":"# # String gsaved with Nlview 7.0r6  2020-01-29 bk=1.5227 VDI=41 GEI=36 GUI=JA:10.0 non-TLS-threadsafe
 #  -string -flagsOSRD
 preplace port DDR -pg 1 -lvl 4 -x 1390 -y 110 -defaultsOSRD
 preplace port FIXED_IO -pg 1 -lvl 4 -x 1390 -y 130 -defaultsOSRD
@@ -18,7 +18,7 @@ preplace port port-id_wr_en1 -pg 1 -lvl 0 -x 0 -y 1550 -defaultsOSRD
 preplace port port-id_rd_en1 -pg 1 -lvl 0 -x 0 -y 1610 -defaultsOSRD
 preplace port port-id_full -pg 1 -lvl 4 -x 1390 -y 1400 -defaultsOSRD
 preplace port port-id_almost_full -pg 1 -lvl 4 -x 1390 -y 1380 -defaultsOSRD
-preplace port port-id_clk_out_200M -pg 1 -lvl 4 -x 1390 -y 740 -defaultsOSRD
+preplace port port-id_clk_out_dynamic -pg 1 -lvl 4 -x 1390 -y 740 -defaultsOSRD
 preplace port port-id_clk_out1 -pg 1 -lvl 4 -x 1390 -y 1420 -defaultsOSRD
 preplace port port-id_psincdec -pg 1 -lvl 0 -x 0 -y 870 -defaultsOSRD
 preplace port port-id_psen -pg 1 -lvl 0 -x 0 -y 850 -defaultsOSRD

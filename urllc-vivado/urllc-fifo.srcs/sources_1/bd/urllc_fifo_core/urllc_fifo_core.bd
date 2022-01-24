@@ -1,7 +1,7 @@
 {
   "design": {
     "design_info": {
-      "boundary_crc": "0x852ECD04C12F4559",
+      "boundary_crc": "0x9568F85C9D76A11A",
       "device": "xc7z020clg400-2",
       "gen_directory": "../../../../urllc-fifo.gen/sources_1/bd/urllc_fifo_core",
       "name": "urllc_fifo_core",
@@ -19,9 +19,7 @@
         "adc_0": "",
         "xlconcat_0": "",
         "xlconstant_0": "",
-        "xlslice_adc_0_7": "",
-        "clk_slow_to_fast_0": "",
-        "clk_slow_to_fast_1": ""
+        "xlslice_adc_0_7": ""
       },
       "core": {
         "processing_system7_0": "",
@@ -168,7 +166,7 @@
           }
         }
       },
-      "clk_da_200M": {
+      "clk_da_dynamic": {
         "type": "clk",
         "direction": "O",
         "parameters": {
@@ -177,7 +175,7 @@
             "value_src": "ip_prop"
           },
           "FREQ_HZ": {
-            "value": "200000000"
+            "value": "60000000"
           },
           "FREQ_TOLERANCE_HZ": {
             "value": "0",
@@ -328,7 +326,7 @@
                     "value_src": "constant"
                   },
                   "FREQ_HZ": {
-                    "value": "200000000",
+                    "value": "60000000",
                     "value_src": "ip_prop"
                   },
                   "PHASE": {
@@ -691,96 +689,6 @@
                 "value": "8"
               }
             }
-          },
-          "clk_slow_to_fast_0": {
-            "vlnv": "xilinx.com:module_ref:clk_slow_to_fast:1.0",
-            "xci_name": "urllc_fifo_core_clk_slow_to_fast_0_1",
-            "xci_path": "ip\\urllc_fifo_core_clk_slow_to_fast_0_1\\urllc_fifo_core_clk_slow_to_fast_0_1.xci",
-            "inst_hier_path": "adc/clk_slow_to_fast_0",
-            "reference_info": {
-              "ref_type": "hdl",
-              "ref_name": "clk_slow_to_fast",
-              "boundary_crc": "0x0"
-            },
-            "ports": {
-              "clk_fast": {
-                "direction": "I",
-                "parameters": {
-                  "FREQ_HZ": {
-                    "value": "200000000",
-                    "value_src": "ip_prop"
-                  },
-                  "PHASE": {
-                    "value": "0.0",
-                    "value_src": "ip_prop"
-                  },
-                  "CLK_DOMAIN": {
-                    "value": "/core/clk_dynamic_clk_out1",
-                    "value_src": "ip_prop"
-                  }
-                }
-              },
-              "resetn_fast": {
-                "direction": "I",
-                "parameters": {
-                  "POLARITY": {
-                    "value": "ACTIVE_LOW",
-                    "value_src": "const_prop"
-                  }
-                }
-              },
-              "data_in_slow": {
-                "direction": "I"
-              },
-              "data_out_fast": {
-                "direction": "O"
-              }
-            }
-          },
-          "clk_slow_to_fast_1": {
-            "vlnv": "xilinx.com:module_ref:clk_slow_to_fast:1.0",
-            "xci_name": "urllc_fifo_core_clk_slow_to_fast_1_0",
-            "xci_path": "ip\\urllc_fifo_core_clk_slow_to_fast_1_0\\urllc_fifo_core_clk_slow_to_fast_1_0.xci",
-            "inst_hier_path": "adc/clk_slow_to_fast_1",
-            "reference_info": {
-              "ref_type": "hdl",
-              "ref_name": "clk_slow_to_fast",
-              "boundary_crc": "0x0"
-            },
-            "ports": {
-              "clk_fast": {
-                "direction": "I",
-                "parameters": {
-                  "FREQ_HZ": {
-                    "value": "200000000",
-                    "value_src": "ip_prop"
-                  },
-                  "PHASE": {
-                    "value": "0.0",
-                    "value_src": "ip_prop"
-                  },
-                  "CLK_DOMAIN": {
-                    "value": "/core/clk_dynamic_clk_out1",
-                    "value_src": "ip_prop"
-                  }
-                }
-              },
-              "resetn_fast": {
-                "direction": "I",
-                "parameters": {
-                  "POLARITY": {
-                    "value": "ACTIVE_LOW",
-                    "value_src": "const_prop"
-                  }
-                }
-              },
-              "data_in_slow": {
-                "direction": "I"
-              },
-              "data_out_fast": {
-                "direction": "O"
-              }
-            }
           }
         },
         "interface_nets": {
@@ -795,7 +703,7 @@
           "DDCWrapper_0_io_out_data": {
             "ports": [
               "DDCWrapper_0/io_out_data",
-              "clk_slow_to_fast_1/data_in_slow"
+              "xlconcat_0/In0"
             ]
           },
           "Net": {
@@ -812,6 +720,18 @@
               "fifo_read_to_axis_0/resetn",
               "count_trigger_0/resetn",
               "adc_0/resetn"
+            ]
+          },
+          "Net2": {
+            "ports": [
+              "io_clock",
+              "DDCWrapper_0/io_clock"
+            ]
+          },
+          "Net3": {
+            "ports": [
+              "io_resetN",
+              "DDCWrapper_0/io_resetN"
             ]
           },
           "ad_1": {
@@ -837,18 +757,6 @@
             "ports": [
               "Din",
               "xlslice_adc_0_7/Din"
-            ]
-          },
-          "clk_slow_to_fast_0_data_out_fast": {
-            "ports": [
-              "clk_slow_to_fast_0/data_out_fast",
-              "DDCWrapper_0/io_in_sync"
-            ]
-          },
-          "clk_slow_to_fast_1_data_out_fast": {
-            "ports": [
-              "clk_slow_to_fast_1/data_out_fast",
-              "xlconcat_0/In0"
             ]
           },
           "count_trigger_0_trigger_out": {
@@ -887,26 +795,10 @@
               "fifo_read_rd_en"
             ]
           },
-          "io_clock_1": {
-            "ports": [
-              "io_clock",
-              "DDCWrapper_0/io_clock",
-              "clk_slow_to_fast_0/clk_fast",
-              "clk_slow_to_fast_1/clk_fast"
-            ]
-          },
           "io_in_sync_1": {
             "ports": [
               "io_in_sync",
-              "clk_slow_to_fast_0/data_in_slow"
-            ]
-          },
-          "io_resetN_1": {
-            "ports": [
-              "io_resetN",
-              "DDCWrapper_0/io_resetN",
-              "clk_slow_to_fast_0/resetn_fast",
-              "clk_slow_to_fast_1/resetn_fast"
+              "DDCWrapper_0/io_in_sync"
             ]
           },
           "mux_reciever_in_data_out": {
@@ -1043,7 +935,7 @@
           "almost_full": {
             "direction": "O"
           },
-          "clk_out_200M": {
+          "clk_out_dynamic": {
             "type": "clk",
             "direction": "O"
           },
@@ -2824,19 +2716,19 @@
                 "value": "200.0"
               },
               "CLKOUT1_JITTER": {
-                "value": "142.107"
+                "value": "199.644"
               },
               "CLKOUT1_PHASE_ERROR": {
-                "value": "164.985"
+                "value": "161.614"
               },
               "CLKOUT1_REQUESTED_OUT_FREQ": {
-                "value": "200.000"
+                "value": "60"
               },
               "CLK_OUT1_PORT": {
-                "value": "clk_out_200M"
+                "value": "clk_out_dynamic"
               },
               "MMCM_CLKFBOUT_MULT_F": {
-                "value": "20.000"
+                "value": "18.000"
               },
               "MMCM_CLKIN1_PERIOD": {
                 "value": "20.000"
@@ -2845,7 +2737,7 @@
                 "value": "10.0"
               },
               "MMCM_CLKOUT0_DIVIDE_F": {
-                "value": "5.000"
+                "value": "15.000"
               },
               "MMCM_DIVCLK_DIVIDE": {
                 "value": "1"
@@ -3459,9 +3351,9 @@
           },
           "clk_dynamic_clk_out_200M": {
             "ports": [
-              "clk_dynamic/clk_out_200M",
+              "clk_dynamic/clk_out_dynamic",
               "reset_dynamic/slowest_sync_clk",
-              "clk_out_200M"
+              "clk_out_dynamic"
             ]
           },
           "clk_static_clk_out1": {
@@ -4691,8 +4583,8 @@
       },
       "clk_dynamic_clk_out_200M": {
         "ports": [
-          "core/clk_out_200M",
-          "clk_da_200M",
+          "core/clk_out_dynamic",
+          "clk_da_dynamic",
           "adc/io_clock"
         ]
       },

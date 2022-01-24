@@ -56,7 +56,7 @@
 //  Output     Output      Phase    Duty Cycle   Pk-to-Pk     Phase
 //   Clock     Freq (MHz)  (degrees)    (%)     Jitter (ps)  Error (ps)
 //----------------------------------------------------------------------------
-// clk_out_200M__200.00000______0.000______50.0______142.107____164.985
+// clk_out_dynamic__60.00000______0.000______50.0______199.644____161.614
 //
 //----------------------------------------------------------------------------
 // Input Clock   Freq (MHz)    Input Jitter (UI)
@@ -70,7 +70,7 @@
 module urllc_fifo_core_inst_0_clk_dynamic_0 
  (
   // Clock out ports
-  output        clk_out_200M,
+  output        clk_out_dynamic,
   // Dynamic phase shift ports
   input         psclk,
   input         psen,
@@ -86,7 +86,7 @@ module urllc_fifo_core_inst_0_clk_dynamic_0
   urllc_fifo_core_inst_0_clk_dynamic_0_clk_wiz inst
   (
   // Clock out ports  
-  .clk_out_200M(clk_out_200M),
+  .clk_out_dynamic(clk_out_dynamic),
   // Dynamic phase shift ports                
   .psclk(psclk),
   .psen(psen),

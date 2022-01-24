@@ -1,7 +1,7 @@
 //Copyright 1986-2021 Xilinx, Inc. All Rights Reserved.
 //--------------------------------------------------------------------------------
 //Tool Version: Vivado v.2021.1 (win64) Build 3247384 Thu Jun 10 19:36:33 MDT 2021
-//Date        : Sun Jan 23 11:43:34 2022
+//Date        : Mon Jan 24 08:20:02 2022
 //Host        : WIN-544SHHHOI8Q running 64-bit major release  (build 9200)
 //Command     : generate_target urllc_fifo_core_inst_0.bd
 //Design      : urllc_fifo_core_inst_0
@@ -64,21 +64,19 @@ module adc_imp_NVSO26
   wire DDCWrapper_0_io_out_data;
   wire Net;
   wire Net1;
+  wire Net2;
+  wire Net3;
   wire [7:0]ad_1;
   wire [7:0]adc_0_ad_out;
   wire adc_0_ad_out_vld;
   wire [31:0]axi_gpio_0_gpio_io_o;
-  wire clk_slow_to_fast_0_data_out_fast;
-  wire clk_slow_to_fast_1_data_out_fast;
   wire count_trigger_0_trigger_out;
   wire [15:0]fifo_adc_data_count;
   wire fifo_read_almost_empty_1;
   wire fifo_read_empty_1;
   wire [7:0]fifo_read_rd_data_1;
   wire fifo_read_to_axis_0_fifo_read_rd_en;
-  wire io_clock_1;
   wire io_in_sync_1;
-  wire io_resetN_1;
   wire [7:0]mux_reciever_in_data_out;
   wire start_1;
   wire [7:0]xlconcat_0_dout;
@@ -91,6 +89,8 @@ module adc_imp_NVSO26
   assign Conn1_TREADY = axis_tready;
   assign Net = clk;
   assign Net1 = resetn;
+  assign Net2 = io_clock;
+  assign Net3 = io_resetN;
   assign ad_1 = ad[7:0];
   assign ad_out[7:0] = adc_0_ad_out;
   assign ad_out_vld = adc_0_ad_out_vld;
@@ -103,20 +103,18 @@ module adc_imp_NVSO26
   assign fifo_read_empty_1 = fifo_read_empty;
   assign fifo_read_rd_data_1 = fifo_read_rd_data[7:0];
   assign fifo_read_rd_en = fifo_read_to_axis_0_fifo_read_rd_en;
-  assign io_clock_1 = io_clock;
   assign io_in_sync_1 = io_in_sync;
-  assign io_resetN_1 = io_resetN;
   assign start_1 = start;
   assign trigger_out = count_trigger_0_trigger_out;
   assign xlslice_1_Dout = target[15:0];
   assign xlslice_2_Dout = clear;
   assign xlslice_reciever_in_10_Dout = router;
   urllc_fifo_core_inst_0_DDCWrapper_0_0 DDCWrapper_0
-       (.io_clock(io_clock_1),
+       (.io_clock(Net2),
         .io_in_data(ad_1),
-        .io_in_sync(clk_slow_to_fast_0_data_out_fast),
+        .io_in_sync(io_in_sync_1),
         .io_out_data(DDCWrapper_0_io_out_data),
-        .io_resetN(io_resetN_1));
+        .io_resetN(Net3));
   urllc_fifo_core_inst_0_adc_0_0 adc_0
        (.ad_in(mux_reciever_in_data_out),
         .ad_out(adc_0_ad_out),
@@ -124,16 +122,6 @@ module adc_imp_NVSO26
         .clk(Net),
         .div(xlslice_0_Dout),
         .resetn(Net1));
-  urllc_fifo_core_inst_0_clk_slow_to_fast_0_0 clk_slow_to_fast_0
-       (.clk_fast(io_clock_1),
-        .data_in_slow(io_in_sync_1),
-        .data_out_fast(clk_slow_to_fast_0_data_out_fast),
-        .resetn_fast(io_resetN_1));
-  urllc_fifo_core_inst_0_clk_slow_to_fast_1_0 clk_slow_to_fast_1
-       (.clk_fast(io_clock_1),
-        .data_in_slow(DDCWrapper_0_io_out_data),
-        .data_out_fast(clk_slow_to_fast_1_data_out_fast),
-        .resetn_fast(io_resetN_1));
   urllc_fifo_core_inst_0_count_trigger_0_0 count_trigger_0
        (.clear(xlslice_2_Dout),
         .clk(Net),
@@ -159,7 +147,7 @@ module adc_imp_NVSO26
         .sel1(ad_1),
         .sel2(xlconcat_0_dout));
   urllc_fifo_core_inst_0_xlconcat_0_0 xlconcat_0
-       (.In0(clk_slow_to_fast_1_data_out_fast),
+       (.In0(DDCWrapper_0_io_out_data),
         .In1(xlconstant_0_dout),
         .dout(xlconcat_0_dout));
   urllc_fifo_core_inst_0_xlconstant_0_0 xlconstant_0
@@ -221,7 +209,7 @@ module core_imp_1490Y3Y
     almost_empty,
     almost_full,
     clk_out1,
-    clk_out_200M,
+    clk_out_dynamic,
     data_count,
     din,
     din1,
@@ -290,7 +278,7 @@ module core_imp_1490Y3Y
   output almost_empty;
   output almost_full;
   output clk_out1;
-  output clk_out_200M;
+  output clk_out_dynamic;
   output [15:0]data_count;
   input [7:0]din;
   input [7:0]din1;
@@ -556,7 +544,7 @@ module core_imp_1490Y3Y
   assign axis_write_to_fifo_0_fifo_write_wd_data = din1[7:0];
   assign axis_write_to_fifo_0_fifo_write_wd_en = wr_en1;
   assign clk_out1 = clk_static_clk_out1;
-  assign clk_out_200M = clk_dynamic_clk_out_200M;
+  assign clk_out_dynamic = clk_dynamic_clk_out_200M;
   assign dac_0_da_in_vld = rd_en1;
   assign data_count[15:0] = fifo_adc_data_count;
   assign dout[7:0] = fifo_adc_dout;
@@ -747,7 +735,7 @@ module core_imp_1490Y3Y
         .aresetn(rst_ps7_0_50M_peripheral_aresetn));
   urllc_fifo_core_inst_0_clk_dynamic_0 clk_dynamic
        (.clk_in1(processing_system7_0_FCLK_CLK0),
-        .clk_out_200M(clk_dynamic_clk_out_200M),
+        .clk_out_dynamic(clk_dynamic_clk_out_200M),
         .psclk(psclk_1),
         .psen(psen_1),
         .psincdec(psincdec_1),
@@ -1899,7 +1887,7 @@ module s00_couplers_imp_1FBGI7D
         .s_axi_wvalid(s00_couplers_to_auto_pc_WVALID));
 endmodule
 
-(* CORE_GENERATION_INFO = "urllc_fifo_core_inst_0,IP_Integrator,{x_ipVendor=xilinx.com,x_ipLibrary=BlockDiagram,x_ipName=urllc_fifo_core_inst_0,x_ipVersion=1.00.a,x_ipLanguage=VERILOG,numBlks=51,numReposBlks=43,numNonXlnxBlks=0,numHierBlks=8,maxHierDepth=1,numSysgenBlks=0,numHlsBlks=0,numHdlrefBlks=11,numPkgbdBlks=0,bdsource=G_/Chiro/Programs/urllc-demo-pynq/urllc-vivado/urllc-fifo.srcs/sources_1/bd/urllc_fifo_core/urllc_fifo_core.bd,synth_mode=OOC_per_IP}" *) (* HW_HANDOFF = "urllc_fifo_core_inst_0.hwdef" *) 
+(* CORE_GENERATION_INFO = "urllc_fifo_core_inst_0,IP_Integrator,{x_ipVendor=xilinx.com,x_ipLibrary=BlockDiagram,x_ipName=urllc_fifo_core_inst_0,x_ipVersion=1.00.a,x_ipLanguage=VERILOG,numBlks=49,numReposBlks=41,numNonXlnxBlks=0,numHierBlks=8,maxHierDepth=1,numSysgenBlks=0,numHlsBlks=0,numHdlrefBlks=9,numPkgbdBlks=0,bdsource=G_/Chiro/Programs/urllc-demo-pynq/urllc-vivado/urllc-fifo.srcs/sources_1/bd/urllc_fifo_core/urllc_fifo_core.bd,synth_mode=OOC_per_IP}" *) (* HW_HANDOFF = "urllc_fifo_core_inst_0.hwdef" *) 
 module urllc_fifo_core_inst_0
    (DDR_addr,
     DDR_ba,
@@ -1924,7 +1912,7 @@ module urllc_fifo_core_inst_0
     FIXED_IO_ps_srstb,
     ad,
     clk_ad_static,
-    clk_da_200M,
+    clk_da_dynamic,
     da);
   (* X_INTERFACE_INFO = "xilinx.com:interface:ddrx:1.0 DDR ADDR" *) (* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME DDR, AXI_ARBITRATION_SCHEME TDM, BURST_LENGTH 8, CAN_DEBUG false, CAS_LATENCY 11, CAS_WRITE_LATENCY 11, CS_ENABLED true, DATA_MASK_ENABLED true, DATA_WIDTH 8, MEMORY_TYPE COMPONENTS, MEM_ADDR_MAP ROW_COLUMN_BANK, SLOT Single, TIMEPERIOD_PS 1250" *) inout [14:0]DDR_addr;
   (* X_INTERFACE_INFO = "xilinx.com:interface:ddrx:1.0 DDR BA" *) inout [2:0]DDR_ba;
@@ -1949,7 +1937,7 @@ module urllc_fifo_core_inst_0
   (* X_INTERFACE_INFO = "xilinx.com:display_processing_system7:fixedio:1.0 FIXED_IO PS_SRSTB" *) inout FIXED_IO_ps_srstb;
   input [7:0]ad;
   (* X_INTERFACE_INFO = "xilinx.com:signal:clock:1.0 CLK.CLK_AD_STATIC CLK" *) (* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME CLK.CLK_AD_STATIC, CLK_DOMAIN /urllc_fifo_core_0/core/clk_static_clk_out1, FREQ_HZ 60000000, FREQ_TOLERANCE_HZ 0, INSERT_VIP 0, PHASE 0.0" *) output clk_ad_static;
-  (* X_INTERFACE_INFO = "xilinx.com:signal:clock:1.0 CLK.CLK_DA_200M CLK" *) (* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME CLK.CLK_DA_200M, CLK_DOMAIN /urllc_fifo_core_0/core/clk_dynamic_clk_out1, FREQ_HZ 200000000, FREQ_TOLERANCE_HZ 0, INSERT_VIP 0, PHASE 0.0" *) output clk_da_200M;
+  (* X_INTERFACE_INFO = "xilinx.com:signal:clock:1.0 CLK.CLK_DA_DYNAMIC CLK" *) (* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME CLK.CLK_DA_DYNAMIC, CLK_DOMAIN /urllc_fifo_core_0/core/clk_dynamic_clk_out1, FREQ_HZ 60000000, FREQ_TOLERANCE_HZ 0, INSERT_VIP 0, PHASE 0.0" *) output clk_da_dynamic;
   output [7:0]da;
 
   wire [7:0]Net;
@@ -2038,7 +2026,7 @@ module urllc_fifo_core_inst_0
 
   assign ad_1 = ad[7:0];
   assign clk_ad_static = clk_wiz_0_clk_out1;
-  assign clk_da_200M = clk_dynamic_clk_out_200M;
+  assign clk_da_dynamic = clk_dynamic_clk_out_200M;
   assign da[7:0] = mux_0_data_out;
   adc_imp_NVSO26 adc
        (.Din(axi_gpio_0_gpio_io_o),
@@ -2116,7 +2104,7 @@ module urllc_fifo_core_inst_0
         .almost_empty(core_almost_empty),
         .almost_full(fifo_dac_almost_full),
         .clk_out1(clk_wiz_0_clk_out1),
-        .clk_out_200M(clk_dynamic_clk_out_200M),
+        .clk_out_dynamic(clk_dynamic_clk_out_200M),
         .data_count(fifo_adc_data_count),
         .din(adc_0_ad_out),
         .din1(axis_write_to_fifo_0_fifo_write_wd_data),
