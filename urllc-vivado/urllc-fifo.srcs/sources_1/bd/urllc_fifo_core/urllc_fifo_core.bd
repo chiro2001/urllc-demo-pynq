@@ -1,7 +1,7 @@
 {
   "design": {
     "design_info": {
-      "boundary_crc": "0x9568F85C9D76A11A",
+      "boundary_crc": "0x91D6047805245AE9",
       "device": "xc7z020clg400-2",
       "gen_directory": "../../../../urllc-fifo.gen/sources_1/bd/urllc_fifo_core",
       "name": "urllc_fifo_core",
@@ -18,16 +18,13 @@
         "fifo_read_to_axis_0": "",
         "adc_0": "",
         "xlconcat_0": "",
-        "xlconstant_0": "",
-        "xlslice_adc_0_7": ""
+        "xlconstant_0": ""
       },
       "core": {
         "processing_system7_0": "",
         "reset_dynamic": "",
-        "reset_static": "",
         "axi_dma_0": "",
         "axi_smc": "",
-        "clk_static": "",
         "clk_dynamic": "",
         "fifo_adc": "",
         "fifo_dac": "",
@@ -39,18 +36,21 @@
           "m00_couplers": {},
           "m01_couplers": {}
         },
-        "xlconcat_irq": ""
+        "xlconcat_irq": "",
+        "reset_static": "",
+        "ila_0": "",
+        "clk_static": ""
       },
       "dac": {
         "mux_reciever_out": "",
         "axis_write_to_fifo_0": "",
         "dac_0": "",
-        "DUCWrapper_0": ""
+        "DUCWrapper_0": "",
+        "xlslice_sender": ""
       },
       "debug_ctrl": {
         "axi_gpio_0": "",
         "xlslice_fifo_write_start_1": "",
-        "xlslice_sender": "",
         "xlslice_counter_trigger_16_31": "",
         "xlslice_count_trigger_clear_0": "",
         "xlslice_dac_8_15": "",
@@ -58,10 +58,11 @@
         "xlslice_clk_psincdec_5": "",
         "xlslice_clk_psclk_3": "",
         "xlslice_duc_sync_6": "",
-        "xlslice_reciever_in_10": "",
+        "xlslice_reciever_in_9": "",
         "xlslice_reciever_out_7": "",
         "xlslice_fifo_read_start_2": "",
-        "xlslice_ddc_sync_8": ""
+        "xlslice_ddc_sync_8": "",
+        "xlslice_adc_0_7": ""
       },
       "ila_0": "",
       "ila_fifo_in": "",
@@ -195,6 +196,31 @@
         "direction": "O",
         "left": "7",
         "right": "0"
+      },
+      "clk_pl_50M": {
+        "type": "clk",
+        "direction": "I",
+        "parameters": {
+          "CLK_DOMAIN": {
+            "value": "urllc_fifo_core_clk_pl_50M",
+            "value_src": "default"
+          },
+          "FREQ_HZ": {
+            "value": "50000000"
+          },
+          "FREQ_TOLERANCE_HZ": {
+            "value": "0",
+            "value_src": "default"
+          },
+          "INSERT_VIP": {
+            "value": "0",
+            "value_src": "default"
+          },
+          "PHASE": {
+            "value": "0.0",
+            "value_src": "default"
+          }
+        }
       }
     },
     "components": {
@@ -207,11 +233,6 @@
           }
         },
         "ports": {
-          "Din": {
-            "direction": "I",
-            "left": "31",
-            "right": "0"
-          },
           "ad": {
             "direction": "I",
             "left": "7",
@@ -279,6 +300,11 @@
           "io_resetN": {
             "type": "rst",
             "direction": "I"
+          },
+          "div": {
+            "direction": "I",
+            "left": "7",
+            "right": "0"
           }
         },
         "components": {
@@ -675,20 +701,6 @@
                 "value": "7"
               }
             }
-          },
-          "xlslice_adc_0_7": {
-            "vlnv": "xilinx.com:ip:xlslice:1.0",
-            "xci_name": "urllc_fifo_core_xlslice_adc_0_7_0",
-            "xci_path": "ip\\urllc_fifo_core_xlslice_adc_0_7_0\\urllc_fifo_core_xlslice_adc_0_7_0.xci",
-            "inst_hier_path": "adc/xlslice_adc_0_7",
-            "parameters": {
-              "DIN_FROM": {
-                "value": "7"
-              },
-              "DOUT_WIDTH": {
-                "value": "8"
-              }
-            }
           }
         },
         "interface_nets": {
@@ -753,16 +765,16 @@
               "ad_out_vld"
             ]
           },
-          "axi_gpio_0_gpio_io_o": {
-            "ports": [
-              "Din",
-              "xlslice_adc_0_7/Din"
-            ]
-          },
           "count_trigger_0_trigger_out": {
             "ports": [
               "count_trigger_0/trigger_out",
               "trigger_out"
+            ]
+          },
+          "div_1": {
+            "ports": [
+              "div",
+              "adc_0/div"
             ]
           },
           "fifo_adc_data_count": {
@@ -823,12 +835,6 @@
             "ports": [
               "xlconstant_0/dout",
               "xlconcat_0/In1"
-            ]
-          },
-          "xlslice_0_Dout": {
-            "ports": [
-              "xlslice_adc_0_7/Dout",
-              "adc_0/div"
             ]
           },
           "xlslice_1_Dout": {
@@ -967,6 +973,9 @@
             "direction": "I",
             "left": "0",
             "right": "0"
+          },
+          "clk_pl_50M": {
+            "direction": "I"
           }
         },
         "components": {
@@ -2495,12 +2504,6 @@
             "xci_path": "ip\\urllc_fifo_core_reset_dynamic_0\\urllc_fifo_core_reset_dynamic_0.xci",
             "inst_hier_path": "core/reset_dynamic"
           },
-          "reset_static": {
-            "vlnv": "xilinx.com:ip:proc_sys_reset:5.0",
-            "xci_name": "urllc_fifo_core_reset_static_0",
-            "xci_path": "ip\\urllc_fifo_core_reset_static_0\\urllc_fifo_core_reset_static_0.xci",
-            "inst_hier_path": "core/reset_static"
-          },
           "axi_dma_0": {
             "vlnv": "xilinx.com:ip:axi_dma:7.1",
             "xci_name": "urllc_fifo_core_axi_dma_0_0",
@@ -2665,47 +2668,6 @@
               }
             }
           },
-          "clk_static": {
-            "vlnv": "xilinx.com:ip:clk_wiz:6.0",
-            "xci_name": "urllc_fifo_core_clk_static_0",
-            "xci_path": "ip\\urllc_fifo_core_clk_static_0\\urllc_fifo_core_clk_static_0.xci",
-            "inst_hier_path": "core/clk_static",
-            "parameters": {
-              "CLKIN1_JITTER_PS": {
-                "value": "200.0"
-              },
-              "CLKOUT1_JITTER": {
-                "value": "180.523"
-              },
-              "CLKOUT1_PHASE_ERROR": {
-                "value": "162.874"
-              },
-              "CLKOUT1_REQUESTED_OUT_FREQ": {
-                "value": "60.000"
-              },
-              "MMCM_CLKFBOUT_MULT_F": {
-                "value": "20.250"
-              },
-              "MMCM_CLKIN1_PERIOD": {
-                "value": "20.000"
-              },
-              "MMCM_CLKIN2_PERIOD": {
-                "value": "10.0"
-              },
-              "MMCM_CLKOUT0_DIVIDE_F": {
-                "value": "16.875"
-              },
-              "MMCM_DIVCLK_DIVIDE": {
-                "value": "1"
-              },
-              "RESET_PORT": {
-                "value": "resetn"
-              },
-              "RESET_TYPE": {
-                "value": "ACTIVE_LOW"
-              }
-            }
-          },
           "clk_dynamic": {
             "vlnv": "xilinx.com:ip:clk_wiz:6.0",
             "xci_name": "urllc_fifo_core_clk_dynamic_0",
@@ -2713,13 +2675,13 @@
             "inst_hier_path": "core/clk_dynamic",
             "parameters": {
               "CLKIN1_JITTER_PS": {
-                "value": "200.0"
+                "value": "166.66"
               },
               "CLKOUT1_JITTER": {
-                "value": "199.644"
+                "value": "163.829"
               },
               "CLKOUT1_PHASE_ERROR": {
-                "value": "161.614"
+                "value": "130.371"
               },
               "CLKOUT1_REQUESTED_OUT_FREQ": {
                 "value": "60"
@@ -2728,19 +2690,25 @@
                 "value": "clk_out_dynamic"
               },
               "MMCM_CLKFBOUT_MULT_F": {
-                "value": "18.000"
+                "value": "17.000"
               },
               "MMCM_CLKIN1_PERIOD": {
-                "value": "20.000"
+                "value": "16.667"
               },
               "MMCM_CLKIN2_PERIOD": {
                 "value": "10.0"
               },
               "MMCM_CLKOUT0_DIVIDE_F": {
-                "value": "15.000"
+                "value": "17.000"
               },
               "MMCM_DIVCLK_DIVIDE": {
                 "value": "1"
+              },
+              "PRIM_IN_FREQ": {
+                "value": "60.000"
+              },
+              "PRIM_SOURCE": {
+                "value": "Global_buffer"
               },
               "RESET_PORT": {
                 "value": "resetn"
@@ -2750,6 +2718,9 @@
               },
               "USE_DYN_PHASE_SHIFT": {
                 "value": "true"
+              },
+              "USE_RESET": {
+                "value": "false"
               }
             }
           },
@@ -3236,6 +3207,79 @@
                 "value": "3"
               }
             }
+          },
+          "reset_static": {
+            "vlnv": "xilinx.com:ip:proc_sys_reset:5.0",
+            "xci_name": "urllc_fifo_core_reset_static_1",
+            "xci_path": "ip\\urllc_fifo_core_reset_static_1\\urllc_fifo_core_reset_static_1.xci",
+            "inst_hier_path": "core/reset_static"
+          },
+          "ila_0": {
+            "vlnv": "xilinx.com:ip:ila:6.2",
+            "xci_name": "urllc_fifo_core_ila_0_1",
+            "xci_path": "ip\\urllc_fifo_core_ila_0_1\\urllc_fifo_core_ila_0_1.xci",
+            "inst_hier_path": "core/ila_0",
+            "parameters": {
+              "C_DATA_DEPTH": {
+                "value": "32768"
+              },
+              "C_ENABLE_ILA_AXI_MON": {
+                "value": "false"
+              },
+              "C_MONITOR_TYPE": {
+                "value": "Native"
+              },
+              "C_NUM_OF_PROBES": {
+                "value": "8"
+              }
+            }
+          },
+          "clk_static": {
+            "vlnv": "xilinx.com:ip:clk_wiz:6.0",
+            "xci_name": "urllc_fifo_core_clk_static_1",
+            "xci_path": "ip\\urllc_fifo_core_clk_static_1\\urllc_fifo_core_clk_static_1.xci",
+            "inst_hier_path": "core/clk_static",
+            "parameters": {
+              "CLKIN1_JITTER_PS": {
+                "value": "200.0"
+              },
+              "CLKOUT1_JITTER": {
+                "value": "180.523"
+              },
+              "CLKOUT1_PHASE_ERROR": {
+                "value": "162.874"
+              },
+              "CLKOUT1_REQUESTED_OUT_FREQ": {
+                "value": "60.000"
+              },
+              "MMCM_CLKFBOUT_MULT_F": {
+                "value": "20.250"
+              },
+              "MMCM_CLKIN1_PERIOD": {
+                "value": "20.000"
+              },
+              "MMCM_CLKIN2_PERIOD": {
+                "value": "10.0"
+              },
+              "MMCM_CLKOUT0_DIVIDE_F": {
+                "value": "16.875"
+              },
+              "MMCM_DIVCLK_DIVIDE": {
+                "value": "1"
+              },
+              "PRIM_SOURCE": {
+                "value": "Single_ended_clock_capable_pin"
+              },
+              "RESET_PORT": {
+                "value": "resetn"
+              },
+              "RESET_TYPE": {
+                "value": "ACTIVE_LOW"
+              },
+              "USE_RESET": {
+                "value": "false"
+              }
+            }
           }
         },
         "interface_nets": {
@@ -3313,6 +3357,13 @@
               "xlconcat_irq/In0"
             ]
           },
+          "Net": {
+            "ports": [
+              "reset_static/peripheral_reset",
+              "fifo_adc/srst",
+              "fifo_dac/srst"
+            ]
+          },
           "adc_0_ad_out": {
             "ports": [
               "din",
@@ -3356,6 +3407,26 @@
               "clk_out_dynamic"
             ]
           },
+          "clk_dynamic_locked": {
+            "ports": [
+              "clk_dynamic/locked",
+              "reset_dynamic/dcm_locked",
+              "ila_0/probe1"
+            ]
+          },
+          "clk_dynamic_psdone": {
+            "ports": [
+              "clk_dynamic/psdone",
+              "ila_0/probe7"
+            ]
+          },
+          "clk_pl_50M_1": {
+            "ports": [
+              "clk_pl_50M",
+              "ila_0/clk",
+              "clk_static/clk_in1"
+            ]
+          },
           "clk_static_clk_out1": {
             "ports": [
               "clk_static/clk_out1",
@@ -3363,7 +3434,6 @@
               "processing_system7_0/S_AXI_HP0_ACLK",
               "processing_system7_0/S_AXI_HP1_ACLK",
               "processing_system7_0/M_AXI_GP0_ACLK",
-              "reset_static/slowest_sync_clk",
               "axi_dma_0/s_axi_lite_aclk",
               "axi_dma_0/m_axi_mm2s_aclk",
               "axi_dma_0/m_axi_s2mm_aclk",
@@ -3373,7 +3443,16 @@
               "ps7_0_axi_periph/ACLK",
               "ps7_0_axi_periph/S00_ACLK",
               "ps7_0_axi_periph/M00_ACLK",
-              "ps7_0_axi_periph/M01_ACLK"
+              "ps7_0_axi_periph/M01_ACLK",
+              "reset_static/slowest_sync_clk",
+              "clk_dynamic/clk_in1"
+            ]
+          },
+          "clk_static_locked": {
+            "ports": [
+              "clk_static/locked",
+              "reset_static/dcm_locked",
+              "ila_0/probe2"
             ]
           },
           "dac_0_da_in_vld": {
@@ -3430,13 +3509,6 @@
               "fifo_adc/rd_en"
             ]
           },
-          "processing_system7_0_FCLK_CLK0": {
-            "ports": [
-              "processing_system7_0/FCLK_CLK0",
-              "clk_static/clk_in1",
-              "clk_dynamic/clk_in1"
-            ]
-          },
           "processing_system7_0_FCLK_RESET0_N": {
             "ports": [
               "processing_system7_0/FCLK_RESET0_N",
@@ -3447,26 +3519,29 @@
           "psclk_1": {
             "ports": [
               "psclk",
-              "clk_dynamic/psclk"
+              "clk_dynamic/psclk",
+              "ila_0/probe4"
             ]
           },
           "psen_1": {
             "ports": [
               "psen",
-              "clk_dynamic/psen"
+              "clk_dynamic/psen",
+              "ila_0/probe5"
             ]
           },
           "psincdec_1": {
             "ports": [
               "psincdec",
-              "clk_dynamic/psincdec"
+              "clk_dynamic/psincdec",
+              "ila_0/probe6"
             ]
           },
           "reset_dynamic_peripheral_aresetn": {
             "ports": [
               "reset_dynamic/peripheral_aresetn",
               "peripheral_aresetn",
-              "clk_dynamic/resetn"
+              "ila_0/probe3"
             ]
           },
           "rst_ps7_0_50M_peripheral_aresetn": {
@@ -3475,18 +3550,11 @@
               "peripheral_aresetn1",
               "axi_dma_0/axi_resetn",
               "axi_smc/aresetn",
-              "clk_static/resetn",
               "ps7_0_axi_periph/ARESETN",
               "ps7_0_axi_periph/S00_ARESETN",
               "ps7_0_axi_periph/M00_ARESETN",
-              "ps7_0_axi_periph/M01_ARESETN"
-            ]
-          },
-          "rst_ps7_0_50M_peripheral_reset": {
-            "ports": [
-              "reset_static/peripheral_reset",
-              "fifo_adc/srst",
-              "fifo_dac/srst"
+              "ps7_0_axi_periph/M01_ARESETN",
+              "ila_0/probe0"
             ]
           },
           "xlconcat_irq_dout": {
@@ -3507,20 +3575,12 @@
           }
         },
         "ports": {
-          "da_out": {
-            "direction": "O",
-            "left": "7",
-            "right": "0"
-          },
           "da": {
             "direction": "O",
             "left": "7",
             "right": "0"
           },
           "router": {
-            "direction": "I"
-          },
-          "io_in_data": {
             "direction": "I"
           },
           "io_in_sync": {
@@ -3857,6 +3917,23 @@
                 }
               }
             }
+          },
+          "xlslice_sender": {
+            "vlnv": "xilinx.com:ip:xlslice:1.0",
+            "xci_name": "urllc_fifo_core_xlslice_sender_0",
+            "xci_path": "ip\\urllc_fifo_core_xlslice_sender_0\\urllc_fifo_core_xlslice_sender_0.xci",
+            "inst_hier_path": "dac/xlslice_sender",
+            "parameters": {
+              "DIN_FROM": {
+                "value": "0"
+              },
+              "DIN_TO": {
+                "value": "0"
+              },
+              "DIN_WIDTH": {
+                "value": "8"
+              }
+            }
           }
         },
         "interface_nets": {
@@ -3877,8 +3954,8 @@
           "Net": {
             "ports": [
               "dac_0/da_out",
-              "da_out",
-              "mux_reciever_out/sel2"
+              "mux_reciever_out/sel2",
+              "xlslice_sender/Din"
             ]
           },
           "axis_write_to_fifo_0_fifo_write_wd_data": {
@@ -3965,7 +4042,7 @@
           },
           "xlslice_sender_Dout": {
             "ports": [
-              "io_in_data",
+              "xlslice_sender/Dout",
               "DUCWrapper_0/io_in_data"
             ]
           }
@@ -4000,16 +4077,6 @@
             "left": "0",
             "right": "0"
           },
-          "Din": {
-            "direction": "I",
-            "left": "7",
-            "right": "0"
-          },
-          "Dout4": {
-            "direction": "O",
-            "left": "0",
-            "right": "0"
-          },
           "Dout5": {
             "direction": "O",
             "left": "0",
@@ -4022,11 +4089,6 @@
           "s_axi_aresetn": {
             "type": "rst",
             "direction": "I"
-          },
-          "Din1": {
-            "direction": "O",
-            "left": "31",
-            "right": "0"
           },
           "Dout6": {
             "direction": "O",
@@ -4059,6 +4121,11 @@
             "right": "0"
           },
           "Dout12": {
+            "direction": "O",
+            "left": "7",
+            "right": "0"
+          },
+          "Dout13": {
             "direction": "O",
             "left": "7",
             "right": "0"
@@ -4096,23 +4163,6 @@
               },
               "DOUT_WIDTH": {
                 "value": "1"
-              }
-            }
-          },
-          "xlslice_sender": {
-            "vlnv": "xilinx.com:ip:xlslice:1.0",
-            "xci_name": "urllc_fifo_core_xlslice_sender_0",
-            "xci_path": "ip\\urllc_fifo_core_xlslice_sender_0\\urllc_fifo_core_xlslice_sender_0.xci",
-            "inst_hier_path": "debug_ctrl/xlslice_sender",
-            "parameters": {
-              "DIN_FROM": {
-                "value": "0"
-              },
-              "DIN_TO": {
-                "value": "0"
-              },
-              "DIN_WIDTH": {
-                "value": "8"
               }
             }
           },
@@ -4235,17 +4285,17 @@
               }
             }
           },
-          "xlslice_reciever_in_10": {
+          "xlslice_reciever_in_9": {
             "vlnv": "xilinx.com:ip:xlslice:1.0",
             "xci_name": "urllc_fifo_core_xlslice_reciever_in_10_0",
             "xci_path": "ip\\urllc_fifo_core_xlslice_reciever_in_10_0\\urllc_fifo_core_xlslice_reciever_in_10_0.xci",
-            "inst_hier_path": "debug_ctrl/xlslice_reciever_in_10",
+            "inst_hier_path": "debug_ctrl/xlslice_reciever_in_9",
             "parameters": {
               "DIN_FROM": {
-                "value": "8"
+                "value": "9"
               },
               "DIN_TO": {
-                "value": "8"
+                "value": "9"
               },
               "DOUT_WIDTH": {
                 "value": "1"
@@ -4302,6 +4352,20 @@
                 "value": "1"
               }
             }
+          },
+          "xlslice_adc_0_7": {
+            "vlnv": "xilinx.com:ip:xlslice:1.0",
+            "xci_name": "urllc_fifo_core_xlslice_adc_0_7_0",
+            "xci_path": "ip\\urllc_fifo_core_xlslice_adc_0_7_0\\urllc_fifo_core_xlslice_adc_0_7_0.xci",
+            "inst_hier_path": "debug_ctrl/xlslice_adc_0_7",
+            "parameters": {
+              "DIN_FROM": {
+                "value": "7"
+              },
+              "DOUT_WIDTH": {
+                "value": "8"
+              }
+            }
           }
         },
         "interface_nets": {
@@ -4313,12 +4377,6 @@
           }
         },
         "nets": {
-          "Net": {
-            "ports": [
-              "Din",
-              "xlslice_sender/Din"
-            ]
-          },
           "axi_gpio_0_gpio2_io_o": {
             "ports": [
               "axi_gpio_0/gpio2_io_o",
@@ -4328,7 +4386,7 @@
               "xlslice_clk_psincdec_5/Din",
               "xlslice_clk_psclk_3/Din",
               "xlslice_duc_sync_6/Din",
-              "xlslice_reciever_in_10/Din",
+              "xlslice_reciever_in_9/Din",
               "xlslice_reciever_out_7/Din",
               "xlslice_fifo_read_start_2/Din",
               "xlslice_ddc_sync_8/Din"
@@ -4337,9 +4395,9 @@
           "axi_gpio_0_gpio_io_o": {
             "ports": [
               "axi_gpio_0/gpio_io_o",
-              "Din1",
               "xlslice_counter_trigger_16_31/Din",
-              "xlslice_dac_8_15/Din"
+              "xlslice_dac_8_15/Din",
+              "xlslice_adc_0_7/Din"
             ]
           },
           "clk_wiz_0_clk_out1": {
@@ -4370,6 +4428,12 @@
             "ports": [
               "xlslice_count_trigger_clear_0/Dout",
               "Dout9"
+            ]
+          },
+          "xlslice_adc_0_7_Dout": {
+            "ports": [
+              "xlslice_adc_0_7/Dout",
+              "Dout13"
             ]
           },
           "xlslice_clk_psclk_3_Dout": {
@@ -4410,7 +4474,7 @@
           },
           "xlslice_reciever_in_10_Dout": {
             "ports": [
-              "xlslice_reciever_in_10/Dout",
+              "xlslice_reciever_in_9/Dout",
               "Dout11"
             ]
           },
@@ -4424,12 +4488,6 @@
             "ports": [
               "xlslice_ddc_sync_8/Dout",
               "Dout7"
-            ]
-          },
-          "xlslice_sender_Dout": {
-            "ports": [
-              "xlslice_sender/Dout",
-              "Dout4"
             ]
           }
         }
@@ -4533,12 +4591,6 @@
       }
     },
     "nets": {
-      "Net": {
-        "ports": [
-          "dac/da_out",
-          "debug_ctrl/Din"
-        ]
-      },
       "ad_1": {
         "ports": [
           "ad",
@@ -4563,12 +4615,6 @@
           "core/In0"
         ]
       },
-      "axi_gpio_0_gpio_io_o": {
-        "ports": [
-          "debug_ctrl/Din1",
-          "adc/Din"
-        ]
-      },
       "axis_write_to_fifo_0_fifo_write_wd_data": {
         "ports": [
           "dac/fifo_write_wd_data",
@@ -4586,6 +4632,12 @@
           "core/clk_out_dynamic",
           "clk_da_dynamic",
           "adc/io_clock"
+        ]
+      },
+      "clk_pl_50M_1": {
+        "ports": [
+          "clk_pl_50M",
+          "core/clk_pl_50M"
         ]
       },
       "clk_wiz_0_clk_out1": {
@@ -4646,6 +4698,12 @@
         "ports": [
           "debug_ctrl/Dout6",
           "core/psincdec"
+        ]
+      },
+      "div_1": {
+        "ports": [
+          "debug_ctrl/Dout13",
+          "adc/div"
         ]
       },
       "fifo_adc_data_count": {
@@ -4750,12 +4808,6 @@
         "ports": [
           "debug_ctrl/Dout7",
           "adc/io_in_sync"
-        ]
-      },
-      "xlslice_sender_Dout": {
-        "ports": [
-          "debug_ctrl/Dout4",
-          "dac/io_in_data"
         ]
       }
     },

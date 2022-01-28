@@ -1,7 +1,7 @@
 //Copyright 1986-2021 Xilinx, Inc. All Rights Reserved.
 //--------------------------------------------------------------------------------
 //Tool Version: Vivado v.2021.1 (win64) Build 3247384 Thu Jun 10 19:36:33 MDT 2021
-//Date        : Mon Jan 24 08:20:02 2022
+//Date        : Sat Jan 29 04:12:10 2022
 //Host        : WIN-544SHHHOI8Q running 64-bit major release  (build 9200)
 //Command     : generate_target urllc_fifo_core_inst_0.bd
 //Design      : urllc_fifo_core_inst_0
@@ -10,8 +10,7 @@
 `timescale 1 ps / 1 ps
 
 module adc_imp_NVSO26
-   (Din,
-    ad,
+   (ad,
     ad_out,
     ad_out_vld,
     axis_tdata,
@@ -21,6 +20,7 @@ module adc_imp_NVSO26
     clear,
     clk,
     count,
+    div,
     fifo_read_almost_empty,
     fifo_read_empty,
     fifo_read_rd_data,
@@ -33,7 +33,6 @@ module adc_imp_NVSO26
     start,
     target,
     trigger_out);
-  input [31:0]Din;
   input [7:0]ad;
   output [7:0]ad_out;
   output ad_out_vld;
@@ -44,6 +43,7 @@ module adc_imp_NVSO26
   input clear;
   input clk;
   input [15:0]count;
+  input [7:0]div;
   input fifo_read_almost_empty;
   input fifo_read_empty;
   input [7:0]fifo_read_rd_data;
@@ -69,8 +69,8 @@ module adc_imp_NVSO26
   wire [7:0]ad_1;
   wire [7:0]adc_0_ad_out;
   wire adc_0_ad_out_vld;
-  wire [31:0]axi_gpio_0_gpio_io_o;
   wire count_trigger_0_trigger_out;
+  wire [7:0]div_1;
   wire [15:0]fifo_adc_data_count;
   wire fifo_read_almost_empty_1;
   wire fifo_read_empty_1;
@@ -81,7 +81,6 @@ module adc_imp_NVSO26
   wire start_1;
   wire [7:0]xlconcat_0_dout;
   wire [6:0]xlconstant_0_dout;
-  wire [7:0]xlslice_0_Dout;
   wire [15:0]xlslice_1_Dout;
   wire xlslice_2_Dout;
   wire xlslice_reciever_in_10_Dout;
@@ -94,10 +93,10 @@ module adc_imp_NVSO26
   assign ad_1 = ad[7:0];
   assign ad_out[7:0] = adc_0_ad_out;
   assign ad_out_vld = adc_0_ad_out_vld;
-  assign axi_gpio_0_gpio_io_o = Din[31:0];
   assign axis_tdata[7:0] = Conn1_TDATA;
   assign axis_tlast = Conn1_TLAST;
   assign axis_tvalid = Conn1_TVALID;
+  assign div_1 = div[7:0];
   assign fifo_adc_data_count = count[15:0];
   assign fifo_read_almost_empty_1 = fifo_read_almost_empty;
   assign fifo_read_empty_1 = fifo_read_empty;
@@ -120,7 +119,7 @@ module adc_imp_NVSO26
         .ad_out(adc_0_ad_out),
         .ad_out_vld(adc_0_ad_out_vld),
         .clk(Net),
-        .div(xlslice_0_Dout),
+        .div(div_1),
         .resetn(Net1));
   urllc_fifo_core_inst_0_count_trigger_0_0 count_trigger_0
        (.clear(xlslice_2_Dout),
@@ -152,9 +151,6 @@ module adc_imp_NVSO26
         .dout(xlconcat_0_dout));
   urllc_fifo_core_inst_0_xlconstant_0_0 xlconstant_0
        (.dout(xlconstant_0_dout));
-  urllc_fifo_core_inst_0_xlslice_adc_0_7_0 xlslice_adc_0_7
-       (.Din(axi_gpio_0_gpio_io_o),
-        .Dout(xlslice_0_Dout));
 endmodule
 
 module core_imp_1490Y3Y
@@ -210,6 +206,7 @@ module core_imp_1490Y3Y
     almost_full,
     clk_out1,
     clk_out_dynamic,
+    clk_pl_50M,
     data_count,
     din,
     din1,
@@ -279,6 +276,7 @@ module core_imp_1490Y3Y
   output almost_full;
   output clk_out1;
   output clk_out_dynamic;
+  input clk_pl_50M;
   output [15:0]data_count;
   input [7:0]din;
   input [7:0]din1;
@@ -298,6 +296,7 @@ module core_imp_1490Y3Y
   input wr_en1;
 
   wire [0:0]In0_1;
+  wire [0:0]Net;
   wire [7:0]adc_0_ad_out;
   wire adc_0_ad_out_vld;
   wire [7:0]axi_dma_0_M_AXIS_MM2S_TDATA;
@@ -405,7 +404,11 @@ module core_imp_1490Y3Y
   wire [7:0]axis_write_to_fifo_0_fifo_write_wd_data;
   wire axis_write_to_fifo_0_fifo_write_wd_en;
   wire clk_dynamic_clk_out_200M;
+  wire clk_dynamic_locked;
+  wire clk_dynamic_psdone;
+  wire clk_pl_50M_1;
   wire clk_static_clk_out1;
+  wire clk_static_locked;
   wire dac_0_da_in_vld;
   wire fifo_adc_almost_empty;
   wire [15:0]fifo_adc_data_count;
@@ -434,7 +437,6 @@ module core_imp_1490Y3Y
   wire processing_system7_0_DDR_RAS_N;
   wire processing_system7_0_DDR_RESET_N;
   wire processing_system7_0_DDR_WE_N;
-  wire processing_system7_0_FCLK_CLK0;
   wire processing_system7_0_FCLK_RESET0_N;
   wire processing_system7_0_FIXED_IO_DDR_VRN;
   wire processing_system7_0_FIXED_IO_DDR_VRP;
@@ -518,7 +520,6 @@ module core_imp_1490Y3Y
   wire psincdec_1;
   wire [0:0]reset_dynamic_peripheral_aresetn;
   wire [0:0]rst_ps7_0_50M_peripheral_aresetn;
-  wire [0:0]rst_ps7_0_50M_peripheral_reset;
   wire [2:0]xlconcat_irq_dout;
 
   assign In0_1 = In0[0];
@@ -545,6 +546,7 @@ module core_imp_1490Y3Y
   assign axis_write_to_fifo_0_fifo_write_wd_en = wr_en1;
   assign clk_out1 = clk_static_clk_out1;
   assign clk_out_dynamic = clk_dynamic_clk_out_200M;
+  assign clk_pl_50M_1 = clk_pl_50M;
   assign dac_0_da_in_vld = rd_en1;
   assign data_count[15:0] = fifo_adc_data_count;
   assign dout[7:0] = fifo_adc_dout;
@@ -734,16 +736,17 @@ module core_imp_1490Y3Y
         .aclk(clk_static_clk_out1),
         .aresetn(rst_ps7_0_50M_peripheral_aresetn));
   urllc_fifo_core_inst_0_clk_dynamic_0 clk_dynamic
-       (.clk_in1(processing_system7_0_FCLK_CLK0),
+       (.clk_in1(clk_static_clk_out1),
         .clk_out_dynamic(clk_dynamic_clk_out_200M),
+        .locked(clk_dynamic_locked),
         .psclk(psclk_1),
+        .psdone(clk_dynamic_psdone),
         .psen(psen_1),
-        .psincdec(psincdec_1),
-        .resetn(reset_dynamic_peripheral_aresetn));
+        .psincdec(psincdec_1));
   urllc_fifo_core_inst_0_clk_static_0 clk_static
-       (.clk_in1(processing_system7_0_FCLK_CLK0),
+       (.clk_in1(clk_pl_50M_1),
         .clk_out1(clk_static_clk_out1),
-        .resetn(rst_ps7_0_50M_peripheral_aresetn));
+        .locked(clk_static_locked));
   urllc_fifo_core_inst_0_fifo_adc_0 fifo_adc
        (.almost_empty(fifo_adc_almost_empty),
         .clk(clk_static_clk_out1),
@@ -752,7 +755,7 @@ module core_imp_1490Y3Y
         .dout(fifo_adc_dout),
         .empty(fifo_adc_empty),
         .rd_en(fifo_read_to_axis_0_fifo_read_rd_en),
-        .srst(rst_ps7_0_50M_peripheral_reset),
+        .srst(Net),
         .wr_en(adc_0_ad_out_vld));
   urllc_fifo_core_inst_0_fifo_dac_0 fifo_dac
        (.almost_full(fifo_dac_almost_full),
@@ -761,8 +764,18 @@ module core_imp_1490Y3Y
         .dout(fifo_dac_dout),
         .full(fifo_dac_full),
         .rd_en(dac_0_da_in_vld),
-        .srst(rst_ps7_0_50M_peripheral_reset),
+        .srst(Net),
         .wr_en(axis_write_to_fifo_0_fifo_write_wd_en));
+  urllc_fifo_core_inst_0_ila_0_0 ila_0
+       (.clk(clk_pl_50M_1),
+        .probe0(rst_ps7_0_50M_peripheral_aresetn),
+        .probe1(clk_dynamic_locked),
+        .probe2(clk_static_locked),
+        .probe3(reset_dynamic_peripheral_aresetn),
+        .probe4(psclk_1),
+        .probe5(psen_1),
+        .probe6(psincdec_1),
+        .probe7(clk_dynamic_psdone));
   urllc_fifo_core_inst_0_processing_system7_0_0 processing_system7_0
        (.DDR_Addr(DDR_addr[14:0]),
         .DDR_BankAddr(DDR_ba[2:0]),
@@ -782,7 +795,6 @@ module core_imp_1490Y3Y
         .DDR_VRP(FIXED_IO_ddr_vrp),
         .DDR_WEB(DDR_we_n),
         .ENET0_MDIO_I(1'b0),
-        .FCLK_CLK0(processing_system7_0_FCLK_CLK0),
         .FCLK_RESET0_N(processing_system7_0_FCLK_RESET0_N),
         .IRQ_F2P(xlconcat_irq_dout),
         .MIO(FIXED_IO_mio[53:0]),
@@ -988,18 +1000,18 @@ module core_imp_1490Y3Y
         .S00_AXI_wvalid(processing_system7_0_M_AXI_GP0_WVALID));
   urllc_fifo_core_inst_0_reset_dynamic_0 reset_dynamic
        (.aux_reset_in(1'b1),
-        .dcm_locked(1'b1),
+        .dcm_locked(clk_dynamic_locked),
         .ext_reset_in(processing_system7_0_FCLK_RESET0_N),
         .mb_debug_sys_rst(1'b0),
         .peripheral_aresetn(reset_dynamic_peripheral_aresetn),
         .slowest_sync_clk(clk_dynamic_clk_out_200M));
   urllc_fifo_core_inst_0_reset_static_0 reset_static
        (.aux_reset_in(1'b1),
-        .dcm_locked(1'b1),
+        .dcm_locked(clk_static_locked),
         .ext_reset_in(processing_system7_0_FCLK_RESET0_N),
         .mb_debug_sys_rst(1'b0),
         .peripheral_aresetn(rst_ps7_0_50M_peripheral_aresetn),
-        .peripheral_reset(rst_ps7_0_50M_peripheral_reset),
+        .peripheral_reset(Net),
         .slowest_sync_clk(clk_static_clk_out1));
   urllc_fifo_core_inst_0_xlconcat_irq_0 xlconcat_irq
        (.In0(In0_1),
@@ -1018,13 +1030,11 @@ module dac_imp_1Q5Q6V7
     da,
     da_in,
     da_in_vld,
-    da_out,
     div,
     fifo_write_almost_full,
     fifo_write_full,
     fifo_write_wd_data,
     fifo_write_wd_en,
-    io_in_data,
     io_in_sync,
     resetn,
     router,
@@ -1038,13 +1048,11 @@ module dac_imp_1Q5Q6V7
   output [7:0]da;
   input [7:0]da_in;
   output da_in_vld;
-  output [7:0]da_out;
   input [7:0]div;
   input fifo_write_almost_full;
   input fifo_write_full;
   output [7:0]fifo_write_wd_data;
   output fifo_write_wd_en;
-  input io_in_data;
   input io_in_sync;
   input resetn;
   input router;
@@ -1069,7 +1077,7 @@ module dac_imp_1Q5Q6V7
   wire [7:0]xlslice_dac_8_15_Dout;
   wire xlslice_duc_sync_6_Dout;
   wire xlslice_reciever_out_7_Dout;
-  wire xlslice_sender_Dout;
+  wire [0:0]xlslice_sender_Dout;
 
   assign axi_dma_0_M_AXIS_MM2S_TDATA = axis_tdata[7:0];
   assign axi_dma_0_M_AXIS_MM2S_TLAST = axis_tlast;
@@ -1078,7 +1086,6 @@ module dac_imp_1Q5Q6V7
   assign clk_wiz_0_clk_out1 = clk;
   assign da[7:0] = mux_0_data_out;
   assign da_in_vld = dac_0_da_in_vld;
-  assign da_out[7:0] = Net;
   assign fifo_dac_almost_full = fifo_write_almost_full;
   assign fifo_dac_dout = da_in[7:0];
   assign fifo_dac_full = fifo_write_full;
@@ -1089,7 +1096,6 @@ module dac_imp_1Q5Q6V7
   assign xlslice_dac_8_15_Dout = div[7:0];
   assign xlslice_duc_sync_6_Dout = io_in_sync;
   assign xlslice_reciever_out_7_Dout = router;
-  assign xlslice_sender_Dout = io_in_data;
   urllc_fifo_core_inst_0_DUCWrapper_0_0 DUCWrapper_0
        (.io_clock(clk_wiz_0_clk_out1),
         .io_in_data(xlslice_sender_Dout),
@@ -1120,19 +1126,20 @@ module dac_imp_1Q5Q6V7
         .router(xlslice_reciever_out_7_Dout),
         .sel1(DUCWrapper_0_io_out_dac),
         .sel2(Net));
+  urllc_fifo_core_inst_0_xlslice_sender_0 xlslice_sender
+       (.Din(Net),
+        .Dout(xlslice_sender_Dout));
 endmodule
 
 module debug_ctrl_imp_91QJM7
-   (Din,
-    Din1,
-    Dout,
+   (Dout,
     Dout1,
     Dout10,
     Dout11,
     Dout12,
+    Dout13,
     Dout2,
     Dout3,
-    Dout4,
     Dout5,
     Dout6,
     Dout7,
@@ -1157,16 +1164,14 @@ module debug_ctrl_imp_91QJM7
     S_AXI_wvalid,
     s_axi_aclk,
     s_axi_aresetn);
-  input [7:0]Din;
-  output [31:0]Din1;
   output [0:0]Dout;
   output [0:0]Dout1;
   output [15:0]Dout10;
   output [0:0]Dout11;
   output [7:0]Dout12;
+  output [7:0]Dout13;
   output [0:0]Dout2;
   output [0:0]Dout3;
-  output [0:0]Dout4;
   output [0:0]Dout5;
   output [0:0]Dout6;
   output [0:0]Dout7;
@@ -1192,7 +1197,6 @@ module debug_ctrl_imp_91QJM7
   input s_axi_aclk;
   input s_axi_aresetn;
 
-  wire [7:0]Net;
   wire [31:0]axi_gpio_0_gpio2_io_o;
   wire [31:0]axi_gpio_0_gpio_io_o;
   wire clk_wiz_0_clk_out1;
@@ -1217,6 +1221,7 @@ module debug_ctrl_imp_91QJM7
   wire [0:0]xlslice_0_Dout1;
   wire [15:0]xlslice_1_Dout;
   wire [0:0]xlslice_2_Dout;
+  wire [7:0]xlslice_adc_0_7_Dout;
   wire [0:0]xlslice_clk_psclk_3_Dout;
   wire [0:0]xlslice_clk_psen_4_Dout;
   wire [0:0]xlslice_clk_psincdec_5_Dout;
@@ -1226,23 +1231,20 @@ module debug_ctrl_imp_91QJM7
   wire [0:0]xlslice_reciever_in_10_Dout;
   wire [0:0]xlslice_reciever_out_7_Dout;
   wire [0:0]xlslice_reciever_out_8_Dout;
-  wire [0:0]xlslice_sender_Dout;
 
-  assign Din1[31:0] = axi_gpio_0_gpio_io_o;
   assign Dout[0] = xlslice_duc_sync_6_Dout;
   assign Dout1[0] = xlslice_clk_psen_4_Dout;
   assign Dout10[15:0] = xlslice_1_Dout;
   assign Dout11[0] = xlslice_reciever_in_10_Dout;
   assign Dout12[7:0] = xlslice_dac_8_15_Dout;
+  assign Dout13[7:0] = xlslice_adc_0_7_Dout;
   assign Dout2[0] = xlslice_clk_psclk_3_Dout;
   assign Dout3[0] = xlslice_reciever_out_7_Dout;
-  assign Dout4[0] = xlslice_sender_Dout;
   assign Dout5[0] = xlslice_fifo_read_start_2_Dout;
   assign Dout6[0] = xlslice_clk_psincdec_5_Dout;
   assign Dout7[0] = xlslice_reciever_out_8_Dout;
   assign Dout8[0] = xlslice_0_Dout1;
   assign Dout9[0] = xlslice_2_Dout;
-  assign Net = Din[7:0];
   assign S_AXI_arready = ps7_0_axi_periph_M00_AXI_ARREADY;
   assign S_AXI_awready = ps7_0_axi_periph_M00_AXI_AWREADY;
   assign S_AXI_bresp[1:0] = ps7_0_axi_periph_M00_AXI_BRESP;
@@ -1284,6 +1286,9 @@ module debug_ctrl_imp_91QJM7
         .s_axi_wready(ps7_0_axi_periph_M00_AXI_WREADY),
         .s_axi_wstrb(ps7_0_axi_periph_M00_AXI_WSTRB),
         .s_axi_wvalid(ps7_0_axi_periph_M00_AXI_WVALID));
+  urllc_fifo_core_inst_0_xlslice_adc_0_7_0 xlslice_adc_0_7
+       (.Din(axi_gpio_0_gpio_io_o),
+        .Dout(xlslice_adc_0_7_Dout));
   urllc_fifo_core_inst_0_xlslice_clk_psclk_3_0 xlslice_clk_psclk_3
        (.Din(axi_gpio_0_gpio2_io_o),
         .Dout(xlslice_clk_psclk_3_Dout));
@@ -1314,15 +1319,12 @@ module debug_ctrl_imp_91QJM7
   urllc_fifo_core_inst_0_xlslice_fifo_write_start_1_0 xlslice_fifo_write_start_1
        (.Din(axi_gpio_0_gpio2_io_o),
         .Dout(xlslice_0_Dout1));
-  urllc_fifo_core_inst_0_xlslice_reciever_in_10_0 xlslice_reciever_in_10
+  urllc_fifo_core_inst_0_xlslice_reciever_in_9_0 xlslice_reciever_in_9
        (.Din(axi_gpio_0_gpio2_io_o),
         .Dout(xlslice_reciever_in_10_Dout));
   urllc_fifo_core_inst_0_xlslice_reciever_out_7_0 xlslice_reciever_out_7
        (.Din(axi_gpio_0_gpio2_io_o),
         .Dout(xlslice_reciever_out_7_Dout));
-  urllc_fifo_core_inst_0_xlslice_sender_0 xlslice_sender
-       (.Din(Net),
-        .Dout(xlslice_sender_Dout));
 endmodule
 
 module m00_couplers_imp_1FDMWNJ
@@ -1887,7 +1889,7 @@ module s00_couplers_imp_1FBGI7D
         .s_axi_wvalid(s00_couplers_to_auto_pc_WVALID));
 endmodule
 
-(* CORE_GENERATION_INFO = "urllc_fifo_core_inst_0,IP_Integrator,{x_ipVendor=xilinx.com,x_ipLibrary=BlockDiagram,x_ipName=urllc_fifo_core_inst_0,x_ipVersion=1.00.a,x_ipLanguage=VERILOG,numBlks=49,numReposBlks=41,numNonXlnxBlks=0,numHierBlks=8,maxHierDepth=1,numSysgenBlks=0,numHlsBlks=0,numHdlrefBlks=9,numPkgbdBlks=0,bdsource=G_/Chiro/Programs/urllc-demo-pynq/urllc-vivado/urllc-fifo.srcs/sources_1/bd/urllc_fifo_core/urllc_fifo_core.bd,synth_mode=OOC_per_IP}" *) (* HW_HANDOFF = "urllc_fifo_core_inst_0.hwdef" *) 
+(* CORE_GENERATION_INFO = "urllc_fifo_core_inst_0,IP_Integrator,{x_ipVendor=xilinx.com,x_ipLibrary=BlockDiagram,x_ipName=urllc_fifo_core_inst_0,x_ipVersion=1.00.a,x_ipLanguage=VERILOG,numBlks=50,numReposBlks=42,numNonXlnxBlks=0,numHierBlks=8,maxHierDepth=1,numSysgenBlks=0,numHlsBlks=0,numHdlrefBlks=9,numPkgbdBlks=0,bdsource=G_/Chiro/Programs/urllc-demo-pynq/urllc-vivado/urllc-fifo.srcs/sources_1/bd/urllc_fifo_core/urllc_fifo_core.bd,synth_mode=OOC_per_IP}" *) (* HW_HANDOFF = "urllc_fifo_core_inst_0.hwdef" *) 
 module urllc_fifo_core_inst_0
    (DDR_addr,
     DDR_ba,
@@ -1913,6 +1915,7 @@ module urllc_fifo_core_inst_0
     ad,
     clk_ad_static,
     clk_da_dynamic,
+    clk_pl_50M,
     da);
   (* X_INTERFACE_INFO = "xilinx.com:interface:ddrx:1.0 DDR ADDR" *) (* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME DDR, AXI_ARBITRATION_SCHEME TDM, BURST_LENGTH 8, CAN_DEBUG false, CAS_LATENCY 11, CAS_WRITE_LATENCY 11, CS_ENABLED true, DATA_MASK_ENABLED true, DATA_WIDTH 8, MEMORY_TYPE COMPONENTS, MEM_ADDR_MAP ROW_COLUMN_BANK, SLOT Single, TIMEPERIOD_PS 1250" *) inout [14:0]DDR_addr;
   (* X_INTERFACE_INFO = "xilinx.com:interface:ddrx:1.0 DDR BA" *) inout [2:0]DDR_ba;
@@ -1938,9 +1941,9 @@ module urllc_fifo_core_inst_0
   input [7:0]ad;
   (* X_INTERFACE_INFO = "xilinx.com:signal:clock:1.0 CLK.CLK_AD_STATIC CLK" *) (* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME CLK.CLK_AD_STATIC, CLK_DOMAIN /urllc_fifo_core_0/core/clk_static_clk_out1, FREQ_HZ 60000000, FREQ_TOLERANCE_HZ 0, INSERT_VIP 0, PHASE 0.0" *) output clk_ad_static;
   (* X_INTERFACE_INFO = "xilinx.com:signal:clock:1.0 CLK.CLK_DA_DYNAMIC CLK" *) (* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME CLK.CLK_DA_DYNAMIC, CLK_DOMAIN /urllc_fifo_core_0/core/clk_dynamic_clk_out1, FREQ_HZ 60000000, FREQ_TOLERANCE_HZ 0, INSERT_VIP 0, PHASE 0.0" *) output clk_da_dynamic;
+  (* X_INTERFACE_INFO = "xilinx.com:signal:clock:1.0 CLK.CLK_PL_50M CLK" *) (* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME CLK.CLK_PL_50M, CLK_DOMAIN urllc_fifo_sender_clk_pl_50M, FREQ_HZ 50000000, FREQ_TOLERANCE_HZ 0, INSERT_VIP 0, PHASE 0.0" *) input clk_pl_50M;
   output [7:0]da;
 
-  wire [7:0]Net;
   wire [7:0]ad_1;
   wire [7:0]adc_0_ad_out;
   wire adc_0_ad_out_vld;
@@ -1950,10 +1953,10 @@ module urllc_fifo_core_inst_0
   wire axi_dma_0_M_AXIS_MM2S_TLAST;
   wire axi_dma_0_M_AXIS_MM2S_TREADY;
   wire axi_dma_0_M_AXIS_MM2S_TVALID;
-  wire [31:0]axi_gpio_0_gpio_io_o;
   wire [7:0]axis_write_to_fifo_0_fifo_write_wd_data;
   wire axis_write_to_fifo_0_fifo_write_wd_en;
   wire clk_dynamic_clk_out_200M;
+  wire clk_pl_50M_1;
   wire clk_wiz_0_clk_out1;
   wire core_almost_empty;
   wire [7:0]core_dout;
@@ -1963,6 +1966,7 @@ module urllc_fifo_core_inst_0
   wire [0:0]debug_ctrl_Dout2;
   wire [0:0]debug_ctrl_Dout5;
   wire [0:0]debug_ctrl_Dout6;
+  wire [7:0]div_1;
   wire [15:0]fifo_adc_data_count;
   wire fifo_dac_almost_full;
   wire [7:0]fifo_dac_dout;
@@ -2022,15 +2026,14 @@ module urllc_fifo_core_inst_0
   wire [0:0]xlslice_reciever_in_10_Dout;
   wire [0:0]xlslice_reciever_out_7_Dout;
   wire [0:0]xlslice_reciever_out_8_Dout;
-  wire [0:0]xlslice_sender_Dout;
 
   assign ad_1 = ad[7:0];
   assign clk_ad_static = clk_wiz_0_clk_out1;
   assign clk_da_dynamic = clk_dynamic_clk_out_200M;
+  assign clk_pl_50M_1 = clk_pl_50M;
   assign da[7:0] = mux_0_data_out;
   adc_imp_NVSO26 adc
-       (.Din(axi_gpio_0_gpio_io_o),
-        .ad(ad_1),
+       (.ad(ad_1),
         .ad_out(adc_0_ad_out),
         .ad_out_vld(adc_0_ad_out_vld),
         .axis_tdata(fifo_read_to_axis_0_axis_TDATA),
@@ -2040,6 +2043,7 @@ module urllc_fifo_core_inst_0
         .clear(xlslice_2_Dout),
         .clk(clk_wiz_0_clk_out1),
         .count(fifo_adc_data_count),
+        .div(div_1),
         .fifo_read_almost_empty(core_almost_empty),
         .fifo_read_empty(core_empty),
         .fifo_read_rd_data(core_dout),
@@ -2105,6 +2109,7 @@ module urllc_fifo_core_inst_0
         .almost_full(fifo_dac_almost_full),
         .clk_out1(clk_wiz_0_clk_out1),
         .clk_out_dynamic(clk_dynamic_clk_out_200M),
+        .clk_pl_50M(clk_pl_50M_1),
         .data_count(fifo_adc_data_count),
         .din(adc_0_ad_out),
         .din1(axis_write_to_fifo_0_fifo_write_wd_data),
@@ -2132,28 +2137,24 @@ module urllc_fifo_core_inst_0
         .da(mux_0_data_out),
         .da_in(fifo_dac_dout),
         .da_in_vld(dac_0_da_in_vld),
-        .da_out(Net),
         .div(xlslice_dac_8_15_Dout),
         .fifo_write_almost_full(fifo_dac_almost_full),
         .fifo_write_full(fifo_dac_full),
         .fifo_write_wd_data(axis_write_to_fifo_0_fifo_write_wd_data),
         .fifo_write_wd_en(axis_write_to_fifo_0_fifo_write_wd_en),
-        .io_in_data(xlslice_sender_Dout),
         .io_in_sync(xlslice_duc_sync_6_Dout),
         .resetn(rst_ps7_0_50M_peripheral_aresetn),
         .router(xlslice_reciever_out_7_Dout),
         .start(xlslice_0_Dout1));
   debug_ctrl_imp_91QJM7 debug_ctrl
-       (.Din(Net),
-        .Din1(axi_gpio_0_gpio_io_o),
-        .Dout(xlslice_duc_sync_6_Dout),
+       (.Dout(xlslice_duc_sync_6_Dout),
         .Dout1(debug_ctrl_Dout1),
         .Dout10(xlslice_1_Dout),
         .Dout11(xlslice_reciever_in_10_Dout),
         .Dout12(xlslice_dac_8_15_Dout),
+        .Dout13(div_1),
         .Dout2(debug_ctrl_Dout2),
         .Dout3(xlslice_reciever_out_7_Dout),
-        .Dout4(xlslice_sender_Dout),
         .Dout5(debug_ctrl_Dout5),
         .Dout6(debug_ctrl_Dout6),
         .Dout7(xlslice_reciever_out_8_Dout),
@@ -2178,7 +2179,7 @@ module urllc_fifo_core_inst_0
         .S_AXI_wvalid(ps7_0_axi_periph_M00_AXI_WVALID),
         .s_axi_aclk(clk_wiz_0_clk_out1),
         .s_axi_aresetn(rst_ps7_0_50M_peripheral_aresetn));
-  urllc_fifo_core_inst_0_ila_0_0 ila_0
+  urllc_fifo_core_inst_0_ila_0_1 ila_0
        (.clk(clk_wiz_0_clk_out1),
         .probe0(xlconcat_irq_dout));
   urllc_fifo_core_inst_0_ila_fifo_in_0 ila_fifo_in

@@ -167,13 +167,10 @@ proc create_hier_cell_debug_ctrl { parentCell nameHier } {
 
 
   # Create pins
-  create_bd_pin -dir I -from 7 -to 0 Din
-  create_bd_pin -dir O -from 31 -to 0 Din1
   create_bd_pin -dir O -from 0 -to 0 Dout
   create_bd_pin -dir O -from 0 -to 0 Dout1
   create_bd_pin -dir O -from 0 -to 0 Dout2
   create_bd_pin -dir O -from 0 -to 0 Dout3
-  create_bd_pin -dir O -from 0 -to 0 Dout4
   create_bd_pin -dir O -from 0 -to 0 Dout5
   create_bd_pin -dir O -from 0 -to 0 Dout6
   create_bd_pin -dir O -from 0 -to 0 Dout7
@@ -182,6 +179,7 @@ proc create_hier_cell_debug_ctrl { parentCell nameHier } {
   create_bd_pin -dir O -from 15 -to 0 Dout10
   create_bd_pin -dir O -from 0 -to 0 Dout11
   create_bd_pin -dir O -from 7 -to 0 Dout12
+  create_bd_pin -dir O -from 7 -to 0 Dout13
   create_bd_pin -dir I -type clk s_axi_aclk
   create_bd_pin -dir I -type rst s_axi_aresetn
 
@@ -192,6 +190,13 @@ proc create_hier_cell_debug_ctrl { parentCell nameHier } {
    CONFIG.C_ALL_OUTPUTS_2 {1} \
    CONFIG.C_IS_DUAL {1} \
  ] $axi_gpio_0
+
+  # Create instance: xlslice_adc_0_7, and set properties
+  set xlslice_adc_0_7 [ create_bd_cell -type ip -vlnv xilinx.com:ip:xlslice:1.0 xlslice_adc_0_7 ]
+  set_property -dict [ list \
+   CONFIG.DIN_FROM {7} \
+   CONFIG.DOUT_WIDTH {8} \
+ ] $xlslice_adc_0_7
 
   # Create instance: xlslice_clk_psclk_3, and set properties
   set xlslice_clk_psclk_3 [ create_bd_cell -type ip -vlnv xilinx.com:ip:xlslice:1.0 xlslice_clk_psclk_3 ]
@@ -273,13 +278,13 @@ proc create_hier_cell_debug_ctrl { parentCell nameHier } {
    CONFIG.DOUT_WIDTH {1} \
  ] $xlslice_fifo_write_start_1
 
-  # Create instance: xlslice_reciever_in_10, and set properties
-  set xlslice_reciever_in_10 [ create_bd_cell -type ip -vlnv xilinx.com:ip:xlslice:1.0 xlslice_reciever_in_10 ]
+  # Create instance: xlslice_reciever_in_9, and set properties
+  set xlslice_reciever_in_9 [ create_bd_cell -type ip -vlnv xilinx.com:ip:xlslice:1.0 xlslice_reciever_in_9 ]
   set_property -dict [ list \
-   CONFIG.DIN_FROM {8} \
-   CONFIG.DIN_TO {8} \
+   CONFIG.DIN_FROM {9} \
+   CONFIG.DIN_TO {9} \
    CONFIG.DOUT_WIDTH {1} \
- ] $xlslice_reciever_in_10
+ ] $xlslice_reciever_in_9
 
   # Create instance: xlslice_reciever_out_7, and set properties
   set xlslice_reciever_out_7 [ create_bd_cell -type ip -vlnv xilinx.com:ip:xlslice:1.0 xlslice_reciever_out_7 ]
@@ -289,36 +294,27 @@ proc create_hier_cell_debug_ctrl { parentCell nameHier } {
    CONFIG.DOUT_WIDTH {1} \
  ] $xlslice_reciever_out_7
 
-  # Create instance: xlslice_sender, and set properties
-  set xlslice_sender [ create_bd_cell -type ip -vlnv xilinx.com:ip:xlslice:1.0 xlslice_sender ]
-  set_property -dict [ list \
-   CONFIG.DIN_FROM {0} \
-   CONFIG.DIN_TO {0} \
-   CONFIG.DIN_WIDTH {8} \
- ] $xlslice_sender
-
   # Create interface connections
   connect_bd_intf_net -intf_net ps7_0_axi_periph_M00_AXI [get_bd_intf_pins S_AXI] [get_bd_intf_pins axi_gpio_0/S_AXI]
 
   # Create port connections
-  connect_bd_net -net Net [get_bd_pins Din] [get_bd_pins xlslice_sender/Din]
-  connect_bd_net -net axi_gpio_0_gpio2_io_o [get_bd_pins axi_gpio_0/gpio2_io_o] [get_bd_pins xlslice_clk_psclk_3/Din] [get_bd_pins xlslice_clk_psen_4/Din] [get_bd_pins xlslice_clk_psincdec_5/Din] [get_bd_pins xlslice_count_trigger_clear_0/Din] [get_bd_pins xlslice_ddc_sync_8/Din] [get_bd_pins xlslice_duc_sync_6/Din] [get_bd_pins xlslice_fifo_read_start_2/Din] [get_bd_pins xlslice_fifo_write_start_1/Din] [get_bd_pins xlslice_reciever_in_10/Din] [get_bd_pins xlslice_reciever_out_7/Din]
-  connect_bd_net -net axi_gpio_0_gpio_io_o [get_bd_pins Din1] [get_bd_pins axi_gpio_0/gpio_io_o] [get_bd_pins xlslice_counter_trigger_16_31/Din] [get_bd_pins xlslice_dac_8_15/Din]
+  connect_bd_net -net axi_gpio_0_gpio2_io_o [get_bd_pins axi_gpio_0/gpio2_io_o] [get_bd_pins xlslice_clk_psclk_3/Din] [get_bd_pins xlslice_clk_psen_4/Din] [get_bd_pins xlslice_clk_psincdec_5/Din] [get_bd_pins xlslice_count_trigger_clear_0/Din] [get_bd_pins xlslice_ddc_sync_8/Din] [get_bd_pins xlslice_duc_sync_6/Din] [get_bd_pins xlslice_fifo_read_start_2/Din] [get_bd_pins xlslice_fifo_write_start_1/Din] [get_bd_pins xlslice_reciever_in_9/Din] [get_bd_pins xlslice_reciever_out_7/Din]
+  connect_bd_net -net axi_gpio_0_gpio_io_o [get_bd_pins axi_gpio_0/gpio_io_o] [get_bd_pins xlslice_adc_0_7/Din] [get_bd_pins xlslice_counter_trigger_16_31/Din] [get_bd_pins xlslice_dac_8_15/Din]
   connect_bd_net -net clk_wiz_0_clk_out1 [get_bd_pins s_axi_aclk] [get_bd_pins axi_gpio_0/s_axi_aclk]
   connect_bd_net -net rst_ps7_0_50M_peripheral_aresetn [get_bd_pins s_axi_aresetn] [get_bd_pins axi_gpio_0/s_axi_aresetn]
   connect_bd_net -net xlslice_0_Dout1 [get_bd_pins Dout8] [get_bd_pins xlslice_fifo_write_start_1/Dout]
   connect_bd_net -net xlslice_1_Dout [get_bd_pins Dout10] [get_bd_pins xlslice_counter_trigger_16_31/Dout]
   connect_bd_net -net xlslice_2_Dout [get_bd_pins Dout9] [get_bd_pins xlslice_count_trigger_clear_0/Dout]
+  connect_bd_net -net xlslice_adc_0_7_Dout [get_bd_pins Dout13] [get_bd_pins xlslice_adc_0_7/Dout]
   connect_bd_net -net xlslice_clk_psclk_3_Dout [get_bd_pins Dout2] [get_bd_pins xlslice_clk_psclk_3/Dout]
   connect_bd_net -net xlslice_clk_psen_4_Dout [get_bd_pins Dout1] [get_bd_pins xlslice_clk_psen_4/Dout]
   connect_bd_net -net xlslice_clk_psincdec_5_Dout [get_bd_pins Dout6] [get_bd_pins xlslice_clk_psincdec_5/Dout]
   connect_bd_net -net xlslice_dac_8_15_Dout [get_bd_pins Dout12] [get_bd_pins xlslice_dac_8_15/Dout]
   connect_bd_net -net xlslice_duc_sync_6_Dout [get_bd_pins Dout] [get_bd_pins xlslice_duc_sync_6/Dout]
   connect_bd_net -net xlslice_fifo_read_start_2_Dout [get_bd_pins Dout5] [get_bd_pins xlslice_fifo_read_start_2/Dout]
-  connect_bd_net -net xlslice_reciever_in_10_Dout [get_bd_pins Dout11] [get_bd_pins xlslice_reciever_in_10/Dout]
+  connect_bd_net -net xlslice_reciever_in_10_Dout [get_bd_pins Dout11] [get_bd_pins xlslice_reciever_in_9/Dout]
   connect_bd_net -net xlslice_reciever_out_7_Dout [get_bd_pins Dout3] [get_bd_pins xlslice_reciever_out_7/Dout]
   connect_bd_net -net xlslice_reciever_out_8_Dout [get_bd_pins Dout7] [get_bd_pins xlslice_ddc_sync_8/Dout]
-  connect_bd_net -net xlslice_sender_Dout [get_bd_pins Dout4] [get_bd_pins xlslice_sender/Dout]
 
   # Restore current instance
   current_bd_instance $oldCurInst
@@ -367,13 +363,11 @@ proc create_hier_cell_dac { parentCell nameHier } {
   create_bd_pin -dir O -from 7 -to 0 da
   create_bd_pin -dir I -from 7 -to 0 da_in
   create_bd_pin -dir O da_in_vld
-  create_bd_pin -dir O -from 7 -to 0 da_out
   create_bd_pin -dir I -from 7 -to 0 div
   create_bd_pin -dir I fifo_write_almost_full
   create_bd_pin -dir I fifo_write_full
   create_bd_pin -dir O -from 7 -to 0 fifo_write_wd_data
   create_bd_pin -dir O fifo_write_wd_en
-  create_bd_pin -dir I io_in_data
   create_bd_pin -dir I io_in_sync
   create_bd_pin -dir I -type rst resetn
   create_bd_pin -dir I router
@@ -423,12 +417,20 @@ proc create_hier_cell_dac { parentCell nameHier } {
      return 1
    }
   
+  # Create instance: xlslice_sender, and set properties
+  set xlslice_sender [ create_bd_cell -type ip -vlnv xilinx.com:ip:xlslice:1.0 xlslice_sender ]
+  set_property -dict [ list \
+   CONFIG.DIN_FROM {0} \
+   CONFIG.DIN_TO {0} \
+   CONFIG.DIN_WIDTH {8} \
+ ] $xlslice_sender
+
   # Create interface connections
   connect_bd_intf_net -intf_net axi_dma_0_M_AXIS_MM2S [get_bd_intf_pins axis] [get_bd_intf_pins axis_write_to_fifo_0/axis]
 
   # Create port connections
   connect_bd_net -net DUCWrapper_0_io_out_dac [get_bd_pins DUCWrapper_0/io_out_dac] [get_bd_pins mux_reciever_out/sel1]
-  connect_bd_net -net Net [get_bd_pins da_out] [get_bd_pins dac_0/da_out] [get_bd_pins mux_reciever_out/sel2]
+  connect_bd_net -net Net [get_bd_pins dac_0/da_out] [get_bd_pins mux_reciever_out/sel2] [get_bd_pins xlslice_sender/Din]
   connect_bd_net -net axis_write_to_fifo_0_fifo_write_wd_data [get_bd_pins fifo_write_wd_data] [get_bd_pins axis_write_to_fifo_0/fifo_write_wd_data]
   connect_bd_net -net axis_write_to_fifo_0_fifo_write_wd_en [get_bd_pins fifo_write_wd_en] [get_bd_pins axis_write_to_fifo_0/fifo_write_wd_en]
   connect_bd_net -net clk_wiz_0_clk_out1 [get_bd_pins clk] [get_bd_pins DUCWrapper_0/io_clock] [get_bd_pins axis_write_to_fifo_0/clk] [get_bd_pins dac_0/clk]
@@ -442,7 +444,7 @@ proc create_hier_cell_dac { parentCell nameHier } {
   connect_bd_net -net xlslice_dac_8_15_Dout [get_bd_pins div] [get_bd_pins dac_0/div]
   connect_bd_net -net xlslice_duc_sync_6_Dout [get_bd_pins io_in_sync] [get_bd_pins DUCWrapper_0/io_in_sync]
   connect_bd_net -net xlslice_reciever_out_7_Dout [get_bd_pins router] [get_bd_pins mux_reciever_out/router]
-  connect_bd_net -net xlslice_sender_Dout [get_bd_pins io_in_data] [get_bd_pins DUCWrapper_0/io_in_data]
+  connect_bd_net -net xlslice_sender_Dout [get_bd_pins DUCWrapper_0/io_in_data] [get_bd_pins xlslice_sender/Dout]
 
   # Restore current instance
   current_bd_instance $oldCurInst
@@ -500,6 +502,7 @@ proc create_hier_cell_core { parentCell nameHier } {
   create_bd_pin -dir O almost_full
   create_bd_pin -dir O -type clk clk_out1
   create_bd_pin -dir O -type clk clk_out_dynamic
+  create_bd_pin -dir I clk_pl_50M
   create_bd_pin -dir O -from 15 -to 0 data_count
   create_bd_pin -dir I -from 7 -to 0 din
   create_bd_pin -dir I -from 7 -to 0 din1
@@ -538,19 +541,22 @@ proc create_hier_cell_core { parentCell nameHier } {
   # Create instance: clk_dynamic, and set properties
   set clk_dynamic [ create_bd_cell -type ip -vlnv xilinx.com:ip:clk_wiz:6.0 clk_dynamic ]
   set_property -dict [ list \
-   CONFIG.CLKIN1_JITTER_PS {200.0} \
-   CONFIG.CLKOUT1_JITTER {199.644} \
-   CONFIG.CLKOUT1_PHASE_ERROR {161.614} \
+   CONFIG.CLKIN1_JITTER_PS {166.66} \
+   CONFIG.CLKOUT1_JITTER {163.829} \
+   CONFIG.CLKOUT1_PHASE_ERROR {130.371} \
    CONFIG.CLKOUT1_REQUESTED_OUT_FREQ {60} \
    CONFIG.CLK_OUT1_PORT {clk_out_dynamic} \
-   CONFIG.MMCM_CLKFBOUT_MULT_F {18.000} \
-   CONFIG.MMCM_CLKIN1_PERIOD {20.000} \
+   CONFIG.MMCM_CLKFBOUT_MULT_F {17.000} \
+   CONFIG.MMCM_CLKIN1_PERIOD {16.667} \
    CONFIG.MMCM_CLKIN2_PERIOD {10.0} \
-   CONFIG.MMCM_CLKOUT0_DIVIDE_F {15.000} \
+   CONFIG.MMCM_CLKOUT0_DIVIDE_F {17.000} \
    CONFIG.MMCM_DIVCLK_DIVIDE {1} \
-   CONFIG.RESET_PORT {resetn} \
-   CONFIG.RESET_TYPE {ACTIVE_LOW} \
+   CONFIG.PRIM_IN_FREQ {60.000} \
+   CONFIG.PRIM_SOURCE {Global_buffer} \
+   CONFIG.RESET_PORT {reset} \
+   CONFIG.RESET_TYPE {ACTIVE_HIGH} \
    CONFIG.USE_DYN_PHASE_SHIFT {true} \
+   CONFIG.USE_RESET {false} \
  ] $clk_dynamic
 
   # Create instance: clk_static, and set properties
@@ -565,8 +571,10 @@ proc create_hier_cell_core { parentCell nameHier } {
    CONFIG.MMCM_CLKIN2_PERIOD {10.0} \
    CONFIG.MMCM_CLKOUT0_DIVIDE_F {16.875} \
    CONFIG.MMCM_DIVCLK_DIVIDE {1} \
-   CONFIG.RESET_PORT {resetn} \
-   CONFIG.RESET_TYPE {ACTIVE_LOW} \
+   CONFIG.PRIM_SOURCE {Single_ended_clock_capable_pin} \
+   CONFIG.RESET_PORT {reset} \
+   CONFIG.RESET_TYPE {ACTIVE_HIGH} \
+   CONFIG.USE_RESET {false} \
  ] $clk_static
 
   # Create instance: fifo_adc, and set properties
@@ -616,6 +624,15 @@ proc create_hier_cell_core { parentCell nameHier } {
    CONFIG.Read_Data_Count_Width {16} \
    CONFIG.Write_Data_Count_Width {16} \
  ] $fifo_dac
+
+  # Create instance: ila_0, and set properties
+  set ila_0 [ create_bd_cell -type ip -vlnv xilinx.com:ip:ila:6.2 ila_0 ]
+  set_property -dict [ list \
+   CONFIG.C_DATA_DEPTH {32768} \
+   CONFIG.C_ENABLE_ILA_AXI_MON {false} \
+   CONFIG.C_MONITOR_TYPE {Native} \
+   CONFIG.C_NUM_OF_PROBES {8} \
+ ] $ila_0
 
   # Create instance: processing_system7_0, and set properties
   set processing_system7_0 [ create_bd_cell -type ip -vlnv xilinx.com:ip:processing_system7:5.5 processing_system7_0 ]
@@ -1334,6 +1351,7 @@ Flash#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassign
 
   # Create port connections
   connect_bd_net -net In0_1 [get_bd_pins In0] [get_bd_pins xlconcat_irq/In0]
+  connect_bd_net -net Net [get_bd_pins fifo_adc/srst] [get_bd_pins fifo_dac/srst] [get_bd_pins reset_static/peripheral_reset]
   connect_bd_net -net adc_0_ad_out [get_bd_pins din] [get_bd_pins fifo_adc/din]
   connect_bd_net -net adc_0_ad_out_vld [get_bd_pins wr_en] [get_bd_pins fifo_adc/wr_en]
   connect_bd_net -net axi_dma_0_mm2s_introut [get_bd_pins axi_dma_0/mm2s_introut] [get_bd_pins xlconcat_irq/In1]
@@ -1341,7 +1359,11 @@ Flash#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassign
   connect_bd_net -net axis_write_to_fifo_0_fifo_write_wd_data [get_bd_pins din1] [get_bd_pins fifo_dac/din]
   connect_bd_net -net axis_write_to_fifo_0_fifo_write_wd_en [get_bd_pins wr_en1] [get_bd_pins fifo_dac/wr_en]
   connect_bd_net -net clk_dynamic_clk_out_200M [get_bd_pins clk_out_dynamic] [get_bd_pins clk_dynamic/clk_out_dynamic] [get_bd_pins reset_dynamic/slowest_sync_clk]
-  connect_bd_net -net clk_static_clk_out1 [get_bd_pins clk_out1] [get_bd_pins axi_dma_0/m_axi_mm2s_aclk] [get_bd_pins axi_dma_0/m_axi_s2mm_aclk] [get_bd_pins axi_dma_0/s_axi_lite_aclk] [get_bd_pins axi_smc/aclk] [get_bd_pins clk_static/clk_out1] [get_bd_pins fifo_adc/clk] [get_bd_pins fifo_dac/clk] [get_bd_pins processing_system7_0/M_AXI_GP0_ACLK] [get_bd_pins processing_system7_0/S_AXI_HP0_ACLK] [get_bd_pins processing_system7_0/S_AXI_HP1_ACLK] [get_bd_pins ps7_0_axi_periph/ACLK] [get_bd_pins ps7_0_axi_periph/M00_ACLK] [get_bd_pins ps7_0_axi_periph/M01_ACLK] [get_bd_pins ps7_0_axi_periph/S00_ACLK] [get_bd_pins reset_static/slowest_sync_clk]
+  connect_bd_net -net clk_dynamic_locked [get_bd_pins clk_dynamic/locked] [get_bd_pins ila_0/probe1] [get_bd_pins reset_dynamic/dcm_locked]
+  connect_bd_net -net clk_dynamic_psdone [get_bd_pins clk_dynamic/psdone] [get_bd_pins ila_0/probe7]
+  connect_bd_net -net clk_pl_50M_1 [get_bd_pins clk_pl_50M] [get_bd_pins clk_static/clk_in1] [get_bd_pins ila_0/clk]
+  connect_bd_net -net clk_static_clk_out1 [get_bd_pins clk_out1] [get_bd_pins axi_dma_0/m_axi_mm2s_aclk] [get_bd_pins axi_dma_0/m_axi_s2mm_aclk] [get_bd_pins axi_dma_0/s_axi_lite_aclk] [get_bd_pins axi_smc/aclk] [get_bd_pins clk_dynamic/clk_in1] [get_bd_pins clk_static/clk_out1] [get_bd_pins fifo_adc/clk] [get_bd_pins fifo_dac/clk] [get_bd_pins processing_system7_0/M_AXI_GP0_ACLK] [get_bd_pins processing_system7_0/S_AXI_HP0_ACLK] [get_bd_pins processing_system7_0/S_AXI_HP1_ACLK] [get_bd_pins ps7_0_axi_periph/ACLK] [get_bd_pins ps7_0_axi_periph/M00_ACLK] [get_bd_pins ps7_0_axi_periph/M01_ACLK] [get_bd_pins ps7_0_axi_periph/S00_ACLK] [get_bd_pins reset_static/slowest_sync_clk]
+  connect_bd_net -net clk_static_locked [get_bd_pins clk_static/locked] [get_bd_pins ila_0/probe2] [get_bd_pins reset_static/dcm_locked]
   connect_bd_net -net dac_0_da_in_vld [get_bd_pins rd_en1] [get_bd_pins fifo_dac/rd_en]
   connect_bd_net -net fifo_adc_almost_empty [get_bd_pins almost_empty] [get_bd_pins fifo_adc/almost_empty]
   connect_bd_net -net fifo_adc_data_count [get_bd_pins data_count] [get_bd_pins fifo_adc/data_count]
@@ -1351,14 +1373,12 @@ Flash#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassign
   connect_bd_net -net fifo_dac_dout [get_bd_pins dout1] [get_bd_pins fifo_dac/dout]
   connect_bd_net -net fifo_dac_full [get_bd_pins full] [get_bd_pins fifo_dac/full]
   connect_bd_net -net fifo_read_to_axis_0_fifo_read_rd_en [get_bd_pins rd_en] [get_bd_pins fifo_adc/rd_en]
-  connect_bd_net -net processing_system7_0_FCLK_CLK0 [get_bd_pins clk_dynamic/clk_in1] [get_bd_pins clk_static/clk_in1] [get_bd_pins processing_system7_0/FCLK_CLK0]
   connect_bd_net -net processing_system7_0_FCLK_RESET0_N [get_bd_pins processing_system7_0/FCLK_RESET0_N] [get_bd_pins reset_dynamic/ext_reset_in] [get_bd_pins reset_static/ext_reset_in]
-  connect_bd_net -net psclk_1 [get_bd_pins psclk] [get_bd_pins clk_dynamic/psclk]
-  connect_bd_net -net psen_1 [get_bd_pins psen] [get_bd_pins clk_dynamic/psen]
-  connect_bd_net -net psincdec_1 [get_bd_pins psincdec] [get_bd_pins clk_dynamic/psincdec]
-  connect_bd_net -net reset_dynamic_peripheral_aresetn [get_bd_pins peripheral_aresetn] [get_bd_pins clk_dynamic/resetn] [get_bd_pins reset_dynamic/peripheral_aresetn]
-  connect_bd_net -net rst_ps7_0_50M_peripheral_aresetn [get_bd_pins peripheral_aresetn1] [get_bd_pins axi_dma_0/axi_resetn] [get_bd_pins axi_smc/aresetn] [get_bd_pins clk_static/resetn] [get_bd_pins ps7_0_axi_periph/ARESETN] [get_bd_pins ps7_0_axi_periph/M00_ARESETN] [get_bd_pins ps7_0_axi_periph/M01_ARESETN] [get_bd_pins ps7_0_axi_periph/S00_ARESETN] [get_bd_pins reset_static/peripheral_aresetn]
-  connect_bd_net -net rst_ps7_0_50M_peripheral_reset [get_bd_pins fifo_adc/srst] [get_bd_pins fifo_dac/srst] [get_bd_pins reset_static/peripheral_reset]
+  connect_bd_net -net psclk_1 [get_bd_pins psclk] [get_bd_pins clk_dynamic/psclk] [get_bd_pins ila_0/probe4]
+  connect_bd_net -net psen_1 [get_bd_pins psen] [get_bd_pins clk_dynamic/psen] [get_bd_pins ila_0/probe5]
+  connect_bd_net -net psincdec_1 [get_bd_pins psincdec] [get_bd_pins clk_dynamic/psincdec] [get_bd_pins ila_0/probe6]
+  connect_bd_net -net reset_dynamic_peripheral_aresetn [get_bd_pins peripheral_aresetn] [get_bd_pins ila_0/probe3] [get_bd_pins reset_dynamic/peripheral_aresetn]
+  connect_bd_net -net rst_ps7_0_50M_peripheral_aresetn [get_bd_pins peripheral_aresetn1] [get_bd_pins axi_dma_0/axi_resetn] [get_bd_pins axi_smc/aresetn] [get_bd_pins ila_0/probe0] [get_bd_pins ps7_0_axi_periph/ARESETN] [get_bd_pins ps7_0_axi_periph/M00_ARESETN] [get_bd_pins ps7_0_axi_periph/M01_ARESETN] [get_bd_pins ps7_0_axi_periph/S00_ARESETN] [get_bd_pins reset_static/peripheral_aresetn]
   connect_bd_net -net xlconcat_irq_dout [get_bd_pins dout2] [get_bd_pins processing_system7_0/IRQ_F2P] [get_bd_pins xlconcat_irq/dout]
 
   # Restore current instance
@@ -1404,13 +1424,13 @@ proc create_hier_cell_adc { parentCell nameHier } {
 
 
   # Create pins
-  create_bd_pin -dir I -from 31 -to 0 Din
   create_bd_pin -dir I -from 7 -to 0 ad
   create_bd_pin -dir O -from 7 -to 0 ad_out
   create_bd_pin -dir O ad_out_vld
   create_bd_pin -dir I clear
   create_bd_pin -dir I -type clk clk
   create_bd_pin -dir I -from 15 -to 0 count
+  create_bd_pin -dir I -from 7 -to 0 div
   create_bd_pin -dir I fifo_read_almost_empty
   create_bd_pin -dir I fifo_read_empty
   create_bd_pin -dir I -from 7 -to 0 fifo_read_rd_data
@@ -1489,13 +1509,6 @@ proc create_hier_cell_adc { parentCell nameHier } {
    CONFIG.CONST_WIDTH {7} \
  ] $xlconstant_0
 
-  # Create instance: xlslice_adc_0_7, and set properties
-  set xlslice_adc_0_7 [ create_bd_cell -type ip -vlnv xilinx.com:ip:xlslice:1.0 xlslice_adc_0_7 ]
-  set_property -dict [ list \
-   CONFIG.DIN_FROM {7} \
-   CONFIG.DOUT_WIDTH {8} \
- ] $xlslice_adc_0_7
-
   # Create interface connections
   connect_bd_intf_net -intf_net Conn1 [get_bd_intf_pins axis] [get_bd_intf_pins fifo_read_to_axis_0/axis]
 
@@ -1508,8 +1521,8 @@ proc create_hier_cell_adc { parentCell nameHier } {
   connect_bd_net -net ad_1 [get_bd_pins ad] [get_bd_pins DDCWrapper_0/io_in_data] [get_bd_pins mux_reciever_in/sel1]
   connect_bd_net -net adc_0_ad_out [get_bd_pins ad_out] [get_bd_pins adc_0/ad_out]
   connect_bd_net -net adc_0_ad_out_vld [get_bd_pins ad_out_vld] [get_bd_pins adc_0/ad_out_vld]
-  connect_bd_net -net axi_gpio_0_gpio_io_o [get_bd_pins Din] [get_bd_pins xlslice_adc_0_7/Din]
   connect_bd_net -net count_trigger_0_trigger_out [get_bd_pins trigger_out] [get_bd_pins count_trigger_0/trigger_out]
+  connect_bd_net -net div_1 [get_bd_pins div] [get_bd_pins adc_0/div]
   connect_bd_net -net fifo_adc_data_count [get_bd_pins count] [get_bd_pins count_trigger_0/count]
   connect_bd_net -net fifo_read_almost_empty_1 [get_bd_pins fifo_read_almost_empty] [get_bd_pins fifo_read_to_axis_0/fifo_read_almost_empty]
   connect_bd_net -net fifo_read_empty_1 [get_bd_pins fifo_read_empty] [get_bd_pins fifo_read_to_axis_0/fifo_read_empty]
@@ -1520,7 +1533,6 @@ proc create_hier_cell_adc { parentCell nameHier } {
   connect_bd_net -net start_1 [get_bd_pins start] [get_bd_pins fifo_read_to_axis_0/start]
   connect_bd_net -net xlconcat_0_dout [get_bd_pins mux_reciever_in/sel2] [get_bd_pins xlconcat_0/dout]
   connect_bd_net -net xlconstant_0_dout [get_bd_pins xlconcat_0/In1] [get_bd_pins xlconstant_0/dout]
-  connect_bd_net -net xlslice_0_Dout [get_bd_pins adc_0/div] [get_bd_pins xlslice_adc_0_7/Dout]
   connect_bd_net -net xlslice_1_Dout [get_bd_pins target] [get_bd_pins count_trigger_0/target]
   connect_bd_net -net xlslice_2_Dout [get_bd_pins clear] [get_bd_pins count_trigger_0/clear]
   connect_bd_net -net xlslice_reciever_in_10_Dout [get_bd_pins router] [get_bd_pins mux_reciever_in/router]
@@ -1572,6 +1584,7 @@ proc create_root_design { parentCell } {
   set ad [ create_bd_port -dir I -from 7 -to 0 ad ]
   set clk_ad_static [ create_bd_port -dir O -type clk clk_ad_static ]
   set clk_da_dynamic [ create_bd_port -dir O -type clk clk_da_dynamic ]
+  set clk_pl_50M [ create_bd_port -dir I -type clk clk_pl_50M ]
   set da [ create_bd_port -dir O -from 7 -to 0 da ]
 
   # Create instance: adc
@@ -1624,15 +1637,14 @@ connect_bd_intf_net -intf_net [get_bd_intf_nets fifo_read_to_axis_0_axis] [get_b
   connect_bd_intf_net -intf_net ps7_0_axi_periph_M00_AXI [get_bd_intf_pins core/M00_AXI] [get_bd_intf_pins debug_ctrl/S_AXI]
 
   # Create port connections
-  connect_bd_net -net Net [get_bd_pins dac/da_out] [get_bd_pins debug_ctrl/Din]
   connect_bd_net -net ad_1 [get_bd_ports ad] [get_bd_pins adc/ad]
   connect_bd_net -net adc_0_ad_out [get_bd_pins adc/ad_out] [get_bd_pins core/din]
   connect_bd_net -net adc_0_ad_out_vld [get_bd_pins adc/ad_out_vld] [get_bd_pins core/wr_en]
   connect_bd_net -net adc_trigger_out [get_bd_pins adc/trigger_out] [get_bd_pins core/In0]
-  connect_bd_net -net axi_gpio_0_gpio_io_o [get_bd_pins adc/Din] [get_bd_pins debug_ctrl/Din1]
   connect_bd_net -net axis_write_to_fifo_0_fifo_write_wd_data [get_bd_pins core/din1] [get_bd_pins dac/fifo_write_wd_data]
   connect_bd_net -net axis_write_to_fifo_0_fifo_write_wd_en [get_bd_pins core/wr_en1] [get_bd_pins dac/fifo_write_wd_en]
   connect_bd_net -net clk_dynamic_clk_out_200M [get_bd_ports clk_da_dynamic] [get_bd_pins adc/io_clock] [get_bd_pins core/clk_out_dynamic]
+  connect_bd_net -net clk_pl_50M_1 [get_bd_ports clk_pl_50M] [get_bd_pins core/clk_pl_50M]
   connect_bd_net -net clk_wiz_0_clk_out1 [get_bd_ports clk_ad_static] [get_bd_pins adc/clk] [get_bd_pins core/clk_out1] [get_bd_pins dac/clk] [get_bd_pins debug_ctrl/s_axi_aclk] [get_bd_pins ila_0/clk] [get_bd_pins ila_fifo_in/clk] [get_bd_pins ila_fifo_out/clk]
   connect_bd_net -net core_almost_empty [get_bd_pins adc/fifo_read_almost_empty] [get_bd_pins core/almost_empty]
   connect_bd_net -net core_dout [get_bd_pins adc/fifo_read_rd_data] [get_bd_pins core/dout]
@@ -1642,6 +1654,7 @@ connect_bd_intf_net -intf_net [get_bd_intf_nets fifo_read_to_axis_0_axis] [get_b
   connect_bd_net -net debug_ctrl_Dout2 [get_bd_pins core/psclk] [get_bd_pins debug_ctrl/Dout2]
   connect_bd_net -net debug_ctrl_Dout5 [get_bd_pins adc/start] [get_bd_pins debug_ctrl/Dout5]
   connect_bd_net -net debug_ctrl_Dout6 [get_bd_pins core/psincdec] [get_bd_pins debug_ctrl/Dout6]
+  connect_bd_net -net div_1 [get_bd_pins adc/div] [get_bd_pins debug_ctrl/Dout13]
   connect_bd_net -net fifo_adc_data_count [get_bd_pins adc/count] [get_bd_pins core/data_count]
   connect_bd_net -net fifo_dac_almost_full [get_bd_pins core/almost_full] [get_bd_pins dac/fifo_write_almost_full]
   connect_bd_net -net fifo_dac_dout [get_bd_pins core/dout1] [get_bd_pins dac/da_in]
@@ -1659,7 +1672,6 @@ connect_bd_intf_net -intf_net [get_bd_intf_nets fifo_read_to_axis_0_axis] [get_b
   connect_bd_net -net xlslice_reciever_in_10_Dout [get_bd_pins adc/router] [get_bd_pins debug_ctrl/Dout11]
   connect_bd_net -net xlslice_reciever_out_7_Dout [get_bd_pins dac/router] [get_bd_pins debug_ctrl/Dout3]
   connect_bd_net -net xlslice_reciever_out_8_Dout [get_bd_pins adc/io_in_sync] [get_bd_pins debug_ctrl/Dout7]
-  connect_bd_net -net xlslice_sender_Dout [get_bd_pins dac/io_in_data] [get_bd_pins debug_ctrl/Dout4]
 
   # Create address segments
   assign_bd_address -offset 0x00000000 -range 0x10000000 -target_address_space [get_bd_addr_spaces core/axi_dma_0/Data_MM2S] [get_bd_addr_segs core/processing_system7_0/S_AXI_HP0/HP0_DDR_LOWOCM] -force

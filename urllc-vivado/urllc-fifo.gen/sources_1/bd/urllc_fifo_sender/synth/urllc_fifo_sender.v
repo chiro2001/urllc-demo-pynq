@@ -1,7 +1,7 @@
 //Copyright 1986-2021 Xilinx, Inc. All Rights Reserved.
 //--------------------------------------------------------------------------------
 //Tool Version: Vivado v.2021.1 (win64) Build 3247384 Thu Jun 10 19:36:33 MDT 2021
-//Date        : Mon Jan 24 08:20:01 2022
+//Date        : Sat Jan 29 04:12:09 2022
 //Host        : WIN-544SHHHOI8Q running 64-bit major release  (build 9200)
 //Command     : generate_target urllc_fifo_sender.bd
 //Design      : urllc_fifo_sender
@@ -9,7 +9,7 @@
 //--------------------------------------------------------------------------------
 `timescale 1 ps / 1 ps
 
-(* CORE_GENERATION_INFO = "urllc_fifo_sender,IP_Integrator,{x_ipVendor=xilinx.com,x_ipLibrary=BlockDiagram,x_ipName=urllc_fifo_sender,x_ipVersion=1.00.a,x_ipLanguage=VERILOG,numBlks=50,numReposBlks=41,numNonXlnxBlks=0,numHierBlks=9,maxHierDepth=2,numSysgenBlks=0,numHlsBlks=0,numHdlrefBlks=9,numPkgbdBlks=1,bdsource=USER,synth_mode=OOC_per_IP}" *) (* HW_HANDOFF = "urllc_fifo_sender.hwdef" *) 
+(* CORE_GENERATION_INFO = "urllc_fifo_sender,IP_Integrator,{x_ipVendor=xilinx.com,x_ipLibrary=BlockDiagram,x_ipName=urllc_fifo_sender,x_ipVersion=1.00.a,x_ipLanguage=VERILOG,numBlks=51,numReposBlks=42,numNonXlnxBlks=0,numHierBlks=9,maxHierDepth=2,numSysgenBlks=0,numHlsBlks=0,numHdlrefBlks=9,numPkgbdBlks=1,bdsource=USER,synth_mode=OOC_per_IP}" *) (* HW_HANDOFF = "urllc_fifo_sender.hwdef" *) 
 module urllc_fifo_sender
    (DDR_addr,
     DDR_ba,
@@ -32,6 +32,7 @@ module urllc_fifo_sender
     FIXED_IO_ps_clk,
     FIXED_IO_ps_porb,
     FIXED_IO_ps_srstb,
+    clk_pl_50M,
     sender_ad,
     sender_ad_clk_60M,
     sender_da,
@@ -57,11 +58,13 @@ module urllc_fifo_sender
   (* X_INTERFACE_INFO = "xilinx.com:display_processing_system7:fixedio:1.0 FIXED_IO PS_CLK" *) inout FIXED_IO_ps_clk;
   (* X_INTERFACE_INFO = "xilinx.com:display_processing_system7:fixedio:1.0 FIXED_IO PS_PORB" *) inout FIXED_IO_ps_porb;
   (* X_INTERFACE_INFO = "xilinx.com:display_processing_system7:fixedio:1.0 FIXED_IO PS_SRSTB" *) inout FIXED_IO_ps_srstb;
+  (* X_INTERFACE_INFO = "xilinx.com:signal:clock:1.0 CLK.CLK_PL_50M CLK" *) (* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME CLK.CLK_PL_50M, CLK_DOMAIN urllc_fifo_sender_clk_pl_50M, FREQ_HZ 50000000, FREQ_TOLERANCE_HZ 0, INSERT_VIP 0, PHASE 0.0" *) input clk_pl_50M;
   (* X_INTERFACE_INFO = "xilinx.com:signal:data:1.0 DATA.SENDER_AD DATA" *) (* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME DATA.SENDER_AD, LAYERED_METADATA undef" *) input [7:0]sender_ad;
   (* X_INTERFACE_INFO = "xilinx.com:signal:clock:1.0 CLK.SENDER_AD_CLK_60M CLK" *) (* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME CLK.SENDER_AD_CLK_60M, CLK_DOMAIN /urllc_fifo_core_0/core/clk_static_clk_out1, FREQ_HZ 60000000, FREQ_TOLERANCE_HZ 0, INSERT_VIP 0, PHASE 0.0" *) output sender_ad_clk_60M;
   (* X_INTERFACE_INFO = "xilinx.com:signal:data:1.0 DATA.SENDER_DA DATA" *) (* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME DATA.SENDER_DA, LAYERED_METADATA undef" *) output [7:0]sender_da;
   (* X_INTERFACE_INFO = "xilinx.com:signal:clock:1.0 CLK.SENDER_DA_CLK_60M CLK" *) (* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME CLK.SENDER_DA_CLK_60M, CLK_DOMAIN /urllc_fifo_core_0/core/clk_static_clk_out1, FREQ_HZ 60000000, FREQ_TOLERANCE_HZ 0, INSERT_VIP 0, PHASE 0.0" *) output sender_da_clk_60M;
 
+  wire clk_pl_50M_1;
   wire [7:0]sender_ad_1;
   wire [14:0]urllc_fifo_core_0_DDR_ADDR;
   wire [2:0]urllc_fifo_core_0_DDR_BA;
@@ -87,6 +90,7 @@ module urllc_fifo_sender
   wire urllc_fifo_core_0_clk_ad_static;
   wire [7:0]urllc_fifo_core_0_da;
 
+  assign clk_pl_50M_1 = clk_pl_50M;
   assign sender_ad_1 = sender_ad[7:0];
   assign sender_ad_clk_60M = urllc_fifo_core_0_clk_ad_static;
   assign sender_da[7:0] = urllc_fifo_core_0_da;
@@ -115,5 +119,6 @@ module urllc_fifo_sender
         .FIXED_IO_ps_srstb(FIXED_IO_ps_srstb),
         .ad(sender_ad_1),
         .clk_ad_static(urllc_fifo_core_0_clk_ad_static),
+        .clk_pl_50M(clk_pl_50M_1),
         .da(urllc_fifo_core_0_da));
 endmodule

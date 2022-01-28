@@ -50,13 +50,27 @@ module urllc_fifo_core_inst_0_ila_0_0 (
 clk,
 
 
-probe0
+probe0,
+probe1,
+probe2,
+probe3,
+probe4,
+probe5,
+probe6,
+probe7
 );
 
 input clk;
 
 
-input [2 : 0] probe0;
+input [0 : 0] probe0;
+input [0 : 0] probe1;
+input [0 : 0] probe2;
+input [0 : 0] probe3;
+input [0 : 0] probe4;
+input [0 : 0] probe5;
+input [0 : 0] probe6;
+input [0 : 0] probe7;
 
 
 endmodule

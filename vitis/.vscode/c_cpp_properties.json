@@ -4,10 +4,10 @@
             "name": "Win32",
             "includePath": [
                 "${workspaceFolder}/**",
-                "${workspaceFolder}/urllc_reciever/ps7_cortexa9_0/standalone_ps7_cortexa9_0/bsp/ps7_cortexa9_0/include",
-                "${workspaceFolder}/urllc_reciever/zynq_fsbl",
-                "${workspaceFolder}/urllc_reciever/zynq_fsbl/zynq_fsbl_bsp/ps7_cortexa9_0/include",
-                "${workspaceFolder}/urllc_reciever/export/urllc_reciever/sw/urllc_reciever/standalone_ps7_cortexa9_0/bspinclude/include",
+                "${workspaceFolder}/urllc_fifo_sender/ps7_cortexa9_0/standalone_domain/bsp/ps7_cortexa9_0/include",
+                "${workspaceFolder}/urllc_fifo_sender/zynq_fsbl",
+                "${workspaceFolder}/urllc_fifo_sender/zynq_fsbl/zynq_fsbl_bsp/ps7_cortexa9_0/include",
+                "${workspaceFolder}/urllc_fifo_sender/export/urllc_fifo_sender/sw/urllc_fifo_sender/standalone_domain/bspinclude/include",
                 "C:/Xilinx/Vitis/2021.1/gnu/aarch32/nt/gcc-arm-none-eabi/aarch32-xilinx-eabi/usr/include",
                 "C:/Xilinx/Vitis/2021.1/gnu/aarch32/nt/gcc-arm-none-eabi/x86_64-oesdk-mingw32/usr/lib/arm-xilinx-eabi/gcc/arm-xilinx-eabi/10.2.0/include"
             ],

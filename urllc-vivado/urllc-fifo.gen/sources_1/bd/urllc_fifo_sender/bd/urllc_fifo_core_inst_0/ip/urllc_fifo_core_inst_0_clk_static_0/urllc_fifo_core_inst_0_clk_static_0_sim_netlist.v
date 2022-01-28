@@ -1,7 +1,7 @@
 // Copyright 1986-2021 Xilinx, Inc. All Rights Reserved.
 // --------------------------------------------------------------------------------
 // Tool Version: Vivado v.2021.1 (win64) Build 3247384 Thu Jun 10 19:36:33 MDT 2021
-// Date        : Sun Jan 23 09:31:16 2022
+// Date        : Sat Jan 29 02:06:34 2022
 // Host        : WIN-544SHHHOI8Q running 64-bit major release  (build 9200)
 // Command     : write_verilog -force -mode funcsim -rename_top urllc_fifo_core_inst_0_clk_static_0 -prefix
 //               urllc_fifo_core_inst_0_clk_static_0_ urllc_fifo_core_inst_0_clk_static_0_sim_netlist.v
@@ -15,33 +15,27 @@
 (* NotValidForBitStream *)
 module urllc_fifo_core_inst_0_clk_static_0
    (clk_out1,
-    resetn,
     locked,
     clk_in1);
   output clk_out1;
-  input resetn;
   output locked;
   input clk_in1;
 
   (* IBUF_LOW_PWR *) wire clk_in1;
   wire clk_out1;
   wire locked;
-  wire resetn;
 
   urllc_fifo_core_inst_0_clk_static_0_urllc_fifo_core_inst_0_clk_static_0_clk_wiz inst
        (.clk_in1(clk_in1),
         .clk_out1(clk_out1),
-        .locked(locked),
-        .resetn(resetn));
+        .locked(locked));
 endmodule
 
 module urllc_fifo_core_inst_0_clk_static_0_urllc_fifo_core_inst_0_clk_static_0_clk_wiz
    (clk_out1,
-    resetn,
     locked,
     clk_in1);
   output clk_out1;
-  input resetn;
   output locked;
   input clk_in1;
 
@@ -52,8 +46,6 @@ module urllc_fifo_core_inst_0_clk_static_0_urllc_fifo_core_inst_0_clk_static_0_c
   wire clkfbout_buf_urllc_fifo_core_inst_0_clk_static_0;
   wire clkfbout_urllc_fifo_core_inst_0_clk_static_0;
   wire locked;
-  wire reset_high;
-  wire resetn;
   wire NLW_mmcm_adv_inst_CLKFBOUTB_UNCONNECTED;
   wire NLW_mmcm_adv_inst_CLKFBSTOPPED_UNCONNECTED;
   wire NLW_mmcm_adv_inst_CLKINSTOPPED_UNCONNECTED;
@@ -171,12 +163,7 @@ module urllc_fifo_core_inst_0_clk_static_0_urllc_fifo_core_inst_0_clk_static_0_c
         .PSEN(1'b0),
         .PSINCDEC(1'b0),
         .PWRDWN(1'b0),
-        .RST(reset_high));
-  LUT1 #(
-    .INIT(2'h1)) 
-    mmcm_adv_inst_i_1
-       (.I0(resetn),
-        .O(reset_high));
+        .RST(1'b0));
 endmodule
 `ifndef GLBL
 `define GLBL

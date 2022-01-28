@@ -16,7 +16,7 @@
 
 // #define DMA_SIZE 200
 #define DMA_HEADER_SIZE 18
-#define DMA_SIZE (1024 * 2)
+#define DMA_SIZE (1024 * 2 * 8)
 // #define DMA_SIZE 65
 // #define DMA_SIZE 16 * 4
 // #define DMA_SIZE 0x20 * 1

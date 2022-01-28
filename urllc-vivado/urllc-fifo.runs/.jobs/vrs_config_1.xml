@@ -1,83 +1,85 @@
 <?xml version="1.0"?>
 <Runs Version="1" Minor="0">
+	<Run Id="urllc_fifo_core_inst_0_mux_reciever_in_0_synth_1" LaunchDir="G:/Chiro/Programs/urllc-demo-pynq/urllc-vivado/urllc-fifo.runs/urllc_fifo_core_inst_0_mux_reciever_in_0_synth_1" FlowId="Vivado_Synthesis" FromStepId="vivado" ToStepId="vivado"/>
+	<Run Id="urllc_fifo_core_inst_0_reset_dynamic_0_synth_1" LaunchDir="G:/Chiro/Programs/urllc-demo-pynq/urllc-vivado/urllc-fifo.runs/urllc_fifo_core_inst_0_reset_dynamic_0_synth_1" FlowId="Vivado_Synthesis" FromStepId="vivado" ToStepId="vivado"/>
+	<Run Id="urllc_fifo_core_inst_0_count_trigger_0_0_synth_1" LaunchDir="G:/Chiro/Programs/urllc-demo-pynq/urllc-vivado/urllc-fifo.runs/urllc_fifo_core_inst_0_count_trigger_0_0_synth_1" FlowId="Vivado_Synthesis" FromStepId="vivado" ToStepId="vivado"/>
+	<Run Id="urllc_fifo_core_inst_0_adc_0_0_synth_1" LaunchDir="G:/Chiro/Programs/urllc-demo-pynq/urllc-vivado/urllc-fifo.runs/urllc_fifo_core_inst_0_adc_0_0_synth_1" FlowId="Vivado_Synthesis" FromStepId="vivado" ToStepId="vivado"/>
+	<Run Id="urllc_fifo_core_inst_0_DDCWrapper_0_0_synth_1" LaunchDir="G:/Chiro/Programs/urllc-demo-pynq/urllc-vivado/urllc-fifo.runs/urllc_fifo_core_inst_0_DDCWrapper_0_0_synth_1" FlowId="Vivado_Synthesis" FromStepId="vivado" ToStepId="vivado"/>
+	<Run Id="urllc_fifo_core_inst_0_fifo_read_to_axis_0_0_synth_1" LaunchDir="G:/Chiro/Programs/urllc-demo-pynq/urllc-vivado/urllc-fifo.runs/urllc_fifo_core_inst_0_fifo_read_to_axis_0_0_synth_1" FlowId="Vivado_Synthesis" FromStepId="vivado" ToStepId="vivado"/>
+	<Run Id="urllc_fifo_core_inst_0_processing_system7_0_0_synth_1" LaunchDir="G:/Chiro/Programs/urllc-demo-pynq/urllc-vivado/urllc-fifo.runs/urllc_fifo_core_inst_0_processing_system7_0_0_synth_1" FlowId="Vivado_Synthesis" FromStepId="vivado" ToStepId="vivado"/>
 	<Run Id="urllc_fifo_core_inst_0_axi_smc_0_synth_1" LaunchDir="G:/Chiro/Programs/urllc-demo-pynq/urllc-vivado/urllc-fifo.runs/urllc_fifo_core_inst_0_axi_smc_0_synth_1" FlowId="Vivado_Synthesis" FromStepId="vivado" ToStepId="vivado"/>
 	<Run Id="urllc_fifo_core_inst_0_axi_dma_0_0_synth_1" LaunchDir="G:/Chiro/Programs/urllc-demo-pynq/urllc-vivado/urllc-fifo.runs/urllc_fifo_core_inst_0_axi_dma_0_0_synth_1" FlowId="Vivado_Synthesis" FromStepId="vivado" ToStepId="vivado"/>
-	<Run Id="urllc_fifo_core_inst_0_clk_static_0_synth_1" LaunchDir="G:/Chiro/Programs/urllc-demo-pynq/urllc-vivado/urllc-fifo.runs/urllc_fifo_core_inst_0_clk_static_0_synth_1" FlowId="Vivado_Synthesis" FromStepId="vivado" ToStepId="vivado"/>
-	<Run Id="urllc_fifo_core_inst_0_DDCWrapper_0_0_synth_1" LaunchDir="G:/Chiro/Programs/urllc-demo-pynq/urllc-vivado/urllc-fifo.runs/urllc_fifo_core_inst_0_DDCWrapper_0_0_synth_1" FlowId="Vivado_Synthesis" FromStepId="vivado" ToStepId="vivado"/>
-	<Run Id="urllc_fifo_core_inst_0_count_trigger_0_0_synth_1" LaunchDir="G:/Chiro/Programs/urllc-demo-pynq/urllc-vivado/urllc-fifo.runs/urllc_fifo_core_inst_0_count_trigger_0_0_synth_1" FlowId="Vivado_Synthesis" FromStepId="vivado" ToStepId="vivado"/>
-	<Run Id="urllc_fifo_core_inst_0_fifo_read_to_axis_0_0_synth_1" LaunchDir="G:/Chiro/Programs/urllc-demo-pynq/urllc-vivado/urllc-fifo.runs/urllc_fifo_core_inst_0_fifo_read_to_axis_0_0_synth_1" FlowId="Vivado_Synthesis" FromStepId="vivado" ToStepId="vivado"/>
-	<Run Id="urllc_fifo_core_inst_0_reset_dynamic_0_synth_1" LaunchDir="G:/Chiro/Programs/urllc-demo-pynq/urllc-vivado/urllc-fifo.runs/urllc_fifo_core_inst_0_reset_dynamic_0_synth_1" FlowId="Vivado_Synthesis" FromStepId="vivado" ToStepId="vivado"/>
-	<Run Id="urllc_fifo_core_inst_0_mux_reciever_in_0_synth_1" LaunchDir="G:/Chiro/Programs/urllc-demo-pynq/urllc-vivado/urllc-fifo.runs/urllc_fifo_core_inst_0_mux_reciever_in_0_synth_1" FlowId="Vivado_Synthesis" FromStepId="vivado" ToStepId="vivado"/>
-	<Run Id="urllc_fifo_core_inst_0_processing_system7_0_0_synth_1" LaunchDir="G:/Chiro/Programs/urllc-demo-pynq/urllc-vivado/urllc-fifo.runs/urllc_fifo_core_inst_0_processing_system7_0_0_synth_1" FlowId="Vivado_Synthesis" FromStepId="vivado" ToStepId="vivado"/>
-	<Run Id="urllc_fifo_core_inst_0_reset_static_0_synth_1" LaunchDir="G:/Chiro/Programs/urllc-demo-pynq/urllc-vivado/urllc-fifo.runs/urllc_fifo_core_inst_0_reset_static_0_synth_1" FlowId="Vivado_Synthesis" FromStepId="vivado" ToStepId="vivado"/>
+	<Run Id="urllc_fifo_core_inst_0_auto_pc_0_synth_1" LaunchDir="G:/Chiro/Programs/urllc-demo-pynq/urllc-vivado/urllc-fifo.runs/urllc_fifo_core_inst_0_auto_pc_0_synth_1" FlowId="Vivado_Synthesis" FromStepId="vivado" ToStepId="vivado"/>
+	<Run Id="urllc_fifo_core_inst_0_axi_gpio_0_0_synth_1" LaunchDir="G:/Chiro/Programs/urllc-demo-pynq/urllc-vivado/urllc-fifo.runs/urllc_fifo_core_inst_0_axi_gpio_0_0_synth_1" FlowId="Vivado_Synthesis" FromStepId="vivado" ToStepId="vivado"/>
+	<Run Id="urllc_fifo_core_inst_0_DUCWrapper_0_0_synth_1" LaunchDir="G:/Chiro/Programs/urllc-demo-pynq/urllc-vivado/urllc-fifo.runs/urllc_fifo_core_inst_0_DUCWrapper_0_0_synth_1" FlowId="Vivado_Synthesis" FromStepId="vivado" ToStepId="vivado"/>
+	<Run Id="urllc_fifo_core_inst_0_ila_fifo_out_0_synth_1" LaunchDir="G:/Chiro/Programs/urllc-demo-pynq/urllc-vivado/urllc-fifo.runs/urllc_fifo_core_inst_0_ila_fifo_out_0_synth_1" FlowId="Vivado_Synthesis" FromStepId="vivado" ToStepId="vivado"/>
+	<Run Id="urllc_fifo_core_inst_0_ila_fifo_in_0_synth_1" LaunchDir="G:/Chiro/Programs/urllc-demo-pynq/urllc-vivado/urllc-fifo.runs/urllc_fifo_core_inst_0_ila_fifo_in_0_synth_1" FlowId="Vivado_Synthesis" FromStepId="vivado" ToStepId="vivado" IsOrderedIPRun="true">
+		<Parent Id="urllc_fifo_core_inst_0_ila_fifo_out_0_synth_1"/>
+	</Run>
+	<Run Id="urllc_fifo_core_inst_0_mux_reciever_out_0_synth_1" LaunchDir="G:/Chiro/Programs/urllc-demo-pynq/urllc-vivado/urllc-fifo.runs/urllc_fifo_core_inst_0_mux_reciever_out_0_synth_1" FlowId="Vivado_Synthesis" FromStepId="vivado" ToStepId="vivado"/>
+	<Run Id="urllc_fifo_core_inst_0_axis_write_to_fifo_0_0_synth_1" LaunchDir="G:/Chiro/Programs/urllc-demo-pynq/urllc-vivado/urllc-fifo.runs/urllc_fifo_core_inst_0_axis_write_to_fifo_0_0_synth_1" FlowId="Vivado_Synthesis" FromStepId="vivado" ToStepId="vivado"/>
+	<Run Id="urllc_fifo_core_inst_0_reset_static_0_synth_1" LaunchDir="G:/Chiro/Programs/urllc-demo-pynq/urllc-vivado/urllc-fifo.runs/urllc_fifo_core_inst_0_reset_static_0_synth_1" FlowId="Vivado_Synthesis" FromStepId="vivado" ToStepId="vivado" IsOrderedIPRun="true">
+		<Parent Id="urllc_fifo_core_inst_0_reset_dynamic_0_synth_1"/>
+	</Run>
+	<Run Id="urllc_fifo_core_inst_0_dac_0_0_synth_1" LaunchDir="G:/Chiro/Programs/urllc-demo-pynq/urllc-vivado/urllc-fifo.runs/urllc_fifo_core_inst_0_dac_0_0_synth_1" FlowId="Vivado_Synthesis" FromStepId="vivado" ToStepId="vivado"/>
 	<Run Id="urllc_fifo_core_inst_0_clk_dynamic_0_synth_1" LaunchDir="G:/Chiro/Programs/urllc-demo-pynq/urllc-vivado/urllc-fifo.runs/urllc_fifo_core_inst_0_clk_dynamic_0_synth_1" FlowId="Vivado_Synthesis" FromStepId="vivado" ToStepId="vivado"/>
 	<Run Id="urllc_fifo_core_inst_0_fifo_adc_0_synth_1" LaunchDir="G:/Chiro/Programs/urllc-demo-pynq/urllc-vivado/urllc-fifo.runs/urllc_fifo_core_inst_0_fifo_adc_0_synth_1" FlowId="Vivado_Synthesis" FromStepId="vivado" ToStepId="vivado"/>
-	<Run Id="urllc_fifo_core_inst_0_fifo_dac_0_synth_1" LaunchDir="G:/Chiro/Programs/urllc-demo-pynq/urllc-vivado/urllc-fifo.runs/urllc_fifo_core_inst_0_fifo_dac_0_synth_1" FlowId="Vivado_Synthesis" FromStepId="vivado" ToStepId="vivado"/>
+	<Run Id="urllc_fifo_core_inst_0_clk_static_0_synth_1" LaunchDir="G:/Chiro/Programs/urllc-demo-pynq/urllc-vivado/urllc-fifo.runs/urllc_fifo_core_inst_0_clk_static_0_synth_1" FlowId="Vivado_Synthesis" FromStepId="vivado" ToStepId="vivado"/>
 	<Run Id="urllc_fifo_core_inst_0_xbar_0_synth_1" LaunchDir="G:/Chiro/Programs/urllc-demo-pynq/urllc-vivado/urllc-fifo.runs/urllc_fifo_core_inst_0_xbar_0_synth_1" FlowId="Vivado_Synthesis" FromStepId="vivado" ToStepId="vivado"/>
-	<Run Id="urllc_fifo_core_inst_0_adc_0_0_synth_1" LaunchDir="G:/Chiro/Programs/urllc-demo-pynq/urllc-vivado/urllc-fifo.runs/urllc_fifo_core_inst_0_adc_0_0_synth_1" FlowId="Vivado_Synthesis" FromStepId="vivado" ToStepId="vivado"/>
-	<Run Id="urllc_fifo_core_inst_0_auto_pc_0_synth_1" LaunchDir="G:/Chiro/Programs/urllc-demo-pynq/urllc-vivado/urllc-fifo.runs/urllc_fifo_core_inst_0_auto_pc_0_synth_1" FlowId="Vivado_Synthesis" FromStepId="vivado" ToStepId="vivado"/>
-	<Run Id="urllc_fifo_core_inst_0_mux_reciever_out_0_synth_1" LaunchDir="G:/Chiro/Programs/urllc-demo-pynq/urllc-vivado/urllc-fifo.runs/urllc_fifo_core_inst_0_mux_reciever_out_0_synth_1" FlowId="Vivado_Synthesis" FromStepId="vivado" ToStepId="vivado"/>
-	<Run Id="urllc_fifo_core_inst_0_axi_gpio_0_0_synth_1" LaunchDir="G:/Chiro/Programs/urllc-demo-pynq/urllc-vivado/urllc-fifo.runs/urllc_fifo_core_inst_0_axi_gpio_0_0_synth_1" FlowId="Vivado_Synthesis" FromStepId="vivado" ToStepId="vivado"/>
+	<Run Id="urllc_fifo_core_inst_0_fifo_dac_0_synth_1" LaunchDir="G:/Chiro/Programs/urllc-demo-pynq/urllc-vivado/urllc-fifo.runs/urllc_fifo_core_inst_0_fifo_dac_0_synth_1" FlowId="Vivado_Synthesis" FromStepId="vivado" ToStepId="vivado"/>
 	<Run Id="urllc_fifo_core_inst_0_ila_0_0_synth_1" LaunchDir="G:/Chiro/Programs/urllc-demo-pynq/urllc-vivado/urllc-fifo.runs/urllc_fifo_core_inst_0_ila_0_0_synth_1" FlowId="Vivado_Synthesis" FromStepId="vivado" ToStepId="vivado"/>
-	<Run Id="urllc_fifo_core_inst_0_dac_0_0_synth_1" LaunchDir="G:/Chiro/Programs/urllc-demo-pynq/urllc-vivado/urllc-fifo.runs/urllc_fifo_core_inst_0_dac_0_0_synth_1" FlowId="Vivado_Synthesis" FromStepId="vivado" ToStepId="vivado"/>
-	<Run Id="urllc_fifo_core_inst_0_axis_write_to_fifo_0_0_synth_1" LaunchDir="G:/Chiro/Programs/urllc-demo-pynq/urllc-vivado/urllc-fifo.runs/urllc_fifo_core_inst_0_axis_write_to_fifo_0_0_synth_1" FlowId="Vivado_Synthesis" FromStepId="vivado" ToStepId="vivado"/>
-	<Run Id="urllc_fifo_core_inst_0_DUCWrapper_0_0_synth_1" LaunchDir="G:/Chiro/Programs/urllc-demo-pynq/urllc-vivado/urllc-fifo.runs/urllc_fifo_core_inst_0_DUCWrapper_0_0_synth_1" FlowId="Vivado_Synthesis" FromStepId="vivado" ToStepId="vivado"/>
-	<Run Id="urllc_fifo_core_inst_0_ila_fifo_in_0_synth_1" LaunchDir="G:/Chiro/Programs/urllc-demo-pynq/urllc-vivado/urllc-fifo.runs/urllc_fifo_core_inst_0_ila_fifo_in_0_synth_1" FlowId="Vivado_Synthesis" FromStepId="vivado" ToStepId="vivado"/>
-	<Run Id="urllc_fifo_core_inst_0_ila_fifo_out_0_synth_1" LaunchDir="G:/Chiro/Programs/urllc-demo-pynq/urllc-vivado/urllc-fifo.runs/urllc_fifo_core_inst_0_ila_fifo_out_0_synth_1" FlowId="Vivado_Synthesis" FromStepId="vivado" ToStepId="vivado" IsOrderedIPRun="true">
-		<Parent Id="urllc_fifo_core_inst_0_ila_fifo_in_0_synth_1"/>
-	</Run>
 	<Run Id="synth_1" LaunchDir="G:/Chiro/Programs/urllc-demo-pynq/urllc-vivado/urllc-fifo.runs/synth_1" FlowId="Vivado_Synthesis" FromStepId="vivado" ToStepId="vivado">
+		<Parent Id="urllc_fifo_core_inst_0_mux_reciever_in_0_synth_1"/>
+		<Parent Id="urllc_fifo_core_inst_0_reset_dynamic_0_synth_1"/>
+		<Parent Id="urllc_fifo_core_inst_0_count_trigger_0_0_synth_1"/>
+		<Parent Id="urllc_fifo_core_inst_0_adc_0_0_synth_1"/>
+		<Parent Id="urllc_fifo_core_inst_0_DDCWrapper_0_0_synth_1"/>
+		<Parent Id="urllc_fifo_core_inst_0_fifo_read_to_axis_0_0_synth_1"/>
+		<Parent Id="urllc_fifo_core_inst_0_processing_system7_0_0_synth_1"/>
 		<Parent Id="urllc_fifo_core_inst_0_axi_smc_0_synth_1"/>
 		<Parent Id="urllc_fifo_core_inst_0_axi_dma_0_0_synth_1"/>
-		<Parent Id="urllc_fifo_core_inst_0_clk_static_0_synth_1"/>
-		<Parent Id="urllc_fifo_core_inst_0_DDCWrapper_0_0_synth_1"/>
-		<Parent Id="urllc_fifo_core_inst_0_count_trigger_0_0_synth_1"/>
-		<Parent Id="urllc_fifo_core_inst_0_fifo_read_to_axis_0_0_synth_1"/>
-		<Parent Id="urllc_fifo_core_inst_0_reset_dynamic_0_synth_1"/>
-		<Parent Id="urllc_fifo_core_inst_0_mux_reciever_in_0_synth_1"/>
-		<Parent Id="urllc_fifo_core_inst_0_processing_system7_0_0_synth_1"/>
+		<Parent Id="urllc_fifo_core_inst_0_auto_pc_0_synth_1"/>
+		<Parent Id="urllc_fifo_core_inst_0_axi_gpio_0_0_synth_1"/>
+		<Parent Id="urllc_fifo_core_inst_0_DUCWrapper_0_0_synth_1"/>
+		<Parent Id="urllc_fifo_core_inst_0_ila_fifo_out_0_synth_1"/>
+		<Parent Id="urllc_fifo_core_inst_0_ila_fifo_in_0_synth_1"/>
+		<Parent Id="urllc_fifo_core_inst_0_mux_reciever_out_0_synth_1"/>
+		<Parent Id="urllc_fifo_core_inst_0_axis_write_to_fifo_0_0_synth_1"/>
 		<Parent Id="urllc_fifo_core_inst_0_reset_static_0_synth_1"/>
+		<Parent Id="urllc_fifo_core_inst_0_dac_0_0_synth_1"/>
 		<Parent Id="urllc_fifo_core_inst_0_clk_dynamic_0_synth_1"/>
 		<Parent Id="urllc_fifo_core_inst_0_fifo_adc_0_synth_1"/>
-		<Parent Id="urllc_fifo_core_inst_0_fifo_dac_0_synth_1"/>
+		<Parent Id="urllc_fifo_core_inst_0_clk_static_0_synth_1"/>
 		<Parent Id="urllc_fifo_core_inst_0_xbar_0_synth_1"/>
-		<Parent Id="urllc_fifo_core_inst_0_adc_0_0_synth_1"/>
-		<Parent Id="urllc_fifo_core_inst_0_auto_pc_0_synth_1"/>
-		<Parent Id="urllc_fifo_core_inst_0_mux_reciever_out_0_synth_1"/>
-		<Parent Id="urllc_fifo_core_inst_0_axi_gpio_0_0_synth_1"/>
+		<Parent Id="urllc_fifo_core_inst_0_fifo_dac_0_synth_1"/>
 		<Parent Id="urllc_fifo_core_inst_0_ila_0_0_synth_1"/>
-		<Parent Id="urllc_fifo_core_inst_0_dac_0_0_synth_1"/>
-		<Parent Id="urllc_fifo_core_inst_0_axis_write_to_fifo_0_0_synth_1"/>
-		<Parent Id="urllc_fifo_core_inst_0_DUCWrapper_0_0_synth_1"/>
-		<Parent Id="urllc_fifo_core_inst_0_ila_fifo_in_0_synth_1"/>
-		<Parent Id="urllc_fifo_core_inst_0_ila_fifo_out_0_synth_1"/>
 	</Run>
 	<Run Id="impl_1" LaunchDir="G:/Chiro/Programs/urllc-demo-pynq/urllc-vivado/urllc-fifo.runs/impl_1" FlowId="Vivado_Implementation" FromStepId="init_design" ToStepId="write_bitstream">
 		<Parent Id="synth_1"/>
+		<Parent Id="urllc_fifo_core_inst_0_mux_reciever_in_0_synth_1"/>
+		<Parent Id="urllc_fifo_core_inst_0_reset_dynamic_0_synth_1"/>
+		<Parent Id="urllc_fifo_core_inst_0_count_trigger_0_0_synth_1"/>
+		<Parent Id="urllc_fifo_core_inst_0_adc_0_0_synth_1"/>
+		<Parent Id="urllc_fifo_core_inst_0_DDCWrapper_0_0_synth_1"/>
+		<Parent Id="urllc_fifo_core_inst_0_fifo_read_to_axis_0_0_synth_1"/>
+		<Parent Id="urllc_fifo_core_inst_0_processing_system7_0_0_synth_1"/>
 		<Parent Id="urllc_fifo_core_inst_0_axi_smc_0_synth_1"/>
 		<Parent Id="urllc_fifo_core_inst_0_axi_dma_0_0_synth_1"/>
-		<Parent Id="urllc_fifo_core_inst_0_clk_static_0_synth_1"/>
-		<Parent Id="urllc_fifo_core_inst_0_DDCWrapper_0_0_synth_1"/>
-		<Parent Id="urllc_fifo_core_inst_0_count_trigger_0_0_synth_1"/>
-		<Parent Id="urllc_fifo_core_inst_0_fifo_read_to_axis_0_0_synth_1"/>
-		<Parent Id="urllc_fifo_core_inst_0_reset_dynamic_0_synth_1"/>
-		<Parent Id="urllc_fifo_core_inst_0_mux_reciever_in_0_synth_1"/>
-		<Parent Id="urllc_fifo_core_inst_0_processing_system7_0_0_synth_1"/>
+		<Parent Id="urllc_fifo_core_inst_0_auto_pc_0_synth_1"/>
+		<Parent Id="urllc_fifo_core_inst_0_axi_gpio_0_0_synth_1"/>
+		<Parent Id="urllc_fifo_core_inst_0_DUCWrapper_0_0_synth_1"/>
+		<Parent Id="urllc_fifo_core_inst_0_ila_fifo_out_0_synth_1"/>
+		<Parent Id="urllc_fifo_core_inst_0_ila_fifo_in_0_synth_1"/>
+		<Parent Id="urllc_fifo_core_inst_0_mux_reciever_out_0_synth_1"/>
+		<Parent Id="urllc_fifo_core_inst_0_axis_write_to_fifo_0_0_synth_1"/>
 		<Parent Id="urllc_fifo_core_inst_0_reset_static_0_synth_1"/>
+		<Parent Id="urllc_fifo_core_inst_0_dac_0_0_synth_1"/>
 		<Parent Id="urllc_fifo_core_inst_0_clk_dynamic_0_synth_1"/>
 		<Parent Id="urllc_fifo_core_inst_0_fifo_adc_0_synth_1"/>
-		<Parent Id="urllc_fifo_core_inst_0_fifo_dac_0_synth_1"/>
+		<Parent Id="urllc_fifo_core_inst_0_clk_static_0_synth_1"/>
 		<Parent Id="urllc_fifo_core_inst_0_xbar_0_synth_1"/>
-		<Parent Id="urllc_fifo_core_inst_0_adc_0_0_synth_1"/>
-		<Parent Id="urllc_fifo_core_inst_0_auto_pc_0_synth_1"/>
-		<Parent Id="urllc_fifo_core_inst_0_mux_reciever_out_0_synth_1"/>
-		<Parent Id="urllc_fifo_core_inst_0_axi_gpio_0_0_synth_1"/>
+		<Parent Id="urllc_fifo_core_inst_0_fifo_dac_0_synth_1"/>
 		<Parent Id="urllc_fifo_core_inst_0_ila_0_0_synth_1"/>
-		<Parent Id="urllc_fifo_core_inst_0_dac_0_0_synth_1"/>
-		<Parent Id="urllc_fifo_core_inst_0_axis_write_to_fifo_0_0_synth_1"/>
-		<Parent Id="urllc_fifo_core_inst_0_DUCWrapper_0_0_synth_1"/>
-		<Parent Id="urllc_fifo_core_inst_0_ila_fifo_in_0_synth_1"/>
-		<Parent Id="urllc_fifo_core_inst_0_ila_fifo_out_0_synth_1"/>
 	</Run>
 	<Parameters>
 		<Parameter Name="runs.monitorLSFJobs" Val="true" Type="bool"/>

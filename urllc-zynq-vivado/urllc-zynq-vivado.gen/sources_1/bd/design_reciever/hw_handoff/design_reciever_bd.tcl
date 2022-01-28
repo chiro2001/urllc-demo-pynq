@@ -232,8 +232,6 @@ proc create_root_design { parentCell } {
   exclude_bd_addr_seg -offset 0x40400000 -range 0x00010000 -target_address_space [get_bd_addr_spaces urllc_core_0/data_area/sender/axi_dma_0/Data_MM2S] [get_bd_addr_segs urllc_core_0/data_area/reciever/axi_dma_1/S_AXI_LITE/Reg]
   exclude_bd_addr_seg -offset 0x40410000 -range 0x00010000 -target_address_space [get_bd_addr_spaces urllc_core_0/data_area/sender/axi_dma_0/Data_S2MM] [get_bd_addr_segs urllc_core_0/data_area/sender/axi_dma_0/S_AXI_LITE/Reg]
   exclude_bd_addr_seg -offset 0x40400000 -range 0x00010000 -target_address_space [get_bd_addr_spaces urllc_core_0/data_area/sender/axi_dma_0/Data_S2MM] [get_bd_addr_segs urllc_core_0/data_area/reciever/axi_dma_1/S_AXI_LITE/Reg]
-  exclude_bd_addr_seg -target_address_space [get_bd_addr_spaces urllc_core_0/processing_system7_0/Data] [get_bd_addr_segs urllc_core_0/processing_system7_0/S_AXI_HP0/HP0_DDR_LOWOCM]
-  exclude_bd_addr_seg -target_address_space [get_bd_addr_spaces urllc_core_0/processing_system7_0/Data] [get_bd_addr_segs urllc_core_0/processing_system7_0/S_AXI_HP1/HP1_DDR_LOWOCM]
 
 
   # Restore current instance

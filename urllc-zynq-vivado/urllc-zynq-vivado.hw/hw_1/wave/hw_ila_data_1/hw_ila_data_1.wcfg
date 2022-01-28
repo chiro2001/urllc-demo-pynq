@@ -9,15 +9,15 @@
       </db_ref>
    </db_ref_list>
    <zoom_setting>
-      <ZoomStartTime time="0"></ZoomStartTime>
-      <ZoomEndTime time="32,769"></ZoomEndTime>
-      <Cursor1Time time="0"></Cursor1Time>
+      <ZoomStartTime time="11,618"></ZoomStartTime>
+      <ZoomEndTime time="40,219"></ZoomEndTime>
+      <Cursor1Time time="16,384"></Cursor1Time>
    </zoom_setting>
    <column_width_setting>
-      <NameColumnWidth column_width="168"></NameColumnWidth>
-      <ValueColumnWidth column_width="72"></ValueColumnWidth>
+      <NameColumnWidth column_width="464"></NameColumnWidth>
+      <ValueColumnWidth column_width="228"></ValueColumnWidth>
    </column_width_setting>
-   <WVObjectSize size="6" />
+   <WVObjectSize size="8" />
    <wave_markers>
    </wave_markers>
    <wvobject fp_name="design_reciever_i/urllc_core_0/data_area_da" type="array">
@@ -28,26 +28,34 @@
       <obj_property name="LABELRADIX">true</obj_property>
       <obj_property name="WaveformStyle">STYLE_DIGITAL</obj_property>
    </wvobject>
+   <wvobject fp_name="design_reciever_i/urllc_core_0/data_area_data_count" type="array">
+      <obj_property name="DisplayName">FullPathName</obj_property>
+      <obj_property name="ElementShortName">design_reciever_i/urllc_core_0/data_area_data_count[12:0]</obj_property>
+      <obj_property name="ObjectShortName">data_area_data_count[12:0]</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
+      <obj_property name="LABELRADIX">true</obj_property>
+      <obj_property name="WaveformStyle">STYLE_DIGITAL</obj_property>
+   </wvobject>
    <wvobject fp_name="design_reciever_i/urllc_core_0/data_area_data_serial_out" type="logic">
       <obj_property name="DisplayName">FullPathName</obj_property>
       <obj_property name="ElementShortName">design_reciever_i/urllc_core_0/data_area_data_serial_out</obj_property>
       <obj_property name="ObjectShortName">data_area_data_serial_out</obj_property>
+      <obj_property name="LABELRADIX">true</obj_property>
+      <obj_property name="WaveformStyle">STYLE_DIGITAL</obj_property>
+   </wvobject>
+   <wvobject fp_name="design_reciever_i/urllc_core_0/data_area_dout" type="array">
+      <obj_property name="DisplayName">FullPathName</obj_property>
+      <obj_property name="ElementShortName">design_reciever_i/urllc_core_0/data_area_dout[1:0]</obj_property>
+      <obj_property name="ObjectShortName">data_area_dout[1:0]</obj_property>
       <obj_property name="Radix">HEXRADIX</obj_property>
       <obj_property name="LABELRADIX">true</obj_property>
       <obj_property name="WaveformStyle">STYLE_DIGITAL</obj_property>
+      <obj_property name="isExpanded"></obj_property>
    </wvobject>
    <wvobject fp_name="design_reciever_i/urllc_core_0/debug_ports_dout4" type="array">
       <obj_property name="DisplayName">FullPathName</obj_property>
       <obj_property name="ElementShortName">design_reciever_i/urllc_core_0/debug_ports_dout4[8:0]</obj_property>
       <obj_property name="ObjectShortName">debug_ports_dout4[8:0]</obj_property>
-      <obj_property name="Radix">HEXRADIX</obj_property>
-      <obj_property name="LABELRADIX">true</obj_property>
-      <obj_property name="WaveformStyle">STYLE_DIGITAL</obj_property>
-   </wvobject>
-   <wvobject fp_name="design_reciever_i/urllc_core_0/xlconcat_irq_all_dout" type="array">
-      <obj_property name="DisplayName">FullPathName</obj_property>
-      <obj_property name="ElementShortName">design_reciever_i/urllc_core_0/xlconcat_irq_all_dout[5:0]</obj_property>
-      <obj_property name="ObjectShortName">xlconcat_irq_all_dout[5:0]</obj_property>
       <obj_property name="Radix">HEXRADIX</obj_property>
       <obj_property name="LABELRADIX">true</obj_property>
       <obj_property name="WaveformStyle">STYLE_DIGITAL</obj_property>
@@ -64,6 +72,14 @@
       <obj_property name="DisplayName">FullPathName</obj_property>
       <obj_property name="ElementShortName">design_reciever_i/urllc_core_0/multi_clock_dout[3:0]</obj_property>
       <obj_property name="ObjectShortName">multi_clock_dout[3:0]</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
+      <obj_property name="LABELRADIX">true</obj_property>
+      <obj_property name="WaveformStyle">STYLE_DIGITAL</obj_property>
+   </wvobject>
+   <wvobject fp_name="design_reciever_i/urllc_core_0/xlconcat_irq_all_dout" type="array">
+      <obj_property name="DisplayName">FullPathName</obj_property>
+      <obj_property name="ElementShortName">design_reciever_i/urllc_core_0/xlconcat_irq_all_dout[5:0]</obj_property>
+      <obj_property name="ObjectShortName">xlconcat_irq_all_dout[5:0]</obj_property>
       <obj_property name="Radix">HEXRADIX</obj_property>
       <obj_property name="LABELRADIX">true</obj_property>
       <obj_property name="WaveformStyle">STYLE_DIGITAL</obj_property>

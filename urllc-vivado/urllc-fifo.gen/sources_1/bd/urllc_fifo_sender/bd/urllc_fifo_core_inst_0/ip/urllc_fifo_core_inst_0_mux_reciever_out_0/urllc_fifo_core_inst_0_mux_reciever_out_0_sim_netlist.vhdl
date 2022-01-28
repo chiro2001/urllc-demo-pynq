@@ -1,11 +1,11 @@
 -- Copyright 1986-2021 Xilinx, Inc. All Rights Reserved.
 -- --------------------------------------------------------------------------------
 -- Tool Version: Vivado v.2021.1 (win64) Build 3247384 Thu Jun 10 19:36:33 MDT 2021
--- Date        : Sun Jan 23 09:31:15 2022
+-- Date        : Fri Jan 28 04:24:00 2022
 -- Host        : WIN-544SHHHOI8Q running 64-bit major release  (build 9200)
 -- Command     : write_vhdl -force -mode funcsim -rename_top urllc_fifo_core_inst_0_mux_reciever_out_0 -prefix
---               urllc_fifo_core_inst_0_mux_reciever_out_0_ urllc_fifo_core_inst_0_mux_reciever_in_0_sim_netlist.vhdl
--- Design      : urllc_fifo_core_inst_0_mux_reciever_in_0
+--               urllc_fifo_core_inst_0_mux_reciever_out_0_ urllc_fifo_core_inst_0_mux_reciever_out_0_sim_netlist.vhdl
+-- Design      : urllc_fifo_core_inst_0_mux_reciever_out_0
 -- Purpose     : This VHDL netlist is a functional simulation representation of the design and should not be modified or
 --               synthesized. This netlist cannot be used for SDF annotated simulation.
 -- Device      : xc7z020clg400-2
@@ -129,7 +129,7 @@ entity urllc_fifo_core_inst_0_mux_reciever_out_0 is
   attribute NotValidForBitStream : boolean;
   attribute NotValidForBitStream of urllc_fifo_core_inst_0_mux_reciever_out_0 : entity is true;
   attribute CHECK_LICENSE_TYPE : string;
-  attribute CHECK_LICENSE_TYPE of urllc_fifo_core_inst_0_mux_reciever_out_0 : entity is "urllc_fifo_core_inst_0_mux_reciever_in_0,mux,{}";
+  attribute CHECK_LICENSE_TYPE of urllc_fifo_core_inst_0_mux_reciever_out_0 : entity is "urllc_fifo_core_inst_0_mux_reciever_out_0,mux,{}";
   attribute DowngradeIPIdentifiedWarnings : string;
   attribute DowngradeIPIdentifiedWarnings of urllc_fifo_core_inst_0_mux_reciever_out_0 : entity is "yes";
   attribute IP_DEFINITION_SOURCE : string;

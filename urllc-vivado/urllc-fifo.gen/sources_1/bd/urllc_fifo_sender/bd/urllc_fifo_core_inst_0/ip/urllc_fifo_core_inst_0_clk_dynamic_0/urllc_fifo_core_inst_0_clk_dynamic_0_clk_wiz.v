@@ -56,12 +56,12 @@
 //  Output     Output      Phase    Duty Cycle   Pk-to-Pk     Phase
 //   Clock     Freq (MHz)  (degrees)    (%)     Jitter (ps)  Error (ps)
 //----------------------------------------------------------------------------
-// clk_out_dynamic__60.00000______0.000______50.0______199.644____161.614
+// clk_out_dynamic__60.00000______0.000______50.0______163.829____130.371
 //
 //----------------------------------------------------------------------------
 // Input Clock   Freq (MHz)    Input Jitter (UI)
 //----------------------------------------------------------------------------
-// __primary__________50.000____________0.010
+// __primary__________60.000____________0.010
 
 `timescale 1ps/1ps
 
@@ -76,7 +76,6 @@ module urllc_fifo_core_inst_0_clk_dynamic_0_clk_wiz
   input         psincdec,
   output        psdone,
   // Status and control signals
-  input         resetn,
   output        locked,
   input         clk_in1
  );
@@ -84,7 +83,7 @@ module urllc_fifo_core_inst_0_clk_dynamic_0_clk_wiz
   //------------------------------------
 wire clk_in1_urllc_fifo_core_inst_0_clk_dynamic_0;
 wire clk_in2_urllc_fifo_core_inst_0_clk_dynamic_0;
-  IBUF clkin1_ibufg
+  BUFG clkin1_bufg
    (.O (clk_in1_urllc_fifo_core_inst_0_clk_dynamic_0),
     .I (clk_in1));
 
@@ -124,7 +123,6 @@ wire clk_in2_urllc_fifo_core_inst_0_clk_dynamic_0;
   wire        clkout6_unused;
   wire        clkfbstopped_unused;
   wire        clkinstopped_unused;
-  wire        reset_high;
 
   MMCME2_ADV
   #(.BANDWIDTH            ("OPTIMIZED"),
@@ -132,14 +130,14 @@ wire clk_in2_urllc_fifo_core_inst_0_clk_dynamic_0;
     .COMPENSATION         ("ZHOLD"),
     .STARTUP_WAIT         ("FALSE"),
     .DIVCLK_DIVIDE        (1),
-    .CLKFBOUT_MULT_F      (18.000),
+    .CLKFBOUT_MULT_F      (17.000),
     .CLKFBOUT_PHASE       (0.000),
     .CLKFBOUT_USE_FINE_PS ("FALSE"),
-    .CLKOUT0_DIVIDE_F     (15.000),
+    .CLKOUT0_DIVIDE_F     (17.000),
     .CLKOUT0_PHASE        (0.000),
     .CLKOUT0_DUTY_CYCLE   (0.500),
     .CLKOUT0_USE_FINE_PS  ("FALSE"),
-    .CLKIN1_PERIOD        (20.000))
+    .CLKIN1_PERIOD        (16.667))
   mmcm_adv_inst
     // Output clocks
    (
@@ -180,8 +178,7 @@ wire clk_in2_urllc_fifo_core_inst_0_clk_dynamic_0;
     .CLKINSTOPPED        (clkinstopped_unused),
     .CLKFBSTOPPED        (clkfbstopped_unused),
     .PWRDWN              (1'b0),
-    .RST                 (reset_high));
-  assign reset_high = ~resetn; 
+    .RST                 (1'b0));
 
   assign locked = locked_int;
 // Clock Monitor clock assigning

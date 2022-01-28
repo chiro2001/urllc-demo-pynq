@@ -1,8 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <GenRun Id="impl_1" LaunchPart="xc7z020clg400-2" LaunchTime="1642183645">
+  <File Type="ROUTE-PWR" Name="design_reciever_wrapper_power_routed.rpt"/>
   <File Type="PA-TCL" Name="design_reciever_wrapper.tcl"/>
+  <File Type="ROUTE-PWR-SUM" Name="design_reciever_wrapper_power_summary_routed.pb"/>
   <File Type="REPORTS-TCL" Name="design_reciever_wrapper_reports.tcl"/>
   <File Type="BITSTR-MSK" Name="design_reciever_wrapper.msk"/>
+  <File Type="ROUTE-CLK" Name="design_reciever_wrapper_clock_utilization_routed.rpt"/>
   <File Type="RDI-RDI" Name="design_reciever_wrapper.vdi"/>
   <File Type="BG-BIT" Name="design_reciever_wrapper.bit"/>
   <File Type="BG-DRC" Name="design_reciever_wrapper.drc"/>
@@ -12,16 +15,33 @@
   <File Type="BITSTR-NKY" Name="design_reciever_wrapper.nky"/>
   <File Type="BITSTR-BMM" Name="design_reciever_wrapper_bd.bmm"/>
   <File Type="BITSTR-MMI" Name="design_reciever_wrapper.mmi"/>
+  <File Type="ROUTE-METHODOLOGY-DRC" Name="design_reciever_wrapper_methodology_drc_routed.rpt"/>
   <File Type="BITSTR-SYSDEF" Name="design_reciever_wrapper.sysdef"/>
+  <File Type="ROUTE-METHODOLOGY-DRC-PB" Name="design_reciever_wrapper_methodology_drc_routed.pb"/>
   <File Type="BITSTR-LTX" Name="debug_nets.ltx"/>
   <File Type="BITSTR-LTX" Name="design_reciever_wrapper.ltx"/>
   <File Type="WBT-USG" Name="usage_statistics_webtalk.html"/>
+  <File Type="OPT-DRC" Name="design_reciever_wrapper_drc_opted.rpt"/>
   <File Type="OPT-HWDEF" Name="design_reciever_wrapper.hwdef"/>
+  <File Type="PLACE-IO" Name="design_reciever_wrapper_io_placed.rpt"/>
+  <File Type="PLACE-UTIL" Name="design_reciever_wrapper_utilization_placed.rpt"/>
+  <File Type="PLACE-UTIL-PB" Name="design_reciever_wrapper_utilization_placed.pb"/>
+  <File Type="PLACE-CTRL" Name="design_reciever_wrapper_control_sets_placed.rpt"/>
   <File Type="PLACE-PRE-SIMILARITY" Name="design_reciever_wrapper_incremental_reuse_pre_placed.rpt"/>
+  <File Type="ROUTE-DRC" Name="design_reciever_wrapper_drc_routed.rpt"/>
+  <File Type="ROUTE-DRC-PB" Name="design_reciever_wrapper_drc_routed.pb"/>
+  <File Type="ROUTE-PWR-RPX" Name="design_reciever_wrapper_power_routed.rpx"/>
+  <File Type="ROUTE-STATUS" Name="design_reciever_wrapper_route_status.rpt"/>
+  <File Type="ROUTE-STATUS-PB" Name="design_reciever_wrapper_route_status.pb"/>
   <File Type="ROUTE-DCP" Name="design_reciever_wrapper_routed.dcp"/>
   <File Type="ROUTE-ERROR-DCP" Name="design_reciever_wrapper_routed_error.dcp"/>
   <File Type="ROUTE-BLACKBOX-DCP" Name="design_reciever_wrapper_routed_bb.dcp"/>
+  <File Type="ROUTE-TIMINGSUMMARY" Name="design_reciever_wrapper_timing_summary_routed.rpt"/>
   <File Type="ROUTE-TIMING-PB" Name="design_reciever_wrapper_timing_summary_routed.pb"/>
+  <File Type="ROUTE-TIMING-RPX" Name="design_reciever_wrapper_timing_summary_routed.rpx"/>
+  <File Type="ROUTE-BUS-SKEW" Name="design_reciever_wrapper_bus_skew_routed.rpt"/>
+  <File Type="ROUTE-BUS-SKEW-PB" Name="design_reciever_wrapper_bus_skew_routed.pb"/>
+  <File Type="ROUTE-BUS-SKEW-RPX" Name="design_reciever_wrapper_bus_skew_routed.rpx"/>
   <File Type="OPT-DCP" Name="design_reciever_wrapper_opt.dcp"/>
   <File Type="PLACE-DCP" Name="design_reciever_wrapper_placed.dcp"/>
   <File Type="PWROPT-DCP" Name="design_reciever_wrapper_pwropt.dcp"/>
@@ -29,6 +49,8 @@
   <File Type="PHYSOPT-DCP" Name="design_reciever_wrapper_physopt.dcp"/>
   <File Type="POSTROUTE-PHYSOPT-DCP" Name="design_reciever_wrapper_postroute_physopt.dcp"/>
   <File Type="POSTROUTE-PHYSOPT-BLACKBOX-DCP" Name="design_reciever_wrapper_postroute_physopt_bb.dcp"/>
+  <File Type="ROUTE-DRC-RPX" Name="design_reciever_wrapper_drc_routed.rpx"/>
+  <File Type="ROUTE-METHODOLOGY-DRC-RPX" Name="design_reciever_wrapper_methodology_drc_routed.rpx"/>
   <File Type="PDI-FILE" Name="design_reciever_wrapper.pdi"/>
   <File Type="RCFI_FILE" Name="design_reciever_wrapper.rcfi"/>
   <File Type="CFI_FILE" Name="design_reciever_wrapper.cfi"/>
@@ -204,24 +226,24 @@
     <Step Id="write_bitstream"/>
     <Step Id="write_device_image"/>
   </Strategy>
-  <BlockFileSet Type="BlockSrcs" Name="urllc_core_ad2dma_rtl_0_1"/>
-  <BlockFileSet Type="BlockSrcs" Name="urllc_core_inst_0"/>
   <BlockFileSet Type="BlockSrcs" Name="urllc_core_smartconnect_outer_1"/>
   <BlockFileSet Type="BlockSrcs" Name="urllc_core_mux_disable_sel2_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="urllc_core_ad2dma_rtl_0_1"/>
+  <BlockFileSet Type="BlockSrcs" Name="urllc_core_inst_0"/>
   <BlockFileSet Type="BlockSrcs" Name="urllc_core_ad_buf_0_0"/>
-  <BlockFileSet Type="BlockSrcs" Name="urllc_core_div_n_0_0"/>
   <BlockFileSet Type="BlockSrcs" Name="urllc_core_mux_0_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="urllc_core_div_n_0_0"/>
   <BlockFileSet Type="BlockSrcs" Name="urllc_core_mux_rtl_0"/>
   <BlockFileSet Type="BlockSrcs" Name="urllc_core_axi_gpio_0_0"/>
   <BlockFileSet Type="BlockSrcs" Name="urllc_core_ad2dma_rtl_0_0"/>
-  <BlockFileSet Type="BlockSrcs" Name="urllc_core_DDCWrapper_0_0"/>
-  <BlockFileSet Type="BlockSrcs" Name="urllc_core_rst_ps7_0_200M_0"/>
   <BlockFileSet Type="BlockSrcs" Name="urllc_core_ila_0_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="urllc_core_rst_ps7_0_200M_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="urllc_core_DDCWrapper_0_0"/>
   <BlockFileSet Type="BlockSrcs" Name="urllc_core_axi_dma_1_0"/>
-  <BlockFileSet Type="BlockSrcs" Name="urllc_core_mux_0_1"/>
   <BlockFileSet Type="BlockSrcs" Name="urllc_core_mux_1_0"/>
-  <BlockFileSet Type="BlockSrcs" Name="urllc_core_mux_2_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="urllc_core_mux_0_1"/>
   <BlockFileSet Type="BlockSrcs" Name="urllc_core_proc_clock_reset_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="urllc_core_mux_2_0"/>
   <BlockFileSet Type="BlockSrcs" Name="urllc_core_mux_3_0"/>
   <BlockFileSet Type="BlockSrcs" Name="urllc_core_DUCWrapper_0_0"/>
   <BlockFileSet Type="BlockSrcs" Name="urllc_core_axi_dma_0_0"/>
@@ -230,8 +252,8 @@
   <BlockFileSet Type="BlockSrcs" Name="urllc_core_clk_wiz_100M_0"/>
   <BlockFileSet Type="BlockSrcs" Name="urllc_core_clk_wiz_dynamic_0"/>
   <BlockFileSet Type="BlockSrcs" Name="urllc_core_clk_wiz_static_0"/>
-  <BlockFileSet Type="BlockSrcs" Name="urllc_core_proc_data_reset_8M_0"/>
   <BlockFileSet Type="BlockSrcs" Name="urllc_core_inst_0_FrameTriggerWrapper_0_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="urllc_core_proc_data_reset_8M_0"/>
   <BlockFileSet Type="BlockSrcs" Name="urllc_core_smartconnect_outer_0"/>
   <BlockFileSet Type="BlockSrcs" Name="urllc_core_processing_system7_0_0"/>
   <BlockFileSet Type="BlockSrcs" Name="urllc_core_inst_0_smartconnect_outer_1"/>

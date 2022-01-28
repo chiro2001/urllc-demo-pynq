@@ -1,7 +1,7 @@
 -- Copyright 1986-2021 Xilinx, Inc. All Rights Reserved.
 -- --------------------------------------------------------------------------------
 -- Tool Version: Vivado v.2021.1 (win64) Build 3247384 Thu Jun 10 19:36:33 MDT 2021
--- Date        : Fri Jan 14 22:40:16 2022
+-- Date        : Fri Jan 14 23:43:56 2022
 -- Host        : WIN-544SHHHOI8Q running 64-bit major release  (build 9200)
 -- Command     : write_vhdl -force -mode synth_stub -rename_top urllc_core_inst_0_smartconnect_outer_0 -prefix
 --               urllc_core_inst_0_smartconnect_outer_0_ urllc_core_inst_0_smartconnect_outer_0_stub.vhdl

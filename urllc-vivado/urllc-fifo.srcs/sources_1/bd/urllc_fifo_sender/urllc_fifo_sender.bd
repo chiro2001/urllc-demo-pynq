@@ -1,7 +1,7 @@
 {
   "design": {
     "design_info": {
-      "boundary_crc": "0x4D89449CDC244486",
+      "boundary_crc": "0x968D741EDE275B5",
       "device": "xc7z020clg400-2",
       "gen_directory": "../../../../urllc-fifo.gen/sources_1/bd/urllc_fifo_sender",
       "name": "urllc_fifo_sender",
@@ -155,6 +155,31 @@
           "PHASE": {
             "value": "0.0",
             "value_src": "ip_prop"
+          }
+        }
+      },
+      "clk_pl_50M": {
+        "type": "clk",
+        "direction": "I",
+        "parameters": {
+          "CLK_DOMAIN": {
+            "value": "urllc_fifo_sender_clk_pl_50M",
+            "value_src": "default"
+          },
+          "FREQ_HZ": {
+            "value": "50000000"
+          },
+          "FREQ_TOLERANCE_HZ": {
+            "value": "0",
+            "value_src": "default"
+          },
+          "INSERT_VIP": {
+            "value": "0",
+            "value_src": "default"
+          },
+          "PHASE": {
+            "value": "0.0",
+            "value_src": "default"
           }
         }
       }
@@ -317,6 +342,32 @@
                 "value_src": "ip_prop"
               }
             }
+          },
+          "clk_pl_50M": {
+            "type": "clk",
+            "direction": "I",
+            "parameters": {
+              "CLK_DOMAIN": {
+                "value": "urllc_fifo_sender_clk_pl_50M",
+                "value_src": "default_prop"
+              },
+              "FREQ_HZ": {
+                "value": "50000000",
+                "value_src": "user_prop"
+              },
+              "FREQ_TOLERANCE_HZ": {
+                "value": "0",
+                "value_src": "strong"
+              },
+              "INSERT_VIP": {
+                "value": "0",
+                "value_src": "strong"
+              },
+              "PHASE": {
+                "value": "0.0",
+                "value_src": "default_prop"
+              }
+            }
           }
         },
         "post_compiled_compname": "urllc_fifo_core_inst_0",
@@ -324,7 +375,7 @@
         "variant_info": {
           "urllc_fifo_core.bd": {
             "scoped_diagram": "urllc_fifo_core_inst_0.bd",
-            "design_checksum": "0x1F5B51C5",
+            "design_checksum": "0x1D774B30",
             "ref_name": "urllc_fifo_core",
             "ref_subinst_path": "urllc_fifo_sender_urllc_fifo_core_0",
             "ref_type": "Block Design",
@@ -349,6 +400,12 @@
       }
     },
     "nets": {
+      "clk_pl_50M_1": {
+        "ports": [
+          "clk_pl_50M",
+          "urllc_fifo_core_0/clk_pl_50M"
+        ]
+      },
       "sender_ad_1": {
         "ports": [
           "sender_ad",

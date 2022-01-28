@@ -1,7 +1,7 @@
 -- Copyright 1986-2021 Xilinx, Inc. All Rights Reserved.
 -- --------------------------------------------------------------------------------
 -- Tool Version: Vivado v.2021.1 (win64) Build 3247384 Thu Jun 10 19:36:33 MDT 2021
--- Date        : Sun Jan 23 09:31:16 2022
+-- Date        : Sat Jan 29 02:06:34 2022
 -- Host        : WIN-544SHHHOI8Q running 64-bit major release  (build 9200)
 -- Command     : write_vhdl -force -mode funcsim -rename_top urllc_fifo_core_inst_0_clk_static_0 -prefix
 --               urllc_fifo_core_inst_0_clk_static_0_ urllc_fifo_core_inst_0_clk_static_0_sim_netlist.vhdl
@@ -17,7 +17,6 @@ use UNISIM.VCOMPONENTS.ALL;
 entity urllc_fifo_core_inst_0_clk_static_0_urllc_fifo_core_inst_0_clk_static_0_clk_wiz is
   port (
     clk_out1 : out STD_LOGIC;
-    resetn : in STD_LOGIC;
     locked : out STD_LOGIC;
     clk_in1 : in STD_LOGIC
   );
@@ -28,7 +27,6 @@ architecture STRUCTURE of urllc_fifo_core_inst_0_clk_static_0_urllc_fifo_core_in
   signal clk_out1_urllc_fifo_core_inst_0_clk_static_0 : STD_LOGIC;
   signal clkfbout_buf_urllc_fifo_core_inst_0_clk_static_0 : STD_LOGIC;
   signal clkfbout_urllc_fifo_core_inst_0_clk_static_0 : STD_LOGIC;
-  signal reset_high : STD_LOGIC;
   signal NLW_mmcm_adv_inst_CLKFBOUTB_UNCONNECTED : STD_LOGIC;
   signal NLW_mmcm_adv_inst_CLKFBSTOPPED_UNCONNECTED : STD_LOGIC;
   signal NLW_mmcm_adv_inst_CLKINSTOPPED_UNCONNECTED : STD_LOGIC;
@@ -159,15 +157,7 @@ mmcm_adv_inst: unisim.vcomponents.MMCME2_ADV
       PSEN => '0',
       PSINCDEC => '0',
       PWRDWN => '0',
-      RST => reset_high
-    );
-mmcm_adv_inst_i_1: unisim.vcomponents.LUT1
-    generic map(
-      INIT => X"1"
-    )
-        port map (
-      I0 => resetn,
-      O => reset_high
+      RST => '0'
     );
 end STRUCTURE;
 library IEEE;
@@ -177,7 +167,6 @@ use UNISIM.VCOMPONENTS.ALL;
 entity urllc_fifo_core_inst_0_clk_static_0 is
   port (
     clk_out1 : out STD_LOGIC;
-    resetn : in STD_LOGIC;
     locked : out STD_LOGIC;
     clk_in1 : in STD_LOGIC
   );
@@ -191,7 +180,6 @@ inst: entity work.urllc_fifo_core_inst_0_clk_static_0_urllc_fifo_core_inst_0_clk
      port map (
       clk_in1 => clk_in1,
       clk_out1 => clk_out1,
-      locked => locked,
-      resetn => resetn
+      locked => locked
     );
 end STRUCTURE;

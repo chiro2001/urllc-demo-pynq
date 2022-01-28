@@ -1,0 +1,487 @@
+{
+  "design": {
+    "design_info": {
+      "boundary_crc": "0xF05933995EA0BCA7",
+      "device": "xc7z020clg400-2",
+      "gen_directory": "../../../../urllc-fifo.gen/sources_1/bd/urllc_fifo_receiver",
+      "name": "urllc_fifo_receiver",
+      "rev_ctrl_bd_flag": "RevCtrlBdOff",
+      "synth_flow_mode": "Hierarchical",
+      "tool_version": "2021.1",
+      "validated": "true"
+    },
+    "design_tree": {
+      "urllc_fifo_core_0": ""
+    },
+    "interface_ports": {
+      "DDR": {
+        "mode": "Master",
+        "vlnv_bus_definition": "xilinx.com:interface:ddrx:1.0",
+        "vlnv": "xilinx.com:interface:ddrx_rtl:1.0",
+        "parameters": {
+          "AXI_ARBITRATION_SCHEME": {
+            "value": "TDM",
+            "value_src": "default"
+          },
+          "BURST_LENGTH": {
+            "value": "8",
+            "value_src": "default"
+          },
+          "CAN_DEBUG": {
+            "value": "false",
+            "value_src": "default"
+          },
+          "CAS_LATENCY": {
+            "value": "11",
+            "value_src": "default"
+          },
+          "CAS_WRITE_LATENCY": {
+            "value": "11",
+            "value_src": "default"
+          },
+          "CS_ENABLED": {
+            "value": "true",
+            "value_src": "default"
+          },
+          "DATA_MASK_ENABLED": {
+            "value": "true",
+            "value_src": "default"
+          },
+          "DATA_WIDTH": {
+            "value": "8",
+            "value_src": "default"
+          },
+          "MEMORY_TYPE": {
+            "value": "COMPONENTS",
+            "value_src": "default"
+          },
+          "MEM_ADDR_MAP": {
+            "value": "ROW_COLUMN_BANK",
+            "value_src": "default"
+          },
+          "SLOT": {
+            "value": "Single",
+            "value_src": "default"
+          },
+          "TIMEPERIOD_PS": {
+            "value": "1250",
+            "value_src": "default"
+          }
+        }
+      },
+      "FIXED_IO": {
+        "mode": "Master",
+        "vlnv_bus_definition": "xilinx.com:display_processing_system7:fixedio:1.0",
+        "vlnv": "xilinx.com:display_processing_system7:fixedio_rtl:1.0",
+        "parameters": {
+          "CAN_DEBUG": {
+            "value": "false",
+            "value_src": "default"
+          }
+        }
+      }
+    },
+    "ports": {
+      "clk_pl_50M": {
+        "type": "clk",
+        "direction": "I",
+        "parameters": {
+          "CLK_DOMAIN": {
+            "value": "urllc_fifo_receiver_clk_pl_50M",
+            "value_src": "default"
+          },
+          "FREQ_HZ": {
+            "value": "50000000"
+          },
+          "FREQ_TOLERANCE_HZ": {
+            "value": "0",
+            "value_src": "default"
+          },
+          "INSERT_VIP": {
+            "value": "0",
+            "value_src": "default"
+          },
+          "PHASE": {
+            "value": "0.0",
+            "value_src": "default"
+          }
+        }
+      },
+      "receiver_ad_sel1": {
+        "type": "data",
+        "direction": "I",
+        "left": "7",
+        "right": "0",
+        "parameters": {
+          "LAYERED_METADATA": {
+            "value": "undef",
+            "value_src": "default"
+          }
+        }
+      },
+      "receiver_ad_clk_60M": {
+        "type": "clk",
+        "direction": "O",
+        "parameters": {
+          "CLK_DOMAIN": {
+            "value": "/urllc_fifo_core_0/core/clk_dynamic_clk_out1",
+            "value_src": "ip_prop"
+          },
+          "FREQ_HZ": {
+            "value": "60000000",
+            "value_src": "ip_prop"
+          },
+          "FREQ_TOLERANCE_HZ": {
+            "value": "0",
+            "value_src": "default"
+          },
+          "INSERT_VIP": {
+            "value": "0",
+            "value_src": "default"
+          },
+          "PHASE": {
+            "value": "0.0",
+            "value_src": "ip_prop"
+          }
+        }
+      },
+      "receiver_da": {
+        "type": "data",
+        "direction": "O",
+        "left": "7",
+        "right": "0",
+        "parameters": {
+          "LAYERED_METADATA": {
+            "value": "undef",
+            "value_src": "default"
+          }
+        }
+      },
+      "receiver_da_clk_60M": {
+        "type": "clk",
+        "direction": "O",
+        "parameters": {
+          "CLK_DOMAIN": {
+            "value": "/urllc_fifo_core_0/core/clk_static_clk_out1",
+            "value_src": "ip_prop"
+          },
+          "FREQ_HZ": {
+            "value": "60000000",
+            "value_src": "ip_prop"
+          },
+          "FREQ_TOLERANCE_HZ": {
+            "value": "0",
+            "value_src": "default"
+          },
+          "INSERT_VIP": {
+            "value": "0",
+            "value_src": "default"
+          },
+          "PHASE": {
+            "value": "0.0",
+            "value_src": "ip_prop"
+          }
+        }
+      }
+    },
+    "components": {
+      "urllc_fifo_core_0": {
+        "parameters": {
+          "ACTIVE_SIM_BD": {
+            "value": "urllc_fifo_core.bd"
+          },
+          "ACTIVE_SYNTH_BD": {
+            "value": "urllc_fifo_core.bd"
+          },
+          "ENABLE_DFX": {
+            "value": "0"
+          },
+          "LIST_SIM_BD": {
+            "value": "urllc_fifo_core.bd"
+          },
+          "LIST_SYNTH_BD": {
+            "value": "urllc_fifo_core.bd"
+          },
+          "LOCK_PROPAGATE": {
+            "value": "0"
+          }
+        },
+        "interface_ports": {
+          "DDR": {
+            "mode": "Master",
+            "vlnv_bus_definition": "xilinx.com:interface:ddrx:1.0",
+            "vlnv": "xilinx.com:interface:ddrx_rtl:1.0",
+            "parameters": {
+              "AXI_ARBITRATION_SCHEME": {
+                "value": "TDM",
+                "value_src": "default"
+              },
+              "BURST_LENGTH": {
+                "value": "8",
+                "value_src": "default"
+              },
+              "CAN_DEBUG": {
+                "value": "false",
+                "value_src": "default"
+              },
+              "CAS_LATENCY": {
+                "value": "11",
+                "value_src": "default"
+              },
+              "CAS_WRITE_LATENCY": {
+                "value": "11",
+                "value_src": "default"
+              },
+              "CS_ENABLED": {
+                "value": "true",
+                "value_src": "default"
+              },
+              "DATA_MASK_ENABLED": {
+                "value": "true",
+                "value_src": "default"
+              },
+              "DATA_WIDTH": {
+                "value": "8",
+                "value_src": "default"
+              },
+              "MEMORY_TYPE": {
+                "value": "COMPONENTS",
+                "value_src": "default"
+              },
+              "MEM_ADDR_MAP": {
+                "value": "ROW_COLUMN_BANK",
+                "value_src": "default"
+              },
+              "SLOT": {
+                "value": "Single",
+                "value_src": "default"
+              },
+              "TIMEPERIOD_PS": {
+                "value": "1250",
+                "value_src": "default"
+              }
+            }
+          },
+          "FIXED_IO": {
+            "mode": "Master",
+            "vlnv_bus_definition": "xilinx.com:display_processing_system7:fixedio:1.0",
+            "vlnv": "xilinx.com:display_processing_system7:fixedio_rtl:1.0",
+            "parameters": {
+              "CAN_DEBUG": {
+                "value": "false",
+                "value_src": "default"
+              }
+            }
+          }
+        },
+        "ports": {
+          "ad": {
+            "direction": "I",
+            "left": "7",
+            "right": "0",
+            "parameters": {
+              "LAYERED_METADATA": {
+                "value": "undef",
+                "value_src": "default_prop"
+              }
+            }
+          },
+          "clk_ad_static": {
+            "type": "clk",
+            "direction": "O",
+            "parameters": {
+              "CLK_DOMAIN": {
+                "value": "/urllc_fifo_core_0/core/clk_static_clk_out1",
+                "value_src": "ip_prop"
+              },
+              "FREQ_HZ": {
+                "value": "60000000",
+                "value_src": "ip_prop"
+              },
+              "FREQ_TOLERANCE_HZ": {
+                "value": "0",
+                "value_src": "default"
+              },
+              "INSERT_VIP": {
+                "value": "0",
+                "value_src": "default"
+              },
+              "PHASE": {
+                "value": "0.0",
+                "value_src": "ip_prop"
+              }
+            }
+          },
+          "clk_da_dynamic": {
+            "type": "clk",
+            "direction": "O",
+            "parameters": {
+              "CLK_DOMAIN": {
+                "value": "/urllc_fifo_core_0/core/clk_dynamic_clk_out1",
+                "value_src": "ip_prop"
+              },
+              "FREQ_HZ": {
+                "value": "60000000",
+                "value_src": "ip_prop"
+              },
+              "FREQ_TOLERANCE_HZ": {
+                "value": "0",
+                "value_src": "default"
+              },
+              "INSERT_VIP": {
+                "value": "0",
+                "value_src": "default"
+              },
+              "PHASE": {
+                "value": "0.0",
+                "value_src": "ip_prop"
+              }
+            }
+          },
+          "da": {
+            "direction": "O",
+            "left": "7",
+            "right": "0"
+          },
+          "clk_pl_50M": {
+            "type": "clk",
+            "direction": "I",
+            "parameters": {
+              "CLK_DOMAIN": {
+                "value": "urllc_fifo_receiver_clk_pl_50M",
+                "value_src": "default_prop"
+              },
+              "FREQ_HZ": {
+                "value": "50000000",
+                "value_src": "user_prop"
+              },
+              "FREQ_TOLERANCE_HZ": {
+                "value": "0",
+                "value_src": "strong"
+              },
+              "INSERT_VIP": {
+                "value": "0",
+                "value_src": "strong"
+              },
+              "PHASE": {
+                "value": "0.0",
+                "value_src": "default_prop"
+              }
+            }
+          }
+        },
+        "post_compiled_compname": "urllc_fifo_core_inst_1",
+        "architecture": "zynq",
+        "variant_info": {
+          "urllc_fifo_core.bd": {
+            "scoped_diagram": "urllc_fifo_core_inst_1.bd",
+            "design_checksum": "0x1D774B30",
+            "ref_name": "urllc_fifo_core",
+            "ref_subinst_path": "urllc_fifo_receiver_urllc_fifo_core_0",
+            "ref_type": "Block Design",
+            "source_type": "all",
+            "active": "all"
+          }
+        }
+      }
+    },
+    "interface_nets": {
+      "urllc_fifo_core_0_DDR": {
+        "interface_ports": [
+          "DDR",
+          "urllc_fifo_core_0/DDR"
+        ]
+      },
+      "urllc_fifo_core_0_FIXED_IO": {
+        "interface_ports": [
+          "FIXED_IO",
+          "urllc_fifo_core_0/FIXED_IO"
+        ]
+      }
+    },
+    "nets": {
+      "clk_pl_50M_1": {
+        "ports": [
+          "clk_pl_50M",
+          "urllc_fifo_core_0/clk_pl_50M"
+        ]
+      },
+      "receiver_ad_sel1_1": {
+        "ports": [
+          "receiver_ad_sel1",
+          "urllc_fifo_core_0/ad"
+        ]
+      },
+      "urllc_fifo_core_0_clk_ad_static": {
+        "ports": [
+          "urllc_fifo_core_0/clk_ad_static",
+          "receiver_da_clk_60M"
+        ]
+      },
+      "urllc_fifo_core_0_clk_da_dynamic": {
+        "ports": [
+          "urllc_fifo_core_0/clk_da_dynamic",
+          "receiver_ad_clk_60M"
+        ]
+      },
+      "urllc_fifo_core_0_da": {
+        "ports": [
+          "urllc_fifo_core_0/da",
+          "receiver_da"
+        ]
+      }
+    },
+    "addressing": {
+      "/urllc_fifo_core_0/core/processing_system7_0": {
+        "address_spaces": {
+          "Data": {
+            "segments": {
+              "SEG_axi_dma_0_Reg": {
+                "address_block": "/urllc_fifo_core_0/core/axi_dma_0/S_AXI_LITE/Reg",
+                "offset": "0x40400000",
+                "range": "64K"
+              },
+              "SEG_axi_gpio_0_Reg": {
+                "address_block": "/urllc_fifo_core_0/debug_ctrl/axi_gpio_0/S_AXI/Reg",
+                "offset": "0x41200000",
+                "range": "64K"
+              }
+            }
+          }
+        }
+      },
+      "/urllc_fifo_core_0/core/axi_dma_0": {
+        "address_spaces": {
+          "Data_MM2S": {
+            "segments": {
+              "SEG_processing_system7_0_HP0_DDR_LOWOCM": {
+                "address_block": "/urllc_fifo_core_0/core/processing_system7_0/S_AXI_HP0/HP0_DDR_LOWOCM",
+                "offset": "0x00000000",
+                "range": "256M"
+              },
+              "SEG_processing_system7_0_HP1_DDR_LOWOCM": {
+                "address_block": "/urllc_fifo_core_0/core/processing_system7_0/S_AXI_HP1/HP1_DDR_LOWOCM",
+                "offset": "0x10000000",
+                "range": "256M"
+              }
+            }
+          },
+          "Data_S2MM": {
+            "segments": {
+              "SEG_processing_system7_0_HP0_DDR_LOWOCM": {
+                "address_block": "/urllc_fifo_core_0/core/processing_system7_0/S_AXI_HP0/HP0_DDR_LOWOCM",
+                "offset": "0x00000000",
+                "range": "256M"
+              },
+              "SEG_processing_system7_0_HP1_DDR_LOWOCM": {
+                "address_block": "/urllc_fifo_core_0/core/processing_system7_0/S_AXI_HP1/HP1_DDR_LOWOCM",
+                "offset": "0x10000000",
+                "range": "256M"
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

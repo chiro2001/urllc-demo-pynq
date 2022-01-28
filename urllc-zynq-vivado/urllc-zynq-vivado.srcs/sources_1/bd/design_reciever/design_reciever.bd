@@ -504,7 +504,7 @@
         "variant_info": {
           "urllc_core.bd": {
             "scoped_diagram": "urllc_core_inst_0.bd",
-            "design_checksum": "0x6DB8F8EA",
+            "design_checksum": "0x493E64E3",
             "ref_name": "urllc_core",
             "ref_subinst_path": "design_reciever_urllc_core_0",
             "ref_type": "Block Design",
@@ -731,18 +731,6 @@
                 "address_block": "/urllc_core_0/multi_clock/clk_wiz_dynamic/s_axi_lite/Reg",
                 "offset": "0x83C00000",
                 "range": "64K"
-              },
-              "SEG_processing_system7_0_HP0_DDR_LOWOCM": {
-                "address_block": "/urllc_core_0/processing_system7_0/S_AXI_HP0/HP0_DDR_LOWOCM",
-                "offset": "0x00000000",
-                "range": "1",
-                "is_excluded": "TRUE"
-              },
-              "SEG_processing_system7_0_HP1_DDR_LOWOCM": {
-                "address_block": "/urllc_core_0/processing_system7_0/S_AXI_HP1/HP1_DDR_LOWOCM",
-                "offset": "0x00000000",
-                "range": "1",
-                "is_excluded": "TRUE"
               }
             }
           }

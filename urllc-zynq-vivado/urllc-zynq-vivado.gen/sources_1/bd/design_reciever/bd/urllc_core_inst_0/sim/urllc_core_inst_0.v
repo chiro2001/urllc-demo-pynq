@@ -1,7 +1,7 @@
 //Copyright 1986-2021 Xilinx, Inc. All Rights Reserved.
 //--------------------------------------------------------------------------------
 //Tool Version: Vivado v.2021.1 (win64) Build 3247384 Thu Jun 10 19:36:33 MDT 2021
-//Date        : Sun Jan 16 22:40:06 2022
+//Date        : Sun Jan 23 09:07:22 2022
 //Host        : WIN-544SHHHOI8Q running 64-bit major release  (build 9200)
 //Command     : generate_target urllc_core_inst_0.bd
 //Design      : urllc_core_inst_0
@@ -109,6 +109,7 @@ module data_area_imp_1RV7JVF
     clk_200M,
     clk_8M,
     da,
+    data_count,
     data_out_router,
     data_serial_out,
     debug_disable_sync,
@@ -116,6 +117,7 @@ module data_area_imp_1RV7JVF
     debug_use_sender_iq,
     debug_use_sender_serial,
     ext_reset_in,
+    fifo_state,
     io_out_trigger,
     irq,
     reciever_serial_in,
@@ -220,6 +222,7 @@ module data_area_imp_1RV7JVF
   input clk_200M;
   input clk_8M;
   output [7:0]da;
+  output [12:0]data_count;
   input data_out_router;
   output [0:0]data_serial_out;
   input debug_disable_sync;
@@ -227,6 +230,7 @@ module data_area_imp_1RV7JVF
   input debug_use_sender_iq;
   input debug_use_sender_serial;
   input ext_reset_in;
+  output [1:0]fifo_state;
   output io_out_trigger;
   output [4:0]irq;
   input [0:0]reciever_serial_in;
@@ -342,6 +346,8 @@ module data_area_imp_1RV7JVF
   wire [7:0]mux_disable_sel2_data_out;
   wire [7:0]mux_mux_data_out;
   wire [7:0]reciever_da;
+  wire [12:0]reciever_data_count;
+  wire [1:0]reciever_dout;
   wire reciever_io_out_trigger;
   wire [2:0]reciever_irq;
   wire [0:0]reciever_resetn_200M;
@@ -454,11 +460,13 @@ module data_area_imp_1RV7JVF
   assign clk_120M_1 = clk_120M;
   assign clk_4M_1 = clk_8M;
   assign da[7:0] = mux_0_data_out;
+  assign data_count[12:0] = reciever_data_count;
   assign data_serial_out[0] = sender_data_serial_out;
   assign debug_disable_sync_1 = debug_disable_sync;
   assign debug_use_sender_iq_1 = debug_use_sender_iq;
   assign debug_use_sender_serial_1 = debug_use_sender_serial;
   assign ext_reset_in_1 = ext_reset_in;
+  assign fifo_state[1:0] = reciever_dout;
   assign io_in_clear_1 = trigger_clear_input;
   assign io_out_trigger = reciever_io_out_trigger;
   assign irq[4:0] = xlconcat_irq_dout;
@@ -541,12 +549,14 @@ module data_area_imp_1RV7JVF
         .clk_200M(clk_1),
         .clk_8M(clk_4M_1),
         .da(reciever_da),
+        .data_count(reciever_data_count),
         .data_in_serial(sender_data_serial_out),
         .debug_disable_sync(debug_disable_sync_1),
         .debug_use_input_serial_inner(router_2),
         .debug_use_sender_iq(debug_use_sender_iq_1),
         .debug_use_sender_serial(debug_use_sender_serial_1),
         .ext_reset_in(ext_reset_in_1),
+        .fifo_state(reciever_dout),
         .frame_trigger_io_in_clear(io_in_clear_1),
         .io_out_trigger(reciever_io_out_trigger),
         .irq(reciever_irq),
@@ -860,7 +870,7 @@ module debug_ports_imp_18JP07K
         .s_axi_wready(S_AXI1_1_WREADY),
         .s_axi_wstrb(S_AXI1_1_WSTRB),
         .s_axi_wvalid(S_AXI1_1_WVALID));
-  urllc_core_inst_0_xlconcat_0_1 xlconcat_0
+  urllc_core_inst_0_xlconcat_0_2 xlconcat_0
        (.In0(xlslice_2_disable_sync_Dout),
         .In1(xlslice_1_use_sender_serial_Dout),
         .In2(xlslice_3_use_sender_iq_Dout),
@@ -1581,7 +1591,7 @@ module multi_clock_imp_1041P9E
         .S00_AXI_wvalid(S00_AXI_1_WVALID),
         .aclk(ACLK_1),
         .aresetn(ARESETN_2));
-  urllc_core_inst_0_xlconcat_0_2 xlconcat_0
+  urllc_core_inst_0_xlconcat_0_3 xlconcat_0
        (.In0(clk_wiz_dynamic_psdone),
         .In1(clk_wiz_dynamic_locked),
         .In2(clk_wiz_static_locked),
@@ -1675,12 +1685,14 @@ module reciever_imp_QXLECW
     clk_200M,
     clk_8M,
     da,
+    data_count,
     data_in_serial,
     debug_disable_sync,
     debug_use_input_serial_inner,
     debug_use_sender_iq,
     debug_use_sender_serial,
     ext_reset_in,
+    fifo_state,
     frame_trigger_io_in_clear,
     io_out_trigger,
     irq,
@@ -1737,12 +1749,14 @@ module reciever_imp_QXLECW
   input clk_200M;
   input clk_8M;
   output [7:0]da;
+  output [12:0]data_count;
   input data_in_serial;
   input debug_disable_sync;
   input debug_use_input_serial_inner;
   input debug_use_sender_iq;
   input debug_use_sender_serial;
   input ext_reset_in;
+  output [1:0]fifo_state;
   input frame_trigger_io_in_clear;
   output io_out_trigger;
   output [2:0]irq;
@@ -1780,6 +1794,7 @@ module reciever_imp_QXLECW
   wire [3:0]Conn2_WSTRB;
   wire Conn2_WVALID;
   wire DDCWrapper_0_io_out_data;
+  wire D_0_D;
   wire FrameTriggerWrapper_0_io_out_trigger;
   wire M00_ARESETN_1;
   wire [0:0]Net;
@@ -1830,6 +1845,10 @@ module reciever_imp_QXLECW
   wire debug_use_sender_iq_1;
   wire debug_use_sender_serial_1;
   wire ext_reset_in_1;
+  wire [12:0]fifo_generator_0_data_count;
+  wire [31:0]fifo_generator_0_dout;
+  wire fifo_generator_0_empty;
+  wire fifo_generator_0_full;
   wire io_in_clear_1;
   wire [7:0]mux_0_data_out;
   wire [0:0]mux_1_data_out;
@@ -1839,9 +1858,11 @@ module reciever_imp_QXLECW
   wire router_1;
   wire [7:0]sel2_1;
   wire [2:0]xlconcat_0_dout;
+  wire [1:0]xlconcat_0_dout1;
   wire [31:0]xlconcat_1_dout;
   wire [0:0]xlconstant_0_dout;
   wire [30:0]xlconstant_1_dout;
+  wire [0:0]xlslice_0_Dout;
   wire [7:0]xlslice_1_Dout;
 
   assign Conn1_ARREADY = M_AXI_MM2S_arready;
@@ -1894,11 +1915,13 @@ module reciever_imp_QXLECW
   assign clk_200M_1 = clk_200M;
   assign clk_4M_1 = clk_8M;
   assign da[7:0] = xlslice_1_Dout;
+  assign data_count[12:0] = fifo_generator_0_data_count;
   assign data_in_serial_1 = data_in_serial;
   assign debug_disable_sync_1 = debug_disable_sync;
   assign debug_use_sender_iq_1 = debug_use_sender_iq;
   assign debug_use_sender_serial_1 = debug_use_sender_serial;
   assign ext_reset_in_1 = ext_reset_in;
+  assign fifo_state[1:0] = xlconcat_0_dout1;
   assign io_in_clear_1 = frame_trigger_io_in_clear;
   assign io_out_trigger = FrameTriggerWrapper_0_io_out_trigger;
   assign irq[2:0] = xlconcat_0_dout;
@@ -1912,6 +1935,12 @@ module reciever_imp_QXLECW
         .io_in_sync(mux_3_data_out),
         .io_out_data(DDCWrapper_0_io_out_data),
         .io_resetN(Net));
+  urllc_core_inst_0_D_0_0 D_0
+       (.D(D_0_D),
+        .clear(io_in_clear_1),
+        .clk(clk_4M_1),
+        .resetn(M00_ARESETN_1),
+        .set(FrameTriggerWrapper_0_io_out_trigger));
   urllc_core_inst_0_FrameTriggerWrapper_0_0 FrameTriggerWrapper_0
        (.io_clock(clk_200M_1),
         .io_in_clear(io_in_clear_1),
@@ -1919,7 +1948,7 @@ module reciever_imp_QXLECW
         .io_out_trigger(FrameTriggerWrapper_0_io_out_trigger),
         .io_resetN(Net));
   urllc_core_inst_0_ad2dma_rtl_0_0 ad2dma_rtl_0
-       (.ad(xlconcat_1_dout),
+       (.ad(fifo_generator_0_dout),
         .clk(clk_4M_1),
         .da(ad2dma_rtl_0_da),
         .in_axis_tdata(axis_data_fifo_1_M_AXIS_TDATA),
@@ -2021,6 +2050,16 @@ module reciever_imp_QXLECW
         .s_axis_tlast(axi_dma_1_M_AXIS_MM2S_TLAST),
         .s_axis_tready(axi_dma_1_M_AXIS_MM2S_TREADY),
         .s_axis_tvalid(axi_dma_1_M_AXIS_MM2S_TVALID));
+  urllc_core_inst_0_fifo_generator_0_0 fifo_generator_0
+       (.clk(clk_4M_1),
+        .data_count(fifo_generator_0_data_count),
+        .din(xlconcat_1_dout),
+        .dout(fifo_generator_0_dout),
+        .empty(fifo_generator_0_empty),
+        .full(fifo_generator_0_full),
+        .rd_en(xlslice_0_Dout),
+        .srst(io_in_clear_1),
+        .wr_en(D_0_D));
   urllc_core_inst_0_mux_0_1 mux_0
        (.data_out(mux_0_data_out),
         .router(debug_use_sender_iq_1),
@@ -2048,6 +2087,10 @@ module reciever_imp_QXLECW
         .mb_debug_sys_rst(1'b0),
         .peripheral_aresetn(Net),
         .slowest_sync_clk(clk_200M_1));
+  urllc_core_inst_0_xlconcat_0_0 xlconcat_0
+       (.In0(fifo_generator_0_empty),
+        .In1(fifo_generator_0_full),
+        .dout(xlconcat_0_dout1));
   urllc_core_inst_0_xlconcat_1_0 xlconcat_1
        (.In0(mux_1_data_out),
         .In1(xlconstant_1_dout),
@@ -2061,6 +2104,9 @@ module reciever_imp_QXLECW
        (.dout(xlconstant_0_dout));
   urllc_core_inst_0_xlconstant_1_0 xlconstant_1
        (.dout(xlconstant_1_dout));
+  urllc_core_inst_0_xlslice_0_0 xlslice_0
+       (.Din(ad2dma_rtl_0_da),
+        .Dout(xlslice_0_Dout));
   urllc_core_inst_0_xlslice_1_0 xlslice_1
        (.Din(ad2dma_rtl_0_da),
         .Dout(xlslice_1_Dout));
@@ -2427,7 +2473,7 @@ module sender_imp_X6OK7I
         .mb_debug_sys_rst(1'b0),
         .peripheral_aresetn(rst_ps7_0_120M_peripheral_aresetn),
         .slowest_sync_clk(io_in_clockDac_1));
-  urllc_core_inst_0_xlconcat_0_0 xlconcat_0
+  urllc_core_inst_0_xlconcat_0_1 xlconcat_0
        (.In0(ad_1),
         .In1(xlconstant_0_dout),
         .dout(xlconcat_0_dout));
@@ -2445,7 +2491,7 @@ module sender_imp_X6OK7I
         .Dout(xlslice_frame_avaliable_Dout));
 endmodule
 
-(* CORE_GENERATION_INFO = "urllc_core_inst_0,IP_Integrator,{x_ipVendor=xilinx.com,x_ipLibrary=BlockDiagram,x_ipName=urllc_core_inst_0,x_ipVersion=1.00.a,x_ipLanguage=VERILOG,numBlks=65,numReposBlks=59,numNonXlnxBlks=0,numHierBlks=6,maxHierDepth=2,numSysgenBlks=0,numHlsBlks=0,numHdlrefBlks=14,numPkgbdBlks=0,bdsource=G_/Chiro/Programs/urllc-demo-pynq/urllc-zynq-vivado/urllc-zynq-vivado.srcs/sources_1/bd/urllc_core/urllc_core.bd,synth_mode=OOC_per_IP}" *) (* HW_HANDOFF = "urllc_core_inst_0.hwdef" *) 
+(* CORE_GENERATION_INFO = "urllc_core_inst_0,IP_Integrator,{x_ipVendor=xilinx.com,x_ipLibrary=BlockDiagram,x_ipName=urllc_core_inst_0,x_ipVersion=1.00.a,x_ipLanguage=VERILOG,numBlks=69,numReposBlks=63,numNonXlnxBlks=0,numHierBlks=6,maxHierDepth=2,numSysgenBlks=0,numHlsBlks=0,numHdlrefBlks=15,numPkgbdBlks=0,bdsource=G_/Chiro/Programs/urllc-demo-pynq/urllc-zynq-vivado/urllc-zynq-vivado.srcs/sources_1/bd/urllc_core/urllc_core.bd,synth_mode=OOC_per_IP}" *) (* HW_HANDOFF = "urllc_core_inst_0.hwdef" *) 
 module urllc_core_inst_0
    (DDR_addr,
     DDR_ba,
@@ -2602,7 +2648,9 @@ module urllc_core_inst_0
   wire [3:0]data_area_M_AXI_S2MM_WSTRB;
   wire data_area_M_AXI_S2MM_WVALID;
   wire [7:0]data_area_da;
+  wire [12:0]data_area_data_count;
   wire [0:0]data_area_data_serial_out;
+  wire [1:0]data_area_dout;
   wire data_area_io_out_trigger;
   wire [4:0]data_area_irq;
   wire [0:0]data_area_sender_frame_avaliable;
@@ -2950,6 +2998,7 @@ module urllc_core_inst_0
         .clk_200M(clk_wiz_0_clk_out_200M),
         .clk_8M(div_n_0_clk_div2),
         .da(data_area_da),
+        .data_count(data_area_data_count),
         .data_out_router(debug_ports_Dout3),
         .data_serial_out(data_area_data_serial_out),
         .debug_disable_sync(debug_ports_Dout),
@@ -2957,6 +3006,7 @@ module urllc_core_inst_0
         .debug_use_sender_iq(debug_ports_Dout2),
         .debug_use_sender_serial(debug_ports_Dout1),
         .ext_reset_in(processing_system7_0_FCLK_RESET0_N),
+        .fifo_state(data_area_dout),
         .io_out_trigger(data_area_io_out_trigger),
         .irq(data_area_irq),
         .reciever_serial_in(reciever_serial_in_1),
@@ -3019,7 +3069,9 @@ module urllc_core_inst_0
         .probe2(debug_ports_dout4),
         .probe3(xlconcat_irq_all_dout),
         .probe4(debug_ports_gpio_io_o),
-        .probe5(multi_clock_dout));
+        .probe5(multi_clock_dout),
+        .probe6(data_area_dout),
+        .probe7(data_area_data_count));
   multi_clock_imp_1041P9E multi_clock
        (.ACLK(processing_system7_0_FCLK_CLK0),
         .M01_AXI_araddr(multi_clock_M01_AXI_ARADDR),

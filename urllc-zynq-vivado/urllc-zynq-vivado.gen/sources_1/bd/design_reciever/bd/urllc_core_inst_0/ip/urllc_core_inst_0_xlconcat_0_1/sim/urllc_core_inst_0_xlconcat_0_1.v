@@ -56,30 +56,16 @@
 module urllc_core_inst_0_xlconcat_0_1 (
   In0,
   In1,
-  In2,
-  In3,
-  In4,
-  In5,
-  In6,
-  In7,
-  In8,
   dout
 );
 
-input wire [0 : 0] In0;
-input wire [0 : 0] In1;
-input wire [0 : 0] In2;
-input wire [0 : 0] In3;
-input wire [0 : 0] In4;
-input wire [0 : 0] In5;
-input wire [0 : 0] In6;
-input wire [0 : 0] In7;
-input wire [0 : 0] In8;
-output wire [8 : 0] dout;
+input wire [7 : 0] In0;
+input wire [23 : 0] In1;
+output wire [31 : 0] dout;
 
   xlconcat_v2_1_4_xlconcat #(
-    .IN0_WIDTH(1),
-    .IN1_WIDTH(1),
+    .IN0_WIDTH(8),
+    .IN1_WIDTH(24),
     .IN2_WIDTH(1),
     .IN3_WIDTH(1),
     .IN4_WIDTH(1),
@@ -206,18 +192,18 @@ output wire [8 : 0] dout;
     .IN125_WIDTH(1),
     .IN126_WIDTH(1),
     .IN127_WIDTH(1),
-    .dout_width(9),
-    .NUM_PORTS(9)
+    .dout_width(32),
+    .NUM_PORTS(2)
   ) inst (
     .In0(In0),
     .In1(In1),
-    .In2(In2),
-    .In3(In3),
-    .In4(In4),
-    .In5(In5),
-    .In6(In6),
-    .In7(In7),
-    .In8(In8),
+    .In2(1'B0),
+    .In3(1'B0),
+    .In4(1'B0),
+    .In5(1'B0),
+    .In6(1'B0),
+    .In7(1'B0),
+    .In8(1'B0),
     .In9(1'B0),
     .In10(1'B0),
     .In11(1'B0),

@@ -56,16 +56,16 @@
 //  Output     Output      Phase    Duty Cycle   Pk-to-Pk     Phase
 //   Clock     Freq (MHz)  (degrees)    (%)     Jitter (ps)  Error (ps)
 //----------------------------------------------------------------------------
-// clk_out_dynamic__60.00000______0.000______50.0______199.644____161.614
+// clk_out_dynamic__60.00000______0.000______50.0______163.829____130.371
 //
 //----------------------------------------------------------------------------
 // Input Clock   Freq (MHz)    Input Jitter (UI)
 //----------------------------------------------------------------------------
-// __primary__________50.000____________0.010
+// __primary__________60.000____________0.010
 
 `timescale 1ps/1ps
 
-(* CORE_GENERATION_INFO = "urllc_fifo_core_inst_0_clk_dynamic_0,clk_wiz_v6_0_8_0_0,{component_name=urllc_fifo_core_inst_0_clk_dynamic_0,use_phase_alignment=true,use_min_o_jitter=false,use_max_i_jitter=false,use_dyn_phase_shift=true,use_inclk_switchover=false,use_dyn_reconfig=false,enable_axi=0,feedback_source=FDBK_AUTO,PRIMITIVE=MMCM,num_out_clk=1,clkin1_period=20.000,clkin2_period=10.0,use_power_down=false,use_reset=true,use_locked=true,use_inclk_stopped=false,feedback_type=SINGLE,CLOCK_MGR_TYPE=NA,manual_override=false}" *)
+(* CORE_GENERATION_INFO = "urllc_fifo_core_inst_0_clk_dynamic_0,clk_wiz_v6_0_8_0_0,{component_name=urllc_fifo_core_inst_0_clk_dynamic_0,use_phase_alignment=true,use_min_o_jitter=false,use_max_i_jitter=false,use_dyn_phase_shift=true,use_inclk_switchover=false,use_dyn_reconfig=false,enable_axi=0,feedback_source=FDBK_AUTO,PRIMITIVE=MMCM,num_out_clk=1,clkin1_period=16.667,clkin2_period=10.0,use_power_down=false,use_reset=false,use_locked=true,use_inclk_stopped=false,feedback_type=SINGLE,CLOCK_MGR_TYPE=NA,manual_override=false}" *)
 
 module urllc_fifo_core_inst_0_clk_dynamic_0 
  (
@@ -77,7 +77,6 @@ module urllc_fifo_core_inst_0_clk_dynamic_0
   input         psincdec,
   output        psdone,
   // Status and control signals
-  input         resetn,
   output        locked,
  // Clock in ports
   input         clk_in1
@@ -93,7 +92,6 @@ module urllc_fifo_core_inst_0_clk_dynamic_0
   .psincdec(psincdec),
   .psdone(psdone),
   // Status and control signals               
-  .resetn(resetn), 
   .locked(locked),
  // Clock in ports
   .clk_in1(clk_in1)

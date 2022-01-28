@@ -149,7 +149,7 @@ void urllc_core_inst_0_processing_system7_0_0::before_end_of_elaboration()
 
   // 'M_AXI_GP0' transactor parameters
     xsc::common_cpp::properties M_AXI_GP0_transactor_param_props;
-    M_AXI_GP0_transactor_param_props.addLong("SUPPORTS_NARROW_BURST", "0");
+    M_AXI_GP0_transactor_param_props.addLong("SUPPORTS_NARROW_BURST", "1");
     M_AXI_GP0_transactor_param_props.addLong("NUM_WRITE_OUTSTANDING", "8");
     M_AXI_GP0_transactor_param_props.addLong("NUM_READ_OUTSTANDING", "8");
     M_AXI_GP0_transactor_param_props.addLong("DATA_WIDTH", "32");
@@ -258,7 +258,7 @@ void urllc_core_inst_0_processing_system7_0_0::before_end_of_elaboration()
     xsc::common_cpp::properties M_AXI_GP1_transactor_param_props;
     M_AXI_GP1_transactor_param_props.addLong("NUM_WRITE_OUTSTANDING", "8");
     M_AXI_GP1_transactor_param_props.addLong("NUM_READ_OUTSTANDING", "8");
-    M_AXI_GP1_transactor_param_props.addLong("SUPPORTS_NARROW_BURST", "0");
+    M_AXI_GP1_transactor_param_props.addLong("SUPPORTS_NARROW_BURST", "1");
     M_AXI_GP1_transactor_param_props.addLong("DATA_WIDTH", "32");
     M_AXI_GP1_transactor_param_props.addLong("FREQ_HZ", "50000000");
     M_AXI_GP1_transactor_param_props.addLong("ID_WIDTH", "12");
@@ -665,7 +665,7 @@ void urllc_core_inst_0_processing_system7_0_0::before_end_of_elaboration()
 
   // 'M_AXI_GP0' transactor parameters
     xsc::common_cpp::properties M_AXI_GP0_transactor_param_props;
-    M_AXI_GP0_transactor_param_props.addLong("SUPPORTS_NARROW_BURST", "0");
+    M_AXI_GP0_transactor_param_props.addLong("SUPPORTS_NARROW_BURST", "1");
     M_AXI_GP0_transactor_param_props.addLong("NUM_WRITE_OUTSTANDING", "8");
     M_AXI_GP0_transactor_param_props.addLong("NUM_READ_OUTSTANDING", "8");
     M_AXI_GP0_transactor_param_props.addLong("DATA_WIDTH", "32");
@@ -774,7 +774,7 @@ void urllc_core_inst_0_processing_system7_0_0::before_end_of_elaboration()
     xsc::common_cpp::properties M_AXI_GP1_transactor_param_props;
     M_AXI_GP1_transactor_param_props.addLong("NUM_WRITE_OUTSTANDING", "8");
     M_AXI_GP1_transactor_param_props.addLong("NUM_READ_OUTSTANDING", "8");
-    M_AXI_GP1_transactor_param_props.addLong("SUPPORTS_NARROW_BURST", "0");
+    M_AXI_GP1_transactor_param_props.addLong("SUPPORTS_NARROW_BURST", "1");
     M_AXI_GP1_transactor_param_props.addLong("DATA_WIDTH", "32");
     M_AXI_GP1_transactor_param_props.addLong("FREQ_HZ", "50000000");
     M_AXI_GP1_transactor_param_props.addLong("ID_WIDTH", "12");
@@ -1181,7 +1181,7 @@ void urllc_core_inst_0_processing_system7_0_0::before_end_of_elaboration()
 
   // 'M_AXI_GP0' transactor parameters
     xsc::common_cpp::properties M_AXI_GP0_transactor_param_props;
-    M_AXI_GP0_transactor_param_props.addLong("SUPPORTS_NARROW_BURST", "0");
+    M_AXI_GP0_transactor_param_props.addLong("SUPPORTS_NARROW_BURST", "1");
     M_AXI_GP0_transactor_param_props.addLong("NUM_WRITE_OUTSTANDING", "8");
     M_AXI_GP0_transactor_param_props.addLong("NUM_READ_OUTSTANDING", "8");
     M_AXI_GP0_transactor_param_props.addLong("DATA_WIDTH", "32");
@@ -1290,7 +1290,7 @@ void urllc_core_inst_0_processing_system7_0_0::before_end_of_elaboration()
     xsc::common_cpp::properties M_AXI_GP1_transactor_param_props;
     M_AXI_GP1_transactor_param_props.addLong("NUM_WRITE_OUTSTANDING", "8");
     M_AXI_GP1_transactor_param_props.addLong("NUM_READ_OUTSTANDING", "8");
-    M_AXI_GP1_transactor_param_props.addLong("SUPPORTS_NARROW_BURST", "0");
+    M_AXI_GP1_transactor_param_props.addLong("SUPPORTS_NARROW_BURST", "1");
     M_AXI_GP1_transactor_param_props.addLong("DATA_WIDTH", "32");
     M_AXI_GP1_transactor_param_props.addLong("FREQ_HZ", "50000000");
     M_AXI_GP1_transactor_param_props.addLong("ID_WIDTH", "12");
@@ -1686,7 +1686,7 @@ urllc_core_inst_0_processing_system7_0_0::urllc_core_inst_0_processing_system7_0
 
   // configure M_AXI_GP0_transactor
     xsc::common_cpp::properties M_AXI_GP0_transactor_param_props;
-    M_AXI_GP0_transactor_param_props.addLong("SUPPORTS_NARROW_BURST", "0");
+    M_AXI_GP0_transactor_param_props.addLong("SUPPORTS_NARROW_BURST", "1");
     M_AXI_GP0_transactor_param_props.addLong("NUM_WRITE_OUTSTANDING", "8");
     M_AXI_GP0_transactor_param_props.addLong("NUM_READ_OUTSTANDING", "8");
     M_AXI_GP0_transactor_param_props.addLong("DATA_WIDTH", "32");
@@ -1776,7 +1776,7 @@ urllc_core_inst_0_processing_system7_0_0::urllc_core_inst_0_processing_system7_0
     xsc::common_cpp::properties M_AXI_GP1_transactor_param_props;
     M_AXI_GP1_transactor_param_props.addLong("NUM_WRITE_OUTSTANDING", "8");
     M_AXI_GP1_transactor_param_props.addLong("NUM_READ_OUTSTANDING", "8");
-    M_AXI_GP1_transactor_param_props.addLong("SUPPORTS_NARROW_BURST", "0");
+    M_AXI_GP1_transactor_param_props.addLong("SUPPORTS_NARROW_BURST", "1");
     M_AXI_GP1_transactor_param_props.addLong("DATA_WIDTH", "32");
     M_AXI_GP1_transactor_param_props.addLong("FREQ_HZ", "50000000");
     M_AXI_GP1_transactor_param_props.addLong("ID_WIDTH", "12");
@@ -2200,7 +2200,7 @@ urllc_core_inst_0_processing_system7_0_0::urllc_core_inst_0_processing_system7_0
 
   // configure M_AXI_GP0_transactor
     xsc::common_cpp::properties M_AXI_GP0_transactor_param_props;
-    M_AXI_GP0_transactor_param_props.addLong("SUPPORTS_NARROW_BURST", "0");
+    M_AXI_GP0_transactor_param_props.addLong("SUPPORTS_NARROW_BURST", "1");
     M_AXI_GP0_transactor_param_props.addLong("NUM_WRITE_OUTSTANDING", "8");
     M_AXI_GP0_transactor_param_props.addLong("NUM_READ_OUTSTANDING", "8");
     M_AXI_GP0_transactor_param_props.addLong("DATA_WIDTH", "32");
@@ -2290,7 +2290,7 @@ urllc_core_inst_0_processing_system7_0_0::urllc_core_inst_0_processing_system7_0
     xsc::common_cpp::properties M_AXI_GP1_transactor_param_props;
     M_AXI_GP1_transactor_param_props.addLong("NUM_WRITE_OUTSTANDING", "8");
     M_AXI_GP1_transactor_param_props.addLong("NUM_READ_OUTSTANDING", "8");
-    M_AXI_GP1_transactor_param_props.addLong("SUPPORTS_NARROW_BURST", "0");
+    M_AXI_GP1_transactor_param_props.addLong("SUPPORTS_NARROW_BURST", "1");
     M_AXI_GP1_transactor_param_props.addLong("DATA_WIDTH", "32");
     M_AXI_GP1_transactor_param_props.addLong("FREQ_HZ", "50000000");
     M_AXI_GP1_transactor_param_props.addLong("ID_WIDTH", "12");

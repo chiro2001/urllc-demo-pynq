@@ -40,4 +40,4 @@ EAStep()
      fi
 }
 
-EAStep vivado -log urllc_fifo_sender_wrapper.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source urllc_fifo_sender_wrapper.tcl
+EAStep vivado -log urllc_fifo_receiver_wrapper.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source urllc_fifo_receiver_wrapper.tcl

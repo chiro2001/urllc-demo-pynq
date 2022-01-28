@@ -1,7 +1,7 @@
 {
   "design": {
     "design_info": {
-      "boundary_crc": "0x77F62EAA15F70BF4",
+      "boundary_crc": "0x77F62EAAABD86E66",
       "design_src": "SBD",
       "device": "xc7z020clg400-2",
       "name": "bd_a924",
@@ -229,8 +229,8 @@
             "value_src": "const_prop"
           },
           "SUPPORTS_NARROW_BURST": {
-            "value": "0",
-            "value_src": "user_prop"
+            "value": "1",
+            "value_src": "default_prop"
           },
           "WUSER_BITS_PER_BYTE": {
             "value": "0",
@@ -327,7 +327,7 @@
           },
           "MAX_BURST_LENGTH": {
             "value": "256",
-            "value_src": "user_prop"
+            "value_src": "default"
           },
           "NUM_READ_OUTSTANDING": {
             "value": "16"
@@ -462,7 +462,7 @@
           },
           "MAX_BURST_LENGTH": {
             "value": "256",
-            "value_src": "user_prop"
+            "value_src": "default"
           },
           "NUM_READ_OUTSTANDING": {
             "value": "2"
@@ -597,7 +597,7 @@
           },
           "MAX_BURST_LENGTH": {
             "value": "256",
-            "value_src": "user_prop"
+            "value_src": "default"
           },
           "NUM_READ_OUTSTANDING": {
             "value": "16"
@@ -732,7 +732,7 @@
           },
           "MAX_BURST_LENGTH": {
             "value": "256",
-            "value_src": "user_prop"
+            "value_src": "default"
           },
           "NUM_READ_OUTSTANDING": {
             "value": "2"
@@ -2535,7 +2535,7 @@
                 "value": "1"
               },
               "SUPPORTS_NARROW": {
-                "value": "0"
+                "value": "1"
               },
               "S_ARUSER_WIDTH": {
                 "value": "0"
@@ -2582,7 +2582,7 @@
                 "value": "0"
               },
               "MEP_IDENTIFIER": {
-                "value": "1"
+                "value": "5"
               },
               "MEP_IDENTIFIER_WIDTH": {
                 "value": "3"
@@ -2725,7 +2725,7 @@
                 "value": "32"
               },
               "SUPPORTS_NARROW": {
-                "value": "0"
+                "value": "1"
               },
               "S_RUSER_BITS_PER_BYTE": {
                 "value": "0"
@@ -3938,7 +3938,7 @@
                 "value": "0"
               },
               "MEP_IDENTIFIER": {
-                "value": "2"
+                "value": "1"
               },
               "MEP_IDENTIFIER_WIDTH": {
                 "value": "3"
@@ -4744,7 +4744,7 @@
                 "value": "0"
               },
               "MEP_IDENTIFIER": {
-                "value": "3"
+                "value": "2"
               },
               "MEP_IDENTIFIER_WIDTH": {
                 "value": "3"
@@ -5725,7 +5725,7 @@
                 "value": "0"
               },
               "MEP_IDENTIFIER": {
-                "value": "4"
+                "value": "3"
               },
               "MEP_IDENTIFIER_WIDTH": {
                 "value": "3"
@@ -6531,7 +6531,7 @@
                 "value": "0"
               },
               "MEP_IDENTIFIER": {
-                "value": "5"
+                "value": "4"
               },
               "MEP_IDENTIFIER_WIDTH": {
                 "value": "3"
@@ -8453,19 +8453,19 @@
                 "value": "0b00000"
               },
               "SSC001_ROUTE": {
-                "value": "0b00001"
-              },
-              "SSC002_ROUTE": {
                 "value": "0b00010"
               },
-              "SSC003_ROUTE": {
+              "SSC002_ROUTE": {
                 "value": "0b00100"
               },
-              "SSC004_ROUTE": {
+              "SSC003_ROUTE": {
                 "value": "0b01000"
               },
-              "SSC005_ROUTE": {
+              "SSC004_ROUTE": {
                 "value": "0b10000"
+              },
+              "SSC005_ROUTE": {
+                "value": "0b00001"
               },
               "SSC006_ROUTE": {
                 "value": "0b00000"
@@ -9599,19 +9599,19 @@
                 "value": "0b00000"
               },
               "SSC001_ROUTE": {
-                "value": "0b00001"
-              },
-              "SSC002_ROUTE": {
                 "value": "0b00010"
               },
-              "SSC003_ROUTE": {
+              "SSC002_ROUTE": {
                 "value": "0b00100"
               },
-              "SSC004_ROUTE": {
+              "SSC003_ROUTE": {
                 "value": "0b01000"
               },
-              "SSC005_ROUTE": {
+              "SSC004_ROUTE": {
                 "value": "0b10000"
+              },
+              "SSC005_ROUTE": {
+                "value": "0b00001"
               },
               "SSC006_ROUTE": {
                 "value": "0b00000"
@@ -10778,19 +10778,19 @@
                 "value": "0b00000"
               },
               "SSC001_ROUTE": {
-                "value": "0b00001"
-              },
-              "SSC002_ROUTE": {
                 "value": "0b00010"
               },
-              "SSC003_ROUTE": {
+              "SSC002_ROUTE": {
                 "value": "0b00100"
               },
-              "SSC004_ROUTE": {
+              "SSC003_ROUTE": {
                 "value": "0b01000"
               },
-              "SSC005_ROUTE": {
+              "SSC004_ROUTE": {
                 "value": "0b10000"
+              },
+              "SSC005_ROUTE": {
+                "value": "0b00001"
               },
               "SSC006_ROUTE": {
                 "value": "0b00000"

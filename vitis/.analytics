@@ -652,3 +652,97 @@ timestamp=[2022-01-17 00:41:59], mode=BUILD, duration=0:00:00.715, duration_ms=7
 timestamp=[2022-01-17 00:42:26], mode=BUILD, duration=0:00:00.764, duration_ms=764, data={name=sender_zynq, configuration=Debug, clean_build=false}
 timestamp=[2022-01-17 00:45:03], mode=BUILD, duration=0:00:00.667, duration_ms=667, data={name=sender_zynq, configuration=Debug, clean_build=false}
 timestamp=[2022-01-17 00:45:41], mode=BUILD, duration=0:00:00.720, duration_ms=720, data={name=reciever_zynq, configuration=Debug, clean_build=false}
+timestamp=[2022-01-18 09:04:37], mode=WORKBENCH_START, duration=0:00:08.188, duration_ms=8188, data={}
+timestamp=[2022-01-18 09:04:38], mode=WORKBENCH_UI_INIT, duration=0:00:00.729, duration_ms=729, data={editors_count=18, platform_editors_count=10, projects_count=28, platform_projects_count=9, active_platform_editor=false, projects=RemoteSystemsTempFiles,ila_dma_test,ila_dma_test_system,my_ila,my_ila_per,my_ila_per_system,reciever,reciever_system,reciever_test,reciever_test_system,reciever_zynq,reciever_zynq_system,riciever_fifo_all,sender_fifo,sender_fifo_all,sender_fsbl,sender_fsbl_system,sender_zynq,sender_zynq_system,urllc_all_test,urllc_all_test_system,urllc_reciever,urllc_sender,xaxidma_example_simple_poll_1,xaxidma_example_simple_poll_1_system,zynq_buffer_sender,zynq_reciever,zynq_sender}
+timestamp=[2022-01-18 09:04:38], mode=PLATFORM_REPOSITORY_INIT, duration=0:00:00.413, duration_ms=413, data={}
+timestamp=[2022-01-18 09:42:37], mode=BUILD, duration=0:00:01.588, duration_ms=1588, data={name=reciever_zynq, configuration=Debug, clean_build=false}
+timestamp=[2022-01-18 09:54:58], mode=BUILD, duration=0:00:00.720, duration_ms=720, data={name=reciever_zynq, configuration=Debug, clean_build=false}
+timestamp=[2022-01-18 10:02:45], mode=BUILD, duration=0:00:00.704, duration_ms=704, data={name=reciever_zynq, configuration=Debug, clean_build=false}
+timestamp=[2022-01-18 12:40:50], mode=PLATFORM_CREATION, duration=0:00:13.926, duration_ms=13926, data={platform_source=dsa, os=standalone, processor=ps7_cortexa9, platform=null}
+timestamp=[2022-01-18 12:41:30], mode=PLATFORM_GENERATION, duration=0:00:09.898, duration_ms=9898, data={name=reciever_fifo2}
+timestamp=[2022-01-18 12:41:47], mode=PLATFORM_GENERATION, duration=0:00:04.261, duration_ms=4261, data={name=reciever_fifo2}
+timestamp=[2022-01-18 12:41:56], mode=PLATFORM_GENERATION, duration=0:00:09.869, duration_ms=9869, data={name=reciever_fifo2}
+timestamp=[2022-01-18 12:41:59], mode=BUILD, duration=0:00:02.350, duration_ms=2350, data={name=reciever_zynq, configuration=Debug, clean_build=false}
+timestamp=[2022-01-18 12:42:04], mode=BUILD, duration=0:00:04.692, duration_ms=4692, data={name=reciever_zynq_system, configuration=Debug, clean_build=false}
+timestamp=[2022-01-18 12:42:15], mode=BUILD, duration=0:00:00.264, duration_ms=264, data={name=reciever_zynq, configuration=Debug, clean_build=false}
+timestamp=[2022-01-18 12:44:39], mode=BUILD, duration=0:00:00.766, duration_ms=766, data={name=reciever_zynq, configuration=Debug, clean_build=false}
+timestamp=[2022-01-19 10:08:21], mode=WORKBENCH_START, duration=0:00:09.142, duration_ms=9142, data={}
+timestamp=[2022-01-19 10:08:22], mode=WORKBENCH_UI_INIT, duration=0:00:00.843, duration_ms=843, data={editors_count=21, platform_editors_count=13, projects_count=29, platform_projects_count=10, active_platform_editor=false, projects=RemoteSystemsTempFiles,ila_dma_test,ila_dma_test_system,my_ila,my_ila_per,my_ila_per_system,reciever,reciever_fifo2,reciever_system,reciever_test,reciever_test_system,reciever_zynq,reciever_zynq_system,riciever_fifo_all,sender_fifo,sender_fifo_all,sender_fsbl,sender_fsbl_system,sender_zynq,sender_zynq_system,urllc_all_test,urllc_all_test_system,urllc_reciever,urllc_sender,xaxidma_example_simple_poll_1,xaxidma_example_simple_poll_1_system,zynq_buffer_sender,zynq_reciever,zynq_sender}
+timestamp=[2022-01-19 10:08:22], mode=PLATFORM_REPOSITORY_INIT, duration=0:00:00.425, duration_ms=425, data={}
+timestamp=[2022-01-19 10:13:36], mode=BUILD, duration=0:00:01.458, duration_ms=1458, data={name=reciever_zynq, configuration=Debug, clean_build=false}
+timestamp=[2022-01-19 10:16:32], mode=BUILD, duration=0:00:01.432, duration_ms=1432, data={name=reciever_zynq, configuration=Debug, clean_build=false}
+timestamp=[2022-01-19 10:56:56], mode=PLATFORM_CREATION, duration=0:00:15.082, duration_ms=15082, data={platform_source=dsa, os=standalone, processor=ps7_cortexa9, platform=null}
+timestamp=[2022-01-19 10:57:44], mode=PLATFORM_GENERATION, duration=0:00:02.637, duration_ms=2637, data={name=reciever_fifo_3}
+timestamp=[2022-01-19 10:57:54], mode=PLATFORM_GENERATION, duration=0:00:09.838, duration_ms=9838, data={name=reciever_fifo_3}
+timestamp=[2022-01-19 10:58:20], mode=PLATFORM_GENERATION, duration=0:00:04.146, duration_ms=4146, data={name=reciever_fifo_3}
+timestamp=[2022-01-19 10:58:29], mode=PLATFORM_GENERATION, duration=0:00:08.452, duration_ms=8452, data={name=reciever_fifo_3}
+timestamp=[2022-01-19 10:58:31], mode=BUILD, duration=0:00:02.240, duration_ms=2240, data={name=reciever_zynq, configuration=Debug, clean_build=false}
+timestamp=[2022-01-19 10:58:37], mode=BUILD, duration=0:00:05.122, duration_ms=5122, data={name=reciever_zynq_system, configuration=Debug, clean_build=false}
+timestamp=[2022-01-19 10:58:56], mode=BUILD, duration=0:00:00.258, duration_ms=258, data={name=reciever_zynq, configuration=Debug, clean_build=false}
+timestamp=[2022-01-19 11:10:13], mode=BUILD, duration=0:00:00.710, duration_ms=710, data={name=reciever_zynq, configuration=Debug, clean_build=false}
+timestamp=[2022-01-19 11:10:30], mode=BUILD, duration=0:00:00.716, duration_ms=716, data={name=reciever_zynq, configuration=Debug, clean_build=false}
+timestamp=[2022-01-23 09:10:16], mode=WORKBENCH_START, duration=0:00:10.032, duration_ms=10032, data={}
+timestamp=[2022-01-23 09:10:17], mode=WORKBENCH_UI_INIT, duration=0:00:00.846, duration_ms=846, data={editors_count=22, platform_editors_count=14, projects_count=30, platform_projects_count=11, active_platform_editor=false, projects=RemoteSystemsTempFiles,ila_dma_test,ila_dma_test_system,my_ila,my_ila_per,my_ila_per_system,reciever,reciever_fifo2,reciever_fifo_3,reciever_system,reciever_test,reciever_test_system,reciever_zynq,reciever_zynq_system,riciever_fifo_all,sender_fifo,sender_fifo_all,sender_fsbl,sender_fsbl_system,sender_zynq,sender_zynq_system,urllc_all_test,urllc_all_test_system,urllc_reciever,urllc_sender,xaxidma_example_simple_poll_1,xaxidma_example_simple_poll_1_system,zynq_buffer_sender,zynq_reciever,zynq_sender}
+timestamp=[2022-01-23 09:10:18], mode=PLATFORM_REPOSITORY_INIT, duration=0:00:00.516, duration_ms=516, data={}
+timestamp=[2022-01-23 22:35:12], mode=WORKBENCH_START, duration=0:00:09.555, duration_ms=9555, data={}
+timestamp=[2022-01-23 22:35:13], mode=WORKBENCH_UI_INIT, duration=0:00:01.013, duration_ms=1013, data={editors_count=22, platform_editors_count=14, projects_count=30, platform_projects_count=11, active_platform_editor=false, projects=RemoteSystemsTempFiles,ila_dma_test,ila_dma_test_system,my_ila,my_ila_per,my_ila_per_system,reciever,reciever_fifo2,reciever_fifo_3,reciever_system,reciever_test,reciever_test_system,reciever_zynq,reciever_zynq_system,riciever_fifo_all,sender_fifo,sender_fifo_all,sender_fsbl,sender_fsbl_system,sender_zynq,sender_zynq_system,urllc_all_test,urllc_all_test_system,urllc_reciever,urllc_sender,xaxidma_example_simple_poll_1,xaxidma_example_simple_poll_1_system,zynq_buffer_sender,zynq_reciever,zynq_sender}
+timestamp=[2022-01-23 22:35:13], mode=PLATFORM_REPOSITORY_INIT, duration=0:00:00.738, duration_ms=738, data={}
+timestamp=[2022-01-24 08:46:38], mode=PLATFORM_CREATION, duration=0:00:13.126, duration_ms=13126, data={platform_source=dsa, os=standalone, processor=ps7_cortexa9, platform=null}
+timestamp=[2022-01-24 08:47:14], mode=PLATFORM_GENERATION, duration=0:00:09.693, duration_ms=9693, data={name=urllc_fifo_sender}
+timestamp=[2022-01-24 08:51:27], mode=APP_CREATION, duration=0:00:05.333, duration_ms=5333, data={name=urllc_fifo_sender_ps, project_type=sdk, os=standalone, processor=cortex-a9, runtime=C/C++, platform=urllc_fifo_sender, application_type=application}
+timestamp=[2022-01-24 08:51:47], mode=BUILD, duration=0:00:02.426, duration_ms=2426, data={name=urllc_fifo_sender_ps, configuration=Debug, clean_build=false}
+timestamp=[2022-01-24 08:59:57], mode=BUILD, duration=0:00:00.271, duration_ms=271, data={name=urllc_fifo_sender_ps, configuration=Debug, clean_build=false}
+timestamp=[2022-01-29 02:21:28], mode=WORKBENCH_START, duration=0:00:09.290, duration_ms=9290, data={}
+timestamp=[2022-01-29 02:21:29], mode=WORKBENCH_UI_INIT, duration=0:00:00.790, duration_ms=790, data={editors_count=1, platform_editors_count=0, projects_count=33, platform_projects_count=12, active_platform_editor=false, projects=RemoteSystemsTempFiles,ila_dma_test,ila_dma_test_system,my_ila,my_ila_per,my_ila_per_system,reciever,reciever_fifo2,reciever_fifo_3,reciever_system,reciever_test,reciever_test_system,reciever_zynq,reciever_zynq_system,riciever_fifo_all,sender_fifo,sender_fifo_all,sender_fsbl,sender_fsbl_system,sender_zynq,sender_zynq_system,urllc_all_test,urllc_all_test_system,urllc_fifo_sender,urllc_fifo_sender_ps,urllc_fifo_sender_ps_system,urllc_reciever,urllc_sender,xaxidma_example_simple_poll_1,xaxidma_example_simple_poll_1_system,zynq_buffer_sender,zynq_reciever,zynq_sender}
+timestamp=[2022-01-29 02:21:29], mode=PLATFORM_REPOSITORY_INIT, duration=0:00:00.541, duration_ms=541, data={}
+timestamp=[2022-01-29 02:28:10], mode=WORKBENCH_START, duration=0:00:09.219, duration_ms=9219, data={}
+timestamp=[2022-01-29 02:28:12], mode=WORKBENCH_UI_INIT, duration=0:00:01.304, duration_ms=1304, data={editors_count=1, platform_editors_count=0, projects_count=33, platform_projects_count=12, active_platform_editor=false, projects=RemoteSystemsTempFiles,ila_dma_test,ila_dma_test_system,my_ila,my_ila_per,my_ila_per_system,reciever,reciever_fifo2,reciever_fifo_3,reciever_system,reciever_test,reciever_test_system,reciever_zynq,reciever_zynq_system,riciever_fifo_all,sender_fifo,sender_fifo_all,sender_fsbl,sender_fsbl_system,sender_zynq,sender_zynq_system,urllc_all_test,urllc_all_test_system,urllc_fifo_sender,urllc_fifo_sender_ps,urllc_fifo_sender_ps_system,urllc_reciever,urllc_sender,xaxidma_example_simple_poll_1,xaxidma_example_simple_poll_1_system,zynq_buffer_sender,zynq_reciever,zynq_sender}
+timestamp=[2022-01-29 02:28:12], mode=PLATFORM_REPOSITORY_INIT, duration=0:00:00.593, duration_ms=593, data={}
+timestamp=[2022-01-29 02:31:53], mode=PLATFORM_GENERATION, duration=0:00:04.841, duration_ms=4841, data={name=urllc_fifo_sender}
+timestamp=[2022-01-29 02:32:02], mode=PLATFORM_GENERATION, duration=0:00:08.518, duration_ms=8518, data={name=urllc_fifo_sender}
+timestamp=[2022-01-29 02:32:06], mode=PLATFORM_GENERATION, duration=0:00:03.902, duration_ms=3902, data={name=urllc_fifo_sender}
+timestamp=[2022-01-29 02:32:06], mode=BUILD, duration=0:00:00.144, duration_ms=144, data={name=urllc_fifo_sender_ps, configuration=Debug, clean_build=true}
+timestamp=[2022-01-29 02:32:14], mode=PLATFORM_GENERATION, duration=0:00:07.680, duration_ms=7680, data={name=urllc_fifo_sender}
+timestamp=[2022-01-29 02:32:19], mode=BUILD, duration=0:00:02.714, duration_ms=2714, data={name=urllc_fifo_sender_ps, configuration=Debug, clean_build=false}
+timestamp=[2022-01-29 02:32:29], mode=BUILD, duration=0:00:05.032, duration_ms=5032, data={name=urllc_fifo_sender_ps_system, configuration=Debug, clean_build=false}
+timestamp=[2022-01-29 02:32:29], mode=BUILD, duration=0:00:00.267, duration_ms=267, data={name=urllc_fifo_sender_ps, configuration=Debug, clean_build=false}
+timestamp=[2022-01-29 04:28:46], mode=BUILD, duration=0:00:00.439, duration_ms=439, data={name=urllc_fifo_sender_ps, configuration=Debug, clean_build=true}
+timestamp=[2022-01-29 04:28:47], mode=BUILD, duration=0:00:00.541, duration_ms=541, data={name=urllc_fifo_sender_ps, configuration=Debug, clean_build=false}
+timestamp=[2022-01-29 04:29:18], mode=BUILD, duration=0:00:00.416, duration_ms=416, data={name=urllc_fifo_sender_ps, configuration=Debug, clean_build=false}
+timestamp=[2022-01-29 04:30:57], mode=BUILD, duration=0:00:00.407, duration_ms=407, data={name=urllc_fifo_sender_ps, configuration=Debug, clean_build=false}
+timestamp=[2022-01-29 04:32:40], mode=BUILD, duration=0:00:00.351, duration_ms=351, data={name=urllc_fifo_sender_ps, configuration=Debug, clean_build=false}
+timestamp=[2022-01-29 04:34:37], mode=BUILD, duration=0:00:00.357, duration_ms=357, data={name=urllc_fifo_sender_ps, configuration=Debug, clean_build=false}
+timestamp=[2022-01-29 04:34:49], mode=BUILD, duration=0:00:02.726, duration_ms=2726, data={name=urllc_fifo_sender_ps, configuration=Debug, clean_build=false}
+timestamp=[2022-01-29 04:35:19], mode=BUILD, duration=0:00:00.143, duration_ms=143, data={name=urllc_fifo_sender_ps, configuration=Debug, clean_build=true}
+timestamp=[2022-01-29 04:35:21], mode=BUILD, duration=0:00:02.277, duration_ms=2277, data={name=urllc_fifo_sender_ps, configuration=Debug, clean_build=false}
+timestamp=[2022-01-29 04:44:53], mode=BUILD, duration=0:00:00.407, duration_ms=407, data={name=urllc_fifo_sender_ps, configuration=Debug, clean_build=false}
+timestamp=[2022-01-29 04:46:09], mode=BUILD, duration=0:00:00.708, duration_ms=708, data={name=urllc_fifo_sender_ps, configuration=Debug, clean_build=false}
+timestamp=[2022-01-29 04:51:50], mode=BUILD, duration=0:00:00.358, duration_ms=358, data={name=urllc_fifo_sender_ps, configuration=Debug, clean_build=false}
+timestamp=[2022-01-29 04:52:14], mode=BUILD, duration=0:00:00.405, duration_ms=405, data={name=urllc_fifo_sender_ps, configuration=Debug, clean_build=false}
+timestamp=[2022-01-29 04:53:28], mode=BUILD, duration=0:00:00.355, duration_ms=355, data={name=urllc_fifo_sender_ps, configuration=Debug, clean_build=false}
+timestamp=[2022-01-29 04:53:45], mode=BUILD, duration=0:00:00.359, duration_ms=359, data={name=urllc_fifo_sender_ps, configuration=Debug, clean_build=false}
+timestamp=[2022-01-29 04:54:46], mode=BUILD, duration=0:00:00.359, duration_ms=359, data={name=urllc_fifo_sender_ps, configuration=Debug, clean_build=false}
+timestamp=[2022-01-29 04:55:01], mode=BUILD, duration=0:00:00.368, duration_ms=368, data={name=urllc_fifo_sender_ps, configuration=Debug, clean_build=false}
+timestamp=[2022-01-29 04:55:29], mode=BUILD, duration=0:00:00.660, duration_ms=660, data={name=urllc_fifo_sender_ps, configuration=Debug, clean_build=false}
+timestamp=[2022-01-29 05:34:24], mode=BUILD, duration=0:00:00.614, duration_ms=614, data={name=urllc_fifo_sender_ps, configuration=Debug, clean_build=false}
+timestamp=[2022-01-29 05:34:48], mode=BUILD, duration=0:00:00.154, duration_ms=154, data={name=urllc_fifo_sender_ps, configuration=Debug, clean_build=true}
+timestamp=[2022-01-29 05:34:49], mode=BUILD, duration=0:00:00.359, duration_ms=359, data={name=urllc_fifo_sender_ps, configuration=Debug, clean_build=false}
+timestamp=[2022-01-29 05:35:13], mode=BUILD, duration=0:00:02.252, duration_ms=2252, data={name=urllc_fifo_sender_ps, configuration=Debug, clean_build=false}
+timestamp=[2022-01-29 05:56:19], mode=PLATFORM_GENERATION, duration=0:00:03.884, duration_ms=3884, data={name=urllc_fifo_sender}
+timestamp=[2022-01-29 05:56:19], mode=BUILD, duration=0:00:00.505, duration_ms=505, data={name=urllc_fifo_sender_ps, configuration=Debug, clean_build=false}
+timestamp=[2022-01-29 05:56:36], mode=BUILD, duration=0:00:00.769, duration_ms=769, data={name=urllc_fifo_sender_ps, configuration=Debug, clean_build=false}
+timestamp=[2022-01-29 05:56:58], mode=BUILD, duration=0:00:00.709, duration_ms=709, data={name=urllc_fifo_sender_ps, configuration=Debug, clean_build=false}
+timestamp=[2022-01-29 06:11:56], mode=PLATFORM_GENERATION, duration=0:00:01.739, duration_ms=1739, data={name=urllc_fifo_sender}
+timestamp=[2022-01-29 06:11:59], mode=BUILD, duration=0:00:00.259, duration_ms=259, data={name=urllc_fifo_sender_ps, configuration=Debug, clean_build=false}
+timestamp=[2022-01-29 06:12:10], mode=PLATFORM_GENERATION, duration=0:00:03.988, duration_ms=3988, data={name=urllc_fifo_sender}
+timestamp=[2022-01-29 06:12:12], mode=PLATFORM_GENERATION, duration=0:00:01.565, duration_ms=1565, data={name=urllc_fifo_sender}
+timestamp=[2022-01-29 06:12:12], mode=BUILD, duration=0:00:00.160, duration_ms=160, data={name=urllc_fifo_sender_ps, configuration=Debug, clean_build=true}
+timestamp=[2022-01-29 06:12:12], mode=BUILD, duration=0:00:00.163, duration_ms=163, data={name=urllc_fifo_sender_ps_system, configuration=Debug, clean_build=true}
+timestamp=[2022-01-29 06:12:20], mode=PLATFORM_GENERATION, duration=0:00:07.796, duration_ms=7796, data={name=urllc_fifo_sender}
+timestamp=[2022-01-29 06:12:23], mode=BUILD, duration=0:00:02.535, duration_ms=2535, data={name=urllc_fifo_sender_ps, configuration=Debug, clean_build=false}
+timestamp=[2022-01-29 06:12:33], mode=BUILD, duration=0:00:05.055, duration_ms=5055, data={name=urllc_fifo_sender_ps_system, configuration=Debug, clean_build=false}
+timestamp=[2022-01-29 06:25:01], mode=BUILD, duration=0:00:00.715, duration_ms=715, data={name=urllc_fifo_sender_ps, configuration=Debug, clean_build=false}
+timestamp=[2022-01-29 06:27:24], mode=BUILD, duration=0:00:00.710, duration_ms=710, data={name=urllc_fifo_sender_ps, configuration=Debug, clean_build=false}
+timestamp=[2022-01-29 06:30:37], mode=BUILD, duration=0:00:00.712, duration_ms=712, data={name=urllc_fifo_sender_ps, configuration=Debug, clean_build=false}
+timestamp=[2022-01-29 06:43:54], mode=BUILD, duration=0:00:00.757, duration_ms=757, data={name=urllc_fifo_sender_ps, configuration=Debug, clean_build=false}
+timestamp=[2022-01-29 06:58:06], mode=BUILD, duration=0:00:00.767, duration_ms=767, data={name=urllc_fifo_sender_ps, configuration=Debug, clean_build=false}

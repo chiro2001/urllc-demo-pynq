@@ -1,24 +1,26 @@
 {
    "ActiveEmotionalView":"Default View",
    "Default View_ScaleFactor":"1.25",
-   "Default View_TopLeft":"-524,-233",
+   "Default View_TopLeft":"-242,-32",
    "ExpandedHierarchyInLayout":"",
-   "guistr":"# # String gsaved with Nlview 7.0r6  2020-01-29 bk=1.5227 VDI=41 GEI=36 GUI=JA:10.0 non-TLS-threadsafe
+   "guistr":"# # String gsaved with Nlview 7.0r6  2020-01-29 bk=1.5227 VDI=41 GEI=36 GUI=JA:10.0 non-TLS
 #  -string -flagsOSRD
-preplace port DDR -pg 1 -lvl 2 -x 290 -y 60 -defaultsOSRD
-preplace port FIXED_IO -pg 1 -lvl 2 -x 290 -y 80 -defaultsOSRD
-preplace port port-id_sender_da_clk_60M -pg 1 -lvl 2 -x 290 -y 120 -defaultsOSRD
-preplace port port-id_sender_ad_clk_60M -pg 1 -lvl 2 -x 290 -y 100 -defaultsOSRD
-preplace portBus sender_ad -pg 1 -lvl 0 -x -10 -y 100 -defaultsOSRD
-preplace portBus sender_da -pg 1 -lvl 2 -x 290 -y 140 -defaultsOSRD
-preplace inst urllc_fifo_core_0 -pg 1 -lvl 1 -x 140 -y 100 -defaultsOSRD
-preplace netloc sender_ad_1 1 0 1 N 100
-preplace netloc urllc_fifo_core_0_clk_ad_static 1 1 1 270 100n
+preplace port DDR -pg 1 -lvl 2 -x 330 -y 60 -defaultsOSRD
+preplace port FIXED_IO -pg 1 -lvl 2 -x 330 -y 80 -defaultsOSRD
+preplace port port-id_sender_da_clk_60M -pg 1 -lvl 2 -x 330 -y 120 -defaultsOSRD
+preplace port port-id_sender_ad_clk_60M -pg 1 -lvl 2 -x 330 -y 100 -defaultsOSRD
+preplace port port-id_clk_pl_50M -pg 1 -lvl 0 -x 0 -y 110 -defaultsOSRD
+preplace portBus sender_ad -pg 1 -lvl 0 -x 0 -y 90 -defaultsOSRD
+preplace portBus sender_da -pg 1 -lvl 2 -x 330 -y 140 -defaultsOSRD
+preplace inst urllc_fifo_core_0 -pg 1 -lvl 1 -x 160 -y 100 -defaultsOSRD
+preplace netloc clk_pl_50M_1 1 0 1 NJ 110
+preplace netloc sender_ad_1 1 0 1 NJ 90
+preplace netloc urllc_fifo_core_0_clk_ad_static 1 1 1 300 100n
 preplace netloc urllc_fifo_core_0_da 1 1 1 NJ 140
 preplace netloc urllc_fifo_core_0_DDR 1 1 1 NJ 60
 preplace netloc urllc_fifo_core_0_FIXED_IO 1 1 1 NJ 80
-levelinfo -pg 1 -10 140 290
-pagesize -pg 1 -db -bbox -sgen -160 0 470 200
+levelinfo -pg 1 0 160 330
+pagesize -pg 1 -db -bbox -sgen -150 0 510 200
 "
 }
 0

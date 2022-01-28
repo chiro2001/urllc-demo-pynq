@@ -1,11 +1,11 @@
 // Copyright 1986-2021 Xilinx, Inc. All Rights Reserved.
 // --------------------------------------------------------------------------------
 // Tool Version: Vivado v.2021.1 (win64) Build 3247384 Thu Jun 10 19:36:33 MDT 2021
-// Date        : Sun Jan 23 09:31:15 2022
+// Date        : Fri Jan 28 04:24:00 2022
 // Host        : WIN-544SHHHOI8Q running 64-bit major release  (build 9200)
 // Command     : write_verilog -force -mode funcsim -rename_top urllc_fifo_core_inst_0_mux_reciever_in_0 -prefix
-//               urllc_fifo_core_inst_0_mux_reciever_in_0_ urllc_fifo_core_inst_0_mux_reciever_in_0_sim_netlist.v
-// Design      : urllc_fifo_core_inst_0_mux_reciever_in_0
+//               urllc_fifo_core_inst_0_mux_reciever_in_0_ urllc_fifo_core_inst_0_mux_reciever_out_0_sim_netlist.v
+// Design      : urllc_fifo_core_inst_0_mux_reciever_out_0
 // Purpose     : This verilog netlist is a functional simulation representation of the design and should not be modified
 //               or synthesized. This netlist cannot be used for SDF annotated simulation.
 // Device      : xc7z020clg400-2
@@ -93,7 +93,7 @@ module urllc_fifo_core_inst_0_mux_reciever_in_0_mux
         .O(data_out[7]));
 endmodule
 
-(* CHECK_LICENSE_TYPE = "urllc_fifo_core_inst_0_mux_reciever_in_0,mux,{}" *) (* DowngradeIPIdentifiedWarnings = "yes" *) (* IP_DEFINITION_SOURCE = "module_ref" *) 
+(* CHECK_LICENSE_TYPE = "urllc_fifo_core_inst_0_mux_reciever_out_0,mux,{}" *) (* DowngradeIPIdentifiedWarnings = "yes" *) (* IP_DEFINITION_SOURCE = "module_ref" *) 
 (* X_CORE_INFO = "mux,Vivado 2021.1" *) 
 (* NotValidForBitStream *)
 module urllc_fifo_core_inst_0_mux_reciever_in_0

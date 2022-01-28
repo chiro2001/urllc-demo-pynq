@@ -1,0 +1,62 @@
+// #define SELF RECIEVER
+#define SELF SENDER
+
+#define SELF_SENDER
+
+#ifndef SELF_SENDER
+#define SELF_RECIEVER
+#endif
+
+#include <stdint.h>
+
+#include "macro.h"
+#include "xparameters.h"
+#define DEVICE_ID_DMA XPAR_AXIDMA_0_DEVICE_ID
+#define DEVICE_ID_GPIO_OUT XPAR_GPIO_0_DEVICE_ID
+
+// #define DMA_SIZE 200
+#define DMA_HEADER_SIZE 18
+#define DMA_SIZE (1024 * 2 * 8)
+// #define DMA_SIZE 65
+// #define DMA_SIZE 16 * 4
+// #define DMA_SIZE 0x20 * 1
+// #define DMA_TIMEOUT 0xFFFFF
+// #define DMA_TIMEOUT 0x0
+#define DMA_LOOP
+// #define DMA_INTR
+#define GPIO_CHANNEL_DEBUG 2
+#define GPIO_CHANNEL_VALUE 1
+
+// #define SENDER_DELAY 0xFFFFF
+#define SENDER_DELAY 0xFFFF
+// #define RECIEVER_DELAY 0xFFF
+
+// Xilinx ∫¶»À≤ª«≥∞°
+// #define DEVICE_GPIO_IN_IRQN 65U
+// #define IRQN_COUNTER_TRIGGER 63U
+#define IRQN_COUNTER_TRIGGER 61U
+
+enum {
+  DEBUG_BIT_TRIGGER_CLEAR = 0,
+  DEBUG_BIT_FIFO_WRITE_START,
+  DEBUG_BIT_FIFO_READ_START,
+  DEBUG_BIT_CLK_PSCLK,
+  DEBUG_BIT_CLK_PSEN,
+  DEBUG_BIT_CLK_PSINCDEC,
+  DEBUG_BIT_DUC_SYNC,
+  DEBUG_BIT_FUN_OUT,
+  DEBUG_BIT_DDC_SYNC,
+  DEBUG_BIT_FUN_IN
+};
+extern uint32_t DebugBits;
+
+struct ValueGpio_t_ {
+  uint8_t divider_adc;
+  uint8_t divider_dac;
+  uint16_t counter_trigger;
+};
+typedef struct ValueGpio_t_ ValueGpio_t;
+extern ValueGpio_t ValueGpio;
+
+#define FUN_OUT_SENDER false
+#define FUN_OUT_RECEIVER true

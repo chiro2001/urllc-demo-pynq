@@ -40,7 +40,7 @@ if { [string first $scripts_vivado_version $current_vivado_version] == -1 } {
 
 # The design that will be created by this Tcl script contains the following 
 # module references:
-# ad_buf, mux, mux, div_n, mux, DDCWrapper, FrameTriggerWrapper, ad2dma_rtl, mux, mux, mux, mux, DUCWrapper, ad2dma_rtl
+# ad_buf, mux, mux, div_n, mux, DDCWrapper, D, FrameTriggerWrapper, ad2dma_rtl, mux, mux, mux, mux, DUCWrapper, ad2dma_rtl
 
 # Please add the sources of those modules before sourcing this Tcl script.
 
@@ -337,12 +337,14 @@ proc create_hier_cell_reciever { parentCell nameHier } {
   create_bd_pin -dir I -type clk clk_200M
   create_bd_pin -dir I clk_8M
   create_bd_pin -dir O -from 7 -to 0 da
+  create_bd_pin -dir O -from 12 -to 0 data_count
   create_bd_pin -dir I data_in_serial
   create_bd_pin -dir I debug_disable_sync
   create_bd_pin -dir I debug_use_input_serial_inner
   create_bd_pin -dir I debug_use_sender_iq
   create_bd_pin -dir I debug_use_sender_serial
   create_bd_pin -dir I -type rst ext_reset_in
+  create_bd_pin -dir O -from 1 -to 0 fifo_state
   create_bd_pin -dir I frame_trigger_io_in_clear
   create_bd_pin -dir O io_out_trigger
   create_bd_pin -dir O -from 2 -to 0 irq
@@ -357,6 +359,17 @@ proc create_hier_cell_reciever { parentCell nameHier } {
      catch {common::send_gid_msg -ssname BD::TCL -id 2095 -severity "ERROR" "Unable to add referenced block <$block_name>. Please add the files for ${block_name}'s definition into the project."}
      return 1
    } elseif { $DDCWrapper_0 eq "" } {
+     catch {common::send_gid_msg -ssname BD::TCL -id 2096 -severity "ERROR" "Unable to referenced block <$block_name>. Please add the files for ${block_name}'s definition into the project."}
+     return 1
+   }
+  
+  # Create instance: D_0, and set properties
+  set block_name D
+  set block_cell_name D_0
+  if { [catch {set D_0 [create_bd_cell -type module -reference $block_name $block_cell_name] } errmsg] } {
+     catch {common::send_gid_msg -ssname BD::TCL -id 2095 -severity "ERROR" "Unable to add referenced block <$block_name>. Please add the files for ${block_name}'s definition into the project."}
+     return 1
+   } elseif { $D_0 eq "" } {
      catch {common::send_gid_msg -ssname BD::TCL -id 2096 -severity "ERROR" "Unable to referenced block <$block_name>. Please add the files for ${block_name}'s definition into the project."}
      return 1
    }
@@ -407,6 +420,34 @@ proc create_hier_cell_reciever { parentCell nameHier } {
    CONFIG.FIFO_DEPTH {8192} \
    CONFIG.FIFO_MODE {2} \
  ] $axis_data_fifo_1
+
+  # Create instance: fifo_generator_0, and set properties
+  set fifo_generator_0 [ create_bd_cell -type ip -vlnv xilinx.com:ip:fifo_generator:13.2 fifo_generator_0 ]
+  set_property -dict [ list \
+   CONFIG.Data_Count {true} \
+   CONFIG.Data_Count_Width {13} \
+   CONFIG.Empty_Threshold_Assert_Value_rach {1022} \
+   CONFIG.Empty_Threshold_Assert_Value_wach {1022} \
+   CONFIG.Empty_Threshold_Assert_Value_wrch {1022} \
+   CONFIG.Enable_Safety_Circuit {false} \
+   CONFIG.FIFO_Implementation_rach {Common_Clock_Distributed_RAM} \
+   CONFIG.FIFO_Implementation_wach {Common_Clock_Distributed_RAM} \
+   CONFIG.FIFO_Implementation_wrch {Common_Clock_Distributed_RAM} \
+   CONFIG.Full_Flags_Reset_Value {0} \
+   CONFIG.Full_Threshold_Assert_Value {8190} \
+   CONFIG.Full_Threshold_Assert_Value_rach {1023} \
+   CONFIG.Full_Threshold_Assert_Value_wach {1023} \
+   CONFIG.Full_Threshold_Assert_Value_wrch {1023} \
+   CONFIG.Full_Threshold_Negate_Value {8189} \
+   CONFIG.INTERFACE_TYPE {Native} \
+   CONFIG.Input_Data_Width {32} \
+   CONFIG.Input_Depth {8192} \
+   CONFIG.Output_Data_Width {32} \
+   CONFIG.Output_Depth {8192} \
+   CONFIG.Read_Data_Count_Width {13} \
+   CONFIG.Reset_Type {Synchronous_Reset} \
+   CONFIG.Write_Data_Count_Width {13} \
+ ] $fifo_generator_0
 
   # Create instance: mux_0, and set properties
   set block_name mux
@@ -467,6 +508,9 @@ proc create_hier_cell_reciever { parentCell nameHier } {
   # Create instance: rst_ps7_0_200M, and set properties
   set rst_ps7_0_200M [ create_bd_cell -type ip -vlnv xilinx.com:ip:proc_sys_reset:5.0 rst_ps7_0_200M ]
 
+  # Create instance: xlconcat_0, and set properties
+  set xlconcat_0 [ create_bd_cell -type ip -vlnv xilinx.com:ip:xlconcat:2.1 xlconcat_0 ]
+
   # Create instance: xlconcat_1, and set properties
   set xlconcat_1 [ create_bd_cell -type ip -vlnv xilinx.com:ip:xlconcat:2.1 xlconcat_1 ]
 
@@ -486,6 +530,14 @@ proc create_hier_cell_reciever { parentCell nameHier } {
    CONFIG.CONST_WIDTH {31} \
  ] $xlconstant_1
 
+  # Create instance: xlslice_0, and set properties
+  set xlslice_0 [ create_bd_cell -type ip -vlnv xilinx.com:ip:xlslice:1.0 xlslice_0 ]
+  set_property -dict [ list \
+   CONFIG.DIN_FROM {31} \
+   CONFIG.DIN_TO {31} \
+   CONFIG.DOUT_WIDTH {1} \
+ ] $xlslice_0
+
   # Create instance: xlslice_1, and set properties
   set xlslice_1 [ create_bd_cell -type ip -vlnv xilinx.com:ip:xlslice:1.0 xlslice_1 ]
   set_property -dict [ list \
@@ -504,21 +556,26 @@ proc create_hier_cell_reciever { parentCell nameHier } {
 
   # Create port connections
   connect_bd_net -net DDCWrapper_0_io_out_data [get_bd_pins DDCWrapper_0/io_out_data] [get_bd_pins mux_1/sel1]
-  connect_bd_net -net FrameTriggerWrapper_0_io_out_trigger [get_bd_pins io_out_trigger] [get_bd_pins FrameTriggerWrapper_0/io_out_trigger] [get_bd_pins mux_3/sel1] [get_bd_pins xlconcat_irq/In2]
-  connect_bd_net -net M00_ARESETN_1 [get_bd_pins axi_resetn] [get_bd_pins ad2dma_rtl_0/resetn] [get_bd_pins axi_dma_1/axi_resetn] [get_bd_pins axis_data_fifo_0/s_axis_aresetn] [get_bd_pins axis_data_fifo_1/s_axis_aresetn]
+  connect_bd_net -net D_0_D [get_bd_pins D_0/D] [get_bd_pins fifo_generator_0/wr_en]
+  connect_bd_net -net FrameTriggerWrapper_0_io_out_trigger [get_bd_pins io_out_trigger] [get_bd_pins D_0/set] [get_bd_pins FrameTriggerWrapper_0/io_out_trigger] [get_bd_pins mux_3/sel1] [get_bd_pins xlconcat_irq/In2]
+  connect_bd_net -net M00_ARESETN_1 [get_bd_pins axi_resetn] [get_bd_pins D_0/resetn] [get_bd_pins ad2dma_rtl_0/resetn] [get_bd_pins axi_dma_1/axi_resetn] [get_bd_pins axis_data_fifo_0/s_axis_aresetn] [get_bd_pins axis_data_fifo_1/s_axis_aresetn]
   connect_bd_net -net Net [get_bd_pins resetn_200M] [get_bd_pins DDCWrapper_0/io_resetN] [get_bd_pins FrameTriggerWrapper_0/io_resetN] [get_bd_pins rst_ps7_0_200M/peripheral_aresetn]
-  connect_bd_net -net ad2dma_rtl_0_da [get_bd_pins ad2dma_rtl_0/da] [get_bd_pins xlslice_1/Din]
+  connect_bd_net -net ad2dma_rtl_0_da [get_bd_pins ad2dma_rtl_0/da] [get_bd_pins xlslice_0/Din] [get_bd_pins xlslice_1/Din]
   connect_bd_net -net ad_iq_1 [get_bd_pins ad_iq] [get_bd_pins mux_0/sel1]
   connect_bd_net -net axi_dma_1_mm2s_introut [get_bd_pins axi_dma_1/mm2s_introut] [get_bd_pins xlconcat_irq/In0]
   connect_bd_net -net axi_dma_1_s2mm_introut [get_bd_pins axi_dma_1/s2mm_introut] [get_bd_pins xlconcat_irq/In1]
   connect_bd_net -net clk_200M_1 [get_bd_pins clk_200M] [get_bd_pins DDCWrapper_0/io_clock] [get_bd_pins FrameTriggerWrapper_0/io_clock] [get_bd_pins rst_ps7_0_200M/slowest_sync_clk]
-  connect_bd_net -net clk_4M_1 [get_bd_pins clk_8M] [get_bd_pins ad2dma_rtl_0/clk] [get_bd_pins axi_dma_1/m_axi_mm2s_aclk] [get_bd_pins axi_dma_1/m_axi_s2mm_aclk] [get_bd_pins axi_dma_1/s_axi_lite_aclk] [get_bd_pins axis_data_fifo_0/s_axis_aclk] [get_bd_pins axis_data_fifo_1/s_axis_aclk]
+  connect_bd_net -net clk_4M_1 [get_bd_pins clk_8M] [get_bd_pins D_0/clk] [get_bd_pins ad2dma_rtl_0/clk] [get_bd_pins axi_dma_1/m_axi_mm2s_aclk] [get_bd_pins axi_dma_1/m_axi_s2mm_aclk] [get_bd_pins axi_dma_1/s_axi_lite_aclk] [get_bd_pins axis_data_fifo_0/s_axis_aclk] [get_bd_pins axis_data_fifo_1/s_axis_aclk] [get_bd_pins fifo_generator_0/clk]
   connect_bd_net -net data_in_serial_1 [get_bd_pins data_in_serial] [get_bd_pins mux_2/sel2]
   connect_bd_net -net debug_disable_sync_1 [get_bd_pins debug_disable_sync] [get_bd_pins mux_3/router]
   connect_bd_net -net debug_use_sender_iq_1 [get_bd_pins debug_use_sender_iq] [get_bd_pins mux_0/router]
   connect_bd_net -net debug_use_sender_serial_1 [get_bd_pins debug_use_sender_serial] [get_bd_pins mux_1/router]
   connect_bd_net -net ext_reset_in_1 [get_bd_pins ext_reset_in] [get_bd_pins rst_ps7_0_200M/ext_reset_in]
-  connect_bd_net -net io_in_clear_1 [get_bd_pins frame_trigger_io_in_clear] [get_bd_pins FrameTriggerWrapper_0/io_in_clear]
+  connect_bd_net -net fifo_generator_0_data_count [get_bd_pins data_count] [get_bd_pins fifo_generator_0/data_count]
+  connect_bd_net -net fifo_generator_0_dout [get_bd_pins ad2dma_rtl_0/ad] [get_bd_pins fifo_generator_0/dout]
+  connect_bd_net -net fifo_generator_0_empty [get_bd_pins fifo_generator_0/empty] [get_bd_pins xlconcat_0/In0]
+  connect_bd_net -net fifo_generator_0_full [get_bd_pins fifo_generator_0/full] [get_bd_pins xlconcat_0/In1]
+  connect_bd_net -net io_in_clear_1 [get_bd_pins frame_trigger_io_in_clear] [get_bd_pins D_0/clear] [get_bd_pins FrameTriggerWrapper_0/io_in_clear] [get_bd_pins fifo_generator_0/srst]
   connect_bd_net -net mux_0_data_out [get_bd_pins DDCWrapper_0/io_in_data] [get_bd_pins FrameTriggerWrapper_0/io_in_data] [get_bd_pins mux_0/data_out]
   connect_bd_net -net mux_1_data_out [get_bd_pins mux_1/data_out] [get_bd_pins xlconcat_1/In0]
   connect_bd_net -net mux_2_data_out [get_bd_pins mux_1/sel2] [get_bd_pins mux_2/data_out]
@@ -527,9 +584,11 @@ proc create_hier_cell_reciever { parentCell nameHier } {
   connect_bd_net -net router_1 [get_bd_pins debug_use_input_serial_inner] [get_bd_pins mux_2/router]
   connect_bd_net -net sel2_1 [get_bd_pins sender_da_iq] [get_bd_pins mux_0/sel2]
   connect_bd_net -net xlconcat_0_dout [get_bd_pins irq] [get_bd_pins xlconcat_irq/dout]
-  connect_bd_net -net xlconcat_1_dout [get_bd_pins ad2dma_rtl_0/ad] [get_bd_pins xlconcat_1/dout]
+  connect_bd_net -net xlconcat_0_dout1 [get_bd_pins fifo_state] [get_bd_pins xlconcat_0/dout]
+  connect_bd_net -net xlconcat_1_dout [get_bd_pins fifo_generator_0/din] [get_bd_pins xlconcat_1/dout]
   connect_bd_net -net xlconstant_0_dout [get_bd_pins mux_3/sel2] [get_bd_pins xlconstant_0/dout]
   connect_bd_net -net xlconstant_1_dout [get_bd_pins xlconcat_1/In1] [get_bd_pins xlconstant_1/dout]
+  connect_bd_net -net xlslice_0_Dout [get_bd_pins fifo_generator_0/rd_en] [get_bd_pins xlslice_0/Dout]
   connect_bd_net -net xlslice_1_Dout [get_bd_pins da] [get_bd_pins xlslice_1/Dout]
 
   # Restore current instance
@@ -1078,6 +1137,7 @@ proc create_hier_cell_data_area { parentCell nameHier } {
   create_bd_pin -dir I -type clk clk_200M
   create_bd_pin -dir I -type clk clk_8M
   create_bd_pin -dir O -from 7 -to 0 da
+  create_bd_pin -dir O -from 12 -to 0 data_count
   create_bd_pin -dir I data_out_router
   create_bd_pin -dir O -from 0 -to 0 data_serial_out
   create_bd_pin -dir I debug_disable_sync
@@ -1085,6 +1145,7 @@ proc create_hier_cell_data_area { parentCell nameHier } {
   create_bd_pin -dir I debug_use_sender_iq
   create_bd_pin -dir I debug_use_sender_serial
   create_bd_pin -dir I -type rst ext_reset_in
+  create_bd_pin -dir O -from 1 -to 0 fifo_state
   create_bd_pin -dir O io_out_trigger
   create_bd_pin -dir O -from 4 -to 0 irq
   create_bd_pin -dir I -from 0 -to 0 reciever_serial_in
@@ -1167,6 +1228,8 @@ proc create_hier_cell_data_area { parentCell nameHier } {
   connect_bd_net -net mux_disable_sel2_data_out [get_bd_pins mux_disable_sel2/data_out] [get_bd_pins reciever/ad_iq]
   connect_bd_net -net mux_mux_data_out [get_bd_pins mux/mux_data_out] [get_bd_pins mux_disable_sel2/sel1]
   connect_bd_net -net reciever_da [get_bd_pins mux_0/sel2] [get_bd_pins reciever/da]
+  connect_bd_net -net reciever_data_count [get_bd_pins data_count] [get_bd_pins reciever/data_count]
+  connect_bd_net -net reciever_dout [get_bd_pins fifo_state] [get_bd_pins reciever/fifo_state]
   connect_bd_net -net reciever_io_out_trigger [get_bd_pins io_out_trigger] [get_bd_pins reciever/io_out_trigger]
   connect_bd_net -net reciever_irq [get_bd_pins reciever/irq] [get_bd_pins xlconcat_irq/In1]
   connect_bd_net -net reciever_resetn_200M [get_bd_pins ad_buf_0/resetn] [get_bd_pins mux/resetn] [get_bd_pins reciever/resetn_200M]
@@ -1250,12 +1313,14 @@ proc create_root_design { parentCell } {
    CONFIG.C_DATA_DEPTH {32768} \
    CONFIG.C_ENABLE_ILA_AXI_MON {false} \
    CONFIG.C_MONITOR_TYPE {Native} \
-   CONFIG.C_NUM_OF_PROBES {6} \
+   CONFIG.C_NUM_OF_PROBES {8} \
    CONFIG.C_PROBE0_WIDTH {8} \
    CONFIG.C_PROBE2_WIDTH {9} \
    CONFIG.C_PROBE3_WIDTH {6} \
    CONFIG.C_PROBE4_WIDTH {32} \
    CONFIG.C_PROBE5_WIDTH {4} \
+   CONFIG.C_PROBE6_WIDTH {2} \
+   CONFIG.C_PROBE7_WIDTH {13} \
  ] $ila_0
 
   # Create instance: multi_clock
@@ -2049,7 +2114,9 @@ Flash#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassign
   connect_bd_net -net clock_dynamic_psen_1 [get_bd_pins debug_ports/ctrkl_psen] [get_bd_pins multi_clock/clock_dynamic_psen]
   connect_bd_net -net clock_dynamic_psincdec_1 [get_bd_pins debug_ports/ctrl_psincdec] [get_bd_pins multi_clock/clock_dynamic_psincdec]
   connect_bd_net -net data_area_da [get_bd_ports da] [get_bd_pins data_area/da] [get_bd_pins ila_0/probe0]
+  connect_bd_net -net data_area_data_count [get_bd_pins data_area/data_count] [get_bd_pins ila_0/probe7]
   connect_bd_net -net data_area_data_serial_out [get_bd_ports sender_serial_out] [get_bd_pins data_area/data_serial_out] [get_bd_pins ila_0/probe1]
+  connect_bd_net -net data_area_dout [get_bd_pins data_area/fifo_state] [get_bd_pins ila_0/probe6]
   connect_bd_net -net data_area_io_out_trigger [get_bd_ports reciever_frame_start] [get_bd_pins data_area/io_out_trigger] [get_bd_pins debug_ports/io_in_trigger]
   connect_bd_net -net data_area_irq [get_bd_pins data_area/irq] [get_bd_pins xlconcat_irq_all/In0]
   connect_bd_net -net data_area_sender_frame_avaliable [get_bd_ports sender_frame_avaliable] [get_bd_pins data_area/sender_frame_avaliable]
@@ -2092,8 +2159,6 @@ Flash#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassign
   exclude_bd_addr_seg -offset 0x40400000 -range 0x00010000 -target_address_space [get_bd_addr_spaces data_area/sender/axi_dma_0/Data_MM2S] [get_bd_addr_segs data_area/reciever/axi_dma_1/S_AXI_LITE/Reg]
   exclude_bd_addr_seg -offset 0x40410000 -range 0x00010000 -target_address_space [get_bd_addr_spaces data_area/sender/axi_dma_0/Data_S2MM] [get_bd_addr_segs data_area/sender/axi_dma_0/S_AXI_LITE/Reg]
   exclude_bd_addr_seg -offset 0x40400000 -range 0x00010000 -target_address_space [get_bd_addr_spaces data_area/sender/axi_dma_0/Data_S2MM] [get_bd_addr_segs data_area/reciever/axi_dma_1/S_AXI_LITE/Reg]
-  exclude_bd_addr_seg -target_address_space [get_bd_addr_spaces processing_system7_0/Data] [get_bd_addr_segs processing_system7_0/S_AXI_HP0/HP0_DDR_LOWOCM]
-  exclude_bd_addr_seg -target_address_space [get_bd_addr_spaces processing_system7_0/Data] [get_bd_addr_segs processing_system7_0/S_AXI_HP1/HP1_DDR_LOWOCM]
 
 
   # Restore current instance

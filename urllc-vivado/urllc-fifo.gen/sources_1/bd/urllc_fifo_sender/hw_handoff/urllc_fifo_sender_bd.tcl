@@ -168,6 +168,7 @@ proc create_root_design { parentCell } {
 
 
   # Create ports
+  set clk_pl_50M [ create_bd_port -dir I -type clk -freq_hz 50000000 clk_pl_50M ]
   set sender_ad [ create_bd_port -dir I -from 7 -to 0 -type data sender_ad ]
   set sender_ad_clk_60M [ create_bd_port -dir O -type clk sender_ad_clk_60M ]
   set sender_da [ create_bd_port -dir O -from 7 -to 0 -type data sender_da ]
@@ -189,6 +190,7 @@ proc create_root_design { parentCell } {
   connect_bd_intf_net -intf_net urllc_fifo_core_0_FIXED_IO [get_bd_intf_ports FIXED_IO] [get_bd_intf_pins urllc_fifo_core_0/FIXED_IO]
 
   # Create port connections
+  connect_bd_net -net clk_pl_50M_1 [get_bd_ports clk_pl_50M] [get_bd_pins urllc_fifo_core_0/clk_pl_50M]
   connect_bd_net -net sender_ad_1 [get_bd_ports sender_ad] [get_bd_pins urllc_fifo_core_0/ad]
   connect_bd_net -net urllc_fifo_core_0_clk_ad_static [get_bd_ports sender_ad_clk_60M] [get_bd_ports sender_da_clk_60M] [get_bd_pins urllc_fifo_core_0/clk_ad_static]
   connect_bd_net -net urllc_fifo_core_0_da [get_bd_ports sender_da] [get_bd_pins urllc_fifo_core_0/da]

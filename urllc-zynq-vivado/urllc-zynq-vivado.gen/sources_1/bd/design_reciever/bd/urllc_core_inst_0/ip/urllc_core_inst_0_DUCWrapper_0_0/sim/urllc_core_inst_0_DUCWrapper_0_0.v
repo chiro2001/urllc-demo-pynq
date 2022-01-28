@@ -58,6 +58,7 @@ module urllc_core_inst_0_DUCWrapper_0_0 (
   io_in_data,
   io_in_sync,
   io_out_dac,
+  io_out_sync,
   io_clock,
   io_resetN
 );
@@ -65,6 +66,7 @@ module urllc_core_inst_0_DUCWrapper_0_0 (
 input wire io_in_data;
 input wire io_in_sync;
 output wire [7 : 0] io_out_dac;
+output wire io_out_sync;
 (* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME io_clock, ASSOCIATED_RESET io_resetN, FREQ_HZ 120000000, FREQ_TOLERANCE_HZ 0, PHASE 0.0, CLK_DOMAIN /urllc_core_0/multi_clock/clk_wiz_static_clk_out1, INSERT_VIP 0" *)
 (* X_INTERFACE_INFO = "xilinx.com:signal:clock:1.0 io_clock CLK" *)
 input wire io_clock;
@@ -76,6 +78,7 @@ input wire io_resetN;
     .io_in_data(io_in_data),
     .io_in_sync(io_in_sync),
     .io_out_dac(io_out_dac),
+    .io_out_sync(io_out_sync),
     .io_clock(io_clock),
     .io_resetN(io_resetN)
   );

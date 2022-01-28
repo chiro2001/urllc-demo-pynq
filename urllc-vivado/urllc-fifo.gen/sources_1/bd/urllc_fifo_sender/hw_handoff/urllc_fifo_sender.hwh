@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
-<EDKSYSTEM EDWVERSION="1.2" TIMESTAMP="Mon Jan 24 08:20:34 2022" VIVADOVERSION="2021.1">
+<EDKSYSTEM EDWVERSION="1.2" TIMESTAMP="Sat Jan 29 04:12:41 2022" VIVADOVERSION="2021.1">
 
   <SYSTEMINFO ARCH="zynq" DEVICE="7z020" NAME="urllc_fifo_sender" PACKAGE="clg400" SPEEDGRADE="-2"/>
 
@@ -22,6 +22,11 @@
     <PORT CLKFREQUENCY="60000000" DIR="O" NAME="sender_ad_clk_60M" SIGIS="clk" SIGNAME="urllc_fifo_core_0_clk_ad_static">
       <CONNECTIONS>
         <CONNECTION INSTANCE="urllc_fifo_core_0" PORT="clk_ad_static"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT CLKFREQUENCY="50000000" DIR="I" NAME="clk_pl_50M" SIGIS="clk" SIGNAME="External_Ports_clk_pl_50M">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="urllc_fifo_core_0" PORT="clk_pl_50M"/>
       </CONNECTIONS>
     </PORT>
     <PORT DIR="IO" NAME="DDR_cas_n" SIGIS="undef" SIGNAME="urllc_fifo_core_0_DDR_cas_n">
@@ -205,6 +210,11 @@
         <PORT DIR="O" LEFT="7" NAME="da" RIGHT="0" SIGIS="undef" SIGNAME="urllc_fifo_core_0_da">
           <CONNECTIONS>
             <CONNECTION INSTANCE="External_Ports" PORT="sender_da"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT CLKFREQUENCY="50000000" DIR="I" NAME="clk_pl_50M" SIGIS="clk" SIGNAME="External_Ports_clk_pl_50M">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External_Ports" PORT="clk_pl_50M"/>
           </CONNECTIONS>
         </PORT>
         <PORT DIR="IO" NAME="DDR_cas_n" SIGIS="undef" SIGNAME="urllc_fifo_core_0_DDR_cas_n">

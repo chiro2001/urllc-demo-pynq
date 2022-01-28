@@ -1,7 +1,7 @@
 // Copyright 1986-2021 Xilinx, Inc. All Rights Reserved.
 // --------------------------------------------------------------------------------
 // Tool Version: Vivado v.2021.1 (win64) Build 3247384 Thu Jun 10 19:36:33 MDT 2021
-// Date        : Mon Jan 24 01:54:58 2022
+// Date        : Sat Jan 29 02:06:34 2022
 // Host        : WIN-544SHHHOI8Q running 64-bit major release  (build 9200)
 // Command     : write_verilog -force -mode funcsim -rename_top urllc_fifo_core_inst_0_clk_dynamic_0 -prefix
 //               urllc_fifo_core_inst_0_clk_dynamic_0_ urllc_fifo_core_inst_0_clk_dynamic_0_sim_netlist.v
@@ -19,7 +19,6 @@ module urllc_fifo_core_inst_0_clk_dynamic_0
     psen,
     psincdec,
     psdone,
-    resetn,
     locked,
     clk_in1);
   output clk_out_dynamic;
@@ -27,18 +26,16 @@ module urllc_fifo_core_inst_0_clk_dynamic_0
   input psen;
   input psincdec;
   output psdone;
-  input resetn;
   output locked;
   input clk_in1;
 
-  (* IBUF_LOW_PWR *) wire clk_in1;
+  wire clk_in1;
   wire clk_out_dynamic;
   wire locked;
   wire psclk;
   wire psdone;
   wire psen;
   wire psincdec;
-  wire resetn;
 
   urllc_fifo_core_inst_0_clk_dynamic_0_urllc_fifo_core_inst_0_clk_dynamic_0_clk_wiz inst
        (.clk_in1(clk_in1),
@@ -47,8 +44,7 @@ module urllc_fifo_core_inst_0_clk_dynamic_0
         .psclk(psclk),
         .psdone(psdone),
         .psen(psen),
-        .psincdec(psincdec),
-        .resetn(resetn));
+        .psincdec(psincdec));
 endmodule
 
 module urllc_fifo_core_inst_0_clk_dynamic_0_urllc_fifo_core_inst_0_clk_dynamic_0_clk_wiz
@@ -57,7 +53,6 @@ module urllc_fifo_core_inst_0_clk_dynamic_0_urllc_fifo_core_inst_0_clk_dynamic_0
     psen,
     psincdec,
     psdone,
-    resetn,
     locked,
     clk_in1);
   output clk_out_dynamic;
@@ -65,7 +60,6 @@ module urllc_fifo_core_inst_0_clk_dynamic_0_urllc_fifo_core_inst_0_clk_dynamic_0
   input psen;
   input psincdec;
   output psdone;
-  input resetn;
   output locked;
   input clk_in1;
 
@@ -80,8 +74,6 @@ module urllc_fifo_core_inst_0_clk_dynamic_0_urllc_fifo_core_inst_0_clk_dynamic_0
   wire psdone;
   wire psen;
   wire psincdec;
-  wire reset_high;
-  wire resetn;
   wire NLW_mmcm_adv_inst_CLKFBOUTB_UNCONNECTED;
   wire NLW_mmcm_adv_inst_CLKFBSTOPPED_UNCONNECTED;
   wire NLW_mmcm_adv_inst_CLKINSTOPPED_UNCONNECTED;
@@ -103,12 +95,7 @@ module urllc_fifo_core_inst_0_clk_dynamic_0_urllc_fifo_core_inst_0_clk_dynamic_0
        (.I(clkfbout_urllc_fifo_core_inst_0_clk_dynamic_0),
         .O(clkfbout_buf_urllc_fifo_core_inst_0_clk_dynamic_0));
   (* BOX_TYPE = "PRIMITIVE" *) 
-  (* CAPACITANCE = "DONT_CARE" *) 
-  (* IBUF_DELAY_VALUE = "0" *) 
-  (* IFD_DELAY_VALUE = "AUTO" *) 
-  IBUF #(
-    .IOSTANDARD("DEFAULT")) 
-    clkin1_ibufg
+  BUFG clkin1_bufg
        (.I(clk_in1),
         .O(clk_in1_urllc_fifo_core_inst_0_clk_dynamic_0));
   (* BOX_TYPE = "PRIMITIVE" *) 
@@ -118,12 +105,12 @@ module urllc_fifo_core_inst_0_clk_dynamic_0_urllc_fifo_core_inst_0_clk_dynamic_0
   (* BOX_TYPE = "PRIMITIVE" *) 
   MMCME2_ADV #(
     .BANDWIDTH("OPTIMIZED"),
-    .CLKFBOUT_MULT_F(18.000000),
+    .CLKFBOUT_MULT_F(17.000000),
     .CLKFBOUT_PHASE(0.000000),
     .CLKFBOUT_USE_FINE_PS("FALSE"),
-    .CLKIN1_PERIOD(20.000000),
+    .CLKIN1_PERIOD(16.667000),
     .CLKIN2_PERIOD(0.000000),
-    .CLKOUT0_DIVIDE_F(15.000000),
+    .CLKOUT0_DIVIDE_F(17.000000),
     .CLKOUT0_DUTY_CYCLE(0.500000),
     .CLKOUT0_PHASE(0.000000),
     .CLKOUT0_USE_FINE_PS("FALSE"),
@@ -152,7 +139,7 @@ module urllc_fifo_core_inst_0_clk_dynamic_0_urllc_fifo_core_inst_0_clk_dynamic_0
     .CLKOUT6_DUTY_CYCLE(0.500000),
     .CLKOUT6_PHASE(0.000000),
     .CLKOUT6_USE_FINE_PS("FALSE"),
-    .COMPENSATION("ZHOLD"),
+    .COMPENSATION("BUF_IN"),
     .DIVCLK_DIVIDE(1),
     .IS_CLKINSEL_INVERTED(1'b0),
     .IS_PSEN_INVERTED(1'b0),
@@ -198,12 +185,7 @@ module urllc_fifo_core_inst_0_clk_dynamic_0_urllc_fifo_core_inst_0_clk_dynamic_0
         .PSEN(psen),
         .PSINCDEC(psincdec),
         .PWRDWN(1'b0),
-        .RST(reset_high));
-  LUT1 #(
-    .INIT(2'h1)) 
-    mmcm_adv_inst_i_1
-       (.I0(resetn),
-        .O(reset_high));
+        .RST(1'b0));
 endmodule
 `ifndef GLBL
 `define GLBL

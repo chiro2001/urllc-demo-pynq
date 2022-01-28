@@ -1,7 +1,7 @@
 //Copyright 1986-2021 Xilinx, Inc. All Rights Reserved.
 //--------------------------------------------------------------------------------
 //Tool Version: Vivado v.2021.1 (win64) Build 3247384 Thu Jun 10 19:36:33 MDT 2021
-//Date        : Mon Jan 24 08:20:01 2022
+//Date        : Sat Jan 29 04:12:09 2022
 //Host        : WIN-544SHHHOI8Q running 64-bit major release  (build 9200)
 //Command     : generate_target urllc_fifo_sender_wrapper.bd
 //Design      : urllc_fifo_sender_wrapper
@@ -31,6 +31,7 @@ module urllc_fifo_sender_wrapper
     FIXED_IO_ps_clk,
     FIXED_IO_ps_porb,
     FIXED_IO_ps_srstb,
+    clk_pl_50M,
     sender_ad,
     sender_ad_clk_60M,
     sender_da,
@@ -56,6 +57,7 @@ module urllc_fifo_sender_wrapper
   inout FIXED_IO_ps_clk;
   inout FIXED_IO_ps_porb;
   inout FIXED_IO_ps_srstb;
+  input clk_pl_50M;
   input [7:0]sender_ad;
   output sender_ad_clk_60M;
   output [7:0]sender_da;
@@ -82,6 +84,7 @@ module urllc_fifo_sender_wrapper
   wire FIXED_IO_ps_clk;
   wire FIXED_IO_ps_porb;
   wire FIXED_IO_ps_srstb;
+  wire clk_pl_50M;
   wire [7:0]sender_ad;
   wire sender_ad_clk_60M;
   wire [7:0]sender_da;
@@ -109,6 +112,7 @@ module urllc_fifo_sender_wrapper
         .FIXED_IO_ps_clk(FIXED_IO_ps_clk),
         .FIXED_IO_ps_porb(FIXED_IO_ps_porb),
         .FIXED_IO_ps_srstb(FIXED_IO_ps_srstb),
+        .clk_pl_50M(clk_pl_50M),
         .sender_ad(sender_ad),
         .sender_ad_clk_60M(sender_ad_clk_60M),
         .sender_da(sender_da),

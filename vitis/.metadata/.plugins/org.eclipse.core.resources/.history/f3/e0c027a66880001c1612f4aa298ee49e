@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="ASCII"?>
+<systemproject:SystemProject xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:sdsproject="http://www.xilinx.com/sdsproject" xmlns:systemproject="http://www.xilinx.com/systemproject" name="urllc_fifo_sender_ps_system" platform="G:/Chiro/Programs/urllc-demo-pynq/vitis/urllc_fifo_sender/export/urllc_fifo_sender/urllc_fifo_sender.xpfm" platformUID="xilinx:::0.0(custom)" sysConfig="urllc_fifo_sender" runtime="C/C++" rootFSLocation="" linuxImage="" sysroot="">
+  <configuration name="Debug" id="com.xilinx.sdx.system.managedbuilder.debugConfiguration.2118986742">
+    <configBuildOptions xsi:type="systemproject:SystemOptions">
+      <applications name="urllc_fifo_sender_ps" domainName="standalone_domain" domainPrettyName="standalone on ps7_cortexa9_0" appBuildConfig="Debug"/>
+      <options xsi:type="sdsproject:Option" gensdcard="true" dmclkid="0"/>
+    </configBuildOptions>
+  </configuration>
+  <configuration name="Release" id="com.xilinx.sdx.system.managedbuilder.releaseConfiguration.1580527383">
+    <configBuildOptions xsi:type="systemproject:SystemOptions">
+      <applications name="urllc_fifo_sender_ps" domainName="standalone_domain" domainPrettyName="standalone on ps7_cortexa9_0" appBuildConfig="Release"/>
+      <options xsi:type="sdsproject:Option" gensdcard="true" dmclkid="0"/>
+    </configBuildOptions>
+  </configuration>
+</systemproject:SystemProject>

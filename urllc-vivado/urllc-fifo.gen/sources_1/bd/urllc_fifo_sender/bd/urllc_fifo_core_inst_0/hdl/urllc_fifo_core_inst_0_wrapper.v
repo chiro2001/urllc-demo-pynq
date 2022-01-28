@@ -1,7 +1,7 @@
 //Copyright 1986-2021 Xilinx, Inc. All Rights Reserved.
 //--------------------------------------------------------------------------------
 //Tool Version: Vivado v.2021.1 (win64) Build 3247384 Thu Jun 10 19:36:33 MDT 2021
-//Date        : Mon Jan 24 08:20:02 2022
+//Date        : Sat Jan 29 04:12:10 2022
 //Host        : WIN-544SHHHOI8Q running 64-bit major release  (build 9200)
 //Command     : generate_target urllc_fifo_core_inst_0_wrapper.bd
 //Design      : urllc_fifo_core_inst_0_wrapper
@@ -34,6 +34,7 @@ module urllc_fifo_core_inst_0_wrapper
     ad,
     clk_ad_static,
     clk_da_dynamic,
+    clk_pl_50M,
     da);
   inout [14:0]DDR_addr;
   inout [2:0]DDR_ba;
@@ -59,6 +60,7 @@ module urllc_fifo_core_inst_0_wrapper
   input [7:0]ad;
   output clk_ad_static;
   output clk_da_dynamic;
+  input clk_pl_50M;
   output [7:0]da;
 
   wire [14:0]DDR_addr;
@@ -85,6 +87,7 @@ module urllc_fifo_core_inst_0_wrapper
   wire [7:0]ad;
   wire clk_ad_static;
   wire clk_da_dynamic;
+  wire clk_pl_50M;
   wire [7:0]da;
 
   urllc_fifo_core_inst_0 urllc_fifo_core_inst_0_i
@@ -112,5 +115,6 @@ module urllc_fifo_core_inst_0_wrapper
         .ad(ad),
         .clk_ad_static(clk_ad_static),
         .clk_da_dynamic(clk_da_dynamic),
+        .clk_pl_50M(clk_pl_50M),
         .da(da));
 endmodule
