@@ -1,7 +1,7 @@
 {
    "ActiveEmotionalView":"Default View",
-   "Default View_ScaleFactor":"1.0",
-   "Default View_TopLeft":"-451,-149",
+   "Default View_ScaleFactor":"1.5",
+   "Default View_TopLeft":"-364,-133",
    "ExpandedHierarchyInLayout":"",
    "guistr":"# # String gsaved with Nlview 7.0r6  2020-01-29 bk=1.5227 VDI=41 GEI=36 GUI=JA:10.0 non-TLS
 #  -string -flagsOSRD
@@ -15,13 +15,13 @@ preplace portBus receiver_da -pg 1 -lvl 2 -x 320 -y 140 -defaultsOSRD
 preplace inst urllc_fifo_core_0 -pg 1 -lvl 1 -x 160 -y 100 -defaultsOSRD
 preplace netloc clk_pl_50M_1 1 0 1 NJ 110
 preplace netloc receiver_ad_sel1_1 1 0 1 NJ 90
-preplace netloc urllc_fifo_core_0_da 1 1 1 NJ 140
-preplace netloc urllc_fifo_core_0_clk_da_dynamic 1 1 1 NJ 120
 preplace netloc urllc_fifo_core_0_clk_ad_static 1 1 1 NJ 100
+preplace netloc urllc_fifo_core_0_clk_da_dynamic 1 1 1 NJ 120
+preplace netloc urllc_fifo_core_0_da 1 1 1 NJ 140
 preplace netloc urllc_fifo_core_0_DDR 1 1 1 NJ 60
 preplace netloc urllc_fifo_core_0_FIXED_IO 1 1 1 NJ 80
 levelinfo -pg 1 0 160 320
 pagesize -pg 1 -db -bbox -sgen -190 0 510 200
 "
 }
-
+0

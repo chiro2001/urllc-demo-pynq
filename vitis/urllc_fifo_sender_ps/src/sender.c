@@ -64,6 +64,9 @@ static XGpio GpioOutput;
 uint32_t DebugBits = 0;
 ValueGpio_t ValueGpio;
 
+static bool intrDone = false;
+size_t targetSize = 0;
+
 void SmallDelay() {
   uint32_t delay = 0xFF;
   while (delay) delay--;
@@ -94,9 +97,16 @@ int SetupGpioOut() {
   XGpio_SetDataDirection(&GpioOutput, GPIO_CHANNEL_VALUE, 0x0);
   // Clear all to zero
   UpdateDebugBitGpio();
+  // 设置GPIO values
+  memset(&ValueGpio, 0, sizeof(ValueGpio));
+  UpdateValueGpio();
 
   check(SetupDebugBits(concat(FUN_OUT_, SELF), DEBUG_BIT_FUN_IN));
   check(SetupDebugBits(concat(FUN_OUT_, SELF), DEBUG_BIT_FUN_OUT));
+
+  // 不使用sync
+  check(SetupDebugBits(true, DEBUG_BIT_DUC_SYNC));
+  check(SetupDebugBits(true, DEBUG_BIT_DDC_SYNC));
 
   return XST_SUCCESS;
 }
@@ -108,8 +118,14 @@ int PulseTrigger(uint32_t debug_bit) {
 }
 
 void CounterHandler(void *InstancePtr) {
-  PulseTrigger(DEBUG_BIT_FIFO_READ_START);
   xil_printf("CounterHandler\r\n");
+  // 发送src，接收dst
+  XAxiDma_SimpleTransfer(&AxiDma, (UINTPTR)dst, targetSize / 2,
+                         XAXIDMA_DEVICE_TO_DMA);
+  XAxiDma_SimpleTransfer(&AxiDma, (UINTPTR)src, targetSize / 2,
+                         XAXIDMA_DMA_TO_DEVICE);
+  intrDone = true;
+  PulseTrigger(DEBUG_BIT_FIFO_READ_START);
 }
 
 int SetupIntrSystem(XScuGic *IntcInstancePtr, u16 IntrId,
@@ -159,14 +175,16 @@ int SystemInit() {
 
   srand(0);
 
-  // 设置da输出数据源
+  targetSize = URLLC_MTU / 8;
+
+  // 设置GPIO && 设置da输出数据源
   SetupGpioOut();
-  // 设置GPIO values
-  memset(&ValueGpio, 0, sizeof(ValueGpio));
+  check(SetupDebugBits(true, DEBUG_BIT_FIFO_READ_START));
+  
   ValueGpio.divider_adc = 120;
-  ValueGpio.divider_dac = 120;
+  ValueGpio.divider_dac = 15;
   // ValueGpio.counter_trigger = 4096;
-  ValueGpio.counter_trigger = 0xFFFF;
+  ValueGpio.counter_trigger = targetSize;
   UpdateValueGpio();
 
   // 设置中断
@@ -174,10 +192,6 @@ int SystemInit() {
   check(SetupIntrSystem(&intc, IRQN_COUNTER_TRIGGER, CounterHandler, NULL));
 
   // 清空FIFO
-  u32 clearDelay = 100;
-  // while (clearDelay--) check(PulseTrigger(DEBUG_BIT_FIFO_READ_START));
-  check(SetupDebugBits(true, DEBUG_BIT_FIFO_READ_START));
-  while (clearDelay--) SmallDelay();
   check(SetupDebugBits(false, DEBUG_BIT_FIFO_READ_START));
 
   // 清除trigger标志位
@@ -201,40 +215,29 @@ int SystemInit() {
 }
 
 int RecieverGpioInit() {
-  // check(XGpio_Initialize(&GpioInput, DEVICE_ID_GPIO_IN));
-  // check(GpioSetupIntrSystem(&intc, &GpioInput, DEVICE_ID_GPIO_IN,
-  //                           DEVICE_GPIO_IN_IRQN, GPIO_CHANNEL1));
   return XST_SUCCESS;
 }
 
 int SenderLoop() {
 #ifdef DMA_LOOP
-  // memset(src, 0, sizeof(uint32_t) * DMA_SIZE);
+  memset(src, 0, sizeof(uint32_t) * DMA_SIZE);
   memset(dst, 0, sizeof(uint32_t) * DMA_SIZE);
   while (true) {
 #endif
-    DmaReset();
-    // 发送src，接收dst
-    XAxiDma_SimpleTransfer(&AxiDma, (UINTPTR)dst, DMA_SIZE,
-                           XAXIDMA_DEVICE_TO_DMA);
-    XAxiDma_SimpleTransfer(&AxiDma, (UINTPTR)src, DMA_SIZE,
-                           XAXIDMA_DMA_TO_DEVICE);
+    // DmaReset();
+    while (!intrDone) SmallDelay();
+    intrDone = false;
     while ((XAxiDma_Busy(&AxiDma, XAXIDMA_DEVICE_TO_DMA)) ||
            (XAxiDma_Busy(&AxiDma, XAXIDMA_DMA_TO_DEVICE)))
       ;
     // 发送完毕，解析下次应该发送的数据
-    // 500k 8bit (in 8M uint32_t) => 4M 1bit (8M AXI)
-    for (size_t i = 0; i < DMA_SIZE; i += 2 * 8) {
+    // 500k 8bit => 4M 1bit
+    for (size_t i = 0; i < targetSize; i += 8) {
       uint8_t val = (uint8_t)(dst[i] & 0xFF);
       for (size_t k = 0; k < 8; k++) {
-        for (size_t j = 0; j < 2; j++) {
-          src[i + j + k] = (((val & (1 << k)) == 0) ? 0 : 1);
-        }
+        src[i + k] = (((val & (1 << k)) == 0) ? 0 : 1);
       }
     }
-    uint32_t delay = SENDER_DELAY;
-    while (delay--)
-      ;
 #ifdef DMA_LOOP
   }
 #endif

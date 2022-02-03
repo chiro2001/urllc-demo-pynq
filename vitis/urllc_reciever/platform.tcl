@@ -40,3 +40,6 @@ platform clean
 platform clean
 platform generate
 platform write
+platform clean
+platform clean
+platform clean

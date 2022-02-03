@@ -29,3 +29,13 @@ platform generate -domains
 platform clean
 platform clean
 platform generate
+platform active {urllc_fifo_sender}
+platform config -updatehw {G:/Chiro/Programs/urllc-demo-pynq/platforms/urllc_fifo_sender2.xsa}
+platform clean
+platform generate
+platform clean
+platform generate
+platform clean
+platform generate
+platform clean
+platform clean

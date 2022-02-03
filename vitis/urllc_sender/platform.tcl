@@ -51,3 +51,6 @@ platform active {urllc_sender}
 platform config -updatehw {G:/Chiro/Programs/urllc-demo-pynq/platforms/urllc_sender.xsa}
 platform clean
 platform generate
+platform clean
+platform clean
+platform clean

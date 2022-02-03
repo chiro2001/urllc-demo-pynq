@@ -18,3 +18,4 @@ platform active {reciever_fifo2}
 platform generate
 platform clean
 platform generate
+platform clean

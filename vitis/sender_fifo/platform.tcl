@@ -16,3 +16,4 @@ platform write
 platform generate -domains 
 platform active {sender_fifo}
 platform generate
+platform clean

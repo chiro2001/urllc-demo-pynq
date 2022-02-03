@@ -1,63 +1,70 @@
 {
    "ActiveEmotionalView":"Default View",
-   "Default View_ScaleFactor":"1.14152",
-   "Default View_TopLeft":"-202,-46",
+   "Default View_ScaleFactor":"1.05926",
+   "Default View_TopLeft":"-304,0",
    "ExpandedHierarchyInLayout":"",
    "guistr":"# # String gsaved with Nlview 7.0r6  2020-01-29 bk=1.5227 VDI=41 GEI=36 GUI=JA:10.0 non-TLS
 #  -string -flagsOSRD
-preplace port axis -pg 1 -lvl 5 -x 1210 -y 100 -defaultsOSRD
-preplace port port-id_io_in_sync -pg 1 -lvl 0 -x -10 -y 300 -defaultsOSRD
-preplace port port-id_clk -pg 1 -lvl 0 -x -10 -y 60 -defaultsOSRD
-preplace port port-id_resetn -pg 1 -lvl 0 -x -10 -y 80 -defaultsOSRD
-preplace port port-id_ad_out_vld -pg 1 -lvl 5 -x 1210 -y 380 -defaultsOSRD
-preplace port port-id_router -pg 1 -lvl 0 -x -10 -y 400 -defaultsOSRD
-preplace port port-id_clear -pg 1 -lvl 0 -x -10 -y 580 -defaultsOSRD
-preplace port port-id_trigger_out -pg 1 -lvl 5 -x 1210 -y 540 -defaultsOSRD
-preplace port port-id_fifo_read_almost_empty -pg 1 -lvl 0 -x -10 -y 140 -defaultsOSRD
-preplace port port-id_fifo_read_empty -pg 1 -lvl 0 -x -10 -y 120 -defaultsOSRD
-preplace port port-id_fifo_read_rd_en -pg 1 -lvl 5 -x 1210 -y 120 -defaultsOSRD
-preplace port port-id_start -pg 1 -lvl 0 -x -10 -y 100 -defaultsOSRD
-preplace port port-id_io_clock -pg 1 -lvl 0 -x -10 -y 320 -defaultsOSRD
-preplace port port-id_io_resetN -pg 1 -lvl 0 -x -10 -y 340 -defaultsOSRD
-preplace portBus ad -pg 1 -lvl 0 -x -10 -y 240 -defaultsOSRD
-preplace portBus ad_out -pg 1 -lvl 5 -x 1210 -y 360 -defaultsOSRD
-preplace portBus count -pg 1 -lvl 0 -x -10 -y 540 -defaultsOSRD
-preplace portBus target -pg 1 -lvl 0 -x -10 -y 560 -defaultsOSRD
-preplace portBus fifo_read_rd_data -pg 1 -lvl 0 -x -10 -y 160 -defaultsOSRD
-preplace portBus div -pg 1 -lvl 0 -x -10 -y 420 -defaultsOSRD
-preplace inst DDCWrapper_0 -pg 1 -lvl 1 -x 180 -y 310 -defaultsOSRD
-preplace inst mux_reciever_in -pg 1 -lvl 3 -x 680 -y 380 -defaultsOSRD
-preplace inst count_trigger_0 -pg 1 -lvl 4 -x 1010 -y 540 -defaultsOSRD
-preplace inst fifo_read_to_axis_0 -pg 1 -lvl 4 -x 1010 -y 110 -defaultsOSRD
-preplace inst adc_0 -pg 1 -lvl 4 -x 1010 -y 370 -defaultsOSRD
-preplace inst xlconcat_0 -pg 1 -lvl 2 -x 450 -y 470 -defaultsOSRD
-preplace inst xlconstant_0 -pg 1 -lvl 1 -x 180 -y 480 -defaultsOSRD
-preplace netloc DDCWrapper_0_io_out_data 1 1 1 340 280n
-preplace netloc Net 1 0 4 NJ 60 NJ 60 NJ 60 820
-preplace netloc Net1 1 0 4 NJ 80 NJ 80 NJ 80 800
-preplace netloc Net2 1 0 1 NJ 320
-preplace netloc Net3 1 0 1 NJ 340
-preplace netloc ad_1 1 0 3 10 220 NJ 220 550
-preplace netloc adc_0_ad_out 1 4 1 NJ 360
-preplace netloc adc_0_ad_out_vld 1 4 1 NJ 380
-preplace netloc count_trigger_0_trigger_out 1 4 1 NJ 540
-preplace netloc fifo_adc_data_count 1 0 4 NJ 540 NJ 540 NJ 540 NJ
-preplace netloc fifo_read_almost_empty_1 1 0 4 NJ 140 NJ 140 NJ 140 NJ
-preplace netloc fifo_read_empty_1 1 0 4 NJ 120 NJ 120 NJ 120 NJ
-preplace netloc fifo_read_rd_data_1 1 0 4 NJ 160 NJ 160 NJ 160 NJ
-preplace netloc fifo_read_to_axis_0_fifo_read_rd_en 1 4 1 NJ 120
-preplace netloc io_in_sync_1 1 0 1 NJ 300
-preplace netloc mux_reciever_in_data_out 1 3 1 N 380
-preplace netloc start_1 1 0 4 NJ 100 NJ 100 NJ 100 NJ
-preplace netloc xlconcat_0_dout 1 2 1 550 380n
-preplace netloc xlconstant_0_dout 1 1 1 NJ 480
-preplace netloc xlslice_1_Dout 1 0 4 NJ 560 NJ 560 NJ 560 NJ
-preplace netloc xlslice_2_Dout 1 0 4 NJ 580 NJ 580 NJ 580 NJ
-preplace netloc xlslice_reciever_in_10_Dout 1 0 3 NJ 400 NJ 400 NJ
-preplace netloc div_1 1 0 4 NJ 420 350J 390 540J 460 810J
-preplace netloc Conn1 1 4 1 NJ 100
-levelinfo -pg 1 -10 180 450 680 1010 1210
-pagesize -pg 1 -db -bbox -sgen -220 0 1360 640
+preplace port axis -pg 1 -lvl 6 -x 1500 -y 590 -defaultsOSRD
+preplace port port-id_io_in_sync -pg 1 -lvl 0 -x 0 -y 140 -defaultsOSRD
+preplace port port-id_clk -pg 1 -lvl 0 -x 0 -y 720 -defaultsOSRD
+preplace port port-id_resetn -pg 1 -lvl 0 -x 0 -y 600 -defaultsOSRD
+preplace port port-id_ad_out_vld -pg 1 -lvl 6 -x 1500 -y 630 -defaultsOSRD
+preplace port port-id_router -pg 1 -lvl 0 -x 0 -y 250 -defaultsOSRD
+preplace port port-id_clear -pg 1 -lvl 0 -x 0 -y 780 -defaultsOSRD
+preplace port port-id_trigger_out -pg 1 -lvl 6 -x 1500 -y 650 -defaultsOSRD
+preplace port port-id_fifo_read_almost_empty -pg 1 -lvl 0 -x 0 -y 660 -defaultsOSRD
+preplace port port-id_fifo_read_empty -pg 1 -lvl 0 -x 0 -y 640 -defaultsOSRD
+preplace port port-id_fifo_read_rd_en -pg 1 -lvl 6 -x 1500 -y 570 -defaultsOSRD
+preplace port port-id_start -pg 1 -lvl 0 -x 0 -y 620 -defaultsOSRD
+preplace port port-id_io_clock -pg 1 -lvl 0 -x 0 -y 160 -defaultsOSRD
+preplace port port-id_io_resetN -pg 1 -lvl 0 -x 0 -y 180 -defaultsOSRD
+preplace portBus ad -pg 1 -lvl 0 -x 0 -y 120 -defaultsOSRD
+preplace portBus ad_out -pg 1 -lvl 6 -x 1500 -y 610 -defaultsOSRD
+preplace portBus count -pg 1 -lvl 0 -x 0 -y 740 -defaultsOSRD
+preplace portBus target -pg 1 -lvl 0 -x 0 -y 760 -defaultsOSRD
+preplace portBus fifo_read_rd_data -pg 1 -lvl 0 -x 0 -y 680 -defaultsOSRD
+preplace portBus div -pg 1 -lvl 0 -x 0 -y 700 -defaultsOSRD
+preplace inst DDCWrapper_0 -pg 1 -lvl 1 -x 190 -y 150 -defaultsOSRD
+preplace inst mux_reciever_in -pg 1 -lvl 3 -x 660 -y 320 -defaultsOSRD
+preplace inst count_trigger_0 -pg 1 -lvl 4 -x 1060 -y 980 -defaultsOSRD
+preplace inst fifo_read_to_axis_0 -pg 1 -lvl 4 -x 1060 -y 630 -defaultsOSRD
+preplace inst adc_0 -pg 1 -lvl 4 -x 1060 -y 810 -defaultsOSRD
+preplace inst xlconcat_0 -pg 1 -lvl 2 -x 440 -y 320 -defaultsOSRD
+preplace inst xlconstant_0 -pg 1 -lvl 1 -x 190 -y 330 -defaultsOSRD
+preplace inst ila_adc -pg 1 -lvl 5 -x 1390 -y 290 -defaultsOSRD
+preplace netloc DDCWrapper_0_io_out_data 1 1 4 350 120 NJ 120 NJ 120 N
+preplace netloc Net 1 0 5 NJ 720 NJ 720 NJ 720 810 60 NJ
+preplace netloc Net1 1 0 4 NJ 600 NJ 600 NJ 600 780
+preplace netloc Net2 1 0 1 NJ 160
+preplace netloc Net3 1 0 1 NJ 180
+preplace netloc ad_1 1 0 5 30 60 NJ 60 530 80 NJ 80 N
+preplace netloc adc_0_ad_out 1 4 2 1270 610 NJ
+preplace netloc adc_0_ad_out_vld 1 4 2 1280 630 NJ
+preplace netloc count_trigger_0_trigger_out 1 4 2 1300 650 NJ
+preplace netloc div_1 1 0 5 NJ 700 NJ 700 NJ 700 870 240 NJ
+preplace netloc fifo_adc_data_count 1 0 5 NJ 740 NJ 740 NJ 740 830 300 NJ
+preplace netloc fifo_read_almost_empty_1 1 0 5 NJ 660 NJ 660 NJ 660 860 420 NJ
+preplace netloc fifo_read_empty_1 1 0 5 NJ 640 NJ 640 NJ 640 820 400 NJ
+preplace netloc fifo_read_rd_data_1 1 0 5 NJ 680 NJ 680 NJ 680 880 440 NJ
+preplace netloc fifo_read_to_axis_0_fifo_read_rd_en 1 4 2 1290 580 1480J
+preplace netloc io_in_sync_1 1 0 5 20 50 NJ 50 NJ 50 NJ 50 1300
+preplace netloc mux_reciever_in_data_out 1 3 2 840 220 NJ
+preplace netloc start_1 1 0 5 NJ 620 NJ 620 NJ 620 800 380 NJ
+preplace netloc xlconcat_0_dout 1 2 1 N 320
+preplace netloc xlconstant_0_dout 1 1 1 NJ 330
+preplace netloc xlslice_1_Dout 1 0 5 NJ 760 NJ 760 NJ 760 850 320 NJ
+preplace netloc xlslice_2_Dout 1 0 5 NJ 780 NJ 780 NJ 780 790 340 NJ
+preplace netloc xlslice_reciever_in_10_Dout 1 0 5 NJ 250 NJ 250 540 200 NJ 200 N
+preplace netloc DDCWrapper_0_io_out_update 1 1 4 NJ 140 NJ 140 NJ 140 N
+preplace netloc DDCWrapper_0_io_out_readData 1 1 4 NJ 160 NJ 160 NJ 160 N
+preplace netloc DDCWrapper_0_io_out_ave 1 1 4 NJ 180 NJ 180 NJ 180 N
+preplace netloc fifo_read_to_axis_0_axis_tdata 1 4 1 1240 480n
+preplace netloc fifo_read_to_axis_0_axis_tlast 1 4 1 1250 500n
+preplace netloc fifo_read_to_axis_0_axis_tvalid 1 4 1 1260 520n
+preplace netloc Conn1 1 4 2 NJ 590 NJ
+levelinfo -pg 1 0 190 440 660 1060 1390 1500
+pagesize -pg 1 -db -bbox -sgen -210 0 1650 1080
 "
 }
 

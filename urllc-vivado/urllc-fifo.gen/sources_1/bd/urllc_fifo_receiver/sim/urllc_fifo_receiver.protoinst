@@ -1,9 +1,0 @@
-{
-	"version": "1.0",
-	"modules": {
-		"urllc_fifo_receiver": {
-			"proto_instances": {
-			}
-		}
-	}
-}

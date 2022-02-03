@@ -3,4 +3,5 @@
 	<item key="enabletrace_urllc_io_test_Debug" value="false"/>
 	<item key="emulatorarguments_urllc_io_test_Debug" value=""/>
 	<item key="waveform_urllc_io_test_Debug" value="false"/>
+	<item key="waveform_urllc_fifo_sender_ps_Debug" value="false"/>
 </section>

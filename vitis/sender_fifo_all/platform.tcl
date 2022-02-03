@@ -22,3 +22,5 @@ platform clean
 platform generate
 platform generate
 platform active {sender_fifo_all}
+platform clean
+platform clean

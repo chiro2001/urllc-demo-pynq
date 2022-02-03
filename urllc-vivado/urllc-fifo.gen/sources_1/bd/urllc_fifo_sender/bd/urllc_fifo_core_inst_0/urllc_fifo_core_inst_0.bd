@@ -19,7 +19,8 @@
         "fifo_read_to_axis_0": "",
         "adc_0": "",
         "xlconcat_0": "",
-        "xlconstant_0": ""
+        "xlconstant_0": "",
+        "ila_adc": ""
       },
       "core": {
         "processing_system7_0": "",
@@ -39,15 +40,19 @@
         },
         "xlconcat_irq": "",
         "reset_static": "",
-        "ila_0": "",
-        "clk_static": ""
+        "ila_core": "",
+        "clk_static": "",
+        "ila_1": "",
+        "ila_fifo_in": "",
+        "ila_fifo_out": ""
       },
       "dac": {
         "mux_reciever_out": "",
         "axis_write_to_fifo_0": "",
         "dac_0": "",
         "DUCWrapper_0": "",
-        "xlslice_sender": ""
+        "xlslice_sender": "",
+        "ila_0": ""
       },
       "debug_ctrl": {
         "axi_gpio_0": "",
@@ -64,10 +69,7 @@
         "xlslice_fifo_read_start_2": "",
         "xlslice_ddc_sync_8": "",
         "xlslice_adc_0_7": ""
-      },
-      "ila_0": "",
-      "ila_fifo_in": "",
-      "ila_fifo_out": ""
+      }
     },
     "interface_ports": {
       "DDR": {
@@ -845,6 +847,26 @@
                 "value": "7"
               }
             }
+          },
+          "ila_adc": {
+            "vlnv": "xilinx.com:ip:ila:6.2",
+            "xci_name": "urllc_fifo_core_inst_0_ila_adc_0",
+            "xci_path": "ip\\urllc_fifo_core_inst_0_ila_adc_0\\urllc_fifo_core_inst_0_ila_adc_0.xci",
+            "inst_hier_path": "adc/ila_adc",
+            "parameters": {
+              "C_DATA_DEPTH": {
+                "value": "8192"
+              },
+              "C_ENABLE_ILA_AXI_MON": {
+                "value": "false"
+              },
+              "C_MONITOR_TYPE": {
+                "value": "Native"
+              },
+              "C_NUM_OF_PROBES": {
+                "value": "23"
+              }
+            }
           }
         },
         "interface_nets": {
@@ -856,10 +878,29 @@
           }
         },
         "nets": {
+          "DDCWrapper_0_io_out_ave": {
+            "ports": [
+              "DDCWrapper_0/io_out_ave",
+              "ila_adc/probe5"
+            ]
+          },
           "DDCWrapper_0_io_out_data": {
             "ports": [
               "DDCWrapper_0/io_out_data",
-              "xlconcat_0/In0"
+              "xlconcat_0/In0",
+              "ila_adc/probe2"
+            ]
+          },
+          "DDCWrapper_0_io_out_readData": {
+            "ports": [
+              "DDCWrapper_0/io_out_readData",
+              "ila_adc/probe4"
+            ]
+          },
+          "DDCWrapper_0_io_out_update": {
+            "ports": [
+              "DDCWrapper_0/io_out_update",
+              "ila_adc/probe3"
             ]
           },
           "Net": {
@@ -867,7 +908,8 @@
               "clk",
               "fifo_read_to_axis_0/clk",
               "count_trigger_0/clk",
-              "adc_0/clk"
+              "adc_0/clk",
+              "ila_adc/clk"
             ]
           },
           "Net1": {
@@ -894,79 +936,110 @@
             "ports": [
               "ad",
               "mux_reciever_in/sel1",
-              "DDCWrapper_0/io_in_data"
+              "DDCWrapper_0/io_in_data",
+              "ila_adc/probe0"
             ]
           },
           "adc_0_ad_out": {
             "ports": [
               "adc_0/ad_out",
-              "ad_out"
+              "ad_out",
+              "ila_adc/probe9"
             ]
           },
           "adc_0_ad_out_vld": {
             "ports": [
               "adc_0/ad_out_vld",
-              "ad_out_vld"
+              "ad_out_vld",
+              "ila_adc/probe10"
             ]
           },
           "count_trigger_0_trigger_out": {
             "ports": [
               "count_trigger_0/trigger_out",
-              "trigger_out"
+              "trigger_out",
+              "ila_adc/probe14"
             ]
           },
           "div_1": {
             "ports": [
               "div",
-              "adc_0/div"
+              "adc_0/div",
+              "ila_adc/probe8"
             ]
           },
           "fifo_adc_data_count": {
             "ports": [
               "count",
-              "count_trigger_0/count"
+              "count_trigger_0/count",
+              "ila_adc/probe11"
             ]
           },
           "fifo_read_almost_empty_1": {
             "ports": [
               "fifo_read_almost_empty",
-              "fifo_read_to_axis_0/fifo_read_almost_empty"
+              "fifo_read_to_axis_0/fifo_read_almost_empty",
+              "ila_adc/probe17"
             ]
           },
           "fifo_read_empty_1": {
             "ports": [
               "fifo_read_empty",
-              "fifo_read_to_axis_0/fifo_read_empty"
+              "fifo_read_to_axis_0/fifo_read_empty",
+              "ila_adc/probe16"
             ]
           },
           "fifo_read_rd_data_1": {
             "ports": [
               "fifo_read_rd_data",
-              "fifo_read_to_axis_0/fifo_read_rd_data"
+              "fifo_read_to_axis_0/fifo_read_rd_data",
+              "ila_adc/probe18"
+            ]
+          },
+          "fifo_read_to_axis_0_axis_tdata": {
+            "ports": [
+              "fifo_read_to_axis_0/axis_tdata",
+              "ila_adc/probe20"
+            ]
+          },
+          "fifo_read_to_axis_0_axis_tlast": {
+            "ports": [
+              "fifo_read_to_axis_0/axis_tlast",
+              "ila_adc/probe21"
+            ]
+          },
+          "fifo_read_to_axis_0_axis_tvalid": {
+            "ports": [
+              "fifo_read_to_axis_0/axis_tvalid",
+              "ila_adc/probe22"
             ]
           },
           "fifo_read_to_axis_0_fifo_read_rd_en": {
             "ports": [
               "fifo_read_to_axis_0/fifo_read_rd_en",
-              "fifo_read_rd_en"
+              "fifo_read_rd_en",
+              "ila_adc/probe19"
             ]
           },
           "io_in_sync_1": {
             "ports": [
               "io_in_sync",
-              "DDCWrapper_0/io_in_sync"
+              "DDCWrapper_0/io_in_sync",
+              "ila_adc/probe1"
             ]
           },
           "mux_reciever_in_data_out": {
             "ports": [
               "mux_reciever_in/data_out",
-              "adc_0/ad_in"
+              "adc_0/ad_in",
+              "ila_adc/probe7"
             ]
           },
           "start_1": {
             "ports": [
               "start",
-              "fifo_read_to_axis_0/start"
+              "fifo_read_to_axis_0/start",
+              "ila_adc/probe15"
             ]
           },
           "xlconcat_0_dout": {
@@ -984,19 +1057,22 @@
           "xlslice_1_Dout": {
             "ports": [
               "target",
-              "count_trigger_0/target"
+              "count_trigger_0/target",
+              "ila_adc/probe12"
             ]
           },
           "xlslice_2_Dout": {
             "ports": [
               "clear",
-              "count_trigger_0/clear"
+              "count_trigger_0/clear",
+              "ila_adc/probe13"
             ]
           },
           "xlslice_reciever_in_10_Dout": {
             "ports": [
               "router",
-              "mux_reciever_in/router"
+              "mux_reciever_in/router",
+              "ila_adc/probe6"
             ]
           }
         }
@@ -1414,11 +1490,6 @@
             "type": "rst",
             "direction": "O",
             "left": "0",
-            "right": "0"
-          },
-          "dout2": {
-            "direction": "O",
-            "left": "2",
             "right": "0"
           },
           "In0": {
@@ -5934,14 +6005,14 @@
             "xci_path": "ip\\urllc_fifo_core_inst_0_reset_static_0\\urllc_fifo_core_inst_0_reset_static_0.xci",
             "inst_hier_path": "core/reset_static"
           },
-          "ila_0": {
+          "ila_core": {
             "vlnv": "xilinx.com:ip:ila:6.2",
-            "xci_name": "urllc_fifo_core_inst_0_ila_0_0",
-            "xci_path": "ip\\urllc_fifo_core_inst_0_ila_0_0\\urllc_fifo_core_inst_0_ila_0_0.xci",
-            "inst_hier_path": "core/ila_0",
+            "xci_name": "urllc_fifo_core_inst_0_ila_core_0",
+            "xci_path": "ip\\urllc_fifo_core_inst_0_ila_core_0\\urllc_fifo_core_inst_0_ila_core_0.xci",
+            "inst_hier_path": "core/ila_core",
             "parameters": {
               "C_DATA_DEPTH": {
-                "value": "32768"
+                "value": "8192"
               },
               "C_ENABLE_ILA_AXI_MON": {
                 "value": "false"
@@ -6000,13 +6071,77 @@
                 "value": "false"
               }
             }
+          },
+          "ila_1": {
+            "vlnv": "xilinx.com:ip:ila:6.2",
+            "xci_name": "urllc_fifo_core_inst_0_ila_1_0",
+            "xci_path": "ip\\urllc_fifo_core_inst_0_ila_1_0\\urllc_fifo_core_inst_0_ila_1_0.xci",
+            "inst_hier_path": "core/ila_1",
+            "parameters": {
+              "C_DATA_DEPTH": {
+                "value": "8192"
+              },
+              "C_ENABLE_ILA_AXI_MON": {
+                "value": "false"
+              },
+              "C_MONITOR_TYPE": {
+                "value": "Native"
+              },
+              "C_NUM_OF_PROBES": {
+                "value": "15"
+              },
+              "C_PROBE0_WIDTH": {
+                "value": "3"
+              }
+            }
+          },
+          "ila_fifo_in": {
+            "vlnv": "xilinx.com:ip:ila:6.2",
+            "xci_name": "urllc_fifo_core_inst_0_ila_fifo_in_0",
+            "xci_path": "ip\\urllc_fifo_core_inst_0_ila_fifo_in_0\\urllc_fifo_core_inst_0_ila_fifo_in_0.xci",
+            "inst_hier_path": "core/ila_fifo_in",
+            "parameters": {
+              "C_ENABLE_ILA_AXI_MON": {
+                "value": "true"
+              },
+              "C_MONITOR_TYPE": {
+                "value": "AXI"
+              },
+              "C_NUM_OF_PROBES": {
+                "value": "9"
+              },
+              "C_SLOT_0_AXI_PROTOCOL": {
+                "value": "AXI4S"
+              }
+            }
+          },
+          "ila_fifo_out": {
+            "vlnv": "xilinx.com:ip:ila:6.2",
+            "xci_name": "urllc_fifo_core_inst_0_ila_fifo_out_0",
+            "xci_path": "ip\\urllc_fifo_core_inst_0_ila_fifo_out_0\\urllc_fifo_core_inst_0_ila_fifo_out_0.xci",
+            "inst_hier_path": "core/ila_fifo_out",
+            "parameters": {
+              "C_ENABLE_ILA_AXI_MON": {
+                "value": "true"
+              },
+              "C_MONITOR_TYPE": {
+                "value": "AXI"
+              },
+              "C_NUM_OF_PROBES": {
+                "value": "9"
+              },
+              "C_SLOT_0_AXI_PROTOCOL": {
+                "value": "AXI4S"
+              }
+            }
           }
         },
         "interface_nets": {
           "axi_dma_0_M_AXIS_MM2S": {
             "interface_ports": [
               "M_AXIS_MM2S",
-              "axi_dma_0/M_AXIS_MM2S"
+              "axi_dma_0/M_AXIS_MM2S",
+              "ila_fifo_out/SLOT_0_AXIS"
             ]
           },
           "axi_dma_0_M_AXI_MM2S": {
@@ -6036,7 +6171,8 @@
           "fifo_read_to_axis_0_axis": {
             "interface_ports": [
               "S_AXIS_S2MM",
-              "axi_dma_0/S_AXIS_S2MM"
+              "axi_dma_0/S_AXIS_S2MM",
+              "ila_fifo_in/SLOT_0_AXIS"
             ]
           },
           "processing_system7_0_DDR": {
@@ -6087,13 +6223,15 @@
           "adc_0_ad_out": {
             "ports": [
               "din",
-              "fifo_adc/din"
+              "fifo_adc/din",
+              "ila_1/probe1"
             ]
           },
           "adc_0_ad_out_vld": {
             "ports": [
               "wr_en",
-              "fifo_adc/wr_en"
+              "fifo_adc/wr_en",
+              "ila_1/probe2"
             ]
           },
           "axi_dma_0_mm2s_introut": {
@@ -6111,13 +6249,15 @@
           "axis_write_to_fifo_0_fifo_write_wd_data": {
             "ports": [
               "din1",
-              "fifo_dac/din"
+              "fifo_dac/din",
+              "ila_1/probe10"
             ]
           },
           "axis_write_to_fifo_0_fifo_write_wd_en": {
             "ports": [
               "wr_en1",
-              "fifo_dac/wr_en"
+              "fifo_dac/wr_en",
+              "ila_1/probe11"
             ]
           },
           "clk_dynamic_clk_out_200M": {
@@ -6131,19 +6271,19 @@
             "ports": [
               "clk_dynamic/locked",
               "reset_dynamic/dcm_locked",
-              "ila_0/probe1"
+              "ila_core/probe1"
             ]
           },
           "clk_dynamic_psdone": {
             "ports": [
               "clk_dynamic/psdone",
-              "ila_0/probe7"
+              "ila_core/probe7"
             ]
           },
           "clk_pl_50M_1": {
             "ports": [
               "clk_pl_50M",
-              "ila_0/clk",
+              "ila_core/clk",
               "clk_static/clk_in1"
             ]
           },
@@ -6165,68 +6305,86 @@
               "ps7_0_axi_periph/M00_ACLK",
               "ps7_0_axi_periph/M01_ACLK",
               "reset_static/slowest_sync_clk",
-              "clk_dynamic/clk_in1"
+              "clk_dynamic/clk_in1",
+              "ila_1/clk",
+              "ila_fifo_in/clk",
+              "ila_fifo_out/clk"
             ]
           },
           "clk_static_locked": {
             "ports": [
               "clk_static/locked",
               "reset_static/dcm_locked",
-              "ila_0/probe2"
+              "ila_core/probe2"
             ]
           },
           "dac_0_da_in_vld": {
             "ports": [
               "rd_en1",
-              "fifo_dac/rd_en"
+              "fifo_dac/rd_en",
+              "ila_1/probe13"
             ]
           },
           "fifo_adc_almost_empty": {
             "ports": [
               "fifo_adc/almost_empty",
-              "almost_empty"
+              "almost_empty",
+              "ila_1/probe3"
             ]
           },
           "fifo_adc_data_count": {
             "ports": [
               "fifo_adc/data_count",
-              "data_count"
+              "data_count",
+              "ila_1/probe7"
             ]
           },
           "fifo_adc_dout": {
             "ports": [
               "fifo_adc/dout",
-              "dout"
+              "dout",
+              "ila_1/probe5"
             ]
           },
           "fifo_adc_empty": {
             "ports": [
               "fifo_adc/empty",
-              "empty"
+              "empty",
+              "ila_1/probe4"
             ]
           },
           "fifo_dac_almost_full": {
             "ports": [
               "fifo_dac/almost_full",
-              "almost_full"
+              "almost_full",
+              "ila_1/probe8"
+            ]
+          },
+          "fifo_dac_data_count": {
+            "ports": [
+              "fifo_dac/data_count",
+              "ila_1/probe14"
             ]
           },
           "fifo_dac_dout": {
             "ports": [
               "fifo_dac/dout",
-              "dout1"
+              "dout1",
+              "ila_1/probe12"
             ]
           },
           "fifo_dac_full": {
             "ports": [
               "fifo_dac/full",
-              "full"
+              "full",
+              "ila_1/probe9"
             ]
           },
           "fifo_read_to_axis_0_fifo_read_rd_en": {
             "ports": [
               "rd_en",
-              "fifo_adc/rd_en"
+              "fifo_adc/rd_en",
+              "ila_1/probe6"
             ]
           },
           "processing_system7_0_FCLK_RESET0_N": {
@@ -6240,28 +6398,28 @@
             "ports": [
               "psclk",
               "clk_dynamic/psclk",
-              "ila_0/probe4"
+              "ila_core/probe4"
             ]
           },
           "psen_1": {
             "ports": [
               "psen",
               "clk_dynamic/psen",
-              "ila_0/probe5"
+              "ila_core/probe5"
             ]
           },
           "psincdec_1": {
             "ports": [
               "psincdec",
               "clk_dynamic/psincdec",
-              "ila_0/probe6"
+              "ila_core/probe6"
             ]
           },
           "reset_dynamic_peripheral_aresetn": {
             "ports": [
               "reset_dynamic/peripheral_aresetn",
               "peripheral_aresetn",
-              "ila_0/probe3"
+              "ila_core/probe3"
             ]
           },
           "rst_ps7_0_50M_peripheral_aresetn": {
@@ -6274,14 +6432,14 @@
               "ps7_0_axi_periph/S00_ARESETN",
               "ps7_0_axi_periph/M00_ARESETN",
               "ps7_0_axi_periph/M01_ARESETN",
-              "ila_0/probe0"
+              "ila_core/probe0"
             ]
           },
           "xlconcat_irq_dout": {
             "ports": [
               "xlconcat_irq/dout",
               "processing_system7_0/IRQ_F2P",
-              "dout2"
+              "ila_1/probe0"
             ]
           }
         }
@@ -6680,6 +6838,26 @@
                 "value": "8"
               }
             }
+          },
+          "ila_0": {
+            "vlnv": "xilinx.com:ip:ila:6.2",
+            "xci_name": "urllc_fifo_core_inst_0_ila_0_0",
+            "xci_path": "ip\\urllc_fifo_core_inst_0_ila_0_0\\urllc_fifo_core_inst_0_ila_0_0.xci",
+            "inst_hier_path": "dac/ila_0",
+            "parameters": {
+              "C_DATA_DEPTH": {
+                "value": "8192"
+              },
+              "C_ENABLE_ILA_AXI_MON": {
+                "value": "false"
+              },
+              "C_MONITOR_TYPE": {
+                "value": "Native"
+              },
+              "C_NUM_OF_PROBES": {
+                "value": "15"
+              }
+            }
           }
         },
         "interface_nets": {
@@ -6694,26 +6872,36 @@
           "DUCWrapper_0_io_out_dac": {
             "ports": [
               "DUCWrapper_0/io_out_dac",
-              "mux_reciever_out/sel1"
+              "mux_reciever_out/sel1",
+              "ila_0/probe2"
+            ]
+          },
+          "DUCWrapper_0_io_out_sync": {
+            "ports": [
+              "DUCWrapper_0/io_out_sync",
+              "ila_0/probe3"
             ]
           },
           "Net": {
             "ports": [
               "dac_0/da_out",
               "mux_reciever_out/sel2",
-              "xlslice_sender/Din"
+              "xlslice_sender/Din",
+              "ila_0/probe8"
             ]
           },
           "axis_write_to_fifo_0_fifo_write_wd_data": {
             "ports": [
               "axis_write_to_fifo_0/fifo_write_wd_data",
-              "fifo_write_wd_data"
+              "fifo_write_wd_data",
+              "ila_0/probe13"
             ]
           },
           "axis_write_to_fifo_0_fifo_write_wd_en": {
             "ports": [
               "axis_write_to_fifo_0/fifo_write_wd_en",
-              "fifo_write_wd_en"
+              "fifo_write_wd_en",
+              "ila_0/probe14"
             ]
           },
           "clk_wiz_0_clk_out1": {
@@ -6721,37 +6909,43 @@
               "clk",
               "axis_write_to_fifo_0/clk",
               "dac_0/clk",
-              "DUCWrapper_0/io_clock"
+              "DUCWrapper_0/io_clock",
+              "ila_0/clk"
             ]
           },
           "dac_0_da_in_vld": {
             "ports": [
               "dac_0/da_in_vld",
-              "da_in_vld"
+              "da_in_vld",
+              "ila_0/probe9"
             ]
           },
           "fifo_dac_almost_full": {
             "ports": [
               "fifo_write_almost_full",
-              "axis_write_to_fifo_0/fifo_write_almost_full"
+              "axis_write_to_fifo_0/fifo_write_almost_full",
+              "ila_0/probe12"
             ]
           },
           "fifo_dac_dout": {
             "ports": [
               "da_in",
-              "dac_0/da_in"
+              "dac_0/da_in",
+              "ila_0/probe6"
             ]
           },
           "fifo_dac_full": {
             "ports": [
               "fifo_write_full",
-              "axis_write_to_fifo_0/fifo_write_full"
+              "axis_write_to_fifo_0/fifo_write_full",
+              "ila_0/probe11"
             ]
           },
           "mux_0_data_out": {
             "ports": [
               "mux_reciever_out/data_out",
-              "da"
+              "da",
+              "ila_0/probe5"
             ]
           },
           "rst_ps7_0_50M_peripheral_aresetn": {
@@ -6765,31 +6959,36 @@
           "xlslice_0_Dout1": {
             "ports": [
               "start",
-              "axis_write_to_fifo_0/start"
+              "axis_write_to_fifo_0/start",
+              "ila_0/probe10"
             ]
           },
           "xlslice_dac_8_15_Dout": {
             "ports": [
               "div",
-              "dac_0/div"
+              "dac_0/div",
+              "ila_0/probe7"
             ]
           },
           "xlslice_duc_sync_6_Dout": {
             "ports": [
               "io_in_sync",
-              "DUCWrapper_0/io_in_sync"
+              "DUCWrapper_0/io_in_sync",
+              "ila_0/probe1"
             ]
           },
           "xlslice_reciever_out_7_Dout": {
             "ports": [
               "router",
-              "mux_reciever_out/router"
+              "mux_reciever_out/router",
+              "ila_0/probe4"
             ]
           },
           "xlslice_sender_Dout": {
             "ports": [
               "xlslice_sender/Dout",
-              "DUCWrapper_0/io_in_data"
+              "DUCWrapper_0/io_in_data",
+              "ila_0/probe0"
             ]
           }
         }
@@ -7321,84 +7520,19 @@
             ]
           }
         }
-      },
-      "ila_0": {
-        "vlnv": "xilinx.com:ip:ila:6.2",
-        "xci_name": "urllc_fifo_core_inst_0_ila_0_1",
-        "xci_path": "ip\\urllc_fifo_core_inst_0_ila_0_1\\urllc_fifo_core_inst_0_ila_0_1.xci",
-        "inst_hier_path": "ila_0",
-        "parameters": {
-          "C_DATA_DEPTH": {
-            "value": "65536"
-          },
-          "C_ENABLE_ILA_AXI_MON": {
-            "value": "false"
-          },
-          "C_MONITOR_TYPE": {
-            "value": "Native"
-          },
-          "C_NUM_OF_PROBES": {
-            "value": "1"
-          },
-          "C_PROBE0_WIDTH": {
-            "value": "3"
-          }
-        }
-      },
-      "ila_fifo_in": {
-        "vlnv": "xilinx.com:ip:ila:6.2",
-        "xci_name": "urllc_fifo_core_inst_0_ila_fifo_in_0",
-        "xci_path": "ip\\urllc_fifo_core_inst_0_ila_fifo_in_0\\urllc_fifo_core_inst_0_ila_fifo_in_0.xci",
-        "inst_hier_path": "ila_fifo_in",
-        "parameters": {
-          "C_ENABLE_ILA_AXI_MON": {
-            "value": "true"
-          },
-          "C_MONITOR_TYPE": {
-            "value": "AXI"
-          },
-          "C_NUM_OF_PROBES": {
-            "value": "9"
-          },
-          "C_SLOT_0_AXI_PROTOCOL": {
-            "value": "AXI4S"
-          }
-        }
-      },
-      "ila_fifo_out": {
-        "vlnv": "xilinx.com:ip:ila:6.2",
-        "xci_name": "urllc_fifo_core_inst_0_ila_fifo_out_0",
-        "xci_path": "ip\\urllc_fifo_core_inst_0_ila_fifo_out_0\\urllc_fifo_core_inst_0_ila_fifo_out_0.xci",
-        "inst_hier_path": "ila_fifo_out",
-        "parameters": {
-          "C_ENABLE_ILA_AXI_MON": {
-            "value": "true"
-          },
-          "C_MONITOR_TYPE": {
-            "value": "AXI"
-          },
-          "C_NUM_OF_PROBES": {
-            "value": "9"
-          },
-          "C_SLOT_0_AXI_PROTOCOL": {
-            "value": "AXI4S"
-          }
-        }
       }
     },
     "interface_nets": {
       "axi_dma_0_M_AXIS_MM2S": {
         "interface_ports": [
           "dac/axis",
-          "core/M_AXIS_MM2S",
-          "ila_fifo_out/SLOT_0_AXIS"
+          "core/M_AXIS_MM2S"
         ]
       },
       "fifo_read_to_axis_0_axis": {
         "interface_ports": [
           "adc/axis",
-          "core/S_AXIS_S2MM",
-          "ila_fifo_in/SLOT_0_AXIS"
+          "core/S_AXIS_S2MM"
         ]
       },
       "processing_system7_0_DDR": {
@@ -7476,10 +7610,7 @@
           "clk_ad_static",
           "adc/clk",
           "debug_ctrl/s_axi_aclk",
-          "dac/clk",
-          "ila_fifo_in/clk",
-          "ila_0/clk",
-          "ila_fifo_out/clk"
+          "dac/clk"
         ]
       },
       "core_almost_empty": {
@@ -7584,12 +7715,6 @@
           "adc/resetn",
           "debug_ctrl/s_axi_aresetn",
           "dac/resetn"
-        ]
-      },
-      "xlconcat_irq_dout": {
-        "ports": [
-          "core/dout2",
-          "ila_0/probe0"
         ]
       },
       "xlslice_0_Dout1": {

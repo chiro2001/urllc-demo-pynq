@@ -27,4 +27,5 @@
 	<item key="sender_zynq_system-device" value="Auto Detect"/>
 	<item key="sender_zynq_system-partial_bit" value="false"/>
 	<item key="sender_zynq_system-skip_rev_check" value="false"/>
+	<item key="devices_info_yashiro" value="{&quot;cables&quot;:[{&quot;name&quot;:&quot;Digilent JTAG-SMT2 210251A08870&quot;,&quot;indexContextMap&quot;:{&quot;2&quot;:&quot;jsn-JTAG-SMT2-210251A08870-4ba00477-0&quot;,&quot;3&quot;:&quot;jsn-JTAG-SMT2-210251A08870-23727093-0&quot;}}]}"/>
 </section>
