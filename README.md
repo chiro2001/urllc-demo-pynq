@@ -185,5 +185,88 @@ input_iq --12.W,200M--> ddc --1.W,4M--> serial --8.W,500K--> data_process --8.W,
 
       ![image-20220103171357927](README.assets/image-20220103171357927.png)
 
-      
+3. 2022年1月29日07点25分
+
+    1. 核心部分架构图
+
+      [urllc_fifo_core.pdf](./urllc-vivado/urllc_fifo_core.pdf)
+    
+4. 2022年2月3日16点15分 [version 0.3 (urllc-fifo)]
+
+    1. GPIO1：参数设置
+
+        | counter trigger | divider DAC | divider ADC |
+        | --------------- | ----------- | ----------- |
+        | [31:16]         | [15:8]      | [7:0]       |
+
+    2. GPIO2：开关设置
+
+        | 0    | trigger clear    |
+        | ---- | ---------------- |
+        | 1    | FIFO write start |
+        | 2    | FIFO read start  |
+        | 3    | psclk            |
+        | 4    | psen             |
+        | 5    | psincdec         |
+        | 6    | DUC sync         |
+        | 7    | function out     |
+        | 8    | DDC sync         |
+        | 9    | function in      |
+        
+    3. 外部中断
+
+        | 61   | trigger out   |
+        | ---- | ------------- |
+        | 62   | mm2s intr out |
+        | 63   | s2mm intr out |
+
+    4. 发送端流程
+
+        1. 初始化
+            - 设置输入输出数据router = 0，sender = 0; receiver = 1
+            - 暂时不使用sync: DUC sync = 1; DDC sync = 1
+            - 设置输入数据=>FIFO的divider（ADC divider & DAC divider）
+              - ADC：60M总线频率500k，div = 120
+              - DAC：60M总线频率4M，div = 15
+            - 设置counter trigger
+              - target = (MTU / 8)
+            - 设置外部中断
+              - 中断号：61
+              - 触发类型：上升沿
+              - 当中断触发时：开始DMA读写
+            - // 清空FIFO（触发一次中断）
+              - counter trigger clear = 1
+              - 开始一次DMA读(写)
+              - counter trigger clear = 0
+        2. LOOP
+            - 等待中断触发
+            - 等待DMA发送&接收完毕
+            - 处理数据：
+              - map(dst) => dst
+              - 并行数据转串行：dst[target] => src[target * 8]
+
+    5. 接收端流程
+
+        1. 初始化
+           - 设置输入输出数据router = 1，sender = 0; receiver = 1
+           - 暂时不使用sync: DUC sync = 1; DDC sync = 1
+           - 设置输入数据=>FIFO的divider（ADC divider & DAC divider）
+             - ADC：60M总线频率4M，div = 15
+             - DAC：60M总线频率500k，div =120
+           - 设置counter trigger
+             - target = MTU
+           - 设置外部中断
+             - 中断号：61
+             - 触发类型：上升沿
+             - 当中断触发时：开始DMA读写
+           - // 清空FIFO（触发一次中断）
+             - counter trigger clear = 1
+             - 开始一次DMA读(写)
+             - counter trigger clear = 0
+        2. LOOP
+           - 等待中断触发
+           - 等待DMA发送&接收完毕
+           - 处理数据：
+             - 并行数据转串行：dst[target] => src[target / 8]
+             - map(dst) => dst
 
