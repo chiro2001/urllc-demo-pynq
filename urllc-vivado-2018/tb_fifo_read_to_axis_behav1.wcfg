@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wave_config>
+   <wave_state>
+   </wave_state>
+   <db_ref_list>
+      <db_ref path="tb_fifo_read_to_axis_behav.wdb" id="1">
+         <top_modules>
+            <top_module name="glbl" />
+            <top_module name="tb_fifo_read_to_axis" />
+         </top_modules>
+      </db_ref>
+   </db_ref_list>
+   <zoom_setting>
+      <ZoomStartTime time="18883140fs"></ZoomStartTime>
+      <ZoomEndTime time="245823373fs"></ZoomEndTime>
+      <Cursor1Time time="96000000fs"></Cursor1Time>
+   </zoom_setting>
+   <column_width_setting>
+      <NameColumnWidth column_width="303"></NameColumnWidth>
+      <ValueColumnWidth column_width="102"></ValueColumnWidth>
+   </column_width_setting>
+   <WVObjectSize size="13" />
+   <wvobject fp_name="/tb_fifo_read_to_axis/clk" type="logic">
+      <obj_property name="ElementShortName">clk</obj_property>
+      <obj_property name="ObjectShortName">clk</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_fifo_read_to_axis/resetn" type="logic">
+      <obj_property name="ElementShortName">resetn</obj_property>
+      <obj_property name="ObjectShortName">resetn</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_fifo_read_to_axis/start" type="logic">
+      <obj_property name="ElementShortName">start</obj_property>
+      <obj_property name="ObjectShortName">start</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_fifo_read_to_axis/fifo_write_full" type="logic">
+      <obj_property name="ElementShortName">fifo_write_full</obj_property>
+      <obj_property name="ObjectShortName">fifo_write_full</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_fifo_read_to_axis/fifo_write_almost_full" type="logic">
+      <obj_property name="ElementShortName">fifo_write_almost_full</obj_property>
+      <obj_property name="ObjectShortName">fifo_write_almost_full</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_fifo_read_to_axis/axis_tready" type="logic">
+      <obj_property name="ElementShortName">axis_tready</obj_property>
+      <obj_property name="ObjectShortName">axis_tready</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_fifo_read_to_axis/axis_tdata" type="array">
+      <obj_property name="ElementShortName">axis_tdata[7:0]</obj_property>
+      <obj_property name="ObjectShortName">axis_tdata[7:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_fifo_read_to_axis/axis_tvalid" type="logic">
+      <obj_property name="ElementShortName">axis_tvalid</obj_property>
+      <obj_property name="ObjectShortName">axis_tvalid</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_fifo_read_to_axis/axis_tlast" type="logic">
+      <obj_property name="ElementShortName">axis_tlast</obj_property>
+      <obj_property name="ObjectShortName">axis_tlast</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_fifo_read_to_axis/fifo_write_wd_en" type="logic">
+      <obj_property name="ElementShortName">fifo_write_wd_en</obj_property>
+      <obj_property name="ObjectShortName">fifo_write_wd_en</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_fifo_read_to_axis/fifo_write_wd_data" type="array">
+      <obj_property name="ElementShortName">fifo_write_wd_data[7:0]</obj_property>
+      <obj_property name="ObjectShortName">fifo_write_wd_data[7:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_fifo_read_to_axis/axis_write_to_fifo_u0/started" type="logic">
+      <obj_property name="ElementShortName">started</obj_property>
+      <obj_property name="ObjectShortName">started</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_fifo_read_to_axis/axis_write_to_fifo_u0/will_write" type="logic">
+      <obj_property name="ElementShortName">will_write</obj_property>
+      <obj_property name="ObjectShortName">will_write</obj_property>
+   </wvobject>
+</wave_config>

@@ -1,0 +1,6 @@
+{
+  "files.associations": {
+    "xparameters.h": "c",
+    "xdebug.h": "c"
+  }
+}

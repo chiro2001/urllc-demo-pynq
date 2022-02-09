@@ -1,0 +1,393 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wave_config>
+   <wave_state>
+   </wave_state>
+   <db_ref_list>
+      <db_ref path="D:/Programs/urllc-demo-pynq/urllc-vivado-2018/urllc-vivado-2018.hw/hw_1/wave/hw_ila_data_1/hw_ila_data_1.wdb" id="1">
+         <top_modules>
+         </top_modules>
+      </db_ref>
+   </db_ref_list>
+   <zoom_setting>
+      <ZoomStartTime time="6599000fs"></ZoomStartTime>
+      <ZoomEndTime time="20379001fs"></ZoomEndTime>
+      <Cursor1Time time="8229000fs"></Cursor1Time>
+   </zoom_setting>
+   <column_width_setting>
+      <NameColumnWidth column_width="559"></NameColumnWidth>
+      <ValueColumnWidth column_width="98"></ValueColumnWidth>
+   </column_width_setting>
+   <WVObjectSize size="48" />
+   <wave_markers>
+   </wave_markers>
+   <wvobject fp_name="urllc_fifo_core_i/adc/ad_1" type="array">
+      <obj_property name="DisplayName">FullPathName</obj_property>
+      <obj_property name="ElementShortName">urllc_fifo_core_i/adc/ad_1[7:0]</obj_property>
+      <obj_property name="ObjectShortName">ad_1[7:0]</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
+      <obj_property name="LABELRADIX">true</obj_property>
+      <obj_property name="WaveformStyle">STYLE_DIGITAL</obj_property>
+   </wvobject>
+   <wvobject fp_name="urllc_fifo_core_i/adc/io_in_sync_1" type="logic">
+      <obj_property name="DisplayName">FullPathName</obj_property>
+      <obj_property name="ElementShortName">urllc_fifo_core_i/adc/io_in_sync_1</obj_property>
+      <obj_property name="ObjectShortName">io_in_sync_1</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
+      <obj_property name="LABELRADIX">true</obj_property>
+      <obj_property name="WaveformStyle">STYLE_DIGITAL</obj_property>
+   </wvobject>
+   <wvobject fp_name="urllc_fifo_core_i/adc/DDCWrapper_0_io_out_data" type="logic">
+      <obj_property name="DisplayName">FullPathName</obj_property>
+      <obj_property name="ElementShortName">urllc_fifo_core_i/adc/DDCWrapper_0_io_out_data</obj_property>
+      <obj_property name="ObjectShortName">DDCWrapper_0_io_out_data</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
+      <obj_property name="LABELRADIX">true</obj_property>
+      <obj_property name="WaveformStyle">STYLE_DIGITAL</obj_property>
+   </wvobject>
+   <wvobject fp_name="urllc_fifo_core_i/adc/DDCWrapper_0_io_out_update" type="logic">
+      <obj_property name="DisplayName">FullPathName</obj_property>
+      <obj_property name="ElementShortName">urllc_fifo_core_i/adc/DDCWrapper_0_io_out_update</obj_property>
+      <obj_property name="ObjectShortName">DDCWrapper_0_io_out_update</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
+      <obj_property name="LABELRADIX">true</obj_property>
+      <obj_property name="WaveformStyle">STYLE_DIGITAL</obj_property>
+   </wvobject>
+   <wvobject fp_name="urllc_fifo_core_i/adc/DDCWrapper_0_io_out_readData" type="array">
+      <obj_property name="DisplayName">FullPathName</obj_property>
+      <obj_property name="ElementShortName">urllc_fifo_core_i/adc/DDCWrapper_0_io_out_readData[7:0]</obj_property>
+      <obj_property name="ObjectShortName">DDCWrapper_0_io_out_readData[7:0]</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
+      <obj_property name="LABELRADIX">true</obj_property>
+      <obj_property name="WaveformStyle">STYLE_DIGITAL</obj_property>
+   </wvobject>
+   <wvobject fp_name="urllc_fifo_core_i/adc/DDCWrapper_0_io_out_ave" type="array">
+      <obj_property name="DisplayName">FullPathName</obj_property>
+      <obj_property name="ElementShortName">urllc_fifo_core_i/adc/DDCWrapper_0_io_out_ave[7:0]</obj_property>
+      <obj_property name="ObjectShortName">DDCWrapper_0_io_out_ave[7:0]</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
+      <obj_property name="LABELRADIX">true</obj_property>
+      <obj_property name="WaveformStyle">STYLE_DIGITAL</obj_property>
+   </wvobject>
+   <wvobject fp_name="urllc_fifo_core_i/adc/xlslice_reciever_in_10_Dout" type="logic">
+      <obj_property name="DisplayName">FullPathName</obj_property>
+      <obj_property name="ElementShortName">urllc_fifo_core_i/adc/xlslice_reciever_in_10_Dout</obj_property>
+      <obj_property name="ObjectShortName">xlslice_reciever_in_10_Dout</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
+      <obj_property name="LABELRADIX">true</obj_property>
+      <obj_property name="WaveformStyle">STYLE_DIGITAL</obj_property>
+   </wvobject>
+   <wvobject fp_name="urllc_fifo_core_i/adc/mux_reciever_in_data_out" type="array">
+      <obj_property name="DisplayName">FullPathName</obj_property>
+      <obj_property name="ElementShortName">urllc_fifo_core_i/adc/mux_reciever_in_data_out[7:0]</obj_property>
+      <obj_property name="ObjectShortName">mux_reciever_in_data_out[7:0]</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
+      <obj_property name="LABELRADIX">true</obj_property>
+      <obj_property name="WaveformStyle">STYLE_ANALOG</obj_property>
+   </wvobject>
+   <wvobject fp_name="urllc_fifo_core_i/adc/div_1" type="array">
+      <obj_property name="DisplayName">FullPathName</obj_property>
+      <obj_property name="ElementShortName">urllc_fifo_core_i/adc/div_1[7:0]</obj_property>
+      <obj_property name="ObjectShortName">div_1[7:0]</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
+      <obj_property name="LABELRADIX">true</obj_property>
+      <obj_property name="WaveformStyle">STYLE_DIGITAL</obj_property>
+   </wvobject>
+   <wvobject fp_name="urllc_fifo_core_i/adc/adc_0_ad_out" type="array">
+      <obj_property name="DisplayName">FullPathName</obj_property>
+      <obj_property name="ElementShortName">urllc_fifo_core_i/adc/adc_0_ad_out[7:0]</obj_property>
+      <obj_property name="ObjectShortName">adc_0_ad_out[7:0]</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
+      <obj_property name="LABELRADIX">true</obj_property>
+      <obj_property name="WaveformStyle">STYLE_DIGITAL</obj_property>
+   </wvobject>
+   <wvobject fp_name="urllc_fifo_core_i/adc/adc_0_ad_out_vld" type="logic">
+      <obj_property name="DisplayName">FullPathName</obj_property>
+      <obj_property name="ElementShortName">urllc_fifo_core_i/adc/adc_0_ad_out_vld</obj_property>
+      <obj_property name="ObjectShortName">adc_0_ad_out_vld</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
+      <obj_property name="LABELRADIX">true</obj_property>
+      <obj_property name="WaveformStyle">STYLE_DIGITAL</obj_property>
+   </wvobject>
+   <wvobject fp_name="urllc_fifo_core_i/adc/fifo_adc_data_count" type="array">
+      <obj_property name="DisplayName">FullPathName</obj_property>
+      <obj_property name="ElementShortName">urllc_fifo_core_i/adc/fifo_adc_data_count[15:0]</obj_property>
+      <obj_property name="ObjectShortName">fifo_adc_data_count[15:0]</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
+      <obj_property name="LABELRADIX">true</obj_property>
+      <obj_property name="WaveformStyle">STYLE_DIGITAL</obj_property>
+   </wvobject>
+   <wvobject fp_name="urllc_fifo_core_i/adc/xlslice_1_Dout" type="array">
+      <obj_property name="DisplayName">FullPathName</obj_property>
+      <obj_property name="ElementShortName">urllc_fifo_core_i/adc/xlslice_1_Dout[15:0]</obj_property>
+      <obj_property name="ObjectShortName">xlslice_1_Dout[15:0]</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
+      <obj_property name="LABELRADIX">true</obj_property>
+      <obj_property name="WaveformStyle">STYLE_DIGITAL</obj_property>
+   </wvobject>
+   <wvobject fp_name="urllc_fifo_core_i/adc/xlslice_2_Dout" type="logic">
+      <obj_property name="DisplayName">FullPathName</obj_property>
+      <obj_property name="ElementShortName">urllc_fifo_core_i/adc/xlslice_2_Dout</obj_property>
+      <obj_property name="ObjectShortName">xlslice_2_Dout</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
+      <obj_property name="LABELRADIX">true</obj_property>
+      <obj_property name="WaveformStyle">STYLE_DIGITAL</obj_property>
+   </wvobject>
+   <wvobject fp_name="urllc_fifo_core_i/adc/count_trigger_0_trigger_out" type="logic">
+      <obj_property name="DisplayName">FullPathName</obj_property>
+      <obj_property name="ElementShortName">urllc_fifo_core_i/adc/count_trigger_0_trigger_out</obj_property>
+      <obj_property name="ObjectShortName">count_trigger_0_trigger_out</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
+      <obj_property name="LABELRADIX">true</obj_property>
+      <obj_property name="WaveformStyle">STYLE_DIGITAL</obj_property>
+   </wvobject>
+   <wvobject fp_name="urllc_fifo_core_i/adc/start_1" type="logic">
+      <obj_property name="DisplayName">FullPathName</obj_property>
+      <obj_property name="ElementShortName">urllc_fifo_core_i/adc/start_1</obj_property>
+      <obj_property name="ObjectShortName">start_1</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
+      <obj_property name="LABELRADIX">true</obj_property>
+      <obj_property name="WaveformStyle">STYLE_DIGITAL</obj_property>
+   </wvobject>
+   <wvobject fp_name="urllc_fifo_core_i/adc/fifo_read_empty_1" type="logic">
+      <obj_property name="DisplayName">FullPathName</obj_property>
+      <obj_property name="ElementShortName">urllc_fifo_core_i/adc/fifo_read_empty_1</obj_property>
+      <obj_property name="ObjectShortName">fifo_read_empty_1</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
+      <obj_property name="LABELRADIX">true</obj_property>
+      <obj_property name="WaveformStyle">STYLE_DIGITAL</obj_property>
+   </wvobject>
+   <wvobject fp_name="urllc_fifo_core_i/adc/fifo_read_almost_empty_1" type="logic">
+      <obj_property name="DisplayName">FullPathName</obj_property>
+      <obj_property name="ElementShortName">urllc_fifo_core_i/adc/fifo_read_almost_empty_1</obj_property>
+      <obj_property name="ObjectShortName">fifo_read_almost_empty_1</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
+      <obj_property name="LABELRADIX">true</obj_property>
+      <obj_property name="WaveformStyle">STYLE_DIGITAL</obj_property>
+   </wvobject>
+   <wvobject fp_name="urllc_fifo_core_i/adc/fifo_read_rd_data_1" type="array">
+      <obj_property name="DisplayName">FullPathName</obj_property>
+      <obj_property name="ElementShortName">urllc_fifo_core_i/adc/fifo_read_rd_data_1[7:0]</obj_property>
+      <obj_property name="ObjectShortName">fifo_read_rd_data_1[7:0]</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
+      <obj_property name="LABELRADIX">true</obj_property>
+      <obj_property name="WaveformStyle">STYLE_DIGITAL</obj_property>
+   </wvobject>
+   <wvobject fp_name="urllc_fifo_core_i/adc/fifo_read_to_axis_0_fifo_read_rd_en" type="logic">
+      <obj_property name="DisplayName">FullPathName</obj_property>
+      <obj_property name="ElementShortName">urllc_fifo_core_i/adc/fifo_read_to_axis_0_fifo_read_rd_en</obj_property>
+      <obj_property name="ObjectShortName">fifo_read_to_axis_0_fifo_read_rd_en</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
+      <obj_property name="LABELRADIX">true</obj_property>
+      <obj_property name="WaveformStyle">STYLE_DIGITAL</obj_property>
+   </wvobject>
+   <wvobject fp_name="urllc_fifo_core_i/adc/fifo_read_to_axis_0_axis_tdata" type="array">
+      <obj_property name="DisplayName">FullPathName</obj_property>
+      <obj_property name="ElementShortName">urllc_fifo_core_i/adc/fifo_read_to_axis_0_axis_tdata[7:0]</obj_property>
+      <obj_property name="ObjectShortName">fifo_read_to_axis_0_axis_tdata[7:0]</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
+      <obj_property name="LABELRADIX">true</obj_property>
+      <obj_property name="WaveformStyle">STYLE_DIGITAL</obj_property>
+   </wvobject>
+   <wvobject fp_name="urllc_fifo_core_i/adc/fifo_read_to_axis_0_axis_tlast" type="logic">
+      <obj_property name="DisplayName">FullPathName</obj_property>
+      <obj_property name="ElementShortName">urllc_fifo_core_i/adc/fifo_read_to_axis_0_axis_tlast</obj_property>
+      <obj_property name="ObjectShortName">fifo_read_to_axis_0_axis_tlast</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
+      <obj_property name="LABELRADIX">true</obj_property>
+      <obj_property name="WaveformStyle">STYLE_DIGITAL</obj_property>
+   </wvobject>
+   <wvobject fp_name="urllc_fifo_core_i/adc/fifo_read_to_axis_0_axis_tvalid" type="logic">
+      <obj_property name="DisplayName">FullPathName</obj_property>
+      <obj_property name="ElementShortName">urllc_fifo_core_i/adc/fifo_read_to_axis_0_axis_tvalid</obj_property>
+      <obj_property name="ObjectShortName">fifo_read_to_axis_0_axis_tvalid</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
+      <obj_property name="LABELRADIX">true</obj_property>
+      <obj_property name="WaveformStyle">STYLE_DIGITAL</obj_property>
+   </wvobject>
+   <wvobject fp_name="urllc_fifo_core_i/adc/axis_tready1_1" type="logic">
+      <obj_property name="DisplayName">FullPathName</obj_property>
+      <obj_property name="ElementShortName">urllc_fifo_core_i/adc/axis_tready1_1</obj_property>
+      <obj_property name="ObjectShortName">axis_tready1_1</obj_property>
+      <obj_property name="LABELRADIX">true</obj_property>
+      <obj_property name="WaveformStyle">STYLE_DIGITAL</obj_property>
+   </wvobject>
+   <wvobject fp_name="urllc_fifo_core_i/adc/DDCWrapper_0_io_out_ave" type="array">
+      <obj_property name="DisplayName">FullPathName</obj_property>
+      <obj_property name="ElementShortName">urllc_fifo_core_i/adc/DDCWrapper_0_io_out_ave[7:0]</obj_property>
+      <obj_property name="ObjectShortName">DDCWrapper_0_io_out_ave[7:0]</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
+      <obj_property name="LABELRADIX">true</obj_property>
+      <obj_property name="WaveformStyle">STYLE_DIGITAL</obj_property>
+   </wvobject>
+   <wvobject fp_name="urllc_fifo_core_i/adc/DDCWrapper_0_io_out_data" type="logic">
+      <obj_property name="DisplayName">FullPathName</obj_property>
+      <obj_property name="ElementShortName">urllc_fifo_core_i/adc/DDCWrapper_0_io_out_data</obj_property>
+      <obj_property name="ObjectShortName">DDCWrapper_0_io_out_data</obj_property>
+      <obj_property name="LABELRADIX">true</obj_property>
+      <obj_property name="WaveformStyle">STYLE_DIGITAL</obj_property>
+   </wvobject>
+   <wvobject fp_name="urllc_fifo_core_i/adc/DDCWrapper_0_io_out_readData" type="array">
+      <obj_property name="DisplayName">FullPathName</obj_property>
+      <obj_property name="ElementShortName">urllc_fifo_core_i/adc/DDCWrapper_0_io_out_readData[7:0]</obj_property>
+      <obj_property name="ObjectShortName">DDCWrapper_0_io_out_readData[7:0]</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
+      <obj_property name="LABELRADIX">true</obj_property>
+      <obj_property name="WaveformStyle">STYLE_DIGITAL</obj_property>
+   </wvobject>
+   <wvobject fp_name="urllc_fifo_core_i/adc/DDCWrapper_0_io_out_update" type="logic">
+      <obj_property name="DisplayName">FullPathName</obj_property>
+      <obj_property name="ElementShortName">urllc_fifo_core_i/adc/DDCWrapper_0_io_out_update</obj_property>
+      <obj_property name="ObjectShortName">DDCWrapper_0_io_out_update</obj_property>
+      <obj_property name="LABELRADIX">true</obj_property>
+      <obj_property name="WaveformStyle">STYLE_DIGITAL</obj_property>
+   </wvobject>
+   <wvobject fp_name="urllc_fifo_core_i/adc/ad_1" type="array">
+      <obj_property name="DisplayName">FullPathName</obj_property>
+      <obj_property name="ElementShortName">urllc_fifo_core_i/adc/ad_1[7:0]</obj_property>
+      <obj_property name="ObjectShortName">ad_1[7:0]</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
+      <obj_property name="LABELRADIX">true</obj_property>
+      <obj_property name="WaveformStyle">STYLE_DIGITAL</obj_property>
+   </wvobject>
+   <wvobject fp_name="urllc_fifo_core_i/adc/adc_0_ad_out" type="array">
+      <obj_property name="DisplayName">FullPathName</obj_property>
+      <obj_property name="ElementShortName">urllc_fifo_core_i/adc/adc_0_ad_out[7:0]</obj_property>
+      <obj_property name="ObjectShortName">adc_0_ad_out[7:0]</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
+      <obj_property name="LABELRADIX">true</obj_property>
+      <obj_property name="WaveformStyle">STYLE_DIGITAL</obj_property>
+   </wvobject>
+   <wvobject fp_name="urllc_fifo_core_i/adc/adc_0_ad_out_vld" type="logic">
+      <obj_property name="DisplayName">FullPathName</obj_property>
+      <obj_property name="ElementShortName">urllc_fifo_core_i/adc/adc_0_ad_out_vld</obj_property>
+      <obj_property name="ObjectShortName">adc_0_ad_out_vld</obj_property>
+      <obj_property name="LABELRADIX">true</obj_property>
+      <obj_property name="WaveformStyle">STYLE_DIGITAL</obj_property>
+   </wvobject>
+   <wvobject fp_name="urllc_fifo_core_i/adc/axis_tready1_1" type="logic">
+      <obj_property name="DisplayName">FullPathName</obj_property>
+      <obj_property name="ElementShortName">urllc_fifo_core_i/adc/axis_tready1_1</obj_property>
+      <obj_property name="ObjectShortName">axis_tready1_1</obj_property>
+      <obj_property name="LABELRADIX">true</obj_property>
+      <obj_property name="WaveformStyle">STYLE_DIGITAL</obj_property>
+   </wvobject>
+   <wvobject fp_name="urllc_fifo_core_i/adc/count_trigger_0_trigger_out" type="logic">
+      <obj_property name="DisplayName">FullPathName</obj_property>
+      <obj_property name="ElementShortName">urllc_fifo_core_i/adc/count_trigger_0_trigger_out</obj_property>
+      <obj_property name="ObjectShortName">count_trigger_0_trigger_out</obj_property>
+      <obj_property name="LABELRADIX">true</obj_property>
+      <obj_property name="WaveformStyle">STYLE_DIGITAL</obj_property>
+   </wvobject>
+   <wvobject fp_name="urllc_fifo_core_i/adc/div_1" type="array">
+      <obj_property name="DisplayName">FullPathName</obj_property>
+      <obj_property name="ElementShortName">urllc_fifo_core_i/adc/div_1[7:0]</obj_property>
+      <obj_property name="ObjectShortName">div_1[7:0]</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
+      <obj_property name="LABELRADIX">true</obj_property>
+      <obj_property name="WaveformStyle">STYLE_DIGITAL</obj_property>
+   </wvobject>
+   <wvobject fp_name="urllc_fifo_core_i/adc/fifo_adc_data_count" type="array">
+      <obj_property name="DisplayName">FullPathName</obj_property>
+      <obj_property name="ElementShortName">urllc_fifo_core_i/adc/fifo_adc_data_count[15:0]</obj_property>
+      <obj_property name="ObjectShortName">fifo_adc_data_count[15:0]</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
+      <obj_property name="LABELRADIX">true</obj_property>
+      <obj_property name="WaveformStyle">STYLE_DIGITAL</obj_property>
+   </wvobject>
+   <wvobject fp_name="urllc_fifo_core_i/adc/fifo_read_almost_empty_1" type="logic">
+      <obj_property name="DisplayName">FullPathName</obj_property>
+      <obj_property name="ElementShortName">urllc_fifo_core_i/adc/fifo_read_almost_empty_1</obj_property>
+      <obj_property name="ObjectShortName">fifo_read_almost_empty_1</obj_property>
+      <obj_property name="LABELRADIX">true</obj_property>
+      <obj_property name="WaveformStyle">STYLE_DIGITAL</obj_property>
+   </wvobject>
+   <wvobject fp_name="urllc_fifo_core_i/adc/fifo_read_empty_1" type="logic">
+      <obj_property name="DisplayName">FullPathName</obj_property>
+      <obj_property name="ElementShortName">urllc_fifo_core_i/adc/fifo_read_empty_1</obj_property>
+      <obj_property name="ObjectShortName">fifo_read_empty_1</obj_property>
+      <obj_property name="LABELRADIX">true</obj_property>
+      <obj_property name="WaveformStyle">STYLE_DIGITAL</obj_property>
+   </wvobject>
+   <wvobject fp_name="urllc_fifo_core_i/adc/fifo_read_rd_data_1" type="array">
+      <obj_property name="DisplayName">FullPathName</obj_property>
+      <obj_property name="ElementShortName">urllc_fifo_core_i/adc/fifo_read_rd_data_1[7:0]</obj_property>
+      <obj_property name="ObjectShortName">fifo_read_rd_data_1[7:0]</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
+      <obj_property name="LABELRADIX">true</obj_property>
+      <obj_property name="WaveformStyle">STYLE_DIGITAL</obj_property>
+   </wvobject>
+   <wvobject fp_name="urllc_fifo_core_i/adc/fifo_read_to_axis_0_axis_tdata" type="array">
+      <obj_property name="DisplayName">FullPathName</obj_property>
+      <obj_property name="ElementShortName">urllc_fifo_core_i/adc/fifo_read_to_axis_0_axis_tdata[7:0]</obj_property>
+      <obj_property name="ObjectShortName">fifo_read_to_axis_0_axis_tdata[7:0]</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
+      <obj_property name="LABELRADIX">true</obj_property>
+      <obj_property name="WaveformStyle">STYLE_DIGITAL</obj_property>
+   </wvobject>
+   <wvobject fp_name="urllc_fifo_core_i/adc/fifo_read_to_axis_0_axis_tlast" type="logic">
+      <obj_property name="DisplayName">FullPathName</obj_property>
+      <obj_property name="ElementShortName">urllc_fifo_core_i/adc/fifo_read_to_axis_0_axis_tlast</obj_property>
+      <obj_property name="ObjectShortName">fifo_read_to_axis_0_axis_tlast</obj_property>
+      <obj_property name="LABELRADIX">true</obj_property>
+      <obj_property name="WaveformStyle">STYLE_DIGITAL</obj_property>
+   </wvobject>
+   <wvobject fp_name="urllc_fifo_core_i/adc/fifo_read_to_axis_0_axis_tvalid" type="logic">
+      <obj_property name="DisplayName">FullPathName</obj_property>
+      <obj_property name="ElementShortName">urllc_fifo_core_i/adc/fifo_read_to_axis_0_axis_tvalid</obj_property>
+      <obj_property name="ObjectShortName">fifo_read_to_axis_0_axis_tvalid</obj_property>
+      <obj_property name="LABELRADIX">true</obj_property>
+      <obj_property name="WaveformStyle">STYLE_DIGITAL</obj_property>
+   </wvobject>
+   <wvobject fp_name="urllc_fifo_core_i/adc/fifo_read_to_axis_0_fifo_read_rd_en" type="logic">
+      <obj_property name="DisplayName">FullPathName</obj_property>
+      <obj_property name="ElementShortName">urllc_fifo_core_i/adc/fifo_read_to_axis_0_fifo_read_rd_en</obj_property>
+      <obj_property name="ObjectShortName">fifo_read_to_axis_0_fifo_read_rd_en</obj_property>
+      <obj_property name="LABELRADIX">true</obj_property>
+      <obj_property name="WaveformStyle">STYLE_DIGITAL</obj_property>
+   </wvobject>
+   <wvobject fp_name="urllc_fifo_core_i/adc/io_in_sync_1" type="logic">
+      <obj_property name="DisplayName">FullPathName</obj_property>
+      <obj_property name="ElementShortName">urllc_fifo_core_i/adc/io_in_sync_1</obj_property>
+      <obj_property name="ObjectShortName">io_in_sync_1</obj_property>
+      <obj_property name="LABELRADIX">true</obj_property>
+      <obj_property name="WaveformStyle">STYLE_DIGITAL</obj_property>
+   </wvobject>
+   <wvobject fp_name="urllc_fifo_core_i/adc/mux_reciever_in_data_out" type="array">
+      <obj_property name="DisplayName">FullPathName</obj_property>
+      <obj_property name="ElementShortName">urllc_fifo_core_i/adc/mux_reciever_in_data_out[7:0]</obj_property>
+      <obj_property name="ObjectShortName">mux_reciever_in_data_out[7:0]</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
+      <obj_property name="LABELRADIX">true</obj_property>
+      <obj_property name="WaveformStyle">STYLE_ANALOG</obj_property>
+      <obj_property name="CellHeight">100</obj_property>
+   </wvobject>
+   <wvobject fp_name="urllc_fifo_core_i/adc/start_1" type="logic">
+      <obj_property name="DisplayName">FullPathName</obj_property>
+      <obj_property name="ElementShortName">urllc_fifo_core_i/adc/start_1</obj_property>
+      <obj_property name="ObjectShortName">start_1</obj_property>
+      <obj_property name="LABELRADIX">true</obj_property>
+      <obj_property name="WaveformStyle">STYLE_DIGITAL</obj_property>
+   </wvobject>
+   <wvobject fp_name="urllc_fifo_core_i/adc/xlslice_1_Dout" type="array">
+      <obj_property name="DisplayName">FullPathName</obj_property>
+      <obj_property name="ElementShortName">urllc_fifo_core_i/adc/xlslice_1_Dout[15:0]</obj_property>
+      <obj_property name="ObjectShortName">xlslice_1_Dout[15:0]</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
+      <obj_property name="LABELRADIX">true</obj_property>
+      <obj_property name="WaveformStyle">STYLE_DIGITAL</obj_property>
+   </wvobject>
+   <wvobject fp_name="urllc_fifo_core_i/adc/xlslice_2_Dout" type="logic">
+      <obj_property name="DisplayName">FullPathName</obj_property>
+      <obj_property name="ElementShortName">urllc_fifo_core_i/adc/xlslice_2_Dout</obj_property>
+      <obj_property name="ObjectShortName">xlslice_2_Dout</obj_property>
+      <obj_property name="LABELRADIX">true</obj_property>
+      <obj_property name="WaveformStyle">STYLE_DIGITAL</obj_property>
+   </wvobject>
+   <wvobject fp_name="urllc_fifo_core_i/adc/xlslice_reciever_in_10_Dout" type="logic">
+      <obj_property name="DisplayName">FullPathName</obj_property>
+      <obj_property name="ElementShortName">urllc_fifo_core_i/adc/xlslice_reciever_in_10_Dout</obj_property>
+      <obj_property name="ObjectShortName">xlslice_reciever_in_10_Dout</obj_property>
+      <obj_property name="LABELRADIX">true</obj_property>
+      <obj_property name="WaveformStyle">STYLE_DIGITAL</obj_property>
+   </wvobject>
+</wave_config>

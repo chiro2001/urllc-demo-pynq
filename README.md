@@ -212,38 +212,42 @@ input_iq --12.W,200M--> ddc --1.W,4M--> serial --8.W,500K--> data_process --8.W,
         | 7    | function out     |
         | 8    | DDC sync         |
         | 9    | function in      |
-        
+        | 10   | ADC FIFO reset   |
+        | 11   | DAC FIFO reset   |
+
     3. 外部中断
 
-        | 61   | trigger out   |
-        | ---- | ------------- |
-        | 62   | mm2s intr out |
-        | 63   | s2mm intr out |
+        | 61   | trigger out    |
+        | ---- | -------------- |
+        | 62   | mm2s intr out  |
+        | 63   | s2mm intr out  |
+        | 64   | ADC FIFO full  |
+        | 65   | ADC FIFO empty |
+        | 66   | DAC FIFO full  |
+        | 67   | DAC FIFO empty |
 
     4. 发送端流程
 
         1. 初始化
             - 设置输入输出数据router = 0，sender = 0; receiver = 1
             - 暂时不使用sync: DUC sync = 1; DDC sync = 1
-            - 设置输入数据=>FIFO的divider（ADC divider & DAC divider）
-              - ADC：60M总线频率500k，div = 120
-              - DAC：60M总线频率4M，div = 15
             - 设置counter trigger
               - target = (MTU / 8)
             - 设置外部中断
-              - 中断号：61
+              - 中断号：61、64
               - 触发类型：上升沿
-              - 当中断触发时：开始DMA读写
-            - // 清空FIFO（触发一次中断）
-              - counter trigger clear = 1
-              - 开始一次DMA读(写)
-              - counter trigger clear = 0
-        2. LOOP
-            - 等待中断触发
-            - 等待DMA发送&接收完毕
+            - 复位FIFO：两个FIFO
+            - 设置输入数据=>FIFO的divider (ADC divider =/= 0的时候开始写入FIFO)
+              - ADC：60M总线频率500k，div = 120
+              - DAC：60M总线频率4M，div = 15
+        2. 中断
+            - 设置独占中断（flag = 1）
+            - 开始DMA传送
+            - 等待DMA发送&接收完毕 // 读取FIFO内全部数据
             - 处理数据：
               - map(dst) => dst
               - 并行数据转串行：dst[target] => src[target * 8]
+            - 关闭独占（flag = 0）
 
     5. 接收端流程
 

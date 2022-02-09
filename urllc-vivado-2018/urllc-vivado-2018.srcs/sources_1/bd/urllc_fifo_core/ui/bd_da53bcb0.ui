@@ -1,0 +1,62 @@
+{
+   "ExpandedHierarchyInLayout":"",
+   "guistr":"# # String gsaved with Nlview 6.8.11  2018-08-07 bk=1.4403 VDI=40 GEI=35 GUI=JA:9.0 non-TLS
+#  -string -flagsOSRD
+preplace port s_axi_aclk -pg 1 -y 260 -defaultsOSRD
+preplace port S_AXI -pg 1 -y 240 -defaultsOSRD
+preplace port s_axi_aresetn -pg 1 -y 280 -defaultsOSRD
+preplace portBus Dout1 -pg 1 -y 450 -defaultsOSRD
+preplace portBus Dout10 -pg 1 -y 150 -defaultsOSRD
+preplace portBus Dout2 -pg 1 -y 350 -defaultsOSRD
+preplace portBus Dout11 -pg 1 -y 1210 -defaultsOSRD
+preplace portBus Dout3 -pg 1 -y 1150 -defaultsOSRD
+preplace portBus Dout -pg 1 -y 850 -defaultsOSRD
+preplace portBus Dout4 -pg 1 -y -10 -defaultsOSRD
+preplace portBus Dout12 -pg 1 -y 250 -defaultsOSRD
+preplace portBus Dout13 -pg 1 -y 50 -defaultsOSRD
+preplace portBus Dout5 -pg 1 -y 950 -defaultsOSRD
+preplace portBus Dout14 -pg 1 -y -30 -defaultsOSRD
+preplace portBus Dout6 -pg 1 -y 550 -defaultsOSRD
+preplace portBus Dout7 -pg 1 -y 750 -defaultsOSRD
+preplace portBus Dout8 -pg 1 -y 1050 -defaultsOSRD
+preplace portBus Dout9 -pg 1 -y 650 -defaultsOSRD
+preplace inst xlslice_adc_fifo_reset_10 -pg 1 -lvl 1 -y 1170 -defaultsOSRD -resize 160 88
+preplace inst xlslice_counter_trigger_16_31 -pg 1 -lvl 2 -y 150 -defaultsOSRD
+preplace inst xlslice_clk_psclk_3 -pg 1 -lvl 2 -y 350 -defaultsOSRD
+preplace inst xlslice_duc_sync_6 -pg 1 -lvl 2 -y 850 -defaultsOSRD
+preplace inst xlslice_adc_0_7 -pg 1 -lvl 2 -y 50 -defaultsOSRD
+preplace inst axi_gpio_0 -pg 1 -lvl 1 -y 260 -defaultsOSRD
+preplace inst xlslice_fifo_write_start_1 -pg 1 -lvl 2 -y 1050 -defaultsOSRD
+preplace inst xlslice_reciever_out_7 -pg 1 -lvl 2 -y 1150 -defaultsOSRD
+preplace inst xlslice_dac_8_15 -pg 1 -lvl 2 -y 250 -defaultsOSRD
+preplace inst xlslice_fifo_read_start_2 -pg 1 -lvl 2 -y 950 -defaultsOSRD
+preplace inst xlslice_clk_psincdec_5 -pg 1 -lvl 2 -y 550 -defaultsOSRD
+preplace inst xlslice_reciever_in_9 -pg 1 -lvl 2 -y 1250 -defaultsOSRD
+preplace inst xlslice_ddc_sync_8 -pg 1 -lvl 2 -y 750 -defaultsOSRD
+preplace inst xlslice_dac_fifo_reset_11 -pg 1 -lvl 1 -y 1060 -defaultsOSRD -resize 160 88
+preplace inst xlslice_count_trigger_clear_0 -pg 1 -lvl 2 -y 650 -defaultsOSRD
+preplace inst xlslice_clk_psen_4 -pg 1 -lvl 2 -y 450 -defaultsOSRD
+preplace netloc xlslice_clk_psen_4_Dout 1 2 1 NJ
+preplace netloc xlslice_1_Dout 1 2 1 NJ
+preplace netloc xlslice_duc_sync_6_Dout 1 2 1 NJ
+preplace netloc xlslice_dac_fifo_reset_11_Dout 1 1 2 300J -30 NJ
+preplace netloc xlslice_fifo_read_start_2_Dout 1 2 1 NJ
+preplace netloc xlslice_clk_psclk_3_Dout 1 2 1 NJ
+preplace netloc xlslice_0_Dout1 1 2 1 NJ
+preplace netloc xlslice_adc_fifo_reset_10_Dout 1 1 2 320J -10 NJ
+preplace netloc xlslice_reciever_out_8_Dout 1 2 1 NJ
+preplace netloc xlslice_dac_8_15_Dout 1 2 1 NJ
+preplace netloc xlslice_adc_0_7_Dout 1 2 1 NJ
+preplace netloc axi_gpio_0_gpio_io_o 1 1 1 330
+preplace netloc xlslice_reciever_out_7_Dout 1 2 1 NJ
+preplace netloc xlslice_clk_psincdec_5_Dout 1 2 1 NJ
+preplace netloc xlslice_2_Dout 1 2 1 NJ
+preplace netloc rst_ps7_0_50M_peripheral_aresetn 1 0 1 NJ
+preplace netloc clk_wiz_0_clk_out1 1 0 1 NJ
+preplace netloc axi_gpio_0_gpio2_io_o 1 0 2 10 990 310
+preplace netloc ps7_0_axi_periph_M00_AXI 1 0 1 NJ
+preplace netloc xlslice_reciever_in_10_Dout 1 2 1 550J
+levelinfo -pg 1 -10 160 450 720 -top -50 -bot 1310
+"
+}
+0

@@ -1,0 +1,442 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Root MajorVersion="0" MinorVersion="36">
+  <CompositeFile CompositeFileTopName="urllc_fifo_core" CanBeSetAsTop="false" CanDisplayChildGraph="true">
+    <Description>Composite Fileset</Description>
+    <Generation Name="SYNTHESIS" State="RESET" Timestamp="1644374381"/>
+    <Generation Name="IMPLEMENTATION" State="RESET" Timestamp="1644374381"/>
+    <Generation Name="SIMULATION" State="RESET" Timestamp="1644374381"/>
+    <Generation Name="HW_HANDOFF" State="RESET" Timestamp="1644374381"/>
+    <FileCollection Name="SOURCES" Type="SOURCES">
+      <File Name="ip\urllc_fifo_core_DDCWrapper_0_0\urllc_fifo_core_DDCWrapper_0_0.xci" Type="IP">
+        <Instance HierarchyPath="adc/DDCWrapper_0"/>
+        <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="true" IsStatusTracked="true"/>
+        <Library Name="xil_defaultlib"/>
+        <UsedIn Val="SYNTHESIS"/>
+        <UsedIn Val="IMPLEMENTATION"/>
+        <UsedIn Val="SIMULATION"/>
+      </File>
+      <File Name="ip\urllc_fifo_core_adc_0_0\urllc_fifo_core_adc_0_0.xci" Type="IP">
+        <Instance HierarchyPath="adc/adc_0"/>
+        <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="true" IsStatusTracked="true"/>
+        <Library Name="xil_defaultlib"/>
+        <UsedIn Val="SYNTHESIS"/>
+        <UsedIn Val="IMPLEMENTATION"/>
+        <UsedIn Val="SIMULATION"/>
+      </File>
+      <File Name="ip\urllc_fifo_core_count_trigger_0_0\urllc_fifo_core_count_trigger_0_0.xci" Type="IP">
+        <Instance HierarchyPath="adc/count_trigger_0"/>
+        <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="true" IsStatusTracked="true"/>
+        <Library Name="xil_defaultlib"/>
+        <UsedIn Val="SYNTHESIS"/>
+        <UsedIn Val="IMPLEMENTATION"/>
+        <UsedIn Val="SIMULATION"/>
+      </File>
+      <File Name="ip\urllc_fifo_core_fifo_read_to_axis_0_0\urllc_fifo_core_fifo_read_to_axis_0_0.xci" Type="IP">
+        <Instance HierarchyPath="adc/fifo_read_to_axis_0"/>
+        <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="true" IsStatusTracked="true"/>
+        <Library Name="xil_defaultlib"/>
+        <UsedIn Val="SYNTHESIS"/>
+        <UsedIn Val="IMPLEMENTATION"/>
+        <UsedIn Val="SIMULATION"/>
+      </File>
+      <File Name="ip\urllc_fifo_core_ila_adc_0\urllc_fifo_core_ila_adc_0.xci" Type="IP">
+        <Instance HierarchyPath="adc/ila_adc"/>
+        <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="true" IsStatusTracked="true"/>
+        <Library Name="xil_defaultlib"/>
+        <UsedIn Val="SYNTHESIS"/>
+        <UsedIn Val="IMPLEMENTATION"/>
+        <UsedIn Val="SIMULATION"/>
+      </File>
+      <File Name="ip\urllc_fifo_core_mux_reciever_in_0\urllc_fifo_core_mux_reciever_in_0.xci" Type="IP">
+        <Instance HierarchyPath="adc/mux_reciever_in"/>
+        <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="true" IsStatusTracked="true"/>
+        <Library Name="xil_defaultlib"/>
+        <UsedIn Val="SYNTHESIS"/>
+        <UsedIn Val="IMPLEMENTATION"/>
+        <UsedIn Val="SIMULATION"/>
+      </File>
+      <File Name="ip\urllc_fifo_core_xlconcat_0_0\urllc_fifo_core_xlconcat_0_0.xci" Type="IP">
+        <Instance HierarchyPath="adc/xlconcat_0"/>
+        <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="true" IsStatusTracked="true"/>
+        <Library Name="xil_defaultlib"/>
+        <UsedIn Val="SYNTHESIS"/>
+        <UsedIn Val="IMPLEMENTATION"/>
+        <UsedIn Val="SIMULATION"/>
+      </File>
+      <File Name="ip\urllc_fifo_core_xlconstant_0_0\urllc_fifo_core_xlconstant_0_0.xci" Type="IP">
+        <Instance HierarchyPath="adc/xlconstant_0"/>
+        <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="true" IsStatusTracked="true"/>
+        <Library Name="xil_defaultlib"/>
+        <UsedIn Val="SYNTHESIS"/>
+        <UsedIn Val="IMPLEMENTATION"/>
+        <UsedIn Val="SIMULATION"/>
+      </File>
+      <File Name="ip\urllc_fifo_core_axi_dma_0_0\urllc_fifo_core_axi_dma_0_0.xci" Type="IP">
+        <Instance HierarchyPath="core/axi_dma_0"/>
+        <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="true" IsStatusTracked="true"/>
+        <Library Name="xil_defaultlib"/>
+        <UsedIn Val="SYNTHESIS"/>
+        <UsedIn Val="IMPLEMENTATION"/>
+        <UsedIn Val="SIMULATION"/>
+      </File>
+      <File Name="ip\urllc_fifo_core_clk_dynamic_0\urllc_fifo_core_clk_dynamic_0.xci" Type="IP">
+        <Instance HierarchyPath="core/clk_dynamic"/>
+        <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="true" IsStatusTracked="true"/>
+        <Library Name="xil_defaultlib"/>
+        <UsedIn Val="SYNTHESIS"/>
+        <UsedIn Val="IMPLEMENTATION"/>
+        <UsedIn Val="SIMULATION"/>
+      </File>
+      <File Name="ip\urllc_fifo_core_clk_static_0\urllc_fifo_core_clk_static_0.xci" Type="IP">
+        <Instance HierarchyPath="core/clk_static"/>
+        <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="true" IsStatusTracked="true"/>
+        <Library Name="xil_defaultlib"/>
+        <UsedIn Val="SYNTHESIS"/>
+        <UsedIn Val="IMPLEMENTATION"/>
+        <UsedIn Val="SIMULATION"/>
+      </File>
+      <File Name="ip\urllc_fifo_core_fifo_adc_0\urllc_fifo_core_fifo_adc_0.xci" Type="IP">
+        <Instance HierarchyPath="core/fifo_adc"/>
+        <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="true" IsStatusTracked="true"/>
+        <Library Name="xil_defaultlib"/>
+        <UsedIn Val="SYNTHESIS"/>
+        <UsedIn Val="IMPLEMENTATION"/>
+        <UsedIn Val="SIMULATION"/>
+      </File>
+      <File Name="ip\urllc_fifo_core_fifo_dac_0\urllc_fifo_core_fifo_dac_0.xci" Type="IP">
+        <Instance HierarchyPath="core/fifo_dac"/>
+        <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="true" IsStatusTracked="true"/>
+        <Library Name="xil_defaultlib"/>
+        <UsedIn Val="SYNTHESIS"/>
+        <UsedIn Val="IMPLEMENTATION"/>
+        <UsedIn Val="SIMULATION"/>
+      </File>
+      <File Name="ip\urllc_fifo_core_ila_1_0\urllc_fifo_core_ila_1_0.xci" Type="IP">
+        <Instance HierarchyPath="core/ila_1"/>
+        <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="true" IsStatusTracked="true"/>
+        <Library Name="xil_defaultlib"/>
+        <UsedIn Val="SYNTHESIS"/>
+        <UsedIn Val="IMPLEMENTATION"/>
+        <UsedIn Val="SIMULATION"/>
+      </File>
+      <File Name="ip\urllc_fifo_core_ila_core_0\urllc_fifo_core_ila_core_0.xci" Type="IP">
+        <Instance HierarchyPath="core/ila_core"/>
+        <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="true" IsStatusTracked="true"/>
+        <Library Name="xil_defaultlib"/>
+        <UsedIn Val="SYNTHESIS"/>
+        <UsedIn Val="IMPLEMENTATION"/>
+        <UsedIn Val="SIMULATION"/>
+      </File>
+      <File Name="ip\urllc_fifo_core_processing_system7_0_0\urllc_fifo_core_processing_system7_0_0.xci" Type="IP">
+        <Instance HierarchyPath="core/processing_system7_0"/>
+        <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="true" IsStatusTracked="true"/>
+        <Library Name="xil_defaultlib"/>
+        <UsedIn Val="SYNTHESIS"/>
+        <UsedIn Val="IMPLEMENTATION"/>
+        <UsedIn Val="SIMULATION"/>
+      </File>
+      <File Name="ip\urllc_fifo_core_xbar_0\urllc_fifo_core_xbar_0.xci" Type="IP">
+        <Instance HierarchyPath="core/ps7_0_axi_periph/xbar"/>
+        <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="true" IsStatusTracked="true"/>
+        <Library Name="xil_defaultlib"/>
+        <UsedIn Val="SYNTHESIS"/>
+        <UsedIn Val="IMPLEMENTATION"/>
+        <UsedIn Val="SIMULATION"/>
+      </File>
+      <File Name="ip\urllc_fifo_core_ps7_0_axi_periph_0\urllc_fifo_core_ps7_0_axi_periph_0.xci" Type="IP">
+        <Properties IsEditable="false" IsVisible="false" Timestamp="0" IsTrackable="true" IsStatusTracked="true"/>
+        <Library Name="xil_defaultlib"/>
+        <UsedIn Val="SYNTHESIS"/>
+        <UsedIn Val="IMPLEMENTATION"/>
+        <UsedIn Val="SIMULATION"/>
+      </File>
+      <File Name="ip\urllc_fifo_core_reset_dynamic_0\urllc_fifo_core_reset_dynamic_0.xci" Type="IP">
+        <Instance HierarchyPath="core/reset_dynamic"/>
+        <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="true" IsStatusTracked="true"/>
+        <Library Name="xil_defaultlib"/>
+        <UsedIn Val="SYNTHESIS"/>
+        <UsedIn Val="IMPLEMENTATION"/>
+        <UsedIn Val="SIMULATION"/>
+      </File>
+      <File Name="ip\urllc_fifo_core_reset_static_0\urllc_fifo_core_reset_static_0.xci" Type="IP">
+        <Instance HierarchyPath="core/reset_static"/>
+        <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="true" IsStatusTracked="true"/>
+        <Library Name="xil_defaultlib"/>
+        <UsedIn Val="SYNTHESIS"/>
+        <UsedIn Val="IMPLEMENTATION"/>
+        <UsedIn Val="SIMULATION"/>
+      </File>
+      <File Name="ip\urllc_fifo_core_xlconcat_irq_0\urllc_fifo_core_xlconcat_irq_0.xci" Type="IP">
+        <Instance HierarchyPath="core/xlconcat_irq"/>
+        <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="true" IsStatusTracked="true"/>
+        <Library Name="xil_defaultlib"/>
+        <UsedIn Val="SYNTHESIS"/>
+        <UsedIn Val="IMPLEMENTATION"/>
+        <UsedIn Val="SIMULATION"/>
+      </File>
+      <File Name="ip\urllc_fifo_core_DUCWrapper_0_0\urllc_fifo_core_DUCWrapper_0_0.xci" Type="IP">
+        <Instance HierarchyPath="dac/DUCWrapper_0"/>
+        <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="true" IsStatusTracked="true"/>
+        <Library Name="xil_defaultlib"/>
+        <UsedIn Val="SYNTHESIS"/>
+        <UsedIn Val="IMPLEMENTATION"/>
+        <UsedIn Val="SIMULATION"/>
+      </File>
+      <File Name="ip\urllc_fifo_core_axis_write_to_fifo_0_0\urllc_fifo_core_axis_write_to_fifo_0_0.xci" Type="IP">
+        <Instance HierarchyPath="dac/axis_write_to_fifo_0"/>
+        <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="true" IsStatusTracked="true"/>
+        <Library Name="xil_defaultlib"/>
+        <UsedIn Val="SYNTHESIS"/>
+        <UsedIn Val="IMPLEMENTATION"/>
+        <UsedIn Val="SIMULATION"/>
+      </File>
+      <File Name="ip\urllc_fifo_core_dac_0_0\urllc_fifo_core_dac_0_0.xci" Type="IP">
+        <Instance HierarchyPath="dac/dac_0"/>
+        <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="true" IsStatusTracked="true"/>
+        <Library Name="xil_defaultlib"/>
+        <UsedIn Val="SYNTHESIS"/>
+        <UsedIn Val="IMPLEMENTATION"/>
+        <UsedIn Val="SIMULATION"/>
+      </File>
+      <File Name="ip\urllc_fifo_core_ila_0_0\urllc_fifo_core_ila_0_0.xci" Type="IP">
+        <Instance HierarchyPath="dac/ila_0"/>
+        <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="true" IsStatusTracked="true"/>
+        <Library Name="xil_defaultlib"/>
+        <UsedIn Val="SYNTHESIS"/>
+        <UsedIn Val="IMPLEMENTATION"/>
+        <UsedIn Val="SIMULATION"/>
+      </File>
+      <File Name="ip\urllc_fifo_core_mux_reciever_out_0\urllc_fifo_core_mux_reciever_out_0.xci" Type="IP">
+        <Instance HierarchyPath="dac/mux_reciever_out"/>
+        <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="true" IsStatusTracked="true"/>
+        <Library Name="xil_defaultlib"/>
+        <UsedIn Val="SYNTHESIS"/>
+        <UsedIn Val="IMPLEMENTATION"/>
+        <UsedIn Val="SIMULATION"/>
+      </File>
+      <File Name="ip\urllc_fifo_core_xlslice_sender_0\urllc_fifo_core_xlslice_sender_0.xci" Type="IP">
+        <Instance HierarchyPath="dac/xlslice_sender"/>
+        <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="true" IsStatusTracked="true"/>
+        <Library Name="xil_defaultlib"/>
+        <UsedIn Val="SYNTHESIS"/>
+        <UsedIn Val="IMPLEMENTATION"/>
+        <UsedIn Val="SIMULATION"/>
+      </File>
+      <File Name="ip\urllc_fifo_core_axi_gpio_0_0\urllc_fifo_core_axi_gpio_0_0.xci" Type="IP">
+        <Instance HierarchyPath="debug_ctrl/axi_gpio_0"/>
+        <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="true" IsStatusTracked="true"/>
+        <Library Name="xil_defaultlib"/>
+        <UsedIn Val="SYNTHESIS"/>
+        <UsedIn Val="IMPLEMENTATION"/>
+        <UsedIn Val="SIMULATION"/>
+      </File>
+      <File Name="ip\urllc_fifo_core_xlslice_adc_0_7_0\urllc_fifo_core_xlslice_adc_0_7_0.xci" Type="IP">
+        <Instance HierarchyPath="debug_ctrl/xlslice_adc_0_7"/>
+        <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="true" IsStatusTracked="true"/>
+        <Library Name="xil_defaultlib"/>
+        <UsedIn Val="SYNTHESIS"/>
+        <UsedIn Val="IMPLEMENTATION"/>
+        <UsedIn Val="SIMULATION"/>
+      </File>
+      <File Name="ip\urllc_fifo_core_xlslice_clk_psclk_3_0\urllc_fifo_core_xlslice_clk_psclk_3_0.xci" Type="IP">
+        <Instance HierarchyPath="debug_ctrl/xlslice_clk_psclk_3"/>
+        <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="true" IsStatusTracked="true"/>
+        <Library Name="xil_defaultlib"/>
+        <UsedIn Val="SYNTHESIS"/>
+        <UsedIn Val="IMPLEMENTATION"/>
+        <UsedIn Val="SIMULATION"/>
+      </File>
+      <File Name="ip\urllc_fifo_core_xlslice_clk_psen_4_0\urllc_fifo_core_xlslice_clk_psen_4_0.xci" Type="IP">
+        <Instance HierarchyPath="debug_ctrl/xlslice_clk_psen_4"/>
+        <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="true" IsStatusTracked="true"/>
+        <Library Name="xil_defaultlib"/>
+        <UsedIn Val="SYNTHESIS"/>
+        <UsedIn Val="IMPLEMENTATION"/>
+        <UsedIn Val="SIMULATION"/>
+      </File>
+      <File Name="ip\urllc_fifo_core_xlslice_clk_psincdec_5_0\urllc_fifo_core_xlslice_clk_psincdec_5_0.xci" Type="IP">
+        <Instance HierarchyPath="debug_ctrl/xlslice_clk_psincdec_5"/>
+        <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="true" IsStatusTracked="true"/>
+        <Library Name="xil_defaultlib"/>
+        <UsedIn Val="SYNTHESIS"/>
+        <UsedIn Val="IMPLEMENTATION"/>
+        <UsedIn Val="SIMULATION"/>
+      </File>
+      <File Name="ip\urllc_fifo_core_xlslice_count_trigger_clear_0_0\urllc_fifo_core_xlslice_count_trigger_clear_0_0.xci" Type="IP">
+        <Instance HierarchyPath="debug_ctrl/xlslice_count_trigger_clear_0"/>
+        <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="true" IsStatusTracked="true"/>
+        <Library Name="xil_defaultlib"/>
+        <UsedIn Val="SYNTHESIS"/>
+        <UsedIn Val="IMPLEMENTATION"/>
+        <UsedIn Val="SIMULATION"/>
+      </File>
+      <File Name="ip\urllc_fifo_core_xlslice_counter_trigger_16_31_0\urllc_fifo_core_xlslice_counter_trigger_16_31_0.xci" Type="IP">
+        <Instance HierarchyPath="debug_ctrl/xlslice_counter_trigger_16_31"/>
+        <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="true" IsStatusTracked="true"/>
+        <Library Name="xil_defaultlib"/>
+        <UsedIn Val="SYNTHESIS"/>
+        <UsedIn Val="IMPLEMENTATION"/>
+        <UsedIn Val="SIMULATION"/>
+      </File>
+      <File Name="ip\urllc_fifo_core_xlslice_dac_8_15_0\urllc_fifo_core_xlslice_dac_8_15_0.xci" Type="IP">
+        <Instance HierarchyPath="debug_ctrl/xlslice_dac_8_15"/>
+        <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="true" IsStatusTracked="true"/>
+        <Library Name="xil_defaultlib"/>
+        <UsedIn Val="SYNTHESIS"/>
+        <UsedIn Val="IMPLEMENTATION"/>
+        <UsedIn Val="SIMULATION"/>
+      </File>
+      <File Name="ip\urllc_fifo_core_xlslice_ddc_sync_8_0\urllc_fifo_core_xlslice_ddc_sync_8_0.xci" Type="IP">
+        <Instance HierarchyPath="debug_ctrl/xlslice_ddc_sync_8"/>
+        <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="true" IsStatusTracked="true"/>
+        <Library Name="xil_defaultlib"/>
+        <UsedIn Val="SYNTHESIS"/>
+        <UsedIn Val="IMPLEMENTATION"/>
+        <UsedIn Val="SIMULATION"/>
+      </File>
+      <File Name="ip\urllc_fifo_core_xlslice_duc_sync_6_0\urllc_fifo_core_xlslice_duc_sync_6_0.xci" Type="IP">
+        <Instance HierarchyPath="debug_ctrl/xlslice_duc_sync_6"/>
+        <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="true" IsStatusTracked="true"/>
+        <Library Name="xil_defaultlib"/>
+        <UsedIn Val="SYNTHESIS"/>
+        <UsedIn Val="IMPLEMENTATION"/>
+        <UsedIn Val="SIMULATION"/>
+      </File>
+      <File Name="ip\urllc_fifo_core_xlslice_fifo_read_start_2_0\urllc_fifo_core_xlslice_fifo_read_start_2_0.xci" Type="IP">
+        <Instance HierarchyPath="debug_ctrl/xlslice_fifo_read_start_2"/>
+        <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="true" IsStatusTracked="true"/>
+        <Library Name="xil_defaultlib"/>
+        <UsedIn Val="SYNTHESIS"/>
+        <UsedIn Val="IMPLEMENTATION"/>
+        <UsedIn Val="SIMULATION"/>
+      </File>
+      <File Name="ip\urllc_fifo_core_xlslice_fifo_write_start_1_0\urllc_fifo_core_xlslice_fifo_write_start_1_0.xci" Type="IP">
+        <Instance HierarchyPath="debug_ctrl/xlslice_fifo_write_start_1"/>
+        <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="true" IsStatusTracked="true"/>
+        <Library Name="xil_defaultlib"/>
+        <UsedIn Val="SYNTHESIS"/>
+        <UsedIn Val="IMPLEMENTATION"/>
+        <UsedIn Val="SIMULATION"/>
+      </File>
+      <File Name="ip\urllc_fifo_core_xlslice_reciever_in_9_0\urllc_fifo_core_xlslice_reciever_in_9_0.xci" Type="IP">
+        <Instance HierarchyPath="debug_ctrl/xlslice_reciever_in_9"/>
+        <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="true" IsStatusTracked="true"/>
+        <Library Name="xil_defaultlib"/>
+        <UsedIn Val="SYNTHESIS"/>
+        <UsedIn Val="IMPLEMENTATION"/>
+        <UsedIn Val="SIMULATION"/>
+      </File>
+      <File Name="ip\urllc_fifo_core_xlslice_reciever_out_7_0\urllc_fifo_core_xlslice_reciever_out_7_0.xci" Type="IP">
+        <Instance HierarchyPath="debug_ctrl/xlslice_reciever_out_7"/>
+        <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="true" IsStatusTracked="true"/>
+        <Library Name="xil_defaultlib"/>
+        <UsedIn Val="SYNTHESIS"/>
+        <UsedIn Val="IMPLEMENTATION"/>
+        <UsedIn Val="SIMULATION"/>
+      </File>
+      <File Name="ip\urllc_fifo_core_mux_0_0\urllc_fifo_core_mux_0_0.xci" Type="IP">
+        <Instance HierarchyPath="core/mux_adc_fifo_reset"/>
+        <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="true" IsStatusTracked="true"/>
+        <Library Name="xil_defaultlib"/>
+        <UsedIn Val="SYNTHESIS"/>
+        <UsedIn Val="IMPLEMENTATION"/>
+        <UsedIn Val="SIMULATION"/>
+      </File>
+      <File Name="ip\urllc_fifo_core_mux_fifo_reset_0\urllc_fifo_core_mux_fifo_reset_0.xci" Type="IP">
+        <Instance HierarchyPath="core/mux_dac_fifo_reset"/>
+        <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="true" IsStatusTracked="true"/>
+        <Library Name="xil_defaultlib"/>
+        <UsedIn Val="SYNTHESIS"/>
+        <UsedIn Val="IMPLEMENTATION"/>
+        <UsedIn Val="SIMULATION"/>
+      </File>
+      <File Name="ip\urllc_fifo_core_xlconstant_0_1\urllc_fifo_core_xlconstant_0_1.xci" Type="IP">
+        <Instance HierarchyPath="core/xlconstant_one"/>
+        <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="true" IsStatusTracked="true"/>
+        <Library Name="xil_defaultlib"/>
+        <UsedIn Val="SYNTHESIS"/>
+        <UsedIn Val="IMPLEMENTATION"/>
+        <UsedIn Val="SIMULATION"/>
+      </File>
+      <File Name="ip\urllc_fifo_core_xlslice_reciever_in_9_1\urllc_fifo_core_xlslice_reciever_in_9_1.xci" Type="IP">
+        <Instance HierarchyPath="debug_ctrl/xlslice_adc_fifo_reset_10"/>
+        <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="true" IsStatusTracked="true"/>
+        <Library Name="xil_defaultlib"/>
+        <UsedIn Val="SYNTHESIS"/>
+        <UsedIn Val="IMPLEMENTATION"/>
+        <UsedIn Val="SIMULATION"/>
+      </File>
+      <File Name="ip\urllc_fifo_core_xlslice_adc_fifo_reset_10_0\urllc_fifo_core_xlslice_adc_fifo_reset_10_0.xci" Type="IP">
+        <Instance HierarchyPath="debug_ctrl/xlslice_dac_fifo_reset_11"/>
+        <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="true" IsStatusTracked="true"/>
+        <Library Name="xil_defaultlib"/>
+        <UsedIn Val="SYNTHESIS"/>
+        <UsedIn Val="IMPLEMENTATION"/>
+        <UsedIn Val="SIMULATION"/>
+      </File>
+      <File Name="ip\urllc_fifo_core_xlconstant_0_2\urllc_fifo_core_xlconstant_0_2.xci" Type="IP">
+        <Instance HierarchyPath="core/xlconstant_dma_mm2s_tkeep"/>
+        <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="true" IsStatusTracked="true"/>
+        <Library Name="xil_defaultlib"/>
+        <UsedIn Val="SYNTHESIS"/>
+        <UsedIn Val="IMPLEMENTATION"/>
+        <UsedIn Val="SIMULATION"/>
+      </File>
+      <File Name="ip\urllc_fifo_core_system_ila_0_0\urllc_fifo_core_system_ila_0_0.xci" Type="IP">
+        <Instance HierarchyPath="core/system_ila_dma"/>
+        <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="true" IsStatusTracked="true"/>
+        <Library Name="xil_defaultlib"/>
+        <UsedIn Val="SYNTHESIS"/>
+        <UsedIn Val="IMPLEMENTATION"/>
+        <UsedIn Val="SIMULATION"/>
+      </File>
+      <File Name="ip\urllc_fifo_core_xbar_1\urllc_fifo_core_xbar_1.xci" Type="IP">
+        <Instance HierarchyPath="core/axi_interconnect_0/xbar"/>
+        <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="true" IsStatusTracked="true"/>
+        <Library Name="xil_defaultlib"/>
+        <UsedIn Val="SYNTHESIS"/>
+        <UsedIn Val="IMPLEMENTATION"/>
+        <UsedIn Val="SIMULATION"/>
+      </File>
+      <File Name="ip\urllc_fifo_core_axi_interconnect_0_0\urllc_fifo_core_axi_interconnect_0_0.xci" Type="IP">
+        <Properties IsEditable="false" IsVisible="false" Timestamp="0" IsTrackable="true" IsStatusTracked="true"/>
+        <Library Name="xil_defaultlib"/>
+        <UsedIn Val="SYNTHESIS"/>
+        <UsedIn Val="IMPLEMENTATION"/>
+        <UsedIn Val="SIMULATION"/>
+      </File>
+      <File Name="ip\urllc_fifo_core_auto_pc_0\urllc_fifo_core_auto_pc_0.xci" Type="IP">
+        <Instance HierarchyPath="core/ps7_0_axi_periph/s00_couplers/auto_pc"/>
+        <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="true" IsStatusTracked="true"/>
+        <Library Name="xil_defaultlib"/>
+        <UsedIn Val="SYNTHESIS"/>
+        <UsedIn Val="IMPLEMENTATION"/>
+        <UsedIn Val="SIMULATION"/>
+      </File>
+      <File Name="ip\urllc_fifo_core_auto_us_0\urllc_fifo_core_auto_us_0.xci" Type="IP">
+        <Instance HierarchyPath="core/axi_interconnect_0/s00_couplers/auto_us"/>
+        <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="true" IsStatusTracked="true"/>
+        <Library Name="xil_defaultlib"/>
+        <UsedIn Val="SYNTHESIS"/>
+        <UsedIn Val="IMPLEMENTATION"/>
+        <UsedIn Val="SIMULATION"/>
+      </File>
+      <File Name="ip\urllc_fifo_core_auto_us_1\urllc_fifo_core_auto_us_1.xci" Type="IP">
+        <Instance HierarchyPath="core/axi_interconnect_0/s01_couplers/auto_us"/>
+        <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="true" IsStatusTracked="true"/>
+        <Library Name="xil_defaultlib"/>
+        <UsedIn Val="SYNTHESIS"/>
+        <UsedIn Val="IMPLEMENTATION"/>
+        <UsedIn Val="SIMULATION"/>
+      </File>
+      <File Name="ip\urllc_fifo_core_auto_pc_1\urllc_fifo_core_auto_pc_1.xci" Type="IP">
+        <Instance HierarchyPath="core/axi_interconnect_0/m00_couplers/auto_pc"/>
+        <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="true" IsStatusTracked="true"/>
+        <Library Name="xil_defaultlib"/>
+        <UsedIn Val="SYNTHESIS"/>
+        <UsedIn Val="IMPLEMENTATION"/>
+        <UsedIn Val="SIMULATION"/>
+      </File>
+    </FileCollection>
+  </CompositeFile>
+</Root>
