@@ -1,0 +1,184 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GenRun Id="synth_1" LaunchPart="xc7z020clg400-2" LaunchTime="1650939235">
+  <File Type="PA-TCL" Name="sender_wrapper.tcl"/>
+  <File Type="RDS-PROPCONSTRS" Name="sender_wrapper_drc_synth.rpt"/>
+  <File Type="REPORTS-TCL" Name="sender_wrapper_reports.tcl"/>
+  <File Type="RDS-RDS" Name="sender_wrapper.vds"/>
+  <File Type="RDS-UTIL" Name="sender_wrapper_utilization_synth.rpt"/>
+  <File Type="RDS-UTIL-PB" Name="sender_wrapper_utilization_synth.pb"/>
+  <File Type="RDS-DCP" Name="sender_wrapper.dcp"/>
+  <File Type="VDS-TIMINGSUMMARY" Name="sender_wrapper_timing_summary_synth.rpt"/>
+  <File Type="VDS-TIMING-PB" Name="sender_wrapper_timing_summary_synth.pb"/>
+  <FileSet Name="sources" Type="DesignSrcs" RelSrcDir="$PSRCDIR/sources_1">
+    <Filter Type="Srcs"/>
+    <File Path="$PSRCDIR/sources_1/imports/generated/DDC/DDCWrapper.v">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../chisel-test-project/generated/DDC/DDCWrapper.v"/>
+        <Attr Name="ImportTime" Val="1642817200"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/srcs/mux.v">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/srcs/mux.v"/>
+        <Attr Name="ImportTime" Val="1642899268"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/generated/DUC/DUCWrapper.v">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../chisel-test-project/generated/DUC/DUCWrapper.v"/>
+        <Attr Name="ImportTime" Val="1642817200"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/srcs/adc_axis.v">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/srcs/dac_axis.v">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/bd/urllc_fifo_core/urllc_fifo_core.bd">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/new/sender_wrapper.v">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/srcs/axis_write_to_fifo.v">
+      <FileInfo>
+        <Attr Name="AutoDisabled" Val="1"/>
+        <Attr Name="ImportPath" Val="$PPRDIR/srcs/axis_write_to_fifo.v"/>
+        <Attr Name="ImportTime" Val="1642899268"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/srcs/dac.v">
+      <FileInfo>
+        <Attr Name="AutoDisabled" Val="1"/>
+        <Attr Name="ImportPath" Val="$PPRDIR/srcs/dac.v"/>
+        <Attr Name="ImportTime" Val="1642899268"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/srcs/adc.v">
+      <FileInfo>
+        <Attr Name="AutoDisabled" Val="1"/>
+        <Attr Name="ImportPath" Val="$PPRDIR/srcs/adc.v"/>
+        <Attr Name="ImportTime" Val="1642899268"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/srcs/count_trigger.v">
+      <FileInfo>
+        <Attr Name="AutoDisabled" Val="1"/>
+        <Attr Name="ImportPath" Val="$PPRDIR/srcs/count_trigger.v"/>
+        <Attr Name="ImportTime" Val="1642899268"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/srcs/fifo_read_to_axis.v">
+      <FileInfo>
+        <Attr Name="AutoDisabled" Val="1"/>
+        <Attr Name="ImportPath" Val="$PPRDIR/srcs/fifo_read_to_axis.v"/>
+        <Attr Name="ImportTime" Val="1642899268"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/bd/test_fifo_axis/test_fifo_axis.bd">
+      <FileInfo>
+        <Attr Name="AutoDisabled" Val="1"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/bd/test_fifo_axis/hdl/test_fifo_axis_wrapper.v">
+      <FileInfo>
+        <Attr Name="AutoDisabled" Val="1"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <Config>
+      <Option Name="DesignMode" Val="RTL"/>
+      <Option Name="TopModule" Val="sender_wrapper"/>
+    </Config>
+  </FileSet>
+  <FileSet Name="constrs_in" Type="Constrs" RelSrcDir="$PSRCDIR/constrs_1">
+    <Filter Type="Constrs"/>
+    <File Path="$PSRCDIR/constrs_1/imports/srcs/urllc.xdc">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/srcs/urllc.xdc"/>
+        <Attr Name="ImportTime" Val="1643401474"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+      </FileInfo>
+    </File>
+    <Config>
+      <Option Name="ConstrsType" Val="XDC"/>
+    </Config>
+  </FileSet>
+  <FileSet Name="utils" Type="Utils" RelSrcDir="$PSRCDIR/utils_1">
+    <Filter Type="Utils"/>
+    <Config>
+      <Option Name="TopAutoSet" Val="TRUE"/>
+    </Config>
+  </FileSet>
+  <Strategy Version="1" Minor="2">
+    <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2018"/>
+    <Step Id="synth_design"/>
+  </Strategy>
+  <BlockFileSet Type="BlockSrcs" Name="urllc_fifo_core_clk_dynamic_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="urllc_fifo_core_reset_static_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="urllc_fifo_core_DUCWrapper_0_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="urllc_fifo_core_mux_reciever_in_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="urllc_fifo_core_DDCWrapper_0_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="urllc_fifo_core_axi_dma_0_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="urllc_fifo_core_reset_dynamic_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="urllc_fifo_core_clk_static_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="urllc_fifo_core_processing_system7_0_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="urllc_fifo_core_xbar_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="urllc_fifo_core_axi_gpio_0_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="urllc_fifo_core_mux_reciever_out_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="urllc_fifo_core_system_ila_0_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="urllc_fifo_core_xbar_1"/>
+  <BlockFileSet Type="BlockSrcs" Name="urllc_fifo_core_adc_axis_0_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="urllc_fifo_core_axis_data_fifo_0_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="urllc_fifo_core_axis_data_fifo_adc_1"/>
+  <BlockFileSet Type="BlockSrcs" Name="urllc_fifo_core_mux_adc_fifo_reset_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="urllc_fifo_core_mux_dac_fifo_reset_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="urllc_fifo_core_dac_axis_0_0"/>
+</GenRun>

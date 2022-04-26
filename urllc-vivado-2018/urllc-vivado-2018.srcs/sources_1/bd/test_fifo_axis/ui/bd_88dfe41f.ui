@@ -1,0 +1,29 @@
+{
+   "ExpandedHierarchyInLayout":"",
+   "guistr":"# # String gsaved with Nlview 6.8.11  2018-08-07 bk=1.4403 VDI=40 GEI=35 GUI=JA:9.0 non-TLS
+#  -string -flagsOSRD
+preplace port resetn -pg 1 -y 130 -defaultsOSRD
+preplace port axis -pg 1 -y 90 -defaultsOSRD
+preplace port router -pg 1 -y 290 -defaultsOSRD
+preplace port clk -pg 1 -y 110 -defaultsOSRD
+preplace port io_in_sync -pg 1 -y 20 -defaultsOSRD
+preplace portBus div -pg 1 -y 150 -defaultsOSRD
+preplace portBus da -pg 1 -y 270 -defaultsOSRD
+preplace inst mux_reciever_out -pg 1 -lvl 4 -y 270 -defaultsOSRD
+preplace inst DUCWrapper_0 -pg 1 -lvl 3 -y 180 -defaultsOSRD
+preplace inst xlslice_sender -pg 1 -lvl 2 -y 150 -defaultsOSRD
+preplace inst dac_axis_0 -pg 1 -lvl 1 -y 120 -defaultsOSRD
+preplace netloc dac_axis_0_da_out 1 1 3 260 90 NJ 90 770J
+preplace netloc xlslice_duc_sync_6_Dout 1 0 3 NJ 20 NJ 20 470J
+preplace netloc DUCWrapper_0_io_out_dac 1 3 1 760
+preplace netloc xlslice_dac_8_15_Dout 1 0 1 NJ
+preplace netloc xlslice_reciever_out_7_Dout 1 0 4 NJ 290 NJ 290 NJ 290 NJ
+preplace netloc rst_ps7_0_50M_peripheral_aresetn 1 0 3 20 30 NJ 30 460J
+preplace netloc clk_wiz_0_clk_out1 1 0 3 10 10 NJ 10 480
+preplace netloc axis_1 1 0 1 NJ
+preplace netloc xlslice_sender_Dout 1 2 1 NJ
+preplace netloc mux_0_data_out 1 4 1 N
+levelinfo -pg 1 -10 140 360 620 890 1030 -top 0 -bot 350
+"
+}
+

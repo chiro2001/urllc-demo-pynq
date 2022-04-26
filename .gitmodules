@@ -1,3 +1,6 @@
 [submodule "chisel-test-project"]
 	path = chisel-test-project
 	url = https://github.com/chiro2001/chisel-test-project
+[submodule "script"]
+	path = script
+	url = https://github.com/telantan/script

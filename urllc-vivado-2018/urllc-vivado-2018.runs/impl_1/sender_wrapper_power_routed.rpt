@@ -1,0 +1,180 @@
+Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
+----------------------------------------------------------------------------------------------------------------------------------------------------------------
+| Tool Version     : Vivado v.2018.3 (win64) Build 2405991 Thu Dec  6 23:38:27 MST 2018
+| Date             : Tue Apr 26 10:22:49 2022
+| Host             : Chiro running 64-bit major release  (build 9200)
+| Command          : report_power -file sender_wrapper_power_routed.rpt -pb sender_wrapper_power_summary_routed.pb -rpx sender_wrapper_power_routed.rpx
+| Design           : sender_wrapper
+| Device           : xc7z020clg400-2
+| Design State     : routed
+| Grade            : commercial
+| Process          : typical
+| Characterization : Production
+----------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Power Report
+
+Table of Contents
+-----------------
+1. Summary
+1.1 On-Chip Components
+1.2 Power Supply Summary
+1.3 Confidence Level
+2. Settings
+2.1 Environment
+2.2 Clock Constraints
+3. Detailed Reports
+3.1 By Hierarchy
+
+1. Summary
+----------
+
++--------------------------+--------------+
+| Total On-Chip Power (W)  | 1.728        |
+| Design Power Budget (W)  | Unspecified* |
+| Power Budget Margin (W)  | NA           |
+| Dynamic (W)              | 1.578        |
+| Device Static (W)        | 0.150        |
+| Effective TJA (C/W)      | 11.5         |
+| Max Ambient (C)          | 65.1         |
+| Junction Temperature (C) | 44.9         |
+| Confidence Level         | Low          |
+| Setting File             | ---          |
+| Simulation Activity File | ---          |
+| Design Nets Matched      | NA           |
++--------------------------+--------------+
+* Specify Design Power Budget using, set_operating_conditions -design_power_budget <value in Watts>
+
+
+1.1 On-Chip Components
+----------------------
+
++--------------------------+-----------+----------+-----------+-----------------+
+| On-Chip                  | Power (W) | Used     | Available | Utilization (%) |
++--------------------------+-----------+----------+-----------+-----------------+
+| Clocks                   |     0.028 |        8 |       --- |             --- |
+| Slice Logic              |     0.004 |    25218 |       --- |             --- |
+|   LUT as Logic           |     0.004 |     7239 |     53200 |           13.61 |
+|   CARRY4                 |    <0.001 |      599 |     13300 |            4.50 |
+|   Register               |    <0.001 |    11073 |    106400 |           10.41 |
+|   LUT as Distributed RAM |    <0.001 |      174 |     17400 |            1.00 |
+|   LUT as Shift Register  |    <0.001 |     1462 |     17400 |            8.40 |
+|   F7/F8 Muxes            |    <0.001 |      212 |     53200 |            0.40 |
+|   Others                 |     0.000 |     1935 |       --- |             --- |
+| Signals                  |     0.006 |    16105 |       --- |             --- |
+| Block RAM                |     0.019 |     63.5 |       140 |           45.36 |
+| MMCM                     |     0.229 |        2 |         4 |           50.00 |
+| I/O                      |     0.014 |       19 |       125 |           15.20 |
+| PS7                      |     1.277 |        1 |       --- |             --- |
+| Static Power             |     0.150 |          |           |                 |
+| Total                    |     1.728 |          |           |                 |
++--------------------------+-----------+----------+-----------+-----------------+
+
+
+1.2 Power Supply Summary
+------------------------
+
++-----------+-------------+-----------+-------------+------------+
+| Source    | Voltage (V) | Total (A) | Dynamic (A) | Static (A) |
++-----------+-------------+-----------+-------------+------------+
+| Vccint    |       1.000 |     0.074 |       0.057 |      0.017 |
+| Vccaux    |       1.800 |     0.143 |       0.127 |      0.015 |
+| Vcco33    |       3.300 |     0.005 |       0.004 |      0.001 |
+| Vcco25    |       2.500 |     0.000 |       0.000 |      0.000 |
+| Vcco18    |       1.800 |     0.000 |       0.000 |      0.000 |
+| Vcco15    |       1.500 |     0.000 |       0.000 |      0.000 |
+| Vcco135   |       1.350 |     0.000 |       0.000 |      0.000 |
+| Vcco12    |       1.200 |     0.000 |       0.000 |      0.000 |
+| Vccaux_io |       1.800 |     0.000 |       0.000 |      0.000 |
+| Vccbram   |       1.000 |     0.006 |       0.001 |      0.005 |
+| MGTAVcc   |       1.000 |     0.000 |       0.000 |      0.000 |
+| MGTAVtt   |       1.200 |     0.000 |       0.000 |      0.000 |
+| MGTVccaux |       1.800 |     0.000 |       0.000 |      0.000 |
+| Vccpint   |       1.000 |     0.695 |       0.664 |      0.031 |
+| Vccpaux   |       1.800 |     0.037 |       0.026 |      0.010 |
+| Vccpll    |       1.800 |     0.017 |       0.014 |      0.003 |
+| Vcco_ddr  |       1.500 |     0.356 |       0.354 |      0.002 |
+| Vcco_mio0 |       1.800 |     0.004 |       0.003 |      0.001 |
+| Vcco_mio1 |       1.800 |     0.003 |       0.002 |      0.001 |
+| Vccadc    |       1.800 |     0.020 |       0.000 |      0.020 |
++-----------+-------------+-----------+-------------+------------+
+
+
+1.3 Confidence Level
+--------------------
+
++-----------------------------+------------+--------------------------------------------------------+------------------------------------------------------------------------------------------------------------+
+| User Input Data             | Confidence | Details                                                | Action                                                                                                     |
++-----------------------------+------------+--------------------------------------------------------+------------------------------------------------------------------------------------------------------------+
+| Design implementation state | High       | Design is routed                                       |                                                                                                            |
+| Clock nodes activity        | High       | User specified more than 95% of clocks                 |                                                                                                            |
+| I/O nodes activity          | Low        | More than 75% of inputs are missing user specification | Provide missing input activity with simulation results or by editing the "By Resource Type -> I/Os" view   |
+| Internal nodes activity     | Medium     | User specified less than 25% of internal nodes         | Provide missing internal nodes activity with simulation results or by editing the "By Resource Type" views |
+| Device models               | High       | Device models are Production                           |                                                                                                            |
+|                             |            |                                                        |                                                                                                            |
+| Overall confidence level    | Low        |                                                        |                                                                                                            |
++-----------------------------+------------+--------------------------------------------------------+------------------------------------------------------------------------------------------------------------+
+
+
+2. Settings
+-----------
+
+2.1 Environment
+---------------
+
++-----------------------+------------------------+
+| Ambient Temp (C)      | 25.0                   |
+| ThetaJA (C/W)         | 11.5                   |
+| Airflow (LFM)         | 250                    |
+| Heat Sink             | none                   |
+| ThetaSA (C/W)         | 0.0                    |
+| Board Selection       | medium (10"x10")       |
+| # of Board Layers     | 8to11 (8 to 11 Layers) |
+| Board Temperature (C) | 25.0                   |
++-----------------------+------------------------+
+
+
+2.2 Clock Constraints
+---------------------
+
++--------------------------------------------------------------------------------------------+---------------------------------------------------------------------------------------+-----------------+
+| Clock                                                                                      | Domain                                                                                | Constraint (ns) |
++--------------------------------------------------------------------------------------------+---------------------------------------------------------------------------------------+-----------------+
+| clk_out1_urllc_fifo_core_clk_static_0                                                      | urllc_fifo_core_i/core/clk_static/inst/clk_out1_urllc_fifo_core_clk_static_0          |            16.7 |
+| clk_out_dynamic_urllc_fifo_core_clk_dynamic_0                                              | urllc_fifo_core_i/core/clk_dynamic/inst/clk_out_dynamic_urllc_fifo_core_clk_dynamic_0 |            16.7 |
+| clk_pl_50M                                                                                 | clk_pl_50M                                                                            |            20.0 |
+| clkfbout_urllc_fifo_core_clk_dynamic_0                                                     | urllc_fifo_core_i/core/clk_dynamic/inst/clkfbout_urllc_fifo_core_clk_dynamic_0        |            16.7 |
+| clkfbout_urllc_fifo_core_clk_static_0                                                      | urllc_fifo_core_i/core/clk_static/inst/clkfbout_urllc_fifo_core_clk_static_0          |            20.0 |
+| dbg_hub/inst/BSCANID.u_xsdbm_id/SWITCH_N_EXT_BSCAN.bscan_inst/SERIES7_BSCAN.bscan_inst/TCK | dbg_hub/inst/BSCANID.u_xsdbm_id/SWITCH_N_EXT_BSCAN.bscan_inst/tck_bs                  |            33.0 |
++--------------------------------------------------------------------------------------------+---------------------------------------------------------------------------------------+-----------------+
+
+
+3. Detailed Reports
+-------------------
+
+3.1 By Hierarchy
+----------------
+
++----------------------------+-----------+
+| Name                       | Power (W) |
++----------------------------+-----------+
+| sender_wrapper             |     1.578 |
+|   dbg_hub                  |     0.002 |
+|     inst                   |     0.002 |
+|       BSCANID.u_xsdbm_id   |     0.002 |
+|   urllc_fifo_core_i        |     1.562 |
+|     adc                    |     0.002 |
+|       DDCWrapper_0         |     0.002 |
+|     core                   |     1.558 |
+|       axi_dma_0            |     0.006 |
+|       axi_interconnect_0   |     0.003 |
+|       axis_data_fifo_adc   |     0.001 |
+|       axis_data_fifo_dac   |     0.001 |
+|       clk_dynamic          |     0.107 |
+|       clk_static           |     0.123 |
+|       processing_system7_0 |     1.278 |
+|       ps7_0_axi_periph     |     0.003 |
+|       system_ila_dma       |     0.037 |
++----------------------------+-----------+
+
+

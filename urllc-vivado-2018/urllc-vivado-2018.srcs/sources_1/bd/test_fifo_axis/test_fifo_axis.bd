@@ -1,0 +1,793 @@
+{
+  "design": {
+    "design_info": {
+      "boundary_crc": "0xF62BF8DD2C18A98",
+      "device": "xc7z020clg400-2",
+      "name": "test_fifo_axis",
+      "synth_flow_mode": "Hierarchical",
+      "tool_version": "2018.3"
+    },
+    "design_tree": {
+      "dac": {
+        "DUCWrapper_0": "",
+        "mux_reciever_out": "",
+        "xlslice_sender": "",
+        "dac_axis_0": ""
+      },
+      "adc": {
+        "DDCWrapper_0": "",
+        "mux_reciever_in": "",
+        "xlconcat_0": "",
+        "xlconstant_0": "",
+        "adc_axis_0": ""
+      },
+      "axis_data_fifo_inout": ""
+    },
+    "ports": {
+      "clk": {
+        "type": "clk",
+        "direction": "I",
+        "parameters": {
+          "FREQ_HZ": {
+            "value": "60000000"
+          },
+          "PHASE": {
+            "value": "0.0"
+          }
+        }
+      },
+      "resetn": {
+        "type": "rst",
+        "direction": "I"
+      },
+      "router_adc": {
+        "direction": "I"
+      },
+      "io_in_sync_dac": {
+        "direction": "I"
+      },
+      "div_adc": {
+        "direction": "I",
+        "left": "7",
+        "right": "0"
+      },
+      "io_in_sync_adc": {
+        "direction": "I"
+      },
+      "router_dac": {
+        "direction": "I"
+      },
+      "ad": {
+        "direction": "I",
+        "left": "7",
+        "right": "0"
+      },
+      "div_dac": {
+        "direction": "I",
+        "left": "7",
+        "right": "0"
+      },
+      "da": {
+        "direction": "O",
+        "left": "7",
+        "right": "0"
+      },
+      "data_out_adc": {
+        "direction": "O",
+        "left": "7",
+        "right": "0"
+      }
+    },
+    "components": {
+      "dac": {
+        "interface_ports": {
+          "axis": {
+            "mode": "Slave",
+            "vlnv": "xilinx.com:interface:axis_rtl:1.0"
+          }
+        },
+        "ports": {
+          "clk": {
+            "type": "clk",
+            "direction": "I"
+          },
+          "da": {
+            "direction": "O",
+            "left": "7",
+            "right": "0"
+          },
+          "div": {
+            "direction": "I",
+            "left": "7",
+            "right": "0"
+          },
+          "io_in_sync": {
+            "direction": "I"
+          },
+          "resetn": {
+            "type": "rst",
+            "direction": "I"
+          },
+          "router": {
+            "direction": "I"
+          }
+        },
+        "components": {
+          "DUCWrapper_0": {
+            "vlnv": "xilinx.com:module_ref:DUCWrapper:1.0",
+            "xci_name": "test_fifo_axis_DUCWrapper_0_0",
+            "reference_info": {
+              "ref_type": "hdl",
+              "ref_name": "DUCWrapper",
+              "boundary_crc": "0x0"
+            },
+            "ports": {
+              "io_clock": {
+                "type": "clk",
+                "direction": "I"
+              },
+              "io_resetN": {
+                "type": "rst",
+                "direction": "I"
+              },
+              "io_in_data": {
+                "direction": "I"
+              },
+              "io_in_sync": {
+                "direction": "I"
+              },
+              "io_out_dac": {
+                "direction": "O",
+                "left": "7",
+                "right": "0"
+              },
+              "io_out_sync": {
+                "direction": "O"
+              }
+            }
+          },
+          "mux_reciever_out": {
+            "vlnv": "xilinx.com:module_ref:mux:1.0",
+            "xci_name": "test_fifo_axis_mux_reciever_out_0",
+            "reference_info": {
+              "ref_type": "hdl",
+              "ref_name": "mux",
+              "boundary_crc": "0x0"
+            },
+            "ports": {
+              "sel1": {
+                "direction": "I",
+                "left": "7",
+                "right": "0"
+              },
+              "sel2": {
+                "direction": "I",
+                "left": "7",
+                "right": "0"
+              },
+              "data_out": {
+                "direction": "O",
+                "left": "7",
+                "right": "0"
+              },
+              "router": {
+                "direction": "I"
+              }
+            }
+          },
+          "xlslice_sender": {
+            "vlnv": "xilinx.com:ip:xlslice:1.0",
+            "xci_name": "test_fifo_axis_xlslice_sender_0",
+            "parameters": {
+              "DIN_FROM": {
+                "value": "0"
+              },
+              "DIN_TO": {
+                "value": "0"
+              },
+              "DIN_WIDTH": {
+                "value": "8"
+              }
+            }
+          },
+          "dac_axis_0": {
+            "vlnv": "xilinx.com:module_ref:dac_axis:1.0",
+            "xci_name": "test_fifo_axis_dac_axis_0_1",
+            "reference_info": {
+              "ref_type": "hdl",
+              "ref_name": "dac_axis",
+              "boundary_crc": "0x0"
+            },
+            "interface_ports": {
+              "axis": {
+                "mode": "Slave",
+                "vlnv": "xilinx.com:interface:axis_rtl:1.0",
+                "parameters": {
+                  "HAS_TKEEP": {
+                    "value": "0",
+                    "value_src": "constant"
+                  },
+                  "HAS_TLAST": {
+                    "value": "1",
+                    "value_src": "constant"
+                  },
+                  "HAS_TREADY": {
+                    "value": "1",
+                    "value_src": "constant"
+                  },
+                  "HAS_TSTRB": {
+                    "value": "0",
+                    "value_src": "constant"
+                  },
+                  "TDATA_NUM_BYTES": {
+                    "value": "1",
+                    "value_src": "auto"
+                  },
+                  "TDEST_WIDTH": {
+                    "value": "0",
+                    "value_src": "constant"
+                  },
+                  "TID_WIDTH": {
+                    "value": "0",
+                    "value_src": "constant"
+                  },
+                  "TUSER_WIDTH": {
+                    "value": "0",
+                    "value_src": "constant"
+                  }
+                },
+                "port_maps": {
+                  "TDATA": {
+                    "physical_name": "axis_tdata",
+                    "direction": "I",
+                    "left": "7",
+                    "right": "0"
+                  },
+                  "TLAST": {
+                    "physical_name": "axis_tlast",
+                    "direction": "I"
+                  },
+                  "TVALID": {
+                    "physical_name": "axis_tvalid",
+                    "direction": "I"
+                  },
+                  "TREADY": {
+                    "physical_name": "axis_tready",
+                    "direction": "O"
+                  }
+                }
+              }
+            },
+            "ports": {
+              "clk": {
+                "type": "clk",
+                "direction": "I"
+              },
+              "resetn": {
+                "type": "rst",
+                "direction": "I"
+              },
+              "da_out": {
+                "direction": "O",
+                "left": "7",
+                "right": "0"
+              },
+              "div": {
+                "direction": "I",
+                "left": "7",
+                "right": "0"
+              },
+              "axis_tvalid_output": {
+                "direction": "O"
+              }
+            }
+          }
+        },
+        "interface_nets": {
+          "axis_1": {
+            "interface_ports": [
+              "axis",
+              "dac_axis_0/axis"
+            ]
+          }
+        },
+        "nets": {
+          "DUCWrapper_0_io_out_dac": {
+            "ports": [
+              "DUCWrapper_0/io_out_dac",
+              "mux_reciever_out/sel1"
+            ]
+          },
+          "clk_wiz_0_clk_out1": {
+            "ports": [
+              "clk",
+              "DUCWrapper_0/io_clock",
+              "dac_axis_0/clk"
+            ]
+          },
+          "mux_0_data_out": {
+            "ports": [
+              "mux_reciever_out/data_out",
+              "da"
+            ]
+          },
+          "rst_ps7_0_50M_peripheral_aresetn": {
+            "ports": [
+              "resetn",
+              "DUCWrapper_0/io_resetN",
+              "dac_axis_0/resetn"
+            ]
+          },
+          "xlslice_dac_8_15_Dout": {
+            "ports": [
+              "div",
+              "dac_axis_0/div"
+            ]
+          },
+          "xlslice_duc_sync_6_Dout": {
+            "ports": [
+              "io_in_sync",
+              "DUCWrapper_0/io_in_sync"
+            ]
+          },
+          "xlslice_reciever_out_7_Dout": {
+            "ports": [
+              "router",
+              "mux_reciever_out/router"
+            ]
+          },
+          "xlslice_sender_Dout": {
+            "ports": [
+              "xlslice_sender/Dout",
+              "DUCWrapper_0/io_in_data"
+            ]
+          },
+          "dac_axis_0_da_out": {
+            "ports": [
+              "dac_axis_0/da_out",
+              "xlslice_sender/Din",
+              "mux_reciever_out/sel2"
+            ]
+          }
+        }
+      },
+      "adc": {
+        "interface_ports": {
+          "axis_adc": {
+            "mode": "Master",
+            "vlnv": "xilinx.com:interface:axis_rtl:1.0"
+          }
+        },
+        "ports": {
+          "ad": {
+            "direction": "I",
+            "left": "7",
+            "right": "0"
+          },
+          "clk": {
+            "type": "clk",
+            "direction": "I"
+          },
+          "div": {
+            "direction": "I",
+            "left": "7",
+            "right": "0"
+          },
+          "io_clock": {
+            "type": "clk",
+            "direction": "I"
+          },
+          "io_in_sync": {
+            "direction": "I"
+          },
+          "io_resetN": {
+            "type": "rst",
+            "direction": "I"
+          },
+          "resetn": {
+            "type": "rst",
+            "direction": "I"
+          },
+          "router": {
+            "direction": "I"
+          },
+          "data_out": {
+            "direction": "O",
+            "left": "7",
+            "right": "0"
+          }
+        },
+        "components": {
+          "DDCWrapper_0": {
+            "vlnv": "xilinx.com:module_ref:DDCWrapper:1.0",
+            "xci_name": "test_fifo_axis_DDCWrapper_0_0",
+            "reference_info": {
+              "ref_type": "hdl",
+              "ref_name": "DDCWrapper",
+              "boundary_crc": "0x0"
+            },
+            "ports": {
+              "io_clock": {
+                "type": "clk",
+                "direction": "I"
+              },
+              "io_resetN": {
+                "type": "rst",
+                "direction": "I"
+              },
+              "io_in_data": {
+                "direction": "I",
+                "left": "7",
+                "right": "0"
+              },
+              "io_in_sync": {
+                "direction": "I"
+              },
+              "io_out_data": {
+                "direction": "O"
+              },
+              "io_out_update": {
+                "direction": "O"
+              },
+              "io_out_readData": {
+                "direction": "O",
+                "left": "7",
+                "right": "0"
+              },
+              "io_out_ave": {
+                "direction": "O",
+                "left": "7",
+                "right": "0"
+              }
+            }
+          },
+          "mux_reciever_in": {
+            "vlnv": "xilinx.com:module_ref:mux:1.0",
+            "xci_name": "test_fifo_axis_mux_reciever_in_0",
+            "reference_info": {
+              "ref_type": "hdl",
+              "ref_name": "mux",
+              "boundary_crc": "0x0"
+            },
+            "ports": {
+              "sel1": {
+                "direction": "I",
+                "left": "7",
+                "right": "0"
+              },
+              "sel2": {
+                "direction": "I",
+                "left": "7",
+                "right": "0"
+              },
+              "data_out": {
+                "direction": "O",
+                "left": "7",
+                "right": "0"
+              },
+              "router": {
+                "direction": "I"
+              }
+            }
+          },
+          "xlconcat_0": {
+            "vlnv": "xilinx.com:ip:xlconcat:2.1",
+            "xci_name": "test_fifo_axis_xlconcat_0_0"
+          },
+          "xlconstant_0": {
+            "vlnv": "xilinx.com:ip:xlconstant:1.1",
+            "xci_name": "test_fifo_axis_xlconstant_0_0",
+            "parameters": {
+              "CONST_VAL": {
+                "value": "0"
+              },
+              "CONST_WIDTH": {
+                "value": "7"
+              }
+            }
+          },
+          "adc_axis_0": {
+            "vlnv": "xilinx.com:module_ref:adc_axis:1.0",
+            "xci_name": "test_fifo_axis_adc_axis_0_0",
+            "reference_info": {
+              "ref_type": "hdl",
+              "ref_name": "adc_axis",
+              "boundary_crc": "0x0"
+            },
+            "interface_ports": {
+              "axis": {
+                "mode": "Master",
+                "vlnv": "xilinx.com:interface:axis_rtl:1.0",
+                "parameters": {
+                  "CLK_DOMAIN": {
+                    "value": "test_fifo_axis_clk_0",
+                    "value_src": "default_prop"
+                  },
+                  "FREQ_HZ": {
+                    "value": "60000000",
+                    "value_src": "user_prop"
+                  },
+                  "HAS_TKEEP": {
+                    "value": "0",
+                    "value_src": "constant"
+                  },
+                  "HAS_TLAST": {
+                    "value": "1",
+                    "value_src": "constant"
+                  },
+                  "HAS_TREADY": {
+                    "value": "1",
+                    "value_src": "constant"
+                  },
+                  "HAS_TSTRB": {
+                    "value": "0",
+                    "value_src": "constant"
+                  },
+                  "PHASE": {
+                    "value": "0.0",
+                    "value_src": "user_prop"
+                  },
+                  "TDATA_NUM_BYTES": {
+                    "value": "1",
+                    "value_src": "auto"
+                  },
+                  "TDEST_WIDTH": {
+                    "value": "0",
+                    "value_src": "constant"
+                  },
+                  "TID_WIDTH": {
+                    "value": "0",
+                    "value_src": "constant"
+                  },
+                  "TUSER_WIDTH": {
+                    "value": "0",
+                    "value_src": "constant"
+                  }
+                },
+                "port_maps": {
+                  "TDATA": {
+                    "physical_name": "axis_tdata",
+                    "direction": "O",
+                    "left": "7",
+                    "right": "0"
+                  },
+                  "TLAST": {
+                    "physical_name": "axis_tlast",
+                    "direction": "O"
+                  },
+                  "TVALID": {
+                    "physical_name": "axis_tvalid",
+                    "direction": "O"
+                  },
+                  "TREADY": {
+                    "physical_name": "axis_tready",
+                    "direction": "I"
+                  }
+                }
+              }
+            },
+            "ports": {
+              "clk": {
+                "type": "clk",
+                "direction": "I"
+              },
+              "resetn": {
+                "type": "rst",
+                "direction": "I"
+              },
+              "ad_in": {
+                "direction": "I",
+                "left": "7",
+                "right": "0"
+              },
+              "div": {
+                "direction": "I",
+                "left": "7",
+                "right": "0"
+              }
+            }
+          }
+        },
+        "interface_nets": {
+          "adc_axis_0_axis": {
+            "interface_ports": [
+              "axis_adc",
+              "adc_axis_0/axis"
+            ]
+          }
+        },
+        "nets": {
+          "DDCWrapper_0_io_out_data": {
+            "ports": [
+              "DDCWrapper_0/io_out_data",
+              "xlconcat_0/In0"
+            ]
+          },
+          "Net": {
+            "ports": [
+              "clk",
+              "adc_axis_0/clk"
+            ]
+          },
+          "Net1": {
+            "ports": [
+              "resetn",
+              "adc_axis_0/resetn"
+            ]
+          },
+          "Net2": {
+            "ports": [
+              "io_clock",
+              "DDCWrapper_0/io_clock"
+            ]
+          },
+          "Net3": {
+            "ports": [
+              "io_resetN",
+              "DDCWrapper_0/io_resetN"
+            ]
+          },
+          "ad_1": {
+            "ports": [
+              "ad",
+              "DDCWrapper_0/io_in_data",
+              "mux_reciever_in/sel1"
+            ]
+          },
+          "div_1": {
+            "ports": [
+              "div",
+              "adc_axis_0/div"
+            ]
+          },
+          "io_in_sync_1": {
+            "ports": [
+              "io_in_sync",
+              "DDCWrapper_0/io_in_sync"
+            ]
+          },
+          "mux_reciever_in_data_out": {
+            "ports": [
+              "mux_reciever_in/data_out",
+              "adc_axis_0/ad_in",
+              "data_out"
+            ]
+          },
+          "xlconcat_0_dout": {
+            "ports": [
+              "xlconcat_0/dout",
+              "mux_reciever_in/sel2"
+            ]
+          },
+          "xlconstant_0_dout": {
+            "ports": [
+              "xlconstant_0/dout",
+              "xlconcat_0/In1"
+            ]
+          },
+          "xlslice_reciever_in_10_Dout": {
+            "ports": [
+              "router",
+              "mux_reciever_in/router"
+            ]
+          }
+        }
+      },
+      "axis_data_fifo_inout": {
+        "vlnv": "xilinx.com:ip:axis_data_fifo:2.0",
+        "xci_name": "test_fifo_axis_axis_data_fifo_dac_0",
+        "parameters": {
+          "FIFO_DEPTH": {
+            "value": "16384"
+          },
+          "HAS_AEMPTY": {
+            "value": "1"
+          },
+          "HAS_AFULL": {
+            "value": "1"
+          },
+          "HAS_PROG_EMPTY": {
+            "value": "1"
+          },
+          "HAS_PROG_FULL": {
+            "value": "1"
+          },
+          "HAS_WR_DATA_COUNT": {
+            "value": "0"
+          },
+          "PROG_FULL_THRESH": {
+            "value": "2048"
+          }
+        }
+      }
+    },
+    "interface_nets": {
+      "adc_axis_adc": {
+        "interface_ports": [
+          "axis_data_fifo_inout/S_AXIS",
+          "adc/axis_adc"
+        ]
+      },
+      "axis_data_fifo_inout_M_AXIS": {
+        "interface_ports": [
+          "axis_data_fifo_inout/M_AXIS",
+          "dac/axis"
+        ]
+      }
+    },
+    "nets": {
+      "clk_0_1": {
+        "ports": [
+          "clk",
+          "adc/clk",
+          "dac/clk",
+          "axis_data_fifo_inout/s_axis_aclk",
+          "adc/io_clock"
+        ]
+      },
+      "resetn_0_1": {
+        "ports": [
+          "resetn",
+          "adc/resetn",
+          "dac/resetn",
+          "axis_data_fifo_inout/s_axis_aresetn",
+          "adc/io_resetN"
+        ]
+      },
+      "router_0_1": {
+        "ports": [
+          "router_adc",
+          "adc/router"
+        ]
+      },
+      "io_in_sync_0_1": {
+        "ports": [
+          "io_in_sync_dac",
+          "dac/io_in_sync"
+        ]
+      },
+      "div_0_1": {
+        "ports": [
+          "div_adc",
+          "adc/div"
+        ]
+      },
+      "io_in_sync_1_1": {
+        "ports": [
+          "io_in_sync_adc",
+          "adc/io_in_sync"
+        ]
+      },
+      "router_1_1": {
+        "ports": [
+          "router_dac",
+          "dac/router"
+        ]
+      },
+      "ad_0_1": {
+        "ports": [
+          "ad",
+          "adc/ad"
+        ]
+      },
+      "div_1_1": {
+        "ports": [
+          "div_dac",
+          "dac/div"
+        ]
+      },
+      "dac_da": {
+        "ports": [
+          "dac/da",
+          "da"
+        ]
+      },
+      "adc_data_out": {
+        "ports": [
+          "adc/data_out",
+          "data_out_adc"
+        ]
+      }
+    }
+  }
+}

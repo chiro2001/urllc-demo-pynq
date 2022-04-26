@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Root MajorVersion="0" MinorVersion="36">
+  <CompositeFile CompositeFileTopName="test_fifo_axis" CanBeSetAsTop="false" CanDisplayChildGraph="true">
+    <Description>Composite Fileset</Description>
+    <Generation Name="SYNTHESIS" State="RESET" Timestamp="1650939141"/>
+    <Generation Name="IMPLEMENTATION" State="RESET" Timestamp="1650939141"/>
+    <Generation Name="SIMULATION" State="RESET" Timestamp="1650939141"/>
+    <Generation Name="HW_HANDOFF" State="RESET" Timestamp="1650939141"/>
+    <FileCollection Name="SOURCES" Type="SOURCES">
+      <File Name="ip\test_fifo_axis_DUCWrapper_0_0\test_fifo_axis_DUCWrapper_0_0.xci" Type="IP">
+        <Instance HierarchyPath="dac/DUCWrapper_0"/>
+        <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="true" IsStatusTracked="true"/>
+        <Library Name="xil_defaultlib"/>
+        <UsedIn Val="SYNTHESIS"/>
+        <UsedIn Val="IMPLEMENTATION"/>
+        <UsedIn Val="SIMULATION"/>
+      </File>
+      <File Name="ip\test_fifo_axis_mux_reciever_out_0\test_fifo_axis_mux_reciever_out_0.xci" Type="IP">
+        <Instance HierarchyPath="dac/mux_reciever_out"/>
+        <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="true" IsStatusTracked="true"/>
+        <Library Name="xil_defaultlib"/>
+        <UsedIn Val="SYNTHESIS"/>
+        <UsedIn Val="IMPLEMENTATION"/>
+        <UsedIn Val="SIMULATION"/>
+      </File>
+      <File Name="ip\test_fifo_axis_xlslice_sender_0\test_fifo_axis_xlslice_sender_0.xci" Type="IP">
+        <Instance HierarchyPath="dac/xlslice_sender"/>
+        <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="true" IsStatusTracked="true"/>
+        <Library Name="xil_defaultlib"/>
+        <UsedIn Val="SYNTHESIS"/>
+        <UsedIn Val="IMPLEMENTATION"/>
+        <UsedIn Val="SIMULATION"/>
+      </File>
+      <File Name="ip\test_fifo_axis_DDCWrapper_0_0\test_fifo_axis_DDCWrapper_0_0.xci" Type="IP">
+        <Instance HierarchyPath="adc/DDCWrapper_0"/>
+        <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="true" IsStatusTracked="true"/>
+        <Library Name="xil_defaultlib"/>
+        <UsedIn Val="SYNTHESIS"/>
+        <UsedIn Val="IMPLEMENTATION"/>
+        <UsedIn Val="SIMULATION"/>
+      </File>
+      <File Name="ip\test_fifo_axis_mux_reciever_in_0\test_fifo_axis_mux_reciever_in_0.xci" Type="IP">
+        <Instance HierarchyPath="adc/mux_reciever_in"/>
+        <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="true" IsStatusTracked="true"/>
+        <Library Name="xil_defaultlib"/>
+        <UsedIn Val="SYNTHESIS"/>
+        <UsedIn Val="IMPLEMENTATION"/>
+        <UsedIn Val="SIMULATION"/>
+      </File>
+      <File Name="ip\test_fifo_axis_xlconcat_0_0\test_fifo_axis_xlconcat_0_0.xci" Type="IP">
+        <Instance HierarchyPath="adc/xlconcat_0"/>
+        <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="true" IsStatusTracked="true"/>
+        <Library Name="xil_defaultlib"/>
+        <UsedIn Val="SYNTHESIS"/>
+        <UsedIn Val="IMPLEMENTATION"/>
+        <UsedIn Val="SIMULATION"/>
+      </File>
+      <File Name="ip\test_fifo_axis_xlconstant_0_0\test_fifo_axis_xlconstant_0_0.xci" Type="IP">
+        <Instance HierarchyPath="adc/xlconstant_0"/>
+        <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="true" IsStatusTracked="true"/>
+        <Library Name="xil_defaultlib"/>
+        <UsedIn Val="SYNTHESIS"/>
+        <UsedIn Val="IMPLEMENTATION"/>
+        <UsedIn Val="SIMULATION"/>
+      </File>
+      <File Name="ip\test_fifo_axis_adc_axis_0_0\test_fifo_axis_adc_axis_0_0.xci" Type="IP">
+        <Instance HierarchyPath="adc/adc_axis_0"/>
+        <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="true" IsStatusTracked="true"/>
+        <Library Name="xil_defaultlib"/>
+        <UsedIn Val="SYNTHESIS"/>
+        <UsedIn Val="IMPLEMENTATION"/>
+        <UsedIn Val="SIMULATION"/>
+      </File>
+      <File Name="ip\test_fifo_axis_axis_data_fifo_dac_0\test_fifo_axis_axis_data_fifo_dac_0.xci" Type="IP">
+        <Instance HierarchyPath="axis_data_fifo_inout"/>
+        <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="true" IsStatusTracked="true"/>
+        <Library Name="xil_defaultlib"/>
+        <UsedIn Val="SYNTHESIS"/>
+        <UsedIn Val="IMPLEMENTATION"/>
+        <UsedIn Val="SIMULATION"/>
+      </File>
+      <File Name="ip\test_fifo_axis_dac_axis_0_1\test_fifo_axis_dac_axis_0_1.xci" Type="IP">
+        <Instance HierarchyPath="dac/dac_axis_0"/>
+        <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="true" IsStatusTracked="true"/>
+        <Library Name="xil_defaultlib"/>
+        <UsedIn Val="SYNTHESIS"/>
+        <UsedIn Val="IMPLEMENTATION"/>
+        <UsedIn Val="SIMULATION"/>
+      </File>
+    </FileCollection>
+  </CompositeFile>
+</Root>

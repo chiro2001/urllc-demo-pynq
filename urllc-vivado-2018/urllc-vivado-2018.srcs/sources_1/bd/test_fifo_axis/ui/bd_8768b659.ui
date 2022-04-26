@@ -1,0 +1,36 @@
+{
+   "ExpandedHierarchyInLayout":"",
+   "guistr":"# # String gsaved with Nlview 6.8.11  2018-08-07 bk=1.4403 VDI=40 GEI=35 GUI=JA:9.0 non-TLS
+#  -string -flagsOSRD
+preplace port io_resetN -pg 1 -y 110 -defaultsOSRD
+preplace port resetn -pg 1 -y 290 -defaultsOSRD
+preplace port axis_adc -pg 1 -y 300 -defaultsOSRD
+preplace port router -pg 1 -y 430 -defaultsOSRD
+preplace port io_clock -pg 1 -y 90 -defaultsOSRD
+preplace port clk -pg 1 -y 270 -defaultsOSRD
+preplace port io_in_sync -pg 1 -y 70 -defaultsOSRD
+preplace portBus div -pg 1 -y 330 -defaultsOSRD
+preplace portBus ad -pg 1 -y 50 -defaultsOSRD
+preplace portBus data_out -pg 1 -y 390 -defaultsOSRD
+preplace inst adc_axis_0 -pg 1 -lvl 4 -y 300 -defaultsOSRD
+preplace inst xlconstant_0 -pg 1 -lvl 1 -y 210 -defaultsOSRD
+preplace inst mux_reciever_in -pg 1 -lvl 3 -y 410 -defaultsOSRD
+preplace inst DDCWrapper_0 -pg 1 -lvl 1 -y 80 -defaultsOSRD
+preplace inst xlconcat_0 -pg 1 -lvl 2 -y 200 -defaultsOSRD
+preplace netloc DDCWrapper_0_io_out_data 1 1 1 350
+preplace netloc adc_axis_0_axis 1 4 1 NJ
+preplace netloc io_in_sync_1 1 0 1 NJ
+preplace netloc ad_1 1 0 3 20 390 NJ 390 NJ
+preplace netloc xlconstant_0_dout 1 1 1 NJ
+preplace netloc xlconcat_0_dout 1 2 1 550
+preplace netloc div_1 1 0 4 NJ 330 NJ 330 NJ 330 NJ
+preplace netloc mux_reciever_in_data_out 1 3 2 810 390 NJ
+preplace netloc Net1 1 0 4 NJ 290 NJ 290 NJ 290 NJ
+preplace netloc Net 1 0 4 NJ 270 NJ 270 NJ 270 NJ
+preplace netloc xlslice_reciever_in_10_Dout 1 0 3 NJ 430 NJ 430 NJ
+preplace netloc Net2 1 0 1 NJ
+preplace netloc Net3 1 0 1 NJ
+levelinfo -pg 1 0 190 460 690 940 1080 -top -10 -bot 490
+"
+}
+
