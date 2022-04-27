@@ -9,9 +9,9 @@
       <spirit:instanceName>urllc_fifo_core_xlconstant_0_2</spirit:instanceName>
       <spirit:componentRef spirit:vendor="xilinx.com" spirit:library="ip" spirit:name="xlconstant" spirit:version="1.1"/>
       <spirit:configurableElementValues>
-        <spirit:configurableElementValue spirit:referenceId="MODELPARAM_VALUE.CONST_VAL">0x00</spirit:configurableElementValue>
+        <spirit:configurableElementValue spirit:referenceId="MODELPARAM_VALUE.CONST_VAL">0x7F</spirit:configurableElementValue>
         <spirit:configurableElementValue spirit:referenceId="MODELPARAM_VALUE.CONST_WIDTH">8</spirit:configurableElementValue>
-        <spirit:configurableElementValue spirit:referenceId="PARAM_VALUE.CONST_VAL">0</spirit:configurableElementValue>
+        <spirit:configurableElementValue spirit:referenceId="PARAM_VALUE.CONST_VAL">127</spirit:configurableElementValue>
         <spirit:configurableElementValue spirit:referenceId="PARAM_VALUE.CONST_WIDTH">8</spirit:configurableElementValue>
         <spirit:configurableElementValue spirit:referenceId="PARAM_VALUE.Component_Name">urllc_fifo_core_xlconstant_0_2</spirit:configurableElementValue>
         <spirit:configurableElementValue spirit:referenceId="PROJECT_PARAM.ARCHITECTURE">zynq</spirit:configurableElementValue>

@@ -1,7 +1,7 @@
 //Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 //--------------------------------------------------------------------------------
 //Tool Version: Vivado v.2018.3 (win64) Build 2405991 Thu Dec  6 23:38:27 MST 2018
-//Date        : Tue Apr 26 10:13:40 2022
+//Date        : Wed Apr 27 16:10:51 2022
 //Host        : Chiro running 64-bit major release  (build 9200)
 //Command     : generate_target urllc_fifo_core.bd
 //Design      : urllc_fifo_core

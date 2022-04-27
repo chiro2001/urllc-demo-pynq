@@ -57,7 +57,7 @@
 #include "systemc.h"
 class urllc_fifo_core_xlconstant_0_2 : public sc_module {
   public:
-xlconstant_v1_1_5<8,0> mod;
+xlconstant_v1_1_5<8,127> mod;
   sc_out< sc_bv<8> > dout;
 urllc_fifo_core_xlconstant_0_2 (sc_core::sc_module_name name) :sc_module(name), mod("mod") {
     mod.dout(dout);

@@ -83,8 +83,9 @@
     <Object name="urllc_fifo_core_i/core/system_ila_dma/inst/probe22_1" gui_info=""/>
     <Object name="urllc_fifo_core_i/core/system_ila_dma/inst/probe24_1" gui_info=""/>
     <Object name="urllc_fifo_core_i/core/system_ila_dma/inst/probe25_1" gui_info=""/>
+    <Object name="urllc_fifo_core_i/core/system_ila_dma/inst/probe26_1[7:0]" gui_info="Trigger Setup=0"/>
     <Object name="urllc_fifo_core_i/core/system_ila_dma/inst/probe28_1[7:0]" gui_info=""/>
-    <Object name="urllc_fifo_core_i/core/system_ila_dma/inst/probe2_1" gui_info="Trigger Setup=0"/>
+    <Object name="urllc_fifo_core_i/core/system_ila_dma/inst/probe2_1" gui_info=""/>
     <Object name="urllc_fifo_core_i/core/system_ila_dma/inst/probe3_1" gui_info=""/>
     <Object name="urllc_fifo_core_i/core/system_ila_dma/inst/probe6_1" gui_info=""/>
     <Object name="urllc_fifo_core_i/dac/fifo_dac_dout[7:0]" gui_info="Trigger Setup=0"/>
@@ -5627,7 +5628,7 @@
     <probe type="ila" busType="bus" source="netlist" spec="ILA_V2_RT">
       <probeOptions Id="DebugProbeParams">
         <Option Id="CAPTURE_COMPARE_VALUE" value="eq8&apos;hXX"/>
-        <Option Id="COMPARE_VALUE.0" value="eq8&apos;hXX"/>
+        <Option Id="COMPARE_VALUE.0" value="neq8&apos;h00"/>
         <Option Id="DISPLAY_AS_ENUM" value="1"/>
         <Option Id="DISPLAY_HINT" value=""/>
         <Option Id="DISPLAY_RADIX" value="HEX"/>
@@ -5638,7 +5639,7 @@
         <Option Id="NAME.CUSTOM" value="probe26"/>
         <Option Id="NAME.SELECT" value="Custom"/>
         <Option Id="SOURCE" value="netlist"/>
-        <Option Id="TRIGGER_COMPARE_VALUE" value="eq8&apos;hXX"/>
+        <Option Id="TRIGGER_COMPARE_VALUE" value="neq8&apos;h00"/>
         <Option Id="WAVEFORM_STYLE" value="Analog"/>
       </probeOptions>
       <nets>
@@ -5711,7 +5712,7 @@
     <probe type="ila" busType="net" source="netlist" spec="ILA_V2_RT">
       <probeOptions Id="DebugProbeParams">
         <Option Id="CAPTURE_COMPARE_VALUE" value="eq1&apos;bX"/>
-        <Option Id="COMPARE_VALUE.0" value="eq1&apos;b0"/>
+        <Option Id="COMPARE_VALUE.0" value="eq1&apos;bX"/>
         <Option Id="DISPLAY_AS_ENUM" value="1"/>
         <Option Id="DISPLAY_HINT" value=""/>
         <Option Id="DISPLAY_RADIX" value="HEX"/>
@@ -5722,7 +5723,7 @@
         <Option Id="NAME.CUSTOM" value="axis_data_fifo_adc_almost_empty"/>
         <Option Id="NAME.SELECT" value="Custom"/>
         <Option Id="SOURCE" value="netlist"/>
-        <Option Id="TRIGGER_COMPARE_VALUE" value="eq1&apos;b0"/>
+        <Option Id="TRIGGER_COMPARE_VALUE" value="eq1&apos;bX"/>
         <Option Id="WAVEFORM_STYLE" value="Digital"/>
       </probeOptions>
       <nets>

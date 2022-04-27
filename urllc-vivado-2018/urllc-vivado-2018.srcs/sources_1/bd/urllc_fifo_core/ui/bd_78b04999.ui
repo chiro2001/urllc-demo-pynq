@@ -9,171 +9,56 @@ preplace port FIXED_IO -pg 1 -y 2210 -defaultsOSRD
 preplace port clk_pl_50M -pg 1 -y 2670 -defaultsOSRD
 preplace portBus da -pg 1 -y 1690 -defaultsOSRD
 preplace portBus ad -pg 1 -y 2250 -defaultsOSRD
-preplace inst debug_ctrl|axi_gpio_0 -pg 1 -lvl 1 -y 810 -defaultsOSRD
-preplace inst dac|mux_reciever_out -pg 1 -lvl 3 -y 1990 -defaultsOSRD
-preplace inst debug_ctrl|xlslice_clk_psen_4 -pg 1 -lvl 2 -y 200 -defaultsOSRD
-preplace inst core|clk_dynamic -pg 1 -lvl 6 -y 2440 -defaultsOSRD
-preplace inst adc|xlconstant_0 -pg 1 -lvl 1 -y 2320 -defaultsOSRD
-preplace inst debug_ctrl|xlslice_fifo_read_start_2 -pg 1 -lvl 2 -y 1200 -defaultsOSRD
-preplace inst dac -pg 1 -lvl 3 -y 1690 -defaultsOSRD
-preplace inst debug_ctrl|xlslice_dac_8_15 -pg 1 -lvl 2 -y 800 -defaultsOSRD
-preplace inst core|xlconcat_irq -pg 1 -lvl 5 -y 1650 -defaultsOSRD
-preplace inst debug_ctrl|xlslice_reciever_out_7 -pg 1 -lvl 2 -y 400 -defaultsOSRD
-preplace inst dac|DUCWrapper_0 -pg 1 -lvl 2 -y 1980 -defaultsOSRD
-preplace inst core|axis_data_fifo_dac -pg 1 -lvl 6 -y 1990 -defaultsOSRD
-preplace inst core|system_ila_dma -pg 1 -lvl 7 -y 2170 -defaultsOSRD
-preplace inst core|reset_static -pg 1 -lvl 6 -y 1660 -defaultsOSRD
-preplace inst debug_ctrl|xlslice_clk_psincdec_5 -pg 1 -lvl 2 -y 500 -defaultsOSRD
-preplace inst dac|xlslice_sender -pg 1 -lvl 1 -y 1950 -defaultsOSRD
+preplace inst dac|mux_reciever_out -pg 1 -lvl 3 -y 1992 -defaultsOSRD
+preplace inst dac -pg 1 -lvl 3 -y 1692 -defaultsOSRD
+preplace inst dac|DUCWrapper_0 -pg 1 -lvl 2 -y 1982 -defaultsOSRD
+preplace inst dac|xlslice_sender -pg 1 -lvl 1 -y 1952 -defaultsOSRD
 preplace inst core -pg 1 -lvl 2 -y 1220 -defaultsOSRD
-preplace inst debug_ctrl|xlslice_counter_trigger_16_31 -pg 1 -lvl 2 -y 1000 -defaultsOSRD
-preplace inst core|axis_data_fifo_adc -pg 1 -lvl 3 -y 2090 -defaultsOSRD
-preplace inst core|clk_static -pg 1 -lvl 6 -y 2220 -defaultsOSRD
-preplace inst debug_ctrl|xlslice_adc_fifo_reset_10 -pg 1 -lvl 2 -y 1400 -defaultsOSRD
-preplace inst adc|adc_axis_0 -pg 1 -lvl 4 -y 2540 -defaultsOSRD
-preplace inst debug_ctrl|xlslice_reciever_in_9 -pg 1 -lvl 2 -y 700 -defaultsOSRD
-preplace inst debug_ctrl|xlslice_adc_0_7 -pg 1 -lvl 2 -y 900 -defaultsOSRD
-preplace inst adc|DDCWrapper_0 -pg 1 -lvl 1 -y 2480 -defaultsOSRD
-preplace inst debug_ctrl|xlslice_clk_psclk_3 -pg 1 -lvl 2 -y 300 -defaultsOSRD
-preplace inst dac|mux_data_available -pg 1 -lvl 4 -y 1790 -defaultsOSRD
-preplace inst core|reset_dynamic -pg 1 -lvl 7 -y 2690 -defaultsOSRD
-preplace inst core|processing_system7_0 -pg 1 -lvl 6 -y 1460 -defaultsOSRD
-preplace inst debug_ctrl|xlslice_count_trigger_clear_0 -pg 1 -lvl 2 -y 1100 -defaultsOSRD
-preplace inst dac|xlconstant_0 -pg 1 -lvl 3 -y 1670 -defaultsOSRD
-preplace inst core|axi_dma_0 -pg 1 -lvl 4 -y 1970 -defaultsOSRD
+preplace inst dac|mux_data_available -pg 1 -lvl 4 -y 1792 -defaultsOSRD
+preplace inst dac|xlconstant_0 -pg 1 -lvl 3 -y 1672 -defaultsOSRD
 preplace inst debug_ctrl -pg 1 -lvl 3 -y 170 -defaultsOSRD
-preplace inst debug_ctrl|xlslice_dac_fifo_reset_11 -pg 1 -lvl 2 -y 1500 -defaultsOSRD
-preplace inst debug_ctrl|xlslice_duc_sync_6 -pg 1 -lvl 2 -y 100 -defaultsOSRD
-preplace inst debug_ctrl|xlslice_ddc_sync_8 -pg 1 -lvl 2 -y 600 -defaultsOSRD
-preplace inst core|mux_dac_fifo_reset -pg 1 -lvl 2 -y 2310 -defaultsOSRD
-preplace inst core|mux_adc_fifo_reset -pg 1 -lvl 5 -y 2480 -defaultsOSRD
-preplace inst core|xlconstant_zero -pg 1 -lvl 1 -y 2480 -defaultsOSRD
-preplace inst core|ps7_0_axi_periph -pg 1 -lvl 6 -y 1220 -defaultsOSRD
-preplace inst adc|xlconcat_0 -pg 1 -lvl 2 -y 2310 -defaultsOSRD
-preplace inst adc|mux_reciever_in -pg 1 -lvl 3 -y 2310 -defaultsOSRD
-preplace inst debug_ctrl|xlslice_fifo_write_start_1 -pg 1 -lvl 2 -y 1300 -defaultsOSRD
-preplace inst dac|dac_axis_0 -pg 1 -lvl 3 -y 1800 -defaultsOSRD
-preplace inst core|axi_interconnect_0 -pg 1 -lvl 5 -y 2120 -defaultsOSRD
+preplace inst dac|dac_axis_0 -pg 1 -lvl 3 -y 1802 -defaultsOSRD
 preplace inst adc -pg 1 -lvl 1 -y 2330 -defaultsOSRD
-preplace netloc debug_ctrl|xlslice_dac_8_15_Dout 1 2 1 NJ
-preplace netloc core|S00_AXI_1 1 4 1 2890
-preplace netloc probe9_1 1 1 1 1430
-preplace netloc debug_ctrl|ps7_0_axi_periph_M00_AXI 1 0 1 N
-preplace netloc debug_ctrl|xlslice_reciever_out_7_Dout 1 2 1 NJ
-preplace netloc dac|xlslice_dac_8_15_Dout 1 0 3 NJ 1830 NJ 1830 N
-preplace netloc core|S01_AXI_1 1 4 1 2880
-preplace netloc core|probe8_1 1 0 7 NJ 2690 NJ 2690 NJ 2690 NJ 2690 NJ 2690 NJ 2690 3920
-preplace netloc reset_dynamic_peripheral_aresetn 1 0 3 70 2810 1400J 2820 4530
-preplace netloc processing_system7_0_FIXED_IO 1 2 2 4590J 2210 NJ
-preplace netloc core|Net 1 0 7 NJ 2650 NJ 2650 NJ 2650 NJ 2650 2870 2580 NJ 2580 3800
-preplace netloc core|probe9_1 1 0 7 NJ 2710 NJ 2710 NJ 2710 NJ 2710 NJ 2710 NJ 2710 3950
-preplace netloc debug_ctrl|clk_wiz_0_clk_out1 1 0 1 N
-preplace netloc debug_ctrl|xlslice_adc_0_7_Dout 1 2 1 NJ
-preplace netloc core|clk_static_clk_out1 1 2 6 2100 1990 2420 2100 2880 2350 3220 2300 3910 2570 4350J
-preplace netloc core|xlconcat_irq_dout 1 5 1 3200
-preplace netloc dac|dac_axis_0_axis_tvalid_output 1 3 1 N
-preplace netloc debug_ctrl_Dout1 1 1 3 1480 2850 4550J 2100 6110
-preplace netloc adc|DDCWrapper_0_io_out_data 1 1 1 550
-preplace netloc debug_ctrl|rst_ps7_0_50M_peripheral_aresetn 1 0 1 N
-preplace netloc debug_ctrl|axi_gpio_0_gpio_io_o 1 1 1 5100
-preplace netloc core|axis_data_fifo_dac_M_AXIS 1 3 4 2400 1830 NJ 1830 NJ 1830 NJ
-preplace netloc core|axi_dma_0_M_AXIS_MM2S 1 4 3 NJ 1950 3290 1820 3910J
-preplace netloc mux_0_data_out 1 1 3 1460 2940 NJ 2940 6170
-preplace netloc core|axis_data_fifo_adc_almost_full 1 4 3 2880 1770 NJ 1770 3800
-preplace netloc debug_ctrl_Dout2 1 1 3 1440 2880 4600J 2130 6140
-preplace netloc xlslice_reciever_in_10_Dout 1 0 4 80 2820 1390 2920 4660J 2170 6120
-preplace netloc clk_pl_50M_1 1 0 2 NJ 2670 1420J
-preplace netloc debug_ctrl_Dout4 1 1 3 1470 2890 4630J 2140 6100
-preplace netloc processing_system7_0_DDR 1 2 2 4620J 2190 NJ
-preplace netloc core|processing_system7_0_FIXED_IO 1 6 2 NJ 1460 NJ
-preplace netloc core|prog_empty 1 3 4 NJ 2090 2860J 1970 3260J 2150 3820J
-preplace netloc dac|DUCWrapper_0_io_out_dac 1 2 1 N
-preplace netloc debug_ctrl_Dout6 1 1 3 1450 2900 4640J 2150 6130
-preplace netloc dac|mux_reciever_out_data_out 1 3 1 5660
-preplace netloc xlslice_reciever_out_8_Dout 1 0 4 30 2930 NJ 2930 4670J 2180 6150
-preplace netloc dac|xlconstant_0_dout 1 3 1 5640
-preplace netloc probe28_1 1 1 3 1490 2910 4650J 2160 6090
-preplace netloc debug_ctrl|xlslice_reciever_out_8_Dout 1 2 1 NJ
-preplace netloc debug_ctrl|xlslice_clk_psen_4_Dout 1 2 1 NJ
-preplace netloc dac|mux_0_data_out 1 4 1 5910
-preplace netloc ps7_0_axi_periph_M00_AXI 1 2 1 4530
-preplace netloc core|psclk_1 1 0 7 NJ 2590 NJ 2590 NJ 2590 NJ 2590 2810J 2600 3270 2530 3890J
-preplace netloc rst_ps7_0_50M_peripheral_aresetn 1 0 3 40 2840 NJ 2840 4540
-preplace netloc clk_dynamic_clk_out_200M 1 0 4 60 2800 1420J 2810 4570 2950 NJ
-preplace netloc dac|Conn1 1 0 3 NJ 1770 NJ 1770 N
-preplace netloc core|probe28_1 1 0 7 NJ 2770 NJ 2770 NJ 2770 NJ 2770 NJ 2770 NJ 2770 4010
-preplace netloc core|processing_system7_0_FCLK_RESET0_N 1 5 2 3290 1560 3880
-preplace netloc core|prog_full 1 3 4 NJ 2130 2870 2330 NJ 2330 3810J
-preplace netloc debug_ctrl|xlslice_reciever_in_10_Dout 1 2 1 NJ
+preplace netloc dac|mux_0_data_out 1 4 1 5890
+preplace netloc processing_system7_0_DDR 1 2 2 NJ 1150 6130J
+preplace netloc debug_ctrl_Dout2 1 1 3 410 360 NJ 360 6090
+preplace netloc dac|xlslice_duc_sync_6_Dout 1 0 2 NJ 1852 5030
+preplace netloc dac|clk_wiz_0_clk_out1 1 0 3 NJ 1792 5040 1792 NJ
+preplace netloc axis1_1 1 2 1 1890
+preplace netloc debug_ctrl_Dout14 1 1 3 380 340 NJ 340 6020
+preplace netloc debug_ctrl_Dout4 1 1 3 400 370 NJ 370 6030
+preplace netloc xlslice_duc_sync_6_Dout 1 2 2 1940 380 6130
+preplace netloc dac|mux_reciever_out_data_out 1 3 1 5630
+preplace netloc dac|xlslice_dac_8_15_Dout 1 0 3 NJ 1832 NJ 1832 N
+preplace netloc ad_1 1 0 1 20J
+preplace netloc dac|rst_ps7_0_50M_peripheral_aresetn 1 0 3 NJ 1872 5050 1812 NJ
+preplace netloc probe9_1 1 1 1 370
+preplace netloc debug_ctrl_Dout6 1 1 3 370 320 NJ 320 6050
+preplace netloc dac|dac_axis_0_da_out 1 0 5 4830 1892 NJ 1892 5340 1892 5620 1712 NJ
+preplace netloc adc_axis2 1 1 1 360
+preplace netloc xlslice_reciever_out_8_Dout 1 0 4 70 2980 NJ 2980 NJ 2980 6100
+preplace netloc xlslice_dac_8_15_Dout 1 2 2 1930 350 6040
+preplace netloc clk_dynamic_clk_out_200M 1 0 4 80 2450 NJ 2450 1880 2950 NJ
+preplace netloc dac|xlconstant_0_dout 1 3 1 5630
 preplace netloc dac|xlslice_sender_Dout 1 1 1 NJ
-preplace netloc dac|clk_wiz_0_clk_out1 1 0 3 NJ 1790 5050 1790 NJ
-preplace netloc core|axis_data_fifo_adc_M_AXIS 1 6 2 3820 1770 NJ
-preplace netloc core|axis_data_fifo_dac_almost_empty 1 3 4 2410J 1850 2830 1810 NJ 1810 3920
-preplace netloc core|Net1 1 0 7 NJ 2670 1810 2400 NJ 2400 NJ 2400 NJ 2400 3230J 2560 3980
-preplace netloc adc|Net 1 0 4 NJ 2390 NJ 2390 NJ 2390 980
-preplace netloc xlslice_reciever_out_7_Dout 1 2 2 4680 2980 6160
-preplace netloc core|psincdec_1 1 0 7 NJ 2630 NJ 2630 NJ 2630 NJ 2630 NJ 2630 3290 2550 3960J
-preplace netloc core|axis_data_fifo_dac_almost_full 1 3 4 NJ 2110 2840 1800 NJ 1800 3950
-preplace netloc debug_ctrl|xlslice_adc_fifo_reset_10_Dout 1 2 1 NJ
-preplace netloc xlslice_dac_8_15_Dout 1 2 2 4680 1580 6070
-preplace netloc adc|div_1 1 0 4 210J 2570 NJ 2570 NJ 2570 NJ
-preplace netloc adc|Net1 1 0 4 NJ 2580 NJ 2580 NJ 2580 1000J
-preplace netloc core|processing_system7_0_M_AXI_GP0 1 5 2 3290 1360 3770
-preplace netloc core|mux_adc_fifo_reset1_data_out 1 5 2 3240 2350 3830J
-preplace netloc core|axi_dma_0_mm2s_introut 1 4 3 2810 1780 NJ 1780 3990
-preplace netloc adc|io_in_sync_1 1 0 1 220
-preplace netloc adc|Net2 1 0 1 N
-preplace netloc debug_ctrl|axi_gpio_0_gpio2_io_o 1 1 1 5110
-preplace netloc core|probe26_1 1 0 7 NJ 2750 NJ 2750 NJ 2750 NJ 2750 NJ 2750 NJ 2750 4000
-preplace netloc adc|Net3 1 0 1 230
-preplace netloc ad_1 1 0 1 NJ
-preplace netloc axis1_1 1 2 1 N
-preplace netloc core|clk_dynamic_clk_out_200M 1 6 2 3820 2580 NJ
-preplace netloc dac|rst_ps7_0_50M_peripheral_aresetn 1 0 3 NJ 1870 5060 1810 NJ
-preplace netloc adc_axis2 1 1 1 N
-preplace netloc core|reset_dynamic_peripheral_aresetn 1 7 1 4360
-preplace netloc adc|adc_axis_0_axis 1 4 1 N
-preplace netloc adc|ad_1 1 0 3 210 2240 NJ 2240 730J
-preplace netloc dac|xlslice_reciever_out_7_Dout 1 0 3 NJ 1890 NJ 1890 5340
-preplace netloc debug_ctrl|xlslice_duc_sync_6_Dout 1 2 1 NJ
-preplace netloc dac|dac_axis_0_da_out 1 0 5 4840 2070 NJ 2070 5350 2070 5650 1710 NJ
-preplace netloc xlslice_duc_sync_6_Dout 1 2 2 4670 10 6060
-preplace netloc adc|mux_reciever_in_data_out 1 3 2 990 2630 NJ
-preplace netloc core|processing_system7_0_DDR 1 6 2 NJ 1440 NJ
-preplace netloc core|s2mm_prmry_reset_out_n 1 4 3 2830J 2280 3230J 2320 3870J
-preplace netloc core|mux_dac_fifo_reset1_data_out 1 2 5 2090 2340 NJ 2340 NJ 2340 NJ 2340 3850
-preplace netloc core|axis_data_fifo_adc_almost_empty 1 4 3 2890 1790 NJ 1790 3790
-preplace netloc core|xlconstant_one_dout 1 1 4 1800 2480 NJ 2480 NJ 2480 NJ
-preplace netloc div_1 1 0 4 50 2660 1410 2860 4560J 2110 6080
-preplace netloc core|S_AXIS_1 1 0 7 NJ 2540 NJ 2540 2080 2570 NJ 2570 NJ 2570 NJ 2570 3840J
-preplace netloc debug_ctrl|xlslice_dac_fifo_reset_11_Dout 1 2 1 NJ
-preplace netloc dac|xlslice_duc_sync_6_Dout 1 0 2 NJ 1850 5040
-preplace netloc core|ps7_0_axi_periph_M01_AXI 1 3 4 2430 1840 NJ 1840 NJ 1840 3780
-preplace netloc core|ps7_0_axi_periph_M00_AXI 1 6 2 3800 1480 NJ
-preplace netloc core|prog_empty_1 1 6 1 3810
-preplace netloc debug_ctrl|xlslice_clk_psclk_3_Dout 1 2 1 NJ
-preplace netloc core|psen_1 1 0 7 NJ 2610 NJ 2610 NJ 2610 NJ 2610 NJ 2610 3280 2540 3930J
-preplace netloc core|probe10_1 1 0 7 NJ 2730 NJ 2730 NJ 2730 NJ 2730 NJ 2730 NJ 2730 3970
-preplace netloc clk_wiz_0_clk_out1 1 0 4 20 2830 NJ 2830 4610 2970 NJ
-preplace netloc debug_ctrl_Dout14 1 1 3 1500 2870 4580J 2120 6060
-preplace netloc debug_ctrl|xlslice_clk_psincdec_5_Dout 1 2 1 NJ
-preplace netloc core|rst_ps7_0_50M_peripheral_aresetn 1 1 7 1820 2390 NJ 2390 2430 2410 2890 2560 3210 2290 3900 2590 4350J
-preplace netloc adc|xlslice_reciever_in_10_Dout 1 0 3 NJ 2600 NJ 2600 730
-preplace netloc core|clk_dynamic_locked 1 6 1 3990
-preplace netloc core|prog_full_1 1 6 1 3860
-preplace netloc core|mm2s_prmry_reset_out_n 1 4 3 2850J 2270 3250J 2310 3770J
-preplace netloc core|psdone 1 6 1 3940
-preplace netloc core|axi_dma_0_s2mm_introut 1 4 3 2820 1960 3280J 2140 3830J
-preplace netloc adc|xlconcat_0_dout 1 2 1 N
-preplace netloc core|clk_pl_50M_1 1 0 6 NJ 2570 NJ 2570 2070J 2580 NJ 2580 2830J 2590 3260
-preplace netloc adc|xlconstant_0_dout 1 1 1 NJ
-preplace netloc core|clk_static_locked 1 5 2 3290 1760 3770
-preplace netloc core|axi_interconnect_0_M00_AXI 1 5 1 3190
-levelinfo -pg 1 0 250 1720 4880 6190 -top 0 -bot 2990
-levelinfo -hier adc * 390 640 850 1110 *
-levelinfo -hier core * 1720 1940 2250 2620 3040 3530 4180 *
-levelinfo -hier dac * 4940 5200 5500 5780 *
-levelinfo -hier debug_ctrl * 4960 5210 *
+preplace netloc dac|xlslice_reciever_out_7_Dout 1 0 3 4820J 1882 NJ 1882 5330
+preplace netloc processing_system7_0_FIXED_IO 1 2 2 NJ 1170 6110J
+preplace netloc xlslice_reciever_out_7_Dout 1 2 2 1920 10 6070
+preplace netloc rst_ps7_0_50M_peripheral_aresetn 1 0 3 60 1872 NJ 1872 1910
+preplace netloc div_1 1 0 4 80 1390 380 1390 NJ 1390 6070
+preplace netloc clk_wiz_0_clk_out1 1 0 4 50 2460 NJ 2460 1900 2970 NJ
+preplace netloc dac|Conn1 1 0 3 NJ 1772 NJ 1772 N
+preplace netloc dac|DUCWrapper_0_io_out_dac 1 2 1 N
+preplace netloc ps7_0_axi_periph_M00_AXI 1 2 1 1870
+preplace netloc xlslice_reciever_in_10_Dout 1 0 4 40 1380 390 1380 NJ 1380 6080
+preplace netloc clk_pl_50M_1 1 0 2 30J 1130 NJ
+preplace netloc dac|dac_axis_0_axis_tvalid_output 1 3 1 N
+preplace netloc probe28_1 1 1 3 410 2102 NJ 2102 6020
+preplace netloc reset_dynamic_peripheral_aresetn 1 0 3 90 1882 NJ 1882 1870
+preplace netloc mux_0_data_out 1 1 3 400 2092 NJ 2092 6120
+preplace netloc debug_ctrl_Dout1 1 1 3 390 330 NJ 330 6060
+levelinfo -pg 1 0 250 1720 4880 6200 -top 0 -bot 3310
+levelinfo -hier dac * 4930 5190 5490 5770 *
 "
 }
 {

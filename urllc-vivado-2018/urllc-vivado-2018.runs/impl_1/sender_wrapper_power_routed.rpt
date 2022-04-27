@@ -1,7 +1,7 @@
 Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version     : Vivado v.2018.3 (win64) Build 2405991 Thu Dec  6 23:38:27 MST 2018
-| Date             : Tue Apr 26 10:22:49 2022
+| Date             : Wed Apr 27 16:17:36 2022
 | Host             : Chiro running 64-bit major release  (build 9200)
 | Command          : report_power -file sender_wrapper_power_routed.rpt -pb sender_wrapper_power_summary_routed.pb -rpx sender_wrapper_power_routed.rpx
 | Design           : sender_wrapper
@@ -30,10 +30,10 @@ Table of Contents
 ----------
 
 +--------------------------+--------------+
-| Total On-Chip Power (W)  | 1.728        |
+| Total On-Chip Power (W)  | 1.729        |
 | Design Power Budget (W)  | Unspecified* |
 | Power Budget Margin (W)  | NA           |
-| Dynamic (W)              | 1.578        |
+| Dynamic (W)              | 1.579        |
 | Device Static (W)        | 0.150        |
 | Effective TJA (C/W)      | 11.5         |
 | Max Ambient (C)          | 65.1         |
@@ -62,12 +62,12 @@ Table of Contents
 |   F7/F8 Muxes            |    <0.001 |      212 |     53200 |            0.40 |
 |   Others                 |     0.000 |     1935 |       --- |             --- |
 | Signals                  |     0.006 |    16105 |       --- |             --- |
-| Block RAM                |     0.019 |     63.5 |       140 |           45.36 |
+| Block RAM                |     0.020 |     63.5 |       140 |           45.36 |
 | MMCM                     |     0.229 |        2 |         4 |           50.00 |
-| I/O                      |     0.014 |       19 |       125 |           15.20 |
+| I/O                      |     0.015 |       19 |       125 |           15.20 |
 | PS7                      |     1.277 |        1 |       --- |             --- |
 | Static Power             |     0.150 |          |           |                 |
-| Total                    |     1.728 |          |           |                 |
+| Total                    |     1.729 |          |           |                 |
 +--------------------------+-----------+----------+-----------+-----------------+
 
 
@@ -158,7 +158,7 @@ Table of Contents
 +----------------------------+-----------+
 | Name                       | Power (W) |
 +----------------------------+-----------+
-| sender_wrapper             |     1.578 |
+| sender_wrapper             |     1.579 |
 |   dbg_hub                  |     0.002 |
 |     inst                   |     0.002 |
 |       BSCANID.u_xsdbm_id   |     0.002 |
