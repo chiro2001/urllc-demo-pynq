@@ -184,15 +184,25 @@ void CounterHandler(void *InstancePtr) {
   // while ((XAxiDma_Busy(&AxiDma, XAXIDMA_DEVICE_TO_DMA)) ||
   //        (XAxiDma_Busy(&AxiDma, XAXIDMA_DMA_TO_DEVICE)))
   //   ;
-  XAxiDma_SimpleTransfer(&AxiDma, (UINTPTR)dst, FIFO_SIZE,
+  XAxiDma_SimpleTransfer(&AxiDma, (UINTPTR)dst, targetSize,  // FIFO_SIZE,
                          XAXIDMA_DEVICE_TO_DMA);
-  XAxiDma_SimpleTransfer(&AxiDma, (UINTPTR)src, targetSize,
-                         XAXIDMA_DMA_TO_DEVICE);
-  //ClearDebugValue();
-  // // 等待数据同步
-  while ((XAxiDma_Busy(&AxiDma, XAXIDMA_DEVICE_TO_DMA)) ||
-         (XAxiDma_Busy(&AxiDma, XAXIDMA_DMA_TO_DEVICE)))
+  int len = XAxiDma_ReadReg(AxiDma.RegBase, 0x58);
+  xil_printf("read len = %d\r\n", len);
+  // XAxiDma_SimpleTransfer(&AxiDma, (UINTPTR)src, targetSize,
+  //                        XAXIDMA_DMA_TO_DEVICE);
+  // ClearDebugValue();
+  //  // 等待数据同步
+  //  while ((XAxiDma_Busy(&AxiDma, XAXIDMA_DEVICE_TO_DMA)) ||
+  //           (XAxiDma_Busy(&AxiDma, XAXIDMA_DMA_TO_DEVICE)))
+  //      ;
+  SmallDelay();
+  while (XAxiDma_Busy(&AxiDma, XAXIDMA_DEVICE_TO_DMA))
     ;
+  // XAxiDma_SimpleTransfer(&AxiDma, (UINTPTR)src, targetSize,
+  //                       XAXIDMA_DMA_TO_DEVICE);
+  // while (XAxiDma_Busy(&AxiDma, XAXIDMA_DMA_TO_DEVICE))
+  //     ;
+
   // if (!intrPassed)
   Log("Send Done (in CounterHandler) !");
   intrPassed = true;
@@ -202,7 +212,7 @@ void CounterHandler(void *InstancePtr) {
   for (size_t i = 0; i < targetSize; i += 8) {
     uint8_t val = (uint8_t)(dst[i] & 0xFF);
     for (size_t k = 0; k < 8; k++) {
-      src[i + k] = (((val & (1 << k)) == 0) ? 0 : 1) + 0x55;
+      src[i + k] = (((val & (1 << k)) == 0) ? 0 : 1) + 0xaa;
     }
   }
   intrFlag = false;
@@ -388,8 +398,8 @@ void BigDelay() {
   // uint64_t i = 0xfffff * 4;
   uint64_t i = 1;
   while (i--) {
-	  Log("S");
-	  SmallDelay();
+    Log("S");
+    SmallDelay();
   }
 }
 

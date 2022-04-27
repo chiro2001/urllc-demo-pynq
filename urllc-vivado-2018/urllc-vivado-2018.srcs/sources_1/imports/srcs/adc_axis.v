@@ -16,7 +16,8 @@ module adc_axis #(parameter N = 8)
     assign axis_tvalid = vld;
     assign axis_tdata  = ad;
     // 每次传输一个byte
-    assign axis_tlast = vld;
+    // 如果这边输入 tlast = 1，那么 DMA 也会停止传输
+    assign axis_tlast = 0;
     always @ (posedge clk or negedge resetn) begin
         if (~resetn) begin
             cnt <= 8'b0;

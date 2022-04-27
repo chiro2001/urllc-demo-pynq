@@ -14,5 +14,4 @@ ps7_post_config
 targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent JTAG-SMT2 210251A08870"} -index 0
 dow D:/Programs/urllc-demo-pynq/urllc-vivado-2018/urllc-vivado-2018.sdk/sender/Debug/sender.elf
 configparams force-mem-access 0
-targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent JTAG-SMT2 210251A08870"} -index 0
-con
+bpadd -addr &main

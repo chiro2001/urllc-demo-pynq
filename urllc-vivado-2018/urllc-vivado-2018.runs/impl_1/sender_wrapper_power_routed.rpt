@@ -1,7 +1,7 @@
 Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version     : Vivado v.2018.3 (win64) Build 2405991 Thu Dec  6 23:38:27 MST 2018
-| Date             : Wed Apr 27 16:17:36 2022
+| Date             : Wed Apr 27 17:47:05 2022
 | Host             : Chiro running 64-bit major release  (build 9200)
 | Command          : report_power -file sender_wrapper_power_routed.rpt -pb sender_wrapper_power_summary_routed.pb -rpx sender_wrapper_power_routed.rpx
 | Design           : sender_wrapper
@@ -33,7 +33,7 @@ Table of Contents
 | Total On-Chip Power (W)  | 1.729        |
 | Design Power Budget (W)  | Unspecified* |
 | Power Budget Margin (W)  | NA           |
-| Dynamic (W)              | 1.579        |
+| Dynamic (W)              | 1.578        |
 | Device Static (W)        | 0.150        |
 | Effective TJA (C/W)      | 11.5         |
 | Max Ambient (C)          | 65.1         |
@@ -52,16 +52,16 @@ Table of Contents
 +--------------------------+-----------+----------+-----------+-----------------+
 | On-Chip                  | Power (W) | Used     | Available | Utilization (%) |
 +--------------------------+-----------+----------+-----------+-----------------+
-| Clocks                   |     0.028 |        8 |       --- |             --- |
-| Slice Logic              |     0.004 |    25218 |       --- |             --- |
-|   LUT as Logic           |     0.004 |     7239 |     53200 |           13.61 |
+| Clocks                   |     0.027 |        8 |       --- |             --- |
+| Slice Logic              |     0.004 |    25219 |       --- |             --- |
+|   LUT as Logic           |     0.004 |     7244 |     53200 |           13.62 |
 |   CARRY4                 |    <0.001 |      599 |     13300 |            4.50 |
 |   Register               |    <0.001 |    11073 |    106400 |           10.41 |
 |   LUT as Distributed RAM |    <0.001 |      174 |     17400 |            1.00 |
 |   LUT as Shift Register  |    <0.001 |     1462 |     17400 |            8.40 |
 |   F7/F8 Muxes            |    <0.001 |      212 |     53200 |            0.40 |
-|   Others                 |     0.000 |     1935 |       --- |             --- |
-| Signals                  |     0.006 |    16105 |       --- |             --- |
+|   Others                 |     0.000 |     1936 |       --- |             --- |
+| Signals                  |     0.006 |    16119 |       --- |             --- |
 | Block RAM                |     0.020 |     63.5 |       140 |           45.36 |
 | MMCM                     |     0.229 |        2 |         4 |           50.00 |
 | I/O                      |     0.015 |       19 |       125 |           15.20 |
@@ -158,11 +158,11 @@ Table of Contents
 +----------------------------+-----------+
 | Name                       | Power (W) |
 +----------------------------+-----------+
-| sender_wrapper             |     1.579 |
+| sender_wrapper             |     1.578 |
 |   dbg_hub                  |     0.002 |
 |     inst                   |     0.002 |
 |       BSCANID.u_xsdbm_id   |     0.002 |
-|   urllc_fifo_core_i        |     1.562 |
+|   urllc_fifo_core_i        |     1.561 |
 |     adc                    |     0.002 |
 |       DDCWrapper_0         |     0.002 |
 |     core                   |     1.558 |
@@ -174,7 +174,7 @@ Table of Contents
 |       clk_static           |     0.123 |
 |       processing_system7_0 |     1.278 |
 |       ps7_0_axi_periph     |     0.003 |
-|       system_ila_dma       |     0.037 |
+|       system_ila_dma       |     0.036 |
 +----------------------------+-----------+
 
 

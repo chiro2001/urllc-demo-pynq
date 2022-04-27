@@ -1,7 +1,7 @@
 -- Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 -- --------------------------------------------------------------------------------
 -- Tool Version: Vivado v.2018.3 (win64) Build 2405991 Thu Dec  6 23:38:27 MST 2018
--- Date        : Mon Apr 25 16:40:51 2022
+-- Date        : Wed Apr 27 17:41:37 2022
 -- Host        : Chiro running 64-bit major release  (build 9200)
 -- Command     : write_vhdl -force -mode funcsim
 --               D:/Programs/urllc-demo-pynq/urllc-vivado-2018/urllc-vivado-2018.srcs/sources_1/bd/urllc_fifo_core/ip/urllc_fifo_core_adc_axis_0_0/urllc_fifo_core_adc_axis_0_0_sim_netlist.vhdl
@@ -17,7 +17,7 @@ use UNISIM.VCOMPONENTS.ALL;
 entity urllc_fifo_core_adc_axis_0_0_adc_axis is
   port (
     axis_tdata : out STD_LOGIC_VECTOR ( 7 downto 0 );
-    axis_tlast : out STD_LOGIC;
+    axis_tvalid : out STD_LOGIC;
     ad_in : in STD_LOGIC_VECTOR ( 7 downto 0 );
     div : in STD_LOGIC_VECTOR ( 7 downto 0 );
     clk : in STD_LOGIC;
@@ -580,7 +580,7 @@ vld_reg: unisim.vcomponents.FDCE
       CE => '1',
       CLR => \ad[7]_i_3_n_0\,
       D => vld_i_1_n_0,
-      Q => axis_tlast
+      Q => axis_tvalid
     );
 end STRUCTURE;
 library IEEE;
@@ -611,7 +611,7 @@ entity urllc_fifo_core_adc_axis_0_0 is
 end urllc_fifo_core_adc_axis_0_0;
 
 architecture STRUCTURE of urllc_fifo_core_adc_axis_0_0 is
-  signal \^axis_tlast\ : STD_LOGIC;
+  signal \<const0>\ : STD_LOGIC;
   attribute X_INTERFACE_INFO : string;
   attribute X_INTERFACE_INFO of axis_tlast : signal is "xilinx.com:interface:axis:1.0 axis TLAST";
   attribute X_INTERFACE_INFO of axis_tready : signal is "xilinx.com:interface:axis:1.0 axis TREADY";
@@ -624,13 +624,16 @@ architecture STRUCTURE of urllc_fifo_core_adc_axis_0_0 is
   attribute X_INTERFACE_PARAMETER of resetn : signal is "XIL_INTERFACENAME resetn, POLARITY ACTIVE_LOW, INSERT_VIP 0";
   attribute X_INTERFACE_INFO of axis_tdata : signal is "xilinx.com:interface:axis:1.0 axis TDATA";
 begin
-  axis_tlast <= \^axis_tlast\;
-  axis_tvalid <= \^axis_tlast\;
+  axis_tlast <= \<const0>\;
+GND: unisim.vcomponents.GND
+     port map (
+      G => \<const0>\
+    );
 inst: entity work.urllc_fifo_core_adc_axis_0_0_adc_axis
      port map (
       ad_in(7 downto 0) => ad_in(7 downto 0),
       axis_tdata(7 downto 0) => axis_tdata(7 downto 0),
-      axis_tlast => \^axis_tlast\,
+      axis_tvalid => axis_tvalid,
       clk => clk,
       div(7 downto 0) => div(7 downto 0),
       resetn => resetn

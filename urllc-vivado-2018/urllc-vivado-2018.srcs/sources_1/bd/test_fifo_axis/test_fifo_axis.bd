@@ -499,14 +499,6 @@
                 "mode": "Master",
                 "vlnv": "xilinx.com:interface:axis_rtl:1.0",
                 "parameters": {
-                  "CLK_DOMAIN": {
-                    "value": "test_fifo_axis_clk_0",
-                    "value_src": "default_prop"
-                  },
-                  "FREQ_HZ": {
-                    "value": "60000000",
-                    "value_src": "user_prop"
-                  },
                   "HAS_TKEEP": {
                     "value": "0",
                     "value_src": "constant"
@@ -522,10 +514,6 @@
                   "HAS_TSTRB": {
                     "value": "0",
                     "value_src": "constant"
-                  },
-                  "PHASE": {
-                    "value": "0.0",
-                    "value_src": "user_prop"
                   },
                   "TDATA_NUM_BYTES": {
                     "value": "1",
@@ -649,8 +637,8 @@
           "mux_reciever_in_data_out": {
             "ports": [
               "mux_reciever_in/data_out",
-              "adc_axis_0/ad_in",
-              "data_out"
+              "data_out",
+              "adc_axis_0/ad_in"
             ]
           },
           "xlconcat_0_dout": {

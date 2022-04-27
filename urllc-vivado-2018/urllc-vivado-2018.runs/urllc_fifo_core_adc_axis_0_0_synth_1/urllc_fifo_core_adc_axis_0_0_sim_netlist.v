@@ -1,7 +1,7 @@
 // Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 // --------------------------------------------------------------------------------
 // Tool Version: Vivado v.2018.3 (win64) Build 2405991 Thu Dec  6 23:38:27 MST 2018
-// Date        : Mon Apr 25 16:40:50 2022
+// Date        : Wed Apr 27 17:41:36 2022
 // Host        : Chiro running 64-bit major release  (build 9200)
 // Command     : write_verilog -force -mode funcsim -rename_top decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix -prefix
 //               decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_ urllc_fifo_core_adc_axis_0_0_sim_netlist.v
@@ -14,13 +14,13 @@
 
 module decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_adc_axis
    (axis_tdata,
-    axis_tlast,
+    axis_tvalid,
     ad_in,
     div,
     clk,
     resetn);
   output [7:0]axis_tdata;
-  output axis_tlast;
+  output axis_tvalid;
   input [7:0]ad_in;
   input [7:0]div;
   input clk;
@@ -46,7 +46,7 @@ module decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_adc_axis
   wire \ad[7]_i_9_n_0 ;
   wire [7:0]ad_in;
   wire [7:0]axis_tdata;
-  wire axis_tlast;
+  wire axis_tvalid;
   wire clk;
   wire [7:0]cnt;
   wire [7:7]cnt0;
@@ -451,7 +451,7 @@ module decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_adc_axis
         .CE(1'b1),
         .CLR(\ad[7]_i_3_n_0 ),
         .D(vld_i_1_n_0),
-        .Q(axis_tlast));
+        .Q(axis_tvalid));
 endmodule
 
 (* CHECK_LICENSE_TYPE = "urllc_fifo_core_adc_axis_0_0,adc_axis,{}" *) (* DowngradeIPIdentifiedWarnings = "yes" *) (* IP_DEFINITION_SOURCE = "module_ref" *) 
@@ -475,18 +475,21 @@ module decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix
   (* X_INTERFACE_INFO = "xilinx.com:interface:axis:1.0 axis TLAST" *) output axis_tlast;
   (* X_INTERFACE_INFO = "xilinx.com:interface:axis:1.0 axis TREADY" *) (* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME axis, TDATA_NUM_BYTES 1, TDEST_WIDTH 0, TID_WIDTH 0, TUSER_WIDTH 0, HAS_TREADY 1, HAS_TSTRB 0, HAS_TKEEP 0, HAS_TLAST 1, FREQ_HZ 60000000, PHASE 0.0, CLK_DOMAIN /core/clk_static_clk_out1, LAYERED_METADATA undef, INSERT_VIP 0" *) input axis_tready;
 
+  wire \<const0> ;
   wire [7:0]ad_in;
   wire [7:0]axis_tdata;
-  wire axis_tlast;
+  wire axis_tvalid;
   wire clk;
   wire [7:0]div;
   wire resetn;
 
-  assign axis_tvalid = axis_tlast;
+  assign axis_tlast = \<const0> ;
+  GND GND
+       (.G(\<const0> ));
   decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_adc_axis inst
        (.ad_in(ad_in),
         .axis_tdata(axis_tdata),
-        .axis_tlast(axis_tlast),
+        .axis_tvalid(axis_tvalid),
         .clk(clk),
         .div(div),
         .resetn(resetn));
