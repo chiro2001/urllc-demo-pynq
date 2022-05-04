@@ -1,10 +1,10 @@
 // Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 // --------------------------------------------------------------------------------
 // Tool Version: Vivado v.2018.3 (win64) Build 2405991 Thu Dec  6 23:38:27 MST 2018
-// Date        : Wed Feb  9 14:18:33 2022
+// Date        : Tue May  3 23:01:55 2022
 // Host        : Chiro running 64-bit major release  (build 9200)
 // Command     : write_verilog -force -mode funcsim
-//               d:/Programs/urllc-demo-pynq/urllc-vivado-2018/urllc-vivado-2018.srcs/sources_1/bd/urllc_fifo_core/ip/urllc_fifo_core_dac_axis_0_0/urllc_fifo_core_dac_axis_0_0_sim_netlist.v
+//               D:/Programs/urllc-demo-pynq/urllc-vivado-2018/urllc-vivado-2018.srcs/sources_1/bd/urllc_fifo_core/ip/urllc_fifo_core_dac_axis_0_0/urllc_fifo_core_dac_axis_0_0_sim_netlist.v
 // Design      : urllc_fifo_core_dac_axis_0_0
 // Purpose     : This verilog netlist is a functional simulation representation of the design and should not be modified
 //               or synthesized. This netlist cannot be used for SDF annotated simulation.
@@ -23,7 +23,8 @@ module urllc_fifo_core_dac_axis_0_0
     axis_tdata,
     axis_tvalid,
     axis_tlast,
-    axis_tready);
+    axis_tready,
+    axis_tvalid_output);
   (* X_INTERFACE_INFO = "xilinx.com:signal:clock:1.0 clk CLK" *) (* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME clk, ASSOCIATED_BUSIF axis, ASSOCIATED_RESET resetn, FREQ_HZ 60000000, PHASE 0.0, CLK_DOMAIN /core/clk_static_clk_out1, INSERT_VIP 0" *) input clk;
   (* X_INTERFACE_INFO = "xilinx.com:signal:reset:1.0 resetn RST" *) (* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME resetn, POLARITY ACTIVE_LOW, INSERT_VIP 0" *) input resetn;
   output [7:0]da_out;
@@ -32,14 +33,17 @@ module urllc_fifo_core_dac_axis_0_0
   (* X_INTERFACE_INFO = "xilinx.com:interface:axis:1.0 axis TVALID" *) input axis_tvalid;
   (* X_INTERFACE_INFO = "xilinx.com:interface:axis:1.0 axis TLAST" *) input axis_tlast;
   (* X_INTERFACE_INFO = "xilinx.com:interface:axis:1.0 axis TREADY" *) (* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME axis, TDATA_NUM_BYTES 1, TDEST_WIDTH 0, TID_WIDTH 0, TUSER_WIDTH 0, HAS_TREADY 1, HAS_TSTRB 0, HAS_TKEEP 0, HAS_TLAST 1, FREQ_HZ 60000000, PHASE 0.0, CLK_DOMAIN /core/clk_static_clk_out1, LAYERED_METADATA undef, INSERT_VIP 0" *) output axis_tready;
+  output axis_tvalid_output;
 
   wire [7:0]axis_tdata;
   wire axis_tready;
+  wire axis_tvalid;
   wire clk;
   wire [7:0]da_out;
   wire [7:0]div;
   wire resetn;
 
+  assign axis_tvalid_output = axis_tvalid;
   urllc_fifo_core_dac_axis_0_0_dac_axis inst
        (.axis_tdata(axis_tdata),
         .axis_tready(axis_tready),

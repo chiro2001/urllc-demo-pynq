@@ -1,0 +1,630 @@
+﻿<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
+<EDKSYSTEM EDWVERSION="1.2" TIMESTAMP="Wed May  4 16:13:20 2022" VIVADOVERSION="2018.3">
+
+  <SYSTEMINFO ARCH="zynq" DEVICE="7z020" NAME="test_fifo_axis" PACKAGE="clg400" SPEEDGRADE="-2"/>
+
+  <EXTERNALPORTS>
+    <PORT CLKFREQUENCY="60000000" DIR="I" NAME="clk" SIGIS="clk" SIGNAME="External_Ports_clk">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="adc_adc_axis_0" PORT="clk"/>
+        <CONNECTION INSTANCE="dac_DUCWrapper_0" PORT="io_clock"/>
+        <CONNECTION INSTANCE="dac_dac_axis_0" PORT="clk"/>
+        <CONNECTION INSTANCE="axis_data_fifo_inout" PORT="s_axis_aclk"/>
+        <CONNECTION INSTANCE="adc_DDCWrapper_0" PORT="io_clock"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="I" NAME="resetn" SIGIS="rst" SIGNAME="External_Ports_resetn">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="adc_adc_axis_0" PORT="resetn"/>
+        <CONNECTION INSTANCE="dac_DUCWrapper_0" PORT="io_resetN"/>
+        <CONNECTION INSTANCE="dac_dac_axis_0" PORT="resetn"/>
+        <CONNECTION INSTANCE="axis_data_fifo_inout" PORT="s_axis_aresetn"/>
+        <CONNECTION INSTANCE="adc_DDCWrapper_0" PORT="io_resetN"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="I" NAME="router_adc" SIGIS="undef" SIGNAME="External_Ports_router_adc">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="adc_mux_reciever_in" PORT="router"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="I" NAME="io_in_sync_dac" SIGIS="undef" SIGNAME="External_Ports_io_in_sync_dac">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="dac_DUCWrapper_0" PORT="io_in_sync"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="I" LEFT="7" NAME="div_adc" RIGHT="0" SIGIS="undef" SIGNAME="External_Ports_div_adc">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="adc_adc_axis_0" PORT="div"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="I" NAME="io_in_sync_adc" SIGIS="undef" SIGNAME="External_Ports_io_in_sync_adc">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="adc_DDCWrapper_0" PORT="io_in_sync"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="I" NAME="router_dac" SIGIS="undef" SIGNAME="External_Ports_router_dac">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="dac_mux_reciever_out" PORT="router"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="I" LEFT="7" NAME="ad" RIGHT="0" SIGIS="undef" SIGNAME="External_Ports_ad">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="adc_DDCWrapper_0" PORT="io_in_data"/>
+        <CONNECTION INSTANCE="adc_mux_reciever_in" PORT="sel1"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="I" LEFT="7" NAME="div_dac" RIGHT="0" SIGIS="undef" SIGNAME="External_Ports_div_dac">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="dac_dac_axis_0" PORT="div"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="O" LEFT="7" NAME="da" RIGHT="0" SIGIS="undef" SIGNAME="dac_mux_reciever_out_data_out">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="dac_mux_reciever_out" PORT="data_out"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="O" LEFT="7" NAME="data_out_adc" RIGHT="0" SIGIS="undef" SIGNAME="adc_mux_reciever_in_data_out">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="adc_mux_reciever_in" PORT="data_out"/>
+      </CONNECTIONS>
+    </PORT>
+  </EXTERNALPORTS>
+
+  <EXTERNALINTERFACES/>
+
+  <MODULES>
+    <MODULE COREREVISION="1" FULLNAME="/adc/DDCWrapper_0" HWVERSION="1.0" INSTANCE="adc_DDCWrapper_0" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="DDCWrapper" VLNV="xilinx.com:module_ref:DDCWrapper:1.0">
+      <DOCUMENTS/>
+      <PARAMETERS>
+        <PARAMETER NAME="Component_Name" VALUE="test_fifo_axis_DDCWrapper_0_0"/>
+        <PARAMETER NAME="EDK_IPTYPE" VALUE="PERIPHERAL"/>
+      </PARAMETERS>
+      <PORTS>
+        <PORT DIR="I" LEFT="7" NAME="io_in_data" RIGHT="0" SIGIS="undef" SIGNAME="External_Ports_ad">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External_Ports" PORT="ad"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="io_in_sync" SIGIS="undef" SIGNAME="External_Ports_io_in_sync_adc">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External_Ports" PORT="io_in_sync_adc"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" NAME="io_out_data" SIGIS="undef" SIGNAME="adc_DDCWrapper_0_io_out_data">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="adc_xlconcat_0" PORT="In0"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" NAME="io_out_update" SIGIS="undef"/>
+        <PORT DIR="O" LEFT="7" NAME="io_out_readData" RIGHT="0" SIGIS="undef"/>
+        <PORT DIR="O" LEFT="7" NAME="io_out_ave" RIGHT="0" SIGIS="undef"/>
+        <PORT CLKFREQUENCY="60000000" DIR="I" NAME="io_clock" SIGIS="clk" SIGNAME="External_Ports_clk">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External_Ports" PORT="clk"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="io_resetN" SIGIS="rst" SIGNAME="External_Ports_resetn">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External_Ports" PORT="resetn"/>
+          </CONNECTIONS>
+        </PORT>
+      </PORTS>
+      <BUSINTERFACES/>
+    </MODULE>
+    <MODULE COREREVISION="1" FULLNAME="/adc/adc_axis_0" HWVERSION="1.0" INSTANCE="adc_adc_axis_0" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="adc_axis" VLNV="xilinx.com:module_ref:adc_axis:1.0">
+      <DOCUMENTS/>
+      <PARAMETERS>
+        <PARAMETER NAME="N" VALUE="8"/>
+        <PARAMETER NAME="Component_Name" VALUE="test_fifo_axis_adc_axis_0_0"/>
+        <PARAMETER NAME="EDK_IPTYPE" VALUE="PERIPHERAL"/>
+      </PARAMETERS>
+      <PORTS>
+        <PORT CLKFREQUENCY="60000000" DIR="I" NAME="clk" SIGIS="clk" SIGNAME="External_Ports_clk">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External_Ports" PORT="clk"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="resetn" SIGIS="rst" SIGNAME="External_Ports_resetn">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External_Ports" PORT="resetn"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="7" NAME="ad_in" RIGHT="0" SIGIS="undef" SIGNAME="adc_mux_reciever_in_data_out">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="adc_mux_reciever_in" PORT="data_out"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="7" NAME="div" RIGHT="0" SIGIS="undef" SIGNAME="External_Ports_div_adc">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External_Ports" PORT="div_adc"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" LEFT="7" NAME="axis_tdata" RIGHT="0" SIGIS="undef" SIGNAME="adc_adc_axis_0_axis_tdata">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="axis_data_fifo_inout" PORT="s_axis_tdata"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" NAME="axis_tvalid" SIGIS="undef" SIGNAME="adc_adc_axis_0_axis_tvalid">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="axis_data_fifo_inout" PORT="s_axis_tvalid"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" NAME="axis_tlast" SIGIS="undef" SIGNAME="adc_adc_axis_0_axis_tlast">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="axis_data_fifo_inout" PORT="s_axis_tlast"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="axis_tready" SIGIS="undef" SIGNAME="adc_adc_axis_0_axis_tready">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="axis_data_fifo_inout" PORT="s_axis_tready"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="fifo_almost_full" SIGIS="undef" SIGNAME="axis_data_fifo_inout_prog_full">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="axis_data_fifo_inout" PORT="prog_full"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="fifo_almost_empty" SIGIS="undef" SIGNAME="axis_data_fifo_inout_prog_empty">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="axis_data_fifo_inout" PORT="prog_empty"/>
+          </CONNECTIONS>
+        </PORT>
+      </PORTS>
+      <BUSINTERFACES>
+        <BUSINTERFACE BUSNAME="adc_adc_axis_0_axis" NAME="axis" TYPE="INITIATOR" VLNV="xilinx.com:interface:axis:1.0">
+          <PARAMETER NAME="TDATA_NUM_BYTES" VALUE="1"/>
+          <PARAMETER NAME="TDEST_WIDTH" VALUE="0"/>
+          <PARAMETER NAME="TID_WIDTH" VALUE="0"/>
+          <PARAMETER NAME="TUSER_WIDTH" VALUE="0"/>
+          <PARAMETER NAME="HAS_TREADY" VALUE="1"/>
+          <PARAMETER NAME="HAS_TSTRB" VALUE="0"/>
+          <PARAMETER NAME="HAS_TKEEP" VALUE="0"/>
+          <PARAMETER NAME="HAS_TLAST" VALUE="1"/>
+          <PARAMETER NAME="FREQ_HZ" VALUE="60000000"/>
+          <PARAMETER NAME="PHASE" VALUE="0.0"/>
+          <PARAMETER NAME="CLK_DOMAIN" VALUE="test_fifo_axis_clk"/>
+          <PARAMETER NAME="LAYERED_METADATA" VALUE="undef"/>
+          <PARAMETER NAME="INSERT_VIP" VALUE="0"/>
+          <PORTMAPS>
+            <PORTMAP LOGICAL="TDATA" PHYSICAL="axis_tdata"/>
+            <PORTMAP LOGICAL="TLAST" PHYSICAL="axis_tlast"/>
+            <PORTMAP LOGICAL="TVALID" PHYSICAL="axis_tvalid"/>
+            <PORTMAP LOGICAL="TREADY" PHYSICAL="axis_tready"/>
+          </PORTMAPS>
+        </BUSINTERFACE>
+      </BUSINTERFACES>
+    </MODULE>
+    <MODULE COREREVISION="1" FULLNAME="/adc/mux_reciever_in" HWVERSION="1.0" INSTANCE="adc_mux_reciever_in" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="mux" VLNV="xilinx.com:module_ref:mux:1.0">
+      <DOCUMENTS/>
+      <PARAMETERS>
+        <PARAMETER NAME="N" VALUE="8"/>
+        <PARAMETER NAME="Component_Name" VALUE="test_fifo_axis_mux_reciever_in_0"/>
+        <PARAMETER NAME="EDK_IPTYPE" VALUE="PERIPHERAL"/>
+      </PARAMETERS>
+      <PORTS>
+        <PORT DIR="I" LEFT="7" NAME="sel1" RIGHT="0" SIGIS="undef" SIGNAME="External_Ports_ad">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External_Ports" PORT="ad"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="7" NAME="sel2" RIGHT="0" SIGIS="undef" SIGNAME="adc_xlconcat_0_dout">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="adc_xlconcat_0" PORT="dout"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" LEFT="7" NAME="data_out" RIGHT="0" SIGIS="undef" SIGNAME="adc_mux_reciever_in_data_out">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External_Ports" PORT="data_out_adc"/>
+            <CONNECTION INSTANCE="adc_adc_axis_0" PORT="ad_in"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="router" SIGIS="undef" SIGNAME="External_Ports_router_adc">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External_Ports" PORT="router_adc"/>
+          </CONNECTIONS>
+        </PORT>
+      </PORTS>
+      <BUSINTERFACES/>
+    </MODULE>
+    <MODULE COREREVISION="1" FULLNAME="/adc/xlconcat_0" HWVERSION="2.1" INSTANCE="adc_xlconcat_0" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="xlconcat" VLNV="xilinx.com:ip:xlconcat:2.1">
+      <DOCUMENTS/>
+      <PARAMETERS>
+        <PARAMETER NAME="IN0_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="IN1_WIDTH" VALUE="7"/>
+        <PARAMETER NAME="IN2_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="IN3_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="IN4_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="IN5_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="IN6_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="IN7_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="IN8_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="IN9_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="IN10_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="IN11_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="IN12_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="IN13_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="IN14_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="IN15_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="IN16_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="IN17_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="IN18_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="IN19_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="IN20_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="IN21_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="IN22_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="IN23_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="IN24_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="IN25_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="IN26_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="IN27_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="IN28_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="IN29_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="IN30_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="IN31_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="dout_width" VALUE="8"/>
+        <PARAMETER NAME="NUM_PORTS" VALUE="2"/>
+        <PARAMETER NAME="Component_Name" VALUE="test_fifo_axis_xlconcat_0_0"/>
+        <PARAMETER NAME="EDK_IPTYPE" VALUE="PERIPHERAL"/>
+      </PARAMETERS>
+      <PORTS>
+        <PORT DIR="I" LEFT="0" NAME="In0" RIGHT="0" SIGIS="undef" SIGNAME="adc_DDCWrapper_0_io_out_data">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="adc_DDCWrapper_0" PORT="io_out_data"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="6" NAME="In1" RIGHT="0" SIGIS="undef" SIGNAME="adc_xlconstant_0_dout">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="adc_xlconstant_0" PORT="dout"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" LEFT="7" NAME="dout" RIGHT="0" SIGIS="undef" SIGNAME="adc_xlconcat_0_dout">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="adc_mux_reciever_in" PORT="sel2"/>
+          </CONNECTIONS>
+        </PORT>
+      </PORTS>
+      <BUSINTERFACES/>
+    </MODULE>
+    <MODULE COREREVISION="5" FULLNAME="/adc/xlconstant_0" HWVERSION="1.1" INSTANCE="adc_xlconstant_0" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="xlconstant" VLNV="xilinx.com:ip:xlconstant:1.1">
+      <DOCUMENTS/>
+      <PARAMETERS>
+        <PARAMETER NAME="CONST_WIDTH" VALUE="7"/>
+        <PARAMETER NAME="CONST_VAL" VALUE="0x00"/>
+        <PARAMETER NAME="Component_Name" VALUE="test_fifo_axis_xlconstant_0_0"/>
+        <PARAMETER NAME="EDK_IPTYPE" VALUE="PERIPHERAL"/>
+      </PARAMETERS>
+      <PORTS>
+        <PORT DIR="O" LEFT="6" NAME="dout" RIGHT="0" SIGIS="undef" SIGNAME="adc_xlconstant_0_dout">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="adc_xlconcat_0" PORT="In1"/>
+          </CONNECTIONS>
+        </PORT>
+      </PORTS>
+      <BUSINTERFACES/>
+    </MODULE>
+    <MODULE COREREVISION="0" FULLNAME="/axis_data_fifo_inout" HWVERSION="2.0" INSTANCE="axis_data_fifo_inout" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="axis_data_fifo" VLNV="xilinx.com:ip:axis_data_fifo:2.0">
+      <DOCUMENTS>
+        <DOCUMENT SOURCE="https://www.xilinx.com/cgi-bin/docs/ipdoc?c=axis_data_fifo;v=v2_0;d=pg085-axi4stream-infrastructure.pdf"/>
+      </DOCUMENTS>
+      <PARAMETERS>
+        <PARAMETER NAME="C_FAMILY" VALUE="zynq"/>
+        <PARAMETER NAME="C_AXIS_TDATA_WIDTH" VALUE="8"/>
+        <PARAMETER NAME="C_AXIS_TID_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="C_AXIS_TDEST_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="C_AXIS_TUSER_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="C_AXIS_SIGNAL_SET" VALUE="0b00000000000000000000000000010011"/>
+        <PARAMETER NAME="C_FIFO_DEPTH" VALUE="16384"/>
+        <PARAMETER NAME="C_FIFO_MODE" VALUE="1"/>
+        <PARAMETER NAME="C_IS_ACLK_ASYNC" VALUE="0"/>
+        <PARAMETER NAME="C_SYNCHRONIZER_STAGE" VALUE="3"/>
+        <PARAMETER NAME="C_ACLKEN_CONV_MODE" VALUE="0"/>
+        <PARAMETER NAME="C_ECC_MODE" VALUE="0"/>
+        <PARAMETER NAME="C_FIFO_MEMORY_TYPE" VALUE="auto"/>
+        <PARAMETER NAME="C_USE_ADV_FEATURES" VALUE="826355777"/>
+        <PARAMETER NAME="C_PROG_EMPTY_THRESH" VALUE="5"/>
+        <PARAMETER NAME="C_PROG_FULL_THRESH" VALUE="2048"/>
+        <PARAMETER NAME="TDATA_NUM_BYTES" VALUE="1"/>
+        <PARAMETER NAME="TID_WIDTH" VALUE="0"/>
+        <PARAMETER NAME="TDEST_WIDTH" VALUE="0"/>
+        <PARAMETER NAME="TUSER_WIDTH" VALUE="0"/>
+        <PARAMETER NAME="FIFO_DEPTH" VALUE="16384"/>
+        <PARAMETER NAME="FIFO_MODE" VALUE="1"/>
+        <PARAMETER NAME="IS_ACLK_ASYNC" VALUE="0"/>
+        <PARAMETER NAME="ACLKEN_CONV_MODE" VALUE="0"/>
+        <PARAMETER NAME="HAS_TREADY" VALUE="1"/>
+        <PARAMETER NAME="HAS_TSTRB" VALUE="0"/>
+        <PARAMETER NAME="HAS_TKEEP" VALUE="0"/>
+        <PARAMETER NAME="HAS_TLAST" VALUE="1"/>
+        <PARAMETER NAME="SYNCHRONIZATION_STAGES" VALUE="3"/>
+        <PARAMETER NAME="HAS_WR_DATA_COUNT" VALUE="0"/>
+        <PARAMETER NAME="HAS_RD_DATA_COUNT" VALUE="0"/>
+        <PARAMETER NAME="HAS_AEMPTY" VALUE="1"/>
+        <PARAMETER NAME="HAS_PROG_EMPTY" VALUE="1"/>
+        <PARAMETER NAME="PROG_EMPTY_THRESH" VALUE="5"/>
+        <PARAMETER NAME="HAS_AFULL" VALUE="1"/>
+        <PARAMETER NAME="HAS_PROG_FULL" VALUE="1"/>
+        <PARAMETER NAME="PROG_FULL_THRESH" VALUE="2048"/>
+        <PARAMETER NAME="ENABLE_ECC" VALUE="0"/>
+        <PARAMETER NAME="HAS_ECC_ERR_INJECT" VALUE="0"/>
+        <PARAMETER NAME="FIFO_MEMORY_TYPE" VALUE="auto"/>
+        <PARAMETER NAME="Component_Name" VALUE="test_fifo_axis_axis_data_fifo_dac_0"/>
+        <PARAMETER NAME="EDK_IPTYPE" VALUE="PERIPHERAL"/>
+      </PARAMETERS>
+      <PORTS>
+        <PORT DIR="I" NAME="s_axis_aresetn" SIGIS="rst" SIGNAME="External_Ports_resetn">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External_Ports" PORT="resetn"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT CLKFREQUENCY="60000000" DIR="I" NAME="s_axis_aclk" SIGIS="clk" SIGNAME="External_Ports_clk">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External_Ports" PORT="clk"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="s_axis_tvalid" SIGIS="undef" SIGNAME="adc_adc_axis_0_axis_tvalid">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="adc_adc_axis_0" PORT="axis_tvalid"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" NAME="s_axis_tready" SIGIS="undef" SIGNAME="adc_adc_axis_0_axis_tready">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="adc_adc_axis_0" PORT="axis_tready"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="7" NAME="s_axis_tdata" RIGHT="0" SIGIS="undef" SIGNAME="adc_adc_axis_0_axis_tdata">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="adc_adc_axis_0" PORT="axis_tdata"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="s_axis_tlast" SIGIS="undef" SIGNAME="adc_adc_axis_0_axis_tlast">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="adc_adc_axis_0" PORT="axis_tlast"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" NAME="m_axis_tvalid" SIGIS="undef" SIGNAME="axis_data_fifo_inout_m_axis_tvalid">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="dac_dac_axis_0" PORT="axis_tvalid"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="m_axis_tready" SIGIS="undef" SIGNAME="axis_data_fifo_inout_m_axis_tready">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="dac_dac_axis_0" PORT="axis_tready"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" LEFT="7" NAME="m_axis_tdata" RIGHT="0" SIGIS="undef" SIGNAME="axis_data_fifo_inout_m_axis_tdata">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="dac_dac_axis_0" PORT="axis_tdata"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" NAME="m_axis_tlast" SIGIS="undef" SIGNAME="axis_data_fifo_inout_m_axis_tlast">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="dac_dac_axis_0" PORT="axis_tlast"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" NAME="almost_empty" SIGIS="undef"/>
+        <PORT DIR="O" NAME="prog_empty" SIGIS="undef" SIGNAME="axis_data_fifo_inout_prog_empty">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="adc_adc_axis_0" PORT="fifo_almost_empty"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" NAME="almost_full" SIGIS="undef"/>
+        <PORT DIR="O" NAME="prog_full" SIGIS="undef" SIGNAME="axis_data_fifo_inout_prog_full">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="adc_adc_axis_0" PORT="fifo_almost_full"/>
+          </CONNECTIONS>
+        </PORT>
+      </PORTS>
+      <BUSINTERFACES>
+        <BUSINTERFACE BUSNAME="adc_adc_axis_0_axis" NAME="S_AXIS" TYPE="TARGET" VLNV="xilinx.com:interface:axis:1.0">
+          <PARAMETER NAME="TDATA_NUM_BYTES" VALUE="1"/>
+          <PARAMETER NAME="TDEST_WIDTH" VALUE="0"/>
+          <PARAMETER NAME="TID_WIDTH" VALUE="0"/>
+          <PARAMETER NAME="TUSER_WIDTH" VALUE="0"/>
+          <PARAMETER NAME="HAS_TREADY" VALUE="1"/>
+          <PARAMETER NAME="HAS_TSTRB" VALUE="0"/>
+          <PARAMETER NAME="HAS_TKEEP" VALUE="0"/>
+          <PARAMETER NAME="HAS_TLAST" VALUE="1"/>
+          <PARAMETER NAME="FREQ_HZ" VALUE="60000000"/>
+          <PARAMETER NAME="PHASE" VALUE="0.0"/>
+          <PARAMETER NAME="CLK_DOMAIN" VALUE="test_fifo_axis_clk"/>
+          <PARAMETER NAME="LAYERED_METADATA" VALUE="undef"/>
+          <PARAMETER NAME="INSERT_VIP" VALUE="0"/>
+          <PORTMAPS>
+            <PORTMAP LOGICAL="TDATA" PHYSICAL="s_axis_tdata"/>
+            <PORTMAP LOGICAL="TLAST" PHYSICAL="s_axis_tlast"/>
+            <PORTMAP LOGICAL="TREADY" PHYSICAL="s_axis_tready"/>
+            <PORTMAP LOGICAL="TVALID" PHYSICAL="s_axis_tvalid"/>
+          </PORTMAPS>
+        </BUSINTERFACE>
+        <BUSINTERFACE BUSNAME="axis_data_fifo_inout_M_AXIS" NAME="M_AXIS" TYPE="INITIATOR" VLNV="xilinx.com:interface:axis:1.0">
+          <PARAMETER NAME="TDATA_NUM_BYTES" VALUE="1"/>
+          <PARAMETER NAME="TDEST_WIDTH" VALUE="0"/>
+          <PARAMETER NAME="TID_WIDTH" VALUE="0"/>
+          <PARAMETER NAME="TUSER_WIDTH" VALUE="0"/>
+          <PARAMETER NAME="HAS_TREADY" VALUE="1"/>
+          <PARAMETER NAME="HAS_TSTRB" VALUE="0"/>
+          <PARAMETER NAME="HAS_TKEEP" VALUE="0"/>
+          <PARAMETER NAME="HAS_TLAST" VALUE="1"/>
+          <PARAMETER NAME="FREQ_HZ" VALUE="60000000"/>
+          <PARAMETER NAME="PHASE" VALUE="0.0"/>
+          <PARAMETER NAME="CLK_DOMAIN" VALUE="test_fifo_axis_clk"/>
+          <PARAMETER NAME="LAYERED_METADATA" VALUE="undef"/>
+          <PARAMETER NAME="INSERT_VIP" VALUE="0"/>
+          <PORTMAPS>
+            <PORTMAP LOGICAL="TDATA" PHYSICAL="m_axis_tdata"/>
+            <PORTMAP LOGICAL="TLAST" PHYSICAL="m_axis_tlast"/>
+            <PORTMAP LOGICAL="TREADY" PHYSICAL="m_axis_tready"/>
+            <PORTMAP LOGICAL="TVALID" PHYSICAL="m_axis_tvalid"/>
+          </PORTMAPS>
+        </BUSINTERFACE>
+      </BUSINTERFACES>
+    </MODULE>
+    <MODULE COREREVISION="1" FULLNAME="/dac/DUCWrapper_0" HWVERSION="1.0" INSTANCE="dac_DUCWrapper_0" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="DUCWrapper" VLNV="xilinx.com:module_ref:DUCWrapper:1.0">
+      <DOCUMENTS/>
+      <PARAMETERS>
+        <PARAMETER NAME="Component_Name" VALUE="test_fifo_axis_DUCWrapper_0_0"/>
+        <PARAMETER NAME="EDK_IPTYPE" VALUE="PERIPHERAL"/>
+      </PARAMETERS>
+      <PORTS>
+        <PORT DIR="I" NAME="io_in_data" SIGIS="undef" SIGNAME="dac_xlslice_sender_Dout">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="dac_xlslice_sender" PORT="Dout"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="io_in_sync" SIGIS="undef" SIGNAME="External_Ports_io_in_sync_dac">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External_Ports" PORT="io_in_sync_dac"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" LEFT="7" NAME="io_out_dac" RIGHT="0" SIGIS="undef" SIGNAME="dac_DUCWrapper_0_io_out_dac">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="dac_mux_reciever_out" PORT="sel1"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" NAME="io_out_sync" SIGIS="undef"/>
+        <PORT CLKFREQUENCY="60000000" DIR="I" NAME="io_clock" SIGIS="clk" SIGNAME="External_Ports_clk">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External_Ports" PORT="clk"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="io_resetN" SIGIS="rst" SIGNAME="External_Ports_resetn">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External_Ports" PORT="resetn"/>
+          </CONNECTIONS>
+        </PORT>
+      </PORTS>
+      <BUSINTERFACES/>
+    </MODULE>
+    <MODULE COREREVISION="1" FULLNAME="/dac/dac_axis_0" HWVERSION="1.0" INSTANCE="dac_dac_axis_0" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="dac_axis" VLNV="xilinx.com:module_ref:dac_axis:1.0">
+      <DOCUMENTS/>
+      <PARAMETERS>
+        <PARAMETER NAME="N" VALUE="8"/>
+        <PARAMETER NAME="Component_Name" VALUE="test_fifo_axis_dac_axis_0_1"/>
+        <PARAMETER NAME="EDK_IPTYPE" VALUE="PERIPHERAL"/>
+      </PARAMETERS>
+      <PORTS>
+        <PORT CLKFREQUENCY="60000000" DIR="I" NAME="clk" SIGIS="clk" SIGNAME="External_Ports_clk">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External_Ports" PORT="clk"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="resetn" SIGIS="rst" SIGNAME="External_Ports_resetn">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External_Ports" PORT="resetn"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" LEFT="7" NAME="da_out" RIGHT="0" SIGIS="undef" SIGNAME="dac_dac_axis_0_da_out">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="dac_xlslice_sender" PORT="Din"/>
+            <CONNECTION INSTANCE="dac_mux_reciever_out" PORT="sel2"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="7" NAME="div" RIGHT="0" SIGIS="undef" SIGNAME="External_Ports_div_dac">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External_Ports" PORT="div_dac"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="7" NAME="axis_tdata" RIGHT="0" SIGIS="undef" SIGNAME="axis_data_fifo_inout_m_axis_tdata">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="axis_data_fifo_inout" PORT="m_axis_tdata"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="axis_tvalid" SIGIS="undef" SIGNAME="axis_data_fifo_inout_m_axis_tvalid">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="axis_data_fifo_inout" PORT="m_axis_tvalid"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="axis_tlast" SIGIS="undef" SIGNAME="axis_data_fifo_inout_m_axis_tlast">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="axis_data_fifo_inout" PORT="m_axis_tlast"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" NAME="axis_tready" SIGIS="undef" SIGNAME="axis_data_fifo_inout_m_axis_tready">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="axis_data_fifo_inout" PORT="m_axis_tready"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" NAME="axis_tvalid_output" SIGIS="undef"/>
+      </PORTS>
+      <BUSINTERFACES>
+        <BUSINTERFACE BUSNAME="axis_data_fifo_inout_M_AXIS" NAME="axis" TYPE="TARGET" VLNV="xilinx.com:interface:axis:1.0">
+          <PARAMETER NAME="TDATA_NUM_BYTES" VALUE="1"/>
+          <PARAMETER NAME="TDEST_WIDTH" VALUE="0"/>
+          <PARAMETER NAME="TID_WIDTH" VALUE="0"/>
+          <PARAMETER NAME="TUSER_WIDTH" VALUE="0"/>
+          <PARAMETER NAME="HAS_TREADY" VALUE="1"/>
+          <PARAMETER NAME="HAS_TSTRB" VALUE="0"/>
+          <PARAMETER NAME="HAS_TKEEP" VALUE="0"/>
+          <PARAMETER NAME="HAS_TLAST" VALUE="1"/>
+          <PARAMETER NAME="FREQ_HZ" VALUE="60000000"/>
+          <PARAMETER NAME="PHASE" VALUE="0.0"/>
+          <PARAMETER NAME="CLK_DOMAIN" VALUE="test_fifo_axis_clk"/>
+          <PARAMETER NAME="LAYERED_METADATA" VALUE="undef"/>
+          <PARAMETER NAME="INSERT_VIP" VALUE="0"/>
+          <PORTMAPS>
+            <PORTMAP LOGICAL="TDATA" PHYSICAL="axis_tdata"/>
+            <PORTMAP LOGICAL="TLAST" PHYSICAL="axis_tlast"/>
+            <PORTMAP LOGICAL="TVALID" PHYSICAL="axis_tvalid"/>
+            <PORTMAP LOGICAL="TREADY" PHYSICAL="axis_tready"/>
+          </PORTMAPS>
+        </BUSINTERFACE>
+      </BUSINTERFACES>
+    </MODULE>
+    <MODULE COREREVISION="1" FULLNAME="/dac/mux_reciever_out" HWVERSION="1.0" INSTANCE="dac_mux_reciever_out" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="mux" VLNV="xilinx.com:module_ref:mux:1.0">
+      <DOCUMENTS/>
+      <PARAMETERS>
+        <PARAMETER NAME="N" VALUE="8"/>
+        <PARAMETER NAME="Component_Name" VALUE="test_fifo_axis_mux_reciever_out_0"/>
+        <PARAMETER NAME="EDK_IPTYPE" VALUE="PERIPHERAL"/>
+      </PARAMETERS>
+      <PORTS>
+        <PORT DIR="I" LEFT="7" NAME="sel1" RIGHT="0" SIGIS="undef" SIGNAME="dac_DUCWrapper_0_io_out_dac">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="dac_DUCWrapper_0" PORT="io_out_dac"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="7" NAME="sel2" RIGHT="0" SIGIS="undef" SIGNAME="dac_dac_axis_0_da_out">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="dac_dac_axis_0" PORT="da_out"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" LEFT="7" NAME="data_out" RIGHT="0" SIGIS="undef" SIGNAME="dac_mux_reciever_out_data_out">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External_Ports" PORT="da"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="router" SIGIS="undef" SIGNAME="External_Ports_router_dac">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External_Ports" PORT="router_dac"/>
+          </CONNECTIONS>
+        </PORT>
+      </PORTS>
+      <BUSINTERFACES/>
+    </MODULE>
+    <MODULE COREREVISION="1" FULLNAME="/dac/xlslice_sender" HWVERSION="1.0" INSTANCE="dac_xlslice_sender" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="xlslice" VLNV="xilinx.com:ip:xlslice:1.0">
+      <DOCUMENTS/>
+      <PARAMETERS>
+        <PARAMETER NAME="DIN_WIDTH" VALUE="8"/>
+        <PARAMETER NAME="DIN_FROM" VALUE="0"/>
+        <PARAMETER NAME="DIN_TO" VALUE="0"/>
+        <PARAMETER NAME="Component_Name" VALUE="test_fifo_axis_xlslice_sender_0"/>
+        <PARAMETER NAME="DOUT_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="EDK_IPTYPE" VALUE="PERIPHERAL"/>
+      </PARAMETERS>
+      <PORTS>
+        <PORT DIR="I" LEFT="7" NAME="Din" RIGHT="0" SIGIS="undef" SIGNAME="dac_dac_axis_0_da_out">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="dac_dac_axis_0" PORT="da_out"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" LEFT="0" NAME="Dout" RIGHT="0" SIGIS="undef" SIGNAME="dac_xlslice_sender_Dout">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="dac_DUCWrapper_0" PORT="io_in_data"/>
+          </CONNECTIONS>
+        </PORT>
+      </PORTS>
+      <BUSINTERFACES/>
+    </MODULE>
+  </MODULES>
+
+</EDKSYSTEM>

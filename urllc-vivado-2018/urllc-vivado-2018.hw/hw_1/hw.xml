@@ -41,7 +41,7 @@
     <Object name="urllc_fifo_core_i/core/system_ila_dma/inst/ila_lib" gui_info="">
       <Properties Property="CONTROL.TRIGGER_CONDITION" value="AND"/>
       <Properties Property="CONTROL.TRIGGER_MODE" value="BASIC_ONLY"/>
-      <Properties Property="CONTROL.TRIGGER_POSITION" value="512"/>
+      <Properties Property="CONTROL.TRIGGER_POSITION" value="4096"/>
       <Properties Property="CORE_REFRESH_RATE_MS" value="500"/>
     </Object>
     <Object name="urllc_fifo_core_i/dac/ila_0" gui_info="">
@@ -63,7 +63,7 @@
     <Object name="urllc_fifo_core_i/core/fifo_read_to_axis_0_fifo_read_rd_en" gui_info=""/>
     <Object name="urllc_fifo_core_i/core/reset_dynamic_peripheral_reset" gui_info=""/>
     <Object name="urllc_fifo_core_i/core/system_ila_dma/inst/net_slot_0_axis_tdata[31:0]" gui_info=""/>
-    <Object name="urllc_fifo_core_i/core/system_ila_dma/inst/net_slot_0_axis_tlast" gui_info=""/>
+    <Object name="urllc_fifo_core_i/core/system_ila_dma/inst/net_slot_0_axis_tlast" gui_info="Trigger Setup=0"/>
     <Object name="urllc_fifo_core_i/core/system_ila_dma/inst/net_slot_0_axis_tready" gui_info=""/>
     <Object name="urllc_fifo_core_i/core/system_ila_dma/inst/net_slot_0_axis_tvalid" gui_info=""/>
     <Object name="urllc_fifo_core_i/core/system_ila_dma/inst/net_slot_1_axis_tdata[31:0]" gui_info=""/>
@@ -71,8 +71,8 @@
     <Object name="urllc_fifo_core_i/core/system_ila_dma/inst/net_slot_1_axis_tready" gui_info=""/>
     <Object name="urllc_fifo_core_i/core/system_ila_dma/inst/net_slot_1_axis_tvalid" gui_info=""/>
     <Object name="urllc_fifo_core_i/core/system_ila_dma/inst/net_slot_2_axis_tlast" gui_info=""/>
-    <Object name="urllc_fifo_core_i/core/system_ila_dma/inst/net_slot_2_axis_tready" gui_info="Trigger Setup=1"/>
-    <Object name="urllc_fifo_core_i/core/system_ila_dma/inst/net_slot_2_axis_tvalid" gui_info="Trigger Setup=0"/>
+    <Object name="urllc_fifo_core_i/core/system_ila_dma/inst/net_slot_2_axis_tready" gui_info=""/>
+    <Object name="urllc_fifo_core_i/core/system_ila_dma/inst/net_slot_2_axis_tvalid" gui_info=""/>
     <Object name="urllc_fifo_core_i/core/system_ila_dma/inst/net_slot_3_axis_tready" gui_info=""/>
     <Object name="urllc_fifo_core_i/core/system_ila_dma/inst/net_slot_3_axis_tvalid" gui_info=""/>
     <Object name="urllc_fifo_core_i/core/system_ila_dma/inst/net_slot_6_axi_arvalid" gui_info=""/>
@@ -1802,7 +1802,7 @@
     <probe type="ila" busType="net" source="netlist" spec="ILA_V2_RT">
       <probeOptions Id="DebugProbeParams">
         <Option Id="CAPTURE_COMPARE_VALUE" value="eq1&apos;bX"/>
-        <Option Id="COMPARE_VALUE.0" value="eq1&apos;bX"/>
+        <Option Id="COMPARE_VALUE.0" value="eq1&apos;b1"/>
         <Option Id="DISPLAY_AS_ENUM" value="1"/>
         <Option Id="DISPLAY_HINT" value=""/>
         <Option Id="DISPLAY_RADIX" value="HEX"/>
@@ -1813,7 +1813,7 @@
         <Option Id="NAME.CUSTOM" value="slot_0 : axis_data_fifo_dac_M_AXIS : TLAST"/>
         <Option Id="NAME.SELECT" value="Custom"/>
         <Option Id="SOURCE" value="netlist"/>
-        <Option Id="TRIGGER_COMPARE_VALUE" value="eq1&apos;bX"/>
+        <Option Id="TRIGGER_COMPARE_VALUE" value="eq1&apos;b1"/>
         <Option Id="WAVEFORM_STYLE" value="Digital"/>
       </probeOptions>
       <nets>
@@ -2077,7 +2077,7 @@
     <probe type="ila" busType="net" source="netlist" spec="ILA_V2_RT">
       <probeOptions Id="DebugProbeParams">
         <Option Id="CAPTURE_COMPARE_VALUE" value="eq1&apos;bX"/>
-        <Option Id="COMPARE_VALUE.0" value="eq1&apos;b1"/>
+        <Option Id="COMPARE_VALUE.0" value="eq1&apos;bX"/>
         <Option Id="DISPLAY_AS_ENUM" value="1"/>
         <Option Id="DISPLAY_HINT" value=""/>
         <Option Id="DISPLAY_RADIX" value="HEX"/>
@@ -2088,7 +2088,7 @@
         <Option Id="NAME.CUSTOM" value="slot_2 : S_AXIS_1 : TREADY"/>
         <Option Id="NAME.SELECT" value="Custom"/>
         <Option Id="SOURCE" value="netlist"/>
-        <Option Id="TRIGGER_COMPARE_VALUE" value="eq1&apos;b1"/>
+        <Option Id="TRIGGER_COMPARE_VALUE" value="eq1&apos;bX"/>
         <Option Id="WAVEFORM_STYLE" value="Digital"/>
       </probeOptions>
       <nets>
@@ -2098,7 +2098,7 @@
     <probe type="ila" busType="net" source="netlist" spec="ILA_V2_RT">
       <probeOptions Id="DebugProbeParams">
         <Option Id="CAPTURE_COMPARE_VALUE" value="eq1&apos;bX"/>
-        <Option Id="COMPARE_VALUE.0" value="eq1&apos;b1"/>
+        <Option Id="COMPARE_VALUE.0" value="eq1&apos;bX"/>
         <Option Id="DISPLAY_AS_ENUM" value="1"/>
         <Option Id="DISPLAY_HINT" value=""/>
         <Option Id="DISPLAY_RADIX" value="HEX"/>
@@ -2109,7 +2109,7 @@
         <Option Id="NAME.CUSTOM" value="slot_2 : S_AXIS_1 : TVALID"/>
         <Option Id="NAME.SELECT" value="Custom"/>
         <Option Id="SOURCE" value="netlist"/>
-        <Option Id="TRIGGER_COMPARE_VALUE" value="eq1&apos;b1"/>
+        <Option Id="TRIGGER_COMPARE_VALUE" value="eq1&apos;bX"/>
         <Option Id="WAVEFORM_STYLE" value="Digital"/>
       </probeOptions>
       <nets>

@@ -1,7 +1,7 @@
 //Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 //--------------------------------------------------------------------------------
 //Tool Version: Vivado v.2018.3 (win64) Build 2405991 Thu Dec  6 23:38:27 MST 2018
-//Date        : Tue May  3 23:03:26 2022
+//Date        : Wed May  4 16:31:18 2022
 //Host        : Chiro running 64-bit major release  (build 9200)
 //Command     : generate_target urllc_fifo_core.bd
 //Design      : urllc_fifo_core
@@ -56,9 +56,9 @@ module adc_imp_18KFN60
   (* DEBUG = "true" *) wire fifo_almost_full1_1;
   wire io_in_sync_1;
   (* DEBUG = "true" *) (* MARK_DEBUG *) wire [7:0]mux_reciever_in_data_out;
+  (* DEBUG = "true" *) wire router_1;
   wire [7:0]xlconcat_0_dout;
   wire [6:0]xlconstant_0_dout;
-  (* DEBUG = "true" *) (* MARK_DEBUG *) wire xlslice_reciever_in_10_Dout;
 
   assign Net = clk;
   assign Net1 = resetn;
@@ -74,7 +74,7 @@ module adc_imp_18KFN60
   assign fifo_almost_empty_1 = fifo_almost_empty;
   assign fifo_almost_full1_1 = fifo_almost_full1;
   assign io_in_sync_1 = io_in_sync;
-  assign xlslice_reciever_in_10_Dout = router;
+  assign router_1 = router;
   urllc_fifo_core_DDCWrapper_0_0 DDCWrapper_0
        (.io_clock(Net2),
         .io_in_data(ad_1),
@@ -92,9 +92,9 @@ module adc_imp_18KFN60
         .fifo_almost_empty(fifo_almost_empty_1),
         .fifo_almost_full(fifo_almost_full1_1),
         .resetn(Net1));
-  urllc_fifo_core_mux_reciever_in_0 mux_reciever_in
+  urllc_fifo_core_mux_0_1 mux_reciever_in
        (.data_out(mux_reciever_in_data_out),
-        .router(xlslice_reciever_in_10_Dout),
+        .router(router_1),
         .sel1(ad_1),
         .sel2(xlconcat_0_dout));
   urllc_fifo_core_xlconcat_0_0 xlconcat_0

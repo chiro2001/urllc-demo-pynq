@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<GenRun Id="urllc_fifo_core_DDCWrapper_0_0_synth_1" LaunchPart="xc7z020clg400-2" LaunchTime="1651590062">
+<GenRun Id="urllc_fifo_core_DDCWrapper_0_0_synth_1" LaunchPart="xc7z020clg400-2" LaunchTime="1651653133">
   <File Type="PA-TCL" Name="urllc_fifo_core_DDCWrapper_0_0.tcl"/>
   <File Type="RDS-PROPCONSTRS" Name="urllc_fifo_core_DDCWrapper_0_0_drc_synth.rpt"/>
   <File Type="REPORTS-TCL" Name="urllc_fifo_core_DDCWrapper_0_0_reports.tcl"/>

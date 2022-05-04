@@ -1,7 +1,7 @@
 //Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 //--------------------------------------------------------------------------------
 //Tool Version: Vivado v.2018.3 (win64) Build 2405991 Thu Dec  6 23:38:27 MST 2018
-//Date        : Mon Apr 25 13:59:46 2022
+//Date        : Wed May  4 16:13:20 2022
 //Host        : Chiro running 64-bit major release  (build 9200)
 //Command     : generate_target test_fifo_axis_wrapper.bd
 //Design      : test_fifo_axis_wrapper

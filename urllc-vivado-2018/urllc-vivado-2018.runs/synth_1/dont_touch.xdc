@@ -9,9 +9,6 @@ set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==urllc_fifo_core
 # IP: bd/urllc_fifo_core/ip/urllc_fifo_core_DDCWrapper_0_0/urllc_fifo_core_DDCWrapper_0_0.xci
 set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==urllc_fifo_core_DDCWrapper_0_0 || ORIG_REF_NAME==urllc_fifo_core_DDCWrapper_0_0} -quiet] -quiet
 
-# IP: bd/urllc_fifo_core/ip/urllc_fifo_core_mux_reciever_in_0/urllc_fifo_core_mux_reciever_in_0.xci
-set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==urllc_fifo_core_mux_reciever_in_0 || ORIG_REF_NAME==urllc_fifo_core_mux_reciever_in_0} -quiet] -quiet
-
 # IP: bd/urllc_fifo_core/ip/urllc_fifo_core_xlconcat_0_0/urllc_fifo_core_xlconcat_0_0.xci
 set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==urllc_fifo_core_xlconcat_0_0 || ORIG_REF_NAME==urllc_fifo_core_xlconcat_0_0} -quiet] -quiet
 
@@ -137,6 +134,9 @@ set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==urllc_fifo_core
 
 # IP: bd/urllc_fifo_core/ip/urllc_fifo_core_xlconstant_0_2/urllc_fifo_core_xlconstant_0_2.xci
 set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==urllc_fifo_core_xlconstant_0_2 || ORIG_REF_NAME==urllc_fifo_core_xlconstant_0_2} -quiet] -quiet
+
+# IP: bd/urllc_fifo_core/ip/urllc_fifo_core_mux_0_1/urllc_fifo_core_mux_0_1.xci
+set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==urllc_fifo_core_mux_0_1 || ORIG_REF_NAME==urllc_fifo_core_mux_0_1} -quiet] -quiet
 
 # IP: bd/urllc_fifo_core/ip/urllc_fifo_core_auto_pc_0/urllc_fifo_core_auto_pc_0.xci
 set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==urllc_fifo_core_auto_pc_0 || ORIG_REF_NAME==urllc_fifo_core_auto_pc_0} -quiet] -quiet

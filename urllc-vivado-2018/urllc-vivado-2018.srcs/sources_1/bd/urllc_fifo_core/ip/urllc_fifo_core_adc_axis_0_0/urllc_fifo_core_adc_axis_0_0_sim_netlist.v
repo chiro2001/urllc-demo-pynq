@@ -1,7 +1,7 @@
 // Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 // --------------------------------------------------------------------------------
 // Tool Version: Vivado v.2018.3 (win64) Build 2405991 Thu Dec  6 23:38:27 MST 2018
-// Date        : Tue May  3 23:04:03 2022
+// Date        : Wed May  4 16:38:16 2022
 // Host        : Chiro running 64-bit major release  (build 9200)
 // Command     : write_verilog -force -mode funcsim
 //               D:/Programs/urllc-demo-pynq/urllc-vivado-2018/urllc-vivado-2018.srcs/sources_1/bd/urllc_fifo_core/ip/urllc_fifo_core_adc_axis_0_0/urllc_fifo_core_adc_axis_0_0_sim_netlist.v
@@ -43,6 +43,7 @@ module urllc_fifo_core_adc_axis_0_0
   wire axis_tvalid;
   wire clk;
   wire [7:0]div;
+  wire fifo_almost_empty;
   wire fifo_almost_full;
   wire resetn;
 
@@ -53,6 +54,7 @@ module urllc_fifo_core_adc_axis_0_0
         .axis_tvalid(axis_tvalid),
         .clk(clk),
         .div(div),
+        .fifo_almost_empty(fifo_almost_empty),
         .fifo_almost_full(fifo_almost_full),
         .resetn(resetn));
 endmodule
@@ -66,7 +68,8 @@ module urllc_fifo_core_adc_axis_0_0_adc_axis
     ad_in,
     div,
     clk,
-    resetn);
+    resetn,
+    fifo_almost_empty);
   output [7:0]axis_tdata;
   output axis_tvalid;
   output axis_tlast;
@@ -75,6 +78,7 @@ module urllc_fifo_core_adc_axis_0_0_adc_axis
   input [7:0]div;
   input clk;
   input resetn;
+  input fifo_almost_empty;
 
   wire ad;
   wire \ad[0]_i_1_n_0 ;
@@ -115,8 +119,15 @@ module urllc_fifo_core_adc_axis_0_0_adc_axis
   wire \cnt[6]_i_1_n_0 ;
   wire \cnt[6]_i_2_n_0 ;
   wire \cnt[7]_i_1_n_0 ;
+  wire \cnt[7]_i_2_n_0 ;
   wire [7:0]div;
+  wire fifo_almost_empty;
   wire fifo_almost_full;
+  wire finished_i_1_n_0;
+  wire finished_i_2_n_0;
+  wire finished_i_3_n_0;
+  wire finished_i_4_n_0;
+  wire finished_reg_n_0;
   wire resetn;
   wire vld_i_1_n_0;
 
@@ -124,15 +135,15 @@ module urllc_fifo_core_adc_axis_0_0_adc_axis
   LUT3 #(
     .INIT(8'h04)) 
     \ad[0]_i_1 
-       (.I0(fifo_almost_full),
+       (.I0(finished_reg_n_0),
         .I1(ad_in[0]),
         .I2(\ad[7]_i_7_n_0 ),
         .O(\ad[0]_i_1_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair6" *) 
+  (* SOFT_HLUTNM = "soft_lutpair4" *) 
   LUT3 #(
     .INIT(8'h04)) 
     \ad[1]_i_1 
-       (.I0(fifo_almost_full),
+       (.I0(finished_reg_n_0),
         .I1(ad_in[1]),
         .I2(\ad[7]_i_7_n_0 ),
         .O(\ad[1]_i_1_n_0 ));
@@ -140,23 +151,23 @@ module urllc_fifo_core_adc_axis_0_0_adc_axis
   LUT3 #(
     .INIT(8'h04)) 
     \ad[2]_i_1 
-       (.I0(fifo_almost_full),
+       (.I0(finished_reg_n_0),
         .I1(ad_in[2]),
         .I2(\ad[7]_i_7_n_0 ),
         .O(\ad[2]_i_1_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair4" *) 
-  LUT3 #(
-    .INIT(8'h04)) 
-    \ad[3]_i_1 
-       (.I0(fifo_almost_full),
-        .I1(ad_in[3]),
-        .I2(\ad[7]_i_7_n_0 ),
-        .O(\ad[3]_i_1_n_0 ));
   (* SOFT_HLUTNM = "soft_lutpair5" *) 
   LUT3 #(
     .INIT(8'h04)) 
+    \ad[3]_i_1 
+       (.I0(finished_reg_n_0),
+        .I1(ad_in[3]),
+        .I2(\ad[7]_i_7_n_0 ),
+        .O(\ad[3]_i_1_n_0 ));
+  (* SOFT_HLUTNM = "soft_lutpair6" *) 
+  LUT3 #(
+    .INIT(8'h04)) 
     \ad[4]_i_1 
-       (.I0(fifo_almost_full),
+       (.I0(finished_reg_n_0),
         .I1(ad_in[4]),
         .I2(\ad[7]_i_7_n_0 ),
         .O(\ad[4]_i_1_n_0 ));
@@ -164,7 +175,7 @@ module urllc_fifo_core_adc_axis_0_0_adc_axis
   LUT3 #(
     .INIT(8'h04)) 
     \ad[5]_i_1 
-       (.I0(fifo_almost_full),
+       (.I0(finished_reg_n_0),
         .I1(ad_in[5]),
         .I2(\ad[7]_i_7_n_0 ),
         .O(\ad[5]_i_1_n_0 ));
@@ -172,29 +183,29 @@ module urllc_fifo_core_adc_axis_0_0_adc_axis
   LUT3 #(
     .INIT(8'h04)) 
     \ad[6]_i_1 
-       (.I0(fifo_almost_full),
+       (.I0(finished_reg_n_0),
         .I1(ad_in[6]),
         .I2(\ad[7]_i_7_n_0 ),
         .O(\ad[6]_i_1_n_0 ));
-  LUT4 #(
-    .INIT(16'hFF08)) 
+  LUT5 #(
+    .INIT(32'hFFFFFF40)) 
     \ad[7]_i_1 
        (.I0(\ad[7]_i_4_n_0 ),
         .I1(\ad[7]_i_5_n_0 ),
         .I2(\ad[7]_i_6_n_0 ),
-        .I3(\ad[7]_i_7_n_0 ),
+        .I3(finished_reg_n_0),
+        .I4(\ad[7]_i_7_n_0 ),
         .O(ad));
-  LUT6 #(
-    .INIT(64'hFFFFFFFFFFFFFFFE)) 
-    \ad[7]_i_10 
-       (.I0(div[4]),
-        .I1(div[2]),
-        .I2(div[0]),
-        .I3(div[1]),
-        .I4(div[3]),
-        .I5(div[5]),
-        .O(\ad[7]_i_10_n_0 ));
   (* SOFT_HLUTNM = "soft_lutpair2" *) 
+  LUT4 #(
+    .INIT(16'hFFFE)) 
+    \ad[7]_i_10 
+       (.I0(div[2]),
+        .I1(div[0]),
+        .I2(div[1]),
+        .I3(div[3]),
+        .O(\ad[7]_i_10_n_0 ));
+  (* SOFT_HLUTNM = "soft_lutpair0" *) 
   LUT4 #(
     .INIT(16'hFFFE)) 
     \ad[7]_i_11 
@@ -207,7 +218,7 @@ module urllc_fifo_core_adc_axis_0_0_adc_axis
   LUT3 #(
     .INIT(8'h04)) 
     \ad[7]_i_2 
-       (.I0(fifo_almost_full),
+       (.I0(finished_reg_n_0),
         .I1(ad_in[7]),
         .I2(\ad[7]_i_7_n_0 ),
         .O(\ad[7]_i_2_n_0 ));
@@ -216,34 +227,34 @@ module urllc_fifo_core_adc_axis_0_0_adc_axis
     \ad[7]_i_3 
        (.I0(resetn),
         .O(\ad[7]_i_3_n_0 ));
+  LUT5 #(
+    .INIT(32'h7BBDDEE7)) 
+    \ad[7]_i_4 
+       (.I0(cnt[6]),
+        .I1(cnt[7]),
+        .I2(div[6]),
+        .I3(\ad[7]_i_8_n_0 ),
+        .I4(div[7]),
+        .O(\ad[7]_i_4_n_0 ));
+  LUT6 #(
+    .INIT(64'h8002200808800220)) 
+    \ad[7]_i_5 
+       (.I0(\ad[7]_i_9_n_0 ),
+        .I1(div[5]),
+        .I2(\ad[7]_i_10_n_0 ),
+        .I3(div[4]),
+        .I4(cnt[5]),
+        .I5(cnt[4]),
+        .O(\ad[7]_i_5_n_0 ));
   LUT6 #(
     .INIT(64'h4002100808400210)) 
-    \ad[7]_i_4 
+    \ad[7]_i_6 
        (.I0(cnt[0]),
         .I1(div[2]),
         .I2(div[0]),
         .I3(div[1]),
         .I4(cnt[2]),
         .I5(cnt[1]),
-        .O(\ad[7]_i_4_n_0 ));
-  LUT6 #(
-    .INIT(64'h8002200808800220)) 
-    \ad[7]_i_5 
-       (.I0(\ad[7]_i_8_n_0 ),
-        .I1(div[5]),
-        .I2(\ad[7]_i_9_n_0 ),
-        .I3(div[4]),
-        .I4(cnt[5]),
-        .I5(cnt[4]),
-        .O(\ad[7]_i_5_n_0 ));
-  LUT5 #(
-    .INIT(32'h7BBDDEE7)) 
-    \ad[7]_i_6 
-       (.I0(cnt[6]),
-        .I1(cnt[7]),
-        .I2(div[6]),
-        .I3(\ad[7]_i_10_n_0 ),
-        .I4(div[7]),
         .O(\ad[7]_i_6_n_0 ));
   LUT5 #(
     .INIT(32'h00000001)) 
@@ -254,23 +265,25 @@ module urllc_fifo_core_adc_axis_0_0_adc_axis
         .I3(div[7]),
         .I4(\ad[7]_i_11_n_0 ),
         .O(\ad[7]_i_7_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair2" *) 
+  LUT6 #(
+    .INIT(64'hFFFFFFFFFFFFFFFE)) 
+    \ad[7]_i_8 
+       (.I0(div[4]),
+        .I1(div[2]),
+        .I2(div[0]),
+        .I3(div[1]),
+        .I4(div[3]),
+        .I5(div[5]),
+        .O(\ad[7]_i_8_n_0 ));
+  (* SOFT_HLUTNM = "soft_lutpair0" *) 
   LUT5 #(
     .INIT(32'hAAA95556)) 
-    \ad[7]_i_8 
+    \ad[7]_i_9 
        (.I0(div[3]),
         .I1(div[1]),
         .I2(div[0]),
         .I3(div[2]),
         .I4(cnt[3]),
-        .O(\ad[7]_i_8_n_0 ));
-  LUT4 #(
-    .INIT(16'hFFFE)) 
-    \ad[7]_i_9 
-       (.I0(div[2]),
-        .I1(div[0]),
-        .I2(div[1]),
-        .I3(div[3]),
         .O(\ad[7]_i_9_n_0 ));
   FDCE \ad_reg[0] 
        (.C(clk),
@@ -320,15 +333,15 @@ module urllc_fifo_core_adc_axis_0_0_adc_axis
         .CLR(\ad[7]_i_3_n_0 ),
         .D(\ad[7]_i_2_n_0 ),
         .Q(axis_tdata[7]));
-  (* SOFT_HLUTNM = "soft_lutpair0" *) 
-  LUT5 #(
-    .INIT(32'h00002000)) 
+  LUT6 #(
+    .INIT(64'h0000000000004000)) 
     axis_tlast_reg_i_1
-       (.I0(fifo_almost_full),
-        .I1(\ad[7]_i_6_n_0 ),
-        .I2(\ad[7]_i_5_n_0 ),
-        .I3(\ad[7]_i_4_n_0 ),
-        .I4(\ad[7]_i_7_n_0 ),
+       (.I0(\ad[7]_i_4_n_0 ),
+        .I1(\ad[7]_i_5_n_0 ),
+        .I2(\ad[7]_i_6_n_0 ),
+        .I3(fifo_almost_full),
+        .I4(finished_reg_n_0),
+        .I5(\ad[7]_i_7_n_0 ),
         .O(axis_tlast_reg_i_1_n_0));
   FDCE axis_tlast_reg_reg
        (.C(clk),
@@ -339,18 +352,18 @@ module urllc_fifo_core_adc_axis_0_0_adc_axis
   LUT5 #(
     .INIT(32'h000000BF)) 
     \cnt[0]_i_1 
-       (.I0(\ad[7]_i_6_n_0 ),
+       (.I0(\ad[7]_i_4_n_0 ),
         .I1(\ad[7]_i_5_n_0 ),
-        .I2(\ad[7]_i_4_n_0 ),
+        .I2(\ad[7]_i_6_n_0 ),
         .I3(cnt[0]),
         .I4(\ad[7]_i_7_n_0 ),
         .O(\cnt[0]_i_1_n_0 ));
   LUT6 #(
     .INIT(64'h0000000000BFBF00)) 
     \cnt[1]_i_1 
-       (.I0(\ad[7]_i_6_n_0 ),
+       (.I0(\ad[7]_i_4_n_0 ),
         .I1(\ad[7]_i_5_n_0 ),
-        .I2(\ad[7]_i_4_n_0 ),
+        .I2(\ad[7]_i_6_n_0 ),
         .I3(cnt[0]),
         .I4(cnt[1]),
         .I5(\ad[7]_i_7_n_0 ),
@@ -358,9 +371,9 @@ module urllc_fifo_core_adc_axis_0_0_adc_axis
   LUT6 #(
     .INIT(64'h0000000000BFBF00)) 
     \cnt[2]_i_1 
-       (.I0(\ad[7]_i_6_n_0 ),
+       (.I0(\ad[7]_i_4_n_0 ),
         .I1(\ad[7]_i_5_n_0 ),
-        .I2(\ad[7]_i_4_n_0 ),
+        .I2(\ad[7]_i_6_n_0 ),
         .I3(\cnt[2]_i_2_n_0 ),
         .I4(cnt[2]),
         .I5(\ad[7]_i_7_n_0 ),
@@ -375,9 +388,9 @@ module urllc_fifo_core_adc_axis_0_0_adc_axis
   LUT6 #(
     .INIT(64'h0000000000BFBF00)) 
     \cnt[3]_i_1 
-       (.I0(\ad[7]_i_6_n_0 ),
+       (.I0(\ad[7]_i_4_n_0 ),
         .I1(\ad[7]_i_5_n_0 ),
-        .I2(\ad[7]_i_4_n_0 ),
+        .I2(\ad[7]_i_6_n_0 ),
         .I3(\cnt[3]_i_2_n_0 ),
         .I4(cnt[3]),
         .I5(\ad[7]_i_7_n_0 ),
@@ -393,9 +406,9 @@ module urllc_fifo_core_adc_axis_0_0_adc_axis
   LUT6 #(
     .INIT(64'h0000000000BFBF00)) 
     \cnt[4]_i_1 
-       (.I0(\ad[7]_i_6_n_0 ),
+       (.I0(\ad[7]_i_4_n_0 ),
         .I1(\ad[7]_i_5_n_0 ),
-        .I2(\ad[7]_i_4_n_0 ),
+        .I2(\ad[7]_i_6_n_0 ),
         .I3(\cnt[4]_i_2_n_0 ),
         .I4(cnt[4]),
         .I5(\ad[7]_i_7_n_0 ),
@@ -412,9 +425,9 @@ module urllc_fifo_core_adc_axis_0_0_adc_axis
   LUT6 #(
     .INIT(64'h0000000000BFBF00)) 
     \cnt[5]_i_1 
-       (.I0(\ad[7]_i_6_n_0 ),
+       (.I0(\ad[7]_i_4_n_0 ),
         .I1(\ad[7]_i_5_n_0 ),
-        .I2(\ad[7]_i_4_n_0 ),
+        .I2(\ad[7]_i_6_n_0 ),
         .I3(\cnt[5]_i_2_n_0 ),
         .I4(cnt[5]),
         .I5(\ad[7]_i_7_n_0 ),
@@ -432,9 +445,9 @@ module urllc_fifo_core_adc_axis_0_0_adc_axis
   LUT6 #(
     .INIT(64'h0000000000BFBF00)) 
     \cnt[6]_i_1 
-       (.I0(\ad[7]_i_6_n_0 ),
+       (.I0(\ad[7]_i_4_n_0 ),
         .I1(\ad[7]_i_5_n_0 ),
-        .I2(\ad[7]_i_4_n_0 ),
+        .I2(\ad[7]_i_6_n_0 ),
         .I3(\cnt[6]_i_2_n_0 ),
         .I4(cnt[6]),
         .I5(\ad[7]_i_7_n_0 ),
@@ -449,78 +462,129 @@ module urllc_fifo_core_adc_axis_0_0_adc_axis
         .I4(cnt[2]),
         .I5(cnt[4]),
         .O(\cnt[6]_i_2_n_0 ));
+  LUT2 #(
+    .INIT(4'hB)) 
+    \cnt[7]_i_1 
+       (.I0(\ad[7]_i_7_n_0 ),
+        .I1(finished_reg_n_0),
+        .O(\cnt[7]_i_1_n_0 ));
   LUT5 #(
     .INIT(32'h0000BF00)) 
-    \cnt[7]_i_1 
-       (.I0(\ad[7]_i_6_n_0 ),
+    \cnt[7]_i_2 
+       (.I0(\ad[7]_i_4_n_0 ),
         .I1(\ad[7]_i_5_n_0 ),
-        .I2(\ad[7]_i_4_n_0 ),
+        .I2(\ad[7]_i_6_n_0 ),
         .I3(cnt0),
         .I4(\ad[7]_i_7_n_0 ),
-        .O(\cnt[7]_i_1_n_0 ));
+        .O(\cnt[7]_i_2_n_0 ));
   LUT3 #(
     .INIT(8'h78)) 
-    \cnt[7]_i_2 
+    \cnt[7]_i_3 
        (.I0(\cnt[6]_i_2_n_0 ),
         .I1(cnt[6]),
         .I2(cnt[7]),
         .O(cnt0));
   FDCE \cnt_reg[0] 
        (.C(clk),
-        .CE(1'b1),
+        .CE(\cnt[7]_i_1_n_0 ),
         .CLR(\ad[7]_i_3_n_0 ),
         .D(\cnt[0]_i_1_n_0 ),
         .Q(cnt[0]));
   FDCE \cnt_reg[1] 
        (.C(clk),
-        .CE(1'b1),
+        .CE(\cnt[7]_i_1_n_0 ),
         .CLR(\ad[7]_i_3_n_0 ),
         .D(\cnt[1]_i_1_n_0 ),
         .Q(cnt[1]));
   FDCE \cnt_reg[2] 
        (.C(clk),
-        .CE(1'b1),
+        .CE(\cnt[7]_i_1_n_0 ),
         .CLR(\ad[7]_i_3_n_0 ),
         .D(\cnt[2]_i_1_n_0 ),
         .Q(cnt[2]));
   FDCE \cnt_reg[3] 
        (.C(clk),
-        .CE(1'b1),
+        .CE(\cnt[7]_i_1_n_0 ),
         .CLR(\ad[7]_i_3_n_0 ),
         .D(\cnt[3]_i_1_n_0 ),
         .Q(cnt[3]));
   FDCE \cnt_reg[4] 
        (.C(clk),
-        .CE(1'b1),
+        .CE(\cnt[7]_i_1_n_0 ),
         .CLR(\ad[7]_i_3_n_0 ),
         .D(\cnt[4]_i_1_n_0 ),
         .Q(cnt[4]));
   FDCE \cnt_reg[5] 
        (.C(clk),
-        .CE(1'b1),
+        .CE(\cnt[7]_i_1_n_0 ),
         .CLR(\ad[7]_i_3_n_0 ),
         .D(\cnt[5]_i_1_n_0 ),
         .Q(cnt[5]));
   FDCE \cnt_reg[6] 
        (.C(clk),
-        .CE(1'b1),
+        .CE(\cnt[7]_i_1_n_0 ),
         .CLR(\ad[7]_i_3_n_0 ),
         .D(\cnt[6]_i_1_n_0 ),
         .Q(cnt[6]));
   FDCE \cnt_reg[7] 
        (.C(clk),
+        .CE(\cnt[7]_i_1_n_0 ),
+        .CLR(\ad[7]_i_3_n_0 ),
+        .D(\cnt[7]_i_2_n_0 ),
+        .Q(cnt[7]));
+  LUT6 #(
+    .INIT(64'hFF00FF000002FF02)) 
+    finished_i_1
+       (.I0(fifo_almost_full),
+        .I1(finished_i_2_n_0),
+        .I2(\ad[7]_i_4_n_0 ),
+        .I3(finished_reg_n_0),
+        .I4(fifo_almost_empty),
+        .I5(\ad[7]_i_7_n_0 ),
+        .O(finished_i_1_n_0));
+  LUT6 #(
+    .INIT(64'h7FF7F77FFFFFFFFF)) 
+    finished_i_2
+       (.I0(\ad[7]_i_6_n_0 ),
+        .I1(finished_i_3_n_0),
+        .I2(cnt[5]),
+        .I3(finished_i_4_n_0),
+        .I4(div[5]),
+        .I5(\ad[7]_i_9_n_0 ),
+        .O(finished_i_2_n_0));
+  LUT6 #(
+    .INIT(64'hAAAAAAA955555556)) 
+    finished_i_3
+       (.I0(div[4]),
+        .I1(div[2]),
+        .I2(div[0]),
+        .I3(div[1]),
+        .I4(div[3]),
+        .I5(cnt[4]),
+        .O(finished_i_3_n_0));
+  (* SOFT_HLUTNM = "soft_lutpair2" *) 
+  LUT5 #(
+    .INIT(32'hFFFFFFFE)) 
+    finished_i_4
+       (.I0(div[3]),
+        .I1(div[1]),
+        .I2(div[0]),
+        .I3(div[2]),
+        .I4(div[4]),
+        .O(finished_i_4_n_0));
+  FDCE finished_reg
+       (.C(clk),
         .CE(1'b1),
         .CLR(\ad[7]_i_3_n_0 ),
-        .D(\cnt[7]_i_1_n_0 ),
-        .Q(cnt[7]));
-  (* SOFT_HLUTNM = "soft_lutpair0" *) 
+        .D(finished_i_1_n_0),
+        .Q(finished_reg_n_0));
   LUT5 #(
     .INIT(32'h00001000)) 
     vld_i_1
-       (.I0(fifo_almost_full),
-        .I1(\ad[7]_i_6_n_0 ),
+       (.I0(finished_reg_n_0),
+        .I1(\ad[7]_i_4_n_0 ),
         .I2(\ad[7]_i_5_n_0 ),
-        .I3(\ad[7]_i_4_n_0 ),
+        .I3(\ad[7]_i_6_n_0 ),
         .I4(\ad[7]_i_7_n_0 ),
         .O(vld_i_1_n_0));
   FDCE vld_reg

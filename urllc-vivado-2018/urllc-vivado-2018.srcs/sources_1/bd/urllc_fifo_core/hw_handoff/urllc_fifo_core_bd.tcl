@@ -1607,10 +1607,9 @@ set_property HDL_ATTRIBUTE.DEBUG {true} [get_bd_nets div_1]
   connect_bd_net -net io_in_sync_1 [get_bd_pins io_in_sync] [get_bd_pins DDCWrapper_0/io_in_sync]
   connect_bd_net -net mux_reciever_in_data_out [get_bd_pins data_out] [get_bd_pins adc_axis_0/ad_in] [get_bd_pins mux_reciever_in/data_out]
 set_property HDL_ATTRIBUTE.DEBUG {true} [get_bd_nets mux_reciever_in_data_out]
+  connect_bd_net -net router_1 [get_bd_pins router] [get_bd_pins mux_reciever_in/router]
   connect_bd_net -net xlconcat_0_dout [get_bd_pins mux_reciever_in/sel2] [get_bd_pins xlconcat_0/dout]
   connect_bd_net -net xlconstant_0_dout [get_bd_pins xlconcat_0/In1] [get_bd_pins xlconstant_0/dout]
-  connect_bd_net -net xlslice_reciever_in_10_Dout [get_bd_pins router] [get_bd_pins mux_reciever_in/router]
-set_property HDL_ATTRIBUTE.DEBUG {true} [get_bd_nets xlslice_reciever_in_10_Dout]
 
   # Restore current instance
   current_bd_instance $oldCurInst

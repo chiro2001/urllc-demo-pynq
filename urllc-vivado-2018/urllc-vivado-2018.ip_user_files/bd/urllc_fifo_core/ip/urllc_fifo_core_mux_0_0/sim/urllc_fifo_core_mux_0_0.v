@@ -61,13 +61,13 @@ module urllc_fifo_core_mux_0_0 (
   router
 );
 
-input wire [0 : 0] sel1;
-input wire [0 : 0] sel2;
-output wire [0 : 0] data_out;
+input wire [7 : 0] sel1;
+input wire [7 : 0] sel2;
+output wire [7 : 0] data_out;
 input wire router;
 
   mux #(
-    .N(1)
+    .N(8)
   ) inst (
     .sel1(sel1),
     .sel2(sel2),

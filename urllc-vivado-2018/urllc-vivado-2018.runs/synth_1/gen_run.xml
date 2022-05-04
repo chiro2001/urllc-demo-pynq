@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<GenRun Id="synth_1" LaunchPart="xc7z020clg400-2" LaunchTime="1651590215">
+<GenRun Id="synth_1" LaunchPart="xc7z020clg400-2" LaunchTime="1651653200">
   <File Type="PA-TCL" Name="sender_wrapper.tcl"/>
   <File Type="RDS-PROPCONSTRS" Name="sender_wrapper_drc_synth.rpt"/>
   <File Type="REPORTS-TCL" Name="sender_wrapper_reports.tcl"/>
@@ -20,19 +20,19 @@
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
     </File>
-    <File Path="$PSRCDIR/sources_1/imports/srcs/mux.v">
+    <File Path="$PSRCDIR/sources_1/imports/generated/DUC/DUCWrapper.v">
       <FileInfo>
-        <Attr Name="ImportPath" Val="$PPRDIR/srcs/mux.v"/>
-        <Attr Name="ImportTime" Val="1642899268"/>
+        <Attr Name="ImportPath" Val="$PPRDIR/../chisel-test-project/generated/DUC/DUCWrapper.v"/>
+        <Attr Name="ImportTime" Val="1642817200"/>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="implementation"/>
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
     </File>
-    <File Path="$PSRCDIR/sources_1/imports/generated/DUC/DUCWrapper.v">
+    <File Path="$PSRCDIR/sources_1/imports/srcs/mux.v">
       <FileInfo>
-        <Attr Name="ImportPath" Val="$PPRDIR/../chisel-test-project/generated/DUC/DUCWrapper.v"/>
-        <Attr Name="ImportTime" Val="1642817200"/>
+        <Attr Name="ImportPath" Val="$PPRDIR/srcs/mux.v"/>
+        <Attr Name="ImportTime" Val="1642899268"/>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="implementation"/>
         <Attr Name="UsedIn" Val="simulation"/>
@@ -161,13 +161,35 @@
     <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2018"/>
     <Step Id="synth_design"/>
   </Strategy>
+  <BlockFileSet Type="BlockSrcs" Name="urllc_fifo_core_DDCWrapper_0_0"/>
   <BlockFileSet Type="BlockSrcs" Name="urllc_fifo_core_mux_adc_fifo_reset_0"/>
   <BlockFileSet Type="BlockSrcs" Name="urllc_fifo_core_DUCWrapper_0_0"/>
-  <BlockFileSet Type="BlockSrcs" Name="urllc_fifo_core_mux_reciever_in_0"/>
-  <BlockFileSet Type="BlockSrcs" Name="urllc_fifo_core_adc_axis_0_0"/>
-  <BlockFileSet Type="BlockSrcs" Name="urllc_fifo_core_DDCWrapper_0_0"/>
   <BlockFileSet Type="BlockSrcs" Name="urllc_fifo_core_mux_0_0"/>
   <BlockFileSet Type="BlockSrcs" Name="urllc_fifo_core_mux_reciever_out_0"/>
   <BlockFileSet Type="BlockSrcs" Name="urllc_fifo_core_mux_dac_fifo_reset_0"/>
   <BlockFileSet Type="BlockSrcs" Name="urllc_fifo_core_dac_axis_0_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="test_fifo_axis_mux_reciever_out_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="test_fifo_axis_mux_reciever_in_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="test_fifo_axis_DUCWrapper_0_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="test_fifo_axis_dac_axis_0_1"/>
+  <BlockFileSet Type="BlockSrcs" Name="test_fifo_axis_DDCWrapper_0_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="urllc_fifo_core_processing_system7_0_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="urllc_fifo_core_clk_static_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="urllc_fifo_core_xbar_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="urllc_fifo_core_axi_dma_0_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="urllc_fifo_core_clk_dynamic_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="urllc_fifo_core_axi_gpio_0_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="urllc_fifo_core_reset_static_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="urllc_fifo_core_axis_data_fifo_0_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="test_fifo_axis_axis_data_fifo_dac_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="urllc_fifo_core_system_ila_0_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="urllc_fifo_core_axis_data_fifo_adc_1"/>
+  <BlockFileSet Type="BlockSrcs" Name="urllc_fifo_core_xbar_1"/>
+  <BlockFileSet Type="BlockSrcs" Name="urllc_fifo_core_auto_us_1"/>
+  <BlockFileSet Type="BlockSrcs" Name="urllc_fifo_core_reset_dynamic_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="urllc_fifo_core_adc_axis_0_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="urllc_fifo_core_mux_0_1"/>
+  <BlockFileSet Type="BlockSrcs" Name="urllc_fifo_core_auto_pc_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="urllc_fifo_core_auto_pc_1"/>
+  <BlockFileSet Type="BlockSrcs" Name="urllc_fifo_core_auto_us_0"/>
 </GenRun>

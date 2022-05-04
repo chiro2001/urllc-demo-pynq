@@ -1,11 +1,11 @@
 -- Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 -- --------------------------------------------------------------------------------
 -- Tool Version: Vivado v.2018.3 (win64) Build 2405991 Thu Dec  6 23:38:27 MST 2018
--- Date        : Mon Apr 25 16:40:59 2022
+-- Date        : Wed May  4 16:38:23 2022
 -- Host        : Chiro running 64-bit major release  (build 9200)
 -- Command     : write_vhdl -force -mode synth_stub -rename_top urllc_fifo_core_axis_data_fifo_adc_1 -prefix
---               urllc_fifo_core_axis_data_fifo_adc_1_ urllc_fifo_core_axis_data_fifo_adc_1_stub.vhdl
--- Design      : urllc_fifo_core_axis_data_fifo_adc_1
+--               urllc_fifo_core_axis_data_fifo_adc_1_ test_fifo_axis_axis_data_fifo_dac_0_stub.vhdl
+-- Design      : test_fifo_axis_axis_data_fifo_dac_0
 -- Purpose     : Stub declaration of top-level module interface
 -- Device      : xc7z020clg400-2
 -- --------------------------------------------------------------------------------

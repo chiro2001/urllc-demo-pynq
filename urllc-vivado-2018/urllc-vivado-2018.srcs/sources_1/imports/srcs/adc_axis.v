@@ -14,28 +14,23 @@ module adc_axis #(parameter N = 8)
     reg [7:0] cnt;
     reg [N-1:0] ad;
     reg vld;
-    // reg fifo_almost_full_reg;
-    // reg fifo_almost_empty_reg;
     reg axis_tlast_reg;
+    reg finished;
     
     assign axis_tvalid = vld;
     assign axis_tdata  = ad;
     // 每次传输一个byte
     // 如果这边输入 tlast = 1，那么 DMA 在读取到这个数据的时候也会读取到 tlast = 1
-    assign axis_tlast = axis_tlast_reg; //((!fifo_almost_full_reg) && fifo_almost_full);
+    assign axis_tlast = axis_tlast_reg;
     always @ (posedge clk or negedge resetn) begin
         if (~resetn) begin
             cnt <= 8'b0;
             ad  <= 0;
             vld <= 1'b0;
-            // fifo_almost_full_reg <= 1'b0;
-            // fifo_almost_empty_reg <= 1'b0;
             axis_tlast_reg <= 1'b0;
+            finished <= 1'b0;
         end
         else begin
-            // fifo_almost_full_reg <= fifo_almost_full;
-            // fifo_almost_empty_reg <= fifo_almost_empty;
-            // if (div == 8'b0 || fifo_almost_full) begin
             if (div == 8'b0) begin
                 cnt <= 8'b0;
                 ad  <= 0;
@@ -43,23 +38,35 @@ module adc_axis #(parameter N = 8)
                 axis_tlast_reg <= 1'b0;
             end
             else begin
-                if (cnt == div - 8'b1) begin
-                    cnt <= 8'b0;
-                    if (fifo_almost_full) begin
-                        axis_tlast_reg <= 1'b1;
-                        ad  <= 0;
-                        vld <= 1'b0;
-                    end
-                    else begin
-                        axis_tlast_reg <= 1'b0;
-                        ad  <= ad_in;
-                        vld <= 1'b1;
+                if (finished) begin
+                    axis_tlast_reg <= 1'b0;
+                    ad  <= 0;
+                    vld <= 1'b0;
+                    if (fifo_almost_empty) begin
+                        finished <= 1'b0;
                     end
                 end
                 else begin
-                    cnt <= cnt + 8'b1;
-                    vld <= 1'b0;
-                    axis_tlast_reg <= 1'b0;
+                    if (cnt == div - 8'b1) begin
+                        cnt <= 8'b0;
+                        if (fifo_almost_full) begin
+                            finished <= 1'b1;
+                            axis_tlast_reg <= 1'b1;
+                            ad  <= ad_in;
+                            vld <= 1'b1;
+                        end
+                        else begin
+                            finished <= 1'b0;
+                            axis_tlast_reg <= 1'b0;
+                            ad  <= ad_in;
+                            vld <= 1'b1;
+                        end
+                    end
+                    else begin
+                        cnt <= cnt + 8'b1;
+                        vld <= 1'b0;
+                        axis_tlast_reg <= 1'b0;
+                    end
                 end
             end
         end

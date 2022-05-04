@@ -1,7 +1,7 @@
 //Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 //--------------------------------------------------------------------------------
 //Tool Version: Vivado v.2018.3 (win64) Build 2405991 Thu Dec  6 23:38:27 MST 2018
-//Date        : Mon Apr 25 13:59:06 2022
+//Date        : Wed May  4 11:58:53 2022
 //Host        : Chiro running 64-bit major release  (build 9200)
 //Command     : generate_target test_fifo_axis.bd
 //Design      : test_fifo_axis
@@ -81,6 +81,8 @@ module adc_imp_1P5RL9V
         .axis_tvalid(adc_axis_0_axis_TVALID),
         .clk(Net),
         .div(div_1),
+        .fifo_almost_empty(1'b0),
+        .fifo_almost_full(1'b0),
         .resetn(Net1));
   test_fifo_axis_mux_reciever_in_0 mux_reciever_in
        (.data_out(mux_reciever_in_data_out),
@@ -180,7 +182,7 @@ module test_fifo_axis
     router_adc,
     router_dac);
   input [7:0]ad;
-  (* X_INTERFACE_INFO = "xilinx.com:signal:clock:1.0 CLK.CLK CLK" *) (* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME CLK.CLK, ASSOCIATED_RESET resetn, CLK_DOMAIN test_fifo_axis_clk_0, FREQ_HZ 60000000, INSERT_VIP 0, PHASE 0.0" *) input clk;
+  (* X_INTERFACE_INFO = "xilinx.com:signal:clock:1.0 CLK.CLK CLK" *) (* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME CLK.CLK, ASSOCIATED_RESET resetn, CLK_DOMAIN test_fifo_axis_clk, FREQ_HZ 60000000, INSERT_VIP 0, PHASE 0.0" *) input clk;
   output [7:0]da;
   output [7:0]data_out_adc;
   input [7:0]div_adc;

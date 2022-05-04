@@ -62,7 +62,8 @@ module urllc_fifo_core_dac_axis_0_0 (
   axis_tdata,
   axis_tvalid,
   axis_tlast,
-  axis_tready
+  axis_tready,
+  axis_tvalid_output
 );
 
 (* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME clk, ASSOCIATED_BUSIF axis, ASSOCIATED_RESET resetn, FREQ_HZ 60000000, PHASE 0.0, CLK_DOMAIN /core/clk_static_clk_out1, INSERT_VIP 0" *)
@@ -82,6 +83,7 @@ input wire axis_tlast;
 (* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME axis, TDATA_NUM_BYTES 1, TDEST_WIDTH 0, TID_WIDTH 0, TUSER_WIDTH 0, HAS_TREADY 1, HAS_TSTRB 0, HAS_TKEEP 0, HAS_TLAST 1, FREQ_HZ 60000000, PHASE 0.0, CLK_DOMAIN /core/clk_static_clk_out1, LAYERED_METADATA undef, INSERT_VIP 0" *)
 (* X_INTERFACE_INFO = "xilinx.com:interface:axis:1.0 axis TREADY" *)
 output wire axis_tready;
+output wire axis_tvalid_output;
 
   dac_axis #(
     .N(8)
@@ -93,6 +95,7 @@ output wire axis_tready;
     .axis_tdata(axis_tdata),
     .axis_tvalid(axis_tvalid),
     .axis_tlast(axis_tlast),
-    .axis_tready(axis_tready)
+    .axis_tready(axis_tready),
+    .axis_tvalid_output(axis_tvalid_output)
   );
 endmodule

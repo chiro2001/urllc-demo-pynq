@@ -62,7 +62,9 @@ module urllc_fifo_core_adc_axis_0_0 (
   axis_tdata,
   axis_tvalid,
   axis_tlast,
-  axis_tready
+  axis_tready,
+  fifo_almost_full,
+  fifo_almost_empty
 );
 
 (* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME clk, ASSOCIATED_BUSIF axis, ASSOCIATED_RESET resetn, FREQ_HZ 60000000, PHASE 0.0, CLK_DOMAIN /core/clk_static_clk_out1, INSERT_VIP 0" *)
@@ -82,6 +84,8 @@ output wire axis_tlast;
 (* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME axis, TDATA_NUM_BYTES 1, TDEST_WIDTH 0, TID_WIDTH 0, TUSER_WIDTH 0, HAS_TREADY 1, HAS_TSTRB 0, HAS_TKEEP 0, HAS_TLAST 1, FREQ_HZ 60000000, PHASE 0.0, CLK_DOMAIN /core/clk_static_clk_out1, LAYERED_METADATA undef, INSERT_VIP 0" *)
 (* X_INTERFACE_INFO = "xilinx.com:interface:axis:1.0 axis TREADY" *)
 input wire axis_tready;
+input wire fifo_almost_full;
+input wire fifo_almost_empty;
 
   adc_axis #(
     .N(8)
@@ -93,6 +97,8 @@ input wire axis_tready;
     .axis_tdata(axis_tdata),
     .axis_tvalid(axis_tvalid),
     .axis_tlast(axis_tlast),
-    .axis_tready(axis_tready)
+    .axis_tready(axis_tready),
+    .fifo_almost_full(fifo_almost_full),
+    .fifo_almost_empty(fifo_almost_empty)
   );
 endmodule

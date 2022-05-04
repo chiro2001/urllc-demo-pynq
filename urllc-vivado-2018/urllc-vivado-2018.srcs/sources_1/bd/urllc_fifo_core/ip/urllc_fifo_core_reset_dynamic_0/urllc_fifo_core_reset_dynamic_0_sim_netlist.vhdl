@@ -1,7 +1,7 @@
 -- Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 -- --------------------------------------------------------------------------------
 -- Tool Version: Vivado v.2018.3 (win64) Build 2405991 Thu Dec  6 23:38:27 MST 2018
--- Date        : Mon Apr 25 16:40:52 2022
+-- Date        : Wed May  4 16:37:35 2022
 -- Host        : Chiro running 64-bit major release  (build 9200)
 -- Command     : write_vhdl -force -mode funcsim -rename_top urllc_fifo_core_reset_dynamic_0 -prefix
 --               urllc_fifo_core_reset_dynamic_0_ urllc_fifo_core_reset_static_0_sim_netlist.vhdl

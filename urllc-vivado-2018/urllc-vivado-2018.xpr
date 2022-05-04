@@ -18,7 +18,7 @@
     <Option Name="CompiledLibDirRiviera" Val="$PCACHEDIR/compile_simlib/riviera"/>
     <Option Name="CompiledLibDirActivehdl" Val="$PCACHEDIR/compile_simlib/activehdl"/>
     <Option Name="BoardPart" Val=""/>
-    <Option Name="ActiveSimSet" Val="sim_fifo_read_to_axis"/>
+    <Option Name="ActiveSimSet" Val="adc_axis_sim"/>
     <Option Name="DefaultLib" Val="xil_defaultlib"/>
     <Option Name="ProjectType" Val="Default"/>
     <Option Name="IPOutputRepo" Val="$PCACHEDIR/ip"/>
@@ -31,20 +31,20 @@
     <Option Name="EnableBDX" Val="FALSE"/>
     <Option Name="DSAVendor" Val="xilinx"/>
     <Option Name="DSANumComputeUnits" Val="60"/>
-    <Option Name="WTXSimLaunchSim" Val="54"/>
+    <Option Name="WTXSimLaunchSim" Val="83"/>
     <Option Name="WTModelSimLaunchSim" Val="0"/>
     <Option Name="WTQuestaLaunchSim" Val="0"/>
     <Option Name="WTIesLaunchSim" Val="0"/>
     <Option Name="WTVcsLaunchSim" Val="0"/>
     <Option Name="WTRivieraLaunchSim" Val="0"/>
     <Option Name="WTActivehdlLaunchSim" Val="0"/>
-    <Option Name="WTXSimExportSim" Val="2"/>
-    <Option Name="WTModelSimExportSim" Val="2"/>
-    <Option Name="WTQuestaExportSim" Val="2"/>
-    <Option Name="WTIesExportSim" Val="2"/>
-    <Option Name="WTVcsExportSim" Val="2"/>
-    <Option Name="WTRivieraExportSim" Val="2"/>
-    <Option Name="WTActivehdlExportSim" Val="2"/>
+    <Option Name="WTXSimExportSim" Val="4"/>
+    <Option Name="WTModelSimExportSim" Val="4"/>
+    <Option Name="WTQuestaExportSim" Val="4"/>
+    <Option Name="WTIesExportSim" Val="4"/>
+    <Option Name="WTVcsExportSim" Val="4"/>
+    <Option Name="WTRivieraExportSim" Val="4"/>
+    <Option Name="WTActivehdlExportSim" Val="4"/>
     <Option Name="GenerateIPUpgradeLog" Val="TRUE"/>
     <Option Name="XSimRadix" Val="hex"/>
     <Option Name="XSimTimeUnit" Val="ns"/>
@@ -64,19 +64,19 @@
           <Attr Name="UsedIn" Val="simulation"/>
         </FileInfo>
       </File>
-      <File Path="$PSRCDIR/sources_1/imports/srcs/mux.v">
+      <File Path="$PSRCDIR/sources_1/imports/generated/DUC/DUCWrapper.v">
         <FileInfo>
-          <Attr Name="ImportPath" Val="$PPRDIR/srcs/mux.v"/>
-          <Attr Name="ImportTime" Val="1642899268"/>
+          <Attr Name="ImportPath" Val="$PPRDIR/../chisel-test-project/generated/DUC/DUCWrapper.v"/>
+          <Attr Name="ImportTime" Val="1642817200"/>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="implementation"/>
           <Attr Name="UsedIn" Val="simulation"/>
         </FileInfo>
       </File>
-      <File Path="$PSRCDIR/sources_1/imports/generated/DUC/DUCWrapper.v">
+      <File Path="$PSRCDIR/sources_1/imports/srcs/mux.v">
         <FileInfo>
-          <Attr Name="ImportPath" Val="$PPRDIR/../chisel-test-project/generated/DUC/DUCWrapper.v"/>
-          <Attr Name="ImportTime" Val="1642817200"/>
+          <Attr Name="ImportPath" Val="$PPRDIR/srcs/mux.v"/>
+          <Attr Name="ImportTime" Val="1642899268"/>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="implementation"/>
           <Attr Name="UsedIn" Val="simulation"/>
@@ -102,32 +102,80 @@
           <Attr Name="UsedIn" Val="implementation"/>
           <Attr Name="UsedIn" Val="simulation"/>
         </FileInfo>
-        <CompFileExtendedInfo CompFileName="urllc_fifo_core.bd" FileRelPathName="ip/urllc_fifo_core_mux_reciever_in_0/urllc_fifo_core_mux_reciever_in_0.xci">
-          <Proxy FileSetName="urllc_fifo_core_mux_reciever_in_0"/>
+        <CompFileExtendedInfo CompFileName="urllc_fifo_core.bd" FileRelPathName="ip/urllc_fifo_core_reset_static_0/urllc_fifo_core_reset_static_0.xci">
+          <Proxy FileSetName="urllc_fifo_core_reset_static_0"/>
         </CompFileExtendedInfo>
         <CompFileExtendedInfo CompFileName="urllc_fifo_core.bd" FileRelPathName="ip/urllc_fifo_core_DDCWrapper_0_0/urllc_fifo_core_DDCWrapper_0_0.xci">
           <Proxy FileSetName="urllc_fifo_core_DDCWrapper_0_0"/>
         </CompFileExtendedInfo>
-        <CompFileExtendedInfo CompFileName="urllc_fifo_core.bd" FileRelPathName="ip/urllc_fifo_core_DUCWrapper_0_0/urllc_fifo_core_DUCWrapper_0_0.xci">
-          <Proxy FileSetName="urllc_fifo_core_DUCWrapper_0_0"/>
+        <CompFileExtendedInfo CompFileName="urllc_fifo_core.bd" FileRelPathName="ip/urllc_fifo_core_reset_dynamic_0/urllc_fifo_core_reset_dynamic_0.xci">
+          <Proxy FileSetName="urllc_fifo_core_reset_dynamic_0"/>
         </CompFileExtendedInfo>
-        <CompFileExtendedInfo CompFileName="urllc_fifo_core.bd" FileRelPathName="ip/urllc_fifo_core_mux_0_0/urllc_fifo_core_mux_0_0.xci">
-          <Proxy FileSetName="urllc_fifo_core_mux_0_0"/>
+        <CompFileExtendedInfo CompFileName="urllc_fifo_core.bd" FileRelPathName="ip/urllc_fifo_core_clk_dynamic_0/urllc_fifo_core_clk_dynamic_0.xci">
+          <Proxy FileSetName="urllc_fifo_core_clk_dynamic_0"/>
         </CompFileExtendedInfo>
-        <CompFileExtendedInfo CompFileName="urllc_fifo_core.bd" FileRelPathName="ip/urllc_fifo_core_mux_dac_fifo_reset_0/urllc_fifo_core_mux_dac_fifo_reset_0.xci">
-          <Proxy FileSetName="urllc_fifo_core_mux_dac_fifo_reset_0"/>
+        <CompFileExtendedInfo CompFileName="urllc_fifo_core.bd" FileRelPathName="ip/urllc_fifo_core_clk_static_0/urllc_fifo_core_clk_static_0.xci">
+          <Proxy FileSetName="urllc_fifo_core_clk_static_0"/>
         </CompFileExtendedInfo>
-        <CompFileExtendedInfo CompFileName="urllc_fifo_core.bd" FileRelPathName="ip/urllc_fifo_core_mux_reciever_out_0/urllc_fifo_core_mux_reciever_out_0.xci">
-          <Proxy FileSetName="urllc_fifo_core_mux_reciever_out_0"/>
+        <CompFileExtendedInfo CompFileName="urllc_fifo_core.bd" FileRelPathName="ip/urllc_fifo_core_processing_system7_0_0/urllc_fifo_core_processing_system7_0_0.xci">
+          <Proxy FileSetName="urllc_fifo_core_processing_system7_0_0"/>
         </CompFileExtendedInfo>
-        <CompFileExtendedInfo CompFileName="urllc_fifo_core.bd" FileRelPathName="ip/urllc_fifo_core_adc_axis_0_0/urllc_fifo_core_adc_axis_0_0.xci">
-          <Proxy FileSetName="urllc_fifo_core_adc_axis_0_0"/>
+        <CompFileExtendedInfo CompFileName="urllc_fifo_core.bd" FileRelPathName="ip/urllc_fifo_core_xbar_0/urllc_fifo_core_xbar_0.xci">
+          <Proxy FileSetName="urllc_fifo_core_xbar_0"/>
+        </CompFileExtendedInfo>
+        <CompFileExtendedInfo CompFileName="urllc_fifo_core.bd" FileRelPathName="ip/urllc_fifo_core_axi_dma_0_0/urllc_fifo_core_axi_dma_0_0.xci">
+          <Proxy FileSetName="urllc_fifo_core_axi_dma_0_0"/>
         </CompFileExtendedInfo>
         <CompFileExtendedInfo CompFileName="urllc_fifo_core.bd" FileRelPathName="ip/urllc_fifo_core_dac_axis_0_0/urllc_fifo_core_dac_axis_0_0.xci">
           <Proxy FileSetName="urllc_fifo_core_dac_axis_0_0"/>
         </CompFileExtendedInfo>
+        <CompFileExtendedInfo CompFileName="urllc_fifo_core.bd" FileRelPathName="ip/urllc_fifo_core_axi_gpio_0_0/urllc_fifo_core_axi_gpio_0_0.xci">
+          <Proxy FileSetName="urllc_fifo_core_axi_gpio_0_0"/>
+        </CompFileExtendedInfo>
+        <CompFileExtendedInfo CompFileName="urllc_fifo_core.bd" FileRelPathName="ip/urllc_fifo_core_mux_reciever_out_0/urllc_fifo_core_mux_reciever_out_0.xci">
+          <Proxy FileSetName="urllc_fifo_core_mux_reciever_out_0"/>
+        </CompFileExtendedInfo>
+        <CompFileExtendedInfo CompFileName="urllc_fifo_core.bd" FileRelPathName="ip/urllc_fifo_core_system_ila_0_0/urllc_fifo_core_system_ila_0_0.xci">
+          <Proxy FileSetName="urllc_fifo_core_system_ila_0_0"/>
+        </CompFileExtendedInfo>
         <CompFileExtendedInfo CompFileName="urllc_fifo_core.bd" FileRelPathName="ip/urllc_fifo_core_mux_adc_fifo_reset_0/urllc_fifo_core_mux_adc_fifo_reset_0.xci">
           <Proxy FileSetName="urllc_fifo_core_mux_adc_fifo_reset_0"/>
+        </CompFileExtendedInfo>
+        <CompFileExtendedInfo CompFileName="urllc_fifo_core.bd" FileRelPathName="ip/urllc_fifo_core_mux_dac_fifo_reset_0/urllc_fifo_core_mux_dac_fifo_reset_0.xci">
+          <Proxy FileSetName="urllc_fifo_core_mux_dac_fifo_reset_0"/>
+        </CompFileExtendedInfo>
+        <CompFileExtendedInfo CompFileName="urllc_fifo_core.bd" FileRelPathName="ip/urllc_fifo_core_adc_axis_0_0/urllc_fifo_core_adc_axis_0_0.xci">
+          <Proxy FileSetName="urllc_fifo_core_adc_axis_0_0"/>
+        </CompFileExtendedInfo>
+        <CompFileExtendedInfo CompFileName="urllc_fifo_core.bd" FileRelPathName="ip/urllc_fifo_core_DUCWrapper_0_0/urllc_fifo_core_DUCWrapper_0_0.xci">
+          <Proxy FileSetName="urllc_fifo_core_DUCWrapper_0_0"/>
+        </CompFileExtendedInfo>
+        <CompFileExtendedInfo CompFileName="urllc_fifo_core.bd" FileRelPathName="ip/urllc_fifo_core_axis_data_fifo_adc_1/urllc_fifo_core_axis_data_fifo_adc_1.xci">
+          <Proxy FileSetName="urllc_fifo_core_axis_data_fifo_adc_1"/>
+        </CompFileExtendedInfo>
+        <CompFileExtendedInfo CompFileName="urllc_fifo_core.bd" FileRelPathName="ip/urllc_fifo_core_axis_data_fifo_0_0/urllc_fifo_core_axis_data_fifo_0_0.xci">
+          <Proxy FileSetName="urllc_fifo_core_axis_data_fifo_0_0"/>
+        </CompFileExtendedInfo>
+        <CompFileExtendedInfo CompFileName="urllc_fifo_core.bd" FileRelPathName="ip/urllc_fifo_core_mux_0_0/urllc_fifo_core_mux_0_0.xci">
+          <Proxy FileSetName="urllc_fifo_core_mux_0_0"/>
+        </CompFileExtendedInfo>
+        <CompFileExtendedInfo CompFileName="urllc_fifo_core.bd" FileRelPathName="ip/urllc_fifo_core_xbar_1/urllc_fifo_core_xbar_1.xci">
+          <Proxy FileSetName="urllc_fifo_core_xbar_1"/>
+        </CompFileExtendedInfo>
+        <CompFileExtendedInfo CompFileName="urllc_fifo_core.bd" FileRelPathName="ip/urllc_fifo_core_mux_0_1/urllc_fifo_core_mux_0_1.xci">
+          <Proxy FileSetName="urllc_fifo_core_mux_0_1"/>
+        </CompFileExtendedInfo>
+        <CompFileExtendedInfo CompFileName="urllc_fifo_core.bd" FileRelPathName="ip/urllc_fifo_core_auto_pc_0/urllc_fifo_core_auto_pc_0.xci">
+          <Proxy FileSetName="urllc_fifo_core_auto_pc_0"/>
+        </CompFileExtendedInfo>
+        <CompFileExtendedInfo CompFileName="urllc_fifo_core.bd" FileRelPathName="ip/urllc_fifo_core_auto_pc_1/urllc_fifo_core_auto_pc_1.xci">
+          <Proxy FileSetName="urllc_fifo_core_auto_pc_1"/>
+        </CompFileExtendedInfo>
+        <CompFileExtendedInfo CompFileName="urllc_fifo_core.bd" FileRelPathName="ip/urllc_fifo_core_auto_us_0/urllc_fifo_core_auto_us_0.xci">
+          <Proxy FileSetName="urllc_fifo_core_auto_us_0"/>
+        </CompFileExtendedInfo>
+        <CompFileExtendedInfo CompFileName="urllc_fifo_core.bd" FileRelPathName="ip/urllc_fifo_core_auto_us_1/urllc_fifo_core_auto_us_1.xci">
+          <Proxy FileSetName="urllc_fifo_core_auto_us_1"/>
         </CompFileExtendedInfo>
       </File>
       <File Path="$PSRCDIR/sources_1/new/sender_wrapper.v">
@@ -194,6 +242,24 @@
           <Attr Name="UsedIn" Val="implementation"/>
           <Attr Name="UsedIn" Val="simulation"/>
         </FileInfo>
+        <CompFileExtendedInfo CompFileName="test_fifo_axis.bd" FileRelPathName="ip/test_fifo_axis_DDCWrapper_0_0/test_fifo_axis_DDCWrapper_0_0.xci">
+          <Proxy FileSetName="test_fifo_axis_DDCWrapper_0_0"/>
+        </CompFileExtendedInfo>
+        <CompFileExtendedInfo CompFileName="test_fifo_axis.bd" FileRelPathName="ip/test_fifo_axis_mux_reciever_in_0/test_fifo_axis_mux_reciever_in_0.xci">
+          <Proxy FileSetName="test_fifo_axis_mux_reciever_in_0"/>
+        </CompFileExtendedInfo>
+        <CompFileExtendedInfo CompFileName="test_fifo_axis.bd" FileRelPathName="ip/test_fifo_axis_axis_data_fifo_dac_0/test_fifo_axis_axis_data_fifo_dac_0.xci">
+          <Proxy FileSetName="test_fifo_axis_axis_data_fifo_dac_0"/>
+        </CompFileExtendedInfo>
+        <CompFileExtendedInfo CompFileName="test_fifo_axis.bd" FileRelPathName="ip/test_fifo_axis_dac_axis_0_1/test_fifo_axis_dac_axis_0_1.xci">
+          <Proxy FileSetName="test_fifo_axis_dac_axis_0_1"/>
+        </CompFileExtendedInfo>
+        <CompFileExtendedInfo CompFileName="test_fifo_axis.bd" FileRelPathName="ip/test_fifo_axis_mux_reciever_out_0/test_fifo_axis_mux_reciever_out_0.xci">
+          <Proxy FileSetName="test_fifo_axis_mux_reciever_out_0"/>
+        </CompFileExtendedInfo>
+        <CompFileExtendedInfo CompFileName="test_fifo_axis.bd" FileRelPathName="ip/test_fifo_axis_DUCWrapper_0_0/test_fifo_axis_DUCWrapper_0_0.xci">
+          <Proxy FileSetName="test_fifo_axis_DUCWrapper_0_0"/>
+        </CompFileExtendedInfo>
       </File>
       <File Path="$PSRCDIR/sources_1/bd/test_fifo_axis/hdl/test_fifo_axis_wrapper.v">
         <FileInfo>
@@ -239,12 +305,6 @@
       <Filter Type="Utils"/>
       <Config>
         <Option Name="TopAutoSet" Val="TRUE"/>
-      </Config>
-    </FileSet>
-    <FileSet Name="urllc_fifo_core_mux_reciever_in_0" Type="BlockSrcs" RelSrcDir="$PSRCDIR/urllc_fifo_core_mux_reciever_in_0">
-      <Config>
-        <Option Name="TopModule" Val="urllc_fifo_core_mux_reciever_in_0"/>
-        <Option Name="UseBlackboxStub" Val="1"/>
       </Config>
     </FileSet>
     <FileSet Name="urllc_fifo_core_DDCWrapper_0_0" Type="BlockSrcs" RelSrcDir="$PSRCDIR/urllc_fifo_core_DDCWrapper_0_0">
@@ -355,9 +415,167 @@
         <Option Name="UseBlackboxStub" Val="1"/>
       </Config>
     </FileSet>
+    <FileSet Name="adc_axis_sim" Type="SimulationSrcs" RelSrcDir="$PSRCDIR/adc_axis_sim">
+      <Filter Type="Srcs"/>
+      <File Path="$PSRCDIR/adc_axis_sim/imports/new/tb_adc_axis.v">
+        <FileInfo>
+          <Attr Name="ImportPath" Val="$PSRCDIR/sim_fifo_read_to_axis/new/tb_adc_axis.v"/>
+          <Attr Name="ImportTime" Val="1651636154"/>
+          <Attr Name="UsedIn" Val="synthesis"/>
+          <Attr Name="UsedIn" Val="implementation"/>
+          <Attr Name="UsedIn" Val="simulation"/>
+        </FileInfo>
+      </File>
+      <Config>
+        <Option Name="DesignMode" Val="RTL"/>
+        <Option Name="TopModule" Val="tb_adc_axis"/>
+        <Option Name="TopLib" Val="xil_defaultlib"/>
+        <Option Name="TransportPathDelay" Val="0"/>
+        <Option Name="TransportIntDelay" Val="0"/>
+        <Option Name="SrcSet" Val="sources_1"/>
+      </Config>
+    </FileSet>
+    <FileSet Name="test_fifo_axis_mux_reciever_out_0" Type="BlockSrcs" RelSrcDir="$PSRCDIR/test_fifo_axis_mux_reciever_out_0">
+      <Config>
+        <Option Name="TopModule" Val="test_fifo_axis_mux_reciever_out_0"/>
+        <Option Name="UseBlackboxStub" Val="1"/>
+      </Config>
+    </FileSet>
+    <FileSet Name="test_fifo_axis_mux_reciever_in_0" Type="BlockSrcs" RelSrcDir="$PSRCDIR/test_fifo_axis_mux_reciever_in_0">
+      <Config>
+        <Option Name="TopModule" Val="test_fifo_axis_mux_reciever_in_0"/>
+        <Option Name="UseBlackboxStub" Val="1"/>
+      </Config>
+    </FileSet>
+    <FileSet Name="test_fifo_axis_DUCWrapper_0_0" Type="BlockSrcs" RelSrcDir="$PSRCDIR/test_fifo_axis_DUCWrapper_0_0">
+      <Config>
+        <Option Name="TopModule" Val="test_fifo_axis_DUCWrapper_0_0"/>
+        <Option Name="UseBlackboxStub" Val="1"/>
+      </Config>
+    </FileSet>
+    <FileSet Name="test_fifo_axis_dac_axis_0_1" Type="BlockSrcs" RelSrcDir="$PSRCDIR/test_fifo_axis_dac_axis_0_1">
+      <Config>
+        <Option Name="TopModule" Val="test_fifo_axis_dac_axis_0_1"/>
+        <Option Name="UseBlackboxStub" Val="1"/>
+      </Config>
+    </FileSet>
+    <FileSet Name="test_fifo_axis_DDCWrapper_0_0" Type="BlockSrcs" RelSrcDir="$PSRCDIR/test_fifo_axis_DDCWrapper_0_0">
+      <Config>
+        <Option Name="TopModule" Val="test_fifo_axis_DDCWrapper_0_0"/>
+        <Option Name="UseBlackboxStub" Val="1"/>
+      </Config>
+    </FileSet>
+    <FileSet Name="urllc_fifo_core_processing_system7_0_0" Type="BlockSrcs" RelSrcDir="$PSRCDIR/urllc_fifo_core_processing_system7_0_0">
+      <Config>
+        <Option Name="TopModule" Val="urllc_fifo_core_processing_system7_0_0"/>
+        <Option Name="UseBlackboxStub" Val="1"/>
+      </Config>
+    </FileSet>
+    <FileSet Name="urllc_fifo_core_clk_static_0" Type="BlockSrcs" RelSrcDir="$PSRCDIR/urllc_fifo_core_clk_static_0">
+      <Config>
+        <Option Name="TopModule" Val="urllc_fifo_core_clk_static_0"/>
+        <Option Name="UseBlackboxStub" Val="1"/>
+      </Config>
+    </FileSet>
+    <FileSet Name="urllc_fifo_core_xbar_0" Type="BlockSrcs" RelSrcDir="$PSRCDIR/urllc_fifo_core_xbar_0">
+      <Config>
+        <Option Name="TopModule" Val="urllc_fifo_core_xbar_0"/>
+        <Option Name="UseBlackboxStub" Val="1"/>
+      </Config>
+    </FileSet>
+    <FileSet Name="urllc_fifo_core_axi_dma_0_0" Type="BlockSrcs" RelSrcDir="$PSRCDIR/urllc_fifo_core_axi_dma_0_0">
+      <Config>
+        <Option Name="TopModule" Val="urllc_fifo_core_axi_dma_0_0"/>
+        <Option Name="UseBlackboxStub" Val="1"/>
+      </Config>
+    </FileSet>
+    <FileSet Name="urllc_fifo_core_clk_dynamic_0" Type="BlockSrcs" RelSrcDir="$PSRCDIR/urllc_fifo_core_clk_dynamic_0">
+      <Config>
+        <Option Name="TopModule" Val="urllc_fifo_core_clk_dynamic_0"/>
+        <Option Name="UseBlackboxStub" Val="1"/>
+      </Config>
+    </FileSet>
+    <FileSet Name="urllc_fifo_core_axi_gpio_0_0" Type="BlockSrcs" RelSrcDir="$PSRCDIR/urllc_fifo_core_axi_gpio_0_0">
+      <Config>
+        <Option Name="TopModule" Val="urllc_fifo_core_axi_gpio_0_0"/>
+        <Option Name="UseBlackboxStub" Val="1"/>
+      </Config>
+    </FileSet>
+    <FileSet Name="urllc_fifo_core_reset_static_0" Type="BlockSrcs" RelSrcDir="$PSRCDIR/urllc_fifo_core_reset_static_0">
+      <Config>
+        <Option Name="TopModule" Val="urllc_fifo_core_reset_static_0"/>
+        <Option Name="UseBlackboxStub" Val="1"/>
+      </Config>
+    </FileSet>
+    <FileSet Name="urllc_fifo_core_axis_data_fifo_0_0" Type="BlockSrcs" RelSrcDir="$PSRCDIR/urllc_fifo_core_axis_data_fifo_0_0">
+      <Config>
+        <Option Name="TopModule" Val="urllc_fifo_core_axis_data_fifo_0_0"/>
+        <Option Name="UseBlackboxStub" Val="1"/>
+      </Config>
+    </FileSet>
+    <FileSet Name="test_fifo_axis_axis_data_fifo_dac_0" Type="BlockSrcs" RelSrcDir="$PSRCDIR/test_fifo_axis_axis_data_fifo_dac_0">
+      <Config>
+        <Option Name="TopModule" Val="test_fifo_axis_axis_data_fifo_dac_0"/>
+        <Option Name="UseBlackboxStub" Val="1"/>
+      </Config>
+    </FileSet>
+    <FileSet Name="urllc_fifo_core_system_ila_0_0" Type="BlockSrcs" RelSrcDir="$PSRCDIR/urllc_fifo_core_system_ila_0_0">
+      <Config>
+        <Option Name="TopModule" Val="urllc_fifo_core_system_ila_0_0"/>
+        <Option Name="UseBlackboxStub" Val="1"/>
+      </Config>
+    </FileSet>
+    <FileSet Name="urllc_fifo_core_axis_data_fifo_adc_1" Type="BlockSrcs" RelSrcDir="$PSRCDIR/urllc_fifo_core_axis_data_fifo_adc_1">
+      <Config>
+        <Option Name="TopModule" Val="urllc_fifo_core_axis_data_fifo_adc_1"/>
+        <Option Name="UseBlackboxStub" Val="1"/>
+      </Config>
+    </FileSet>
+    <FileSet Name="urllc_fifo_core_xbar_1" Type="BlockSrcs" RelSrcDir="$PSRCDIR/urllc_fifo_core_xbar_1">
+      <Config>
+        <Option Name="TopModule" Val="urllc_fifo_core_xbar_1"/>
+        <Option Name="UseBlackboxStub" Val="1"/>
+      </Config>
+    </FileSet>
+    <FileSet Name="urllc_fifo_core_reset_dynamic_0" Type="BlockSrcs" RelSrcDir="$PSRCDIR/urllc_fifo_core_reset_dynamic_0">
+      <Config>
+        <Option Name="TopModule" Val="urllc_fifo_core_reset_dynamic_0"/>
+        <Option Name="UseBlackboxStub" Val="1"/>
+      </Config>
+    </FileSet>
     <FileSet Name="urllc_fifo_core_adc_axis_0_0" Type="BlockSrcs" RelSrcDir="$PSRCDIR/urllc_fifo_core_adc_axis_0_0">
       <Config>
         <Option Name="TopModule" Val="urllc_fifo_core_adc_axis_0_0"/>
+        <Option Name="UseBlackboxStub" Val="1"/>
+      </Config>
+    </FileSet>
+    <FileSet Name="urllc_fifo_core_mux_0_1" Type="BlockSrcs" RelSrcDir="$PSRCDIR/urllc_fifo_core_mux_0_1">
+      <Config>
+        <Option Name="TopModule" Val="urllc_fifo_core_mux_0_1"/>
+        <Option Name="UseBlackboxStub" Val="1"/>
+      </Config>
+    </FileSet>
+    <FileSet Name="urllc_fifo_core_auto_pc_0" Type="BlockSrcs" RelSrcDir="$PSRCDIR/urllc_fifo_core_auto_pc_0">
+      <Config>
+        <Option Name="TopModule" Val="urllc_fifo_core_auto_pc_0"/>
+        <Option Name="UseBlackboxStub" Val="1"/>
+      </Config>
+    </FileSet>
+    <FileSet Name="urllc_fifo_core_auto_pc_1" Type="BlockSrcs" RelSrcDir="$PSRCDIR/urllc_fifo_core_auto_pc_1">
+      <Config>
+        <Option Name="TopModule" Val="urllc_fifo_core_auto_pc_1"/>
+        <Option Name="UseBlackboxStub" Val="1"/>
+      </Config>
+    </FileSet>
+    <FileSet Name="urllc_fifo_core_auto_us_0" Type="BlockSrcs" RelSrcDir="$PSRCDIR/urllc_fifo_core_auto_us_0">
+      <Config>
+        <Option Name="TopModule" Val="urllc_fifo_core_auto_us_0"/>
+        <Option Name="UseBlackboxStub" Val="1"/>
+      </Config>
+    </FileSet>
+    <FileSet Name="urllc_fifo_core_auto_us_1" Type="BlockSrcs" RelSrcDir="$PSRCDIR/urllc_fifo_core_auto_us_1">
+      <Config>
+        <Option Name="TopModule" Val="urllc_fifo_core_auto_us_1"/>
         <Option Name="UseBlackboxStub" Val="1"/>
       </Config>
     </FileSet>
@@ -382,15 +600,6 @@
   </Simulators>
   <Runs Version="1" Minor="10">
     <Run Id="synth_1" Type="Ft3:Synth" SrcSet="sources_1" Part="xc7z020clg400-2" ConstrsSet="constrs_1" Description="Vivado Synthesis Defaults" AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" State="current" Dir="$PRUNDIR/synth_1" IncludeInArchive="true">
-      <Strategy Version="1" Minor="2">
-        <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2018"/>
-        <Step Id="synth_design"/>
-      </Strategy>
-      <GeneratedRun Dir="$PRUNDIR" File="gen_run.xml"/>
-      <ReportStrategy Name="Vivado Synthesis Default Reports" Flow="Vivado Synthesis 2018"/>
-      <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
-    </Run>
-    <Run Id="urllc_fifo_core_mux_reciever_in_0_synth_1" Type="Ft3:Synth" SrcSet="urllc_fifo_core_mux_reciever_in_0" Part="xc7z020clg400-2" ConstrsSet="urllc_fifo_core_mux_reciever_in_0" Description="Vivado Synthesis Defaults" AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" Dir="$PRUNDIR/urllc_fifo_core_mux_reciever_in_0_synth_1" IncludeInArchive="true">
       <Strategy Version="1" Minor="2">
         <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2018"/>
         <Step Id="synth_design"/>
@@ -455,6 +664,177 @@
     </Run>
     <Run Id="urllc_fifo_core_mux_0_0_synth_1" Type="Ft3:Synth" SrcSet="urllc_fifo_core_mux_0_0" Part="xc7z020clg400-2" ConstrsSet="urllc_fifo_core_mux_0_0" Description="Vivado Synthesis Defaults" AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" Dir="$PRUNDIR/urllc_fifo_core_mux_0_0_synth_1" IncludeInArchive="true">
       <Strategy Version="1" Minor="2">
+        <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2018"/>
+        <Step Id="synth_design"/>
+      </Strategy>
+      <GeneratedRun Dir="$PRUNDIR" File="gen_run.xml"/>
+      <ReportStrategy Name="Vivado Synthesis Default Reports" Flow="Vivado Synthesis 2018"/>
+      <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
+    </Run>
+    <Run Id="test_fifo_axis_mux_reciever_out_0_synth_1" Type="Ft3:Synth" SrcSet="test_fifo_axis_mux_reciever_out_0" Part="xc7z020clg400-2" ConstrsSet="test_fifo_axis_mux_reciever_out_0" Description="Vivado Synthesis Defaults" AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" Dir="$PRUNDIR/test_fifo_axis_mux_reciever_out_0_synth_1" IncludeInArchive="true">
+      <Strategy Version="1" Minor="2">
+        <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2018"/>
+        <Step Id="synth_design"/>
+      </Strategy>
+      <GeneratedRun Dir="$PRUNDIR" File="gen_run.xml"/>
+      <ReportStrategy Name="Vivado Synthesis Default Reports" Flow="Vivado Synthesis 2018"/>
+      <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
+    </Run>
+    <Run Id="test_fifo_axis_mux_reciever_in_0_synth_1" Type="Ft3:Synth" SrcSet="test_fifo_axis_mux_reciever_in_0" Part="xc7z020clg400-2" ConstrsSet="test_fifo_axis_mux_reciever_in_0" Description="Vivado Synthesis Defaults" AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" Dir="$PRUNDIR/test_fifo_axis_mux_reciever_in_0_synth_1" IncludeInArchive="true">
+      <Strategy Version="1" Minor="2">
+        <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2018"/>
+        <Step Id="synth_design"/>
+      </Strategy>
+      <GeneratedRun Dir="$PRUNDIR" File="gen_run.xml"/>
+      <ReportStrategy Name="Vivado Synthesis Default Reports" Flow="Vivado Synthesis 2018"/>
+      <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
+    </Run>
+    <Run Id="test_fifo_axis_DUCWrapper_0_0_synth_1" Type="Ft3:Synth" SrcSet="test_fifo_axis_DUCWrapper_0_0" Part="xc7z020clg400-2" ConstrsSet="test_fifo_axis_DUCWrapper_0_0" Description="Vivado Synthesis Defaults" AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" Dir="$PRUNDIR/test_fifo_axis_DUCWrapper_0_0_synth_1" IncludeInArchive="true">
+      <Strategy Version="1" Minor="2">
+        <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2018"/>
+        <Step Id="synth_design"/>
+      </Strategy>
+      <GeneratedRun Dir="$PRUNDIR" File="gen_run.xml"/>
+      <ReportStrategy Name="Vivado Synthesis Default Reports" Flow="Vivado Synthesis 2018"/>
+      <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
+    </Run>
+    <Run Id="test_fifo_axis_dac_axis_0_1_synth_1" Type="Ft3:Synth" SrcSet="test_fifo_axis_dac_axis_0_1" Part="xc7z020clg400-2" ConstrsSet="test_fifo_axis_dac_axis_0_1" Description="Vivado Synthesis Defaults" AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" Dir="$PRUNDIR/test_fifo_axis_dac_axis_0_1_synth_1" IncludeInArchive="true">
+      <Strategy Version="1" Minor="2">
+        <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2018"/>
+        <Step Id="synth_design"/>
+      </Strategy>
+      <GeneratedRun Dir="$PRUNDIR" File="gen_run.xml"/>
+      <ReportStrategy Name="Vivado Synthesis Default Reports" Flow="Vivado Synthesis 2018"/>
+      <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
+    </Run>
+    <Run Id="test_fifo_axis_DDCWrapper_0_0_synth_1" Type="Ft3:Synth" SrcSet="test_fifo_axis_DDCWrapper_0_0" Part="xc7z020clg400-2" ConstrsSet="test_fifo_axis_DDCWrapper_0_0" Description="Vivado Synthesis Defaults" AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" Dir="$PRUNDIR/test_fifo_axis_DDCWrapper_0_0_synth_1" IncludeInArchive="true">
+      <Strategy Version="1" Minor="2">
+        <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2018"/>
+        <Step Id="synth_design"/>
+      </Strategy>
+      <GeneratedRun Dir="$PRUNDIR" File="gen_run.xml"/>
+      <ReportStrategy Name="Vivado Synthesis Default Reports" Flow="Vivado Synthesis 2018"/>
+      <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
+    </Run>
+    <Run Id="urllc_fifo_core_processing_system7_0_0_synth_1" Type="Ft3:Synth" SrcSet="urllc_fifo_core_processing_system7_0_0" Part="xc7z020clg400-2" ConstrsSet="urllc_fifo_core_processing_system7_0_0" Description="Vivado Synthesis Defaults" AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" Dir="$PRUNDIR/urllc_fifo_core_processing_system7_0_0_synth_1" IncludeInArchive="true">
+      <Strategy Version="1" Minor="2">
+        <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2018"/>
+        <Step Id="synth_design"/>
+      </Strategy>
+      <GeneratedRun Dir="$PRUNDIR" File="gen_run.xml"/>
+      <ReportStrategy Name="Vivado Synthesis Default Reports" Flow="Vivado Synthesis 2018"/>
+      <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
+    </Run>
+    <Run Id="urllc_fifo_core_clk_static_0_synth_1" Type="Ft3:Synth" SrcSet="urllc_fifo_core_clk_static_0" Part="xc7z020clg400-2" ConstrsSet="urllc_fifo_core_clk_static_0" Description="Vivado Synthesis Defaults" AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" Dir="$PRUNDIR/urllc_fifo_core_clk_static_0_synth_1" IncludeInArchive="true">
+      <Strategy Version="1" Minor="2">
+        <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2018"/>
+        <Step Id="synth_design"/>
+      </Strategy>
+      <GeneratedRun Dir="$PRUNDIR" File="gen_run.xml"/>
+      <ReportStrategy Name="Vivado Synthesis Default Reports" Flow="Vivado Synthesis 2018"/>
+      <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
+    </Run>
+    <Run Id="urllc_fifo_core_xbar_0_synth_1" Type="Ft3:Synth" SrcSet="urllc_fifo_core_xbar_0" Part="xc7z020clg400-2" ConstrsSet="urllc_fifo_core_xbar_0" Description="Vivado Synthesis Defaults" AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" Dir="$PRUNDIR/urllc_fifo_core_xbar_0_synth_1" IncludeInArchive="true">
+      <Strategy Version="1" Minor="2">
+        <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2018"/>
+        <Step Id="synth_design"/>
+      </Strategy>
+      <GeneratedRun Dir="$PRUNDIR" File="gen_run.xml"/>
+      <ReportStrategy Name="Vivado Synthesis Default Reports" Flow="Vivado Synthesis 2018"/>
+      <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
+    </Run>
+    <Run Id="urllc_fifo_core_axi_dma_0_0_synth_1" Type="Ft3:Synth" SrcSet="urllc_fifo_core_axi_dma_0_0" Part="xc7z020clg400-2" ConstrsSet="urllc_fifo_core_axi_dma_0_0" Description="Vivado Synthesis Defaults" AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" Dir="$PRUNDIR/urllc_fifo_core_axi_dma_0_0_synth_1" IncludeInArchive="true">
+      <Strategy Version="1" Minor="2">
+        <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2018"/>
+        <Step Id="synth_design"/>
+      </Strategy>
+      <GeneratedRun Dir="$PRUNDIR" File="gen_run.xml"/>
+      <ReportStrategy Name="Vivado Synthesis Default Reports" Flow="Vivado Synthesis 2018"/>
+      <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
+    </Run>
+    <Run Id="urllc_fifo_core_clk_dynamic_0_synth_1" Type="Ft3:Synth" SrcSet="urllc_fifo_core_clk_dynamic_0" Part="xc7z020clg400-2" ConstrsSet="urllc_fifo_core_clk_dynamic_0" Description="Vivado Synthesis Defaults" AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" Dir="$PRUNDIR/urllc_fifo_core_clk_dynamic_0_synth_1" IncludeInArchive="true">
+      <Strategy Version="1" Minor="2">
+        <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2018"/>
+        <Step Id="synth_design"/>
+      </Strategy>
+      <GeneratedRun Dir="$PRUNDIR" File="gen_run.xml"/>
+      <ReportStrategy Name="Vivado Synthesis Default Reports" Flow="Vivado Synthesis 2018"/>
+      <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
+    </Run>
+    <Run Id="urllc_fifo_core_axi_gpio_0_0_synth_1" Type="Ft3:Synth" SrcSet="urllc_fifo_core_axi_gpio_0_0" Part="xc7z020clg400-2" ConstrsSet="urllc_fifo_core_axi_gpio_0_0" Description="Vivado Synthesis Defaults" AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" Dir="$PRUNDIR/urllc_fifo_core_axi_gpio_0_0_synth_1" IncludeInArchive="true">
+      <Strategy Version="1" Minor="2">
+        <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2018"/>
+        <Step Id="synth_design"/>
+      </Strategy>
+      <GeneratedRun Dir="$PRUNDIR" File="gen_run.xml"/>
+      <ReportStrategy Name="Vivado Synthesis Default Reports" Flow="Vivado Synthesis 2018"/>
+      <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
+    </Run>
+    <Run Id="urllc_fifo_core_reset_static_0_synth_1" Type="Ft3:Synth" SrcSet="urllc_fifo_core_reset_static_0" Part="xc7z020clg400-2" ConstrsSet="urllc_fifo_core_reset_static_0" Description="Vivado Synthesis Defaults" AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" Dir="$PRUNDIR/urllc_fifo_core_reset_static_0_synth_1" IncludeInArchive="true">
+      <Strategy Version="1" Minor="2">
+        <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2018"/>
+        <Step Id="synth_design"/>
+      </Strategy>
+      <GeneratedRun Dir="$PRUNDIR" File="gen_run.xml"/>
+      <ReportStrategy Name="Vivado Synthesis Default Reports" Flow="Vivado Synthesis 2018"/>
+      <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
+    </Run>
+    <Run Id="urllc_fifo_core_axis_data_fifo_0_0_synth_1" Type="Ft3:Synth" SrcSet="urllc_fifo_core_axis_data_fifo_0_0" Part="xc7z020clg400-2" ConstrsSet="urllc_fifo_core_axis_data_fifo_0_0" Description="Vivado Synthesis Defaults" AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" Dir="$PRUNDIR/urllc_fifo_core_axis_data_fifo_0_0_synth_1" IncludeInArchive="true">
+      <Strategy Version="1" Minor="2">
+        <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2018"/>
+        <Step Id="synth_design"/>
+      </Strategy>
+      <GeneratedRun Dir="$PRUNDIR" File="gen_run.xml"/>
+      <ReportStrategy Name="Vivado Synthesis Default Reports" Flow="Vivado Synthesis 2018"/>
+      <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
+    </Run>
+    <Run Id="test_fifo_axis_axis_data_fifo_dac_0_synth_1" Type="Ft3:Synth" SrcSet="test_fifo_axis_axis_data_fifo_dac_0" Part="xc7z020clg400-2" ConstrsSet="test_fifo_axis_axis_data_fifo_dac_0" Description="Vivado Synthesis Defaults" AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" Dir="$PRUNDIR/test_fifo_axis_axis_data_fifo_dac_0_synth_1" IncludeInArchive="true">
+      <Strategy Version="1" Minor="2">
+        <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2018"/>
+        <Step Id="synth_design"/>
+      </Strategy>
+      <GeneratedRun Dir="$PRUNDIR" File="gen_run.xml"/>
+      <ReportStrategy Name="Vivado Synthesis Default Reports" Flow="Vivado Synthesis 2018"/>
+      <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
+    </Run>
+    <Run Id="urllc_fifo_core_system_ila_0_0_synth_1" Type="Ft3:Synth" SrcSet="urllc_fifo_core_system_ila_0_0" Part="xc7z020clg400-2" ConstrsSet="urllc_fifo_core_system_ila_0_0" Description="Vivado Synthesis Defaults" AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" Dir="$PRUNDIR/urllc_fifo_core_system_ila_0_0_synth_1" IncludeInArchive="true">
+      <Strategy Version="1" Minor="2">
+        <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2018"/>
+        <Step Id="synth_design"/>
+      </Strategy>
+      <GeneratedRun Dir="$PRUNDIR" File="gen_run.xml"/>
+      <ReportStrategy Name="Vivado Synthesis Default Reports" Flow="Vivado Synthesis 2018"/>
+      <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
+    </Run>
+    <Run Id="urllc_fifo_core_axis_data_fifo_adc_1_synth_1" Type="Ft3:Synth" SrcSet="urllc_fifo_core_axis_data_fifo_adc_1" Part="xc7z020clg400-2" ConstrsSet="urllc_fifo_core_axis_data_fifo_adc_1" Description="Vivado Synthesis Defaults" AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" Dir="$PRUNDIR/urllc_fifo_core_axis_data_fifo_adc_1_synth_1" IncludeInArchive="true">
+      <Strategy Version="1" Minor="2">
+        <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2018"/>
+        <Step Id="synth_design"/>
+      </Strategy>
+      <GeneratedRun Dir="$PRUNDIR" File="gen_run.xml"/>
+      <ReportStrategy Name="Vivado Synthesis Default Reports" Flow="Vivado Synthesis 2018"/>
+      <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
+    </Run>
+    <Run Id="urllc_fifo_core_xbar_1_synth_1" Type="Ft3:Synth" SrcSet="urllc_fifo_core_xbar_1" Part="xc7z020clg400-2" ConstrsSet="urllc_fifo_core_xbar_1" Description="Vivado Synthesis Defaults" AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" Dir="$PRUNDIR/urllc_fifo_core_xbar_1_synth_1" IncludeInArchive="true">
+      <Strategy Version="1" Minor="2">
+        <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2018"/>
+        <Step Id="synth_design"/>
+      </Strategy>
+      <GeneratedRun Dir="$PRUNDIR" File="gen_run.xml"/>
+      <ReportStrategy Name="Vivado Synthesis Default Reports" Flow="Vivado Synthesis 2018"/>
+      <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
+    </Run>
+    <Run Id="urllc_fifo_core_reset_dynamic_0_synth_1" Type="Ft3:Synth" SrcSet="urllc_fifo_core_reset_dynamic_0" Part="xc7z020clg400-2" ConstrsSet="urllc_fifo_core_reset_dynamic_0" Description="Vivado Synthesis Defaults" AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" Dir="$PRUNDIR/urllc_fifo_core_reset_dynamic_0_synth_1" IncludeInArchive="true">
+      <Strategy Version="1" Minor="2">
+        <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2018"/>
+        <Step Id="synth_design"/>
+      </Strategy>
+      <GeneratedRun Dir="$PRUNDIR" File="gen_run.xml"/>
+      <ReportStrategy Name="Vivado Synthesis Default Reports" Flow="Vivado Synthesis 2018"/>
+      <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
+    </Run>
+    <Run Id="urllc_fifo_core_adc_axis_0_0_synth_1" Type="Ft3:Synth" SrcSet="urllc_fifo_core_adc_axis_0_0" Part="xc7z020clg400-2" ConstrsSet="urllc_fifo_core_adc_axis_0_0" Description="Vivado Synthesis Defaults" AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" Dir="$PRUNDIR/urllc_fifo_core_adc_axis_0_0_synth_1" IncludeInArchive="true">
+      <Strategy Version="1" Minor="2">
         <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2018">
           <Desc>Vivado Synthesis Defaults</Desc>
         </StratHandle>
@@ -464,7 +844,51 @@
       <ReportStrategy Name="Vivado Synthesis Default Reports" Flow="Vivado Synthesis 2018"/>
       <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
     </Run>
-    <Run Id="urllc_fifo_core_adc_axis_0_0_synth_1" Type="Ft3:Synth" SrcSet="urllc_fifo_core_adc_axis_0_0" Part="xc7z020clg400-2" ConstrsSet="urllc_fifo_core_adc_axis_0_0" Description="Vivado Synthesis Defaults" AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" Dir="$PRUNDIR/urllc_fifo_core_adc_axis_0_0_synth_1" IncludeInArchive="true">
+    <Run Id="urllc_fifo_core_mux_0_1_synth_1" Type="Ft3:Synth" SrcSet="urllc_fifo_core_mux_0_1" Part="xc7z020clg400-2" ConstrsSet="urllc_fifo_core_mux_0_1" Description="Vivado Synthesis Defaults" AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" Dir="$PRUNDIR/urllc_fifo_core_mux_0_1_synth_1" IncludeInArchive="true">
+      <Strategy Version="1" Minor="2">
+        <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2018">
+          <Desc>Vivado Synthesis Defaults</Desc>
+        </StratHandle>
+        <Step Id="synth_design"/>
+      </Strategy>
+      <GeneratedRun Dir="$PRUNDIR" File="gen_run.xml"/>
+      <ReportStrategy Name="Vivado Synthesis Default Reports" Flow="Vivado Synthesis 2018"/>
+      <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
+    </Run>
+    <Run Id="urllc_fifo_core_auto_pc_0_synth_1" Type="Ft3:Synth" SrcSet="urllc_fifo_core_auto_pc_0" Part="xc7z020clg400-2" ConstrsSet="urllc_fifo_core_auto_pc_0" Description="Vivado Synthesis Defaults" AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" Dir="$PRUNDIR/urllc_fifo_core_auto_pc_0_synth_1" IncludeInArchive="true">
+      <Strategy Version="1" Minor="2">
+        <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2018">
+          <Desc>Vivado Synthesis Defaults</Desc>
+        </StratHandle>
+        <Step Id="synth_design"/>
+      </Strategy>
+      <GeneratedRun Dir="$PRUNDIR" File="gen_run.xml"/>
+      <ReportStrategy Name="Vivado Synthesis Default Reports" Flow="Vivado Synthesis 2018"/>
+      <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
+    </Run>
+    <Run Id="urllc_fifo_core_auto_pc_1_synth_1" Type="Ft3:Synth" SrcSet="urllc_fifo_core_auto_pc_1" Part="xc7z020clg400-2" ConstrsSet="urllc_fifo_core_auto_pc_1" Description="Vivado Synthesis Defaults" AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" Dir="$PRUNDIR/urllc_fifo_core_auto_pc_1_synth_1" IncludeInArchive="true">
+      <Strategy Version="1" Minor="2">
+        <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2018">
+          <Desc>Vivado Synthesis Defaults</Desc>
+        </StratHandle>
+        <Step Id="synth_design"/>
+      </Strategy>
+      <GeneratedRun Dir="$PRUNDIR" File="gen_run.xml"/>
+      <ReportStrategy Name="Vivado Synthesis Default Reports" Flow="Vivado Synthesis 2018"/>
+      <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
+    </Run>
+    <Run Id="urllc_fifo_core_auto_us_0_synth_1" Type="Ft3:Synth" SrcSet="urllc_fifo_core_auto_us_0" Part="xc7z020clg400-2" ConstrsSet="urllc_fifo_core_auto_us_0" Description="Vivado Synthesis Defaults" AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" Dir="$PRUNDIR/urllc_fifo_core_auto_us_0_synth_1" IncludeInArchive="true">
+      <Strategy Version="1" Minor="2">
+        <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2018">
+          <Desc>Vivado Synthesis Defaults</Desc>
+        </StratHandle>
+        <Step Id="synth_design"/>
+      </Strategy>
+      <GeneratedRun Dir="$PRUNDIR" File="gen_run.xml"/>
+      <ReportStrategy Name="Vivado Synthesis Default Reports" Flow="Vivado Synthesis 2018"/>
+      <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
+    </Run>
+    <Run Id="urllc_fifo_core_auto_us_1_synth_1" Type="Ft3:Synth" SrcSet="urllc_fifo_core_auto_us_1" Part="xc7z020clg400-2" ConstrsSet="urllc_fifo_core_auto_us_1" Description="Vivado Synthesis Defaults" AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" Dir="$PRUNDIR/urllc_fifo_core_auto_us_1_synth_1" IncludeInArchive="true">
       <Strategy Version="1" Minor="2">
         <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2018">
           <Desc>Vivado Synthesis Defaults</Desc>
@@ -489,22 +913,6 @@
         <Step Id="write_bitstream"/>
       </Strategy>
       <GeneratedRun Dir="$PRUNDIR" File="gen_run.xml"/>
-      <ReportStrategy Name="Vivado Implementation Default Reports" Flow="Vivado Implementation 2018"/>
-      <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
-    </Run>
-    <Run Id="urllc_fifo_core_mux_reciever_in_0_impl_1" Type="Ft2:EntireDesign" Part="xc7z020clg400-2" ConstrsSet="urllc_fifo_core_mux_reciever_in_0" Description="Default settings for Implementation." AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" SynthRun="urllc_fifo_core_mux_reciever_in_0_synth_1" IncludeInArchive="false" GenFullBitstream="true">
-      <Strategy Version="1" Minor="2">
-        <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2018"/>
-        <Step Id="init_design"/>
-        <Step Id="opt_design"/>
-        <Step Id="power_opt_design"/>
-        <Step Id="place_design"/>
-        <Step Id="post_place_power_opt_design"/>
-        <Step Id="phys_opt_design"/>
-        <Step Id="route_design"/>
-        <Step Id="post_route_phys_opt_design"/>
-        <Step Id="write_bitstream"/>
-      </Strategy>
       <ReportStrategy Name="Vivado Implementation Default Reports" Flow="Vivado Implementation 2018"/>
       <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
     </Run>
@@ -606,6 +1014,310 @@
     </Run>
     <Run Id="urllc_fifo_core_mux_0_0_impl_1" Type="Ft2:EntireDesign" Part="xc7z020clg400-2" ConstrsSet="urllc_fifo_core_mux_0_0" Description="Default settings for Implementation." AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" SynthRun="urllc_fifo_core_mux_0_0_synth_1" IncludeInArchive="false" GenFullBitstream="true">
       <Strategy Version="1" Minor="2">
+        <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2018"/>
+        <Step Id="init_design"/>
+        <Step Id="opt_design"/>
+        <Step Id="power_opt_design"/>
+        <Step Id="place_design"/>
+        <Step Id="post_place_power_opt_design"/>
+        <Step Id="phys_opt_design"/>
+        <Step Id="route_design"/>
+        <Step Id="post_route_phys_opt_design"/>
+        <Step Id="write_bitstream"/>
+      </Strategy>
+      <ReportStrategy Name="Vivado Implementation Default Reports" Flow="Vivado Implementation 2018"/>
+      <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
+    </Run>
+    <Run Id="test_fifo_axis_mux_reciever_out_0_impl_1" Type="Ft2:EntireDesign" Part="xc7z020clg400-2" ConstrsSet="test_fifo_axis_mux_reciever_out_0" Description="Default settings for Implementation." AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" SynthRun="test_fifo_axis_mux_reciever_out_0_synth_1" IncludeInArchive="false" GenFullBitstream="true">
+      <Strategy Version="1" Minor="2">
+        <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2018"/>
+        <Step Id="init_design"/>
+        <Step Id="opt_design"/>
+        <Step Id="power_opt_design"/>
+        <Step Id="place_design"/>
+        <Step Id="post_place_power_opt_design"/>
+        <Step Id="phys_opt_design"/>
+        <Step Id="route_design"/>
+        <Step Id="post_route_phys_opt_design"/>
+        <Step Id="write_bitstream"/>
+      </Strategy>
+      <ReportStrategy Name="Vivado Implementation Default Reports" Flow="Vivado Implementation 2018"/>
+      <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
+    </Run>
+    <Run Id="test_fifo_axis_mux_reciever_in_0_impl_1" Type="Ft2:EntireDesign" Part="xc7z020clg400-2" ConstrsSet="test_fifo_axis_mux_reciever_in_0" Description="Default settings for Implementation." AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" SynthRun="test_fifo_axis_mux_reciever_in_0_synth_1" IncludeInArchive="false" GenFullBitstream="true">
+      <Strategy Version="1" Minor="2">
+        <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2018"/>
+        <Step Id="init_design"/>
+        <Step Id="opt_design"/>
+        <Step Id="power_opt_design"/>
+        <Step Id="place_design"/>
+        <Step Id="post_place_power_opt_design"/>
+        <Step Id="phys_opt_design"/>
+        <Step Id="route_design"/>
+        <Step Id="post_route_phys_opt_design"/>
+        <Step Id="write_bitstream"/>
+      </Strategy>
+      <ReportStrategy Name="Vivado Implementation Default Reports" Flow="Vivado Implementation 2018"/>
+      <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
+    </Run>
+    <Run Id="test_fifo_axis_DUCWrapper_0_0_impl_1" Type="Ft2:EntireDesign" Part="xc7z020clg400-2" ConstrsSet="test_fifo_axis_DUCWrapper_0_0" Description="Default settings for Implementation." AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" SynthRun="test_fifo_axis_DUCWrapper_0_0_synth_1" IncludeInArchive="false" GenFullBitstream="true">
+      <Strategy Version="1" Minor="2">
+        <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2018"/>
+        <Step Id="init_design"/>
+        <Step Id="opt_design"/>
+        <Step Id="power_opt_design"/>
+        <Step Id="place_design"/>
+        <Step Id="post_place_power_opt_design"/>
+        <Step Id="phys_opt_design"/>
+        <Step Id="route_design"/>
+        <Step Id="post_route_phys_opt_design"/>
+        <Step Id="write_bitstream"/>
+      </Strategy>
+      <ReportStrategy Name="Vivado Implementation Default Reports" Flow="Vivado Implementation 2018"/>
+      <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
+    </Run>
+    <Run Id="test_fifo_axis_dac_axis_0_1_impl_1" Type="Ft2:EntireDesign" Part="xc7z020clg400-2" ConstrsSet="test_fifo_axis_dac_axis_0_1" Description="Default settings for Implementation." AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" SynthRun="test_fifo_axis_dac_axis_0_1_synth_1" IncludeInArchive="false" GenFullBitstream="true">
+      <Strategy Version="1" Minor="2">
+        <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2018"/>
+        <Step Id="init_design"/>
+        <Step Id="opt_design"/>
+        <Step Id="power_opt_design"/>
+        <Step Id="place_design"/>
+        <Step Id="post_place_power_opt_design"/>
+        <Step Id="phys_opt_design"/>
+        <Step Id="route_design"/>
+        <Step Id="post_route_phys_opt_design"/>
+        <Step Id="write_bitstream"/>
+      </Strategy>
+      <ReportStrategy Name="Vivado Implementation Default Reports" Flow="Vivado Implementation 2018"/>
+      <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
+    </Run>
+    <Run Id="test_fifo_axis_DDCWrapper_0_0_impl_1" Type="Ft2:EntireDesign" Part="xc7z020clg400-2" ConstrsSet="test_fifo_axis_DDCWrapper_0_0" Description="Default settings for Implementation." AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" SynthRun="test_fifo_axis_DDCWrapper_0_0_synth_1" IncludeInArchive="false" GenFullBitstream="true">
+      <Strategy Version="1" Minor="2">
+        <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2018"/>
+        <Step Id="init_design"/>
+        <Step Id="opt_design"/>
+        <Step Id="power_opt_design"/>
+        <Step Id="place_design"/>
+        <Step Id="post_place_power_opt_design"/>
+        <Step Id="phys_opt_design"/>
+        <Step Id="route_design"/>
+        <Step Id="post_route_phys_opt_design"/>
+        <Step Id="write_bitstream"/>
+      </Strategy>
+      <ReportStrategy Name="Vivado Implementation Default Reports" Flow="Vivado Implementation 2018"/>
+      <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
+    </Run>
+    <Run Id="urllc_fifo_core_processing_system7_0_0_impl_1" Type="Ft2:EntireDesign" Part="xc7z020clg400-2" ConstrsSet="urllc_fifo_core_processing_system7_0_0" Description="Default settings for Implementation." AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" SynthRun="urllc_fifo_core_processing_system7_0_0_synth_1" IncludeInArchive="false" GenFullBitstream="true">
+      <Strategy Version="1" Minor="2">
+        <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2018"/>
+        <Step Id="init_design"/>
+        <Step Id="opt_design"/>
+        <Step Id="power_opt_design"/>
+        <Step Id="place_design"/>
+        <Step Id="post_place_power_opt_design"/>
+        <Step Id="phys_opt_design"/>
+        <Step Id="route_design"/>
+        <Step Id="post_route_phys_opt_design"/>
+        <Step Id="write_bitstream"/>
+      </Strategy>
+      <ReportStrategy Name="Vivado Implementation Default Reports" Flow="Vivado Implementation 2018"/>
+      <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
+    </Run>
+    <Run Id="urllc_fifo_core_clk_static_0_impl_1" Type="Ft2:EntireDesign" Part="xc7z020clg400-2" ConstrsSet="urllc_fifo_core_clk_static_0" Description="Default settings for Implementation." AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" SynthRun="urllc_fifo_core_clk_static_0_synth_1" IncludeInArchive="false" GenFullBitstream="true">
+      <Strategy Version="1" Minor="2">
+        <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2018"/>
+        <Step Id="init_design"/>
+        <Step Id="opt_design"/>
+        <Step Id="power_opt_design"/>
+        <Step Id="place_design"/>
+        <Step Id="post_place_power_opt_design"/>
+        <Step Id="phys_opt_design"/>
+        <Step Id="route_design"/>
+        <Step Id="post_route_phys_opt_design"/>
+        <Step Id="write_bitstream"/>
+      </Strategy>
+      <ReportStrategy Name="Vivado Implementation Default Reports" Flow="Vivado Implementation 2018"/>
+      <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
+    </Run>
+    <Run Id="urllc_fifo_core_xbar_0_impl_1" Type="Ft2:EntireDesign" Part="xc7z020clg400-2" ConstrsSet="urllc_fifo_core_xbar_0" Description="Default settings for Implementation." AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" SynthRun="urllc_fifo_core_xbar_0_synth_1" IncludeInArchive="false" GenFullBitstream="true">
+      <Strategy Version="1" Minor="2">
+        <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2018"/>
+        <Step Id="init_design"/>
+        <Step Id="opt_design"/>
+        <Step Id="power_opt_design"/>
+        <Step Id="place_design"/>
+        <Step Id="post_place_power_opt_design"/>
+        <Step Id="phys_opt_design"/>
+        <Step Id="route_design"/>
+        <Step Id="post_route_phys_opt_design"/>
+        <Step Id="write_bitstream"/>
+      </Strategy>
+      <ReportStrategy Name="Vivado Implementation Default Reports" Flow="Vivado Implementation 2018"/>
+      <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
+    </Run>
+    <Run Id="urllc_fifo_core_axi_dma_0_0_impl_1" Type="Ft2:EntireDesign" Part="xc7z020clg400-2" ConstrsSet="urllc_fifo_core_axi_dma_0_0" Description="Default settings for Implementation." AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" SynthRun="urllc_fifo_core_axi_dma_0_0_synth_1" IncludeInArchive="false" GenFullBitstream="true">
+      <Strategy Version="1" Minor="2">
+        <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2018"/>
+        <Step Id="init_design"/>
+        <Step Id="opt_design"/>
+        <Step Id="power_opt_design"/>
+        <Step Id="place_design"/>
+        <Step Id="post_place_power_opt_design"/>
+        <Step Id="phys_opt_design"/>
+        <Step Id="route_design"/>
+        <Step Id="post_route_phys_opt_design"/>
+        <Step Id="write_bitstream"/>
+      </Strategy>
+      <ReportStrategy Name="Vivado Implementation Default Reports" Flow="Vivado Implementation 2018"/>
+      <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
+    </Run>
+    <Run Id="urllc_fifo_core_clk_dynamic_0_impl_1" Type="Ft2:EntireDesign" Part="xc7z020clg400-2" ConstrsSet="urllc_fifo_core_clk_dynamic_0" Description="Default settings for Implementation." AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" SynthRun="urllc_fifo_core_clk_dynamic_0_synth_1" IncludeInArchive="false" GenFullBitstream="true">
+      <Strategy Version="1" Minor="2">
+        <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2018"/>
+        <Step Id="init_design"/>
+        <Step Id="opt_design"/>
+        <Step Id="power_opt_design"/>
+        <Step Id="place_design"/>
+        <Step Id="post_place_power_opt_design"/>
+        <Step Id="phys_opt_design"/>
+        <Step Id="route_design"/>
+        <Step Id="post_route_phys_opt_design"/>
+        <Step Id="write_bitstream"/>
+      </Strategy>
+      <ReportStrategy Name="Vivado Implementation Default Reports" Flow="Vivado Implementation 2018"/>
+      <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
+    </Run>
+    <Run Id="urllc_fifo_core_axi_gpio_0_0_impl_1" Type="Ft2:EntireDesign" Part="xc7z020clg400-2" ConstrsSet="urllc_fifo_core_axi_gpio_0_0" Description="Default settings for Implementation." AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" SynthRun="urllc_fifo_core_axi_gpio_0_0_synth_1" IncludeInArchive="false" GenFullBitstream="true">
+      <Strategy Version="1" Minor="2">
+        <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2018"/>
+        <Step Id="init_design"/>
+        <Step Id="opt_design"/>
+        <Step Id="power_opt_design"/>
+        <Step Id="place_design"/>
+        <Step Id="post_place_power_opt_design"/>
+        <Step Id="phys_opt_design"/>
+        <Step Id="route_design"/>
+        <Step Id="post_route_phys_opt_design"/>
+        <Step Id="write_bitstream"/>
+      </Strategy>
+      <ReportStrategy Name="Vivado Implementation Default Reports" Flow="Vivado Implementation 2018"/>
+      <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
+    </Run>
+    <Run Id="urllc_fifo_core_reset_static_0_impl_1" Type="Ft2:EntireDesign" Part="xc7z020clg400-2" ConstrsSet="urllc_fifo_core_reset_static_0" Description="Default settings for Implementation." AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" SynthRun="urllc_fifo_core_reset_static_0_synth_1" IncludeInArchive="false" GenFullBitstream="true">
+      <Strategy Version="1" Minor="2">
+        <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2018"/>
+        <Step Id="init_design"/>
+        <Step Id="opt_design"/>
+        <Step Id="power_opt_design"/>
+        <Step Id="place_design"/>
+        <Step Id="post_place_power_opt_design"/>
+        <Step Id="phys_opt_design"/>
+        <Step Id="route_design"/>
+        <Step Id="post_route_phys_opt_design"/>
+        <Step Id="write_bitstream"/>
+      </Strategy>
+      <ReportStrategy Name="Vivado Implementation Default Reports" Flow="Vivado Implementation 2018"/>
+      <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
+    </Run>
+    <Run Id="urllc_fifo_core_axis_data_fifo_0_0_impl_1" Type="Ft2:EntireDesign" Part="xc7z020clg400-2" ConstrsSet="urllc_fifo_core_axis_data_fifo_0_0" Description="Default settings for Implementation." AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" SynthRun="urllc_fifo_core_axis_data_fifo_0_0_synth_1" IncludeInArchive="false" GenFullBitstream="true">
+      <Strategy Version="1" Minor="2">
+        <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2018"/>
+        <Step Id="init_design"/>
+        <Step Id="opt_design"/>
+        <Step Id="power_opt_design"/>
+        <Step Id="place_design"/>
+        <Step Id="post_place_power_opt_design"/>
+        <Step Id="phys_opt_design"/>
+        <Step Id="route_design"/>
+        <Step Id="post_route_phys_opt_design"/>
+        <Step Id="write_bitstream"/>
+      </Strategy>
+      <ReportStrategy Name="Vivado Implementation Default Reports" Flow="Vivado Implementation 2018"/>
+      <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
+    </Run>
+    <Run Id="test_fifo_axis_axis_data_fifo_dac_0_impl_1" Type="Ft2:EntireDesign" Part="xc7z020clg400-2" ConstrsSet="test_fifo_axis_axis_data_fifo_dac_0" Description="Default settings for Implementation." AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" SynthRun="test_fifo_axis_axis_data_fifo_dac_0_synth_1" IncludeInArchive="false" GenFullBitstream="true">
+      <Strategy Version="1" Minor="2">
+        <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2018"/>
+        <Step Id="init_design"/>
+        <Step Id="opt_design"/>
+        <Step Id="power_opt_design"/>
+        <Step Id="place_design"/>
+        <Step Id="post_place_power_opt_design"/>
+        <Step Id="phys_opt_design"/>
+        <Step Id="route_design"/>
+        <Step Id="post_route_phys_opt_design"/>
+        <Step Id="write_bitstream"/>
+      </Strategy>
+      <ReportStrategy Name="Vivado Implementation Default Reports" Flow="Vivado Implementation 2018"/>
+      <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
+    </Run>
+    <Run Id="urllc_fifo_core_system_ila_0_0_impl_1" Type="Ft2:EntireDesign" Part="xc7z020clg400-2" ConstrsSet="urllc_fifo_core_system_ila_0_0" Description="Default settings for Implementation." AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" SynthRun="urllc_fifo_core_system_ila_0_0_synth_1" IncludeInArchive="false" GenFullBitstream="true">
+      <Strategy Version="1" Minor="2">
+        <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2018"/>
+        <Step Id="init_design"/>
+        <Step Id="opt_design"/>
+        <Step Id="power_opt_design"/>
+        <Step Id="place_design"/>
+        <Step Id="post_place_power_opt_design"/>
+        <Step Id="phys_opt_design"/>
+        <Step Id="route_design"/>
+        <Step Id="post_route_phys_opt_design"/>
+        <Step Id="write_bitstream"/>
+      </Strategy>
+      <ReportStrategy Name="Vivado Implementation Default Reports" Flow="Vivado Implementation 2018"/>
+      <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
+    </Run>
+    <Run Id="urllc_fifo_core_axis_data_fifo_adc_1_impl_1" Type="Ft2:EntireDesign" Part="xc7z020clg400-2" ConstrsSet="urllc_fifo_core_axis_data_fifo_adc_1" Description="Default settings for Implementation." AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" SynthRun="urllc_fifo_core_axis_data_fifo_adc_1_synth_1" IncludeInArchive="false" GenFullBitstream="true">
+      <Strategy Version="1" Minor="2">
+        <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2018"/>
+        <Step Id="init_design"/>
+        <Step Id="opt_design"/>
+        <Step Id="power_opt_design"/>
+        <Step Id="place_design"/>
+        <Step Id="post_place_power_opt_design"/>
+        <Step Id="phys_opt_design"/>
+        <Step Id="route_design"/>
+        <Step Id="post_route_phys_opt_design"/>
+        <Step Id="write_bitstream"/>
+      </Strategy>
+      <ReportStrategy Name="Vivado Implementation Default Reports" Flow="Vivado Implementation 2018"/>
+      <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
+    </Run>
+    <Run Id="urllc_fifo_core_xbar_1_impl_1" Type="Ft2:EntireDesign" Part="xc7z020clg400-2" ConstrsSet="urllc_fifo_core_xbar_1" Description="Default settings for Implementation." AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" SynthRun="urllc_fifo_core_xbar_1_synth_1" IncludeInArchive="false" GenFullBitstream="true">
+      <Strategy Version="1" Minor="2">
+        <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2018"/>
+        <Step Id="init_design"/>
+        <Step Id="opt_design"/>
+        <Step Id="power_opt_design"/>
+        <Step Id="place_design"/>
+        <Step Id="post_place_power_opt_design"/>
+        <Step Id="phys_opt_design"/>
+        <Step Id="route_design"/>
+        <Step Id="post_route_phys_opt_design"/>
+        <Step Id="write_bitstream"/>
+      </Strategy>
+      <ReportStrategy Name="Vivado Implementation Default Reports" Flow="Vivado Implementation 2018"/>
+      <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
+    </Run>
+    <Run Id="urllc_fifo_core_reset_dynamic_0_impl_1" Type="Ft2:EntireDesign" Part="xc7z020clg400-2" ConstrsSet="urllc_fifo_core_reset_dynamic_0" Description="Default settings for Implementation." AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" SynthRun="urllc_fifo_core_reset_dynamic_0_synth_1" IncludeInArchive="false" GenFullBitstream="true">
+      <Strategy Version="1" Minor="2">
+        <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2018"/>
+        <Step Id="init_design"/>
+        <Step Id="opt_design"/>
+        <Step Id="power_opt_design"/>
+        <Step Id="place_design"/>
+        <Step Id="post_place_power_opt_design"/>
+        <Step Id="phys_opt_design"/>
+        <Step Id="route_design"/>
+        <Step Id="post_route_phys_opt_design"/>
+        <Step Id="write_bitstream"/>
+      </Strategy>
+      <ReportStrategy Name="Vivado Implementation Default Reports" Flow="Vivado Implementation 2018"/>
+      <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
+    </Run>
+    <Run Id="urllc_fifo_core_adc_axis_0_0_impl_1" Type="Ft2:EntireDesign" Part="xc7z020clg400-2" ConstrsSet="urllc_fifo_core_adc_axis_0_0" Description="Default settings for Implementation." AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" SynthRun="urllc_fifo_core_adc_axis_0_0_synth_1" IncludeInArchive="false" GenFullBitstream="true">
+      <Strategy Version="1" Minor="2">
         <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2018">
           <Desc>Default settings for Implementation.</Desc>
         </StratHandle>
@@ -622,7 +1334,79 @@
       <ReportStrategy Name="Vivado Implementation Default Reports" Flow="Vivado Implementation 2018"/>
       <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
     </Run>
-    <Run Id="urllc_fifo_core_adc_axis_0_0_impl_1" Type="Ft2:EntireDesign" Part="xc7z020clg400-2" ConstrsSet="urllc_fifo_core_adc_axis_0_0" Description="Default settings for Implementation." AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" SynthRun="urllc_fifo_core_adc_axis_0_0_synth_1" IncludeInArchive="false" GenFullBitstream="true">
+    <Run Id="urllc_fifo_core_mux_0_1_impl_1" Type="Ft2:EntireDesign" Part="xc7z020clg400-2" ConstrsSet="urllc_fifo_core_mux_0_1" Description="Default settings for Implementation." AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" SynthRun="urllc_fifo_core_mux_0_1_synth_1" IncludeInArchive="false" GenFullBitstream="true">
+      <Strategy Version="1" Minor="2">
+        <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2018">
+          <Desc>Default settings for Implementation.</Desc>
+        </StratHandle>
+        <Step Id="init_design"/>
+        <Step Id="opt_design"/>
+        <Step Id="power_opt_design"/>
+        <Step Id="place_design"/>
+        <Step Id="post_place_power_opt_design"/>
+        <Step Id="phys_opt_design"/>
+        <Step Id="route_design"/>
+        <Step Id="post_route_phys_opt_design"/>
+        <Step Id="write_bitstream"/>
+      </Strategy>
+      <ReportStrategy Name="Vivado Implementation Default Reports" Flow="Vivado Implementation 2018"/>
+      <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
+    </Run>
+    <Run Id="urllc_fifo_core_auto_pc_0_impl_1" Type="Ft2:EntireDesign" Part="xc7z020clg400-2" ConstrsSet="urllc_fifo_core_auto_pc_0" Description="Default settings for Implementation." AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" SynthRun="urllc_fifo_core_auto_pc_0_synth_1" IncludeInArchive="false" GenFullBitstream="true">
+      <Strategy Version="1" Minor="2">
+        <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2018">
+          <Desc>Default settings for Implementation.</Desc>
+        </StratHandle>
+        <Step Id="init_design"/>
+        <Step Id="opt_design"/>
+        <Step Id="power_opt_design"/>
+        <Step Id="place_design"/>
+        <Step Id="post_place_power_opt_design"/>
+        <Step Id="phys_opt_design"/>
+        <Step Id="route_design"/>
+        <Step Id="post_route_phys_opt_design"/>
+        <Step Id="write_bitstream"/>
+      </Strategy>
+      <ReportStrategy Name="Vivado Implementation Default Reports" Flow="Vivado Implementation 2018"/>
+      <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
+    </Run>
+    <Run Id="urllc_fifo_core_auto_pc_1_impl_1" Type="Ft2:EntireDesign" Part="xc7z020clg400-2" ConstrsSet="urllc_fifo_core_auto_pc_1" Description="Default settings for Implementation." AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" SynthRun="urllc_fifo_core_auto_pc_1_synth_1" IncludeInArchive="false" GenFullBitstream="true">
+      <Strategy Version="1" Minor="2">
+        <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2018">
+          <Desc>Default settings for Implementation.</Desc>
+        </StratHandle>
+        <Step Id="init_design"/>
+        <Step Id="opt_design"/>
+        <Step Id="power_opt_design"/>
+        <Step Id="place_design"/>
+        <Step Id="post_place_power_opt_design"/>
+        <Step Id="phys_opt_design"/>
+        <Step Id="route_design"/>
+        <Step Id="post_route_phys_opt_design"/>
+        <Step Id="write_bitstream"/>
+      </Strategy>
+      <ReportStrategy Name="Vivado Implementation Default Reports" Flow="Vivado Implementation 2018"/>
+      <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
+    </Run>
+    <Run Id="urllc_fifo_core_auto_us_0_impl_1" Type="Ft2:EntireDesign" Part="xc7z020clg400-2" ConstrsSet="urllc_fifo_core_auto_us_0" Description="Default settings for Implementation." AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" SynthRun="urllc_fifo_core_auto_us_0_synth_1" IncludeInArchive="false" GenFullBitstream="true">
+      <Strategy Version="1" Minor="2">
+        <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2018">
+          <Desc>Default settings for Implementation.</Desc>
+        </StratHandle>
+        <Step Id="init_design"/>
+        <Step Id="opt_design"/>
+        <Step Id="power_opt_design"/>
+        <Step Id="place_design"/>
+        <Step Id="post_place_power_opt_design"/>
+        <Step Id="phys_opt_design"/>
+        <Step Id="route_design"/>
+        <Step Id="post_route_phys_opt_design"/>
+        <Step Id="write_bitstream"/>
+      </Strategy>
+      <ReportStrategy Name="Vivado Implementation Default Reports" Flow="Vivado Implementation 2018"/>
+      <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
+    </Run>
+    <Run Id="urllc_fifo_core_auto_us_1_impl_1" Type="Ft2:EntireDesign" Part="xc7z020clg400-2" ConstrsSet="urllc_fifo_core_auto_us_1" Description="Default settings for Implementation." AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" SynthRun="urllc_fifo_core_auto_us_1_synth_1" IncludeInArchive="false" GenFullBitstream="true">
       <Strategy Version="1" Minor="2">
         <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2018">
           <Desc>Default settings for Implementation.</Desc>

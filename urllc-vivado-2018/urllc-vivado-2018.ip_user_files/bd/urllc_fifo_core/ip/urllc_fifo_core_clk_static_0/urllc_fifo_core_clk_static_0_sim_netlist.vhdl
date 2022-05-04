@@ -1,10 +1,10 @@
 -- Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 -- --------------------------------------------------------------------------------
 -- Tool Version: Vivado v.2018.3 (win64) Build 2405991 Thu Dec  6 23:38:27 MST 2018
--- Date        : Fri Feb  4 16:53:14 2022
+-- Date        : Mon Apr 25 16:40:50 2022
 -- Host        : Chiro running 64-bit major release  (build 9200)
--- Command     : write_vhdl -force -mode funcsim
---               D:/Programs/urllc-demo-pynq/urllc-vivado-2018/urllc-vivado-2018.srcs/sources_1/bd/urllc_fifo_core/ip/urllc_fifo_core_clk_static_0/urllc_fifo_core_clk_static_0_sim_netlist.vhdl
+-- Command     : write_vhdl -force -mode funcsim -rename_top urllc_fifo_core_clk_static_0 -prefix
+--               urllc_fifo_core_clk_static_0_ urllc_fifo_core_clk_static_0_sim_netlist.vhdl
 -- Design      : urllc_fifo_core_clk_static_0
 -- Purpose     : This VHDL netlist is a functional simulation representation of the design and should not be modified or
 --               synthesized. This netlist cannot be used for SDF annotated simulation.
@@ -20,8 +20,6 @@ entity urllc_fifo_core_clk_static_0_urllc_fifo_core_clk_static_0_clk_wiz is
     locked : out STD_LOGIC;
     clk_in1 : in STD_LOGIC
   );
-  attribute ORIG_REF_NAME : string;
-  attribute ORIG_REF_NAME of urllc_fifo_core_clk_static_0_urllc_fifo_core_clk_static_0_clk_wiz : entity is "urllc_fifo_core_clk_static_0_clk_wiz";
 end urllc_fifo_core_clk_static_0_urllc_fifo_core_clk_static_0_clk_wiz;
 
 architecture STRUCTURE of urllc_fifo_core_clk_static_0_urllc_fifo_core_clk_static_0_clk_wiz is
@@ -78,12 +76,12 @@ clkout1_buf: unisim.vcomponents.BUFG
 mmcm_adv_inst: unisim.vcomponents.MMCME2_ADV
     generic map(
       BANDWIDTH => "OPTIMIZED",
-      CLKFBOUT_MULT_F => 49.875000,
+      CLKFBOUT_MULT_F => 20.250000,
       CLKFBOUT_PHASE => 0.000000,
       CLKFBOUT_USE_FINE_PS => false,
-      CLKIN1_PERIOD => 10.000000,
+      CLKIN1_PERIOD => 20.000000,
       CLKIN2_PERIOD => 0.000000,
-      CLKOUT0_DIVIDE_F => 16.625000,
+      CLKOUT0_DIVIDE_F => 16.875000,
       CLKOUT0_DUTY_CYCLE => 0.500000,
       CLKOUT0_PHASE => 0.000000,
       CLKOUT0_USE_FINE_PS => false,
@@ -113,7 +111,7 @@ mmcm_adv_inst: unisim.vcomponents.MMCME2_ADV
       CLKOUT6_PHASE => 0.000000,
       CLKOUT6_USE_FINE_PS => false,
       COMPENSATION => "ZHOLD",
-      DIVCLK_DIVIDE => 5,
+      DIVCLK_DIVIDE => 1,
       IS_CLKINSEL_INVERTED => '0',
       IS_PSEN_INVERTED => '0',
       IS_PSINCDEC_INVERTED => '0',

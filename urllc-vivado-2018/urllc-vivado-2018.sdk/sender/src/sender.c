@@ -181,28 +181,17 @@ void CounterHandler(void *InstancePtr) {
   // xil_printf("CounterHandler\r\n");
   // 发送src，接收dst
   // DmaReset();
-  // while ((XAxiDma_Busy(&AxiDma, XAXIDMA_DEVICE_TO_DMA)) ||
-  //        (XAxiDma_Busy(&AxiDma, XAXIDMA_DMA_TO_DEVICE)))
-  //   ;
-  XAxiDma_SimpleTransfer(&AxiDma, (UINTPTR)dst, 2000,//FIFO_SIZE-1,  // FIFO_SIZE,
+  XAxiDma_SimpleTransfer(&AxiDma, (UINTPTR)dst, FIFO_SIZE - 1,  // FIFO_SIZE,
                          XAXIDMA_DEVICE_TO_DMA);
   int len = XAxiDma_ReadReg(AxiDma.RegBase, 0x58);
   xil_printf("read len = %d\r\n", len);
-  // XAxiDma_SimpleTransfer(&AxiDma, (UINTPTR)src, targetSize,
-  //                        XAXIDMA_DMA_TO_DEVICE);
+  XAxiDma_SimpleTransfer(&AxiDma, (UINTPTR)src, targetSize,
+                         XAXIDMA_DMA_TO_DEVICE);
   // ClearDebugValue();
-  //  // 等待数据同步
-  //  while ((XAxiDma_Busy(&AxiDma, XAXIDMA_DEVICE_TO_DMA)) ||
-  //           (XAxiDma_Busy(&AxiDma, XAXIDMA_DMA_TO_DEVICE)))
-  //      ;
-  SmallDelay();
-  while (XAxiDma_Busy(&AxiDma, XAXIDMA_DEVICE_TO_DMA))
+  // 等待数据同步
+  while ((XAxiDma_Busy(&AxiDma, XAXIDMA_DEVICE_TO_DMA)) ||
+         (XAxiDma_Busy(&AxiDma, XAXIDMA_DMA_TO_DEVICE)))
     ;
-  // XAxiDma_SimpleTransfer(&AxiDma, (UINTPTR)src, targetSize,
-  //                       XAXIDMA_DMA_TO_DEVICE);
-  // while (XAxiDma_Busy(&AxiDma, XAXIDMA_DMA_TO_DEVICE))
-  //     ;
-
   // if (!intrPassed)
   Log("Send Done (in CounterHandler) !");
   intrPassed = true;

@@ -1,0 +1,9 @@
+# compile vhdl design source files
+vhdl xil_defaultlib  \
+"../../../../urllc-vivado-2018.ip_user_files/bd/urllc_fifo_core/ip/urllc_fifo_core_axi_dma_0_0/sim/urllc_fifo_core_axi_dma_0_0.vhd" \
+"../../../../urllc-vivado-2018.ip_user_files/bd/urllc_fifo_core/ip/urllc_fifo_core_reset_dynamic_0/sim/urllc_fifo_core_reset_dynamic_0.vhd" \
+"../../../../urllc-vivado-2018.ip_user_files/bd/urllc_fifo_core/ip/urllc_fifo_core_reset_static_0/sim/urllc_fifo_core_reset_static_0.vhd" \
+"../../../../urllc-vivado-2018.ip_user_files/bd/urllc_fifo_core/ip/urllc_fifo_core_axi_gpio_0_0/sim/urllc_fifo_core_axi_gpio_0_0.vhd" \
+
+# Do not sort compile order
+nosort

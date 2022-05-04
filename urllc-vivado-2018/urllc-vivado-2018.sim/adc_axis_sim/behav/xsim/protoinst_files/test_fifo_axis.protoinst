@@ -1,0 +1,71 @@
+{
+	"version": "1.0",
+	"modules": {
+		"test_fifo_axis": {
+			"proto_instances": {
+				"/adc/adc_axis_0/axis": {
+					"interface": "xilinx.com:interface:axis:1.0",
+					"ports": {
+						"ACLK": { "actual": "clk"},
+						"ARESETN": { "actual": "resetn"},
+						"TDATA": { "actual": "axis_tdata"},
+						"TLAST": { "actual": "axis_tlast"},
+						"TREADY": { "actual": "axis_tready"},
+						"TVALID": { "actual": "axis_tvalid"}
+					}
+				},
+				"/adc/axis_adc": {
+					"interface": "xilinx.com:interface:axis:1.0",
+					"ports": {
+						"TDATA": { "actual": "axis_adc_tdata"},
+						"TLAST": { "actual": "axis_adc_tlast"},
+						"TREADY": { "actual": "axis_adc_tready"},
+						"TVALID": { "actual": "axis_adc_tvalid"}
+					}
+				},
+				"/axis_data_fifo_inout/M_AXIS": {
+					"interface": "xilinx.com:interface:axis:1.0",
+					"ports": {
+						"ACLK": { "actual": "s_axis_aclk"},
+						"ARESETN": { "actual": "s_axis_aresetn"},
+						"TDATA": { "actual": "m_axis_tdata"},
+						"TLAST": { "actual": "m_axis_tlast"},
+						"TREADY": { "actual": "m_axis_tready"},
+						"TVALID": { "actual": "m_axis_tvalid"}
+					}
+				},
+				"/axis_data_fifo_inout/S_AXIS": {
+					"interface": "xilinx.com:interface:axis:1.0",
+					"ports": {
+						"ACLK": { "actual": "s_axis_aclk"},
+						"ARESETN": { "actual": "s_axis_aresetn"},
+						"TDATA": { "actual": "s_axis_tdata"},
+						"TLAST": { "actual": "s_axis_tlast"},
+						"TREADY": { "actual": "s_axis_tready"},
+						"TVALID": { "actual": "s_axis_tvalid"}
+					}
+				},
+				"/dac/axis": {
+					"interface": "xilinx.com:interface:axis:1.0",
+					"ports": {
+						"TDATA": { "actual": "axis_tdata"},
+						"TLAST": { "actual": "axis_tlast"},
+						"TREADY": { "actual": "axis_tready"},
+						"TVALID": { "actual": "axis_tvalid"}
+					}
+				},
+				"/dac/dac_axis_0/axis": {
+					"interface": "xilinx.com:interface:axis:1.0",
+					"ports": {
+						"ACLK": { "actual": "clk"},
+						"ARESETN": { "actual": "resetn"},
+						"TDATA": { "actual": "axis_tdata"},
+						"TLAST": { "actual": "axis_tlast"},
+						"TREADY": { "actual": "axis_tready"},
+						"TVALID": { "actual": "axis_tvalid"}
+					}
+				}
+			}
+		}
+	}
+}

@@ -203,6 +203,14 @@
                 "mode": "Slave",
                 "vlnv": "xilinx.com:interface:axis_rtl:1.0",
                 "parameters": {
+                  "CLK_DOMAIN": {
+                    "value": "test_fifo_axis_clk",
+                    "value_src": "default_prop"
+                  },
+                  "FREQ_HZ": {
+                    "value": "60000000",
+                    "value_src": "user_prop"
+                  },
                   "HAS_TKEEP": {
                     "value": "0",
                     "value_src": "constant"
@@ -218,6 +226,10 @@
                   "HAS_TSTRB": {
                     "value": "0",
                     "value_src": "constant"
+                  },
+                  "PHASE": {
+                    "value": "0.0",
+                    "value_src": "user_prop"
                   },
                   "TDATA_NUM_BYTES": {
                     "value": "1",
@@ -395,6 +407,12 @@
             "direction": "O",
             "left": "7",
             "right": "0"
+          },
+          "fifo_almost_full": {
+            "direction": "I"
+          },
+          "fifo_almost_empty": {
+            "direction": "I"
           }
         },
         "components": {
@@ -664,6 +682,18 @@
               "router",
               "mux_reciever_in/router"
             ]
+          },
+          "fifo_almost_full_1": {
+            "ports": [
+              "fifo_almost_full",
+              "adc_axis_0/fifo_almost_full"
+            ]
+          },
+          "fifo_almost_empty_1": {
+            "ports": [
+              "fifo_almost_empty",
+              "adc_axis_0/fifo_almost_empty"
+            ]
           }
         }
       },
@@ -780,6 +810,18 @@
         "ports": [
           "adc/data_out",
           "data_out_adc"
+        ]
+      },
+      "axis_data_fifo_inout_prog_full": {
+        "ports": [
+          "axis_data_fifo_inout/prog_full",
+          "adc/fifo_almost_full"
+        ]
+      },
+      "axis_data_fifo_inout_prog_empty": {
+        "ports": [
+          "axis_data_fifo_inout/prog_empty",
+          "adc/fifo_almost_empty"
         ]
       }
     }

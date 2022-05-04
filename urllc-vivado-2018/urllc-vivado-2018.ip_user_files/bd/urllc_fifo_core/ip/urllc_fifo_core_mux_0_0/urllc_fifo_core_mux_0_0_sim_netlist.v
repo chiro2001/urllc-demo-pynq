@@ -1,10 +1,10 @@
 // Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 // --------------------------------------------------------------------------------
 // Tool Version: Vivado v.2018.3 (win64) Build 2405991 Thu Dec  6 23:38:27 MST 2018
-// Date        : Fri Feb  4 16:56:19 2022
+// Date        : Tue May  3 23:01:54 2022
 // Host        : Chiro running 64-bit major release  (build 9200)
 // Command     : write_verilog -force -mode funcsim
-//               d:/Programs/urllc-demo-pynq/urllc-vivado-2018/urllc-vivado-2018.srcs/sources_1/bd/urllc_fifo_core/ip/urllc_fifo_core_mux_0_0/urllc_fifo_core_mux_0_0_sim_netlist.v
+//               D:/Programs/urllc-demo-pynq/urllc-vivado-2018/urllc-vivado-2018.srcs/sources_1/bd/urllc_fifo_core/ip/urllc_fifo_core_mux_0_0/urllc_fifo_core_mux_0_0_sim_netlist.v
 // Design      : urllc_fifo_core_mux_0_0
 // Purpose     : This verilog netlist is a functional simulation representation of the design and should not be modified
 //               or synthesized. This netlist cannot be used for SDF annotated simulation.
@@ -20,23 +20,103 @@ module urllc_fifo_core_mux_0_0
     sel2,
     data_out,
     router);
-  input [0:0]sel1;
-  input [0:0]sel2;
-  output [0:0]data_out;
+  input [7:0]sel1;
+  input [7:0]sel2;
+  output [7:0]data_out;
   input router;
 
-  wire [0:0]data_out;
+  wire [7:0]data_out;
   wire router;
-  wire [0:0]sel1;
-  wire [0:0]sel2;
+  wire [7:0]sel1;
+  wire [7:0]sel2;
 
+  urllc_fifo_core_mux_0_0_mux inst
+       (.data_out(data_out),
+        .router(router),
+        .sel1(sel1),
+        .sel2(sel2));
+endmodule
+
+(* ORIG_REF_NAME = "mux" *) 
+module urllc_fifo_core_mux_0_0_mux
+   (data_out,
+    sel2,
+    sel1,
+    router);
+  output [7:0]data_out;
+  input [7:0]sel2;
+  input [7:0]sel1;
+  input router;
+
+  wire [7:0]data_out;
+  wire router;
+  wire [7:0]sel1;
+  wire [7:0]sel2;
+
+  (* SOFT_HLUTNM = "soft_lutpair0" *) 
   LUT3 #(
-    .INIT(8'hB8)) 
+    .INIT(8'hAC)) 
     \data_out[0]_INST_0 
-       (.I0(sel2),
-        .I1(router),
-        .I2(sel1),
-        .O(data_out));
+       (.I0(sel2[0]),
+        .I1(sel1[0]),
+        .I2(router),
+        .O(data_out[0]));
+  (* SOFT_HLUTNM = "soft_lutpair0" *) 
+  LUT3 #(
+    .INIT(8'hAC)) 
+    \data_out[1]_INST_0 
+       (.I0(sel2[1]),
+        .I1(sel1[1]),
+        .I2(router),
+        .O(data_out[1]));
+  (* SOFT_HLUTNM = "soft_lutpair1" *) 
+  LUT3 #(
+    .INIT(8'hAC)) 
+    \data_out[2]_INST_0 
+       (.I0(sel2[2]),
+        .I1(sel1[2]),
+        .I2(router),
+        .O(data_out[2]));
+  (* SOFT_HLUTNM = "soft_lutpair1" *) 
+  LUT3 #(
+    .INIT(8'hAC)) 
+    \data_out[3]_INST_0 
+       (.I0(sel2[3]),
+        .I1(sel1[3]),
+        .I2(router),
+        .O(data_out[3]));
+  (* SOFT_HLUTNM = "soft_lutpair2" *) 
+  LUT3 #(
+    .INIT(8'hAC)) 
+    \data_out[4]_INST_0 
+       (.I0(sel2[4]),
+        .I1(sel1[4]),
+        .I2(router),
+        .O(data_out[4]));
+  (* SOFT_HLUTNM = "soft_lutpair2" *) 
+  LUT3 #(
+    .INIT(8'hAC)) 
+    \data_out[5]_INST_0 
+       (.I0(sel2[5]),
+        .I1(sel1[5]),
+        .I2(router),
+        .O(data_out[5]));
+  (* SOFT_HLUTNM = "soft_lutpair3" *) 
+  LUT3 #(
+    .INIT(8'hAC)) 
+    \data_out[6]_INST_0 
+       (.I0(sel2[6]),
+        .I1(sel1[6]),
+        .I2(router),
+        .O(data_out[6]));
+  (* SOFT_HLUTNM = "soft_lutpair3" *) 
+  LUT3 #(
+    .INIT(8'hAC)) 
+    \data_out[7]_INST_0 
+       (.I0(sel2[7]),
+        .I1(sel1[7]),
+        .I2(router),
+        .O(data_out[7]));
 endmodule
 `ifndef GLBL
 `define GLBL

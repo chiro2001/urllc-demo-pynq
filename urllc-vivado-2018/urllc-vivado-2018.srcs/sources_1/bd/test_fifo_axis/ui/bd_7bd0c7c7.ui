@@ -2,34 +2,36 @@
    "ExpandedHierarchyInLayout":"",
    "guistr":"# # String gsaved with Nlview 6.8.11  2018-08-07 bk=1.4403 VDI=40 GEI=35 GUI=JA:9.0 non-TLS
 #  -string -flagsOSRD
-preplace port io_in_sync_adc -pg 1 -y 320 -defaultsOSRD
-preplace port router_adc -pg 1 -y 410 -defaultsOSRD
-preplace port io_in_sync_dac -pg 1 -y 700 -defaultsOSRD
-preplace port router_dac -pg 1 -y 760 -defaultsOSRD
-preplace port resetn -pg 1 -y 570 -defaultsOSRD
-preplace port clk -pg 1 -y 590 -defaultsOSRD
-preplace portBus da -pg 1 -y 740 -defaultsOSRD
-preplace portBus data_out_adc -pg 1 -y 440 -defaultsOSRD
-preplace portBus div_dac -pg 1 -y 680 -defaultsOSRD
-preplace portBus ad -pg 1 -y 60 -defaultsOSRD
-preplace portBus div_adc -pg 1 -y 280 -defaultsOSRD
-preplace inst dac -pg 1 -lvl 2 -y 620 -defaultsOSRD
-preplace inst axis_data_fifo_inout -pg 1 -lvl 1 -y 570 -defaultsOSRD
-preplace inst adc -pg 1 -lvl 2 -y 140 -defaultsOSRD
-preplace netloc io_in_sync_0_1 1 0 2 NJ 700 340J
-preplace netloc adc_axis_adc 1 0 3 30 670 300J 510 620
-preplace netloc adc_data_out 1 2 1 630J
-preplace netloc io_in_sync_1_1 1 0 2 20J 150 NJ
-preplace netloc router_0_1 1 0 2 30J 210 NJ
-preplace netloc clk_0_1 1 0 2 20 680 290
-preplace netloc resetn_0_1 1 0 2 10 710 320
-preplace netloc div_1_1 1 0 2 0J 690 330J
-preplace netloc div_0_1 1 0 2 10J 110 NJ
-preplace netloc router_1_1 1 0 2 NJ 760 350J
-preplace netloc dac_da 1 2 1 630J
-preplace netloc ad_0_1 1 0 2 NJ 60 290J
-preplace netloc axis_data_fifo_inout_M_AXIS 1 1 1 310
-levelinfo -pg 1 -20 160 510 1640 -top 0 -bot 960
+preplace port io_in_sync_adc -pg 1 -y 640 -defaultsOSRD
+preplace port router_adc -pg 1 -y 660 -defaultsOSRD
+preplace port io_in_sync_dac -pg 1 -y 800 -defaultsOSRD
+preplace port router_dac -pg 1 -y 860 -defaultsOSRD
+preplace port resetn -pg 1 -y 510 -defaultsOSRD
+preplace port clk -pg 1 -y 530 -defaultsOSRD
+preplace portBus da -pg 1 -y 840 -defaultsOSRD
+preplace portBus data_out_adc -pg 1 -y 500 -defaultsOSRD
+preplace portBus div_dac -pg 1 -y 780 -defaultsOSRD
+preplace portBus ad -pg 1 -y 90 -defaultsOSRD
+preplace portBus div_adc -pg 1 -y 620 -defaultsOSRD
+preplace inst dac -pg 1 -lvl 2 -y 404 -defaultsOSRD
+preplace inst axis_data_fifo_inout -pg 1 -lvl 1 -y 510 -defaultsOSRD
+preplace inst adc -pg 1 -lvl 2 -y 148 -defaultsOSRD
+preplace netloc io_in_sync_0_1 1 0 2 30J 410 310J
+preplace netloc adc_axis_adc 1 0 3 40 -2 NJ -2 730
+preplace netloc adc_data_out 1 2 1 730J
+preplace netloc io_in_sync_1_1 1 0 2 -30J 138 NJ
+preplace netloc axis_data_fifo_inout_prog_full 1 1 1 320
+preplace netloc router_0_1 1 0 2 -20J 198 NJ
+preplace netloc clk_0_1 1 0 2 0 370 370
+preplace netloc resetn_0_1 1 0 2 10 380 360
+preplace netloc div_1_1 1 0 2 -10J 390 350J
+preplace netloc div_0_1 1 0 2 -40J 98 NJ
+preplace netloc router_1_1 1 0 2 20J 400 300J
+preplace netloc dac_da 1 2 1 720J
+preplace netloc ad_0_1 1 0 2 -50J 58 NJ
+preplace netloc axis_data_fifo_inout_M_AXIS 1 1 1 340
+preplace netloc axis_data_fifo_inout_prog_empty 1 1 1 330
+levelinfo -pg 1 -70 170 590 760 -top -20 -bot 940
 "
 }
 {

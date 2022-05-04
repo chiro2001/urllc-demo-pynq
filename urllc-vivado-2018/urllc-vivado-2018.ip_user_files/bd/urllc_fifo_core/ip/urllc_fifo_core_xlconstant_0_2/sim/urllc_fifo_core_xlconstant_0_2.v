@@ -57,11 +57,11 @@ module urllc_fifo_core_xlconstant_0_2 (
   dout
 );
 
-output wire [0 : 0] dout;
+output wire [7 : 0] dout;
 
   xlconstant_v1_1_5_xlconstant #(
-    .CONST_WIDTH(1),
-    .CONST_VAL('H1)
+    .CONST_WIDTH(8),
+    .CONST_VAL('H7F)
   ) inst (
     .dout(dout)
   );

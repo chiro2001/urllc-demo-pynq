@@ -1,7 +1,7 @@
 //Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 //--------------------------------------------------------------------------------
 //Tool Version: Vivado v.2018.3 (win64) Build 2405991 Thu Dec  6 23:38:27 MST 2018
-//Date        : Mon Feb  7 22:55:28 2022
+//Date        : Wed May  4 11:58:34 2022
 //Host        : Chiro running 64-bit major release  (build 9200)
 //Command     : generate_target urllc_fifo_core.bd
 //Design      : urllc_fifo_core
@@ -11,158 +11,87 @@
 
 module adc_imp_18KFN60
    (ad,
-    ad_out,
-    ad_out_vld,
-    axis_tready1,
-    clear,
+    axis_adc_tdata,
+    axis_adc_tlast,
+    axis_adc_tready,
+    axis_adc_tvalid,
     clk,
-    count,
+    data_out,
     div,
-    fifo_read_almost_empty,
-    fifo_read_empty,
-    fifo_read_rd_data,
-    fifo_read_rd_en,
+    fifo_almost_empty,
+    fifo_almost_full1,
     io_clock,
     io_in_sync,
     io_resetN,
     resetn,
-    router,
-    start,
-    target,
-    trigger_out);
+    router);
   input [7:0]ad;
-  output [7:0]ad_out;
-  output ad_out_vld;
-  input axis_tready1;
-  input clear;
+  output [7:0]axis_adc_tdata;
+  output axis_adc_tlast;
+  input axis_adc_tready;
+  output axis_adc_tvalid;
   input clk;
-  input [15:0]count;
+  output [7:0]data_out;
   input [7:0]div;
-  input fifo_read_almost_empty;
-  input fifo_read_empty;
-  input [7:0]fifo_read_rd_data;
-  output fifo_read_rd_en;
+  input fifo_almost_empty;
+  input fifo_almost_full1;
   input io_clock;
   input io_in_sync;
   input io_resetN;
   input resetn;
   input router;
-  input start;
-  input [15:0]target;
-  output trigger_out;
 
-  wire [7:0]DDCWrapper_0_io_out_ave;
   wire DDCWrapper_0_io_out_data;
-  wire [7:0]DDCWrapper_0_io_out_readData;
-  wire DDCWrapper_0_io_out_update;
   wire Net;
   wire Net1;
   wire Net2;
   wire Net3;
   wire [7:0]ad_1;
-  wire [7:0]adc_0_ad_out;
-  wire adc_0_ad_out_vld;
-  wire axis_tready1_1;
-  wire count_trigger_0_trigger_out;
-  wire [7:0]div_1;
-  wire [15:0]fifo_adc_data_count;
-  wire fifo_read_almost_empty_1;
-  wire fifo_read_empty_1;
-  wire [7:0]fifo_read_rd_data_1;
-  wire [7:0]fifo_read_to_axis_0_axis_tdata;
-  wire fifo_read_to_axis_0_axis_tlast;
-  wire fifo_read_to_axis_0_axis_tvalid;
-  wire fifo_read_to_axis_0_fifo_read_rd_en;
+  (* DEBUG = "true" *) wire [7:0]adc_axis_0_axis_TDATA;
+  (* DEBUG = "true" *) wire adc_axis_0_axis_TLAST;
+  (* DEBUG = "true" *) wire adc_axis_0_axis_TREADY;
+  (* DEBUG = "true" *) wire adc_axis_0_axis_TVALID;
+  (* DEBUG = "true" *) (* MARK_DEBUG *) wire [7:0]div_1;
+  (* DEBUG = "true" *) wire fifo_almost_empty_1;
+  (* DEBUG = "true" *) wire fifo_almost_full1_1;
   wire io_in_sync_1;
-  wire [7:0]mux_reciever_in_data_out;
-  wire start_1;
+  (* DEBUG = "true" *) (* MARK_DEBUG *) wire [7:0]mux_reciever_in_data_out;
   wire [7:0]xlconcat_0_dout;
   wire [6:0]xlconstant_0_dout;
-  wire [15:0]xlslice_1_Dout;
-  wire xlslice_2_Dout;
-  wire xlslice_reciever_in_10_Dout;
+  (* DEBUG = "true" *) (* MARK_DEBUG *) wire xlslice_reciever_in_10_Dout;
 
   assign Net = clk;
   assign Net1 = resetn;
   assign Net2 = io_clock;
   assign Net3 = io_resetN;
   assign ad_1 = ad[7:0];
-  assign ad_out[7:0] = adc_0_ad_out;
-  assign ad_out_vld = adc_0_ad_out_vld;
-  assign axis_tready1_1 = axis_tready1;
+  assign adc_axis_0_axis_TREADY = axis_adc_tready;
+  assign axis_adc_tdata[7:0] = adc_axis_0_axis_TDATA;
+  assign axis_adc_tlast = adc_axis_0_axis_TLAST;
+  assign axis_adc_tvalid = adc_axis_0_axis_TVALID;
+  assign data_out[7:0] = mux_reciever_in_data_out;
   assign div_1 = div[7:0];
-  assign fifo_adc_data_count = count[15:0];
-  assign fifo_read_almost_empty_1 = fifo_read_almost_empty;
-  assign fifo_read_empty_1 = fifo_read_empty;
-  assign fifo_read_rd_data_1 = fifo_read_rd_data[7:0];
-  assign fifo_read_rd_en = fifo_read_to_axis_0_fifo_read_rd_en;
+  assign fifo_almost_empty_1 = fifo_almost_empty;
+  assign fifo_almost_full1_1 = fifo_almost_full1;
   assign io_in_sync_1 = io_in_sync;
-  assign start_1 = start;
-  assign trigger_out = count_trigger_0_trigger_out;
-  assign xlslice_1_Dout = target[15:0];
-  assign xlslice_2_Dout = clear;
   assign xlslice_reciever_in_10_Dout = router;
   urllc_fifo_core_DDCWrapper_0_0 DDCWrapper_0
        (.io_clock(Net2),
         .io_in_data(ad_1),
         .io_in_sync(io_in_sync_1),
-        .io_out_ave(DDCWrapper_0_io_out_ave),
         .io_out_data(DDCWrapper_0_io_out_data),
-        .io_out_readData(DDCWrapper_0_io_out_readData),
-        .io_out_update(DDCWrapper_0_io_out_update),
         .io_resetN(Net3));
-  urllc_fifo_core_adc_0_0 adc_0
+  urllc_fifo_core_adc_axis_0_0 adc_axis_0
        (.ad_in(mux_reciever_in_data_out),
-        .ad_out(adc_0_ad_out),
-        .ad_out_vld(adc_0_ad_out_vld),
+        .axis_tdata(adc_axis_0_axis_TDATA),
+        .axis_tlast(adc_axis_0_axis_TLAST),
+        .axis_tready(adc_axis_0_axis_TREADY),
+        .axis_tvalid(adc_axis_0_axis_TVALID),
         .clk(Net),
         .div(div_1),
+        .fifo_almost_empty(fifo_almost_empty_1),
+        .fifo_almost_full(fifo_almost_full1_1),
         .resetn(Net1));
-  urllc_fifo_core_count_trigger_0_0 count_trigger_0
-       (.clear(xlslice_2_Dout),
-        .clk(Net),
-        .count(fifo_adc_data_count),
-        .resetn(Net1),
-        .target(xlslice_1_Dout),
-        .trigger_out(count_trigger_0_trigger_out));
-  urllc_fifo_core_fifo_read_to_axis_0_0 fifo_read_to_axis_0
-       (.axis_tdata(fifo_read_to_axis_0_axis_tdata),
-        .axis_tlast(fifo_read_to_axis_0_axis_tlast),
-        .axis_tready(axis_tready1_1),
-        .axis_tvalid(fifo_read_to_axis_0_axis_tvalid),
-        .clk(Net),
-        .fifo_read_almost_empty(fifo_read_almost_empty_1),
-        .fifo_read_empty(fifo_read_empty_1),
-        .fifo_read_rd_data(fifo_read_rd_data_1),
-        .fifo_read_rd_en(fifo_read_to_axis_0_fifo_read_rd_en),
-        .resetn(Net1),
-        .start(start_1));
-  urllc_fifo_core_ila_adc_0 ila_adc
-       (.clk(Net),
-        .probe0(ad_1),
-        .probe1(io_in_sync_1),
-        .probe10(adc_0_ad_out_vld),
-        .probe11(fifo_adc_data_count),
-        .probe12(xlslice_1_Dout),
-        .probe13(xlslice_2_Dout),
-        .probe14(count_trigger_0_trigger_out),
-        .probe15(start_1),
-        .probe16(fifo_read_empty_1),
-        .probe17(fifo_read_almost_empty_1),
-        .probe18(fifo_read_rd_data_1),
-        .probe19(fifo_read_to_axis_0_fifo_read_rd_en),
-        .probe2(DDCWrapper_0_io_out_data),
-        .probe20(fifo_read_to_axis_0_axis_tdata),
-        .probe21(fifo_read_to_axis_0_axis_tlast),
-        .probe22(fifo_read_to_axis_0_axis_tvalid),
-        .probe23(axis_tready1_1),
-        .probe3(DDCWrapper_0_io_out_update),
-        .probe4(DDCWrapper_0_io_out_readData),
-        .probe5(DDCWrapper_0_io_out_ave),
-        .probe6(xlslice_reciever_in_10_Dout),
-        .probe7(mux_reciever_in_data_out),
-        .probe8(div_1),
-        .probe9(adc_0_ad_out));
   urllc_fifo_core_mux_reciever_in_0 mux_reciever_in
        (.data_out(mux_reciever_in_data_out),
         .router(xlslice_reciever_in_10_Dout),
@@ -192,15 +121,12 @@ module core_imp_IXGSD3
     DDR_ras_n,
     DDR_reset_n,
     DDR_we_n,
-    FCLK_CLK0,
-    FCLK_RESET0_N,
     FIXED_IO_ddr_vrn,
     FIXED_IO_ddr_vrp,
     FIXED_IO_mio,
     FIXED_IO_ps_clk,
     FIXED_IO_ps_porb,
     FIXED_IO_ps_srstb,
-    In0,
     M00_AXI_araddr,
     M00_AXI_arready,
     M00_AXI_arvalid,
@@ -218,38 +144,32 @@ module core_imp_IXGSD3
     M00_AXI_wready,
     M00_AXI_wstrb,
     M00_AXI_wvalid,
-    M_AXIS_MM2S_tdata,
-    M_AXIS_MM2S_tkeep,
-    M_AXIS_MM2S_tlast,
-    M_AXIS_MM2S_tready,
-    M_AXIS_MM2S_tvalid,
-    S_AXIS_S2MM_tdata,
-    S_AXIS_S2MM_tlast,
-    S_AXIS_S2MM_tvalid,
+    M_AXIS_tdata,
+    M_AXIS_tkeep,
+    M_AXIS_tlast,
+    M_AXIS_tready,
+    M_AXIS_tvalid,
+    S_AXIS_tdata,
+    S_AXIS_tlast,
+    S_AXIS_tready,
+    S_AXIS_tvalid,
     almost_empty,
-    almost_full,
     clk_out1,
     clk_out_dynamic,
     clk_pl_50M,
-    data_count,
-    din,
-    din1,
-    dout,
-    dout1,
-    empty,
-    full,
     peripheral_aresetn,
     peripheral_aresetn1,
+    probe10,
+    probe26,
+    probe28,
+    probe8,
+    probe9,
+    prog_full1,
     psclk,
     psen,
     psincdec,
-    rd_en,
-    rd_en1,
     router,
-    router1,
-    s_axis_s2mm_tready1,
-    wr_en,
-    wr_en1);
+    router1);
   inout [14:0]DDR_addr;
   inout [2:0]DDR_ba;
   inout DDR_cas_n;
@@ -265,15 +185,12 @@ module core_imp_IXGSD3
   inout DDR_ras_n;
   inout DDR_reset_n;
   inout DDR_we_n;
-  output FCLK_CLK0;
-  output FCLK_RESET0_N;
   inout FIXED_IO_ddr_vrn;
   inout FIXED_IO_ddr_vrp;
   inout [53:0]FIXED_IO_mio;
   inout FIXED_IO_ps_clk;
   inout FIXED_IO_ps_porb;
   inout FIXED_IO_ps_srstb;
-  input [0:0]In0;
   output [31:0]M00_AXI_araddr;
   input M00_AXI_arready;
   output M00_AXI_arvalid;
@@ -291,42 +208,35 @@ module core_imp_IXGSD3
   input M00_AXI_wready;
   output [3:0]M00_AXI_wstrb;
   output M00_AXI_wvalid;
-  output [7:0]M_AXIS_MM2S_tdata;
-  output [0:0]M_AXIS_MM2S_tkeep;
-  output M_AXIS_MM2S_tlast;
-  input M_AXIS_MM2S_tready;
-  output M_AXIS_MM2S_tvalid;
-  input [7:0]S_AXIS_S2MM_tdata;
-  input S_AXIS_S2MM_tlast;
-  input S_AXIS_S2MM_tvalid;
+  output [7:0]M_AXIS_tdata;
+  output [0:0]M_AXIS_tkeep;
+  output M_AXIS_tlast;
+  input M_AXIS_tready;
+  output M_AXIS_tvalid;
+  input [7:0]S_AXIS_tdata;
+  input S_AXIS_tlast;
+  output S_AXIS_tready;
+  input S_AXIS_tvalid;
   output almost_empty;
-  output almost_full;
   output clk_out1;
   output clk_out_dynamic;
   input clk_pl_50M;
-  output [15:0]data_count;
-  input [7:0]din;
-  input [7:0]din1;
-  output [7:0]dout;
-  output [7:0]dout1;
-  output empty;
-  output full;
   output [0:0]peripheral_aresetn;
   output [0:0]peripheral_aresetn1;
+  input [0:0]probe10;
+  input [7:0]probe26;
+  input [7:0]probe28;
+  input [7:0]probe8;
+  input [7:0]probe9;
+  output prog_full1;
   input psclk;
   input psen;
   input psincdec;
-  input rd_en;
-  input rd_en1;
   input [0:0]router;
   input [0:0]router1;
-  output s_axis_s2mm_tready1;
-  input wr_en;
-  input wr_en1;
 
-  wire [0:0]In0_1;
-  wire [0:0]Net;
-  wire [0:0]Net1;
+  (* DEBUG = "true" *) (* MARK_DEBUG *) wire [0:0]Net;
+  (* DEBUG = "true" *) (* MARK_DEBUG *) wire [0:0]Net1;
   wire [31:0]S00_AXI_1_ARADDR;
   wire [1:0]S00_AXI_1_ARBURST;
   wire [3:0]S00_AXI_1_ARCACHE;
@@ -356,16 +266,17 @@ module core_imp_IXGSD3
   wire S01_AXI_1_WREADY;
   wire [3:0]S01_AXI_1_WSTRB;
   wire S01_AXI_1_WVALID;
-  wire [7:0]adc_0_ad_out;
-  wire adc_0_ad_out_vld;
-  (* CONN_BUS_INFO = "axi_dma_0_M_AXIS_MM2S xilinx.com:interface:axis:1.0 None TDATA" *) (* DONT_TOUCH *) wire [7:0]axi_dma_0_M_AXIS_MM2S_TDATA;
-  (* CONN_BUS_INFO = "axi_dma_0_M_AXIS_MM2S xilinx.com:interface:axis:1.0 None TKEEP" *) (* DONT_TOUCH *) wire [0:0]axi_dma_0_M_AXIS_MM2S_TKEEP;
-  (* CONN_BUS_INFO = "axi_dma_0_M_AXIS_MM2S xilinx.com:interface:axis:1.0 None TLAST" *) (* DONT_TOUCH *) wire axi_dma_0_M_AXIS_MM2S_TLAST;
-  (* CONN_BUS_INFO = "axi_dma_0_M_AXIS_MM2S xilinx.com:interface:axis:1.0 None TREADY" *) (* DONT_TOUCH *) wire axi_dma_0_M_AXIS_MM2S_TREADY;
-  (* CONN_BUS_INFO = "axi_dma_0_M_AXIS_MM2S xilinx.com:interface:axis:1.0 None TVALID" *) (* DONT_TOUCH *) wire axi_dma_0_M_AXIS_MM2S_TVALID;
-  wire axi_dma_0_mm2s_introut;
-  wire axi_dma_0_s2mm_introut;
-  wire axi_dma_0_s_axis_s2mm_tready;
+  (* CONN_BUS_INFO = "S_AXIS_1 xilinx.com:interface:axis:1.0 None TDATA" *) (* DEBUG = "true" *) (* MARK_DEBUG *) wire [7:0]S_AXIS_1_TDATA;
+  (* CONN_BUS_INFO = "S_AXIS_1 xilinx.com:interface:axis:1.0 None TLAST" *) (* DEBUG = "true" *) (* MARK_DEBUG *) wire S_AXIS_1_TLAST;
+  (* CONN_BUS_INFO = "S_AXIS_1 xilinx.com:interface:axis:1.0 None TREADY" *) (* DEBUG = "true" *) (* MARK_DEBUG *) wire S_AXIS_1_TREADY;
+  (* CONN_BUS_INFO = "S_AXIS_1 xilinx.com:interface:axis:1.0 None TVALID" *) (* DEBUG = "true" *) (* MARK_DEBUG *) wire S_AXIS_1_TVALID;
+  (* CONN_BUS_INFO = "axi_dma_0_M_AXIS_MM2S xilinx.com:interface:axis:1.0 None TDATA" *) (* DEBUG = "true" *) (* MARK_DEBUG *) wire [7:0]axi_dma_0_M_AXIS_MM2S_TDATA;
+  (* CONN_BUS_INFO = "axi_dma_0_M_AXIS_MM2S xilinx.com:interface:axis:1.0 None TKEEP" *) (* DEBUG = "true" *) (* MARK_DEBUG *) wire [0:0]axi_dma_0_M_AXIS_MM2S_TKEEP;
+  (* CONN_BUS_INFO = "axi_dma_0_M_AXIS_MM2S xilinx.com:interface:axis:1.0 None TLAST" *) (* DEBUG = "true" *) (* MARK_DEBUG *) wire axi_dma_0_M_AXIS_MM2S_TLAST;
+  (* CONN_BUS_INFO = "axi_dma_0_M_AXIS_MM2S xilinx.com:interface:axis:1.0 None TREADY" *) (* DEBUG = "true" *) (* MARK_DEBUG *) wire axi_dma_0_M_AXIS_MM2S_TREADY;
+  (* CONN_BUS_INFO = "axi_dma_0_M_AXIS_MM2S xilinx.com:interface:axis:1.0 None TVALID" *) (* DEBUG = "true" *) (* MARK_DEBUG *) wire axi_dma_0_M_AXIS_MM2S_TVALID;
+  (* DEBUG = "true" *) (* MARK_DEBUG *) wire axi_dma_0_mm2s_introut;
+  (* DEBUG = "true" *) (* MARK_DEBUG *) wire axi_dma_0_s2mm_introut;
   wire [31:0]axi_interconnect_0_M00_AXI_ARADDR;
   wire [1:0]axi_interconnect_0_M00_AXI_ARBURST;
   wire [3:0]axi_interconnect_0_M00_AXI_ARCACHE;
@@ -404,31 +315,32 @@ module core_imp_IXGSD3
   wire axi_interconnect_0_M00_AXI_WREADY;
   wire [7:0]axi_interconnect_0_M00_AXI_WSTRB;
   wire axi_interconnect_0_M00_AXI_WVALID;
-  wire [7:0]axis_write_to_fifo_0_fifo_write_wd_data;
-  wire axis_write_to_fifo_0_fifo_write_wd_en;
+  (* CONN_BUS_INFO = "axis_data_fifo_adc_M_AXIS xilinx.com:interface:axis:1.0 None TDATA" *) (* DEBUG = "true" *) (* MARK_DEBUG *) wire [7:0]axis_data_fifo_adc_M_AXIS_TDATA;
+  (* CONN_BUS_INFO = "axis_data_fifo_adc_M_AXIS xilinx.com:interface:axis:1.0 None TKEEP" *) (* DEBUG = "true" *) (* MARK_DEBUG *) wire [0:0]axis_data_fifo_adc_M_AXIS_TKEEP;
+  (* CONN_BUS_INFO = "axis_data_fifo_adc_M_AXIS xilinx.com:interface:axis:1.0 None TLAST" *) (* DEBUG = "true" *) (* MARK_DEBUG *) wire axis_data_fifo_adc_M_AXIS_TLAST;
+  (* CONN_BUS_INFO = "axis_data_fifo_adc_M_AXIS xilinx.com:interface:axis:1.0 None TREADY" *) (* DEBUG = "true" *) (* MARK_DEBUG *) wire axis_data_fifo_adc_M_AXIS_TREADY;
+  (* CONN_BUS_INFO = "axis_data_fifo_adc_M_AXIS xilinx.com:interface:axis:1.0 None TVALID" *) (* DEBUG = "true" *) (* MARK_DEBUG *) wire axis_data_fifo_adc_M_AXIS_TVALID;
+  (* DEBUG = "true" *) (* MARK_DEBUG *) wire axis_data_fifo_adc_almost_empty;
+  (* DEBUG = "true" *) (* MARK_DEBUG *) wire axis_data_fifo_adc_almost_full;
+  wire axis_data_fifo_adc_almost_full1;
+  (* CONN_BUS_INFO = "axis_data_fifo_dac_M_AXIS xilinx.com:interface:axis:1.0 None TDATA" *) (* DEBUG = "true" *) (* MARK_DEBUG *) wire [7:0]axis_data_fifo_dac_M_AXIS_TDATA;
+  (* CONN_BUS_INFO = "axis_data_fifo_dac_M_AXIS xilinx.com:interface:axis:1.0 None TLAST" *) (* DEBUG = "true" *) (* MARK_DEBUG *) wire axis_data_fifo_dac_M_AXIS_TLAST;
+  (* CONN_BUS_INFO = "axis_data_fifo_dac_M_AXIS xilinx.com:interface:axis:1.0 None TREADY" *) (* DEBUG = "true" *) (* MARK_DEBUG *) wire axis_data_fifo_dac_M_AXIS_TREADY;
+  (* CONN_BUS_INFO = "axis_data_fifo_dac_M_AXIS xilinx.com:interface:axis:1.0 None TVALID" *) (* DEBUG = "true" *) (* MARK_DEBUG *) wire axis_data_fifo_dac_M_AXIS_TVALID;
+  (* DEBUG = "true" *) (* MARK_DEBUG *) wire axis_data_fifo_dac_almost_empty;
   wire clk_dynamic_clk_out_200M;
-  wire clk_dynamic_locked;
-  wire clk_dynamic_psdone;
+  (* DEBUG = "true" *) (* MARK_DEBUG *) wire clk_dynamic_locked;
   wire clk_pl_50M_1;
   wire clk_static_clk_out1;
   wire clk_static_locked;
-  wire dac_0_da_in_vld;
-  wire fifo_adc_almost_empty;
-  wire [15:0]fifo_adc_data_count;
-  wire [7:0]fifo_adc_dout;
-  wire fifo_adc_empty;
-  wire fifo_adc_full;
-  wire fifo_dac_almost_full;
-  wire [15:0]fifo_dac_data_count;
-  wire [7:0]fifo_dac_dout;
-  wire fifo_dac_empty;
-  wire fifo_dac_full;
-  (* CONN_BUS_INFO = "fifo_read_to_axis_0_axis xilinx.com:interface:axis:1.0 None TDATA" *) (* DONT_TOUCH *) wire [7:0]fifo_read_to_axis_0_axis_TDATA;
-  (* CONN_BUS_INFO = "fifo_read_to_axis_0_axis xilinx.com:interface:axis:1.0 None TLAST" *) (* DONT_TOUCH *) wire fifo_read_to_axis_0_axis_TLAST;
-  (* CONN_BUS_INFO = "fifo_read_to_axis_0_axis xilinx.com:interface:axis:1.0 None TVALID" *) (* DONT_TOUCH *) wire fifo_read_to_axis_0_axis_TVALID;
-  wire fifo_read_to_axis_0_fifo_read_rd_en;
-  wire [0:0]mux_dac_fifo_reset1_data_out;
-  wire [0:0]mux_fifo_reset_data_out;
+  (* DEBUG = "true" *) (* MARK_DEBUG *) wire mm2s_prmry_reset_out_n;
+  (* DEBUG = "true" *) (* MARK_DEBUG *) wire [0:0]mux_adc_fifo_reset1_data_out;
+  (* DEBUG = "true" *) (* MARK_DEBUG *) wire [0:0]mux_dac_fifo_reset1_data_out;
+  (* DEBUG = "true" *) wire [0:0]probe10_1;
+  (* DEBUG = "true" *) wire [7:0]probe26_1;
+  (* DEBUG = "true" *) wire [7:0]probe28_1;
+  (* DEBUG = "true" *) wire [7:0]probe8_1;
+  (* DEBUG = "true" *) wire [7:0]probe9_1;
   wire [14:0]processing_system7_0_DDR_ADDR;
   wire [2:0]processing_system7_0_DDR_BA;
   wire processing_system7_0_DDR_CAS_N;
@@ -489,6 +401,10 @@ module core_imp_IXGSD3
   wire processing_system7_0_M_AXI_GP0_WREADY;
   wire [3:0]processing_system7_0_M_AXI_GP0_WSTRB;
   wire processing_system7_0_M_AXI_GP0_WVALID;
+  (* DEBUG = "true" *) (* MARK_DEBUG *) wire prog_empty;
+  (* DEBUG = "true" *) (* MARK_DEBUG *) wire prog_empty_1;
+  (* DEBUG = "true" *) (* MARK_DEBUG *) wire prog_full;
+  (* DEBUG = "true" *) (* MARK_DEBUG *) wire prog_full_1;
   wire [31:0]ps7_0_axi_periph_M00_AXI_ARADDR;
   wire ps7_0_axi_periph_M00_AXI_ARREADY;
   wire ps7_0_axi_periph_M00_AXI_ARVALID;
@@ -522,20 +438,16 @@ module core_imp_IXGSD3
   wire [31:0]ps7_0_axi_periph_M01_AXI_WDATA;
   wire ps7_0_axi_periph_M01_AXI_WREADY;
   wire [0:0]ps7_0_axi_periph_M01_AXI_WVALID;
-  wire psclk_1;
-  wire psen_1;
-  wire psincdec_1;
+  (* DEBUG = "true" *) (* MARK_DEBUG *) wire psclk_1;
+  (* DEBUG = "true" *) (* MARK_DEBUG *) wire psdone;
+  (* DEBUG = "true" *) (* MARK_DEBUG *) wire psen_1;
+  (* DEBUG = "true" *) (* MARK_DEBUG *) wire psincdec_1;
   wire [0:0]reset_dynamic_peripheral_aresetn;
-  wire [0:0]reset_dynamic_peripheral_reset;
-  wire [0:0]reset_static_peripheral_reset;
   wire [0:0]rst_ps7_0_50M_peripheral_aresetn;
+  (* DEBUG = "true" *) (* MARK_DEBUG *) wire s2mm_prmry_reset_out_n;
   wire [6:0]xlconcat_irq_dout;
-  wire [0:0]xlconstant_dma_mm2s_tkeep_dout;
   wire [0:0]xlconstant_one_dout;
 
-  assign FCLK_CLK0 = clk_static_clk_out1;
-  assign FCLK_RESET0_N = processing_system7_0_FCLK_RESET0_N;
-  assign In0_1 = In0[0];
   assign M00_AXI_araddr[31:0] = ps7_0_axi_periph_M00_AXI_ARADDR;
   assign M00_AXI_arvalid = ps7_0_axi_periph_M00_AXI_ARVALID;
   assign M00_AXI_awaddr[31:0] = ps7_0_axi_periph_M00_AXI_AWADDR;
@@ -545,34 +457,29 @@ module core_imp_IXGSD3
   assign M00_AXI_wdata[31:0] = ps7_0_axi_periph_M00_AXI_WDATA;
   assign M00_AXI_wstrb[3:0] = ps7_0_axi_periph_M00_AXI_WSTRB;
   assign M00_AXI_wvalid = ps7_0_axi_periph_M00_AXI_WVALID;
-  assign M_AXIS_MM2S_tdata[7:0] = axi_dma_0_M_AXIS_MM2S_TDATA;
-  assign M_AXIS_MM2S_tkeep[0] = axi_dma_0_M_AXIS_MM2S_TKEEP;
-  assign M_AXIS_MM2S_tlast = axi_dma_0_M_AXIS_MM2S_TLAST;
-  assign M_AXIS_MM2S_tvalid = axi_dma_0_M_AXIS_MM2S_TVALID;
+  assign M_AXIS_tdata[7:0] = axis_data_fifo_adc_M_AXIS_TDATA;
+  assign M_AXIS_tkeep[0] = axis_data_fifo_adc_M_AXIS_TKEEP;
+  assign M_AXIS_tlast = axis_data_fifo_adc_M_AXIS_TLAST;
+  assign M_AXIS_tvalid = axis_data_fifo_adc_M_AXIS_TVALID;
   assign Net = router[0];
   assign Net1 = router1[0];
-  assign adc_0_ad_out = din[7:0];
-  assign adc_0_ad_out_vld = wr_en;
-  assign almost_empty = fifo_adc_almost_empty;
-  assign almost_full = fifo_dac_almost_full;
-  assign axi_dma_0_M_AXIS_MM2S_TREADY = M_AXIS_MM2S_tready;
-  assign axis_write_to_fifo_0_fifo_write_wd_data = din1[7:0];
-  assign axis_write_to_fifo_0_fifo_write_wd_en = wr_en1;
+  assign S_AXIS_1_TDATA = S_AXIS_tdata[7:0];
+  assign S_AXIS_1_TLAST = S_AXIS_tlast;
+  assign S_AXIS_1_TVALID = S_AXIS_tvalid;
+  assign S_AXIS_tready = S_AXIS_1_TREADY;
+  assign almost_empty = axis_data_fifo_dac_almost_empty;
+  assign axis_data_fifo_adc_M_AXIS_TREADY = M_AXIS_tready;
   assign clk_out1 = clk_static_clk_out1;
   assign clk_out_dynamic = clk_dynamic_clk_out_200M;
   assign clk_pl_50M_1 = clk_pl_50M;
-  assign dac_0_da_in_vld = rd_en1;
-  assign data_count[15:0] = fifo_adc_data_count;
-  assign dout[7:0] = fifo_adc_dout;
-  assign dout1[7:0] = fifo_dac_dout;
-  assign empty = fifo_adc_empty;
-  assign fifo_read_to_axis_0_axis_TDATA = S_AXIS_S2MM_tdata[7:0];
-  assign fifo_read_to_axis_0_axis_TLAST = S_AXIS_S2MM_tlast;
-  assign fifo_read_to_axis_0_axis_TVALID = S_AXIS_S2MM_tvalid;
-  assign fifo_read_to_axis_0_fifo_read_rd_en = rd_en;
-  assign full = fifo_dac_full;
   assign peripheral_aresetn[0] = reset_dynamic_peripheral_aresetn;
   assign peripheral_aresetn1[0] = rst_ps7_0_50M_peripheral_aresetn;
+  assign probe10_1 = probe10[0];
+  assign probe26_1 = probe26[7:0];
+  assign probe28_1 = probe28[7:0];
+  assign probe8_1 = probe8[7:0];
+  assign probe9_1 = probe9[7:0];
+  assign prog_full1 = prog_full;
   assign ps7_0_axi_periph_M00_AXI_ARREADY = M00_AXI_arready;
   assign ps7_0_axi_periph_M00_AXI_AWREADY = M00_AXI_awready;
   assign ps7_0_axi_periph_M00_AXI_BRESP = M00_AXI_bresp[1:0];
@@ -584,7 +491,6 @@ module core_imp_IXGSD3
   assign psclk_1 = psclk;
   assign psen_1 = psen;
   assign psincdec_1 = psincdec;
-  assign s_axis_s2mm_tready1 = axi_dma_0_s_axis_s2mm_tready;
   urllc_fifo_core_axi_dma_0_0 axi_dma_0
        (.axi_resetn(rst_ps7_0_50M_peripheral_aresetn),
         .m_axi_mm2s_aclk(clk_static_clk_out1),
@@ -624,7 +530,9 @@ module core_imp_IXGSD3
         .m_axis_mm2s_tready(axi_dma_0_M_AXIS_MM2S_TREADY),
         .m_axis_mm2s_tvalid(axi_dma_0_M_AXIS_MM2S_TVALID),
         .mm2s_introut(axi_dma_0_mm2s_introut),
+        .mm2s_prmry_reset_out_n(mm2s_prmry_reset_out_n),
         .s2mm_introut(axi_dma_0_s2mm_introut),
+        .s2mm_prmry_reset_out_n(s2mm_prmry_reset_out_n),
         .s_axi_lite_aclk(clk_static_clk_out1),
         .s_axi_lite_araddr(ps7_0_axi_periph_M01_AXI_ARADDR[9:0]),
         .s_axi_lite_arready(ps7_0_axi_periph_M01_AXI_ARREADY),
@@ -642,11 +550,11 @@ module core_imp_IXGSD3
         .s_axi_lite_wdata(ps7_0_axi_periph_M01_AXI_WDATA),
         .s_axi_lite_wready(ps7_0_axi_periph_M01_AXI_WREADY),
         .s_axi_lite_wvalid(ps7_0_axi_periph_M01_AXI_WVALID),
-        .s_axis_s2mm_tdata(fifo_read_to_axis_0_axis_TDATA),
-        .s_axis_s2mm_tkeep(xlconstant_dma_mm2s_tkeep_dout),
-        .s_axis_s2mm_tlast(fifo_read_to_axis_0_axis_TLAST),
-        .s_axis_s2mm_tready(axi_dma_0_s_axis_s2mm_tready),
-        .s_axis_s2mm_tvalid(fifo_read_to_axis_0_axis_TVALID));
+        .s_axis_s2mm_tdata(axis_data_fifo_dac_M_AXIS_TDATA),
+        .s_axis_s2mm_tkeep(1'b1),
+        .s_axis_s2mm_tlast(axis_data_fifo_dac_M_AXIS_TLAST),
+        .s_axis_s2mm_tready(axis_data_fifo_dac_M_AXIS_TREADY),
+        .s_axis_s2mm_tvalid(axis_data_fifo_dac_M_AXIS_TVALID));
   urllc_fifo_core_axi_interconnect_0_0 axi_interconnect_0
        (.ACLK(clk_static_clk_out1),
         .ARESETN(rst_ps7_0_50M_peripheral_aresetn),
@@ -723,82 +631,59 @@ module core_imp_IXGSD3
         .S01_AXI_wready(S01_AXI_1_WREADY),
         .S01_AXI_wstrb(S01_AXI_1_WSTRB),
         .S01_AXI_wvalid(S01_AXI_1_WVALID));
+  urllc_fifo_core_axis_data_fifo_adc_1 axis_data_fifo_adc
+       (.almost_empty(axis_data_fifo_dac_almost_empty),
+        .almost_full(axis_data_fifo_adc_almost_full1),
+        .m_axis_tdata(axis_data_fifo_dac_M_AXIS_TDATA),
+        .m_axis_tlast(axis_data_fifo_dac_M_AXIS_TLAST),
+        .m_axis_tready(axis_data_fifo_dac_M_AXIS_TREADY),
+        .m_axis_tvalid(axis_data_fifo_dac_M_AXIS_TVALID),
+        .prog_empty(prog_empty),
+        .prog_full(prog_full),
+        .s_axis_aclk(clk_static_clk_out1),
+        .s_axis_aresetn(mux_dac_fifo_reset1_data_out),
+        .s_axis_tdata(S_AXIS_1_TDATA),
+        .s_axis_tlast(S_AXIS_1_TLAST),
+        .s_axis_tready(S_AXIS_1_TREADY),
+        .s_axis_tvalid(S_AXIS_1_TVALID));
+  urllc_fifo_core_axis_data_fifo_0_0 axis_data_fifo_dac
+       (.almost_empty(axis_data_fifo_adc_almost_empty),
+        .almost_full(axis_data_fifo_adc_almost_full),
+        .m_axis_tdata(axis_data_fifo_adc_M_AXIS_TDATA),
+        .m_axis_tkeep(axis_data_fifo_adc_M_AXIS_TKEEP),
+        .m_axis_tlast(axis_data_fifo_adc_M_AXIS_TLAST),
+        .m_axis_tready(axis_data_fifo_adc_M_AXIS_TREADY),
+        .m_axis_tvalid(axis_data_fifo_adc_M_AXIS_TVALID),
+        .prog_empty(prog_empty_1),
+        .prog_full(prog_full_1),
+        .s_axis_aclk(clk_static_clk_out1),
+        .s_axis_aresetn(mux_adc_fifo_reset1_data_out),
+        .s_axis_tdata(axi_dma_0_M_AXIS_MM2S_TDATA),
+        .s_axis_tkeep(axi_dma_0_M_AXIS_MM2S_TKEEP),
+        .s_axis_tlast(axi_dma_0_M_AXIS_MM2S_TLAST),
+        .s_axis_tready(axi_dma_0_M_AXIS_MM2S_TREADY),
+        .s_axis_tvalid(axi_dma_0_M_AXIS_MM2S_TVALID));
   urllc_fifo_core_clk_dynamic_0 clk_dynamic
        (.clk_in1(clk_static_clk_out1),
         .clk_out_dynamic(clk_dynamic_clk_out_200M),
         .locked(clk_dynamic_locked),
         .psclk(psclk_1),
-        .psdone(clk_dynamic_psdone),
+        .psdone(psdone),
         .psen(psen_1),
         .psincdec(psincdec_1));
   urllc_fifo_core_clk_static_0 clk_static
        (.clk_in1(clk_pl_50M_1),
         .clk_out1(clk_static_clk_out1),
         .locked(clk_static_locked));
-  urllc_fifo_core_fifo_adc_0 fifo_adc
-       (.almost_empty(fifo_adc_almost_empty),
-        .clk(clk_static_clk_out1),
-        .data_count(fifo_adc_data_count),
-        .din(adc_0_ad_out),
-        .dout(fifo_adc_dout),
-        .empty(fifo_adc_empty),
-        .full(fifo_adc_full),
-        .rd_en(fifo_read_to_axis_0_fifo_read_rd_en),
-        .srst(mux_fifo_reset_data_out),
-        .wr_en(adc_0_ad_out_vld));
-  urllc_fifo_core_fifo_dac_0 fifo_dac
-       (.almost_full(fifo_dac_almost_full),
-        .clk(clk_static_clk_out1),
-        .data_count(fifo_dac_data_count),
-        .din(axis_write_to_fifo_0_fifo_write_wd_data),
-        .dout(fifo_dac_dout),
-        .empty(fifo_dac_empty),
-        .full(fifo_dac_full),
-        .rd_en(dac_0_da_in_vld),
-        .srst(mux_dac_fifo_reset1_data_out),
-        .wr_en(axis_write_to_fifo_0_fifo_write_wd_en));
-  urllc_fifo_core_ila_1_0 ila_1
-       (.clk(clk_static_clk_out1),
-        .probe0(xlconcat_irq_dout),
-        .probe1(adc_0_ad_out),
-        .probe10(axis_write_to_fifo_0_fifo_write_wd_data),
-        .probe11(axis_write_to_fifo_0_fifo_write_wd_en),
-        .probe12(fifo_dac_dout),
-        .probe13(dac_0_da_in_vld),
-        .probe14(fifo_dac_data_count),
-        .probe15(reset_static_peripheral_reset),
-        .probe16(rst_ps7_0_50M_peripheral_aresetn),
-        .probe17(reset_dynamic_peripheral_reset),
-        .probe18(reset_dynamic_peripheral_aresetn),
-        .probe19(Net),
-        .probe2(adc_0_ad_out_vld),
-        .probe20(Net1),
-        .probe3(fifo_adc_almost_empty),
-        .probe4(fifo_adc_empty),
-        .probe5(fifo_adc_dout),
-        .probe6(fifo_read_to_axis_0_fifo_read_rd_en),
-        .probe7(fifo_adc_data_count),
-        .probe8(fifo_dac_almost_full),
-        .probe9(fifo_dac_full));
-  urllc_fifo_core_ila_core_0 ila_core
-       (.clk(clk_pl_50M_1),
-        .probe0(rst_ps7_0_50M_peripheral_aresetn),
-        .probe1(clk_dynamic_locked),
-        .probe2(clk_static_locked),
-        .probe3(reset_dynamic_peripheral_aresetn),
-        .probe4(psclk_1),
-        .probe5(psen_1),
-        .probe6(psincdec_1),
-        .probe7(clk_dynamic_psdone));
-  urllc_fifo_core_mux_0_0 mux_adc_fifo_reset
-       (.data_out(mux_fifo_reset_data_out),
+  urllc_fifo_core_mux_adc_fifo_reset_0 mux_adc_fifo_reset
+       (.data_out(mux_adc_fifo_reset1_data_out),
         .router(Net),
-        .sel1(reset_static_peripheral_reset),
+        .sel1(rst_ps7_0_50M_peripheral_aresetn),
         .sel2(xlconstant_one_dout));
-  urllc_fifo_core_mux_fifo_reset_0 mux_dac_fifo_reset
+  urllc_fifo_core_mux_dac_fifo_reset_0 mux_dac_fifo_reset
        (.data_out(mux_dac_fifo_reset1_data_out),
         .router(Net1),
-        .sel1(reset_static_peripheral_reset),
+        .sel1(rst_ps7_0_50M_peripheral_aresetn),
         .sel2(xlconstant_one_dout));
   urllc_fifo_core_processing_system7_0_0 processing_system7_0
        (.DDR_Addr(DDR_addr[14:0]),
@@ -991,7 +876,6 @@ module core_imp_IXGSD3
         .ext_reset_in(processing_system7_0_FCLK_RESET0_N),
         .mb_debug_sys_rst(1'b0),
         .peripheral_aresetn(reset_dynamic_peripheral_aresetn),
-        .peripheral_reset(reset_dynamic_peripheral_reset),
         .slowest_sync_clk(clk_dynamic_clk_out_200M));
   urllc_fifo_core_reset_static_0 reset_static
        (.aux_reset_in(1'b1),
@@ -999,32 +883,67 @@ module core_imp_IXGSD3
         .ext_reset_in(processing_system7_0_FCLK_RESET0_N),
         .mb_debug_sys_rst(1'b0),
         .peripheral_aresetn(rst_ps7_0_50M_peripheral_aresetn),
-        .peripheral_reset(reset_static_peripheral_reset),
         .slowest_sync_clk(clk_static_clk_out1));
   urllc_fifo_core_system_ila_0_0 system_ila_dma
-       (.SLOT_0_AXIS_tdata({1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,fifo_read_to_axis_0_axis_TDATA}),
-        .SLOT_0_AXIS_tlast(fifo_read_to_axis_0_axis_TLAST),
-        .SLOT_0_AXIS_tready(1'b1),
-        .SLOT_0_AXIS_tvalid(fifo_read_to_axis_0_axis_TVALID),
+       (.SLOT_0_AXIS_tdata({1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,axis_data_fifo_dac_M_AXIS_TDATA}),
+        .SLOT_0_AXIS_tlast(axis_data_fifo_dac_M_AXIS_TLAST),
+        .SLOT_0_AXIS_tready(axis_data_fifo_dac_M_AXIS_TREADY),
+        .SLOT_0_AXIS_tvalid(axis_data_fifo_dac_M_AXIS_TVALID),
         .SLOT_1_AXIS_tdata({1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,axi_dma_0_M_AXIS_MM2S_TDATA}),
         .SLOT_1_AXIS_tkeep({1'b1,1'b1,1'b1,axi_dma_0_M_AXIS_MM2S_TKEEP}),
         .SLOT_1_AXIS_tlast(axi_dma_0_M_AXIS_MM2S_TLAST),
         .SLOT_1_AXIS_tready(axi_dma_0_M_AXIS_MM2S_TREADY),
         .SLOT_1_AXIS_tvalid(axi_dma_0_M_AXIS_MM2S_TVALID),
+        .SLOT_2_AXIS_tdata({1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,S_AXIS_1_TDATA}),
+        .SLOT_2_AXIS_tlast(S_AXIS_1_TLAST),
+        .SLOT_2_AXIS_tready(S_AXIS_1_TREADY),
+        .SLOT_2_AXIS_tvalid(S_AXIS_1_TVALID),
+        .SLOT_3_AXIS_tdata({1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,axis_data_fifo_adc_M_AXIS_TDATA}),
+        .SLOT_3_AXIS_tkeep({1'b1,1'b1,1'b1,axis_data_fifo_adc_M_AXIS_TKEEP}),
+        .SLOT_3_AXIS_tlast(axis_data_fifo_adc_M_AXIS_TLAST),
+        .SLOT_3_AXIS_tready(axis_data_fifo_adc_M_AXIS_TREADY),
+        .SLOT_3_AXIS_tvalid(axis_data_fifo_adc_M_AXIS_TVALID),
         .clk(clk_static_clk_out1),
+        .probe0(axis_data_fifo_adc_almost_full),
+        .probe1(axis_data_fifo_dac_almost_empty),
+        .probe10(axi_dma_0_s2mm_introut),
+        .probe11(clk_dynamic_locked),
+        .probe12(psclk_1),
+        .probe13(psen_1),
+        .probe14(psincdec_1),
+        .probe15(psdone),
+        .probe16(Net),
+        .probe17(Net),
+        .probe18(Net1),
+        .probe19(Net),
+        .probe2(axis_data_fifo_adc_almost_empty),
+        .probe20(mux_adc_fifo_reset1_data_out),
+        .probe21(mux_dac_fifo_reset1_data_out),
+        .probe22(s2mm_prmry_reset_out_n),
+        .probe23(mm2s_prmry_reset_out_n),
+        .probe24(prog_full),
+        .probe25(prog_full_1),
+        .probe26(probe26_1),
+        .probe27(probe26_1),
+        .probe28(probe28_1),
+        .probe3(axis_data_fifo_adc_almost_full1),
+        .probe4(prog_empty),
+        .probe5(prog_empty_1),
+        .probe6(probe8_1),
+        .probe7(probe9_1),
+        .probe8(probe10_1),
+        .probe9(axi_dma_0_mm2s_introut),
         .resetn(rst_ps7_0_50M_peripheral_aresetn));
   urllc_fifo_core_xlconcat_irq_0 xlconcat_irq
-       (.In0(In0_1),
+       (.In0(prog_full),
         .In1(axi_dma_0_mm2s_introut),
         .In2(axi_dma_0_s2mm_introut),
-        .In3(fifo_adc_full),
-        .In4(fifo_adc_empty),
-        .In5(fifo_dac_full),
-        .In6(fifo_dac_empty),
+        .In3(axis_data_fifo_adc_almost_full),
+        .In4(axis_data_fifo_adc_almost_empty),
+        .In5(axis_data_fifo_adc_almost_full1),
+        .In6(axis_data_fifo_dac_almost_empty),
         .dout(xlconcat_irq_dout));
-  urllc_fifo_core_xlconstant_0_2 xlconstant_dma_mm2s_tkeep
-       (.dout(xlconstant_dma_mm2s_tkeep_dout));
-  urllc_fifo_core_xlconstant_0_1 xlconstant_one
+  urllc_fifo_core_xlconstant_0_1 xlconstant_zero
        (.dout(xlconstant_one_dout));
 endmodule
 
@@ -1036,17 +955,11 @@ module dac_imp_1D1Y9NN
     axis_tvalid,
     clk,
     da,
-    da_in,
-    da_in_vld,
+    da_out,
     div,
-    fifo_write_almost_full,
-    fifo_write_full,
-    fifo_write_wd_data,
-    fifo_write_wd_en,
     io_in_sync,
     resetn,
-    router,
-    start);
+    router);
   input [7:0]axis_tdata;
   input [0:0]axis_tkeep;
   input axis_tlast;
@@ -1054,54 +967,37 @@ module dac_imp_1D1Y9NN
   input axis_tvalid;
   input clk;
   output [7:0]da;
-  input [7:0]da_in;
-  output da_in_vld;
+  output [7:0]da_out;
   input [7:0]div;
-  input fifo_write_almost_full;
-  input fifo_write_full;
-  output [7:0]fifo_write_wd_data;
-  output fifo_write_wd_en;
   input io_in_sync;
   input resetn;
   input router;
-  input start;
 
+  (* DEBUG = "true" *) wire [7:0]Conn1_TDATA;
+  (* DEBUG = "true" *) wire Conn1_TLAST;
+  (* DEBUG = "true" *) wire Conn1_TREADY;
+  (* DEBUG = "true" *) wire Conn1_TVALID;
   wire [7:0]DUCWrapper_0_io_out_dac;
-  wire DUCWrapper_0_io_out_sync;
-  wire [7:0]Net;
-  wire [7:0]axi_dma_0_M_AXIS_MM2S_TDATA;
-  wire axi_dma_0_M_AXIS_MM2S_TLAST;
-  wire axi_dma_0_M_AXIS_MM2S_TREADY;
-  wire axi_dma_0_M_AXIS_MM2S_TVALID;
-  wire [7:0]axis_write_to_fifo_0_fifo_write_wd_data;
-  wire axis_write_to_fifo_0_fifo_write_wd_en;
   wire clk_wiz_0_clk_out1;
-  wire dac_0_da_in_vld;
-  wire fifo_dac_almost_full;
-  wire [7:0]fifo_dac_dout;
-  wire fifo_dac_full;
-  wire [7:0]mux_0_data_out;
+  wire dac_axis_0_axis_tvalid_output;
+  (* DEBUG = "true" *) (* MARK_DEBUG *) wire [7:0]dac_axis_0_da_out;
+  (* DEBUG = "true" *) wire [7:0]mux_0_data_out;
+  wire [7:0]mux_reciever_out_data_out;
   wire rst_ps7_0_50M_peripheral_aresetn;
-  wire xlslice_0_Dout1;
+  wire [7:0]xlconstant_0_dout;
   wire [7:0]xlslice_dac_8_15_Dout;
   wire xlslice_duc_sync_6_Dout;
   wire xlslice_reciever_out_7_Dout;
   wire [0:0]xlslice_sender_Dout;
 
-  assign axi_dma_0_M_AXIS_MM2S_TDATA = axis_tdata[7:0];
-  assign axi_dma_0_M_AXIS_MM2S_TLAST = axis_tlast;
-  assign axi_dma_0_M_AXIS_MM2S_TVALID = axis_tvalid;
-  assign axis_tready = axi_dma_0_M_AXIS_MM2S_TREADY;
+  assign Conn1_TDATA = axis_tdata[7:0];
+  assign Conn1_TLAST = axis_tlast;
+  assign Conn1_TVALID = axis_tvalid;
+  assign axis_tready = Conn1_TREADY;
   assign clk_wiz_0_clk_out1 = clk;
   assign da[7:0] = mux_0_data_out;
-  assign da_in_vld = dac_0_da_in_vld;
-  assign fifo_dac_almost_full = fifo_write_almost_full;
-  assign fifo_dac_dout = da_in[7:0];
-  assign fifo_dac_full = fifo_write_full;
-  assign fifo_write_wd_data[7:0] = axis_write_to_fifo_0_fifo_write_wd_data;
-  assign fifo_write_wd_en = axis_write_to_fifo_0_fifo_write_wd_en;
+  assign da_out[7:0] = dac_axis_0_da_out;
   assign rst_ps7_0_50M_peripheral_aresetn = resetn;
-  assign xlslice_0_Dout1 = start;
   assign xlslice_dac_8_15_Dout = div[7:0];
   assign xlslice_duc_sync_6_Dout = io_in_sync;
   assign xlslice_reciever_out_7_Dout = router;
@@ -1110,58 +1006,37 @@ module dac_imp_1D1Y9NN
         .io_in_data(xlslice_sender_Dout),
         .io_in_sync(xlslice_duc_sync_6_Dout),
         .io_out_dac(DUCWrapper_0_io_out_dac),
-        .io_out_sync(DUCWrapper_0_io_out_sync),
         .io_resetN(rst_ps7_0_50M_peripheral_aresetn));
-  urllc_fifo_core_axis_write_to_fifo_0_0 axis_write_to_fifo_0
-       (.axis_tdata(axi_dma_0_M_AXIS_MM2S_TDATA),
-        .axis_tlast(axi_dma_0_M_AXIS_MM2S_TLAST),
-        .axis_tready(axi_dma_0_M_AXIS_MM2S_TREADY),
-        .axis_tvalid(axi_dma_0_M_AXIS_MM2S_TVALID),
+  urllc_fifo_core_dac_axis_0_0 dac_axis_0
+       (.axis_tdata(Conn1_TDATA),
+        .axis_tlast(Conn1_TLAST),
+        .axis_tready(Conn1_TREADY),
+        .axis_tvalid(Conn1_TVALID),
+        .axis_tvalid_output(dac_axis_0_axis_tvalid_output),
         .clk(clk_wiz_0_clk_out1),
-        .fifo_write_almost_full(fifo_dac_almost_full),
-        .fifo_write_full(fifo_dac_full),
-        .fifo_write_wd_data(axis_write_to_fifo_0_fifo_write_wd_data),
-        .fifo_write_wd_en(axis_write_to_fifo_0_fifo_write_wd_en),
-        .resetn(rst_ps7_0_50M_peripheral_aresetn),
-        .start(xlslice_0_Dout1));
-  urllc_fifo_core_dac_0_0 dac_0
-       (.clk(clk_wiz_0_clk_out1),
-        .da_in(fifo_dac_dout),
-        .da_in_vld(dac_0_da_in_vld),
-        .da_out(Net),
+        .da_out(dac_axis_0_da_out),
         .div(xlslice_dac_8_15_Dout),
         .resetn(rst_ps7_0_50M_peripheral_aresetn));
-  urllc_fifo_core_ila_0_0 ila_0
-       (.clk(clk_wiz_0_clk_out1),
-        .probe0(xlslice_sender_Dout),
-        .probe1(xlslice_duc_sync_6_Dout),
-        .probe10(xlslice_0_Dout1),
-        .probe11(fifo_dac_full),
-        .probe12(fifo_dac_almost_full),
-        .probe13(axis_write_to_fifo_0_fifo_write_wd_data),
-        .probe14(axis_write_to_fifo_0_fifo_write_wd_en),
-        .probe2(DUCWrapper_0_io_out_dac),
-        .probe3(DUCWrapper_0_io_out_sync),
-        .probe4(xlslice_reciever_out_7_Dout),
-        .probe5(mux_0_data_out),
-        .probe6(fifo_dac_dout),
-        .probe7(xlslice_dac_8_15_Dout),
-        .probe8(Net),
-        .probe9(dac_0_da_in_vld));
-  urllc_fifo_core_mux_reciever_out_0 mux_reciever_out
+  urllc_fifo_core_mux_0_0 mux_data_available
        (.data_out(mux_0_data_out),
+        .router(dac_axis_0_axis_tvalid_output),
+        .sel1(xlconstant_0_dout),
+        .sel2(mux_reciever_out_data_out));
+  urllc_fifo_core_mux_reciever_out_0 mux_reciever_out
+       (.data_out(mux_reciever_out_data_out),
         .router(xlslice_reciever_out_7_Dout),
         .sel1(DUCWrapper_0_io_out_dac),
-        .sel2(Net));
+        .sel2(dac_axis_0_da_out));
+  urllc_fifo_core_xlconstant_0_2 xlconstant_0
+       (.dout(xlconstant_0_dout));
   urllc_fifo_core_xlslice_sender_0 xlslice_sender
-       (.Din(Net),
+       (.Din(dac_axis_0_da_out),
         .Dout(xlslice_sender_Dout));
 endmodule
 
 module debug_ctrl_imp_1AJIQFJ
    (Dout,
     Dout1,
-    Dout10,
     Dout11,
     Dout12,
     Dout13,
@@ -1169,11 +1044,8 @@ module debug_ctrl_imp_1AJIQFJ
     Dout2,
     Dout3,
     Dout4,
-    Dout5,
     Dout6,
     Dout7,
-    Dout8,
-    Dout9,
     S_AXI_araddr,
     S_AXI_arready,
     S_AXI_arvalid,
@@ -1195,7 +1067,6 @@ module debug_ctrl_imp_1AJIQFJ
     s_axi_aresetn);
   output [0:0]Dout;
   output [0:0]Dout1;
-  output [15:0]Dout10;
   output [0:0]Dout11;
   output [7:0]Dout12;
   output [7:0]Dout13;
@@ -1203,11 +1074,8 @@ module debug_ctrl_imp_1AJIQFJ
   output [0:0]Dout2;
   output [0:0]Dout3;
   output [0:0]Dout4;
-  output [0:0]Dout5;
   output [0:0]Dout6;
   output [0:0]Dout7;
-  output [0:0]Dout8;
-  output [0:0]Dout9;
   input [31:0]S_AXI_araddr;
   output S_AXI_arready;
   input S_AXI_arvalid;
@@ -1249,25 +1117,20 @@ module debug_ctrl_imp_1AJIQFJ
   wire [3:0]ps7_0_axi_periph_M00_AXI_WSTRB;
   wire ps7_0_axi_periph_M00_AXI_WVALID;
   wire rst_ps7_0_50M_peripheral_aresetn;
-  wire [0:0]xlslice_0_Dout1;
-  wire [15:0]xlslice_1_Dout;
-  wire [0:0]xlslice_2_Dout;
-  wire [7:0]xlslice_adc_0_7_Dout;
-  wire [0:0]xlslice_adc_fifo_reset_10_Dout;
-  wire [0:0]xlslice_clk_psclk_3_Dout;
-  wire [0:0]xlslice_clk_psen_4_Dout;
-  wire [0:0]xlslice_clk_psincdec_5_Dout;
+  (* DEBUG = "true" *) wire [7:0]xlslice_adc_0_7_Dout;
+  (* DEBUG = "true" *) (* MARK_DEBUG *) wire [0:0]xlslice_adc_fifo_reset_10_Dout;
+  (* DEBUG = "true" *) wire [0:0]xlslice_clk_psclk_3_Dout;
+  (* DEBUG = "true" *) wire [0:0]xlslice_clk_psen_4_Dout;
+  (* DEBUG = "true" *) wire [0:0]xlslice_clk_psincdec_5_Dout;
   wire [7:0]xlslice_dac_8_15_Dout;
-  wire [0:0]xlslice_dac_fifo_reset_11_Dout;
+  (* DEBUG = "true" *) wire [0:0]xlslice_dac_fifo_reset_11_Dout;
   wire [0:0]xlslice_duc_sync_6_Dout;
-  wire [0:0]xlslice_fifo_read_start_2_Dout;
-  wire [0:0]xlslice_reciever_in_10_Dout;
+  (* DEBUG = "true" *) wire [0:0]xlslice_reciever_in_10_Dout;
   wire [0:0]xlslice_reciever_out_7_Dout;
   wire [0:0]xlslice_reciever_out_8_Dout;
 
   assign Dout[0] = xlslice_duc_sync_6_Dout;
   assign Dout1[0] = xlslice_clk_psen_4_Dout;
-  assign Dout10[15:0] = xlslice_1_Dout;
   assign Dout11[0] = xlslice_reciever_in_10_Dout;
   assign Dout12[7:0] = xlslice_dac_8_15_Dout;
   assign Dout13[7:0] = xlslice_adc_0_7_Dout;
@@ -1275,11 +1138,8 @@ module debug_ctrl_imp_1AJIQFJ
   assign Dout2[0] = xlslice_clk_psclk_3_Dout;
   assign Dout3[0] = xlslice_reciever_out_7_Dout;
   assign Dout4[0] = xlslice_adc_fifo_reset_10_Dout;
-  assign Dout5[0] = xlslice_fifo_read_start_2_Dout;
   assign Dout6[0] = xlslice_clk_psincdec_5_Dout;
   assign Dout7[0] = xlslice_reciever_out_8_Dout;
-  assign Dout8[0] = xlslice_0_Dout1;
-  assign Dout9[0] = xlslice_2_Dout;
   assign S_AXI_arready = ps7_0_axi_periph_M00_AXI_ARREADY;
   assign S_AXI_awready = ps7_0_axi_periph_M00_AXI_AWREADY;
   assign S_AXI_bresp[1:0] = ps7_0_axi_periph_M00_AXI_BRESP;
@@ -1337,11 +1197,9 @@ module debug_ctrl_imp_1AJIQFJ
        (.Din(axi_gpio_0_gpio2_io_o),
         .Dout(xlslice_clk_psincdec_5_Dout));
   urllc_fifo_core_xlslice_count_trigger_clear_0_0 xlslice_count_trigger_clear_0
-       (.Din(axi_gpio_0_gpio2_io_o),
-        .Dout(xlslice_2_Dout));
+       (.Din(axi_gpio_0_gpio2_io_o));
   urllc_fifo_core_xlslice_counter_trigger_16_31_0 xlslice_counter_trigger_16_31
-       (.Din(axi_gpio_0_gpio_io_o),
-        .Dout(xlslice_1_Dout));
+       (.Din(axi_gpio_0_gpio_io_o));
   urllc_fifo_core_xlslice_dac_8_15_0 xlslice_dac_8_15
        (.Din(axi_gpio_0_gpio_io_o),
         .Dout(xlslice_dac_8_15_Dout));
@@ -1355,11 +1213,9 @@ module debug_ctrl_imp_1AJIQFJ
        (.Din(axi_gpio_0_gpio2_io_o),
         .Dout(xlslice_duc_sync_6_Dout));
   urllc_fifo_core_xlslice_fifo_read_start_2_0 xlslice_fifo_read_start_2
-       (.Din(axi_gpio_0_gpio2_io_o),
-        .Dout(xlslice_fifo_read_start_2_Dout));
+       (.Din(axi_gpio_0_gpio2_io_o));
   urllc_fifo_core_xlslice_fifo_write_start_1_0 xlslice_fifo_write_start_1
-       (.Din(axi_gpio_0_gpio2_io_o),
-        .Dout(xlslice_0_Dout1));
+       (.Din(axi_gpio_0_gpio2_io_o));
   urllc_fifo_core_xlslice_reciever_in_9_0 xlslice_reciever_in_9
        (.Din(axi_gpio_0_gpio2_io_o),
         .Dout(xlslice_reciever_in_10_Dout));
@@ -2691,7 +2547,7 @@ module s01_couplers_imp_1K2OF6S
         .s_axi_wvalid(s01_couplers_to_auto_us_WVALID));
 endmodule
 
-(* CORE_GENERATION_INFO = "urllc_fifo_core,IP_Integrator,{x_ipVendor=xilinx.com,x_ipLibrary=BlockDiagram,x_ipName=urllc_fifo_core,x_ipVersion=1.00.a,x_ipLanguage=VERILOG,numBlks=64,numReposBlks=52,numNonXlnxBlks=0,numHierBlks=12,maxHierDepth=1,numSysgenBlks=0,numHlsBlks=0,numHdlrefBlks=11,numPkgbdBlks=0,bdsource=USER,da_clkrst_cnt=4,synth_mode=OOC_per_IP}" *) (* HW_HANDOFF = "urllc_fifo_core.hwdef" *) 
+(* CORE_GENERATION_INFO = "urllc_fifo_core,IP_Integrator,{x_ipVendor=xilinx.com,x_ipLibrary=BlockDiagram,x_ipName=urllc_fifo_core,x_ipVersion=1.00.a,x_ipLanguage=VERILOG,numBlks=58,numReposBlks=46,numNonXlnxBlks=0,numHierBlks=12,maxHierDepth=1,numSysgenBlks=0,numHlsBlks=0,numHdlrefBlks=9,numPkgbdBlks=0,bdsource=USER,da_clkrst_cnt=4,synth_mode=OOC_per_IP}" *) (* HW_HANDOFF = "urllc_fifo_core.hwdef" *) 
 module urllc_fifo_core
    (DDR_addr,
     DDR_ba,
@@ -2743,40 +2599,33 @@ module urllc_fifo_core
   input [7:0]ad;
   (* X_INTERFACE_INFO = "xilinx.com:signal:clock:1.0 CLK.CLK_AD_STATIC CLK" *) (* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME CLK.CLK_AD_STATIC, CLK_DOMAIN /core/clk_static_clk_out1, FREQ_HZ 60000000, INSERT_VIP 0, PHASE 0.0" *) output clk_ad_static;
   (* X_INTERFACE_INFO = "xilinx.com:signal:clock:1.0 CLK.CLK_DA_DYNAMIC CLK" *) (* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME CLK.CLK_DA_DYNAMIC, CLK_DOMAIN /core/clk_dynamic_clk_out1, FREQ_HZ 60000000, INSERT_VIP 0, PHASE 0.0" *) output clk_da_dynamic;
-  (* X_INTERFACE_INFO = "xilinx.com:signal:clock:1.0 CLK.CLK_PL_50M CLK" *) (* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME CLK.CLK_PL_50M, CLK_DOMAIN urllc_fifo_core_clk_pl_50M, FREQ_HZ 100000000, INSERT_VIP 0, PHASE 0.000" *) input clk_pl_50M;
+  (* X_INTERFACE_INFO = "xilinx.com:signal:clock:1.0 CLK.CLK_PL_50M CLK" *) (* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME CLK.CLK_PL_50M, CLK_DOMAIN urllc_fifo_core_clk_pl_50M, FREQ_HZ 50000000, INSERT_VIP 0, PHASE 0.000" *) input clk_pl_50M;
   output [7:0]da;
 
   wire [7:0]ad_1;
-  wire [7:0]adc_0_ad_out;
-  wire adc_0_ad_out_vld;
-  wire adc_trigger_out;
-  wire [7:0]axi_dma_0_M_AXIS_MM2S_TDATA;
-  wire [0:0]axi_dma_0_M_AXIS_MM2S_TKEEP;
-  wire axi_dma_0_M_AXIS_MM2S_TLAST;
-  wire axi_dma_0_M_AXIS_MM2S_TREADY;
-  wire axi_dma_0_M_AXIS_MM2S_TVALID;
-  wire [7:0]axis_write_to_fifo_0_fifo_write_wd_data;
-  wire axis_write_to_fifo_0_fifo_write_wd_en;
+  (* DEBUG = "true" *) wire [7:0]adc_axis2_TDATA;
+  (* DEBUG = "true" *) wire adc_axis2_TLAST;
+  (* DEBUG = "true" *) wire adc_axis2_TREADY;
+  (* DEBUG = "true" *) wire adc_axis2_TVALID;
+  (* DEBUG = "true" *) wire [7:0]axis1_1_TDATA;
+  (* DEBUG = "true" *) wire [0:0]axis1_1_TKEEP;
+  (* DEBUG = "true" *) wire axis1_1_TLAST;
+  (* DEBUG = "true" *) wire axis1_1_TREADY;
+  (* DEBUG = "true" *) wire axis1_1_TVALID;
   wire clk_dynamic_clk_out_200M;
   wire clk_pl_50M_1;
   wire clk_wiz_0_clk_out1;
-  wire core_almost_empty;
-  wire [7:0]core_dout;
-  wire core_empty;
-  wire core_s_axis_s2mm_tready1;
-  wire dac_0_da_in_vld;
-  wire [0:0]debug_ctrl_Dout1;
-  wire [0:0]debug_ctrl_Dout14;
-  wire [0:0]debug_ctrl_Dout2;
-  wire [0:0]debug_ctrl_Dout4;
-  wire [0:0]debug_ctrl_Dout5;
-  wire [0:0]debug_ctrl_Dout6;
-  wire [7:0]div_1;
-  wire [15:0]fifo_adc_data_count;
-  wire fifo_dac_almost_full;
-  wire [7:0]fifo_dac_dout;
-  wire fifo_dac_full;
-  wire [7:0]mux_0_data_out;
+  (* DEBUG = "true" *) wire core_almost_empty;
+  (* DEBUG = "true" *) wire core_prog_full1;
+  (* DEBUG = "true" *) wire [0:0]debug_ctrl_Dout1;
+  (* DEBUG = "true" *) wire [0:0]debug_ctrl_Dout14;
+  (* DEBUG = "true" *) wire [0:0]debug_ctrl_Dout2;
+  (* DEBUG = "true" *) (* MARK_DEBUG *) wire [0:0]debug_ctrl_Dout4;
+  (* DEBUG = "true" *) wire [0:0]debug_ctrl_Dout6;
+  (* DEBUG = "true" *) wire [7:0]div_1;
+  (* DEBUG = "true" *) (* MARK_DEBUG *) wire [7:0]mux_0_data_out;
+  (* DEBUG = "true" *) wire [7:0]probe28_1;
+  (* DEBUG = "true" *) wire [7:0]probe9_1;
   wire [14:0]processing_system7_0_DDR_ADDR;
   wire [2:0]processing_system7_0_DDR_BA;
   wire processing_system7_0_DDR_CAS_N;
@@ -2815,15 +2664,11 @@ module urllc_fifo_core
   wire ps7_0_axi_periph_M00_AXI_WREADY;
   wire [3:0]ps7_0_axi_periph_M00_AXI_WSTRB;
   wire ps7_0_axi_periph_M00_AXI_WVALID;
-  wire rd_en_1;
   wire [0:0]reset_dynamic_peripheral_aresetn;
   wire [0:0]rst_ps7_0_50M_peripheral_aresetn;
-  wire [0:0]xlslice_0_Dout1;
-  wire [15:0]xlslice_1_Dout;
-  wire [0:0]xlslice_2_Dout;
   wire [7:0]xlslice_dac_8_15_Dout;
   wire [0:0]xlslice_duc_sync_6_Dout;
-  wire [0:0]xlslice_reciever_in_10_Dout;
+  (* DEBUG = "true" *) wire [0:0]xlslice_reciever_in_10_Dout;
   wire [0:0]xlslice_reciever_out_7_Dout;
   wire [0:0]xlslice_reciever_out_8_Dout;
 
@@ -2834,25 +2679,20 @@ module urllc_fifo_core
   assign da[7:0] = mux_0_data_out;
   adc_imp_18KFN60 adc
        (.ad(ad_1),
-        .ad_out(adc_0_ad_out),
-        .ad_out_vld(adc_0_ad_out_vld),
-        .axis_tready1(core_s_axis_s2mm_tready1),
-        .clear(xlslice_2_Dout),
+        .axis_adc_tdata(adc_axis2_TDATA),
+        .axis_adc_tlast(adc_axis2_TLAST),
+        .axis_adc_tready(adc_axis2_TREADY),
+        .axis_adc_tvalid(adc_axis2_TVALID),
         .clk(clk_wiz_0_clk_out1),
-        .count(fifo_adc_data_count),
+        .data_out(probe9_1),
         .div(div_1),
-        .fifo_read_almost_empty(core_almost_empty),
-        .fifo_read_empty(core_empty),
-        .fifo_read_rd_data(core_dout),
-        .fifo_read_rd_en(rd_en_1),
+        .fifo_almost_empty(core_almost_empty),
+        .fifo_almost_full1(core_prog_full1),
         .io_clock(clk_dynamic_clk_out_200M),
         .io_in_sync(xlslice_reciever_out_8_Dout),
         .io_resetN(reset_dynamic_peripheral_aresetn),
         .resetn(rst_ps7_0_50M_peripheral_aresetn),
-        .router(xlslice_reciever_in_10_Dout),
-        .start(debug_ctrl_Dout5),
-        .target(xlslice_1_Dout),
-        .trigger_out(adc_trigger_out));
+        .router(xlslice_reciever_in_10_Dout));
   core_imp_IXGSD3 core
        (.DDR_addr(DDR_addr[14:0]),
         .DDR_ba(DDR_ba[2:0]),
@@ -2875,7 +2715,6 @@ module urllc_fifo_core
         .FIXED_IO_ps_clk(FIXED_IO_ps_clk),
         .FIXED_IO_ps_porb(FIXED_IO_ps_porb),
         .FIXED_IO_ps_srstb(FIXED_IO_ps_srstb),
-        .In0(adc_trigger_out),
         .M00_AXI_araddr(ps7_0_axi_periph_M00_AXI_ARADDR),
         .M00_AXI_arready(ps7_0_axi_periph_M00_AXI_ARREADY),
         .M00_AXI_arvalid(ps7_0_axi_periph_M00_AXI_ARVALID),
@@ -2893,61 +2732,48 @@ module urllc_fifo_core
         .M00_AXI_wready(ps7_0_axi_periph_M00_AXI_WREADY),
         .M00_AXI_wstrb(ps7_0_axi_periph_M00_AXI_WSTRB),
         .M00_AXI_wvalid(ps7_0_axi_periph_M00_AXI_WVALID),
-        .M_AXIS_MM2S_tdata(axi_dma_0_M_AXIS_MM2S_TDATA),
-        .M_AXIS_MM2S_tkeep(axi_dma_0_M_AXIS_MM2S_TKEEP),
-        .M_AXIS_MM2S_tlast(axi_dma_0_M_AXIS_MM2S_TLAST),
-        .M_AXIS_MM2S_tready(axi_dma_0_M_AXIS_MM2S_TREADY),
-        .M_AXIS_MM2S_tvalid(axi_dma_0_M_AXIS_MM2S_TVALID),
-        .S_AXIS_S2MM_tdata({1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0}),
-        .S_AXIS_S2MM_tlast(1'b0),
-        .S_AXIS_S2MM_tvalid(1'b0),
+        .M_AXIS_tdata(axis1_1_TDATA),
+        .M_AXIS_tkeep(axis1_1_TKEEP),
+        .M_AXIS_tlast(axis1_1_TLAST),
+        .M_AXIS_tready(axis1_1_TREADY),
+        .M_AXIS_tvalid(axis1_1_TVALID),
+        .S_AXIS_tdata(adc_axis2_TDATA),
+        .S_AXIS_tlast(adc_axis2_TLAST),
+        .S_AXIS_tready(adc_axis2_TREADY),
+        .S_AXIS_tvalid(adc_axis2_TVALID),
         .almost_empty(core_almost_empty),
-        .almost_full(fifo_dac_almost_full),
         .clk_out1(clk_wiz_0_clk_out1),
         .clk_out_dynamic(clk_dynamic_clk_out_200M),
         .clk_pl_50M(clk_pl_50M_1),
-        .data_count(fifo_adc_data_count),
-        .din(adc_0_ad_out),
-        .din1(axis_write_to_fifo_0_fifo_write_wd_data),
-        .dout(core_dout),
-        .dout1(fifo_dac_dout),
-        .empty(core_empty),
-        .full(fifo_dac_full),
         .peripheral_aresetn(reset_dynamic_peripheral_aresetn),
         .peripheral_aresetn1(rst_ps7_0_50M_peripheral_aresetn),
+        .probe10(xlslice_reciever_in_10_Dout),
+        .probe26(mux_0_data_out),
+        .probe28(probe28_1),
+        .probe8(div_1),
+        .probe9(probe9_1),
+        .prog_full1(core_prog_full1),
         .psclk(debug_ctrl_Dout2),
         .psen(debug_ctrl_Dout1),
         .psincdec(debug_ctrl_Dout6),
-        .rd_en(rd_en_1),
-        .rd_en1(dac_0_da_in_vld),
         .router(debug_ctrl_Dout4),
-        .router1(debug_ctrl_Dout14),
-        .s_axis_s2mm_tready1(core_s_axis_s2mm_tready1),
-        .wr_en(adc_0_ad_out_vld),
-        .wr_en1(axis_write_to_fifo_0_fifo_write_wd_en));
+        .router1(debug_ctrl_Dout14));
   dac_imp_1D1Y9NN dac
-       (.axis_tdata(axi_dma_0_M_AXIS_MM2S_TDATA),
-        .axis_tkeep(axi_dma_0_M_AXIS_MM2S_TKEEP),
-        .axis_tlast(axi_dma_0_M_AXIS_MM2S_TLAST),
-        .axis_tready(axi_dma_0_M_AXIS_MM2S_TREADY),
-        .axis_tvalid(axi_dma_0_M_AXIS_MM2S_TVALID),
+       (.axis_tdata(axis1_1_TDATA),
+        .axis_tkeep(axis1_1_TKEEP),
+        .axis_tlast(axis1_1_TLAST),
+        .axis_tready(axis1_1_TREADY),
+        .axis_tvalid(axis1_1_TVALID),
         .clk(clk_wiz_0_clk_out1),
         .da(mux_0_data_out),
-        .da_in(fifo_dac_dout),
-        .da_in_vld(dac_0_da_in_vld),
+        .da_out(probe28_1),
         .div(xlslice_dac_8_15_Dout),
-        .fifo_write_almost_full(fifo_dac_almost_full),
-        .fifo_write_full(fifo_dac_full),
-        .fifo_write_wd_data(axis_write_to_fifo_0_fifo_write_wd_data),
-        .fifo_write_wd_en(axis_write_to_fifo_0_fifo_write_wd_en),
         .io_in_sync(xlslice_duc_sync_6_Dout),
         .resetn(rst_ps7_0_50M_peripheral_aresetn),
-        .router(xlslice_reciever_out_7_Dout),
-        .start(xlslice_0_Dout1));
+        .router(xlslice_reciever_out_7_Dout));
   debug_ctrl_imp_1AJIQFJ debug_ctrl
        (.Dout(xlslice_duc_sync_6_Dout),
         .Dout1(debug_ctrl_Dout1),
-        .Dout10(xlslice_1_Dout),
         .Dout11(xlslice_reciever_in_10_Dout),
         .Dout12(xlslice_dac_8_15_Dout),
         .Dout13(div_1),
@@ -2955,11 +2781,8 @@ module urllc_fifo_core
         .Dout2(debug_ctrl_Dout2),
         .Dout3(xlslice_reciever_out_7_Dout),
         .Dout4(debug_ctrl_Dout4),
-        .Dout5(debug_ctrl_Dout5),
         .Dout6(debug_ctrl_Dout6),
         .Dout7(xlslice_reciever_out_8_Dout),
-        .Dout8(xlslice_0_Dout1),
-        .Dout9(xlslice_2_Dout),
         .S_AXI_araddr(ps7_0_axi_periph_M00_AXI_ARADDR),
         .S_AXI_arready(ps7_0_axi_periph_M00_AXI_ARREADY),
         .S_AXI_arvalid(ps7_0_axi_periph_M00_AXI_ARVALID),

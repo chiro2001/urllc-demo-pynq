@@ -1,10 +1,10 @@
 -- Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 -- --------------------------------------------------------------------------------
 -- Tool Version: Vivado v.2018.3 (win64) Build 2405991 Thu Dec  6 23:38:27 MST 2018
--- Date        : Mon Apr 25 16:41:51 2022
+-- Date        : Wed May  4 16:39:09 2022
 -- Host        : Chiro running 64-bit major release  (build 9200)
--- Command     : write_vhdl -force -mode funcsim -rename_top urllc_fifo_core_auto_pc_1 -prefix
---               urllc_fifo_core_auto_pc_1_ urllc_fifo_core_auto_pc_1_sim_netlist.vhdl
+-- Command     : write_vhdl -force -mode funcsim
+--               d:/Programs/urllc-demo-pynq/urllc-vivado-2018/urllc-vivado-2018.srcs/sources_1/bd/urllc_fifo_core/ip/urllc_fifo_core_auto_pc_1/urllc_fifo_core_auto_pc_1_sim_netlist.vhdl
 -- Design      : urllc_fifo_core_auto_pc_1
 -- Purpose     : This VHDL netlist is a functional simulation representation of the design and should not be modified or
 --               synthesized. This netlist cannot be used for SDF annotated simulation.
@@ -29,6 +29,8 @@ entity urllc_fifo_core_auto_pc_1_axi_protocol_converter_v2_1_18_b_downsizer is
     dout : in STD_LOGIC_VECTOR ( 4 downto 0 );
     m_axi_bresp : in STD_LOGIC_VECTOR ( 1 downto 0 )
   );
+  attribute ORIG_REF_NAME : string;
+  attribute ORIG_REF_NAME of urllc_fifo_core_auto_pc_1_axi_protocol_converter_v2_1_18_b_downsizer : entity is "axi_protocol_converter_v2_1_18_b_downsizer";
 end urllc_fifo_core_auto_pc_1_axi_protocol_converter_v2_1_18_b_downsizer;
 
 architecture STRUCTURE of urllc_fifo_core_auto_pc_1_axi_protocol_converter_v2_1_18_b_downsizer is
@@ -277,6 +279,8 @@ entity urllc_fifo_core_auto_pc_1_axi_protocol_converter_v2_1_18_w_axi3_conv is
     empty : in STD_LOGIC;
     dout : in STD_LOGIC_VECTOR ( 3 downto 0 )
   );
+  attribute ORIG_REF_NAME : string;
+  attribute ORIG_REF_NAME of urllc_fifo_core_auto_pc_1_axi_protocol_converter_v2_1_18_w_axi3_conv : entity is "axi_protocol_converter_v2_1_18_w_axi3_conv";
 end urllc_fifo_core_auto_pc_1_axi_protocol_converter_v2_1_18_w_axi3_conv;
 
 architecture STRUCTURE of urllc_fifo_core_auto_pc_1_axi_protocol_converter_v2_1_18_w_axi3_conv is
@@ -604,6 +608,8 @@ entity urllc_fifo_core_auto_pc_1_xpm_cdc_async_rst is
   attribute INIT_SYNC_FF of urllc_fifo_core_auto_pc_1_xpm_cdc_async_rst : entity is 0;
   attribute INV_DEF_VAL : string;
   attribute INV_DEF_VAL of urllc_fifo_core_auto_pc_1_xpm_cdc_async_rst : entity is "1'b1";
+  attribute ORIG_REF_NAME : string;
+  attribute ORIG_REF_NAME of urllc_fifo_core_auto_pc_1_xpm_cdc_async_rst : entity is "xpm_cdc_async_rst";
   attribute RST_ACTIVE_HIGH : integer;
   attribute RST_ACTIVE_HIGH of urllc_fifo_core_auto_pc_1_xpm_cdc_async_rst : entity is 1;
   attribute VERSION : integer;
@@ -808,6 +814,8 @@ entity urllc_fifo_core_auto_pc_1_dmem is
     I28 : in STD_LOGIC_VECTOR ( 4 downto 0 );
     \gpr1.dout_i_reg[0]_0\ : in STD_LOGIC_VECTOR ( 0 to 0 )
   );
+  attribute ORIG_REF_NAME : string;
+  attribute ORIG_REF_NAME of urllc_fifo_core_auto_pc_1_dmem : entity is "dmem";
 end urllc_fifo_core_auto_pc_1_dmem;
 
 architecture STRUCTURE of urllc_fifo_core_auto_pc_1_dmem is
@@ -1100,6 +1108,8 @@ entity urllc_fifo_core_auto_pc_1_rd_bin_cntr is
     clk : in STD_LOGIC;
     \gc0.count_d1_reg[0]_0\ : in STD_LOGIC
   );
+  attribute ORIG_REF_NAME : string;
+  attribute ORIG_REF_NAME of urllc_fifo_core_auto_pc_1_rd_bin_cntr : entity is "rd_bin_cntr";
 end urllc_fifo_core_auto_pc_1_rd_bin_cntr;
 
 architecture STRUCTURE of urllc_fifo_core_auto_pc_1_rd_bin_cntr is
@@ -1662,6 +1672,8 @@ entity urllc_fifo_core_auto_pc_1_rd_fwft is
     rd_en : in STD_LOGIC;
     \gc0.count_reg[4]\ : in STD_LOGIC
   );
+  attribute ORIG_REF_NAME : string;
+  attribute ORIG_REF_NAME of urllc_fifo_core_auto_pc_1_rd_fwft : entity is "rd_fwft";
 end urllc_fifo_core_auto_pc_1_rd_fwft;
 
 architecture STRUCTURE of urllc_fifo_core_auto_pc_1_rd_fwft is
@@ -2362,6 +2374,8 @@ entity urllc_fifo_core_auto_pc_1_rd_status_flags_ss is
     clk : in STD_LOGIC;
     ram_empty_fb_i_reg_0 : in STD_LOGIC
   );
+  attribute ORIG_REF_NAME : string;
+  attribute ORIG_REF_NAME of urllc_fifo_core_auto_pc_1_rd_status_flags_ss : entity is "rd_status_flags_ss";
 end urllc_fifo_core_auto_pc_1_rd_status_flags_ss;
 
 architecture STRUCTURE of urllc_fifo_core_auto_pc_1_rd_status_flags_ss is
@@ -2530,6 +2544,8 @@ entity urllc_fifo_core_auto_pc_1_wr_bin_cntr is
     clk : in STD_LOGIC;
     AR : in STD_LOGIC_VECTOR ( 0 to 0 )
   );
+  attribute ORIG_REF_NAME : string;
+  attribute ORIG_REF_NAME of urllc_fifo_core_auto_pc_1_wr_bin_cntr : entity is "wr_bin_cntr";
 end urllc_fifo_core_auto_pc_1_wr_bin_cntr;
 
 architecture STRUCTURE of urllc_fifo_core_auto_pc_1_wr_bin_cntr is
@@ -3426,6 +3442,8 @@ entity urllc_fifo_core_auto_pc_1_wr_status_flags_ss is
     AR : in STD_LOGIC_VECTOR ( 0 to 0 );
     wr_en : in STD_LOGIC
   );
+  attribute ORIG_REF_NAME : string;
+  attribute ORIG_REF_NAME of urllc_fifo_core_auto_pc_1_wr_status_flags_ss : entity is "wr_status_flags_ss";
 end urllc_fifo_core_auto_pc_1_wr_status_flags_ss;
 
 architecture STRUCTURE of urllc_fifo_core_auto_pc_1_wr_status_flags_ss is
@@ -3686,6 +3704,8 @@ entity urllc_fifo_core_auto_pc_1_memory is
     I28 : in STD_LOGIC_VECTOR ( 4 downto 0 );
     \gpr1.dout_i_reg[0]\ : in STD_LOGIC_VECTOR ( 0 to 0 )
   );
+  attribute ORIG_REF_NAME : string;
+  attribute ORIG_REF_NAME of urllc_fifo_core_auto_pc_1_memory : entity is "memory";
 end urllc_fifo_core_auto_pc_1_memory;
 
 architecture STRUCTURE of urllc_fifo_core_auto_pc_1_memory is
@@ -3919,6 +3939,8 @@ entity urllc_fifo_core_auto_pc_1_rd_logic is
     \gc0.count_d1_reg[0]\ : in STD_LOGIC;
     rd_en : in STD_LOGIC
   );
+  attribute ORIG_REF_NAME : string;
+  attribute ORIG_REF_NAME of urllc_fifo_core_auto_pc_1_rd_logic : entity is "rd_logic";
 end urllc_fifo_core_auto_pc_1_rd_logic;
 
 architecture STRUCTURE of urllc_fifo_core_auto_pc_1_rd_logic is
@@ -4078,6 +4100,8 @@ entity urllc_fifo_core_auto_pc_1_reset_blk_ramfifo is
     rst : in STD_LOGIC;
     clk : in STD_LOGIC
   );
+  attribute ORIG_REF_NAME : string;
+  attribute ORIG_REF_NAME of urllc_fifo_core_auto_pc_1_reset_blk_ramfifo : entity is "reset_blk_ramfifo";
 end urllc_fifo_core_auto_pc_1_reset_blk_ramfifo;
 
 architecture STRUCTURE of urllc_fifo_core_auto_pc_1_reset_blk_ramfifo is
@@ -4347,6 +4371,8 @@ entity urllc_fifo_core_auto_pc_1_wr_logic is
     ram_empty_fb_i_i_3 : in STD_LOGIC_VECTOR ( 4 downto 0 );
     ram_empty_fb_i_i_2 : in STD_LOGIC_VECTOR ( 4 downto 0 )
   );
+  attribute ORIG_REF_NAME : string;
+  attribute ORIG_REF_NAME of urllc_fifo_core_auto_pc_1_wr_logic : entity is "wr_logic";
 end urllc_fifo_core_auto_pc_1_wr_logic;
 
 architecture STRUCTURE of urllc_fifo_core_auto_pc_1_wr_logic is
@@ -4504,6 +4530,8 @@ entity urllc_fifo_core_auto_pc_1_fifo_generator_ramfifo is
     rd_en : in STD_LOGIC;
     wr_en : in STD_LOGIC
   );
+  attribute ORIG_REF_NAME : string;
+  attribute ORIG_REF_NAME of urllc_fifo_core_auto_pc_1_fifo_generator_ramfifo : entity is "fifo_generator_ramfifo";
 end urllc_fifo_core_auto_pc_1_fifo_generator_ramfifo;
 
 architecture STRUCTURE of urllc_fifo_core_auto_pc_1_fifo_generator_ramfifo is
@@ -4758,6 +4786,8 @@ entity urllc_fifo_core_auto_pc_1_fifo_generator_top is
     rd_en : in STD_LOGIC;
     wr_en : in STD_LOGIC
   );
+  attribute ORIG_REF_NAME : string;
+  attribute ORIG_REF_NAME of urllc_fifo_core_auto_pc_1_fifo_generator_top : entity is "fifo_generator_top";
 end urllc_fifo_core_auto_pc_1_fifo_generator_top;
 
 architecture STRUCTURE of urllc_fifo_core_auto_pc_1_fifo_generator_top is
@@ -4855,6 +4885,8 @@ entity urllc_fifo_core_auto_pc_1_fifo_generator_v13_2_3_synth is
     rd_en : in STD_LOGIC;
     wr_en : in STD_LOGIC
   );
+  attribute ORIG_REF_NAME : string;
+  attribute ORIG_REF_NAME of urllc_fifo_core_auto_pc_1_fifo_generator_v13_2_3_synth : entity is "fifo_generator_v13_2_3_synth";
 end urllc_fifo_core_auto_pc_1_fifo_generator_v13_2_3_synth;
 
 architecture STRUCTURE of urllc_fifo_core_auto_pc_1_fifo_generator_v13_2_3_synth is
@@ -5579,6 +5611,8 @@ entity urllc_fifo_core_auto_pc_1_fifo_generator_v13_2_3 is
   attribute C_WR_PNTR_WIDTH_WRCH of urllc_fifo_core_auto_pc_1_fifo_generator_v13_2_3 : entity is 4;
   attribute C_WR_RESPONSE_LATENCY : integer;
   attribute C_WR_RESPONSE_LATENCY of urllc_fifo_core_auto_pc_1_fifo_generator_v13_2_3 : entity is 1;
+  attribute ORIG_REF_NAME : string;
+  attribute ORIG_REF_NAME of urllc_fifo_core_auto_pc_1_fifo_generator_v13_2_3 : entity is "fifo_generator_v13_2_3";
 end urllc_fifo_core_auto_pc_1_fifo_generator_v13_2_3;
 
 architecture STRUCTURE of urllc_fifo_core_auto_pc_1_fifo_generator_v13_2_3 is
@@ -8792,6 +8826,8 @@ entity urllc_fifo_core_auto_pc_1_axi_data_fifo_v2_1_17_fifo_gen is
     areset_d : in STD_LOGIC_VECTOR ( 0 to 0 );
     command_ongoing_reg : in STD_LOGIC
   );
+  attribute ORIG_REF_NAME : string;
+  attribute ORIG_REF_NAME of urllc_fifo_core_auto_pc_1_axi_data_fifo_v2_1_17_fifo_gen : entity is "axi_data_fifo_v2_1_17_fifo_gen";
 end urllc_fifo_core_auto_pc_1_axi_data_fifo_v2_1_17_fifo_gen;
 
 architecture STRUCTURE of urllc_fifo_core_auto_pc_1_axi_data_fifo_v2_1_17_fifo_gen is
@@ -12097,6 +12133,8 @@ entity urllc_fifo_core_auto_pc_1_axi_data_fifo_v2_1_17_axic_fifo is
     areset_d : in STD_LOGIC_VECTOR ( 0 to 0 );
     command_ongoing_reg : in STD_LOGIC
   );
+  attribute ORIG_REF_NAME : string;
+  attribute ORIG_REF_NAME of urllc_fifo_core_auto_pc_1_axi_data_fifo_v2_1_17_axic_fifo : entity is "axi_data_fifo_v2_1_17_axic_fifo";
 end urllc_fifo_core_auto_pc_1_axi_data_fifo_v2_1_17_axic_fifo;
 
 architecture STRUCTURE of urllc_fifo_core_auto_pc_1_axi_data_fifo_v2_1_17_axic_fifo is
@@ -12389,6 +12427,8 @@ entity urllc_fifo_core_auto_pc_1_axi_protocol_converter_v2_1_18_a_axi3_conv is
     s_axi_awprot : in STD_LOGIC_VECTOR ( 2 downto 0 );
     s_axi_awqos : in STD_LOGIC_VECTOR ( 3 downto 0 )
   );
+  attribute ORIG_REF_NAME : string;
+  attribute ORIG_REF_NAME of urllc_fifo_core_auto_pc_1_axi_protocol_converter_v2_1_18_a_axi3_conv : entity is "axi_protocol_converter_v2_1_18_a_axi3_conv";
 end urllc_fifo_core_auto_pc_1_axi_protocol_converter_v2_1_18_a_axi3_conv;
 
 architecture STRUCTURE of urllc_fifo_core_auto_pc_1_axi_protocol_converter_v2_1_18_a_axi3_conv is
@@ -18875,6 +18915,8 @@ entity urllc_fifo_core_auto_pc_1_axi_protocol_converter_v2_1_18_axi3_conv is
     s_axi_awvalid : in STD_LOGIC;
     s_axi_arvalid : in STD_LOGIC
   );
+  attribute ORIG_REF_NAME : string;
+  attribute ORIG_REF_NAME of urllc_fifo_core_auto_pc_1_axi_protocol_converter_v2_1_18_axi3_conv : entity is "axi_protocol_converter_v2_1_18_axi3_conv";
 end urllc_fifo_core_auto_pc_1_axi_protocol_converter_v2_1_18_axi3_conv;
 
 architecture STRUCTURE of urllc_fifo_core_auto_pc_1_axi_protocol_converter_v2_1_18_axi3_conv is
@@ -19135,6 +19177,8 @@ entity urllc_fifo_core_auto_pc_1_axi_protocol_converter_v2_1_18_axi_protocol_con
   attribute C_TRANSLATION_MODE of urllc_fifo_core_auto_pc_1_axi_protocol_converter_v2_1_18_axi_protocol_converter : entity is 2;
   attribute DowngradeIPIdentifiedWarnings : string;
   attribute DowngradeIPIdentifiedWarnings of urllc_fifo_core_auto_pc_1_axi_protocol_converter_v2_1_18_axi_protocol_converter : entity is "yes";
+  attribute ORIG_REF_NAME : string;
+  attribute ORIG_REF_NAME of urllc_fifo_core_auto_pc_1_axi_protocol_converter_v2_1_18_axi_protocol_converter : entity is "axi_protocol_converter_v2_1_18_axi_protocol_converter";
   attribute P_AXI3 : integer;
   attribute P_AXI3 of urllc_fifo_core_auto_pc_1_axi_protocol_converter_v2_1_18_axi_protocol_converter : entity is 1;
   attribute P_AXI4 : integer;
