@@ -16,21 +16,21 @@ preplace portBus div_adc -pg 1 -y 620 -defaultsOSRD
 preplace inst dac -pg 1 -lvl 2 -y 404 -defaultsOSRD
 preplace inst axis_data_fifo_inout -pg 1 -lvl 1 -y 510 -defaultsOSRD
 preplace inst adc -pg 1 -lvl 2 -y 148 -defaultsOSRD
-preplace netloc io_in_sync_0_1 1 0 2 30J 410 310J
+preplace netloc io_in_sync_0_1 1 0 2 10J 400 320J
 preplace netloc adc_axis_adc 1 0 3 40 -2 NJ -2 730
 preplace netloc adc_data_out 1 2 1 730J
 preplace netloc io_in_sync_1_1 1 0 2 -30J 138 NJ
-preplace netloc axis_data_fifo_inout_prog_full 1 1 1 320
+preplace netloc axis_data_fifo_inout_prog_full 1 1 1 330
 preplace netloc router_0_1 1 0 2 -20J 198 NJ
-preplace netloc clk_0_1 1 0 2 0 370 370
-preplace netloc resetn_0_1 1 0 2 10 380 360
-preplace netloc div_1_1 1 0 2 -10J 390 350J
+preplace netloc clk_0_1 1 0 2 20 380 320
+preplace netloc resetn_0_1 1 0 2 0 370 310
+preplace netloc div_1_1 1 0 2 -10J 390 360J
 preplace netloc div_0_1 1 0 2 -40J 98 NJ
-preplace netloc router_1_1 1 0 2 20J 400 300J
+preplace netloc router_1_1 1 0 2 30J 410 300J
 preplace netloc dac_da 1 2 1 720J
 preplace netloc ad_0_1 1 0 2 -50J 58 NJ
-preplace netloc axis_data_fifo_inout_M_AXIS 1 1 1 340
-preplace netloc axis_data_fifo_inout_prog_empty 1 1 1 330
+preplace netloc axis_data_fifo_inout_M_AXIS 1 1 1 350
+preplace netloc axis_data_fifo_inout_prog_empty 1 1 1 340
 levelinfo -pg 1 -70 170 590 760 -top -20 -bot 940
 "
 }

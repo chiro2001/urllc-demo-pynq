@@ -203,14 +203,6 @@
                 "mode": "Slave",
                 "vlnv": "xilinx.com:interface:axis_rtl:1.0",
                 "parameters": {
-                  "CLK_DOMAIN": {
-                    "value": "test_fifo_axis_clk",
-                    "value_src": "default_prop"
-                  },
-                  "FREQ_HZ": {
-                    "value": "60000000",
-                    "value_src": "user_prop"
-                  },
                   "HAS_TKEEP": {
                     "value": "0",
                     "value_src": "constant"
@@ -226,10 +218,6 @@
                   "HAS_TSTRB": {
                     "value": "0",
                     "value_src": "constant"
-                  },
-                  "PHASE": {
-                    "value": "0.0",
-                    "value_src": "user_prop"
                   },
                   "TDATA_NUM_BYTES": {
                     "value": "1",
@@ -726,16 +714,16 @@
       }
     },
     "interface_nets": {
-      "axis_data_fifo_inout_M_AXIS": {
-        "interface_ports": [
-          "axis_data_fifo_inout/M_AXIS",
-          "dac/axis"
-        ]
-      },
       "adc_axis_adc": {
         "interface_ports": [
           "axis_data_fifo_inout/S_AXIS",
           "adc/axis_adc"
+        ]
+      },
+      "axis_data_fifo_inout_M_AXIS": {
+        "interface_ports": [
+          "axis_data_fifo_inout/M_AXIS",
+          "dac/axis"
         ]
       }
     },

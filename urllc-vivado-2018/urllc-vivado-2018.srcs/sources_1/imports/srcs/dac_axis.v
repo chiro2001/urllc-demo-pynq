@@ -33,11 +33,10 @@ module dac_axis #(parameter N = 8)
             else begin
                 if (cnt == div - 8'b1) begin
                     cnt <= 8'b0;
-                    da  <= axis_tdata;
+                    da  <= axis_tvalid ? axis_tdata : 0;
                     vld <= 1'b0;
                 end
                 else begin
-                    da  <= 0;
                     cnt <= cnt + 8'b1;
                     if (cnt == div - 8'd2) begin
                         vld <= 1'b1;

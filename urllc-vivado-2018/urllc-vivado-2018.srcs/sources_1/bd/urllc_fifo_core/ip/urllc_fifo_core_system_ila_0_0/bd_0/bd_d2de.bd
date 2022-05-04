@@ -992,16 +992,16 @@
           "g_inst/slot_1_axis"
         ]
       },
-      "Conn2": {
-        "interface_ports": [
-          "SLOT_2_AXIS",
-          "g_inst/slot_2_axis"
-        ]
-      },
       "Conn3": {
         "interface_ports": [
           "SLOT_3_AXIS",
           "g_inst/slot_3_axis"
+        ]
+      },
+      "Conn2": {
+        "interface_ports": [
+          "SLOT_2_AXIS",
+          "g_inst/slot_2_axis"
         ]
       }
     },

@@ -308,7 +308,8 @@ int SystemInit() {
   SetupGpioOut();
 
   // memset(src, 0x55, sizeof(src));
-  for (size_t i = 0; i < sizeof(src); i++) src[i] = 0xFF & (i + 0x55);
+  // for (size_t i = 0; i < sizeof(src); i++) src[i] = 0xFF & (i + 0x55);
+  for (size_t i = 0; i < sizeof(src); i++) src[i] = 0;
   // memset(dst, 0xAA, sizeof(dst));
   for (size_t i = 0; i < sizeof(dst); i++) dst[i] = 0xAA + (i % 2 == 0);
 

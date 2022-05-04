@@ -41,7 +41,7 @@
     <Object name="urllc_fifo_core_i/core/system_ila_dma/inst/ila_lib" gui_info="">
       <Properties Property="CONTROL.TRIGGER_CONDITION" value="AND"/>
       <Properties Property="CONTROL.TRIGGER_MODE" value="BASIC_ONLY"/>
-      <Properties Property="CONTROL.TRIGGER_POSITION" value="4096"/>
+      <Properties Property="CONTROL.TRIGGER_POSITION" value="1024"/>
       <Properties Property="CORE_REFRESH_RATE_MS" value="500"/>
     </Object>
     <Object name="urllc_fifo_core_i/dac/ila_0" gui_info="">
@@ -5639,7 +5639,7 @@
         <Option Id="HW_ILA" value="hw_ila_1"/>
         <Option Id="LINK_TO_WAVEFORM" value="1"/>
         <Option Id="MAP" value="probe26[7:0]"/>
-        <Option Id="NAME.CUSTOM" value="probe26"/>
+        <Option Id="NAME.CUSTOM" value="da"/>
         <Option Id="NAME.SELECT" value="Custom"/>
         <Option Id="SOURCE" value="netlist"/>
         <Option Id="TRIGGER_COMPARE_VALUE" value="eq8&apos;hXX"/>
@@ -5695,7 +5695,7 @@
         <Option Id="HW_ILA" value="hw_ila_1"/>
         <Option Id="LINK_TO_WAVEFORM" value="1"/>
         <Option Id="MAP" value="probe28[7:0]"/>
-        <Option Id="NAME.CUSTOM" value="probe28"/>
+        <Option Id="NAME.CUSTOM" value="data_out"/>
         <Option Id="NAME.SELECT" value="Custom"/>
         <Option Id="SOURCE" value="netlist"/>
         <Option Id="TRIGGER_COMPARE_VALUE" value="eq8&apos;hXX"/>
