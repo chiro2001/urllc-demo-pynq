@@ -1,7 +1,7 @@
 -- Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 -- --------------------------------------------------------------------------------
 -- Tool Version: Vivado v.2018.3 (win64) Build 2405991 Thu Dec  6 23:38:27 MST 2018
--- Date        : Wed Apr 27 17:41:37 2022
+-- Date        : Tue May  3 23:04:03 2022
 -- Host        : Chiro running 64-bit major release  (build 9200)
 -- Command     : write_vhdl -force -mode funcsim
 --               D:/Programs/urllc-demo-pynq/urllc-vivado-2018/urllc-vivado-2018.srcs/sources_1/bd/urllc_fifo_core/ip/urllc_fifo_core_adc_axis_0_0/urllc_fifo_core_adc_axis_0_0_sim_netlist.vhdl
@@ -18,6 +18,8 @@ entity urllc_fifo_core_adc_axis_0_0_adc_axis is
   port (
     axis_tdata : out STD_LOGIC_VECTOR ( 7 downto 0 );
     axis_tvalid : out STD_LOGIC;
+    axis_tlast : out STD_LOGIC;
+    fifo_almost_full : in STD_LOGIC;
     ad_in : in STD_LOGIC_VECTOR ( 7 downto 0 );
     div : in STD_LOGIC_VECTOR ( 7 downto 0 );
     clk : in STD_LOGIC;
@@ -46,6 +48,7 @@ architecture STRUCTURE of urllc_fifo_core_adc_axis_0_0_adc_axis is
   signal \ad[7]_i_7_n_0\ : STD_LOGIC;
   signal \ad[7]_i_8_n_0\ : STD_LOGIC;
   signal \ad[7]_i_9_n_0\ : STD_LOGIC;
+  signal axis_tlast_reg_i_1_n_0 : STD_LOGIC;
   signal cnt : STD_LOGIC_VECTOR ( 7 downto 0 );
   signal cnt0 : STD_LOGIC_VECTOR ( 7 to 7 );
   signal \cnt[0]_i_1_n_0\ : STD_LOGIC;
@@ -63,84 +66,91 @@ architecture STRUCTURE of urllc_fifo_core_adc_axis_0_0_adc_axis is
   signal \cnt[7]_i_1_n_0\ : STD_LOGIC;
   signal vld_i_1_n_0 : STD_LOGIC;
   attribute SOFT_HLUTNM : string;
-  attribute SOFT_HLUTNM of \ad[0]_i_1\ : label is "soft_lutpair4";
-  attribute SOFT_HLUTNM of \ad[1]_i_1\ : label is "soft_lutpair5";
-  attribute SOFT_HLUTNM of \ad[2]_i_1\ : label is "soft_lutpair6";
-  attribute SOFT_HLUTNM of \ad[3]_i_1\ : label is "soft_lutpair5";
-  attribute SOFT_HLUTNM of \ad[4]_i_1\ : label is "soft_lutpair4";
-  attribute SOFT_HLUTNM of \ad[5]_i_1\ : label is "soft_lutpair6";
-  attribute SOFT_HLUTNM of \ad[6]_i_1\ : label is "soft_lutpair7";
+  attribute SOFT_HLUTNM of \ad[0]_i_1\ : label is "soft_lutpair6";
+  attribute SOFT_HLUTNM of \ad[1]_i_1\ : label is "soft_lutpair6";
+  attribute SOFT_HLUTNM of \ad[2]_i_1\ : label is "soft_lutpair3";
+  attribute SOFT_HLUTNM of \ad[3]_i_1\ : label is "soft_lutpair4";
+  attribute SOFT_HLUTNM of \ad[4]_i_1\ : label is "soft_lutpair5";
+  attribute SOFT_HLUTNM of \ad[5]_i_1\ : label is "soft_lutpair5";
+  attribute SOFT_HLUTNM of \ad[6]_i_1\ : label is "soft_lutpair4";
   attribute SOFT_HLUTNM of \ad[7]_i_11\ : label is "soft_lutpair2";
-  attribute SOFT_HLUTNM of \ad[7]_i_2\ : label is "soft_lutpair7";
+  attribute SOFT_HLUTNM of \ad[7]_i_2\ : label is "soft_lutpair3";
   attribute SOFT_HLUTNM of \ad[7]_i_8\ : label is "soft_lutpair2";
-  attribute SOFT_HLUTNM of \cnt[2]_i_2\ : label is "soft_lutpair3";
-  attribute SOFT_HLUTNM of \cnt[3]_i_2\ : label is "soft_lutpair3";
+  attribute SOFT_HLUTNM of axis_tlast_reg_i_1 : label is "soft_lutpair0";
+  attribute SOFT_HLUTNM of \cnt[2]_i_2\ : label is "soft_lutpair7";
+  attribute SOFT_HLUTNM of \cnt[3]_i_2\ : label is "soft_lutpair7";
   attribute SOFT_HLUTNM of \cnt[4]_i_2\ : label is "soft_lutpair1";
   attribute SOFT_HLUTNM of \cnt[5]_i_2\ : label is "soft_lutpair1";
-  attribute SOFT_HLUTNM of \cnt[7]_i_1\ : label is "soft_lutpair0";
   attribute SOFT_HLUTNM of vld_i_1 : label is "soft_lutpair0";
 begin
-\ad[0]_i_1\: unisim.vcomponents.LUT2
+\ad[0]_i_1\: unisim.vcomponents.LUT3
     generic map(
-      INIT => X"2"
+      INIT => X"04"
     )
         port map (
-      I0 => ad_in(0),
-      I1 => \ad[7]_i_7_n_0\,
+      I0 => fifo_almost_full,
+      I1 => ad_in(0),
+      I2 => \ad[7]_i_7_n_0\,
       O => \ad[0]_i_1_n_0\
     );
-\ad[1]_i_1\: unisim.vcomponents.LUT2
+\ad[1]_i_1\: unisim.vcomponents.LUT3
     generic map(
-      INIT => X"2"
+      INIT => X"04"
     )
         port map (
-      I0 => ad_in(1),
-      I1 => \ad[7]_i_7_n_0\,
+      I0 => fifo_almost_full,
+      I1 => ad_in(1),
+      I2 => \ad[7]_i_7_n_0\,
       O => \ad[1]_i_1_n_0\
     );
-\ad[2]_i_1\: unisim.vcomponents.LUT2
+\ad[2]_i_1\: unisim.vcomponents.LUT3
     generic map(
-      INIT => X"2"
+      INIT => X"04"
     )
         port map (
-      I0 => ad_in(2),
-      I1 => \ad[7]_i_7_n_0\,
+      I0 => fifo_almost_full,
+      I1 => ad_in(2),
+      I2 => \ad[7]_i_7_n_0\,
       O => \ad[2]_i_1_n_0\
     );
-\ad[3]_i_1\: unisim.vcomponents.LUT2
+\ad[3]_i_1\: unisim.vcomponents.LUT3
     generic map(
-      INIT => X"2"
+      INIT => X"04"
     )
         port map (
-      I0 => ad_in(3),
-      I1 => \ad[7]_i_7_n_0\,
+      I0 => fifo_almost_full,
+      I1 => ad_in(3),
+      I2 => \ad[7]_i_7_n_0\,
       O => \ad[3]_i_1_n_0\
     );
-\ad[4]_i_1\: unisim.vcomponents.LUT2
+\ad[4]_i_1\: unisim.vcomponents.LUT3
     generic map(
-      INIT => X"2"
+      INIT => X"04"
     )
         port map (
-      I0 => ad_in(4),
-      I1 => \ad[7]_i_7_n_0\,
+      I0 => fifo_almost_full,
+      I1 => ad_in(4),
+      I2 => \ad[7]_i_7_n_0\,
       O => \ad[4]_i_1_n_0\
     );
-\ad[5]_i_1\: unisim.vcomponents.LUT2
+\ad[5]_i_1\: unisim.vcomponents.LUT3
     generic map(
-      INIT => X"2"
+      INIT => X"04"
     )
         port map (
-      I0 => ad_in(5),
-      I1 => \ad[7]_i_7_n_0\,
+      I0 => fifo_almost_full,
+      I1 => ad_in(5),
+      I2 => \ad[7]_i_7_n_0\,
       O => \ad[5]_i_1_n_0\
     );
-\ad[6]_i_1\: unisim.vcomponents.LUT2
+\ad[6]_i_1\: unisim.vcomponents.LUT3
     generic map(
-      INIT => X"2"
+      INIT => X"04"
     )
         port map (
-      I0 => ad_in(6),
-      I1 => \ad[7]_i_7_n_0\,
+      I0 => fifo_almost_full,
+      I1 => ad_in(6),
+      I2 => \ad[7]_i_7_n_0\,
       O => \ad[6]_i_1_n_0\
     );
 \ad[7]_i_1\: unisim.vcomponents.LUT4
@@ -178,13 +188,14 @@ begin
       I3 => div(1),
       O => \ad[7]_i_11_n_0\
     );
-\ad[7]_i_2\: unisim.vcomponents.LUT2
+\ad[7]_i_2\: unisim.vcomponents.LUT3
     generic map(
-      INIT => X"2"
+      INIT => X"04"
     )
         port map (
-      I0 => ad_in(7),
-      I1 => \ad[7]_i_7_n_0\,
+      I0 => fifo_almost_full,
+      I1 => ad_in(7),
+      I2 => \ad[7]_i_7_n_0\,
       O => \ad[7]_i_2_n_0\
     );
 \ad[7]_i_3\: unisim.vcomponents.LUT1
@@ -331,6 +342,26 @@ begin
       CLR => \ad[7]_i_3_n_0\,
       D => \ad[7]_i_2_n_0\,
       Q => axis_tdata(7)
+    );
+axis_tlast_reg_i_1: unisim.vcomponents.LUT5
+    generic map(
+      INIT => X"00002000"
+    )
+        port map (
+      I0 => fifo_almost_full,
+      I1 => \ad[7]_i_6_n_0\,
+      I2 => \ad[7]_i_5_n_0\,
+      I3 => \ad[7]_i_4_n_0\,
+      I4 => \ad[7]_i_7_n_0\,
+      O => axis_tlast_reg_i_1_n_0
+    );
+axis_tlast_reg_reg: unisim.vcomponents.FDCE
+     port map (
+      C => clk,
+      CE => '1',
+      CLR => \ad[7]_i_3_n_0\,
+      D => axis_tlast_reg_i_1_n_0,
+      Q => axis_tlast
     );
 \cnt[0]_i_1\: unisim.vcomponents.LUT5
     generic map(
@@ -563,15 +594,16 @@ begin
       D => \cnt[7]_i_1_n_0\,
       Q => cnt(7)
     );
-vld_i_1: unisim.vcomponents.LUT4
+vld_i_1: unisim.vcomponents.LUT5
     generic map(
-      INIT => X"0008"
+      INIT => X"00001000"
     )
         port map (
-      I0 => \ad[7]_i_4_n_0\,
-      I1 => \ad[7]_i_5_n_0\,
-      I2 => \ad[7]_i_6_n_0\,
-      I3 => \ad[7]_i_7_n_0\,
+      I0 => fifo_almost_full,
+      I1 => \ad[7]_i_6_n_0\,
+      I2 => \ad[7]_i_5_n_0\,
+      I3 => \ad[7]_i_4_n_0\,
+      I4 => \ad[7]_i_7_n_0\,
       O => vld_i_1_n_0
     );
 vld_reg: unisim.vcomponents.FDCE
@@ -596,7 +628,9 @@ entity urllc_fifo_core_adc_axis_0_0 is
     axis_tdata : out STD_LOGIC_VECTOR ( 7 downto 0 );
     axis_tvalid : out STD_LOGIC;
     axis_tlast : out STD_LOGIC;
-    axis_tready : in STD_LOGIC
+    axis_tready : in STD_LOGIC;
+    fifo_almost_full : in STD_LOGIC;
+    fifo_almost_empty : in STD_LOGIC
   );
   attribute NotValidForBitStream : boolean;
   attribute NotValidForBitStream of urllc_fifo_core_adc_axis_0_0 : entity is true;
@@ -611,7 +645,6 @@ entity urllc_fifo_core_adc_axis_0_0 is
 end urllc_fifo_core_adc_axis_0_0;
 
 architecture STRUCTURE of urllc_fifo_core_adc_axis_0_0 is
-  signal \<const0>\ : STD_LOGIC;
   attribute X_INTERFACE_INFO : string;
   attribute X_INTERFACE_INFO of axis_tlast : signal is "xilinx.com:interface:axis:1.0 axis TLAST";
   attribute X_INTERFACE_INFO of axis_tready : signal is "xilinx.com:interface:axis:1.0 axis TREADY";
@@ -624,18 +657,15 @@ architecture STRUCTURE of urllc_fifo_core_adc_axis_0_0 is
   attribute X_INTERFACE_PARAMETER of resetn : signal is "XIL_INTERFACENAME resetn, POLARITY ACTIVE_LOW, INSERT_VIP 0";
   attribute X_INTERFACE_INFO of axis_tdata : signal is "xilinx.com:interface:axis:1.0 axis TDATA";
 begin
-  axis_tlast <= \<const0>\;
-GND: unisim.vcomponents.GND
-     port map (
-      G => \<const0>\
-    );
 inst: entity work.urllc_fifo_core_adc_axis_0_0_adc_axis
      port map (
       ad_in(7 downto 0) => ad_in(7 downto 0),
       axis_tdata(7 downto 0) => axis_tdata(7 downto 0),
+      axis_tlast => axis_tlast,
       axis_tvalid => axis_tvalid,
       clk => clk,
       div(7 downto 0) => div(7 downto 0),
+      fifo_almost_full => fifo_almost_full,
       resetn => resetn
     );
 end STRUCTURE;

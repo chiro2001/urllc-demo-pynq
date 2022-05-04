@@ -1,7 +1,7 @@
 //Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 //--------------------------------------------------------------------------------
 //Tool Version: Vivado v.2018.3 (win64) Build 2405991 Thu Dec  6 23:38:27 MST 2018
-//Date        : Wed Apr 27 17:40:37 2022
+//Date        : Tue May  3 23:03:26 2022
 //Host        : Chiro running 64-bit major release  (build 9200)
 //Command     : generate_target urllc_fifo_core.bd
 //Design      : urllc_fifo_core
@@ -18,6 +18,8 @@ module adc_imp_18KFN60
     clk,
     data_out,
     div,
+    fifo_almost_empty,
+    fifo_almost_full1,
     io_clock,
     io_in_sync,
     io_resetN,
@@ -31,6 +33,8 @@ module adc_imp_18KFN60
   input clk;
   output [7:0]data_out;
   input [7:0]div;
+  input fifo_almost_empty;
+  input fifo_almost_full1;
   input io_clock;
   input io_in_sync;
   input io_resetN;
@@ -48,6 +52,8 @@ module adc_imp_18KFN60
   (* DEBUG = "true" *) wire adc_axis_0_axis_TREADY;
   (* DEBUG = "true" *) wire adc_axis_0_axis_TVALID;
   (* DEBUG = "true" *) (* MARK_DEBUG *) wire [7:0]div_1;
+  (* DEBUG = "true" *) wire fifo_almost_empty_1;
+  (* DEBUG = "true" *) wire fifo_almost_full1_1;
   wire io_in_sync_1;
   (* DEBUG = "true" *) (* MARK_DEBUG *) wire [7:0]mux_reciever_in_data_out;
   wire [7:0]xlconcat_0_dout;
@@ -65,6 +71,8 @@ module adc_imp_18KFN60
   assign axis_adc_tvalid = adc_axis_0_axis_TVALID;
   assign data_out[7:0] = mux_reciever_in_data_out;
   assign div_1 = div[7:0];
+  assign fifo_almost_empty_1 = fifo_almost_empty;
+  assign fifo_almost_full1_1 = fifo_almost_full1;
   assign io_in_sync_1 = io_in_sync;
   assign xlslice_reciever_in_10_Dout = router;
   urllc_fifo_core_DDCWrapper_0_0 DDCWrapper_0
@@ -81,6 +89,8 @@ module adc_imp_18KFN60
         .axis_tvalid(adc_axis_0_axis_TVALID),
         .clk(Net),
         .div(div_1),
+        .fifo_almost_empty(fifo_almost_empty_1),
+        .fifo_almost_full(fifo_almost_full1_1),
         .resetn(Net1));
   urllc_fifo_core_mux_reciever_in_0 mux_reciever_in
        (.data_out(mux_reciever_in_data_out),
@@ -143,6 +153,7 @@ module core_imp_IXGSD3
     S_AXIS_tlast,
     S_AXIS_tready,
     S_AXIS_tvalid,
+    almost_empty,
     clk_out1,
     clk_out_dynamic,
     clk_pl_50M,
@@ -153,6 +164,7 @@ module core_imp_IXGSD3
     probe28,
     probe8,
     probe9,
+    prog_full1,
     psclk,
     psen,
     psincdec,
@@ -205,6 +217,7 @@ module core_imp_IXGSD3
   input S_AXIS_tlast;
   output S_AXIS_tready;
   input S_AXIS_tvalid;
+  output almost_empty;
   output clk_out1;
   output clk_out_dynamic;
   input clk_pl_50M;
@@ -215,6 +228,7 @@ module core_imp_IXGSD3
   input [7:0]probe28;
   input [7:0]probe8;
   input [7:0]probe9;
+  output prog_full1;
   input psclk;
   input psen;
   input psincdec;
@@ -308,12 +322,12 @@ module core_imp_IXGSD3
   (* CONN_BUS_INFO = "axis_data_fifo_adc_M_AXIS xilinx.com:interface:axis:1.0 None TVALID" *) (* DEBUG = "true" *) (* MARK_DEBUG *) wire axis_data_fifo_adc_M_AXIS_TVALID;
   (* DEBUG = "true" *) (* MARK_DEBUG *) wire axis_data_fifo_adc_almost_empty;
   (* DEBUG = "true" *) (* MARK_DEBUG *) wire axis_data_fifo_adc_almost_full;
+  wire axis_data_fifo_adc_almost_full1;
   (* CONN_BUS_INFO = "axis_data_fifo_dac_M_AXIS xilinx.com:interface:axis:1.0 None TDATA" *) (* DEBUG = "true" *) (* MARK_DEBUG *) wire [7:0]axis_data_fifo_dac_M_AXIS_TDATA;
   (* CONN_BUS_INFO = "axis_data_fifo_dac_M_AXIS xilinx.com:interface:axis:1.0 None TLAST" *) (* DEBUG = "true" *) (* MARK_DEBUG *) wire axis_data_fifo_dac_M_AXIS_TLAST;
   (* CONN_BUS_INFO = "axis_data_fifo_dac_M_AXIS xilinx.com:interface:axis:1.0 None TREADY" *) (* DEBUG = "true" *) (* MARK_DEBUG *) wire axis_data_fifo_dac_M_AXIS_TREADY;
   (* CONN_BUS_INFO = "axis_data_fifo_dac_M_AXIS xilinx.com:interface:axis:1.0 None TVALID" *) (* DEBUG = "true" *) (* MARK_DEBUG *) wire axis_data_fifo_dac_M_AXIS_TVALID;
   (* DEBUG = "true" *) (* MARK_DEBUG *) wire axis_data_fifo_dac_almost_empty;
-  (* DEBUG = "true" *) (* MARK_DEBUG *) wire axis_data_fifo_dac_almost_full;
   wire clk_dynamic_clk_out_200M;
   (* DEBUG = "true" *) (* MARK_DEBUG *) wire clk_dynamic_locked;
   wire clk_pl_50M_1;
@@ -453,6 +467,7 @@ module core_imp_IXGSD3
   assign S_AXIS_1_TLAST = S_AXIS_tlast;
   assign S_AXIS_1_TVALID = S_AXIS_tvalid;
   assign S_AXIS_tready = S_AXIS_1_TREADY;
+  assign almost_empty = axis_data_fifo_dac_almost_empty;
   assign axis_data_fifo_adc_M_AXIS_TREADY = M_AXIS_tready;
   assign clk_out1 = clk_static_clk_out1;
   assign clk_out_dynamic = clk_dynamic_clk_out_200M;
@@ -464,6 +479,7 @@ module core_imp_IXGSD3
   assign probe28_1 = probe28[7:0];
   assign probe8_1 = probe8[7:0];
   assign probe9_1 = probe9[7:0];
+  assign prog_full1 = prog_full;
   assign ps7_0_axi_periph_M00_AXI_ARREADY = M00_AXI_arready;
   assign ps7_0_axi_periph_M00_AXI_AWREADY = M00_AXI_awready;
   assign ps7_0_axi_periph_M00_AXI_BRESP = M00_AXI_bresp[1:0];
@@ -617,7 +633,7 @@ module core_imp_IXGSD3
         .S01_AXI_wvalid(S01_AXI_1_WVALID));
   urllc_fifo_core_axis_data_fifo_adc_1 axis_data_fifo_adc
        (.almost_empty(axis_data_fifo_dac_almost_empty),
-        .almost_full(axis_data_fifo_dac_almost_full),
+        .almost_full(axis_data_fifo_adc_almost_full1),
         .m_axis_tdata(axis_data_fifo_dac_M_AXIS_TDATA),
         .m_axis_tlast(axis_data_fifo_dac_M_AXIS_TLAST),
         .m_axis_tready(axis_data_fifo_dac_M_AXIS_TREADY),
@@ -910,7 +926,7 @@ module core_imp_IXGSD3
         .probe26(probe26_1),
         .probe27(probe26_1),
         .probe28(probe28_1),
-        .probe3(axis_data_fifo_dac_almost_full),
+        .probe3(axis_data_fifo_adc_almost_full1),
         .probe4(prog_empty),
         .probe5(prog_empty_1),
         .probe6(probe8_1),
@@ -924,7 +940,7 @@ module core_imp_IXGSD3
         .In2(axi_dma_0_s2mm_introut),
         .In3(axis_data_fifo_adc_almost_full),
         .In4(axis_data_fifo_adc_almost_empty),
-        .In5(axis_data_fifo_dac_almost_full),
+        .In5(axis_data_fifo_adc_almost_full1),
         .In6(axis_data_fifo_dac_almost_empty),
         .dout(xlconcat_irq_dout));
   urllc_fifo_core_xlconstant_0_1 xlconstant_zero
@@ -2599,6 +2615,8 @@ module urllc_fifo_core
   wire clk_dynamic_clk_out_200M;
   wire clk_pl_50M_1;
   wire clk_wiz_0_clk_out1;
+  (* DEBUG = "true" *) wire core_almost_empty;
+  (* DEBUG = "true" *) wire core_prog_full1;
   (* DEBUG = "true" *) wire [0:0]debug_ctrl_Dout1;
   (* DEBUG = "true" *) wire [0:0]debug_ctrl_Dout14;
   (* DEBUG = "true" *) wire [0:0]debug_ctrl_Dout2;
@@ -2668,6 +2686,8 @@ module urllc_fifo_core
         .clk(clk_wiz_0_clk_out1),
         .data_out(probe9_1),
         .div(div_1),
+        .fifo_almost_empty(core_almost_empty),
+        .fifo_almost_full1(core_prog_full1),
         .io_clock(clk_dynamic_clk_out_200M),
         .io_in_sync(xlslice_reciever_out_8_Dout),
         .io_resetN(reset_dynamic_peripheral_aresetn),
@@ -2721,6 +2741,7 @@ module urllc_fifo_core
         .S_AXIS_tlast(adc_axis2_TLAST),
         .S_AXIS_tready(adc_axis2_TREADY),
         .S_AXIS_tvalid(adc_axis2_TVALID),
+        .almost_empty(core_almost_empty),
         .clk_out1(clk_wiz_0_clk_out1),
         .clk_out_dynamic(clk_dynamic_clk_out_200M),
         .clk_pl_50M(clk_pl_50M_1),
@@ -2731,6 +2752,7 @@ module urllc_fifo_core
         .probe28(probe28_1),
         .probe8(div_1),
         .probe9(probe9_1),
+        .prog_full1(core_prog_full1),
         .psclk(debug_ctrl_Dout2),
         .psen(debug_ctrl_Dout1),
         .psincdec(debug_ctrl_Dout6),

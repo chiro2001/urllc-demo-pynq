@@ -1,7 +1,7 @@
 -- Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 -- --------------------------------------------------------------------------------
 -- Tool Version: Vivado v.2018.3 (win64) Build 2405991 Thu Dec  6 23:38:27 MST 2018
--- Date        : Wed Apr 27 17:41:36 2022
+-- Date        : Tue May  3 23:04:03 2022
 -- Host        : Chiro running 64-bit major release  (build 9200)
 -- Command     : write_vhdl -force -mode synth_stub -rename_top decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix -prefix
 --               decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_ urllc_fifo_core_adc_axis_0_0_stub.vhdl
@@ -21,7 +21,9 @@ entity decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix is
     axis_tdata : out STD_LOGIC_VECTOR ( 7 downto 0 );
     axis_tvalid : out STD_LOGIC;
     axis_tlast : out STD_LOGIC;
-    axis_tready : in STD_LOGIC
+    axis_tready : in STD_LOGIC;
+    fifo_almost_full : in STD_LOGIC;
+    fifo_almost_empty : in STD_LOGIC
   );
 
 end decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix;
@@ -30,7 +32,7 @@ architecture stub of decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix is
 attribute syn_black_box : boolean;
 attribute black_box_pad_pin : string;
 attribute syn_black_box of stub : architecture is true;
-attribute black_box_pad_pin of stub : architecture is "clk,resetn,ad_in[7:0],div[7:0],axis_tdata[7:0],axis_tvalid,axis_tlast,axis_tready";
+attribute black_box_pad_pin of stub : architecture is "clk,resetn,ad_in[7:0],div[7:0],axis_tdata[7:0],axis_tvalid,axis_tlast,axis_tready,fifo_almost_full,fifo_almost_empty";
 attribute X_CORE_INFO : string;
 attribute X_CORE_INFO of stub : architecture is "adc_axis,Vivado 2018.3";
 begin

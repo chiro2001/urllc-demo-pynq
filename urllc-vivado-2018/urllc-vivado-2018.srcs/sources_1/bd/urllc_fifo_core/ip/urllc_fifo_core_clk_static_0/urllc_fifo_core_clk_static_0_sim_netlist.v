@@ -1,10 +1,10 @@
 // Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 // --------------------------------------------------------------------------------
 // Tool Version: Vivado v.2018.3 (win64) Build 2405991 Thu Dec  6 23:38:27 MST 2018
-// Date        : Mon Apr 25 16:40:51 2022
+// Date        : Mon Apr 25 16:40:50 2022
 // Host        : Chiro running 64-bit major release  (build 9200)
-// Command     : write_verilog -force -mode funcsim
-//               D:/Programs/urllc-demo-pynq/urllc-vivado-2018/urllc-vivado-2018.srcs/sources_1/bd/urllc_fifo_core/ip/urllc_fifo_core_clk_static_0/urllc_fifo_core_clk_static_0_sim_netlist.v
+// Command     : write_verilog -force -mode funcsim -rename_top urllc_fifo_core_clk_static_0 -prefix
+//               urllc_fifo_core_clk_static_0_ urllc_fifo_core_clk_static_0_sim_netlist.v
 // Design      : urllc_fifo_core_clk_static_0
 // Purpose     : This verilog netlist is a functional simulation representation of the design and should not be modified
 //               or synthesized. This netlist cannot be used for SDF annotated simulation.
@@ -31,7 +31,6 @@ module urllc_fifo_core_clk_static_0
         .locked(locked));
 endmodule
 
-(* ORIG_REF_NAME = "urllc_fifo_core_clk_static_0_clk_wiz" *) 
 module urllc_fifo_core_clk_static_0_urllc_fifo_core_clk_static_0_clk_wiz
    (clk_out1,
     locked,

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <section name="Workbench">
 	<item value="sender_wrapper_hw_platform_0" key="programflash.hwplatform"/>
-	<item value="Local" key="sender_wrapper_hw_platform_0-target"/>
+	<item value="test" key="sender_wrapper_hw_platform_0-target"/>
 	<item value="D:\Programs\urllc-demo-pynq\urllc-vivado-2018\urllc-vivado-2018.sdk\fsbl\Debug\fsbl.elf" key="sender_wrapper_hw_platform_0-fsblFile"/>
 	<item value="qspi-x4-single" key="sender_wrapper_hw_platform_0-flashType"/>
 	<item value="false" key="sender_wrapper_hw_platform_0-verifyFlash"/>

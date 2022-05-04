@@ -572,6 +572,12 @@
                 "direction": "I",
                 "left": "7",
                 "right": "0"
+              },
+              "fifo_almost_full": {
+                "direction": "I"
+              },
+              "fifo_almost_empty": {
+                "direction": "I"
               }
             }
           }
@@ -690,16 +696,16 @@
       }
     },
     "interface_nets": {
-      "adc_axis_adc": {
-        "interface_ports": [
-          "axis_data_fifo_inout/S_AXIS",
-          "adc/axis_adc"
-        ]
-      },
       "axis_data_fifo_inout_M_AXIS": {
         "interface_ports": [
           "axis_data_fifo_inout/M_AXIS",
           "dac/axis"
+        ]
+      },
+      "adc_axis_adc": {
+        "interface_ports": [
+          "axis_data_fifo_inout/S_AXIS",
+          "adc/axis_adc"
         ]
       }
     },

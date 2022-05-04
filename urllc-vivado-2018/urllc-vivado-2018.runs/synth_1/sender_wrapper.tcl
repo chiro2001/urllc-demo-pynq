@@ -19,6 +19,7 @@ proc create_report { reportName command } {
 }
 set_param tcl.collectionResultDisplayLimit 0
 set_param xicom.use_bs_reader 1
+set_msg_config -id {Common 17-41} -limit 10000000
 set_msg_config -id {HDL-1065} -limit 10000
 create_project -in_memory -part xc7z020clg400-2
 
@@ -55,12 +56,12 @@ set_property used_in_implementation false [get_files -all d:/Programs/urllc-demo
 set_property used_in_implementation false [get_files -all d:/Programs/urllc-demo-pynq/urllc-vivado-2018/urllc-vivado-2018.srcs/sources_1/bd/urllc_fifo_core/ip/urllc_fifo_core_axi_gpio_0_0/urllc_fifo_core_axi_gpio_0_0_board.xdc]
 set_property used_in_implementation false [get_files -all d:/Programs/urllc-demo-pynq/urllc-vivado-2018/urllc-vivado-2018.srcs/sources_1/bd/urllc_fifo_core/ip/urllc_fifo_core_axi_gpio_0_0/urllc_fifo_core_axi_gpio_0_0_ooc.xdc]
 set_property used_in_implementation false [get_files -all d:/Programs/urllc-demo-pynq/urllc-vivado-2018/urllc-vivado-2018.srcs/sources_1/bd/urllc_fifo_core/ip/urllc_fifo_core_axi_gpio_0_0/urllc_fifo_core_axi_gpio_0_0.xdc]
-set_property used_in_implementation false [get_files -all d:/Programs/urllc-demo-pynq/urllc-vivado-2018/urllc-vivado-2018.srcs/sources_1/bd/urllc_fifo_core/ip/urllc_fifo_core_system_ila_0_0/urllc_fifo_core_system_ila_0_0_ooc.xdc]
 set_property used_in_synthesis false [get_files -all d:/Programs/urllc-demo-pynq/urllc-vivado-2018/urllc-vivado-2018.srcs/sources_1/bd/urllc_fifo_core/ip/urllc_fifo_core_system_ila_0_0/bd_0/ip/ip_0/ila_v6_2/constraints/ila_impl.xdc]
 set_property used_in_implementation false [get_files -all d:/Programs/urllc-demo-pynq/urllc-vivado-2018/urllc-vivado-2018.srcs/sources_1/bd/urllc_fifo_core/ip/urllc_fifo_core_system_ila_0_0/bd_0/ip/ip_0/ila_v6_2/constraints/ila_impl.xdc]
 set_property used_in_implementation false [get_files -all d:/Programs/urllc-demo-pynq/urllc-vivado-2018/urllc-vivado-2018.srcs/sources_1/bd/urllc_fifo_core/ip/urllc_fifo_core_system_ila_0_0/bd_0/ip/ip_0/ila_v6_2/constraints/ila.xdc]
 set_property used_in_implementation false [get_files -all d:/Programs/urllc-demo-pynq/urllc-vivado-2018/urllc-vivado-2018.srcs/sources_1/bd/urllc_fifo_core/ip/urllc_fifo_core_system_ila_0_0/bd_0/ip/ip_0/bd_d2de_ila_lib_0_ooc.xdc]
 set_property used_in_implementation false [get_files -all d:/Programs/urllc-demo-pynq/urllc-vivado-2018/urllc-vivado-2018.srcs/sources_1/bd/urllc_fifo_core/ip/urllc_fifo_core_system_ila_0_0/bd_0/bd_d2de_ooc.xdc]
+set_property used_in_implementation false [get_files -all d:/Programs/urllc-demo-pynq/urllc-vivado-2018/urllc-vivado-2018.srcs/sources_1/bd/urllc_fifo_core/ip/urllc_fifo_core_system_ila_0_0/urllc_fifo_core_system_ila_0_0_ooc.xdc]
 set_property used_in_implementation false [get_files -all d:/Programs/urllc-demo-pynq/urllc-vivado-2018/urllc-vivado-2018.srcs/sources_1/bd/urllc_fifo_core/ip/urllc_fifo_core_xbar_1/urllc_fifo_core_xbar_1_ooc.xdc]
 set_property used_in_implementation false [get_files -all d:/Programs/urllc-demo-pynq/urllc-vivado-2018/urllc-vivado-2018.srcs/sources_1/bd/urllc_fifo_core/ip/urllc_fifo_core_axis_data_fifo_0_0/urllc_fifo_core_axis_data_fifo_0_0_ooc.xdc]
 set_property used_in_implementation false [get_files -all d:/Programs/urllc-demo-pynq/urllc-vivado-2018/urllc-vivado-2018.srcs/sources_1/bd/urllc_fifo_core/ip/urllc_fifo_core_axis_data_fifo_adc_1/urllc_fifo_core_axis_data_fifo_adc_1_ooc.xdc]

@@ -501,6 +501,7 @@ proc create_hier_cell_core { parentCell nameHier } {
   create_bd_intf_pin -mode Slave -vlnv xilinx.com:interface:axis_rtl:1.0 S_AXIS
 
   # Create pins
+  create_bd_pin -dir O almost_empty
   create_bd_pin -dir O -type clk clk_out1
   create_bd_pin -dir O -type clk clk_out_dynamic
   create_bd_pin -dir I clk_pl_50M
@@ -511,6 +512,7 @@ proc create_hier_cell_core { parentCell nameHier } {
   create_bd_pin -dir I -from 0 -to 0 probe10
   create_bd_pin -dir I -from 7 -to 0 probe26
   create_bd_pin -dir I -from 7 -to 0 probe28
+  create_bd_pin -dir O prog_full1
   create_bd_pin -dir I psclk
   create_bd_pin -dir I psen
   create_bd_pin -dir I psincdec
@@ -525,7 +527,7 @@ proc create_hier_cell_core { parentCell nameHier } {
    CONFIG.c_mm2s_burst_size {256} \
    CONFIG.c_s2mm_burst_size {256} \
    CONFIG.c_sg_include_stscntrl_strm {0} \
-   CONFIG.c_sg_length_width {16} \
+   CONFIG.c_sg_length_width {24} \
  ] $axi_dma_0
 
   # Create instance: axi_interconnect_0, and set properties
@@ -1447,10 +1449,9 @@ set_property HDL_ATTRIBUTE.DEBUG {true} [get_bd_nets axi_dma_0_s2mm_introut]
 set_property HDL_ATTRIBUTE.DEBUG {true} [get_bd_nets axis_data_fifo_adc_almost_empty]
   connect_bd_net -net axis_data_fifo_adc_almost_full [get_bd_pins axis_data_fifo_dac/almost_full] [get_bd_pins system_ila_dma/probe0] [get_bd_pins xlconcat_irq/In3]
 set_property HDL_ATTRIBUTE.DEBUG {true} [get_bd_nets axis_data_fifo_adc_almost_full]
-  connect_bd_net -net axis_data_fifo_dac_almost_empty [get_bd_pins axis_data_fifo_adc/almost_empty] [get_bd_pins system_ila_dma/probe1] [get_bd_pins xlconcat_irq/In6]
+  connect_bd_net -net axis_data_fifo_adc_almost_full1 [get_bd_pins axis_data_fifo_adc/almost_full] [get_bd_pins system_ila_dma/probe3] [get_bd_pins xlconcat_irq/In5]
+  connect_bd_net -net axis_data_fifo_dac_almost_empty [get_bd_pins almost_empty] [get_bd_pins axis_data_fifo_adc/almost_empty] [get_bd_pins system_ila_dma/probe1] [get_bd_pins xlconcat_irq/In6]
 set_property HDL_ATTRIBUTE.DEBUG {true} [get_bd_nets axis_data_fifo_dac_almost_empty]
-  connect_bd_net -net axis_data_fifo_dac_almost_full [get_bd_pins axis_data_fifo_adc/almost_full] [get_bd_pins system_ila_dma/probe3] [get_bd_pins xlconcat_irq/In5]
-set_property HDL_ATTRIBUTE.DEBUG {true} [get_bd_nets axis_data_fifo_dac_almost_full]
   connect_bd_net -net clk_dynamic_clk_out_200M [get_bd_pins clk_out_dynamic] [get_bd_pins clk_dynamic/clk_out_dynamic] [get_bd_pins reset_dynamic/slowest_sync_clk]
   connect_bd_net -net clk_dynamic_locked [get_bd_pins clk_dynamic/locked] [get_bd_pins reset_dynamic/dcm_locked] [get_bd_pins system_ila_dma/probe11]
 set_property HDL_ATTRIBUTE.DEBUG {true} [get_bd_nets clk_dynamic_locked]
@@ -1473,7 +1474,7 @@ set_property HDL_ATTRIBUTE.DEBUG {true} [get_bd_nets mux_dac_fifo_reset1_data_ou
 set_property HDL_ATTRIBUTE.DEBUG {true} [get_bd_nets prog_empty]
   connect_bd_net -net prog_empty_1 [get_bd_pins axis_data_fifo_dac/prog_empty] [get_bd_pins system_ila_dma/probe5]
 set_property HDL_ATTRIBUTE.DEBUG {true} [get_bd_nets prog_empty_1]
-  connect_bd_net -net prog_full [get_bd_pins axis_data_fifo_adc/prog_full] [get_bd_pins system_ila_dma/probe24] [get_bd_pins xlconcat_irq/In0]
+  connect_bd_net -net prog_full [get_bd_pins prog_full1] [get_bd_pins axis_data_fifo_adc/prog_full] [get_bd_pins system_ila_dma/probe24] [get_bd_pins xlconcat_irq/In0]
 set_property HDL_ATTRIBUTE.DEBUG {true} [get_bd_nets prog_full]
   connect_bd_net -net prog_full_1 [get_bd_pins axis_data_fifo_dac/prog_full] [get_bd_pins system_ila_dma/probe25]
 set_property HDL_ATTRIBUTE.DEBUG {true} [get_bd_nets prog_full_1]
@@ -1538,6 +1539,8 @@ proc create_hier_cell_adc { parentCell nameHier } {
   create_bd_pin -dir I -type clk clk
   create_bd_pin -dir O -from 7 -to 0 data_out
   create_bd_pin -dir I -from 7 -to 0 div
+  create_bd_pin -dir I fifo_almost_empty
+  create_bd_pin -dir I fifo_almost_full1
   create_bd_pin -dir I -type clk io_clock
   create_bd_pin -dir I io_in_sync
   create_bd_pin -dir I -type rst io_resetN
@@ -1599,6 +1602,8 @@ proc create_hier_cell_adc { parentCell nameHier } {
   connect_bd_net -net ad_1 [get_bd_pins ad] [get_bd_pins DDCWrapper_0/io_in_data] [get_bd_pins mux_reciever_in/sel1]
   connect_bd_net -net div_1 [get_bd_pins div] [get_bd_pins adc_axis_0/div]
 set_property HDL_ATTRIBUTE.DEBUG {true} [get_bd_nets div_1]
+  connect_bd_net -net fifo_almost_empty_1 [get_bd_pins fifo_almost_empty] [get_bd_pins adc_axis_0/fifo_almost_empty]
+  connect_bd_net -net fifo_almost_full1_1 [get_bd_pins fifo_almost_full1] [get_bd_pins adc_axis_0/fifo_almost_full]
   connect_bd_net -net io_in_sync_1 [get_bd_pins io_in_sync] [get_bd_pins DDCWrapper_0/io_in_sync]
   connect_bd_net -net mux_reciever_in_data_out [get_bd_pins data_out] [get_bd_pins adc_axis_0/ad_in] [get_bd_pins mux_reciever_in/data_out]
 set_property HDL_ATTRIBUTE.DEBUG {true} [get_bd_nets mux_reciever_in_data_out]
@@ -1688,6 +1693,8 @@ proc create_root_design { parentCell } {
   connect_bd_net -net clk_dynamic_clk_out_200M [get_bd_ports clk_da_dynamic] [get_bd_pins adc/io_clock] [get_bd_pins core/clk_out_dynamic]
   connect_bd_net -net clk_pl_50M_1 [get_bd_ports clk_pl_50M] [get_bd_pins core/clk_pl_50M]
   connect_bd_net -net clk_wiz_0_clk_out1 [get_bd_ports clk_ad_static] [get_bd_pins adc/clk] [get_bd_pins core/clk_out1] [get_bd_pins dac/clk] [get_bd_pins debug_ctrl/s_axi_aclk]
+  connect_bd_net -net core_almost_empty [get_bd_pins adc/fifo_almost_empty] [get_bd_pins core/almost_empty]
+  connect_bd_net -net core_prog_full1 [get_bd_pins adc/fifo_almost_full1] [get_bd_pins core/prog_full1]
   connect_bd_net -net debug_ctrl_Dout1 [get_bd_pins core/psen] [get_bd_pins debug_ctrl/Dout1]
   connect_bd_net -net debug_ctrl_Dout2 [get_bd_pins core/psclk] [get_bd_pins debug_ctrl/Dout2]
   connect_bd_net -net debug_ctrl_Dout4 [get_bd_pins core/router] [get_bd_pins debug_ctrl/Dout4]

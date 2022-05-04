@@ -1,7 +1,7 @@
 // Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 // --------------------------------------------------------------------------------
 // Tool Version: Vivado v.2018.3 (win64) Build 2405991 Thu Dec  6 23:38:27 MST 2018
-// Date        : Wed Apr 27 17:41:37 2022
+// Date        : Tue May  3 23:04:03 2022
 // Host        : Chiro running 64-bit major release  (build 9200)
 // Command     : write_verilog -force -mode funcsim
 //               D:/Programs/urllc-demo-pynq/urllc-vivado-2018/urllc-vivado-2018.srcs/sources_1/bd/urllc_fifo_core/ip/urllc_fifo_core_adc_axis_0_0/urllc_fifo_core_adc_axis_0_0_sim_netlist.v
@@ -23,7 +23,9 @@ module urllc_fifo_core_adc_axis_0_0
     axis_tdata,
     axis_tvalid,
     axis_tlast,
-    axis_tready);
+    axis_tready,
+    fifo_almost_full,
+    fifo_almost_empty);
   (* X_INTERFACE_INFO = "xilinx.com:signal:clock:1.0 clk CLK" *) (* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME clk, ASSOCIATED_BUSIF axis, ASSOCIATED_RESET resetn, FREQ_HZ 60000000, PHASE 0.0, CLK_DOMAIN /core/clk_static_clk_out1, INSERT_VIP 0" *) input clk;
   (* X_INTERFACE_INFO = "xilinx.com:signal:reset:1.0 resetn RST" *) (* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME resetn, POLARITY ACTIVE_LOW, INSERT_VIP 0" *) input resetn;
   input [7:0]ad_in;
@@ -32,24 +34,26 @@ module urllc_fifo_core_adc_axis_0_0
   (* X_INTERFACE_INFO = "xilinx.com:interface:axis:1.0 axis TVALID" *) output axis_tvalid;
   (* X_INTERFACE_INFO = "xilinx.com:interface:axis:1.0 axis TLAST" *) output axis_tlast;
   (* X_INTERFACE_INFO = "xilinx.com:interface:axis:1.0 axis TREADY" *) (* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME axis, TDATA_NUM_BYTES 1, TDEST_WIDTH 0, TID_WIDTH 0, TUSER_WIDTH 0, HAS_TREADY 1, HAS_TSTRB 0, HAS_TKEEP 0, HAS_TLAST 1, FREQ_HZ 60000000, PHASE 0.0, CLK_DOMAIN /core/clk_static_clk_out1, LAYERED_METADATA undef, INSERT_VIP 0" *) input axis_tready;
+  input fifo_almost_full;
+  input fifo_almost_empty;
 
-  wire \<const0> ;
   wire [7:0]ad_in;
   wire [7:0]axis_tdata;
+  wire axis_tlast;
   wire axis_tvalid;
   wire clk;
   wire [7:0]div;
+  wire fifo_almost_full;
   wire resetn;
 
-  assign axis_tlast = \<const0> ;
-  GND GND
-       (.G(\<const0> ));
   urllc_fifo_core_adc_axis_0_0_adc_axis inst
        (.ad_in(ad_in),
         .axis_tdata(axis_tdata),
+        .axis_tlast(axis_tlast),
         .axis_tvalid(axis_tvalid),
         .clk(clk),
         .div(div),
+        .fifo_almost_full(fifo_almost_full),
         .resetn(resetn));
 endmodule
 
@@ -57,12 +61,16 @@ endmodule
 module urllc_fifo_core_adc_axis_0_0_adc_axis
    (axis_tdata,
     axis_tvalid,
+    axis_tlast,
+    fifo_almost_full,
     ad_in,
     div,
     clk,
     resetn);
   output [7:0]axis_tdata;
   output axis_tvalid;
+  output axis_tlast;
+  input fifo_almost_full;
   input [7:0]ad_in;
   input [7:0]div;
   input clk;
@@ -88,6 +96,8 @@ module urllc_fifo_core_adc_axis_0_0_adc_axis
   wire \ad[7]_i_9_n_0 ;
   wire [7:0]ad_in;
   wire [7:0]axis_tdata;
+  wire axis_tlast;
+  wire axis_tlast_reg_i_1_n_0;
   wire axis_tvalid;
   wire clk;
   wire [7:0]cnt;
@@ -106,57 +116,65 @@ module urllc_fifo_core_adc_axis_0_0_adc_axis
   wire \cnt[6]_i_2_n_0 ;
   wire \cnt[7]_i_1_n_0 ;
   wire [7:0]div;
+  wire fifo_almost_full;
   wire resetn;
   wire vld_i_1_n_0;
 
-  (* SOFT_HLUTNM = "soft_lutpair4" *) 
-  LUT2 #(
-    .INIT(4'h2)) 
+  (* SOFT_HLUTNM = "soft_lutpair6" *) 
+  LUT3 #(
+    .INIT(8'h04)) 
     \ad[0]_i_1 
-       (.I0(ad_in[0]),
-        .I1(\ad[7]_i_7_n_0 ),
+       (.I0(fifo_almost_full),
+        .I1(ad_in[0]),
+        .I2(\ad[7]_i_7_n_0 ),
         .O(\ad[0]_i_1_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair5" *) 
-  LUT2 #(
-    .INIT(4'h2)) 
+  (* SOFT_HLUTNM = "soft_lutpair6" *) 
+  LUT3 #(
+    .INIT(8'h04)) 
     \ad[1]_i_1 
-       (.I0(ad_in[1]),
-        .I1(\ad[7]_i_7_n_0 ),
+       (.I0(fifo_almost_full),
+        .I1(ad_in[1]),
+        .I2(\ad[7]_i_7_n_0 ),
         .O(\ad[1]_i_1_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair6" *) 
-  LUT2 #(
-    .INIT(4'h2)) 
+  (* SOFT_HLUTNM = "soft_lutpair3" *) 
+  LUT3 #(
+    .INIT(8'h04)) 
     \ad[2]_i_1 
-       (.I0(ad_in[2]),
-        .I1(\ad[7]_i_7_n_0 ),
+       (.I0(fifo_almost_full),
+        .I1(ad_in[2]),
+        .I2(\ad[7]_i_7_n_0 ),
         .O(\ad[2]_i_1_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair5" *) 
-  LUT2 #(
-    .INIT(4'h2)) 
-    \ad[3]_i_1 
-       (.I0(ad_in[3]),
-        .I1(\ad[7]_i_7_n_0 ),
-        .O(\ad[3]_i_1_n_0 ));
   (* SOFT_HLUTNM = "soft_lutpair4" *) 
-  LUT2 #(
-    .INIT(4'h2)) 
+  LUT3 #(
+    .INIT(8'h04)) 
+    \ad[3]_i_1 
+       (.I0(fifo_almost_full),
+        .I1(ad_in[3]),
+        .I2(\ad[7]_i_7_n_0 ),
+        .O(\ad[3]_i_1_n_0 ));
+  (* SOFT_HLUTNM = "soft_lutpair5" *) 
+  LUT3 #(
+    .INIT(8'h04)) 
     \ad[4]_i_1 
-       (.I0(ad_in[4]),
-        .I1(\ad[7]_i_7_n_0 ),
+       (.I0(fifo_almost_full),
+        .I1(ad_in[4]),
+        .I2(\ad[7]_i_7_n_0 ),
         .O(\ad[4]_i_1_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair6" *) 
-  LUT2 #(
-    .INIT(4'h2)) 
+  (* SOFT_HLUTNM = "soft_lutpair5" *) 
+  LUT3 #(
+    .INIT(8'h04)) 
     \ad[5]_i_1 
-       (.I0(ad_in[5]),
-        .I1(\ad[7]_i_7_n_0 ),
+       (.I0(fifo_almost_full),
+        .I1(ad_in[5]),
+        .I2(\ad[7]_i_7_n_0 ),
         .O(\ad[5]_i_1_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair7" *) 
-  LUT2 #(
-    .INIT(4'h2)) 
+  (* SOFT_HLUTNM = "soft_lutpair4" *) 
+  LUT3 #(
+    .INIT(8'h04)) 
     \ad[6]_i_1 
-       (.I0(ad_in[6]),
-        .I1(\ad[7]_i_7_n_0 ),
+       (.I0(fifo_almost_full),
+        .I1(ad_in[6]),
+        .I2(\ad[7]_i_7_n_0 ),
         .O(\ad[6]_i_1_n_0 ));
   LUT4 #(
     .INIT(16'hFF08)) 
@@ -185,12 +203,13 @@ module urllc_fifo_core_adc_axis_0_0_adc_axis
         .I2(div[0]),
         .I3(div[1]),
         .O(\ad[7]_i_11_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair7" *) 
-  LUT2 #(
-    .INIT(4'h2)) 
+  (* SOFT_HLUTNM = "soft_lutpair3" *) 
+  LUT3 #(
+    .INIT(8'h04)) 
     \ad[7]_i_2 
-       (.I0(ad_in[7]),
-        .I1(\ad[7]_i_7_n_0 ),
+       (.I0(fifo_almost_full),
+        .I1(ad_in[7]),
+        .I2(\ad[7]_i_7_n_0 ),
         .O(\ad[7]_i_2_n_0 ));
   LUT1 #(
     .INIT(2'h1)) 
@@ -301,6 +320,22 @@ module urllc_fifo_core_adc_axis_0_0_adc_axis
         .CLR(\ad[7]_i_3_n_0 ),
         .D(\ad[7]_i_2_n_0 ),
         .Q(axis_tdata[7]));
+  (* SOFT_HLUTNM = "soft_lutpair0" *) 
+  LUT5 #(
+    .INIT(32'h00002000)) 
+    axis_tlast_reg_i_1
+       (.I0(fifo_almost_full),
+        .I1(\ad[7]_i_6_n_0 ),
+        .I2(\ad[7]_i_5_n_0 ),
+        .I3(\ad[7]_i_4_n_0 ),
+        .I4(\ad[7]_i_7_n_0 ),
+        .O(axis_tlast_reg_i_1_n_0));
+  FDCE axis_tlast_reg_reg
+       (.C(clk),
+        .CE(1'b1),
+        .CLR(\ad[7]_i_3_n_0 ),
+        .D(axis_tlast_reg_i_1_n_0),
+        .Q(axis_tlast));
   LUT5 #(
     .INIT(32'h000000BF)) 
     \cnt[0]_i_1 
@@ -330,7 +365,7 @@ module urllc_fifo_core_adc_axis_0_0_adc_axis
         .I4(cnt[2]),
         .I5(\ad[7]_i_7_n_0 ),
         .O(\cnt[2]_i_1_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair3" *) 
+  (* SOFT_HLUTNM = "soft_lutpair7" *) 
   LUT2 #(
     .INIT(4'h8)) 
     \cnt[2]_i_2 
@@ -347,7 +382,7 @@ module urllc_fifo_core_adc_axis_0_0_adc_axis
         .I4(cnt[3]),
         .I5(\ad[7]_i_7_n_0 ),
         .O(\cnt[3]_i_1_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair3" *) 
+  (* SOFT_HLUTNM = "soft_lutpair7" *) 
   LUT3 #(
     .INIT(8'h80)) 
     \cnt[3]_i_2 
@@ -414,7 +449,6 @@ module urllc_fifo_core_adc_axis_0_0_adc_axis
         .I4(cnt[2]),
         .I5(cnt[4]),
         .O(\cnt[6]_i_2_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair0" *) 
   LUT5 #(
     .INIT(32'h0000BF00)) 
     \cnt[7]_i_1 
@@ -480,13 +514,14 @@ module urllc_fifo_core_adc_axis_0_0_adc_axis
         .D(\cnt[7]_i_1_n_0 ),
         .Q(cnt[7]));
   (* SOFT_HLUTNM = "soft_lutpair0" *) 
-  LUT4 #(
-    .INIT(16'h0008)) 
+  LUT5 #(
+    .INIT(32'h00001000)) 
     vld_i_1
-       (.I0(\ad[7]_i_4_n_0 ),
-        .I1(\ad[7]_i_5_n_0 ),
-        .I2(\ad[7]_i_6_n_0 ),
-        .I3(\ad[7]_i_7_n_0 ),
+       (.I0(fifo_almost_full),
+        .I1(\ad[7]_i_6_n_0 ),
+        .I2(\ad[7]_i_5_n_0 ),
+        .I3(\ad[7]_i_4_n_0 ),
+        .I4(\ad[7]_i_7_n_0 ),
         .O(vld_i_1_n_0));
   FDCE vld_reg
        (.C(clk),
