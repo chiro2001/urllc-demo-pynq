@@ -4,3 +4,7 @@
 [submodule "script"]
 	path = script
 	url = https://github.com/telantan/script
+[submodule "urllc-vivado-2018/chisel-playground"]
+	path = urllc-vivado-2018/chisel-playground
+	url = https://github.com/chiro2001/chisel-playground
+	branch = urllc
